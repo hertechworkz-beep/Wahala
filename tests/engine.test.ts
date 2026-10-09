@@ -352,6 +352,7 @@ describe('Verdict and Receipts (rules 9, 15, 20)', () => {
     expect(v.title).toBe("This one isn't funny.");
     expect(v.noRoast).toBe(true);
     expect(v.roast).toContain("Control isn't love");
+    expect(v.roast).not.toBe(v.title);
   });
   it('builds a card for every ending with title, lesson and the hidden truth', () => {
     for (const e of ['locked_in', 'counter_con', 'survived', 'scandal', 'sapa', 'breakdown', 'ghosted', 'fumbled', 'obsession', 'walked_away'] as const) {

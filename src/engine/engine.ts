@@ -360,7 +360,7 @@ export function resolveCard(content: CityContent, s: RunState): ResolvedCard | u
   } else beats = beats.filter((b) => !b.text.includes('{tell}'));
   if (card.slot === 'first_date') {
     const first = ch.vibe_start[s.player.vibe]?.line;
-    if (first) beats.splice(1, 0, { who: 'partner', text: fill(first, ctx) });
+    if (first) beats.splice(1, 0, { who: 'narration', text: fill(first, ctx) });
     const leak = chemistryLeak(ch, s);
     if (leak) beats.push({ who: 'narration', text: fill(leak, ctx) });
   }

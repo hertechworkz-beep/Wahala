@@ -66,7 +66,7 @@ export function buildVerdict(content: CityContent, s: RunState): Verdict {
   const endingText = fill(ch.endings[ending]?.text ?? defaultEndingText(ending), ctx);
   const title = noRoast ? "This one isn't funny." : pickTitle(content, s);
   const lesson = noRoast ? 'Control isn\'t love. If someone tracks you, keys your door or checks your phone, tell someone you trust. You deserve to feel free.' : pickLesson(content, s);
-  const roast = noRoast ? "This one isn't funny. Control isn't love." : pickRoast(content, s, won, goal.roast);
+  const roast = noRoast ? "Control isn't love. Leaving isn't failure." : pickRoast(content, s, won, goal.roast);
   const r = content.rarity[s.characterId]?.endings?.[ending];
 
   return {
