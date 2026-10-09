@@ -1,0 +1,3799 @@
+[
+  {
+    "id": "osz_d1_rooftop",
+    "character": "osaze",
+    "slot": "first_date",
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "night",
+      "expression": "charming",
+      "mood": "positive"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Rooftop in Ikoyi. Osaze pulls out your chair, orders in Italian and sends back the olive oil. Twice."
+      },
+      {
+        "who": "partner",
+        "text": "In Milano we eat slowly, bella. Lagos eats like it's running from LASTMA."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "never_left": {
+        "id": "t_nl_accent",
+        "text": "The waiter brings the wrong wine. 'Oya, comot this thing for my front—' He stops. Smooth again: 'Scusi.'"
+      },
+      "wife_abroad": {
+        "id": "t_wa_photo",
+        "text": "He checks his phone. His lockscreen is a child's crayon drawing: a house, a sun, three stick people."
+      },
+      "japa_real": {
+        "id": "t_jr_embassy",
+        "text": "He yawns into his risotto. 'Sorry. I've been at the embassy since 5am. Long story.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "let_order",
+        "label": "Let him order for you. Milan, in Ikoyi.",
+        "receipt": "You let him order for you.",
+        "outcomes": [
+          {
+            "text": "Everything he orders is delicious and impossible to pronounce. He feeds you tiramisu off his own spoon. Smooth man.",
+            "attachment": 10,
+            "chemistry": 4,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "italian",
+        "label": "Ask him something in Italian. See what happens.",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You tested him in Italian on the first date.",
+        "outcomes": [
+          {
+            "text": "He answers, pleased. You understand one word. It was 'bella'.",
+            "attachment": 3,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "never_left": {
+            "text": "'Come stai?' 'Grazie.' 'Where in Milan?' 'Grazie.' He has one word and he's riding it to Abuja.",
+            "sanity": -3,
+            "attachment": -2
+          },
+          "wife_abroad": {
+            "text": "Fluent, fast, then softer: 'Where did you learn? I have... friends in Torino who speak like you.'",
+            "sanity": -3,
+            "attachment": 4
+          },
+          "japa_real": {
+            "text": "Warm, fast Italian, then he translates everything and makes you repeat 'buonanotte' until you get it right.",
+            "attachment": 8,
+            "chemistry": 4
+          }
+        }
+      },
+      {
+        "id": "split",
+        "label": "\"In Europe you split, abi? Let's split.\"",
+        "tags": [
+          "budget",
+          "independence"
+        ],
+        "cost": 25000,
+        "broke_text": "Your half costs more than your whole week.",
+        "receipt": "You split the bill on the first date.",
+        "outcomes": [
+          {
+            "text": "He laughs, trapped by his own line. 'A modern person. Milan would love you.' He respects you a little more.",
+            "trust": 8,
+            "attachment": 2,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "never_left": {
+            "text": "He looks relieved. Very, very relieved. Then he respects you a little more.",
+            "trust": 8,
+            "attachment": 2
+          }
+        }
+      },
+      {
+        "id": "corp_bank",
+        "label": "[Corporate] Ask which Milan bank he used.",
+        "vibe": "corporate",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You asked which bank he used in Milan.",
+        "outcomes": [
+          {
+            "text": "'Intesa. Why?' A fair answer. You almost feel bad.",
+            "trust": 3,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "never_left": {
+            "text": "'The... Milan Bank.' There is no Milan Bank. He orders more wine.",
+            "saw_truth": true,
+            "sanity": -3
+          },
+          "wife_abroad": {
+            "text": "'Intesa. Joint account.' He freezes. 'With a... business partner.'",
+            "saw_truth": true,
+            "sanity": -5
+          },
+          "japa_real": {
+            "text": "'Intesa. Still open. I'm going back soon. Maybe.' He studies your face when he says 'maybe'.",
+            "trust": 6,
+            "attachment": 4
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "osz_d1_suya",
+    "character": "osaze",
+    "slot": "first_date",
+    "scene": {
+      "location": "mainland_street",
+      "time": "golden",
+      "expression": "charming",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "He insists on Ojuelegba: 'I want to feel real Lagos after Europe.' Suya smoke, danfo horns, his loafers in a puddle."
+      },
+      {
+        "who": "partner",
+        "text": "Mamma mia. In Milano, even the gutters have manners."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "never_left": {
+        "id": "t_nl_shoes",
+        "text": "He slips off a wet loafer to wring it out. The insole says, clearly: 'Made in Aba'."
+      },
+      "wife_abroad": {
+        "id": "t_wa_wu",
+        "text": "Paying the suya man, a Western Union slip falls from his wallet. Receiver: Torino, Italy."
+      },
+      "japa_real": {
+        "id": "t_jr_secret",
+        "text": "A friend shouts from a bus stop: 'Osaze! You don travel?' He shouts back, 'Me? Never!' and walks faster."
+      }
+    },
+    "choices": [
+      {
+        "id": "socks",
+        "label": "Laugh it off. Buy him dry socks from a hawker.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You bought him socks from a hawker.",
+        "outcomes": [
+          {
+            "text": "₦1,500 socks. He wears them proudly. 'Italian quality,' he says. They are not.",
+            "attachment": 8,
+            "sanity": -3,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "ask_milan",
+        "label": "\"Tell me about Milan. Properly.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked him about Milan, properly.",
+        "outcomes": [
+          {
+            "text": "Trams, fog, a landlady called Signora Bruno. It sounds lived in.",
+            "trust": 8,
+            "attachment": 4,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "never_left": {
+            "text": "Trams, fog, the Colosseum. The Colosseum is in Rome. You let it go. For now.",
+            "trust": 4,
+            "sanity": -3
+          },
+          "wife_abroad": {
+            "text": "He talks about Torino more than Milan. Specific Torino. A park, a school gate, a Saturday market.",
+            "trust": 6,
+            "sanity": -3
+          },
+          "japa_real": {
+            "text": "Seven years: warehouse nights, Italian classes, a promotion, then his father's burial brought him home. 'I'm going back.' Then: 'Forget I said that.'",
+            "trust": 12,
+            "attachment": 8
+          }
+        }
+      },
+      {
+        "id": "status",
+        "label": "Post him: \"My Euro boo 🇮🇹\"",
+        "receipt": "You posted him as your 'Euro boo'.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "Comments: 'Is that Ojuelegba?' 'Euro boo in a puddle 😂' Still, 214 views.",
+            "clout": 15,
+            "exposure": 8,
+            "set": [
+              {
+                "flag": "secret_euro_post",
+                "knows": [
+                  "player",
+                  "world"
+                ]
+              }
+            ]
+          },
+          {
+            "chance": 0.4,
+            "text": "He sees it. 'Delete, please. I'm low-key.' He has never been low-key in his life.",
+            "bad": true,
+            "trust": -8,
+            "clout": 5,
+            "set": [
+              {
+                "flag": "secret_euro_post",
+                "knows": [
+                  "player",
+                  "world",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "runs_shoes",
+        "label": "[Runs] Check his shoe stitching while he pays.",
+        "vibe": "runs",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You inspected his shoes on the first date.",
+        "outcomes": [
+          {
+            "text": "Hand-stitched. Proper. You're almost disappointed.",
+            "sanity": -2,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "never_left": {
+            "text": "Glue, not stitching. And a stamp: 'Balogun Line 4'. You know Line 4.",
+            "saw_truth": true,
+            "sanity": -5
+          },
+          "wife_abroad": {
+            "text": "Real Italian. The receipt is still folded inside: a shop in Torino. Torino again.",
+            "sanity": -3
+          },
+          "japa_real": {
+            "text": "Real, old, resoled twice. The shoes of a man who has walked a lot of Milan.",
+            "trust": 4,
+            "sanity": 3
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "osz_d1_shortlet",
+    "character": "osaze",
+    "slot": "first_date",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "expression": "charming",
+      "mood": "positive"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "His Lekki short-let. Pepper soup on the stove, Italian jazz, two suitcases still packed by the door."
+      },
+      {
+        "who": "partner",
+        "text": "My things are still clearing at Tin Can. So it's me, a pot and you. Mangia."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "never_left": {
+        "id": "t_nl_passport",
+        "text": "You ask about his Milan photos. 'Old phone. Stolen in Milan.' And his passport? 'Renewing.' You've never seen one stamp."
+      },
+      "wife_abroad": {
+        "id": "t_wa_time",
+        "text": "At 2:58am he slips onto the balcony. 'Europe time. Business.' He whispers in Italian and Edo."
+      },
+      "japa_real": {
+        "id": "t_jr_money",
+        "text": "A text lights his phone: 'Reminder: ₦200k for papers by Friday.' He turns it over. He doesn't ask you. Yet."
+      }
+    },
+    "choices": [
+      {
+        "id": "stay",
+        "label": "Stay the night. The pepper soup deserves it.",
+        "receipt": "You stayed the night at his short-let.",
+        "outcomes": [
+          {
+            "chance": 0.7,
+            "text": "You wake to espresso from a stovetop pot and a note: 'Buongiorno. Stay till noon.'",
+            "attachment": 15,
+            "chemistry": 4
+          },
+          {
+            "chance": 0.3,
+            "text": "3am, he's on the balcony whispering. You fall asleep counting his laughs. None are at your jokes.",
+            "bad": true,
+            "attachment": 8,
+            "sanity": -10
+          }
+        ],
+        "truth_override": {
+          "japa_real": [
+            {
+              "chance": 0.7,
+              "text": "You wake to espresso from a stovetop pot and a note: 'Buongiorno. Stay till noon.'",
+              "attachment": 15,
+              "chemistry": 4
+            },
+            {
+              "chance": 0.3,
+              "text": "3am, he's on the balcony practising: 'My intention is to work and return...' He sees you and laughs, shy.",
+              "attachment": 12,
+              "trust": 4
+            }
+          ]
+        }
+      },
+      {
+        "id": "suitcases",
+        "label": "\"Why are your suitcases still packed?\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked why his suitcases are still packed.",
+        "outcomes": [
+          {
+            "text": "'Returnee habit.' He kisses your forehead. It's not an answer.",
+            "trust": 6,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "never_left": {
+            "text": "'Moving to Banana Island soon.' You nudge one with your foot. Empty.",
+            "trust": 4,
+            "sanity": -5
+          },
+          "wife_abroad": {
+            "text": "'In case I need to fly urgently.' Urgently. To whom?",
+            "trust": 4,
+            "sanity": -3
+          },
+          "japa_real": {
+            "text": "He sits on one. 'Because I'm leaving. Eventually. I didn't want to say it on day one.'",
+            "trust": 12,
+            "attachment": 6
+          }
+        }
+      },
+      {
+        "id": "go_home",
+        "label": "Eat, kiss, go home. Leave him curious.",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You went home and left him curious.",
+        "outcomes": [
+          {
+            "text": "He walks you to your ride three times. Each time: 'One more thing.' You leave him wanting.",
+            "chemistry": 6,
+            "trust": 4,
+            "attachment": 4,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "sugar_transport",
+        "label": "[Sugar] \"Transport money, abeg. My side is far.\"",
+        "vibe": "sugar",
+        "receipt": "You asked him for transport money.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "₦15k and a voice note: 'For your carriage, bella.'",
+            "wallet": 15000,
+            "attachment": 3
+          },
+          {
+            "chance": 0.4,
+            "text": "'In Europe we use public transport.' He sends ₦2k and a BRT map.",
+            "bad": true,
+            "attachment": -6,
+            "sanity": -5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "osz_rf_3am",
+    "character": "osaze",
+    "slot": "red_flag",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "expression": "suspicious",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "3am. His side of the bed is cold. He's on the balcony, whispering to a glowing screen."
+      },
+      {
+        "who": "partner",
+        "text": "Europe time, bella. Business. Go back to sleep."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "never_left": {
+        "id": "t_nl_accent",
+        "text": "The call drops. He hisses at the screen: 'Ehn, see this one o!' Pure Benin City. Not a drop of Milan."
+      },
+      "wife_abroad": {
+        "id": "t_wa_time",
+        "text": "Before he angles the screen away: a woman's face, a child's voice. 'Papà, buonanotte.'"
+      },
+      "japa_real": {
+        "id": "t_jr_embassy",
+        "text": "On the screen, a checklist: 'Embassy 5am. Bank statement. Police report.' He hides it fast."
+      }
+    },
+    "choices": [
+      {
+        "id": "sleep",
+        "label": "Go back to sleep. Business is business.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You went back to sleep while he whispered on the balcony.",
+        "outcomes": [
+          {
+            "text": "You sleep. He comes back at 4:10 with cold feet and a warm apology.",
+            "attachment": 6,
+            "sanity": -8,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "ask",
+        "label": "\"Who's in Europe at 3am?\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked who he talks to at 3am.",
+        "outcomes": [
+          {
+            "text": "'Suppliers. Italians work late.' Italians are asleep. You know this.",
+            "trust": 4,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "never_left": {
+            "text": "'A supplier in... London. Milan. London.' He picks a city like he's rolling dice.",
+            "trust": 4,
+            "sanity": -5
+          },
+          "wife_abroad": {
+            "text": "'A partner. In Torino.' The word 'partner' is doing a lot of work.",
+            "trust": 4,
+            "sanity": -5
+          },
+          "japa_real": {
+            "text": "He sighs. 'An agent. For my visa. I wanted to tell you when it was real.'",
+            "trust": 12,
+            "attachment": 8
+          }
+        }
+      },
+      {
+        "id": "peek",
+        "label": "Peek over his shoulder.",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You peeked at his screen at 3am.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "A spreadsheet. Very boring. Very confusing.",
+            "sanity": -3
+          },
+          {
+            "chance": 0.4,
+            "text": "'You're spying on me now?' He closes the laptop like a door.",
+            "bad": true,
+            "trust": -12,
+            "expression": "angry",
+            "set": [
+              {
+                "flag": "secret_peeked",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "never_left": [
+            {
+              "chance": 0.6,
+              "text": "A group chat: 'Lagos Returnees (Pretend)'. Forty men sharing the same Milan stock photos.",
+              "saw_truth": true,
+              "sanity": -10
+            },
+            {
+              "chance": 0.4,
+              "text": "'You're spying on me now?' His accent cracks: 'Wetin you dey find?' He closes the laptop like a door.",
+              "bad": true,
+              "trust": -12,
+              "expression": "angry",
+              "set": [
+                {
+                  "flag": "secret_peeked",
+                  "knows": [
+                    "player",
+                    "partner"
+                  ]
+                }
+              ]
+            }
+          ],
+          "wife_abroad": [
+            {
+              "chance": 0.6,
+              "text": "A video call. A woman in a Torino kitchen. A little boy in pyjamas: 'Papà, quando torni?'",
+              "saw_truth": true,
+              "sanity": -15,
+              "set": [
+                {
+                  "flag": "saw_child",
+                  "knows": [
+                    "player"
+                  ]
+                }
+              ]
+            },
+            {
+              "chance": 0.4,
+              "text": "'You're spying on me now?' He closes the laptop like a door.",
+              "bad": true,
+              "trust": -12,
+              "expression": "angry",
+              "set": [
+                {
+                  "flag": "secret_peeked",
+                  "knows": [
+                    "player",
+                    "partner"
+                  ]
+                }
+              ]
+            }
+          ],
+          "japa_real": [
+            {
+              "chance": 0.6,
+              "text": "An embassy portal. Two names on the application. One of them is yours. Spelt right.",
+              "sanity": 10
+            },
+            {
+              "chance": 0.4,
+              "text": "'You're spying on me now?' He looks more hurt than angry, and closes the laptop.",
+              "bad": true,
+              "trust": -12,
+              "expression": "suspicious",
+              "set": [
+                {
+                  "flag": "secret_peeked",
+                  "knows": [
+                    "player",
+                    "partner"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "efosa",
+        "label": "Text Efosa: \"Is he always up at 3am?\"",
+        "tags": [
+          "cautious"
+        ],
+        "requires": {
+          "flags": [
+            "knows_efosa"
+          ]
+        },
+        "receipt": "You texted Efosa about his 3am calls.",
+        "outcomes": [
+          {
+            "text": "Efosa: 'Osaze? Always. Don't worry.'",
+            "sanity": 3,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "never_left": {
+            "text": "Efosa: 'Europe? Osaze has never crossed Seme border. He sells shoes to Italians on Instagram.'",
+            "saw_truth": true,
+            "sanity": -10
+          },
+          "wife_abroad": {
+            "text": "Efosa: 'Ehn... ask him about Ivie. I can't talk. He's my guy.'",
+            "saw_truth": true,
+            "sanity": -10
+          },
+          "japa_real": {
+            "text": "Efosa: 'He's still applying? He made me swear not to tell. He wants it to be a surprise for you.'",
+            "sanity": 10
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "osz_rf_accra",
+    "character": "osaze",
+    "slot": "red_flag",
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "afternoon",
+      "expression": "suspicious",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "You suggest a weekend in Accra. No visa, cheap flights, good jollof debates. He goes very still."
+      },
+      {
+        "who": "partner",
+        "text": "Accra? My passport is... at the embassy. Renewal. These things take time, cara."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "never_left": {
+        "id": "t_nl_passport",
+        "text": "'Show me your old stamps, then.' He laughs: 'They're in my old passport. In Milan. With my things.'"
+      },
+      "wife_abroad": {
+        "id": "t_wa_wu",
+        "text": "He pays. Inside his wallet: another Western Union slip. Torino. Every two weeks, it seems."
+      },
+      "japa_real": {
+        "id": "t_jr_secret",
+        "text": "'Don't tell anyone I'm renewing. Not even your Bestie.' He scans the terrace like it's bugged."
+      }
+    },
+    "choices": [
+      {
+        "id": "lagos",
+        "label": "\"No wahala. Lagos weekend instead.\"",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You let the passport thing go.",
+        "outcomes": [
+          {
+            "text": "Beach, suya, Italian complaints about sand. Sweet, and slightly suspicious.",
+            "attachment": 8,
+            "sanity": -5,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "which_embassy",
+        "label": "\"Which embassy? I'll come with you.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You offered to go to the embassy with him.",
+        "outcomes": [
+          {
+            "text": "'Italian. Ikoyi. Next week.' He names a date. He keeps it.",
+            "trust": 8,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "never_left": {
+            "text": "'It's... online.' Embassies are not online. You note that.",
+            "trust": 4,
+            "sanity": -5
+          },
+          "wife_abroad": {
+            "text": "'Italian. But I'll go alone. Family matter.' Family.",
+            "trust": 4,
+            "sanity": -5
+          },
+          "japa_real": {
+            "text": "He hesitates, then: 'Wednesday. 5am. Bring a jacket, the queue is long.' He means it.",
+            "trust": 12,
+            "attachment": 8
+          }
+        }
+      },
+      {
+        "id": "accra_alone",
+        "label": "Go to Accra with your friends. Post everything.",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You went to Accra without him.",
+        "outcomes": [
+          {
+            "text": "Your Accra photos hit different. He watches every story within four minutes. Then calls. Then calls again.",
+            "clout": 20,
+            "attachment": 6,
+            "sanity": 8,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "padova",
+        "label": "\"Via Padova. Which number did you live at?\"",
+        "tags": [
+          "cautious"
+        ],
+        "requires": {
+          "flags": [
+            "knows_via_padova"
+          ]
+        },
+        "receipt": "You quizzed him about Via Padova.",
+        "outcomes": [
+          {
+            "text": "'Number 112.' He answers without blinking.",
+            "trust": 6,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "never_left": {
+            "text": "'Number... 7. Or 70.' Via Padova has never heard of him.",
+            "saw_truth": true,
+            "sanity": -5
+          },
+          "wife_abroad": {
+            "text": "'I lived there before Torino.' Before Torino. With who?",
+            "saw_truth": true,
+            "sanity": -8
+          },
+          "japa_real": {
+            "text": "'112, above a Peruvian chicken shop.' He pulls up his old lease on email. Real.",
+            "trust": 12,
+            "attachment": 6
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "osz_rf_ex",
+    "character": "osaze",
+    "slot": "red_flag",
+    "scene": {
+      "location": "lekki_salon",
+      "time": "afternoon",
+      "expression": "suspicious",
+      "mood": "negative",
+      "partner_present": false,
+      "npc": {
+        "name": "Efe"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Saturday at a salon on Admiralty Way. The woman in the next chair hears his name and laughs."
+      },
+      {
+        "who": "Efe",
+        "text": "Osaze? Italian shoes, Milan stories? He told me Milan too. In 2019. Then he needed money for 'goods'."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "never_left": {
+        "id": "t_nl_shoes",
+        "text": "Efe shows you an old photo: same loafers. 'He bought those at Balogun. I was there. I held the bag.'"
+      },
+      "wife_abroad": {
+        "id": "t_wa_photo",
+        "text": "Efe: 'He had a child's drawing as his lockscreen then too. Said it was his niece's.'"
+      },
+      "japa_real": {
+        "id": "t_jr_money",
+        "text": "Efe: 'He asked me for ₦200k for papers. I said no. Two weeks later he was gone.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "ignore",
+        "label": "\"Ex-girlfriend energy. I'm not listening.\"",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You ignored his ex's warning.",
+        "outcomes": [
+          {
+            "text": "Efe shrugs. 'Okay. Enjoy Milan.' The whole salon heard. Your stylist pulls your edges tighter in sympathy.",
+            "sanity": -8,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "ask_efe",
+        "label": "\"What happened with the money?\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked his ex what happened with her money.",
+        "outcomes": [
+          {
+            "text": "'I sent it. He was sweet for two weeks. Then busy.'",
+            "sanity": -3,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "never_left": {
+            "text": "'I sent it. He bought a fake Gucci belt and a Balogun suit. Milan, my foot.'",
+            "saw_truth": true,
+            "sanity": -8
+          },
+          "wife_abroad": {
+            "text": "'I sent it. He sent it to Italy the same day. I saw the transfer slip.'",
+            "saw_truth": true,
+            "sanity": -10
+          },
+          "japa_real": {
+            "text": "'I didn't send it. He went anyway. Came back years later with real Italian and a real tan. I regretted.'",
+            "sanity": 10
+          }
+        }
+      },
+      {
+        "id": "call_him",
+        "label": "Call Osaze on speaker. Right now.",
+        "tags": [
+          "contact_partner",
+          "call_out"
+        ],
+        "receipt": "You called him on speaker in front of his ex.",
+        "outcomes": [
+          {
+            "text": "He answers on the first ring. 'Efe? Tell her hello.' Calm. Unbothered.",
+            "trust": 4,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "never_left": {
+            "text": "He hears Efe and his accent collapses: 'Efe, wetin you dey talk?! Ehn?!' Benin City, live, on speaker.",
+            "saw_truth": true,
+            "exposure": 10,
+            "sanity": -5
+          },
+          "wife_abroad": {
+            "text": "He goes calm. Too calm. 'Efe is bitter. Come home, let's talk.'",
+            "trust": 4,
+            "sanity": -5
+          },
+          "japa_real": {
+            "text": "'Efe! Tell her I paid back the ₦50k in 2021. With interest.' Efe checks her phone. He did.",
+            "trust": 10,
+            "attachment": 6
+          }
+        }
+      },
+      {
+        "id": "post",
+        "label": "Post the salon gist on the Parlour.",
+        "tags": [
+          "toxic",
+          "public_embarrassment"
+        ],
+        "receipt": "You posted his ex's gist on the Parlour.",
+        "outcomes": [
+          {
+            "text": "The Parlour loves a returnee scandal. 300 comments. Ten women: 'Milan? Me too.'",
+            "clout": 20,
+            "exposure": 25,
+            "chance": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "osz_mt_goods",
+    "character": "osaze",
+    "slot": "money_trap",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "expression": "charming",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "He's pacing his short-let, phone hot in his hand."
+      },
+      {
+        "who": "partner",
+        "text": "Bella, my leather goods from Milan are stuck at Tin Can. ₦300k to clear. Monday you get it back, plus a bag."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "never_left": {
+        "id": "t_nl_accent",
+        "text": "The clearing agent calls. Osaze shouts: 'Shey you dey craze?!' In flawless Benin pidgin. Then: 'Sorry. Italians.'"
+      },
+      "wife_abroad": {
+        "id": "t_wa_time",
+        "text": "'I need it tonight, before Europe wakes up.' Europe has a lot of opinions about his money."
+      },
+      "japa_real": {
+        "id": "t_jr_secret",
+        "text": "'Don't tell Efosa I asked you. Don't tell anyone. Please.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "send",
+        "label": "Send it. A Milan bag is a Milan bag.",
+        "tags": [
+          "excuse"
+        ],
+        "cost": 300000,
+        "broke_text": "Your account just whispered 'Tin Can who?'",
+        "receipt": "You sent him ₦300k to clear 'goods'.",
+        "outcomes": [
+          {
+            "text": "Sent. 'You're my blessing.'",
+            "sanity": -5,
+            "set": [
+              {
+                "flag": "sent_goods_money",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ],
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "never_left": {
+            "text": "Monday: 'Customs is wicked.' Tuesday: 'The bag is coming.' The bag is from Balogun. You know because you saw him buying it.",
+            "bad": true,
+            "tricked": true,
+            "sanity": -15,
+            "set": [
+              {
+                "flag": "sent_goods_money",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "wife_abroad": {
+            "text": "The money is in Torino by midnight. You find out because he forwards you his Western Union receipt by mistake.",
+            "bad": true,
+            "tricked": true,
+            "saw_truth": true,
+            "sanity": -15,
+            "set": [
+              {
+                "flag": "sent_goods_money",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "japa_real": {
+            "text": "Monday: it's back, plus a leather bag. Not a brand. Hand-made in Milan by a friend. You love it more.",
+            "wallet": 300000,
+            "scaled": true,
+            "trust": 10,
+            "attachment": 10,
+            "set": [
+              {
+                "flag": "sent_goods_money",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "small",
+        "label": "Send ₦30k. \"Clear one shoe.\"",
+        "tags": [
+          "budget"
+        ],
+        "cost": 30000,
+        "broke_text": "Your account balance said 'be serious'.",
+        "receipt": "You sent ₦30k for 'one shoe'.",
+        "outcomes": [
+          {
+            "text": "He laughs, takes it, calls you 'cara mia'. One shoe's worth of love.",
+            "attachment": 4,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "docs",
+        "label": "\"Send the bill of lading first.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked for the bill of lading first.",
+        "outcomes": [
+          {
+            "text": "He sends a document. It looks real. Your gut isn't sure.",
+            "trust": 4,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "never_left": {
+            "text": "He sends a bill of lading for 'frozen chicken, Brazil'. You stare. He sends a laughing emoji.",
+            "saw_truth": true,
+            "sanity": -5
+          },
+          "wife_abroad": {
+            "text": "A real document from Italy. Consignee address: a family flat in Torino.",
+            "saw_truth": true,
+            "sanity": -5,
+            "trust": 4
+          },
+          "japa_real": {
+            "text": "Bill of lading, customs receipts, a selfie at Tin Can in a hi-vis vest. You feel slightly mad.",
+            "trust": 10,
+            "attachment": 4
+          }
+        }
+      },
+      {
+        "id": "no",
+        "label": "\"I'm not your clearing agent, Osaze.\"",
+        "receipt": "You refused to clear his goods.",
+        "outcomes": [
+          {
+            "text": "He goes cold for a day. Then sends 'Buongiorno ☀️' like nothing happened.",
+            "attachment": -8,
+            "sanity": 5,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "bigboy_clear",
+        "label": "[Big Boy] \"I'll clear it. I want 30%.\"",
+        "vibe": "bigboy",
+        "receipt": "You offered to clear his goods for a cut.",
+        "outcomes": [
+          {
+            "text": "Your guy at Tin Can clears it in an hour. Business partners now.",
+            "attachment": 6,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "never_left": {
+            "text": "Your guy at Tin Can: 'Osaze? No container. Na Balogun he dey buy.'",
+            "saw_truth": true,
+            "sanity": -5
+          },
+          "wife_abroad": {
+            "text": "The container is real: baby clothes and pasta, addressed back to Torino.",
+            "saw_truth": true,
+            "sanity": -5
+          },
+          "japa_real": {
+            "text": "Real leather. Your 30% sells out in a weekend. Romantic and profitable.",
+            "wallet": 150000,
+            "trust": 8,
+            "attachment": 8
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "osz_mt_papers",
+    "character": "osaze",
+    "slot": "money_trap",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "morning",
+      "expression": "charming",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Sunday breakfast. He's quiet, then slides a printed form across the table."
+      },
+      {
+        "who": "partner",
+        "text": "I need ₦200k for papers. Visa fee, agent, police report. Bella, it's for both of us."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "never_left": {
+        "id": "t_nl_passport",
+        "text": "You flip the form. The passport number field is blank. 'It's renewing,' he says. Again."
+      },
+      "wife_abroad": {
+        "id": "t_wa_wu",
+        "text": "Under the form: another Western Union slip. Torino. Dated yesterday."
+      },
+      "japa_real": {
+        "id": "t_jr_money",
+        "text": "'₦200k for papers.' He says it like a man who has done the maths fifty times."
+      }
+    },
+    "choices": [
+      {
+        "id": "send",
+        "label": "Send ₦200k. For both of you.",
+        "tags": [
+          "excuse"
+        ],
+        "cost": 200000,
+        "broke_text": "₦200k? Your account is still processing ₦2k.",
+        "receipt": "You sent him ₦200k for 'papers'.",
+        "outcomes": [
+          {
+            "text": "Sent. He holds your face: 'You won't regret this.'",
+            "attachment": 8,
+            "sanity": -5,
+            "set": [
+              {
+                "flag": "sent_papers_money",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ],
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "never_left": {
+            "text": "The 'agent' goes offline. Osaze swears he was scammed too. His accent slips: 'Na wa o!'",
+            "bad": true,
+            "tricked": true,
+            "sanity": -15,
+            "set": [
+              {
+                "flag": "sent_papers_money",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "wife_abroad": {
+            "text": "'Visa fees,' he says. 'Western Union, Torino, ₦200k,' says the slip you find on Wednesday.",
+            "bad": true,
+            "tricked": true,
+            "saw_truth": true,
+            "sanity": -15,
+            "set": [
+              {
+                "flag": "sent_papers_money",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "japa_real": {
+            "text": "Within the hour: a receipt and a biometrics appointment. Your name, spelt right.",
+            "trust": 15,
+            "attachment": 12,
+            "set": [
+              {
+                "flag": "sent_papers_money",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "show_me",
+        "label": "\"Show me the appointment first. Then I pay.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked to see the appointment before paying.",
+        "outcomes": [
+          {
+            "text": "He sends a screenshot. It looks fine. You're still not sure.",
+            "trust": 4,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "never_left": {
+            "text": "A screenshot. The embassy logo is from Google Images. Pixelated, slightly stretched.",
+            "saw_truth": true,
+            "sanity": -5
+          },
+          "wife_abroad": {
+            "text": "A real appointment. For a 'family reunion' visa. Family.",
+            "saw_truth": true,
+            "sanity": -10
+          },
+          "japa_real": {
+            "text": "Real appointment, real reference number. You call the embassy line. It's real.",
+            "trust": 12,
+            "attachment": 6
+          }
+        }
+      },
+      {
+        "id": "halve",
+        "label": "\"For both of us? Then we split it.\"",
+        "tags": [
+          "budget"
+        ],
+        "cost": 60000,
+        "broke_text": "Your account balance said 'be serious'.",
+        "receipt": "You paid half of the 'papers' money.",
+        "outcomes": [
+          {
+            "text": "He agrees immediately. 'Partners.'",
+            "attachment": 4,
+            "set": [
+              {
+                "flag": "sent_papers_money",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ],
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "never_left": {
+            "text": "He takes your half. His half never materialises. Neither do the papers.",
+            "bad": true,
+            "tricked": true,
+            "sanity": -10,
+            "set": [
+              {
+                "flag": "sent_papers_money",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "wife_abroad": {
+            "text": "Your half arrives in Torino before your bank finishes processing.",
+            "bad": true,
+            "tricked": true,
+            "sanity": -10,
+            "set": [
+              {
+                "flag": "sent_papers_money",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "japa_real": {
+            "text": "He matches it to the kobo and sends you the receipt. 'Partners,' he grins.",
+            "trust": 12,
+            "attachment": 8,
+            "set": [
+              {
+                "flag": "sent_papers_money",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "no",
+        "label": "\"Japa is not my dream, Osaze.\"",
+        "receipt": "You told him japa is not your dream.",
+        "outcomes": [
+          {
+            "text": "He's quiet. 'Okay.' Then: 'Okay.' He'll ask again. Differently.",
+            "attachment": -8,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "japa_real": {
+            "text": "He nods slowly. 'Then I'll ask again when I can show you.' It sounds like a promise, not a threat.",
+            "trust": 6,
+            "attachment": -4
+          }
+        }
+      },
+      {
+        "id": "queue",
+        "label": "\"Is this why you queue at 5am?\"",
+        "tags": [
+          "cautious"
+        ],
+        "requires": {
+          "flags": [
+            "knows_5am"
+          ]
+        },
+        "receipt": "You asked if this was why he queues at 5am.",
+        "outcomes": [
+          {
+            "text": "He smiles. 'You notice everything.'",
+            "trust": 4,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "never_left": {
+            "text": "'Queue? What queue?' He forgot his own lie. You didn't.",
+            "saw_truth": true,
+            "sanity": -5
+          },
+          "wife_abroad": {
+            "text": "'For the family visa,' he says. Then he hears himself.",
+            "saw_truth": true,
+            "sanity": -10
+          },
+          "japa_real": {
+            "text": "He laughs, caught. 'Five times. Five 5am queues. For us.'",
+            "trust": 12,
+            "attachment": 8
+          }
+        }
+      },
+      {
+        "id": "runs_agent",
+        "label": "[Runs] \"Give me the agent's number. I'll verify.\"",
+        "vibe": "runs",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You called his visa agent yourself.",
+        "outcomes": [
+          {
+            "text": "The agent picks up, bored, and confirms a file exists.",
+            "trust": 2,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "never_left": {
+            "text": "The 'agent' is Osaze's second line. Same voice, worse accent.",
+            "saw_truth": true,
+            "sanity": -8
+          },
+          "wife_abroad": {
+            "text": "The agent: 'Family visa for Mr Omoregie's wife and son, yes. Who is calling?'",
+            "saw_truth": true,
+            "sanity": -10
+          },
+          "japa_real": {
+            "text": "The agent is real, annoyed and confirms everything. 'He talks about you a lot.'",
+            "trust": 8,
+            "attachment": 6
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "osz_mt_hold",
+    "character": "osaze",
+    "slot": "money_trap",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "expression": "charming",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Midnight. He arrives at your door with a black backpack."
+      },
+      {
+        "who": "partner",
+        "text": "Cara, hold ₦1.8m for me. Two weeks. My account is under review because of Europe transfers. You're the only one I trust."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "never_left": {
+        "id": "t_nl_accent",
+        "text": "You hesitate. His voice jumps: 'Ah ah, wetin? You no trust me?' Benin City, briefly. Then velvet again."
+      },
+      "wife_abroad": {
+        "id": "t_wa_photo",
+        "text": "His phone lights up on your table: the crayon house, the stick people. Seven missed calls."
+      },
+      "japa_real": {
+        "id": "t_jr_embassy",
+        "text": "'It's proof of funds,' he says. 'The embassy wants it somewhere clean. You're clean.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "hold",
+        "label": "Hold it. Return every kobo in two weeks.",
+        "tags": [
+          "discreet"
+        ],
+        "receipt": "You agreed to hold ₦1.8m for him.",
+        "outcomes": [
+          {
+            "text": "You lock it in a separate account. He kisses your forehead: 'Grazie.'",
+            "attachment": 10,
+            "trust": 10,
+            "set": [
+              {
+                "flag": "held_money",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ],
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "never_left": {
+            "text": "It sits. Then your bank calls: 'The sender is reporting fraud.' The ₦1.8m was another woman's savings.",
+            "bad": true,
+            "tricked": true,
+            "saw_truth": true,
+            "sanity": -15,
+            "exposure": 15,
+            "set": [
+              {
+                "flag": "held_money",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "wife_abroad": {
+            "text": "Every evening he asks for 'small small' out of it. For a 'supplier' called Ivie.",
+            "saw_truth": true,
+            "sanity": -10,
+            "attachment": 6,
+            "set": [
+              {
+                "flag": "held_money",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "japa_real": {
+            "text": "You lock it in a separate account. He exhales like he's been holding it for seven years. 'Grazie, amore.'",
+            "attachment": 10,
+            "trust": 12,
+            "set": [
+              {
+                "flag": "held_money",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "keep",
+        "label": "Keep it. Block him. Lagos taught you.",
+        "receipt": "You kept his ₦1.8m and blocked him.",
+        "outcomes": [
+          {
+            "text": "You block him. Your heart is racing. Your balance is glowing.",
+            "wallet": 1500000,
+            "saw_truth": true,
+            "trust": -30,
+            "attachment": -30,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "never_left": {
+            "text": "You block him. He can't report it: it was another woman's money. You both know it.",
+            "wallet": 1500000,
+            "saw_truth": true,
+            "trust": -30,
+            "attachment": -30
+          },
+          "wife_abroad": {
+            "text": "You block him. Somewhere in Torino, rent is late. Somewhere in Lekki, you buy a new fridge.",
+            "wallet": 1500000,
+            "saw_truth": true,
+            "trust": -30,
+            "attachment": -30,
+            "sanity": -5
+          },
+          "japa_real": {
+            "text": "You block him. His interview fails: proof of funds missing. One message gets through: 'I wanted to take you.'",
+            "wallet": 1500000,
+            "trust": -60,
+            "attachment": -40,
+            "sanity": -25
+          }
+        }
+      },
+      {
+        "id": "refuse",
+        "label": "\"Use a bank, Osaze. Not me.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You told him to use a bank.",
+        "outcomes": [
+          {
+            "text": "He sighs. 'Fair.' He takes the backpack and his pride to someone else's house.",
+            "attachment": -6,
+            "sanity": 5,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "japa_real": {
+            "text": "'Fair.' Next day he shows you the bank letter. 'You were right. They wanted it in my account anyway.'",
+            "trust": 8,
+            "sanity": 5
+          }
+        }
+      },
+      {
+        "id": "whose",
+        "label": "\"Whose money is this, exactly?\"",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You asked whose money it really was.",
+        "outcomes": [
+          {
+            "text": "'Mine.' He holds your gaze. You can't read him.",
+            "sanity": -2,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "never_left": {
+            "text": "'Mine.' The bundles are wrapped in a bank band from Benin City. Dated today.",
+            "saw_truth": true,
+            "sanity": -5
+          },
+          "wife_abroad": {
+            "text": "'Savings. For... family.' Which family, he doesn't say.",
+            "saw_truth": true,
+            "sanity": -5
+          },
+          "japa_real": {
+            "text": "'Seven years in Milan. Every cent.' He shows you payslips in Italian. Real ones.",
+            "trust": 8,
+            "attachment": 4
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "osz_mt_asoebi",
+    "character": "osaze",
+    "slot": "money_trap",
+    "scene": {
+      "location": "mainland_street",
+      "time": "afternoon",
+      "expression": "charming",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "His cousin's wedding is next month in Benin City. The family WhatsApp has opinions."
+      },
+      {
+        "who": "partner",
+        "text": "Bella, the family wants you in our asoebi. ₦85k for the fabric. And Mama says you'll sponsor the cake. Small cake. Three tiers."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "never_left": {
+        "id": "t_nl_accent",
+        "text": "On the phone with his aunty, the Italian vanishes completely: 'Yes ma, she go pay. No wahala.'"
+      },
+      "wife_abroad": {
+        "id": "t_wa_time",
+        "text": "'I'll leave the wedding by 2am. Europe time,' he adds, quickly. Nobody asked."
+      },
+      "japa_real": {
+        "id": "t_jr_secret",
+        "text": "'Don't mention travel at the wedding. My aunties will ask for visas for every grandchild.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "pay_all",
+        "label": "Pay for asoebi and cake. Be the in-law.",
+        "tags": [
+          "luxury"
+        ],
+        "cost": 150000,
+        "broke_text": "Three tiers? Your account is one tier. Ground floor.",
+        "receipt": "You paid for the asoebi and the cake.",
+        "outcomes": [
+          {
+            "text": "Mama calls you 'our own' on speaker. Seventeen aunties cheer in the background.",
+            "attachment": 15,
+            "clout": 10,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "wife_abroad": {
+            "text": "Mama calls you 'our own'. A cousin whispers: 'And Ivie? Is she coming from Torino?'",
+            "saw_truth": true,
+            "attachment": 10,
+            "sanity": -10
+          }
+        }
+      },
+      {
+        "id": "fabric",
+        "label": "Buy the fabric. The cake is not your portion.",
+        "tags": [
+          "budget"
+        ],
+        "cost": 30000,
+        "broke_text": "Your account balance said 'be serious'.",
+        "receipt": "You bought the fabric but not the cake.",
+        "outcomes": [
+          {
+            "text": "The aunties grumble about the cake, then compliment your fit. Balance.",
+            "attachment": 6,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "transport",
+        "label": "\"Transport to Benin first. Then we talk.\"",
+        "receipt": "You asked for transport money before asoebi talk.",
+        "outcomes": [
+          {
+            "text": "He laughs so hard he forgets to ask again. You just out-negotiated a Benin family by proxy.",
+            "attachment": 2,
+            "sanity": 5,
+            "trust": 2,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "mama",
+        "label": "Call Mama yourself. Greet her in Edo.",
+        "requires": {
+          "flags": [
+            "knows_mama"
+          ]
+        },
+        "receipt": "You called his mother and greeted her in Edo.",
+        "outcomes": [
+          {
+            "text": "'Koyo, Mama.' Mama screams with joy. The cake is now 'her treat'. Osaze stares at you, in love.",
+            "attachment": 15,
+            "trust": 10,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "never_left": {
+            "text": "'Koyo, Mama!' She's delighted. 'Has he told you he's been in Ikeja all these years? A good boy.' Ikeja. Not Milan.",
+            "saw_truth": true,
+            "trust": 6,
+            "sanity": -5
+          },
+          "wife_abroad": {
+            "text": "'Koyo, Mama.' A pause. 'Who is this? Osaze, is Ivie with you?'",
+            "saw_truth": true,
+            "attachment": 4,
+            "sanity": -12
+          },
+          "japa_real": {
+            "text": "Mama cries: 'Take care of him in Italy, you hear?' So she knows. And now you do.",
+            "trust": 12,
+            "attachment": 10
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "osz_pd_chef",
+    "character": "osaze",
+    "slot": "public_drama",
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "night",
+      "expression": "charming",
+      "mood": "neutral",
+      "npc": {
+        "name": "Marco"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Ikoyi rooftop. The new chef is actually Italian. Osaze waves him over to show off."
+      },
+      {
+        "who": "Marco",
+        "text": "Ah, a Milanese! Which part? I'm from the canals. You know the little bars by the water?"
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "never_left": {
+        "id": "t_nl_accent",
+        "text": "Osaze nods for ten full seconds, then, desperate: 'Yes, yes. Grazie.' Marco blinks."
+      },
+      "wife_abroad": {
+        "id": "t_wa_photo",
+        "text": "Marco squints: 'I know you! The man with the boy who draws houses. Torino, no?' Osaze laughs too loud."
+      },
+      "japa_real": {
+        "id": "t_jr_secret",
+        "text": "Marco: 'You're coming back, yes? The job in Milan?' Osaze shoots him a look: 'Not here.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "let_talk",
+        "label": "Sip your wine. Let the men talk.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You let him and the chef talk.",
+        "outcomes": [
+          {
+            "text": "Ten minutes of Italian you don't understand. Osaze looks proud. Or terrified. Hard to tell.",
+            "attachment": 6,
+            "sanity": -5,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "ask_marco",
+        "label": "Ask Marco: \"Where did he live?\"",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You asked the Italian chef where he lived.",
+        "outcomes": [
+          {
+            "text": "Marco shrugs: 'Milan is big!' Diplomatic man.",
+            "sanity": -2,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "never_left": {
+            "text": "Marco, gently: 'My friend, your Italian is from YouTube.' The terrace goes silent.",
+            "saw_truth": true,
+            "sanity": -5,
+            "expression": "caught"
+          },
+          "wife_abroad": {
+            "text": "'Milan? No, no. Torino. With the wife and the boy. Lovely boy.'",
+            "saw_truth": true,
+            "sanity": -15
+          },
+          "japa_real": {
+            "text": "'Via Padova! The noisy part! The warehouse in Segrate!' Marco hugs him. Osaze glows.",
+            "attachment": 8,
+            "trust": 6
+          }
+        }
+      },
+      {
+        "id": "selfie",
+        "label": "Selfie with the chef: \"Milan in Lagos 🇮🇹\"",
+        "receipt": "You posted a selfie with him and the chef.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "Your post does numbers. Marco reposts it. Osaze's 'Euro' brand is now public record.",
+            "clout": 15,
+            "exposure": 8,
+            "set": [
+              {
+                "flag": "secret_euro_post",
+                "knows": [
+                  "player",
+                  "world"
+                ]
+              }
+            ]
+          },
+          {
+            "chance": 0.4,
+            "text": "Osaze turns away from the camera. 'No pictures, cara.' The photo is mostly his ear.",
+            "bad": true,
+            "clout": 5,
+            "exposure": 5,
+            "trust": -5,
+            "set": [
+              {
+                "flag": "secret_euro_post",
+                "knows": [
+                  "player",
+                  "world"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tasting",
+        "label": "Order the chef's tasting menu for the table.",
+        "tags": [
+          "luxury"
+        ],
+        "cost": 80000,
+        "broke_text": "Your account balance said 'be serious'.",
+        "receipt": "You ordered the chef's tasting menu.",
+        "outcomes": [
+          {
+            "text": "Seven courses. Marco presents each one personally. Osaze looks at you like you just bought him Italy.",
+            "attachment": 10,
+            "clout": 10,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "pasta",
+        "label": "Order the cheapest pasta. Share it.",
+        "tags": [
+          "budget"
+        ],
+        "cost": 8000,
+        "broke_text": "Your account balance said 'be serious'.",
+        "receipt": "You shared the cheapest pasta.",
+        "outcomes": [
+          {
+            "text": "One plate, two forks, a candle. It's the most Italian thing that happens all night.",
+            "attachment": 4,
+            "chemistry": 3,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "padova",
+        "label": "\"Marco, do you know Via Padova?\"",
+        "requires": {
+          "flags": [
+            "knows_via_padova"
+          ]
+        },
+        "receipt": "You asked the chef about Via Padova.",
+        "outcomes": [
+          {
+            "text": "'Of course! Noisy, beautiful.' Osaze nods along.",
+            "trust": 4,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "never_left": {
+            "text": "Marco lights up and asks about the chicken shop on his street. Osaze: 'Ehn... the chicken was very nice.' There is no street.",
+            "saw_truth": true,
+            "sanity": -5
+          },
+          "wife_abroad": {
+            "text": "'Via Padova? He left there for Torino years ago. You didn't know?'",
+            "saw_truth": true,
+            "sanity": -10
+          },
+          "japa_real": {
+            "text": "'Number 112! Above the Peruvian chicken!' They hug like brothers. Osaze looks at you: 'You listened.'",
+            "trust": 12,
+            "attachment": 10
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "osz_pd_engagement",
+    "character": "osaze",
+    "slot": "public_drama",
+    "scene": {
+      "location": "mainland_street",
+      "time": "golden",
+      "expression": "charming",
+      "mood": "neutral",
+      "npc": {
+        "name": "Aunty Osayuwamen"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "His cousin's engagement in Surulere. Coral beads everywhere. An aunty corners you by the small chops."
+      },
+      {
+        "who": "Aunty Osayuwamen",
+        "text": "So you're the one following our Osaze to Italy? When is the flight? Bring me a visa."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "never_left": {
+        "id": "t_nl_passport",
+        "text": "Aunty, loudly: 'Italy! This boy that has never even entered Ghana!' Osaze laughs. She doesn't."
+      },
+      "wife_abroad": {
+        "id": "t_wa_photo",
+        "text": "Aunty pinches his cheek: 'And how is the little artist? Still drawing houses for you?'"
+      },
+      "japa_real": {
+        "id": "t_jr_secret",
+        "text": "Osaze appears instantly: 'Aunty, no travel talk. Please. I beg.' She winks at you."
+      }
+    },
+    "choices": [
+      {
+        "id": "play_along",
+        "label": "Play along: \"Flight is soon, ma.\"",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You told his aunty the flight was soon.",
+        "outcomes": [
+          {
+            "text": "Aunty blesses you, then submits her order: two visas, one handbag and 'Italian cream'. You now owe an aunty.",
+            "attachment": 6,
+            "sanity": -5,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "dance",
+        "label": "Dance with him in front of everyone.",
+        "receipt": "You danced with him at the engagement.",
+        "outcomes": [
+          {
+            "text": "The aunties film you from every angle. Osaze dances like Milan never happened. Pure joy.",
+            "attachment": 12,
+            "chemistry": 4,
+            "clout": 10,
+            "exposure": 10,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "ask_aunty",
+        "label": "\"Aunty, when did he come back from Italy?\"",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You asked his aunty when he came back from Italy.",
+        "outcomes": [
+          {
+            "text": "'Ehn, some time ago.' She waves vaguely at the sky.",
+            "sanity": -2,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "never_left": {
+            "text": "'Back from where? He was at Computer Village selling phones in 2020.'",
+            "saw_truth": true,
+            "sanity": -8
+          },
+          "wife_abroad": {
+            "text": "'He goes and comes. His wife is there, nau.' She stops. 'His... ehn, his work.'",
+            "saw_truth": true,
+            "sanity": -15
+          },
+          "japa_real": {
+            "text": "'After his papa's burial. He cried for one year. Now he's smiling. Because of you, abi?'",
+            "attachment": 8,
+            "sanity": 10
+          }
+        }
+      },
+      {
+        "id": "spray",
+        "label": "Spray him with crisp ₦500s.",
+        "tags": [
+          "budget"
+        ],
+        "cost": 5000,
+        "broke_text": "Your account balance said 'be serious'.",
+        "receipt": "You sprayed him with ₦500 notes.",
+        "outcomes": [
+          {
+            "text": "The aunties approve of your restraint and your rhythm.",
+            "attachment": 4,
+            "clout": 5,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "pepper_soup",
+        "label": "Help the aunties with the pepper soup. Utazi, not uziza.",
+        "requires": {
+          "flags": [
+            "knows_pepper_soup"
+          ]
+        },
+        "receipt": "You helped the aunties make his mother's pepper soup.",
+        "outcomes": [
+          {
+            "text": "You season it like his mama would. An aunty tastes it and declares you family. Osaze is speechless.",
+            "attachment": 12,
+            "trust": 8,
+            "chance": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "osz_cf_balogun",
+    "character": "osaze",
+    "slot": "confrontation",
+    "requires": {
+      "truth": [
+        "never_left"
+      ]
+    },
+    "scene": {
+      "location": "mainland_street",
+      "time": "afternoon",
+      "expression": "caught",
+      "mood": "negative",
+      "npc": {
+        "name": "Chidi"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Balogun Market, Saturday. You came for fabric. Behind a shoe stall, shouting prices in pure Benin pidgin: Osaze."
+      },
+      {
+        "who": "Chidi",
+        "text": "Customer! Original Italian! Oga Osaze, see your babe o!"
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "never_left": {
+        "id": "t_nl_shoes",
+        "text": "On the stall: rows of his exact loafers. Every insole says 'Made in Aba'."
+      }
+    },
+    "choices": [
+      {
+        "id": "pretend",
+        "label": "Pretend you didn't see. Buy fabric. Leave.",
+        "tags": [
+          "excuse",
+          "discreet"
+        ],
+        "receipt": "You pretended you didn't see him at Balogun.",
+        "outcomes": [
+          {
+            "text": "Six yards of ankara you don't need. He texts later: 'Back from Milan meetings, bella.' You reply with a thumbs up.",
+            "sanity": -15,
+            "attachment": 4,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "talk",
+        "label": "Walk up. \"Osaze. Talk to me. Properly.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked him to tell you the truth, at his stall.",
+        "outcomes": [
+          {
+            "text": "He sits on a crate. 'I never left. Visa refused three times. Milan was a dream I talked about until I believed it.'",
+            "saw_truth": true,
+            "trust": 12,
+            "attachment": 8,
+            "sanity": 5,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "haggle",
+        "label": "Haggle for a pair of his 'Italian' loafers.",
+        "tags": [
+          "budget"
+        ],
+        "cost": 15000,
+        "broke_text": "Your account balance said 'be serious'.",
+        "receipt": "You bought 'Italian' loafers from his stall.",
+        "outcomes": [
+          {
+            "text": "Chidi: '₦18k. For you, ₦15k.' Osaze covers his face with a shoebox. You buy them anyway. They're actually comfortable.",
+            "saw_truth": true,
+            "clout": 10,
+            "sanity": 5,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "live",
+        "label": "Go live: \"Euro-returnee spotted in Balogun.\"",
+        "tags": [
+          "toxic",
+          "public_embarrassment"
+        ],
+        "receipt": "You livestreamed him at his Balogun stall.",
+        "outcomes": [
+          {
+            "text": "18k viewers. Chidi waves, advertising his stall. Osaze's 'Milan' Instagram is deactivated by evening.",
+            "clout": 35,
+            "exposure": 30,
+            "truth_exposed": true,
+            "saw_truth": true,
+            "goal": {
+              "revenge": 50
+            },
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "leave",
+        "label": "Walk away. Block him at the bus stop.",
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You walked away and blocked him at the bus stop.",
+        "outcomes": [
+          {
+            "text": "You block him at CMS bus stop. A conductor shouts 'Obalende!' It feels like a sign.",
+            "saw_truth": true,
+            "sanity": 10,
+            "end": "walked_away",
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "refund",
+        "label": "\"Refund my 'clearing' money. Now.\"",
+        "tags": [
+          "call_out"
+        ],
+        "requires": {
+          "any_flags": [
+            "sent_goods_money",
+            "sent_papers_money"
+          ]
+        },
+        "receipt": "You demanded your money back at his stall.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "He pays you back from the stall's cash box, in ₦500 notes, with Chidi counting out loud.",
+            "wallet": 250000,
+            "scaled": true,
+            "saw_truth": true
+          },
+          {
+            "chance": 0.5,
+            "text": "'I've spent it, bella.' Chidi: 'He spent it on stock. Buy shoes, you go see your money.'",
+            "bad": true,
+            "saw_truth": true,
+            "sanity": -10
+          }
+        ]
+      },
+      {
+        "id": "mama_knows",
+        "label": "\"Your mama told me about Ikeja.\"",
+        "tags": [
+          "cautious"
+        ],
+        "requires": {
+          "flags": [
+            "knows_mama"
+          ]
+        },
+        "receipt": "You told him his mother had let it slip.",
+        "outcomes": [
+          {
+            "text": "He laughs, then he doesn't. 'She always tells.' He looks almost relieved somebody finally knows.",
+            "saw_truth": true,
+            "trust": 10,
+            "attachment": 6,
+            "chance": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "osz_cf_torino",
+    "character": "osaze",
+    "slot": "confrontation",
+    "requires": {
+      "truth": [
+        "wife_abroad"
+      ]
+    },
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "expression": "caught",
+      "mood": "negative",
+      "npc": {
+        "name": "Ivie"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "He's in the shower. His iPad rings on the bed. Video call: 'Ivie ❤️'. You answer."
+      },
+      {
+        "who": "Ivie",
+        "text": "Who are you? Where is my husband? Osa, go to your room."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "wife_abroad": {
+        "id": "t_wa_photo",
+        "text": "Behind her, on the fridge: the crayon house from his lockscreen. Three stick people. One is labelled 'Papà'."
+      }
+    },
+    "choices": [
+      {
+        "id": "hang_up",
+        "label": "Hang up. Say nothing. Ever.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You hung up on his wife and said nothing.",
+        "outcomes": [
+          {
+            "text": "You hang up. He comes out humming. You smile. Your smile is a crime scene.",
+            "sanity": -20,
+            "attachment": 4,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "talk_ivie",
+        "label": "Talk to Ivie. Calmly. Honestly.",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You talked to his wife, honestly.",
+        "outcomes": [
+          {
+            "text": "An hour. Rent in Torino, Osa's school, his 'Lagos business'. You are the Lagos business.",
+            "saw_truth": true,
+            "sanity": -5,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "hand_ipad",
+        "label": "Hand him the iPad when he comes out.",
+        "tags": [
+          "call_out",
+          "cautious"
+        ],
+        "receipt": "You handed him the iPad with his wife on it.",
+        "outcomes": [
+          {
+            "text": "He takes it, dripping, caught. Then he sits on the bed and tells you everything. 'It's dead but Italian.' He wants you anyway.",
+            "saw_truth": true,
+            "trust": 8,
+            "attachment": 8,
+            "sanity": -10,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "screenshot",
+        "label": "Screenshot the call. Post it.",
+        "tags": [
+          "toxic",
+          "public_embarrassment"
+        ],
+        "receipt": "You posted a screenshot of his wife's video call.",
+        "outcomes": [
+          {
+            "text": "The Parlour finds Ivie's Facebook in eight minutes. Torino and Lekki are in the same comment section now.",
+            "clout": 30,
+            "exposure": 30,
+            "truth_exposed": true,
+            "saw_truth": true,
+            "goal": {
+              "revenge": 50
+            },
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "leave",
+        "label": "Leave the iPad ringing. Leave him.",
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You left while his wife was still calling.",
+        "outcomes": [
+          {
+            "text": "You leave it face up on his pillow, still ringing. Let Europe time handle him.",
+            "saw_truth": true,
+            "sanity": 10,
+            "end": "walked_away",
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "osa",
+        "label": "\"I've seen Osa before. On your balcony.\"",
+        "tags": [
+          "cautious"
+        ],
+        "requires": {
+          "flags": [
+            "saw_child"
+          ]
+        },
+        "receipt": "You told him you'd seen his son before.",
+        "outcomes": [
+          {
+            "text": "He sits down slowly. 'He's six. He's everything.' The first fully honest thing you've heard from him.",
+            "saw_truth": true,
+            "trust": 10,
+            "attachment": 6,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "papers_rent",
+        "label": "\"Was my 'papers' money her rent?\"",
+        "requires": {
+          "flags": [
+            "sent_papers_money"
+          ]
+        },
+        "receipt": "You asked if your 'papers' money paid his wife's rent.",
+        "outcomes": [
+          {
+            "text": "Ivie answers for him: 'He sent ₦200k last week. That was you? Thank you.' She means it.",
+            "saw_truth": true,
+            "sanity": -15,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "send_ivie",
+        "label": "Send his ₦1.8m straight to Ivie.",
+        "requires": {
+          "flags": [
+            "held_money"
+          ]
+        },
+        "receipt": "You sent the money you were holding to his wife.",
+        "outcomes": [
+          {
+            "text": "You transfer it all to Torino with a note: 'From Lagos, with clarity.' Ivie sends a heart. Osaze sends a scream.",
+            "saw_truth": true,
+            "clout": 15,
+            "sanity": 10,
+            "trust": -20,
+            "chance": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "osz_cf_embassy",
+    "character": "osaze",
+    "slot": "confrontation",
+    "requires": {
+      "truth": [
+        "japa_real"
+      ]
+    },
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "morning",
+      "expression": "caught",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "9am. He's back from the embassy, holding a brown envelope like it might explode. He sits on your bed."
+      },
+      {
+        "who": "partner",
+        "text": "Visa approved. Milan, a job, a flat. I never told you because I was scared. Come with me."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "japa_real": {
+        "id": "t_jr_embassy",
+        "text": "His jacket still smells of the 5am queue: rain, diesel and other people's hope."
+      }
+    },
+    "choices": [
+      {
+        "id": "yes",
+        "label": "\"Yes. Show me the plan.\"",
+        "receipt": "You said yes to Milan.",
+        "outcomes": [
+          {
+            "text": "A folder: your CV, schools, a spare key already cut. You cry. He cries. The envelope is damp now.",
+            "trust": 15,
+            "attachment": 15,
+            "sanity": 10,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "proof",
+        "label": "\"Show me the visa. Then yes.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked to see the visa before saying yes.",
+        "outcomes": [
+          {
+            "text": "Real visa, real stamp, real job letter. He laughs: 'Investigate me. I deserve it.'",
+            "trust": 12,
+            "attachment": 10,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "stay_lagos",
+        "label": "\"I love you. But my life is in Lagos.\"",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You told him your life is in Lagos.",
+        "outcomes": [
+          {
+            "text": "He holds you a long time. 'Then we do long distance. Or I come back. We'll see.' He means every option.",
+            "trust": 10,
+            "attachment": -6,
+            "sanity": 5,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "announce",
+        "label": "Announce it before he can tell anyone.",
+        "tags": [
+          "toxic",
+          "public_embarrassment"
+        ],
+        "receipt": "You announced his visa before he could.",
+        "outcomes": [
+          {
+            "text": "You post 'Japa loading 🇮🇹✈️'. His aunties call within the hour. He wanted to tell them himself.",
+            "bond": -15,
+            "exposure": 15,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "papers_real",
+        "label": "\"So my ₦200k really was papers?\"",
+        "requires": {
+          "flags": [
+            "sent_papers_money"
+          ]
+        },
+        "receipt": "You asked if your papers money was real.",
+        "outcomes": [
+          {
+            "text": "He opens the folder: a receipt in your name. 'Your biometrics are next week.' The papers money was real.",
+            "trust": 15,
+            "attachment": 10,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "volare",
+        "label": "Hum 'Volare'. Say yes without words.",
+        "requires": {
+          "flags": [
+            "knows_volare"
+          ]
+        },
+        "receipt": "You hummed 'Volare' instead of answering.",
+        "outcomes": [
+          {
+            "text": "He stops mid-sentence. Then he joins in, badly, loudly, crying. The neighbours knock. Nobody cares.",
+            "trust": 12,
+            "attachment": 15,
+            "chemistry": 5,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "queue",
+        "label": "\"The 5am queues. All of them were this?\"",
+        "tags": [
+          "cautious"
+        ],
+        "requires": {
+          "flags": [
+            "knows_5am"
+          ]
+        },
+        "receipt": "You asked if all the 5am queues were for this.",
+        "outcomes": [
+          {
+            "text": "'Five queues. Two refusals. One yes.' He shows you the old rejection letters. He kept them all.",
+            "trust": 12,
+            "attachment": 8,
+            "chance": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "osz_po_euro_post",
+    "character": "osaze",
+    "slot": "payoff",
+    "presentation": "text",
+    "requires": {
+      "flags": [
+        "secret_euro_post"
+      ],
+      "not_flags": [
+        "euro_post_seen"
+      ],
+      "day_min": 3
+    },
+    "payoff_of": [
+      "secret_euro_post"
+    ],
+    "scene": {
+      "location": "mainland_street",
+      "time": "afternoon",
+      "mood": "negative",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "A DM from a stranger."
+      },
+      {
+        "who": "Unknown",
+        "text": "Your Euro boo in that post. Where did he tell you he lived?"
+      }
+    ],
+    "priority": 5,
+    "choices": [
+      {
+        "id": "milan",
+        "label": "\"Milan. Why?\"",
+        "receipt": "You told a stranger he lived in Milan.",
+        "outcomes": [
+          {
+            "text": "Seen. Then: 'Okay.' Just 'okay'. Lagos 'okay' is a threat.",
+            "sanity": -5,
+            "set": [
+              {
+                "flag": "euro_post_seen",
+                "knows": [
+                  "player"
+                ]
+              }
+            ],
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "never_left": {
+            "text": "'Milan? He sold me a Milan phone at Computer Village in 2021. It exploded. Tell him I'm coming.'",
+            "saw_truth": true,
+            "sanity": -10,
+            "set": [
+              {
+                "flag": "euro_post_seen",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          },
+          "wife_abroad": {
+            "text": "'I'm Ivie's sister. In Torino. Does he still have a wife, or did he forget?'",
+            "saw_truth": true,
+            "sanity": -15,
+            "set": [
+              {
+                "flag": "euro_post_seen",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          },
+          "japa_real": {
+            "text": "'Yes! I worked with him in Segrate. Tell him the warehouse misses him. And the canteen lady.'",
+            "sanity": 10,
+            "set": [
+              {
+                "flag": "euro_post_seen",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "delete",
+        "label": "Delete the post. Block the stranger.",
+        "tags": [
+          "discreet",
+          "cautious"
+        ],
+        "receipt": "You deleted the post and blocked the stranger.",
+        "outcomes": [
+          {
+            "text": "Deleted. But screenshots are forever in this city.",
+            "exposure": -10,
+            "sanity": -5,
+            "set": [
+              {
+                "flag": "euro_post_seen",
+                "knows": [
+                  "player"
+                ]
+              }
+            ],
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "forward",
+        "label": "Forward it to Osaze: \"Who's this?\"",
+        "tags": [
+          "contact_partner"
+        ],
+        "receipt": "You forwarded the stranger's DM to him.",
+        "outcomes": [
+          {
+            "text": "He replies: 'Nobody. Lagos people.' Then he's typing for a long time.",
+            "trust": 4,
+            "set": [
+              {
+                "flag": "euro_post_seen",
+                "knows": [
+                  "player"
+                ]
+              }
+            ],
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "never_left": {
+            "text": "A voice note, accent fully Benin: 'Who sent this? Block am! Block am now!'",
+            "saw_truth": true,
+            "sanity": -8,
+            "set": [
+              {
+                "flag": "euro_post_seen",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          },
+          "wife_abroad": {
+            "text": "He calls you immediately. 'I can explain.' You hadn't even asked him to.",
+            "saw_truth": true,
+            "sanity": -10,
+            "set": [
+              {
+                "flag": "euro_post_seen",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          },
+          "japa_real": {
+            "text": "'Ha! That's Giulia from the warehouse. Tell her I said ciao.' He sends you a photo of them in hi-vis, 2019.",
+            "trust": 8,
+            "attachment": 6,
+            "set": [
+              {
+                "flag": "euro_post_seen",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "osz_po_papers",
+    "character": "osaze",
+    "slot": "payoff",
+    "presentation": "voice_note",
+    "requires": {
+      "flags": [
+        "sent_papers_money"
+      ],
+      "not_flags": [
+        "papers_followup"
+      ],
+      "flag_age": {
+        "flag": "sent_papers_money",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "sent_papers_money"
+    ],
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "afternoon",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Bella, update on the papers. Call me when you can. It's... complicated."
+      }
+    ],
+    "priority": 4,
+    "choices": [
+      {
+        "id": "call",
+        "label": "Call him now.",
+        "tags": [
+          "contact_partner"
+        ],
+        "receipt": "You called him about the papers.",
+        "outcomes": [
+          {
+            "text": "He talks for twenty minutes. You understand half.",
+            "sanity": -3,
+            "set": [
+              {
+                "flag": "papers_followup",
+                "knows": [
+                  "player"
+                ]
+              }
+            ],
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "never_left": {
+            "text": "'The agent ran away with everything. Mine and yours.' His voice is pure Benin now. No Milan left.",
+            "bad": true,
+            "tricked": true,
+            "sanity": -12,
+            "set": [
+              {
+                "flag": "papers_followup",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          },
+          "wife_abroad": {
+            "text": "'The fees went up.' Behind him, a child: 'Papà!' He mutes himself very fast.",
+            "saw_truth": true,
+            "sanity": -12,
+            "set": [
+              {
+                "flag": "papers_followup",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          },
+          "japa_real": {
+            "text": "'Complicated means good. Your biometrics are booked. Tuesday, 8am.' He's grinning so hard you can hear it.",
+            "trust": 12,
+            "attachment": 10,
+            "set": [
+              {
+                "flag": "papers_followup",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "documents",
+        "label": "\"Send documents, not voice notes.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked for documents about the papers.",
+        "outcomes": [
+          {
+            "text": "He sends a PDF. It's a PDF.",
+            "sanity": -2,
+            "set": [
+              {
+                "flag": "papers_followup",
+                "knows": [
+                  "player"
+                ]
+              }
+            ],
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "never_left": {
+            "text": "He sends a PDF called 'visa_FINAL_final2.jpg'. It's a JPEG. Of a different man's visa.",
+            "saw_truth": true,
+            "sanity": -8,
+            "set": [
+              {
+                "flag": "papers_followup",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          },
+          "wife_abroad": {
+            "text": "A Western Union receipt arrives 'by mistake'. Torino. Your exact amount.",
+            "saw_truth": true,
+            "sanity": -10,
+            "set": [
+              {
+                "flag": "papers_followup",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          },
+          "japa_real": {
+            "text": "Appointment letter, receipt, your reference number. Organised in a folder called 'Us'.",
+            "trust": 10,
+            "attachment": 6,
+            "set": [
+              {
+                "flag": "papers_followup",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "ignore",
+        "label": "Leave it on read. Let him chase.",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You left his papers update on read.",
+        "outcomes": [
+          {
+            "text": "Three more voice notes. The last one is just him sighing for eleven seconds.",
+            "attachment": 4,
+            "sanity": 3,
+            "set": [
+              {
+                "flag": "papers_followup",
+                "knows": [
+                  "player"
+                ]
+              }
+            ],
+            "chance": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "osz_po_held",
+    "character": "osaze",
+    "slot": "payoff",
+    "requires": {
+      "flags": [
+        "held_money"
+      ],
+      "not_flags": [
+        "held_settled"
+      ],
+      "flag_age": {
+        "flag": "held_money",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "held_money"
+    ],
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "expression": "charming",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Cara. About the money you held for me. I need it back now. And... thank you. Really."
+      }
+    ],
+    "priority": 5,
+    "choices": [
+      {
+        "id": "return_all",
+        "label": "Return every kobo. Right now.",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You returned every kobo you held for him.",
+        "outcomes": [
+          {
+            "text": "He watches the alert come in, then looks at you differently. 'Nobody has ever given it back.'",
+            "trust": 12,
+            "attachment": 8,
+            "set": [
+              {
+                "flag": "held_settled",
+                "knows": [
+                  "player"
+                ]
+              }
+            ],
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "wife_abroad": {
+            "text": "He thanks you, then forwards it straight to Torino while still holding your hand.",
+            "saw_truth": true,
+            "trust": 8,
+            "sanity": -8,
+            "set": [
+              {
+                "flag": "held_settled",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "storage_fee",
+        "label": "Return it, minus a ₦100k 'storage fee'.",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You charged him a storage fee for holding his money.",
+        "outcomes": [
+          {
+            "text": "He laughs. Then he realises you're serious. Then he respects it. 'Lagos.'",
+            "wallet": 100000,
+            "trust": -4,
+            "set": [
+              {
+                "flag": "held_settled",
+                "knows": [
+                  "player"
+                ]
+              }
+            ],
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "questions",
+        "label": "\"First tell me where it's going.\"",
+        "tags": [
+          "call_out"
+        ],
+        "receipt": "You asked where his money was going before returning it.",
+        "outcomes": [
+          {
+            "text": "He tells you. You mostly believe it.",
+            "trust": 2,
+            "set": [
+              {
+                "flag": "held_settled",
+                "knows": [
+                  "player"
+                ]
+              }
+            ],
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "never_left": {
+            "text": "'To pay back... someone.' The someone is a woman in Ikeja who has already called your bank twice.",
+            "saw_truth": true,
+            "sanity": -8,
+            "set": [
+              {
+                "flag": "held_settled",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          },
+          "wife_abroad": {
+            "text": "'Rent. In Torino.' He says it before he can stop himself.",
+            "saw_truth": true,
+            "sanity": -10,
+            "set": [
+              {
+                "flag": "held_settled",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          },
+          "japa_real": {
+            "text": "He shows you the embassy's proof-of-funds email. 'Here. All of it. No secrets now.'",
+            "trust": 10,
+            "attachment": 6,
+            "set": [
+              {
+                "flag": "held_settled",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "osz_po_peeked",
+    "character": "osaze",
+    "slot": "payoff",
+    "requires": {
+      "partner_knows": [
+        "secret_peeked"
+      ],
+      "not_flags": [
+        "peek_talked"
+      ],
+      "flag_age": {
+        "flag": "secret_peeked",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "secret_peeked"
+    ],
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "expression": "suspicious",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "You looked at my screen at 3am. You could have just asked me. So ask."
+      }
+    ],
+    "priority": 6,
+    "partner_reacts_to": [
+      "secret_peeked"
+    ],
+    "choices": [
+      {
+        "id": "ask_now",
+        "label": "\"Okay. Who were you talking to?\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked him directly who he'd been talking to.",
+        "outcomes": [
+          {
+            "text": "He tells you something. It might even be true.",
+            "sanity": -3,
+            "set": [
+              {
+                "flag": "peek_talked",
+                "knows": [
+                  "player"
+                ]
+              }
+            ],
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "never_left": {
+            "text": "'A business group.' He says it in Italian, then Pidgin, then English. Three languages, zero answers.",
+            "saw_truth": true,
+            "sanity": -8,
+            "set": [
+              {
+                "flag": "peek_talked",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          },
+          "wife_abroad": {
+            "text": "'Family.' That's all. He holds the word like a hot pot.",
+            "saw_truth": true,
+            "sanity": -10,
+            "set": [
+              {
+                "flag": "peek_talked",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          },
+          "japa_real": {
+            "text": "'My visa agent. I'm going to Milan, and I want you to come.' He shows you everything.",
+            "trust": 10,
+            "attachment": 8,
+            "set": [
+              {
+                "flag": "peek_talked",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "sorry",
+        "label": "\"I'm sorry. That was wrong of me.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You apologised for peeking at his screen.",
+        "outcomes": [
+          {
+            "text": "He softens. 'Lagos makes us all detectives.' He kisses your knuckles.",
+            "attachment": 4,
+            "sanity": 5,
+            "set": [
+              {
+                "flag": "peek_talked",
+                "knows": [
+                  "player"
+                ]
+              }
+            ],
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "again",
+        "label": "\"I'll look again if you keep hiding things.\"",
+        "tags": [
+          "toxic"
+        ],
+        "receipt": "You told him you'd snoop again.",
+        "outcomes": [
+          {
+            "text": "He changes his password in front of you and moves the laptop to his car.",
+            "bond": -12,
+            "set": [
+              {
+                "flag": "peek_talked",
+                "knows": [
+                  "player"
+                ]
+              }
+            ],
+            "chance": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "osz_tt_mama",
+    "character": "osaze",
+    "slot": "talking_time",
+    "presentation": "voice_note",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "golden",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Bella, Sunday 7pm is Mama's call from Benin. I never miss it. She'll ask if I'm eating. I'm not. Don't tell her."
+      }
+    ],
+    "detail": {
+      "flag": "knows_mama",
+      "missed": {
+        "chemistry": -3
+      },
+      "red_flag": false
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Sunday 7pm, Mama. Greet her for me.\"",
+        "caught": true,
+        "receipt": "You noted his Sunday call with his mother.",
+        "outcomes": [
+          {
+            "text": "'She'll ask who you are. Then she'll ask when.' He sends a laughing emoji.",
+            "attachment": 3,
+            "trust": 4,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "eat",
+        "label": "\"Eat something, Osaze!\"",
+        "receipt": "You told him to eat.",
+        "outcomes": [
+          {
+            "text": "He sends a photo of a single cracker. 'Dinner.'",
+            "attachment": 2,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "food_money",
+        "label": "\"Send money, I'll cook for you.\"",
+        "receipt": "You asked for money to cook for him.",
+        "outcomes": [
+          {
+            "text": "₦10k lands. 'Make it spicy. Make it Edo.'",
+            "wallet": 10000,
+            "chance": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "osz_tt_efosa",
+    "character": "osaze",
+    "slot": "talking_time",
+    "presentation": "text",
+    "scene": {
+      "location": "mainland_street",
+      "time": "afternoon",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "If I ever go quiet, ask Efosa. He's my only real friend in Lagos. He knows everything about me."
+      }
+    ],
+    "detail": {
+      "flag": "knows_efosa",
+      "missed": {
+        "chemistry": -2
+      },
+      "red_flag": true
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Efosa. Saved. Everything, you said?\"",
+        "caught": true,
+        "receipt": "You saved his friend Efosa's number.",
+        "outcomes": [
+          {
+            "text": "'Almost everything 😅' He sends Efosa's number.",
+            "attachment": 3,
+            "trust": 4,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "why_quiet",
+        "label": "\"Why would you go quiet?\"",
+        "receipt": "You asked why he'd go quiet.",
+        "outcomes": [
+          {
+            "text": "'Lagos network, cara.' Then he goes quiet for an hour.",
+            "attachment": -2,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "hearts",
+        "label": "\"Don't go quiet on me 🥺\"",
+        "receipt": "You begged him not to go quiet.",
+        "outcomes": [
+          {
+            "text": "He sends seven hearts and a voice note of him humming.",
+            "attachment": 3,
+            "chance": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "osz_tt_padova",
+    "character": "osaze",
+    "slot": "talking_time",
+    "presentation": "voice_note",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Missing Milan tonight. Via Padova, the noisy part. Kebab at 2am, trams at 5. Best years of my life, cara."
+      }
+    ],
+    "detail": {
+      "flag": "knows_via_padova",
+      "missed": {
+        "chemistry": -3
+      },
+      "red_flag": true
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Via Padova, kebab at 2am. Tell me more.\"",
+        "caught": true,
+        "receipt": "You listened to him talk about Via Padova.",
+        "outcomes": [
+          {
+            "text": "He sends a fourteen-minute voice note. You listen to all of it.",
+            "attachment": 3,
+            "trust": 4,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "lagos",
+        "label": "\"Lagos has suya at 2am. Same thing.\"",
+        "receipt": "You told him Lagos suya beats Milan.",
+        "outcomes": [
+          {
+            "text": "'It is not the same thing.' A pause. 'It's better.' Liar.",
+            "attachment": 2,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "take_me",
+        "label": "\"Take me there, then.\"",
+        "receipt": "You asked him to take you to Milan.",
+        "outcomes": [
+          {
+            "text": "'One day.' He says it like a prayer. Or a deflection.",
+            "attachment": 3,
+            "chance": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "osz_tt_pepper",
+    "character": "osaze",
+    "slot": "talking_time",
+    "presentation": "text",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "afternoon",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Nothing in Europe beats my mother's pepper soup. Utazi, not uziza. Remember that, it's important 😂"
+      }
+    ],
+    "detail": {
+      "flag": "knows_pepper_soup",
+      "missed": {
+        "chemistry": -3
+      },
+      "red_flag": false
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Utazi, not uziza. Noted, chef.\"",
+        "caught": true,
+        "receipt": "You remembered his mother's pepper soup secret.",
+        "outcomes": [
+          {
+            "text": "'Marry me.' Then: 'Joke.' Then: 'Small joke.'",
+            "attachment": 3,
+            "trust": 4,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "cook",
+        "label": "\"Come and cook it for me, then.\"",
+        "receipt": "You asked him to cook for you.",
+        "outcomes": [
+          {
+            "text": "'Saturday. Bring your appetite and your patience.'",
+            "attachment": 3,
+            "chemistry": 2,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "eatery",
+        "label": "\"I'll just buy pepper soup at a joint.\"",
+        "receipt": "You said you'd just buy pepper soup.",
+        "outcomes": [
+          {
+            "text": "'Sacrilege.' He sends a crying emoji. You've hurt him.",
+            "attachment": -1,
+            "chance": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "osz_tt_5am",
+    "character": "osaze",
+    "slot": "talking_time",
+    "presentation": "text",
+    "scene": {
+      "location": "mainland_street",
+      "time": "morning",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Early one tomorrow. 5am. If I don't pick, I'm in a queue somewhere being humbled. Pray for me."
+      }
+    ],
+    "detail": {
+      "flag": "knows_5am",
+      "missed": {
+        "chemistry": -2
+      },
+      "red_flag": true
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"5am queue. Praying. What's the queue for?\"",
+        "caught": true,
+        "receipt": "You noted his 5am queue.",
+        "outcomes": [
+          {
+            "text": "'Tell you when it's worth telling.' Then a sunrise photo at 5:12am.",
+            "attachment": 3,
+            "trust": 4,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "sleep",
+        "label": "\"Who queues at 5am? Sleep!\"",
+        "receipt": "You told him to sleep instead.",
+        "outcomes": [
+          {
+            "text": "'Lagos does.' He sends a yawning emoji.",
+            "attachment": 2,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "breakfast",
+        "label": "\"Bring me breakfast after.\"",
+        "receipt": "You asked him to bring breakfast after his queue.",
+        "outcomes": [
+          {
+            "text": "He brings agege bread and akara at 10am, smelling of diesel.",
+            "attachment": 3,
+            "chemistry": 2,
+            "chance": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "osz_tt_volare",
+    "character": "osaze",
+    "slot": "talking_time",
+    "presentation": "voice_note",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "golden",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "My landlady in Milan used to play 'Volare' every Sunday. If you ever hear me humming it, it means I'm happy. Rare thing."
+      }
+    ],
+    "detail": {
+      "flag": "knows_volare",
+      "missed": {
+        "chemistry": -3
+      },
+      "red_flag": false
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"'Volare' means happy. I'll listen for it.\"",
+        "caught": true,
+        "receipt": "You learned what 'Volare' means to him.",
+        "outcomes": [
+          {
+            "text": "He hums three lines into a voice note. Off-key. Happy.",
+            "attachment": 4,
+            "trust": 4,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "song",
+        "label": "\"Send me your playlist.\"",
+        "receipt": "You asked for his playlist.",
+        "outcomes": [
+          {
+            "text": "He sends 400 songs. 390 are Italian. 10 are Afrobeats.",
+            "attachment": 2,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "rare",
+        "label": "\"Rare? You're always smiling.\"",
+        "receipt": "You told him he always smiles.",
+        "outcomes": [
+          {
+            "text": "'Smiling and happy are different things in Lagos, cara.'",
+            "attachment": 1,
+            "chance": 1
+          }
+        ]
+      }
+    ]
+  }
+]

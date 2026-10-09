@@ -4,19 +4,8 @@
     "errors": []
   },
   "kayode": {
-    "pass": false,
-    "errors": [
-      "deck not written yet",
-      "first_date: 0/3",
-      "red_flag: 0/3",
-      "money_trap: 0/3",
-      "payoff: 0/2",
-      "talking_time: 0/3",
-      "no confrontation for truth yahoo",
-      "no confrontation for truth gambler",
-      "no confrontation for truth trust_fund",
-      "needs at least 2 payoff cards tied to earlier choices"
-    ]
+    "pass": true,
+    "errors": []
   },
   "bello": {
     "pass": false,
@@ -50,19 +39,8 @@
     ]
   },
   "osaze": {
-    "pass": false,
-    "errors": [
-      "deck not written yet",
-      "first_date: 0/3",
-      "red_flag: 0/3",
-      "money_trap: 0/3",
-      "payoff: 0/2",
-      "talking_time: 0/3",
-      "no confrontation for truth never_left",
-      "no confrontation for truth wife_abroad",
-      "no confrontation for truth japa_real",
-      "needs at least 2 payoff cards tied to earlier choices"
-    ]
+    "pass": true,
+    "errors": []
   },
   "tiwa": {
     "pass": true,
@@ -81,34 +59,11 @@
     "errors": []
   },
   "mercy": {
-    "pass": false,
-    "errors": [
-      "deck not written yet",
-      "first_date: 0/3",
-      "red_flag: 0/3",
-      "money_trap: 0/3",
-      "payoff: 0/2",
-      "talking_time: 0/3",
-      "no confrontation for truth chief_sponsor",
-      "no confrontation for truth japa",
-      "no confrontation for truth quitting",
-      "needs at least 2 payoff cards tied to earlier choices"
-    ]
+    "pass": true,
+    "errors": []
   },
   "madam_folake": {
-    "pass": false,
-    "errors": [
-      "deck not written yet",
-      "first_date: 0/3",
-      "red_flag: 0/3",
-      "money_trap: 0/3",
-      "payoff: 0/2",
-      "talking_time: 0/3",
-      "no confrontation for truth husband_alive",
-      "no confrontation for truth three_men",
-      "no confrontation for truth widow",
-      "controlling temperament but no escalation cards",
-      "needs at least 2 payoff cards tied to earlier choices"
-    ]
+    "pass": true,
+    "errors": []
   }
 }

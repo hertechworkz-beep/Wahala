@@ -1,0 +1,3795 @@
+[
+  {
+    "id": "mercy_d1_rooftop",
+    "character": "mercy",
+    "slot": "first_date",
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "night",
+      "expression": "charming",
+      "mood": "positive"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Before 'hello', Mercy sends an account number. 'Transport. Ikoyi is far from Ikoyi.' She arrives forty minutes late, carrying three phones."
+      },
+      {
+        "who": "partner",
+        "text": "Rules: I don't do broke, I don't do boring, and I don't do Sundays. Sit."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "chief_sponsor": {
+        "id": "t_cs_prado",
+        "text": "Through the glass, the car that dropped her doesn't leave. A tinted Prado idles across Bourdillon Road, facing the door."
+      },
+      "japa": {
+        "id": "t_jp_dollars",
+        "text": "She scans the menu and mutters: 'Forty-one dollars for rice.' She converts the tip too, out loud."
+      },
+      "quitting": {
+        "id": "t_q_calls",
+        "text": "A phone lights up: 'Daddy Lekki'. She declines it face-down, hard, like she's killing a cockroach."
+      }
+    },
+    "choices": [
+      {
+        "id": "transport",
+        "label": "Send the transport money. ₦20k. Start right.",
+        "tags": [
+          "budget"
+        ],
+        "cost": 20000,
+        "broke_text": "Your account said 'transport for who?'",
+        "receipt": "You paid her transport before the first date started.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Alert received. 'See? Sharp. I like sharp.' She orders for both of you without looking at the menu.",
+            "attachment": 8,
+            "chemistry": 2
+          }
+        ],
+        "truth_override": {
+          "japa": {
+            "text": "Alert received. She sends 'Thank you 🙏🏾', then by accident a screenshot from a converter app: '$13.10'. She deletes it fast.",
+            "attachment": 6
+          },
+          "quitting": {
+            "text": "She sends it straight back. 'I was testing you. Everybody passes that one. Pass a harder one.'",
+            "trust": 6,
+            "attachment": 5
+          }
+        }
+      },
+      {
+        "id": "whole_menu",
+        "label": "Order the whole menu. Lagos is watching.",
+        "tags": [
+          "luxury"
+        ],
+        "cost": 90000,
+        "broke_text": "The menu has prices. Your account read them.",
+        "receipt": "You ordered the whole menu on a first date.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Fourteen plates. She photographs all of them, eats three, and packs the rest for her dispatch riders. Efficient queen.",
+            "attachment": 12,
+            "clout": 15
+          }
+        ],
+        "truth_override": {
+          "quitting": {
+            "text": "She stops you at plate six. 'Men have bought me dinner thinking it bought me. Let's just talk.' You talk till they stack the chairs.",
+            "attachment": 10,
+            "trust": 6
+          }
+        }
+      },
+      {
+        "id": "three_phones",
+        "label": "\"Why three phones, Mercy?\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked her why she carries three phones.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Business, family, and logistics.' She doesn't say what the third one carries.",
+            "trust": 3,
+            "set": [
+              {
+                "flag": "asked_phones",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "chief_sponsor": {
+            "text": "'Business, family, logistics.' The logistics phone lights up: 'C.E. 🧢'. She turns it over like a bad card.",
+            "trust": 2,
+            "set": [
+              {
+                "flag": "asked_phones",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "japa": {
+            "text": "'Lagos, Benin and...' The third phone's clock is six hours behind. 'And international. I'm a global brand.'",
+            "trust": 2,
+            "set": [
+              {
+                "flag": "asked_phones",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "quitting": {
+            "text": "'Two, soon. The third is for people I'm leaving.' She switches it off in front of you and drops it in her bag.",
+            "trust": 8,
+            "attachment": 4,
+            "set": [
+              {
+                "flag": "asked_phones",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "dont_do_late",
+        "label": "Match her: \"And I don't do late.\"",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You told Mercy you don't do late.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "She laughs so hard the next table turns. 'Okay. Okay. You're fun. Fun is rare.'",
+            "attachment": 6,
+            "chemistry": 4
+          },
+          {
+            "chance": 0.4,
+            "text": "'Then you'll hate me.' It's a flirt. Or a warning. With Mercy you can't tell.",
+            "bad": true,
+            "attachment": -5
+          }
+        ]
+      },
+      {
+        "id": "sugar_account",
+        "label": "[Sugar] Send YOUR account number back. Transport.",
+        "vibe": "sugar",
+        "receipt": "You sent Mercy your own account number for transport.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She stares at her phone. Then ₦5k lands with a voice note: 'You get liver. I like you.'",
+            "wallet": 5000,
+            "attachment": 10,
+            "chemistry": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mercy_d1_banga",
+    "character": "mercy",
+    "slot": "first_date",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "expression": "charming",
+      "mood": "positive"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Her Lekki flat: forty pairs of shoes, a ring light, and banga soup on the stove. She cooked. Herself. In lashes."
+      },
+      {
+        "who": "partner",
+        "text": "Taste it. If you make face, the door is there."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "chief_sponsor": {
+        "id": "t_cs_cap",
+        "text": "On the hook by the door: a red chief's cap. 'My uncle's,' she says, before you've even looked at it."
+      },
+      "japa": {
+        "id": "t_jp_ielts",
+        "text": "Hunting under the bed for your earring, you find an IELTS book: dog-eared, highlighted in three colours."
+      },
+      "quitting": {
+        "id": "t_q_gift",
+        "text": "On the counter: a car key with a ribbon, and a sticky note in her handwriting: 'RETURN TO SENDER.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "hands",
+        "label": "Eat with your hands. Ask for seconds.",
+        "receipt": "You ate her banga with your hands and asked for seconds.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She watches you lick your fingers and softens a full ten percent. 'My mother's recipe. Tell nobody I can cook.'",
+            "attachment": 10,
+            "chemistry": 3
+          }
+        ]
+      },
+      {
+        "id": "stay",
+        "label": "Stay the night. The soup made you weak.",
+        "receipt": "You stayed the night at Mercy's on day one.",
+        "outcomes": [
+          {
+            "chance": 0.7,
+            "text": "You wake to her on three calls at once, selling bags in pidgin. She kisses you without hanging up any of them.",
+            "attachment": 12,
+            "sanity": -3
+          },
+          {
+            "chance": 0.3,
+            "text": "6am, someone knocks. Mercy whispers: 'Don't move. Don't breathe.' Footsteps leave. She says nothing about it at breakfast.",
+            "bad": true,
+            "attachment": 6,
+            "sanity": -12
+          }
+        ],
+        "truth_override": {
+          "quitting": [
+            {
+              "chance": 0.7,
+              "text": "You wake to her on three calls at once, selling bags in pidgin. She kisses you without hanging up any of them.",
+              "attachment": 12,
+              "sanity": -3
+            },
+            {
+              "chance": 0.3,
+              "text": "6am, someone knocks. Mercy shouts through the door: 'I said it's finished! Go!' Then she cries in the bathroom with the tap running.",
+              "attachment": 10,
+              "trust": 5,
+              "sanity": -5
+            }
+          ]
+        }
+      },
+      {
+        "id": "who_pays",
+        "label": "\"Who pays for this flat, Mercy?\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked Mercy who pays for her flat.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'I do.' A beat. 'Mostly.' She ladles more soup like that settles it.",
+            "attachment": -3,
+            "trust": 3
+          }
+        ],
+        "truth_override": {
+          "chief_sponsor": {
+            "text": "'An old friend helps with rent. Old. Very old.' She doesn't blink. The soup is suddenly very interesting.",
+            "attachment": -3
+          },
+          "japa": {
+            "text": "'Me. Until December.' She laughs. 'Then it's somebody else's problem.' Whose? She changes the topic to your shoes.",
+            "attachment": -3
+          },
+          "quitting": {
+            "text": "'Somebody did. Not anymore. I'm moving to a self-con in Yaba next month.' She shows you the receipt. Proudly.",
+            "trust": 10,
+            "attachment": 4
+          }
+        }
+      },
+      {
+        "id": "post",
+        "label": "Post the banga on your story. Tag nothing.",
+        "receipt": "You posted Mercy's kitchen on your story.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "'Who cooked for you?' 300 replies. Mercy reposts it with one word: 'Mine.'",
+            "clout": 15,
+            "attachment": 6,
+            "set": [
+              {
+                "flag": "secret_story_post",
+                "knows": [
+                  "player",
+                  "world"
+                ]
+              }
+            ]
+          },
+          {
+            "chance": 0.4,
+            "text": "Someone zooms into the kitchen tiles: 'Isn't this Mercy's flat? Which one is this one?' Lagos is small and nosy.",
+            "bad": true,
+            "clout": 5,
+            "exposure": 15,
+            "set": [
+              {
+                "flag": "secret_story_post",
+                "knows": [
+                  "player",
+                  "world"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "lover_plates",
+        "label": "[Lover] Wash all the plates. Unasked.",
+        "vibe": "lover",
+        "receipt": "You washed every plate in Mercy's kitchen.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She leans on the doorframe, watching you like a documentary. 'Who raised you? I want to thank them.'",
+            "attachment": 12,
+            "trust": 6
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mercy_d1_dispatch",
+    "character": "mercy",
+    "slot": "first_date",
+    "scene": {
+      "location": "mainland_street",
+      "time": "afternoon",
+      "expression": "charming",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "First date: her 'logistics company' in Yaba. One container, two dispatch bikes, and a rider named Sunday who is late."
+      },
+      {
+        "who": "partner",
+        "text": "Hold this bag. Get on the bike. If the customer in Surulere doesn't pay, we sit on her car."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "chief_sponsor": {
+        "id": "t_cs_friday",
+        "text": "A sign on the container: 'NO DELIVERIES FRIDAY 7PM TO MONDAY.' 'Family,' she says. Every weekend?"
+      },
+      "japa": {
+        "id": "t_jp_canada",
+        "text": "Her lock screen says 2:14pm. It's 8:14pm in Yaba. 'I like being early,' she jokes. Six hours early."
+      },
+      "quitting": {
+        "id": "t_q_scared",
+        "text": "A Prado crawls past the container. Mercy steps behind a bike until it's gone, then laughs too loud."
+      }
+    },
+    "choices": [
+      {
+        "id": "ride",
+        "label": "Get on the bike. Helmet? Who needs helmet.",
+        "receipt": "You rode pillion on Mercy's dispatch bike.",
+        "outcomes": [
+          {
+            "chance": 0.7,
+            "text": "The customer pays in full the second she sees you. 'Your person is fine o.' Mercy charges her extra for that.",
+            "attachment": 10,
+            "chemistry": 4,
+            "sanity": 3
+          },
+          {
+            "chance": 0.3,
+            "text": "Pothole at Ojuelegba. The bag survives. Your trousers do not. Mercy laughs for the rest of the date.",
+            "bad": true,
+            "attachment": 5,
+            "sanity": -8,
+            "clout": -5
+          }
+        ]
+      },
+      {
+        "id": "buy_bag",
+        "label": "Buy the bag yourself. ₦80k. Save the trip.",
+        "tags": [
+          "luxury"
+        ],
+        "cost": 80000,
+        "broke_text": "Your account checked the price and fainted.",
+        "receipt": "You bought the customer's bag yourself.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She takes your money, delivers the bag anyway, and sells it twice. 'Logistics,' she winks. 'Your ₦80k is now ₦240k. Dinner's on me.'",
+            "attachment": 10,
+            "clout": 5
+          }
+        ]
+      },
+      {
+        "id": "helmets",
+        "label": "Buy two helmets first. ₦10k. Safety is sexy.",
+        "tags": [
+          "budget"
+        ],
+        "cost": 10000,
+        "receipt": "You bought two helmets before getting on the bike.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She rolls her eyes but wears it. In the selfie, she's laughing with her whole face.",
+            "attachment": 6,
+            "trust": 5
+          }
+        ]
+      },
+      {
+        "id": "original",
+        "label": "\"Is this bag original, Mercy?\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked if the bag was original.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'It's original to Balogun.' She doesn't even pretend. You respect it more than you expected.",
+            "trust": 6,
+            "attachment": 2,
+            "set": [
+              {
+                "flag": "asked_original",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "corp_excel",
+        "label": "[Corporate] Fix her invoice spreadsheet. Find the leak.",
+        "vibe": "corporate",
+        "receipt": "You audited Mercy's dispatch invoices on a first date.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Twenty minutes in Excel and you find ₦140k that Sunday has been 'misplacing'. She looks at you like you're the bag.",
+            "attachment": 12,
+            "trust": 8
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mercy_rf_monday",
+    "character": "mercy",
+    "slot": "red_flag",
+    "scene": {
+      "location": "mainland_street",
+      "time": "morning",
+      "expression": "suspicious",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Monday, 7am. Mercy at your gate in last night's dress, holding akara and pap. Her lipstick is perfect. Her eyes are not."
+      },
+      {
+        "who": "partner",
+        "text": "Don't ask where I was. Ask what I brought."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "chief_sponsor": {
+        "id": "t_cs_prado",
+        "text": "Behind her, a tinted Prado idles until your gate opens. Then it leaves. Slowly. It wanted to see your gate."
+      },
+      "japa": {
+        "id": "t_jp_dollars",
+        "text": "'The akara was two dollars,' she says, then laughs at herself. 'Naira. I mean naira. I'm tired.'"
+      },
+      "quitting": {
+        "id": "t_q_calls",
+        "text": "Her phone rings: 'Daddy Lekki'. She declines, then switches the whole phone off. Her hands are shaking."
+      }
+    },
+    "choices": [
+      {
+        "id": "eat",
+        "label": "Eat the akara. Ask nothing.",
+        "tags": [
+          "excuse",
+          "discreet"
+        ],
+        "receipt": "You ate her akara and didn't ask where she'd been.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She falls asleep on your couch mid-sentence. You cover her with your wrapper. You don't ask. Yet.",
+            "attachment": 8,
+            "sanity": -6
+          }
+        ]
+      },
+      {
+        "id": "where",
+        "label": "\"Where were you, Mercy?\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked Mercy where she'd been all weekend.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Working.' She holds your gaze. 'You want the long answer or the true one?' She gives neither.",
+            "attachment": -3,
+            "set": [
+              {
+                "flag": "asked_weekend",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "chief_sponsor": {
+            "text": "'Benin. Family.' There's Ikoyi beach sand on her heels. There's no beach in Benin.",
+            "sanity": -5,
+            "set": [
+              {
+                "flag": "asked_weekend",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "japa": {
+            "text": "'Embassy-- an event. An event.' She bites the akara so she can stop talking.",
+            "sanity": -3,
+            "set": [
+              {
+                "flag": "asked_weekend",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "quitting": {
+            "text": "'Ending something.' She looks at you properly. 'It didn't want to end. It will.'",
+            "trust": 8,
+            "set": [
+              {
+                "flag": "asked_weekend",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "phone",
+        "label": "Check her phone while she showers",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You went through Mercy's phone while she showered.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Bag orders and her mother's voice notes. Nothing else. You put it back and feel small.",
+            "sanity": -5
+          }
+        ],
+        "truth_override": {
+          "chief_sponsor": [
+            {
+              "chance": 0.6,
+              "text": "A contact saved 'C.E. 🧢': 'Friday again. Wear the gold one. Musa comes at 7.' Musa. Gold. Friday.",
+              "sanity": -12,
+              "set": [
+                {
+                  "flag": "saw_ce_texts",
+                  "knows": [
+                    "player"
+                  ]
+                }
+              ]
+            },
+            {
+              "chance": 0.4,
+              "text": "The shower stops. She's in the doorway, dripping. 'Put. It. Down.'",
+              "bad": true,
+              "trust": -20,
+              "expression": "angry",
+              "set": [
+                {
+                  "flag": "secret_checked_phone",
+                  "knows": [
+                    "player",
+                    "partner"
+                  ]
+                }
+              ]
+            }
+          ],
+          "japa": [
+            {
+              "chance": 0.6,
+              "text": "An email: 'Study permit: decision made.' A flight alert: Lagos to Toronto. One way.",
+              "sanity": -10,
+              "set": [
+                {
+                  "flag": "saw_visa",
+                  "knows": [
+                    "player"
+                  ]
+                }
+              ]
+            },
+            {
+              "chance": 0.4,
+              "text": "The shower stops. She's in the doorway, dripping. 'Put. It. Down.'",
+              "bad": true,
+              "trust": -20,
+              "expression": "angry",
+              "set": [
+                {
+                  "flag": "secret_checked_phone",
+                  "knows": [
+                    "player",
+                    "partner"
+                  ]
+                }
+              ]
+            }
+          ],
+          "quitting": [
+            {
+              "chance": 0.6,
+              "text": "A text she sent at 2am to 'Daddy Lekki': 'I'm done. Don't come to my shop.' Seen. No reply.",
+              "sanity": -3
+            },
+            {
+              "chance": 0.4,
+              "text": "The shower stops. She's in the doorway, dripping. She doesn't shout. She just looks tired.",
+              "bad": true,
+              "trust": -20,
+              "expression": "angry",
+              "set": [
+                {
+                  "flag": "secret_checked_phone",
+                  "knows": [
+                    "player",
+                    "partner"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "bigboy_price",
+        "label": "[Big Boy] \"Next weekend, you're with me. Name your price.\"",
+        "vibe": "bigboy",
+        "receipt": "You asked Mercy to name her price for a weekend.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'My price?' She laughs into the pap. 'You can't afford my weekends.' A pause. 'Try.'",
+            "attachment": 10,
+            "clout": 5
+          }
+        ],
+        "truth_override": {
+          "quitting": {
+            "text": "'I don't have a price anymore.' She says it like it's news to her too.",
+            "trust": 8,
+            "attachment": 6
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "mercy_rf_wrong_chat",
+    "character": "mercy",
+    "slot": "red_flag",
+    "presentation": "text",
+    "scene": {
+      "location": "mainland_street",
+      "time": "night",
+      "expression": "suspicious",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "11:40pm. Mercy sends a message, then deletes it. You saw it anyway:"
+      },
+      {
+        "who": "Deleted message",
+        "text": "Daddy, the rent is due Friday. You promised ❤️"
+      },
+      {
+        "who": "partner",
+        "text": "Wrong chat 😂 Ignore. How was your day?"
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "chief_sponsor": {
+        "id": "t_cs_friday",
+        "text": "Then: 'Can't talk Friday to Monday by the way. Family thing.' Third 'family thing' this month."
+      },
+      "japa": {
+        "id": "t_jp_canada",
+        "text": "The deleted message was stamped 5:40pm. It's 11:40pm. Her phone lives six hours behind Lagos."
+      },
+      "quitting": {
+        "id": "t_q_calls",
+        "text": "Then: 'That was to Daddy Lekki. Old message. He keeps calling to remind me what I owe.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "lol",
+        "label": "\"Lol no wahala. My day was long.\"",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You laughed off her 'wrong chat' message.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She sends a voice note about her day: riders, a customer, a goat that blocked Herbert Macaulay Way. You laugh. You forget. Almost.",
+            "attachment": 6,
+            "sanity": -6
+          }
+        ]
+      },
+      {
+        "id": "which",
+        "label": "\"Which Daddy, Mercy?\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked Mercy which daddy the message was for.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'A sponsor. Ex. Almost ex.' Typing. Stops. Typing. 'You want honesty or peace tonight?'",
+            "trust": 3,
+            "set": [
+              {
+                "flag": "asked_daddy",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "chief_sponsor": {
+            "text": "'An old man who pays rent and wants Fridays.' She sends a red cap emoji, then deletes that too.",
+            "sanity": -5,
+            "set": [
+              {
+                "flag": "asked_daddy",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "japa": {
+            "text": "'A sponsor. Temporary. Everything in Lagos is temporary, babe.' Everything?",
+            "sanity": -3,
+            "set": [
+              {
+                "flag": "asked_daddy",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "quitting": {
+            "text": "She calls instead of typing. 'He's a sponsor. Was. I'm getting out. I didn't want you to find out like this.'",
+            "trust": 10,
+            "attachment": 5,
+            "set": [
+              {
+                "flag": "asked_daddy",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "rent",
+        "label": "Send ₦100k: \"Rent, from your real Daddy.\"",
+        "cost": 100000,
+        "broke_text": "Your own rent is also due Friday. Remember?",
+        "receipt": "You sent Mercy ₦100k for rent.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'😳😳😳' Then: 'You're mad.' Then: 'Thank you.' Then a voice note of her screaming into a pillow.",
+            "attachment": 15
+          }
+        ],
+        "truth_override": {
+          "chief_sponsor": {
+            "text": "'Thank you ❤️' Friday she's still unreachable. Your rent paid for a weekend you weren't in.",
+            "attachment": 10,
+            "sanity": -8,
+            "set": [
+              {
+                "flag": "sent_mercy_money",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "japa": {
+            "text": "'Thank you ❤️' Ten minutes later, her Close Friends story: an exchange rate screenshot. '1,560 today 🙏🏾'.",
+            "tricked": true,
+            "attachment": 8,
+            "sanity": -5,
+            "set": [
+              {
+                "flag": "sent_mercy_money",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "quitting": {
+            "text": "She sends it back in two minutes. 'I don't want rent from you. I want time from you. Different currency.'",
+            "trust": 12,
+            "attachment": 10
+          }
+        }
+      },
+      {
+        "id": "group_chat",
+        "label": "Screenshot it. Drop it in your group chat: \"Guess.\"",
+        "tags": [
+          "toxic"
+        ],
+        "receipt": "You shared Mercy's deleted message in your group chat.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The group chat goes feral. Somebody knows somebody who knows Mercy. By morning, Ivie has forwarded it to her. 'Really?'",
+            "clout": 8,
+            "exposure": 15,
+            "trust": -10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mercy_rf_salon",
+    "character": "mercy",
+    "slot": "red_flag",
+    "scene": {
+      "location": "lekki_salon",
+      "time": "afternoon",
+      "expression": "caught",
+      "mood": "neutral",
+      "npc": {
+        "name": "Ivie"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Admiralty Way salon. You came to surprise Mercy with lunch. Her girls don't see you behind the curtain."
+      },
+      {
+        "who": "Ivie",
+        "text": "So this new one: sponsor or sweetheart? Because Mercy, you cannot be running four--"
+      },
+      {
+        "who": "partner",
+        "text": "Ivie. Shut. Up."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "chief_sponsor": {
+        "id": "t_cs_cap",
+        "text": "Ivie tosses her a red chief's cap: 'Your Chief left this in your back seat again. I'm not his dry cleaner.'"
+      },
+      "japa": {
+        "id": "t_jp_ielts",
+        "text": "On Mercy's lap, under the salon cape: an IELTS practice book. Speaking target: Band 8. She's mouthing answers."
+      },
+      "quitting": {
+        "id": "t_q_gift",
+        "text": "Mercy hands Ivie a car key: 'Give it back to him. Tell him I'm not taking cars anymore.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "step_out",
+        "label": "Step out with lunch: \"Hi. I'm number four.\"",
+        "tags": [
+          "public_embarrassment"
+        ],
+        "receipt": "You introduced yourself to the salon as 'number four'.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The salon screams. Ivie drops a comb. Mercy laughs until she cries, then pinches you very hard.",
+            "clout": 15,
+            "attachment": 6
+          }
+        ],
+        "truth_override": {
+          "quitting": {
+            "text": "Mercy, quietly, over the screaming: 'You were never a number. Sit. Eat. Let me explain.' She does.",
+            "clout": 10,
+            "attachment": 10,
+            "trust": 12
+          }
+        }
+      },
+      {
+        "id": "listen",
+        "label": "Stay behind the curtain. Listen.",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You hid behind the salon curtain and listened.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Ivie changes topic to edges. You learn nothing about Mercy and everything about Ivie's edges.",
+            "sanity": -3
+          }
+        ],
+        "truth_override": {
+          "chief_sponsor": {
+            "text": "Ivie: 'Chief is paying for your shop and you're feeding this one lunch money?' Chief. Shop.",
+            "saw_truth": true,
+            "sanity": -10,
+            "set": [
+              {
+                "flag": "heard_chief",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          },
+          "japa": {
+            "text": "Ivie: 'When you land in Toronto, send me a coat.' Mercy: 'Shh! Nobody knows!' Land?",
+            "saw_truth": true,
+            "sanity": -10,
+            "set": [
+              {
+                "flag": "heard_toronto",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          },
+          "quitting": {
+            "text": "Mercy: 'I'm done with all of them, Ivie. I'm tired. This one makes me laugh.' This one is you.",
+            "trust": 6,
+            "attachment": 5,
+            "sanity": 8
+          }
+        }
+      },
+      {
+        "id": "treat_all",
+        "label": "Pay for every head in the salon. ₦60k.",
+        "tags": [
+          "luxury"
+        ],
+        "cost": 60000,
+        "broke_text": "Your account said 'which salon? Mine?'",
+        "receipt": "You paid for every head in the salon.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Five women and a stylist now pray for you by name. Mercy is embarrassed and delighted in equal measure.",
+            "attachment": 10,
+            "clout": 15
+          }
+        ]
+      },
+      {
+        "id": "braids",
+        "label": "Pay for Mercy's braids only. ₦15k.",
+        "tags": [
+          "budget"
+        ],
+        "cost": 15000,
+        "receipt": "You paid for Mercy's braids.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Who told you?' She checks the receipt. 'Exact amount. Not even tip.' She grins. 'I like you.'",
+            "attachment": 6
+          }
+        ]
+      },
+      {
+        "id": "leave_text",
+        "label": "Leave lunch at reception. Text: \"Enjoy, number four.\"",
+        "tags": [
+          "cautious",
+          "call_out"
+        ],
+        "receipt": "You left lunch at reception and texted 'Enjoy, number four'.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Twenty seconds later she runs out barefoot, half-braided: 'Come back here! Come back here now!'",
+            "attachment": 4,
+            "trust": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mercy_rf_offgrid",
+    "character": "mercy",
+    "slot": "red_flag",
+    "presentation": "text",
+    "scene": {
+      "location": "mainland_street",
+      "time": "night",
+      "expression": "suspicious",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Friday, 6:58pm. Mercy: 'Going off-grid till Monday. Benin network is bad. Don't be dramatic 😘'"
+      },
+      {
+        "who": "narration",
+        "text": "7:20pm. Her Close Friends story: the Lekki-Ikoyi Link Bridge, lit up purple. That's not Benin."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "chief_sponsor": {
+        "id": "t_cs_friday",
+        "text": "Last seen: Friday 6:59pm. It will say that till Monday morning. Like every Monday."
+      },
+      "japa": {
+        "id": "t_jp_canada",
+        "text": "The story's time sticker says 1:20 PM. It's 7:20 in Lagos. Her phone lives somewhere else."
+      },
+      "quitting": {
+        "id": "t_q_scared",
+        "text": "One more story, posted and deleted: headlights in her rear-view, and her voice: 'It's his Prado. Drive. Drive.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "call",
+        "label": "Call her. Again. And again.",
+        "tags": [
+          "contact_partner"
+        ],
+        "receipt": "You called Mercy eleven times on her off-grid night.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Off. Off. Off. On the eleventh try it rings once and dies. You feel that one in your chest.",
+            "sanity": -12,
+            "attachment": -3
+          }
+        ]
+      },
+      {
+        "id": "thirst",
+        "label": "Post a thirst trap. Let Monday see it.",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You posted a thirst trap while Mercy was off-grid.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "Monday, 6:01am: three fire emojis from Mercy, then 'Who is that for?' You. It was for you.",
+            "attachment": 6,
+            "clout": 15
+          },
+          {
+            "chance": 0.4,
+            "text": "Ivie screenshots it to Mercy with 'lol'. Mercy replies 'who cares'. She cares.",
+            "bad": true,
+            "attachment": -5,
+            "clout": 10
+          }
+        ]
+      },
+      {
+        "id": "sleep",
+        "label": "Sleep. Monday is Monday.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You let her weekend disappearance slide.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You sleep. Your phone doesn't. 3am: 'You up?' from Mercy. Deleted before you can answer.",
+            "sanity": 3
+          }
+        ]
+      },
+      {
+        "id": "mama",
+        "label": "Sunday, 8pm sharp: call Mama in Benin.",
+        "tags": [
+          "cautious"
+        ],
+        "requires": {
+          "flags": [
+            "knows_mama_benin"
+          ]
+        },
+        "receipt": "You called Mercy's mother at her Sunday hour.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Mama answers on the first ring. 'Mercy? She's not here. She's in Lagos, working.' Not Benin.",
+            "sanity": -8
+          }
+        ],
+        "truth_override": {
+          "chief_sponsor": {
+            "text": "Mama: 'She's in Lagos with her Chief-- with her work.' Mama coughs for a long time.",
+            "saw_truth": true,
+            "sanity": -10
+          },
+          "japa": {
+            "text": "Mama: 'She's in Lagos, preparing for her travel. Has she not told you?' Travel.",
+            "saw_truth": true,
+            "sanity": -10
+          },
+          "quitting": {
+            "text": "Mama: 'She's here! In my kitchen! Mercy, your person is calling!' Benin network is terrible. But she's there.",
+            "trust": 12,
+            "attachment": 8
+          }
+        }
+      },
+      {
+        "id": "ivie",
+        "label": "Text Ivie. Ivie physically cannot lie.",
+        "tags": [
+          "investigate"
+        ],
+        "requires": {
+          "flags": [
+            "trusts_ivie"
+          ]
+        },
+        "receipt": "You asked Ivie where Mercy goes at weekends.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Ivie: 'Ask her yourself.' Annoyingly fair.",
+            "sanity": -2
+          }
+        ],
+        "truth_override": {
+          "chief_sponsor": {
+            "text": "Ivie: 'She's with the red cap. Don't tell her I talked. Actually, tell her. Somebody should.'",
+            "saw_truth": true,
+            "sanity": -10
+          },
+          "japa": {
+            "text": "Ivie: 'Biometrics Saturday, medicals Monday. She'll kill me. Delete this.'",
+            "saw_truth": true,
+            "sanity": -8
+          },
+          "quitting": {
+            "text": "Ivie: 'She's in Benin hiding from Daddy Lekki. He won't let her go. She likes you, mumu.'",
+            "trust": 8,
+            "attachment": 4
+          }
+        }
+      },
+      {
+        "id": "lover_paragraph",
+        "label": "[Lover] Send a long paragraph about communication.",
+        "tags": [
+          "contact_partner"
+        ],
+        "vibe": "lover",
+        "receipt": "You sent Mercy a paragraph about communication.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Monday she replies with one thumbs up. The paragraph had nine paragraphs.",
+            "sanity": -8,
+            "attachment": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mercy_mt_container",
+    "character": "mercy",
+    "slot": "money_trap",
+    "scene": {
+      "location": "mainland_street",
+      "time": "afternoon",
+      "expression": "charming",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Mercy in full boss mode, laptop balanced on a dispatch bike seat in Yaba."
+      },
+      {
+        "who": "partner",
+        "text": "A container of Dubai bags lands Monday. ₦300k gets you forty percent in two weeks. I don't ask everybody. I'm asking you."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "chief_sponsor": {
+        "id": "t_cs_prado",
+        "text": "The 'warehouse partner' in her photos leans on a tinted Prado, face cropped out. The red cap isn't."
+      },
+      "japa": {
+        "id": "t_jp_dollars",
+        "text": "'Can you send it in dollars? Domiciliary is... easier.' Easier for who?"
+      },
+      "quitting": {
+        "id": "t_q_gift",
+        "text": "She slides a car key across to Ivie: 'Sell it. That's my capital. I'm not building my thing with his car.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "full",
+        "label": "Send ₦300k. Bet on her.",
+        "cost": 300000,
+        "broke_text": "Your account is not a shareholder.",
+        "receipt": "You invested ₦300k in Mercy's container.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Sent. She sends a receipt and a kiss emoji.",
+            "sanity": -3
+          }
+        ],
+        "truth_override": {
+          "chief_sponsor": [
+            {
+              "chance": 0.5,
+              "text": "Two weeks: ₦420k back, with a receipt. She's a real hustler. The 'clearing agent' just takes his cut on Fridays.",
+              "wallet": 420000,
+              "scaled": true,
+              "attachment": 10,
+              "trust": 5
+            },
+            {
+              "chance": 0.5,
+              "text": "The container 'clears' into a Prado boot. 'Chief took it as collateral,' she says, then: 'I mean, my agent.'",
+              "bad": true,
+              "tricked": true,
+              "sanity": -15,
+              "set": [
+                {
+                  "flag": "sent_mercy_money",
+                  "knows": [
+                    "player",
+                    "partner"
+                  ]
+                }
+              ]
+            }
+          ],
+          "japa": {
+            "text": "Two weeks. Then three. The bags don't land. Her story shows a tuition deposit receipt. In dollars.",
+            "bad": true,
+            "tricked": true,
+            "sanity": -18,
+            "set": [
+              {
+                "flag": "sent_mercy_money",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "quitting": {
+            "text": "Two weeks later: ₦420k back, a spreadsheet, and a hug that lasts the whole spreadsheet.",
+            "wallet": 420000,
+            "scaled": true,
+            "attachment": 15,
+            "trust": 10
+          }
+        }
+      },
+      {
+        "id": "small",
+        "label": "Send ₦50k. \"Small investor. Big prayers.\"",
+        "tags": [
+          "budget"
+        ],
+        "cost": 50000,
+        "receipt": "You invested ₦50k in Mercy's container.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She takes it seriously. A 'shareholder update' lands on WhatsApp every morning at 6am, with charts.",
+            "attachment": 5,
+            "trust": 3
+          }
+        ],
+        "truth_override": {
+          "japa": {
+            "text": "Your ₦50k is 'invested'. Her updates every morning come in dollars. Your share is '$32 (pending)'.",
+            "attachment": 3,
+            "sanity": -5
+          }
+        }
+      },
+      {
+        "id": "invoice",
+        "label": "\"Show me the supplier invoice first.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked to see the supplier invoice first.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "It lands in four seconds. It's real. 'You think I'm a scammer? I'm a businesswoman.' Both can be true. Today, one is.",
+            "attachment": -3,
+            "trust": 5
+          }
+        ],
+        "truth_override": {
+          "chief_sponsor": {
+            "text": "The invoice is billed to 'C. Emeka, Ikoyi'. She snatches the phone back. 'Wrong one.'",
+            "saw_truth": true,
+            "attachment": -3
+          },
+          "japa": {
+            "text": "The invoice is real. The account to pay into is in Toronto.",
+            "saw_truth": true,
+            "sanity": -5
+          }
+        }
+      },
+      {
+        "id": "not_bank",
+        "label": "\"Mercy, I'm a lover, not an investor.\"",
+        "receipt": "You told Mercy you're a lover, not an investor.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Then love me with your time and keep your money,' she says. She means it more than you expected.",
+            "attachment": -4,
+            "sanity": 4
+          }
+        ],
+        "truth_override": {
+          "quitting": {
+            "text": "'Good. I'm tired of investors.' She closes the laptop and buys you suya with her own money.",
+            "trust": 8,
+            "sanity": 4
+          }
+        }
+      },
+      {
+        "id": "balogun",
+        "label": "\"Dubai bags, or Balogun 'originals'?\"",
+        "tags": [
+          "call_out"
+        ],
+        "requires": {
+          "flags": [
+            "asked_original"
+          ]
+        },
+        "receipt": "You reminded her the bags are Balogun originals.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She laughs till she wheezes. 'Okay. Balogun. But the margins are pure Dubai.'",
+            "trust": 8,
+            "attachment": 4
+          }
+        ],
+        "truth_override": {
+          "japa": {
+            "text": "'Balogun. But the money is going somewhere very far.' She freezes. 'Forget I said that.'",
+            "saw_truth": true,
+            "trust": 4
+          }
+        }
+      },
+      {
+        "id": "rate",
+        "label": "\"Is this why you asked the dollar rate?\"",
+        "tags": [
+          "cautious"
+        ],
+        "requires": {
+          "flags": [
+            "knows_rate"
+          ]
+        },
+        "receipt": "You connected her pitch to the dollar rate question.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Everybody asks the dollar rate. It's Lagos.' True. Annoyingly true.",
+            "trust": 3
+          }
+        ],
+        "truth_override": {
+          "japa": {
+            "text": "She closes the laptop slowly. 'Some of it. Yes.' She doesn't explain the rest.",
+            "saw_truth": true
+          }
+        }
+      },
+      {
+        "id": "corp_contract",
+        "label": "[Corporate] Draw up a contract. Both sign. Ivie witnesses.",
+        "vibe": "corporate",
+        "receipt": "You made Mercy sign an investment contract.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She signs like she's waited her whole life for someone to treat her business like a business.",
+            "trust": 10,
+            "attachment": 8
+          }
+        ],
+        "truth_override": {
+          "japa": {
+            "text": "She signs. Clause 4 says 'repayable in Lagos.' She crosses out Lagos and writes 'anywhere'.",
+            "saw_truth": true,
+            "trust": 4
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "mercy_mt_mama",
+    "character": "mercy",
+    "slot": "money_trap",
+    "presentation": "text",
+    "scene": {
+      "location": "mainland_street",
+      "time": "night",
+      "expression": "suspicious",
+      "mood": "negative",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Mama collapsed in Benin. The teaching hospital wants ₦150k deposit before they touch her. I'm begging you."
+      },
+      {
+        "who": "narration",
+        "text": "Three missed calls from her. Then a photo of a hospital receipt, slightly blurry."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "chief_sponsor": {
+        "id": "t_cs_friday",
+        "text": "'I'll go to Benin on Friday. No network till Monday.' Friday to Monday. Of course."
+      },
+      "japa": {
+        "id": "t_jp_canada",
+        "text": "The receipt photo's timestamp: 3:14pm. It's 9:14pm here. Her phone still thinks it's in Toronto."
+      },
+      "quitting": {
+        "id": "t_q_calls",
+        "text": "While she texts, 'Daddy Lekki' calls her four times. 'He wants to pay it. I don't want his money near my mother.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "send",
+        "label": "Send the ₦150k. Mama first.",
+        "cost": 150000,
+        "broke_text": "Your account said 'my own mama nko?'",
+        "receipt": "You sent ₦150k for Mercy's mother's hospital bill.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Sent.",
+            "sanity": -3
+          }
+        ],
+        "truth_override": {
+          "chief_sponsor": {
+            "text": "Mama is real. The hospital is real. Later you learn Chief offered to pay 'if she stays available'. You paid so she didn't have to.",
+            "attachment": 15,
+            "trust": 8
+          },
+          "japa": [
+            {
+              "chance": 0.5,
+              "text": "Mama recovers. Mercy sends a photo from the ward, Mama giving a thumbs up. You feel like family.",
+              "attachment": 12,
+              "trust": 5
+            },
+            {
+              "chance": 0.5,
+              "text": "Mama is fine. She's at a church harvest in Benin, dancing. Your ₦150k is 'proof of funds' now.",
+              "bad": true,
+              "tricked": true,
+              "sanity": -15,
+              "set": [
+                {
+                  "flag": "sent_mercy_money",
+                  "knows": [
+                    "player",
+                    "partner"
+                  ]
+                }
+              ]
+            }
+          ],
+          "quitting": {
+            "text": "Mama is discharged Sunday. She sends a voice note in Edo, then in English: 'God bless you. Marry my daughter.'",
+            "attachment": 18,
+            "trust": 12
+          }
+        }
+      },
+      {
+        "id": "small",
+        "label": "Send ₦20k and a very long prayer.",
+        "tags": [
+          "budget"
+        ],
+        "cost": 20000,
+        "receipt": "You sent ₦20k and a prayer for Mercy's mother.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Thank you.' The prayer was longer than the money. She noticed both.",
+            "attachment": 4
+          }
+        ]
+      },
+      {
+        "id": "call_hospital",
+        "label": "Call the hospital yourself. Verify once.",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You called the hospital to verify.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The nurse confirms: Mrs. Osagie, Ward 3. It's real. Mercy finds out you checked. She's hurt for an hour, then she understands.",
+            "trust": 4,
+            "attachment": -3
+          }
+        ],
+        "truth_override": {
+          "japa": {
+            "text": "The nurse: 'Mrs. Osagie? Discharged last week. Very healthy woman.' Last week.",
+            "saw_truth": true,
+            "sanity": -6
+          }
+        }
+      },
+      {
+        "id": "video",
+        "label": "\"Put Mama on video. I want to greet her.\"",
+        "tags": [
+          "cautious"
+        ],
+        "requires": {
+          "flags": [
+            "knows_mama_benin"
+          ]
+        },
+        "receipt": "You asked to greet Mercy's mother on video.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Mama, in a hospital gown, squints at the screen: 'Is this the one?' Mercy: 'Mama!' Mama: 'I'm asking!'",
+            "attachment": 10,
+            "trust": 10,
+            "chemistry": 3
+          }
+        ],
+        "truth_override": {
+          "japa": {
+            "text": "Mama is on video. In her parlour. Healthy. Confused. 'Hospital? Which hospital?'",
+            "saw_truth": true,
+            "sanity": -8
+          }
+        }
+      },
+      {
+        "id": "lover_drive",
+        "label": "[Lover] Drive to Benin with her tonight.",
+        "vibe": "lover",
+        "cost": 30000,
+        "receipt": "You drove Mercy to Benin overnight.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Five hours on the Benin-Ore road, her head on your shoulder. She sleeps for the first time all week.",
+            "attachment": 15,
+            "trust": 10
+          }
+        ],
+        "truth_override": {
+          "japa": {
+            "text": "Somewhere past Ore she admits it. 'Mama is fine. I needed the money for something bigger.' You keep driving.",
+            "saw_truth": true,
+            "attachment": 5,
+            "trust": 5
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "mercy_mt_popup",
+    "character": "mercy",
+    "slot": "money_trap",
+    "scene": {
+      "location": "lekki_salon",
+      "time": "afternoon",
+      "expression": "charming",
+      "mood": "positive"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "An empty shop on Admiralty Way, glass front, two doors from the salon. Mercy spins in the middle of it."
+      },
+      {
+        "who": "partner",
+        "text": "Saturday: Merci Luxe pop-up. Rent and DJ is ₦200k. Everything else I did myself. Are you in?"
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "chief_sponsor": {
+        "id": "t_cs_cap",
+        "text": "On the VIP chair, already reserved: a red chief's cap. 'For a special guest,' she says. Too fast."
+      },
+      "japa": {
+        "id": "t_jp_dollars",
+        "text": "The price tags are in dollars. 'Diaspora market,' she says. Which diaspora shops on Admiralty Way?"
+      },
+      "quitting": {
+        "id": "t_q_scared",
+        "text": "A Prado slows outside the glass. She drops a whole rack of bags and doesn't pick them up till it's gone."
+      }
+    },
+    "choices": [
+      {
+        "id": "fund",
+        "label": "Pay the ₦200k. Her name on a glass door.",
+        "tags": [
+          "luxury"
+        ],
+        "cost": 200000,
+        "broke_text": "Your account said 'glass door? I'm a wooden door account.'",
+        "receipt": "You paid for Mercy's pop-up shop.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Saturday, the shop is packed. Mercy cries in the storeroom for exactly ninety seconds, then sells eleven bags.",
+            "attachment": 15,
+            "trust": 5,
+            "set": [
+              {
+                "flag": "launch_backed",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "chief_sponsor": {
+            "text": "Saturday, the shop is packed. At 4pm a red cap walks in and pays the DJ's balance. She doesn't look at you for an hour.",
+            "attachment": 8,
+            "sanity": -8,
+            "set": [
+              {
+                "flag": "launch_backed",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "quitting": {
+            "text": "Saturday, the shop is packed. She cries in the storeroom for ninety seconds, then introduces you as 'my partner. Business and otherwise.'",
+            "attachment": 15,
+            "trust": 10,
+            "set": [
+              {
+                "flag": "launch_backed",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "sales",
+        "label": "Be her free salesperson for the day.",
+        "tags": [
+          "budget"
+        ],
+        "receipt": "You worked Mercy's pop-up for free.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You sell four bags to your own aunties. Mercy calls you 'Head of Sales' for the rest of the week.",
+            "attachment": 8,
+            "trust": 6,
+            "set": [
+              {
+                "flag": "launch_backed",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "plan",
+        "label": "\"Where's the business plan?\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked to see Mercy's business plan.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She hands you a notebook: three years of plans in biro, prices in pencil. It's good. It's really good.",
+            "trust": 8,
+            "attachment": 3
+          }
+        ],
+        "truth_override": {
+          "japa": {
+            "text": "Year one: Lagos. Year two: 'remote'. Year three is in different ink: 'Toronto'.",
+            "saw_truth": true,
+            "trust": 3
+          }
+        }
+      },
+      {
+        "id": "glass_door",
+        "label": "\"This is the glass door you told me about.\"",
+        "requires": {
+          "flags": [
+            "knows_store_dream"
+          ]
+        },
+        "receipt": "You remembered Mercy's dream of a glass-front store.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She goes very still. 'You remembered.' She doesn't ask for the ₦200k again. She asks what you think of the window.",
+            "attachment": 12,
+            "trust": 12,
+            "chemistry": 4
+          }
+        ]
+      },
+      {
+        "id": "bigboy_stock",
+        "label": "[Big Boy] Buy her whole first stock. Cash.",
+        "tags": [
+          "luxury"
+        ],
+        "vibe": "bigboy",
+        "cost": 400000,
+        "receipt": "You bought Mercy's entire first stock.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She sells it back to you at cost and to your friends at triple. You've never been so respectfully robbed.",
+            "attachment": 15,
+            "clout": 20
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mercy_pd_owambe",
+    "character": "mercy",
+    "slot": "public_drama",
+    "scene": {
+      "location": "mainland_street",
+      "time": "golden",
+      "expression": "charming",
+      "mood": "neutral",
+      "npc": {
+        "name": "Chief Emeka",
+        "look": "chief_emeka"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Saturday owambe in Surulere. Mercy in gold aso-ebi, on your arm. Across the hall, a man in a red cap sprays ₦1,000 notes like confetti."
+      },
+      {
+        "who": "Chief Emeka",
+        "text": "Mercy! My daughter! Come and greet!"
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "sets": [
+      {
+        "flag": "met_chief",
+        "knows": [
+          "player",
+          "partner"
+        ]
+      }
+    ],
+    "tells": {
+      "chief_sponsor": {
+        "id": "t_cs_cap",
+        "text": "When she bends to greet him, Chief straightens her necklace. The way you straighten something you paid for."
+      },
+      "japa": {
+        "id": "t_jp_dollars",
+        "text": "Mercy gathers sprayed notes off the floor, counting under her breath: '...that's nine dollars.'"
+      },
+      "quitting": {
+        "id": "t_q_scared",
+        "text": "When Chief waves, Mercy grips your arm hard enough to bruise. 'Don't leave me alone with any of them.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "outspray",
+        "label": "Spray Mercy. Outspray the red cap.",
+        "tags": [
+          "luxury"
+        ],
+        "cost": 60000,
+        "receipt": "You outsprayed Chief Emeka at the owambe.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The hall turns. Chief bows, amused: 'A competitor!' Mercy glows like the generator just came on.",
+            "clout": 20,
+            "attachment": 10
+          }
+        ]
+      },
+      {
+        "id": "small_notes",
+        "label": "Spray ₦50 notes. Many, many of them.",
+        "tags": [
+          "budget"
+        ],
+        "cost": 5000,
+        "receipt": "You sprayed ₦50 notes at the owambe.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "From far, it looks like a lot. The aunties respect the strategy. Chief does not.",
+            "clout": 8,
+            "attachment": 5
+          }
+        ]
+      },
+      {
+        "id": "greet",
+        "label": "Shake Chief's hand: \"I'm her person.\"",
+        "receipt": "You introduced yourself to Chief Emeka as Mercy's person.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Chief laughs too loud. 'Her person! Good, good.' He holds your hand three seconds too long.",
+            "clout": 5
+          }
+        ],
+        "truth_override": {
+          "chief_sponsor": {
+            "text": "Chief's smile freezes. 'Her person.' He looks at Mercy. Mercy looks at the jollof like it owes her money.",
+            "sanity": -8,
+            "clout": 5
+          },
+          "quitting": {
+            "text": "Chief chuckles. 'So she found somebody. Good. She returned my car, you know. Stubborn girl.' Mercy exhales.",
+            "trust": 8,
+            "attachment": 4
+          }
+        }
+      },
+      {
+        "id": "suya_exit",
+        "label": "Take Mercy out the back for suya.",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You took Mercy out of the owambe for suya.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "On the kerb outside, she eats suya off newspaper and laughs properly for the first time today.",
+            "attachment": 8,
+            "trust": 5
+          }
+        ],
+        "truth_override": {
+          "chief_sponsor": {
+            "text": "Outside, she says 'thank you'. She doesn't say for what. You know for what.",
+            "attachment": 6,
+            "sanity": -5
+          }
+        }
+      },
+      {
+        "id": "weekends",
+        "label": "\"Is that why your weekends go dark?\"",
+        "tags": [
+          "cautious",
+          "call_out"
+        ],
+        "requires": {
+          "flags": [
+            "knows_weekend_rule"
+          ]
+        },
+        "receipt": "You asked if Chief was why her weekends go dark.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'No. That's a different story.' She squeezes your hand. 'I'll tell you. Not at an owambe.'",
+            "trust": 4
+          }
+        ],
+        "truth_override": {
+          "chief_sponsor": {
+            "text": "Mercy doesn't answer. Chief does, from across the hall: 'Mercy! Don't forget Friday!'",
+            "saw_truth": true,
+            "sanity": -8
+          }
+        }
+      },
+      {
+        "id": "bigboy_sprayoff",
+        "label": "[Big Boy] Challenge Chief to a spray-off.",
+        "tags": [
+          "luxury"
+        ],
+        "vibe": "bigboy",
+        "cost": 150000,
+        "receipt": "You beat Chief Emeka in a spray-off.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You win. Chief loses face in front of 300 guests and one videographer. He will remember your face.",
+            "clout": 35,
+            "attachment": 12,
+            "exposure": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mercy_pd_friends",
+    "character": "mercy",
+    "slot": "public_drama",
+    "scene": {
+      "location": "vi_club_vip",
+      "time": "night",
+      "expression": "charming",
+      "mood": "neutral",
+      "npc": {
+        "name": "Ivie"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "'I'm coming with my friends.' She came with five. A VIP lounge on Ozumba Mbadiwe. Ivie has ordered two bottles already."
+      },
+      {
+        "who": "Ivie",
+        "text": "So you're the one paying? Lovely. Waiter! The big sparkler!"
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "chief_sponsor": {
+        "id": "t_cs_friday",
+        "text": "Ivie, loudly: 'Enjoy her tonight. From Friday, she's booked till Monday.' Mercy throws a napkin at her."
+      },
+      "japa": {
+        "id": "t_jp_canada",
+        "text": "Ivie raises her glass: 'To Mercy's last Lagos summer!' Mercy: 'She's drunk. Ignore her.'"
+      },
+      "quitting": {
+        "id": "t_q_calls",
+        "text": "The waiter leans in: 'Madam, Daddy Lekki says the table is on him.' Mercy: 'Tell him no. Tell him NO.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "pay_all",
+        "label": "Pay the whole bill. ₦180k. Be a legend.",
+        "tags": [
+          "luxury"
+        ],
+        "cost": 180000,
+        "broke_text": "Your account left the lounge before you did.",
+        "receipt": "You paid for Mercy and five friends.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Ivie declares you family. Mercy is a little embarrassed and a lot impressed.",
+            "attachment": 12,
+            "clout": 20
+          }
+        ]
+      },
+      {
+        "id": "mine_only",
+        "label": "\"Me and Mercy are paid. Friends, una well done.\"",
+        "tags": [
+          "budget"
+        ],
+        "cost": 25000,
+        "receipt": "You paid only for yourself and Mercy.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Silence. Then Ivie laughs: 'Okay, accountant.' Mercy is laughing hardest.",
+            "attachment": 6,
+            "trust": 5,
+            "clout": -5
+          }
+        ]
+      },
+      {
+        "id": "walk",
+        "label": "\"Enjoy, ladies!\" Walk out before the bill.",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You walked out before the bill came.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "Mercy follows you out, laughing. 'You're mad. I like mad.' Ivie pays. Ivie always has money.",
+            "attachment": 6,
+            "trust": 3
+          },
+          {
+            "chance": 0.5,
+            "text": "The bill comes to Mercy. She pays it. She doesn't call you for a day.",
+            "bad": true,
+            "attachment": -10
+          }
+        ]
+      },
+      {
+        "id": "suya",
+        "label": "\"Skip the bottles. Suya run. My treat.\"",
+        "tags": [
+          "budget"
+        ],
+        "requires": {
+          "flags": [
+            "knows_suya"
+          ]
+        },
+        "cost": 10000,
+        "receipt": "You swapped bottle service for a suya run.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Six women on a kerb at 2am, eating suya off newspaper. Mercy: 'Best night I've had in a year.' She means it.",
+            "attachment": 12,
+            "trust": 8,
+            "chemistry": 4
+          }
+        ]
+      },
+      {
+        "id": "ask_ivie",
+        "label": "Ask Ivie, quietly, what Mercy isn't telling you",
+        "tags": [
+          "investigate"
+        ],
+        "requires": {
+          "flags": [
+            "trusts_ivie"
+          ]
+        },
+        "receipt": "You asked Ivie what Mercy wasn't telling you.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Ivie: 'Ask her yourself.' Ivie physically cannot lie, so she just doesn't answer.",
+            "sanity": -2
+          }
+        ],
+        "truth_override": {
+          "chief_sponsor": {
+            "text": "Ivie whispers: 'There's a Chief. Red cap. He pays her rent and owns her Fridays.'",
+            "saw_truth": true,
+            "sanity": -8
+          },
+          "japa": {
+            "text": "Ivie: 'She's going. Canada. Soon. You didn't hear it from me.' You did, though.",
+            "saw_truth": true,
+            "sanity": -8
+          },
+          "quitting": {
+            "text": "Ivie: 'She's leaving all of them for you. Don't you dare waste it.'",
+            "trust": 8,
+            "attachment": 4
+          }
+        }
+      },
+      {
+        "id": "runs_decline",
+        "label": "[Runs] Fake a card decline. Vanish in the confusion.",
+        "vibe": "runs",
+        "receipt": "You faked a card decline to escape the bill.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "Clean exit. Mercy texts: 'Thief 😂. Respect.'",
+            "attachment": 5
+          },
+          {
+            "chance": 0.5,
+            "text": "Ivie catches you at the door. Ivie always catches people at the door.",
+            "bad": true,
+            "clout": -10,
+            "exposure": 10,
+            "attachment": -8
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mercy_pd_live",
+    "character": "mercy",
+    "slot": "public_drama",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "expression": "charming",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Mercy is live, selling bags. 4,000 viewers. She pulls you into frame without warning."
+      },
+      {
+        "who": "partner",
+        "text": "Everybody, say hi to my person! Person, tell them this bag is original."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "chief_sponsor": {
+        "id": "t_cs_cap",
+        "text": "A comment floats up from an account whose picture is a red chief's cap: 'Call me. Now.' She swipes it away."
+      },
+      "japa": {
+        "id": "t_jp_dollars",
+        "text": "Every price she calls, she says twice: naira for the live, dollars under her breath."
+      },
+      "quitting": {
+        "id": "t_q_calls",
+        "text": "A comment from 'Daddy Lekki': 'Remember who paid for that ring light.' She blocks him live, smiling."
+      }
+    },
+    "choices": [
+      {
+        "id": "sell",
+        "label": "\"Original. I swear on my village.\"",
+        "receipt": "You swore the bags were original on Mercy's live.",
+        "outcomes": [
+          {
+            "chance": 0.7,
+            "text": "Nine bags sold in four minutes. Off-camera, she mouths 'marry me'.",
+            "attachment": 10,
+            "clout": 12
+          },
+          {
+            "chance": 0.3,
+            "text": "A viewer: 'I bought this same bag in Balogun yesterday for ₦9k.' Two hundred laughing emojis.",
+            "bad": true,
+            "clout": -5,
+            "exposure": 10
+          }
+        ]
+      },
+      {
+        "id": "duck",
+        "label": "Duck out of frame. Your face is your business.",
+        "tags": [
+          "discreet"
+        ],
+        "receipt": "You ducked out of Mercy's live.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She keeps selling, but texts you mid-live: 'Shy? Okay. I'll keep you for myself.'",
+            "attachment": 4,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "clapback",
+        "label": "Reply to the shady comment live: \"Who is this?\"",
+        "tags": [
+          "public_embarrassment",
+          "toxic"
+        ],
+        "receipt": "You fought a commenter on Mercy's live.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "4,000 people watch you fight a comment. The clip outlives the bags.",
+            "clout": 15,
+            "exposure": 20
+          }
+        ]
+      },
+      {
+        "id": "buy_bag",
+        "label": "Buy the bag live to boost her numbers. ₦70k.",
+        "tags": [
+          "luxury"
+        ],
+        "cost": 70000,
+        "receipt": "You bought a bag on Mercy's live.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'SOLD to my person!' Orders spike. She sends you the bag with a note: 'Not original. Neither are you. Love you.'",
+            "attachment": 10,
+            "clout": 10
+          }
+        ]
+      },
+      {
+        "id": "keyring",
+        "label": "Buy the ₦8k keyring. Loudly.",
+        "tags": [
+          "budget"
+        ],
+        "cost": 8000,
+        "receipt": "You bought a keyring on Mercy's live.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'A KEYRING!' She makes it a whole segment. Keyrings sell out.",
+            "attachment": 6,
+            "clout": 6
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mercy_cf_chief",
+    "character": "mercy",
+    "slot": "confrontation",
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "night",
+      "expression": "caught",
+      "mood": "negative",
+      "npc": {
+        "name": "Chief Emeka",
+        "look": "chief_emeka"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "One week together. Ikoyi rooftop. A man in a red cap pulls out a chair at your table without asking."
+      },
+      {
+        "who": "Chief Emeka",
+        "text": "Mercy. Friday is tomorrow. Why are you eating my money with somebody else?"
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "requires": {
+      "truth": [
+        "chief_sponsor"
+      ]
+    },
+    "tells": {
+      "chief_sponsor": {
+        "id": "t_cs_prado",
+        "text": "Down on Bourdillon, Musa leans on the tinted Prado. He waves at Mercy like an old colleague."
+      }
+    },
+    "choices": [
+      {
+        "id": "choose",
+        "label": "\"Mercy. Him or me. Now.\"",
+        "receipt": "You made Mercy choose between you and Chief.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "She takes off his bracelet and drops it in his pepper soup. 'You. I choose you.' Chief eats the soup anyway.",
+            "saw_truth": true,
+            "attachment": 20,
+            "trust": 12
+          },
+          {
+            "chance": 0.5,
+            "text": "She looks at the table a long time. 'Give me till Monday.' Monday. Always Monday.",
+            "bad": true,
+            "saw_truth": true,
+            "attachment": -10,
+            "sanity": -15
+          }
+        ]
+      },
+      {
+        "id": "envelope",
+        "label": "Take Chief's envelope. ₦1m to disappear.",
+        "receipt": "You took ₦1m from Chief to disappear.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He pays you to vanish. Mercy watches you count it. You both learn what you are.",
+            "wallet": 1000000,
+            "saw_truth": true,
+            "attachment": -30,
+            "trust": -20,
+            "sanity": -5
+          }
+        ]
+      },
+      {
+        "id": "announce",
+        "label": "Stand up: \"Everybody, meet Mercy's sponsor!\"",
+        "tags": [
+          "public_embarrassment",
+          "toxic"
+        ],
+        "receipt": "You announced Mercy's sponsor to the whole rooftop.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The terrace turns. Phones rise. Chief hides behind his cap. Mercy walks out without her bag.",
+            "clout": 25,
+            "exposure": 30,
+            "saw_truth": true,
+            "truth_exposed": true,
+            "goal": {
+              "revenge": 40
+            },
+            "attachment": -20
+          }
+        ]
+      },
+      {
+        "id": "leave",
+        "label": "Leave cash for your half. Walk out.",
+        "receipt": "You paid your half and walked out on Mercy and Chief.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You pay for your pepper soup and take the stairs. Behind you, Mercy says your name once. You keep going.",
+            "end": "walked_away",
+            "saw_truth": true,
+            "sanity": 10
+          }
+        ]
+      },
+      {
+        "id": "ce",
+        "label": "\"C.E. on the logistics phone. Hello, C.E.\"",
+        "tags": [
+          "call_out"
+        ],
+        "requires": {
+          "flags": [
+            "asked_phones"
+          ]
+        },
+        "receipt": "You greeted Chief by his contact name.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Chief blinks. Mercy laughs despite herself. 'They notice everything,' she tells him. 'Unlike you.'",
+            "saw_truth": true,
+            "trust": 8,
+            "attachment": 8,
+            "clout": 10
+          }
+        ]
+      },
+      {
+        "id": "gold",
+        "label": "\"'Wear the gold one. Musa comes at seven.'\"",
+        "tags": [
+          "call_out"
+        ],
+        "requires": {
+          "flags": [
+            "saw_ce_texts"
+          ]
+        },
+        "receipt": "You quoted Chief's text back to him.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Chief goes grey. Mercy stares at you: 'You read my phone.' Then, at Chief: 'And you wrote it.'",
+            "saw_truth": true,
+            "clout": 10,
+            "attachment": 5
+          }
+        ]
+      },
+      {
+        "id": "sand",
+        "label": "\"Every Monday, Ikoyi sand. Now I know whose.\"",
+        "tags": [
+          "call_out"
+        ],
+        "requires": {
+          "any_flags": [
+            "asked_weekend",
+            "heard_chief"
+          ]
+        },
+        "receipt": "You told Mercy you knew where her weekends went.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Mercy closes her eyes. 'I was going to end it before I told you.' Chief laughs. 'End what?' She turns to him. 'This.'",
+            "saw_truth": true,
+            "trust": 6,
+            "attachment": 6
+          }
+        ]
+      },
+      {
+        "id": "daughter",
+        "label": "\"At the owambe you called her 'daughter'.\"",
+        "tags": [
+          "call_out"
+        ],
+        "requires": {
+          "flags": [
+            "met_chief"
+          ]
+        },
+        "receipt": "You reminded Chief he called Mercy his daughter.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Chief has no next line. Mercy, finally: 'Daughter. Exactly. Go home to your wives, Chief.' He goes.",
+            "saw_truth": true,
+            "attachment": 15,
+            "trust": 10,
+            "clout": 10
+          }
+        ]
+      },
+      {
+        "id": "refund",
+        "label": "\"Refund what I sent your 'daughter'.\"",
+        "requires": {
+          "flags": [
+            "sent_mercy_money"
+          ]
+        },
+        "receipt": "You asked Chief to refund the money you sent Mercy.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "Chief transfers it at the table, mostly to make you leave. Mercy doesn't stop him.",
+            "wallet": 300000,
+            "scaled": true,
+            "saw_truth": true,
+            "attachment": -10
+          },
+          {
+            "chance": 0.5,
+            "text": "'Is it my business?' Chief laughs. Mercy looks away. Your money is in a Prado somewhere.",
+            "bad": true,
+            "saw_truth": true,
+            "sanity": -10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mercy_cf_japa",
+    "character": "mercy",
+    "slot": "confrontation",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "expression": "sad",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Her flat, half packed. Two suitcases. A Canadian study permit on the table, next to the gift you gave her."
+      },
+      {
+        "who": "partner",
+        "text": "My flight is Tuesday. I was going to tell you Monday. You were the last-- you were the best stop."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "requires": {
+      "truth": [
+        "japa"
+      ]
+    },
+    "tells": {
+      "japa": {
+        "id": "t_jp_ielts",
+        "text": "On top of the suitcase: the IELTS book. 'Band 8' circled in red. She got it."
+      }
+    },
+    "choices": [
+      {
+        "id": "take_me",
+        "label": "\"Take me with you.\"",
+        "receipt": "You asked Mercy to take you to Canada.",
+        "outcomes": [
+          {
+            "chance": 0.45,
+            "text": "She stares. Then she laughs and cries at the same time. 'You're serious?' You are. She adds your name to a list.",
+            "saw_truth": true,
+            "attachment": 20,
+            "trust": 15
+          },
+          {
+            "chance": 0.55,
+            "text": "'I can't carry anyone. I can barely carry me.' She kisses your forehead like a goodbye.",
+            "bad": true,
+            "saw_truth": true,
+            "attachment": -15,
+            "sanity": -15
+          }
+        ]
+      },
+      {
+        "id": "help_pack",
+        "label": "Help her pack. Love can carry suitcases.",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You helped Mercy pack for Toronto.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You fold her clothes till 2am. She tells you everything: Mama, the money, the fear. You stay till the cab.",
+            "saw_truth": true,
+            "trust": 15,
+            "attachment": 10,
+            "sanity": -5
+          }
+        ]
+      },
+      {
+        "id": "tell_sponsors",
+        "label": "Tell her sponsors she's leaving Tuesday.",
+        "tags": [
+          "toxic"
+        ],
+        "receipt": "You told Mercy's sponsors she was leaving.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Three sponsors, one group chat. By midnight her street is full of Prados. She misses her flight. She never forgives you.",
+            "saw_truth": true,
+            "truth_exposed": true,
+            "goal": {
+              "revenge": 50
+            },
+            "attachment": -40,
+            "clout": 15,
+            "exposure": 20
+          }
+        ]
+      },
+      {
+        "id": "leave",
+        "label": "\"Safe flight, Mercy.\" Leave first.",
+        "receipt": "You said goodbye first and left.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You leave before she can. It's the one thing in Lagos you got to do first.",
+            "end": "walked_away",
+            "saw_truth": true,
+            "sanity": 5
+          }
+        ]
+      },
+      {
+        "id": "my_money",
+        "label": "\"My money. Is it in that suitcase?\"",
+        "requires": {
+          "flags": [
+            "sent_mercy_money"
+          ]
+        },
+        "receipt": "You asked for your money back before her flight.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She transfers it back in front of you. 'I was going to send it from Toronto. I swear.' You believe half.",
+            "wallet": 300000,
+            "scaled": true,
+            "saw_truth": true,
+            "trust": 5
+          }
+        ]
+      },
+      {
+        "id": "knew",
+        "label": "\"I knew. I was waiting for you to say it.\"",
+        "tags": [
+          "call_out"
+        ],
+        "requires": {
+          "any_flags": [
+            "saw_visa",
+            "heard_toronto",
+            "asked_phones"
+          ]
+        },
+        "receipt": "You told Mercy you'd known about Canada all along.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She sits down on the suitcase. 'And you stayed?' 'I stayed.' Something changes in her face.",
+            "saw_truth": true,
+            "attachment": 15,
+            "trust": 15
+          }
+        ]
+      },
+      {
+        "id": "rate",
+        "label": "\"So that's why you asked the dollar rate.\"",
+        "tags": [
+          "call_out"
+        ],
+        "requires": {
+          "flags": [
+            "knows_rate"
+          ]
+        },
+        "receipt": "You connected the dollar rate question to her japa plan.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Every day for a year.' She shows you the spreadsheet. Your gifts are in it, in dollars. Beside your name she wrote: 'nice one'.",
+            "saw_truth": true,
+            "trust": 10,
+            "attachment": 8
+          }
+        ]
+      },
+      {
+        "id": "runs_bikes",
+        "label": "[Runs] Buy her bikes and client list. ₦150k.",
+        "vibe": "runs",
+        "cost": 150000,
+        "receipt": "You bought Mercy's business and flipped it.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You flip the bikes and her client list for ₦1.1m by Friday. She calls from Toronto: 'Thief. Respect.'",
+            "wallet": 1100000,
+            "saw_truth": true,
+            "attachment": -10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mercy_cf_quitting",
+    "character": "mercy",
+    "slot": "confrontation",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "expression": "suspicious",
+      "mood": "negative",
+      "npc": {
+        "name": "Daddy Lekki"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Midnight. A silver Prado blocks Mercy's gate. A man in a crisp kaftan steps out with two boys."
+      },
+      {
+        "who": "Daddy Lekki",
+        "text": "Mercy owes me two years of rent and one explanation. And who are you?"
+      },
+      {
+        "who": "partner",
+        "text": "I told you. I'm out. I returned the car."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "requires": {
+      "truth": [
+        "quitting"
+      ]
+    },
+    "tells": {
+      "quitting": {
+        "id": "t_q_scared",
+        "text": "Mercy is behind you, holding your shirt the way a child holds a parent in Balogun Market."
+      }
+    },
+    "choices": [
+      {
+        "id": "stand",
+        "label": "Stand beside her: \"She said she's out.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You stood beside Mercy when her ex-sponsor came.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He studies you for a long time. Then he laughs and leaves. 'Lagos is small, my friend.' Mercy doesn't let go of your hand all night.",
+            "attachment": 15,
+            "trust": 15,
+            "sanity": -5
+          }
+        ]
+      },
+      {
+        "id": "pay",
+        "label": "\"How much? I'll pay. Then go.\"",
+        "cost": 200000,
+        "broke_text": "Your account said 'buy freedom with what?'",
+        "receipt": "You paid off Mercy's ex-sponsor.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He counts it slowly. 'She's expensive.' 'She's free,' you say. Mercy hears that. She'll never forget it.",
+            "attachment": 20,
+            "trust": 10
+          }
+        ]
+      },
+      {
+        "id": "stream",
+        "label": "Livestream him to the Parlour.",
+        "tags": [
+          "toxic",
+          "public_embarrassment"
+        ],
+        "receipt": "You livestreamed Mercy's ex-sponsor at her gate.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "40,000 views. He's embarrassed. So is Mercy: 'I asked you to stand with me, not to make me content.'",
+            "clout": 20,
+            "exposure": 25,
+            "trust": -10
+          }
+        ]
+      },
+      {
+        "id": "security",
+        "label": "Call estate security and your Bestie. Loudly.",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You called estate security on Mercy's ex-sponsor.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Security arrives with a torch and one cane. Daddy Lekki leaves with most of his dignity. Mercy laughs, shaking.",
+            "trust": 10,
+            "attachment": 8
+          }
+        ]
+      },
+      {
+        "id": "leave",
+        "label": "\"This is too much wahala.\" Go home.",
+        "receipt": "You left Mercy alone with her ex-sponsor.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You leave. Through the window you see her standing alone between his boys and her gate.",
+            "end": "walked_away",
+            "sanity": -5
+          }
+        ]
+      },
+      {
+        "id": "wrong_chat",
+        "label": "\"You're Daddy Lekki. The wrong-chat Daddy.\"",
+        "tags": [
+          "call_out"
+        ],
+        "requires": {
+          "flags": [
+            "asked_daddy"
+          ]
+        },
+        "receipt": "You named Mercy's ex-sponsor to his face.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He blinks. 'She told you?' 'Everything,' Mercy says. He has no next line. He gets back in the Prado.",
+            "trust": 12,
+            "attachment": 10,
+            "clout": 5
+          }
+        ]
+      },
+      {
+        "id": "weekends",
+        "label": "\"Her weekends belong to her now.\"",
+        "tags": [
+          "call_out"
+        ],
+        "requires": {
+          "flags": [
+            "asked_weekend"
+          ]
+        },
+        "receipt": "You told him Mercy's weekends were hers now.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Mercy looks at you. 'You asked where I was every Monday. Now you know.' She closes the gate on him herself.",
+            "trust": 12,
+            "attachment": 12
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mercy_po_phone",
+    "character": "mercy",
+    "slot": "payoff",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "expression": "angry",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Three phones in this house and you went through mine. Sit down. What did you find?"
+      }
+    ],
+    "requires": {
+      "partner_knows": [
+        "secret_checked_phone"
+      ],
+      "not_flags": [
+        "phone_talked"
+      ],
+      "flag_age": {
+        "flag": "secret_checked_phone",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "secret_checked_phone"
+    ],
+    "priority": 5,
+    "partner_reacts_to": [
+      "secret_checked_phone"
+    ],
+    "choices": [
+      {
+        "id": "enough",
+        "label": "\"Enough.\" Hold her stare.",
+        "receipt": "You told Mercy you'd found enough.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She nods slowly. 'Then you know. And you're still here. Interesting.'",
+            "trust": -5,
+            "attachment": 3,
+            "set": [
+              "phone_talked"
+            ]
+          }
+        ],
+        "truth_override": {
+          "good_one": {
+            "text": "'You found Mama's voice notes and a man I'm leaving. Happy?' She sleeps on the couch.",
+            "attachment": -10,
+            "set": [
+              "phone_talked"
+            ]
+          }
+        }
+      },
+      {
+        "id": "sorry",
+        "label": "\"Nothing. I'm sorry. I panicked.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You apologised for going through her phone.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Next time you panic, panic at me. Not my phone.' She puts the kettle on. Truce.",
+            "attachment": -3,
+            "sanity": 5,
+            "set": [
+              "phone_talked"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "mine",
+        "label": "Hand her your phone. \"Fair is fair.\"",
+        "receipt": "You handed Mercy your unlocked phone.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She scrolls for four seconds and hands it back. 'Your life is so boring. I love it.'",
+            "trust": 8,
+            "attachment": 5,
+            "set": [
+              "phone_talked"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mercy_po_launch",
+    "character": "mercy",
+    "slot": "payoff",
+    "scene": {
+      "location": "lekki_salon",
+      "time": "afternoon",
+      "expression": "happy",
+      "mood": "positive"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "The day after the pop-up. Merci Luxe made ₦640k. Mercy is counting it on the shop floor in her socks."
+      },
+      {
+        "who": "partner",
+        "text": "Half of this is yours. Don't argue. Or argue. I like when you argue."
+      }
+    ],
+    "requires": {
+      "flags": [
+        "launch_backed"
+      ],
+      "not_flags": [
+        "launch_done"
+      ],
+      "flag_age": {
+        "flag": "launch_backed",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "launch_backed"
+    ],
+    "priority": 5,
+    "choices": [
+      {
+        "id": "take_half",
+        "label": "Take your half. You earned it.",
+        "receipt": "You took your half of the pop-up profit.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She transfers it with a note: 'Shareholder dividend 😌'.",
+            "wallet": 150000,
+            "attachment": 5,
+            "set": [
+              "launch_done"
+            ]
+          }
+        ],
+        "truth_override": {
+          "japa": {
+            "text": "She transfers it: 'Shareholder dividend.' Her half goes straight to a Toronto account. You see the app.",
+            "wallet": 150000,
+            "sanity": -5,
+            "set": [
+              "launch_done"
+            ]
+          }
+        }
+      },
+      {
+        "id": "lease",
+        "label": "\"Reinvest it. Sign the real lease.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You told Mercy to reinvest and sign the lease.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She signs a one-year lease with your pen. 'One year on Admiralty Way,' she says, like a promise.",
+            "attachment": 10,
+            "trust": 10,
+            "set": [
+              "launch_done"
+            ]
+          }
+        ],
+        "truth_override": {
+          "japa": {
+            "text": "She holds the pen over the lease. 'One year...' She doesn't sign. 'I can't promise you a year.'",
+            "saw_truth": true,
+            "sanity": -8,
+            "set": [
+              "launch_done"
+            ]
+          },
+          "chief_sponsor": {
+            "text": "She signs. The landlord smiles: 'Chief already paid the caution fee.' Mercy closes her eyes.",
+            "saw_truth": true,
+            "sanity": -5,
+            "set": [
+              "launch_done"
+            ]
+          }
+        }
+      },
+      {
+        "id": "floor_suya",
+        "label": "Celebrate on the floor: suya and Fanta.",
+        "receipt": "You celebrated Mercy's pop-up with suya on the floor.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You eat suya on the shop floor till the security man joins you. He has opinions about pricing.",
+            "attachment": 8,
+            "chemistry": 3,
+            "set": [
+              "launch_done"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mercy_po_story_dm",
+    "character": "mercy",
+    "slot": "payoff",
+    "presentation": "text",
+    "scene": {
+      "location": "mainland_street",
+      "time": "night",
+      "mood": "negative",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "A DM from a stranger with no profile picture."
+      },
+      {
+        "who": "Unknown",
+        "text": "That kitchen in your story. I know those tiles. Tell Mercy I'm watching."
+      }
+    ],
+    "requires": {
+      "flags": [
+        "secret_story_post"
+      ],
+      "not_flags": [
+        "story_dm_done"
+      ],
+      "flag_age": {
+        "flag": "secret_story_post",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "secret_story_post"
+    ],
+    "priority": 4,
+    "choices": [
+      {
+        "id": "who",
+        "label": "\"Who is this?\"",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You asked the stranger who they were.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Read. No reply. The tiles look different now.",
+            "sanity": -3,
+            "set": [
+              "story_dm_done"
+            ]
+          }
+        ],
+        "truth_override": {
+          "chief_sponsor": {
+            "text": "A voice note: an older man, laughing. 'Ask her who paid for the tiles. 🧢'",
+            "saw_truth": true,
+            "sanity": -10,
+            "set": [
+              "story_dm_done"
+            ]
+          },
+          "japa": {
+            "text": "'Her landlord. She gave notice for December and said she's relocating. Relocating where, abeg?'",
+            "saw_truth": true,
+            "sanity": -5,
+            "set": [
+              "story_dm_done"
+            ]
+          },
+          "quitting": {
+            "text": "'Daddy Lekki. She owes me. Tell her to come back.' You screenshot it for her.",
+            "sanity": -5,
+            "set": [
+              "story_dm_done"
+            ]
+          }
+        }
+      },
+      {
+        "id": "forward",
+        "label": "Forward it to Mercy.",
+        "tags": [
+          "contact_partner",
+          "cautious"
+        ],
+        "receipt": "You forwarded the stranger's DM to Mercy.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She calls in ten seconds. 'Block him. Delete it. I'm coming over.' She comes over.",
+            "attachment": 5,
+            "set": [
+              "story_dm_done"
+            ],
+            "reveal": [
+              {
+                "flag": "secret_story_post",
+                "to": [
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "quitting": {
+            "text": "She calls, shaking. 'That's him. I'm sorry you're in it now. I'll fix it.' She arrives with banga and a plan.",
+            "trust": 10,
+            "attachment": 8,
+            "set": [
+              "story_dm_done"
+            ],
+            "reveal": [
+              {
+                "flag": "secret_story_post",
+                "to": [
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "chief_sponsor": {
+            "text": "'Ignore him. Old client.' She sends ₦50k. 'For the inconvenience.' Inconvenience costs ₦50k now.",
+            "wallet": 50000,
+            "trust": -5,
+            "set": [
+              "story_dm_done"
+            ],
+            "reveal": [
+              {
+                "flag": "secret_story_post",
+                "to": [
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "delete",
+        "label": "Delete the story. Block. Breathe.",
+        "tags": [
+          "discreet"
+        ],
+        "receipt": "You deleted your story and blocked the stranger.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Deleted. But the screenshot is already in three group chats.",
+            "sanity": -5,
+            "exposure": 5,
+            "set": [
+              "story_dm_done"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mercy_tt_mama",
+    "character": "mercy",
+    "slot": "talking_time",
+    "presentation": "voice_note",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "morning",
+      "mood": "positive",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Good morning! Mama called. She calls every Sunday at 8pm from Benin. If I don't pick, she calls the pastor. If the pastor can't find me, police. Anyway. Breakfast?"
+      }
+    ],
+    "detail": {
+      "flag": "knows_mama_benin",
+      "missed": {
+        "chemistry": -3
+      }
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Sunday, 8pm: Mama's hour. Noted 😂\"",
+        "caught": true,
+        "receipt": "You noted Mama's Sunday 8pm call.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Don't you dare call her. She'll ask for your surname and your blood group.'",
+            "attachment": 3,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "akara",
+        "label": "\"Breakfast? Send akara money.\"",
+        "receipt": "You asked Mercy for akara money.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "₦5k lands with a laughing emoji. 'Ehen. You too have started.'",
+            "wallet": 5000,
+            "attachment": 2
+          }
+        ]
+      },
+      {
+        "id": "sleep",
+        "label": "Send a heart. Go back to sleep.",
+        "receipt": "You sent a heart and went back to sleep.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She sends a sleeping emoji back. Romance is dead. Long live romance.",
+            "sanity": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mercy_tt_ivie",
+    "character": "mercy",
+    "slot": "talking_time",
+    "presentation": "text",
+    "scene": {
+      "location": "lekki_salon",
+      "time": "afternoon",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Ivie is coming out with us tonight. Warning: Ivie cannot lie. Physically. Her mouth won't let her. That's why I tell her nothing."
+      }
+    ],
+    "detail": {
+      "flag": "trusts_ivie",
+      "missed": {
+        "chemistry": -2
+      }
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Ivie: human lie detector. Got it.\"",
+        "caught": true,
+        "receipt": "You noted that Ivie can't lie.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Exactly. So stay away from her.' Wrong thing to tell you, Mercy.",
+            "attachment": 2,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "single",
+        "label": "\"Is Ivie single?\"",
+        "receipt": "You asked Mercy if Ivie was single.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'...Wow.' Then 'lol'. Then nothing for an hour.",
+            "attachment": -3
+          }
+        ]
+      },
+      {
+        "id": "paying",
+        "label": "\"Tonight? Who's paying?\"",
+        "receipt": "You asked who was paying tonight.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'You, obviously 😘'. A threat dressed as a kiss.",
+            "attachment": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mercy_tt_weekend",
+    "character": "mercy",
+    "slot": "talking_time",
+    "presentation": "voice_note",
+    "scene": {
+      "location": "mainland_street",
+      "time": "golden",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Heads up, sweet: weekends I go dark. Friday 7pm to Monday. Work things. It's not you. Don't overthink it, eh?"
+      }
+    ],
+    "detail": {
+      "flag": "knows_weekend_rule",
+      "missed": {
+        "sanity": -3
+      },
+      "red_flag": true
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Friday to Monday: dark. Noted.\"",
+        "caught": true,
+        "receipt": "You noted that Mercy goes dark at weekends.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Thank you.' Five minutes later: 'You didn't ask why.' She noticed that you noticed.",
+            "attachment": 2,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "which_work",
+        "label": "\"Which work happens only at weekends?\"",
+        "tags": [
+          "cautious"
+        ],
+        "caught": true,
+        "receipt": "You asked Mercy what weekend work she does.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Logistics.' On a Sunday. With a laughing emoji.",
+            "attachment": -2,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "money",
+        "label": "\"Okay sha. Send weekend money.\"",
+        "receipt": "You asked Mercy for weekend money.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "₦10k. 'Enjoy your weekend.' Your weekend. Not ours.",
+            "wallet": 10000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mercy_tt_store",
+    "character": "mercy",
+    "slot": "talking_time",
+    "presentation": "voice_note",
+    "scene": {
+      "location": "lekki_salon",
+      "time": "golden",
+      "mood": "positive",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "I passed Admiralty Way today. One day: a real store. Glass front. My name on it. No sponsors, no favours. Okay. Go back to work. I'm just talking."
+      }
+    ],
+    "detail": {
+      "flag": "knows_store_dream",
+      "missed": {
+        "chemistry": -3
+      }
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Glass front, your name. I'm your first customer.\"",
+        "caught": true,
+        "receipt": "You caught Mercy's dream of a glass-front store.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'You'll pay full price.' Then a voice note of her laughing for nine seconds straight.",
+            "attachment": 4,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "sponsors",
+        "label": "\"No sponsors? Who are the sponsors?\"",
+        "receipt": "You asked Mercy about her sponsors.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Figure of speech.' It takes her forty seconds to type that.",
+            "attachment": -2
+          }
+        ]
+      },
+      {
+        "id": "thumbs",
+        "label": "Send a thumbs up.",
+        "receipt": "You replied to Mercy's dream with a thumbs up.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She sends one back. Romance moves fast in this industry.",
+            "sanity": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mercy_tt_suya",
+    "character": "mercy",
+    "slot": "talking_time",
+    "presentation": "text",
+    "scene": {
+      "location": "mainland_street",
+      "time": "night",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Rule: never buy me roses. Roses die. Buy me suya and a cold Fanta and I'm yours for the evening. Okay, for an hour."
+      }
+    ],
+    "detail": {
+      "flag": "knows_suya",
+      "missed": {
+        "chemistry": -3
+      }
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Suya and Fanta. Never roses. Locked.\"",
+        "caught": true,
+        "receipt": "You noted that Mercy wants suya, not roses.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'See? Somebody who reads.' A suya emoji. Then three.",
+            "attachment": 3,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "hour",
+        "label": "\"Only an hour? I'm offended.\"",
+        "receipt": "You bargained for more than an hour.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Two hours if there's extra pepper.'",
+            "attachment": 2,
+            "chemistry": 2
+          }
+        ]
+      },
+      {
+        "id": "rose",
+        "label": "Send a rose emoji. For the chaos.",
+        "receipt": "You sent Mercy a rose emoji.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Are you deaf in text?' She blocks you for eleven minutes.",
+            "attachment": -2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mercy_tt_rate",
+    "character": "mercy",
+    "slot": "talking_time",
+    "presentation": "text",
+    "scene": {
+      "location": "mainland_street",
+      "time": "afternoon",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Quick one: what's the dollar rate today? Asking for a friend 😅 Anyway. Dinner tomorrow?"
+      }
+    ],
+    "detail": {
+      "flag": "knows_rate",
+      "missed": {
+        "chemistry": -3
+      },
+      "red_flag": true
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"About ₦1,550. Which friend is converting?\"",
+        "caught": true,
+        "receipt": "You caught Mercy asking about the dollar rate.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'A friend. A very far friend.' Then, fast: 'Dinner?'",
+            "attachment": 2,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "dinner",
+        "label": "\"Dinner! Yes. Where?\"",
+        "receipt": "You skipped the rate and said yes to dinner.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Somewhere I can wear the gold dress.' She has never not had a gold dress.",
+            "attachment": 3
+          }
+        ]
+      },
+      {
+        "id": "google",
+        "label": "\"Ask Google. I'm busy.\"",
+        "receipt": "You told Mercy to ask Google.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Rude. Correct, but rude.'",
+            "attachment": -3
+          }
+        ]
+      }
+    ]
+  }
+]

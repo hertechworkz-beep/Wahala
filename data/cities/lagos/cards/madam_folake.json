@@ -1,0 +1,4453 @@
+[
+  {
+    "id": "folake_d1_navy",
+    "character": "madam_folake",
+    "slot": "first_date",
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "night",
+      "expression": "charming",
+      "mood": "positive"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "You wore the navy one. Bisola, her PA, checked you at the lift like a bouncer with an iPad. Madam Folake is seated. Your food is already ordered."
+      },
+      {
+        "who": "partner",
+        "text": "I chose for you. You'll like it. Sit, darling. Phone face down."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "husband_alive": {
+        "id": "t_fh_abuja",
+        "text": "Her phone rings: 'Abuja Office'. She answers in a voice you haven't heard yet: soft, careful. 'Yes sir. Lagos. Alone.'"
+      },
+      "three_men": {
+        "id": "t_f3_name",
+        "text": "'Dapo, pass the-- sorry. You. Pass the water.' She laughs a little too long."
+      },
+      "widow": {
+        "id": "t_fw_ring",
+        "text": "Her wedding ring catches the candlelight. When you look at it, she covers it with her other hand."
+      }
+    },
+    "choices": [
+      {
+        "id": "eat",
+        "label": "Eat what she ordered. \"Thank you, Madam.\"",
+        "tags": [
+          "discreet",
+          "excuse"
+        ],
+        "receipt": "You ate what Madam ordered for you and took the envelope.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She watches you eat like a project going well. At dessert Bisola hands you an envelope: 'Transport.' It is not transport money.",
+            "wallet": 150000,
+            "attachment": 10,
+            "sanity": -8,
+            "set": [
+              {
+                "flag": "accepted_kept",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "widow": {
+            "text": "She watches you eat and relaxes for the first time all night. The envelope comes anyway. 'Don't argue. I like giving.'",
+            "wallet": 100000,
+            "attachment": 10,
+            "trust": 4,
+            "set": [
+              {
+                "flag": "accepted_kept",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "order_own",
+        "label": "Call the waiter back. Order for yourself.",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You ordered for yourself after Madam ordered for you.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Bisola's pen stops. Madam studies you. 'Hm. You have opinions.' She hasn't decided if she likes them.",
+            "attachment": -5,
+            "chemistry": 3
+          }
+        ],
+        "truth_override": {
+          "widow": {
+            "text": "She laughs, a real laugh. 'Good. My husband used to do that. Order me the same thing.'",
+            "trust": 8,
+            "attachment": 6
+          },
+          "three_men": {
+            "text": "'Dapo always eats what I order.' Who is Dapo? She doesn't say. She sips her wine.",
+            "attachment": -8
+          },
+          "husband_alive": {
+            "text": "'Don't make a scene.' She glances at the door. Then again.",
+            "attachment": -5,
+            "sanity": -3
+          }
+        }
+      },
+      {
+        "id": "pay_own",
+        "label": "\"Tonight, I'm paying.\" Card on the table.",
+        "cost": 60000,
+        "broke_text": "Your card would decline in front of Bisola. Not today.",
+        "receipt": "You paid for your own date with Madam Folake.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Put that away.' You don't. She stares at your card like an unfamiliar animal, then lets the waiter take it.",
+            "attachment": 6,
+            "trust": 6,
+            "set": [
+              {
+                "flag": "paid_own_date",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "widow": {
+            "text": "She goes very quiet. 'Nobody has paid for me in five years.' She lets you. Her eyes are wet. She blames the pepper.",
+            "attachment": 12,
+            "trust": 12,
+            "set": [
+              {
+                "flag": "paid_own_date",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "husband_alive": {
+            "text": "'Put that away before anyone sees your name next to mine.' The waiter takes it anyway. She tips him to forget it.",
+            "sanity": -5,
+            "attachment": 3,
+            "set": [
+              {
+                "flag": "paid_own_date",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "three_men": {
+            "text": "'Cute.' Bisola refunds you before you reach the lift: 'Madam doesn't allow that. From anyone.' Anyone.",
+            "wallet": 60000,
+            "scaled": true,
+            "attachment": 3,
+            "set": [
+              {
+                "flag": "paid_own_date",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "why_order",
+        "label": "\"Do you always order for people?\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked Madam why she orders for people.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Always. It saves time. Time is the only thing I can't buy.' She looks at you properly for the first time.",
+            "trust": 5,
+            "attachment": 2
+          }
+        ],
+        "truth_override": {
+          "widow": {
+            "text": "'Since my husband died, I order for everyone. Somebody has to decide something.' She didn't mean to say that.",
+            "trust": 10,
+            "attachment": 5
+          },
+          "three_men": {
+            "text": "'I order for all my--' She sips. 'For everyone I take out.'",
+            "trust": 2
+          },
+          "husband_alive": {
+            "text": "'I like to know what's coming.' Her phone buzzes on the table. She flinches.",
+            "trust": 2
+          }
+        }
+      },
+      {
+        "id": "sugar_lobster",
+        "label": "[Sugar] Order the lobster AND the wine list.",
+        "vibe": "sugar",
+        "receipt": "You ordered the lobster and the wine list on Madam.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Greedy. Good. Greed is honest.' Bisola adds you to a spreadsheet you will never see.",
+            "attachment": 10,
+            "clout": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "folake_d1_range_rover",
+    "character": "madam_folake",
+    "slot": "first_date",
+    "scene": {
+      "location": "prado_interior",
+      "time": "night",
+      "expression": "charming",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Her Range Rover on the Link Bridge. Bisola up front with an iPad. On the seat beside you: a garment bag. Navy. Your size."
+      },
+      {
+        "who": "partner",
+        "text": "Change. The driver won't look. You're meeting my friends tonight and I can't have you in that."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "husband_alive": {
+        "id": "t_fh_hilux",
+        "text": "Through the back glass: a grey Hilux, two cars behind. It takes every turn you take."
+      },
+      "three_men": {
+        "id": "t_f3_shirts",
+        "text": "Bisola opens the boot for your old clothes. Inside: two more garment bags. Navy. Two other sizes."
+      },
+      "widow": {
+        "id": "t_fw_pa",
+        "text": "Bisola, without looking up: 'Madam takes calls from seven to nine. After nine, she is not available. To anyone.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "change",
+        "label": "Change into the navy. Smile.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You let Madam dress you in the back of her car.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "It fits perfectly. That's the scary part. She fixes your collar: 'Now you look like mine.'",
+            "attachment": 12,
+            "sanity": -6,
+            "set": [
+              {
+                "flag": "wore_navy",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "widow": {
+            "text": "It fits. She fixes your collar, then stops, hand on your chest. 'Sorry. Old habit.' She lets go slowly.",
+            "attachment": 10,
+            "trust": 4,
+            "set": [
+              {
+                "flag": "wore_navy",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "refuse",
+        "label": "\"I dress myself, Madam.\"",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You refused to wear the outfit Madam chose.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The car goes quiet. Bisola types something. Madam: 'Noted.' You go to the party in your own clothes, seated at the far end.",
+            "attachment": -8,
+            "sanity": 6,
+            "set": [
+              {
+                "flag": "refused_outfit",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "widow": {
+            "text": "She looks at you a long time, then laughs. 'Okay. Okay. Wear your thing. You look nice, actually.'",
+            "trust": 10,
+            "attachment": 3,
+            "set": [
+              {
+                "flag": "refused_outfit",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "three_men": {
+            "text": "'The others never argue.' Others. She says it like weather.",
+            "attachment": -10,
+            "set": [
+              {
+                "flag": "refused_outfit",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "why_size",
+        "label": "\"How do you know my size?\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked Madam how she knew your size.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'I know a lot of things.' She smiles. It doesn't reach anything.",
+            "trust": 3
+          }
+        ],
+        "truth_override": {
+          "widow": {
+            "text": "'I used to buy my husband's clothes. I'm good with sizes.' She looks out at the lagoon for a long time.",
+            "trust": 10,
+            "attachment": 4
+          },
+          "three_men": {
+            "text": "'Bisola has everybody's-- your size. On file.' On file.",
+            "trust": 2
+          },
+          "husband_alive": {
+            "text": "'I know. Other people know things too. That's why you'll wear what I say.' She checks the mirror.",
+            "sanity": -5
+          }
+        }
+      },
+      {
+        "id": "bigboy_gele",
+        "label": "[Big Boy] Hand her a garment bag back: \"Your turn.\"",
+        "vibe": "bigboy",
+        "receipt": "You brought Madam an outfit of your own choosing.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Bisola gasps. Madam unzips it: a gele in your colours. She laughs for a full minute. 'Nobody has ever.'",
+            "attachment": 12,
+            "clout": 10,
+            "chemistry": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "folake_d1_hall",
+    "character": "madam_folake",
+    "slot": "first_date",
+    "scene": {
+      "location": "vi_club_vip",
+      "time": "night",
+      "expression": "charming",
+      "mood": "positive"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "A 600-guest wedding in her VI hall. She walks you through it like a general. Every waiter straightens when she passes."
+      },
+      {
+        "who": "partner",
+        "text": "Stand next to me. Smile. Say nothing about yourself. People here talk."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "husband_alive": {
+        "id": "t_fh_ring",
+        "text": "Her clutch spills at the high table. A man's wedding ring rolls out. 'For luck,' she says, and zips the bag shut."
+      },
+      "three_men": {
+        "id": "t_f3_slot",
+        "text": "Bisola, into her headset: 'Yes, the new one is here. No, Saturday is their slot now. Tuesday stays Yaba.'"
+      },
+      "widow": {
+        "id": "t_fw_abuja",
+        "text": "A guest: 'Abuja misses you, Madam.' Her smile breaks for one second. 'I don't go to Abuja. Not anymore.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "smile",
+        "label": "Smile. Say nothing. Be the accessory.",
+        "tags": [
+          "excuse",
+          "discreet"
+        ],
+        "receipt": "You stood silently beside Madam all night.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Four hours of smiling. Your cheeks hurt. She squeezes your hand under the table: 'Perfect.' Bisola sends ₦100k: 'Wages.'",
+            "wallet": 100000,
+            "attachment": 12,
+            "sanity": -10,
+            "set": [
+              {
+                "flag": "accepted_kept",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "introduce",
+        "label": "Introduce yourself properly. Full name, job, everything.",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You introduced yourself to Madam's guests.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The aunties love you. Madam doesn't. 'I said nothing about yourself.' The drive home is very quiet.",
+            "attachment": -8,
+            "clout": 10
+          }
+        ],
+        "truth_override": {
+          "widow": {
+            "text": "The aunties love you. Folake watches, then joins in: 'And funny, too.' She sounds proud. She sounds surprised to be proud.",
+            "trust": 8,
+            "attachment": 6,
+            "clout": 10
+          },
+          "husband_alive": {
+            "text": "An old man at table six writes your name on a napkin and pockets it. Madam sees. She goes pale.",
+            "sanity": -8,
+            "clout": 5
+          }
+        }
+      },
+      {
+        "id": "dance",
+        "label": "Pull her onto the dance floor.",
+        "receipt": "You pulled Madam onto the dance floor.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "The DJ switches to Fuji. Madam dances like she's 25 and owes nobody. The hall cheers.",
+            "attachment": 12,
+            "chemistry": 5,
+            "clout": 10
+          },
+          {
+            "chance": 0.4,
+            "text": "'Not in public,' she hisses, and leaves the floor. You dance alone. The videographer gets everything.",
+            "bad": true,
+            "exposure": 10,
+            "attachment": -8,
+            "clout": -5
+          }
+        ],
+        "truth_override": {
+          "three_men": [
+            {
+              "chance": 0.5,
+              "text": "The DJ switches to Fuji. Madam dances like she's 25 and owes nobody. The hall cheers.",
+              "attachment": 12,
+              "chemistry": 5,
+              "clout": 10
+            },
+            {
+              "chance": 0.5,
+              "text": "The DJ stops the music and stares at you, then at her. Bisola mouths 'Dapo'. He plays a breakup song.",
+              "bad": true,
+              "attachment": -5,
+              "sanity": -8,
+              "set": [
+                {
+                  "flag": "met_dapo",
+                  "knows": [
+                    "player",
+                    "partner"
+                  ]
+                }
+              ]
+            }
+          ],
+          "husband_alive": {
+            "text": "'Not in public!' A man at the bar is filming. She covers her face with her fan and leaves.",
+            "bad": true,
+            "exposure": 15,
+            "attachment": -8,
+            "sanity": -5
+          }
+        }
+      },
+      {
+        "id": "who",
+        "label": "\"Who are all these people to you?\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked Madam who everyone at the wedding was.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Clients, enemies and family. At a wedding, same thing.' She gives you the whole map. You're on it now.",
+            "trust": 5,
+            "attachment": 3
+          }
+        ]
+      },
+      {
+        "id": "runs_cards",
+        "label": "[Runs] Work the room. Collect business cards.",
+        "vibe": "runs",
+        "receipt": "You networked at Madam's client's wedding.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Forty cards. Three leads. Madam watches you hustle her own guests and can't decide whether to fire you or hire you.",
+            "attachment": 8,
+            "clout": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "folake_rf_invite",
+    "character": "madam_folake",
+    "slot": "red_flag",
+    "presentation": "text",
+    "scene": {
+      "location": "mainland_street",
+      "time": "afternoon",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "A calendar invite lands from Bisola. You never gave Bisola your email."
+      },
+      {
+        "who": "Bisola",
+        "text": "Madam: Tue 7–9pm. Dress code: white. Do not call before. Do not post. Accept by 5pm."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "three_men": {
+        "id": "t_f3_slot",
+        "text": "Then a second text, clearly not for you: 'Confirming your Tuesday slot. Thursday is GRA.' Deleted."
+      },
+      "husband_alive": {
+        "id": "t_fh_abuja",
+        "text": "A footnote at the bottom: 'No calls after 10pm. Madam speaks to Abuja at 10.'"
+      },
+      "widow": {
+        "id": "t_fw_pa",
+        "text": "Then, separately: 'Madam doesn't take calls after 9. Please don't take it personally. She sleeps badly. - B.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "accept",
+        "label": "Accept. White it is.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You accepted Bisola's calendar invite without a word.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Accepted. Bisola replies with a thumbs up and your measurements. You never sent your measurements.",
+            "attachment": 8,
+            "sanity": -6
+          }
+        ]
+      },
+      {
+        "id": "counter",
+        "label": "Decline. Propose Wednesday instead.",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You declined Madam's slot and proposed your own.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Bisola: 'Madam doesn't do Wednesdays.' Then: 'Madam says Wednesday is fine.' Then: 'Don't do that again.'",
+            "attachment": -4,
+            "sanity": 5
+          }
+        ],
+        "truth_override": {
+          "widow": {
+            "text": "Bisola: 'Madam says yes.' Then a voice note from Folake herself, laughing: 'You argue with my PA? Brave. Wednesday.'",
+            "trust": 8,
+            "attachment": 4
+          }
+        }
+      },
+      {
+        "id": "ask_days",
+        "label": "Ask Bisola what Madam's other days are for.",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked Bisola what Madam's other evenings were for.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Bisola: 'Board meetings.' Nobody has board meetings at 9pm. Bisola knows that you know that.",
+            "trust": 2
+          }
+        ],
+        "truth_override": {
+          "three_men": {
+            "text": "Bisola: 'Tuesday is Yaba. Thursday is GRA. You're Saturday. Don't tell Madam I said.' You didn't have to ask twice.",
+            "saw_truth": true,
+            "sanity": -10,
+            "set": [
+              {
+                "flag": "heard_slots",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          },
+          "husband_alive": {
+            "text": "'Madam's other days belong to Abuja.' Bisola never explains anything twice.",
+            "sanity": -4
+          },
+          "widow": {
+            "text": "'Her other evenings are for the cemetery in Ikoyi and her accountant. Sorry. That was a lot.'",
+            "trust": 6,
+            "attachment": 3
+          }
+        }
+      },
+      {
+        "id": "call_direct",
+        "label": "Call Madam directly. Skip the PA.",
+        "tags": [
+          "contact_partner"
+        ],
+        "receipt": "You called Madam directly instead of her PA.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She picks on the first ring. 'Who gave you this number?' She did. 'Hm. Okay. Talk.'",
+            "attachment": 5,
+            "trust": 3
+          }
+        ],
+        "truth_override": {
+          "husband_alive": {
+            "text": "She declines. Bisola texts: 'Never call Madam directly. People listen to her phone.' People?",
+            "sanity": -6
+          },
+          "widow": {
+            "text": "She picks up. Her voice cracks. 'Nobody calls me just to call me.' You talk for an hour.",
+            "attachment": 8,
+            "trust": 8
+          }
+        }
+      },
+      {
+        "id": "call_ten",
+        "label": "Call her at 10pm. See who answers.",
+        "tags": [
+          "toxic",
+          "contact_partner"
+        ],
+        "requires": {
+          "flags": [
+            "knows_10pm"
+          ]
+        },
+        "receipt": "You called Madam at the hour she asked you never to.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Straight to voicemail. Bisola texts at 10:01: 'Madam asked you not to.'",
+            "sanity": -5
+          }
+        ],
+        "truth_override": {
+          "husband_alive": {
+            "text": "A man answers. Abuja accent. Calm. 'Who is this?' Then her voice in the background, and the line goes dead.",
+            "saw_truth": true,
+            "sanity": -15
+          },
+          "three_men": {
+            "text": "Dapo answers. 'She's in the shower. Who's this? Saturday?' He laughs. You don't.",
+            "saw_truth": true,
+            "sanity": -15
+          },
+          "widow": {
+            "text": "She answers, voice thick. 'At ten I listen to his old voicemails. Please. Not ten.'",
+            "sanity": -8
+          }
+        }
+      },
+      {
+        "id": "lover_poem",
+        "label": "[Lover] Reply with a poem about white outfits.",
+        "vibe": "lover",
+        "receipt": "You replied to Madam's PA with a poem.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Bisola forwards it to Madam. Madam replies with one word: 'Cute.' She saves it, though. You can tell.",
+            "attachment": 8,
+            "trust": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "folake_rf_hilux",
+    "character": "madam_folake",
+    "slot": "red_flag",
+    "scene": {
+      "location": "mainland_street",
+      "time": "afternoon",
+      "mood": "negative",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Third time this week: a grey Hilux behind your danfo at Ojuelegba. Same driver. Same toothpick. He doesn't even pretend."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "husband_alive": {
+        "id": "t_fh_hilux",
+        "text": "FCT plates. Abuja. The driver photographs you through his windscreen, then answers his phone: 'Yes sir. Same one.'"
+      },
+      "three_men": {
+        "id": "t_f3_name",
+        "text": "At the junction he leans out: 'Dapo! Madam said-- ah. Sorry. Wrong person. You people look alike.'"
+      },
+      "widow": {
+        "id": "t_fw_pa",
+        "text": "Later Bisola texts: 'That's Madam's driver. She worries when you take danfo. I've told her it's too much.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "ignore",
+        "label": "Ignore it. Lagos is full of Hiluxes.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You ignored the grey Hilux following you.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You get home. The Hilux parks across the road, engine running. It's still there at midnight.",
+            "sanity": -10
+          }
+        ]
+      },
+      {
+        "id": "knock",
+        "label": "Get off at the junction. Knock on his window.",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You knocked on the Hilux driver's window.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He winds it down an inch. 'I'm just a driver.' He drives off.",
+            "sanity": -5
+          }
+        ],
+        "truth_override": {
+          "husband_alive": [
+            {
+              "chance": 0.6,
+              "text": "'Engineer says you should enjoy Lagos while you can.' He winds the window back up.",
+              "saw_truth": true,
+              "sanity": -15
+            },
+            {
+              "chance": 0.4,
+              "text": "He photographs your face up close and drives off. Your hands shake for an hour.",
+              "bad": true,
+              "sanity": -18,
+              "exposure": 10
+            }
+          ],
+          "three_men": {
+            "text": "'I drive for Madam. I drive all of you. Tuesday, Thursday, Saturday.' All of you.",
+            "saw_truth": true,
+            "sanity": -10
+          },
+          "widow": {
+            "text": "'Madam asked me to see you home. Her husband died on the road. She doesn't trust roads.'",
+            "trust": 8,
+            "attachment": 4
+          }
+        }
+      },
+      {
+        "id": "plate",
+        "label": "Photograph the plate. Quietly.",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You photographed the Hilux's plate.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Plate saved. Future you will thank present you.",
+            "sanity": 3,
+            "set": [
+              {
+                "flag": "secret_hilux_plate",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ask_her",
+        "label": "Call Madam: \"Is the grey Hilux yours?\"",
+        "tags": [
+          "cautious",
+          "contact_partner"
+        ],
+        "receipt": "You asked Madam if the Hilux was hers.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Silence. 'Which Hilux?' Then, too fast: 'Take a cab home. I'll send money.'",
+            "wallet": 20000,
+            "attachment": 3,
+            "set": [
+              {
+                "flag": "asked_hilux",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "widow": {
+            "text": "'Yes. I'm sorry. I'll call him off. I just need to know people get home.' She sounds ashamed of it.",
+            "trust": 10,
+            "set": [
+              {
+                "flag": "asked_hilux",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "husband_alive": {
+            "text": "'It's not mine.' A long pause. 'Take a cab. Don't take danfo anymore. Please.'",
+            "sanity": -5,
+            "set": [
+              {
+                "flag": "asked_hilux",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "ask_bisola",
+        "label": "Text Bisola. Bisola has never lied to Madam.",
+        "tags": [
+          "investigate"
+        ],
+        "requires": {
+          "flags": [
+            "trusts_bisola"
+          ]
+        },
+        "receipt": "You asked Bisola whose Hilux it was.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Bisola: 'I can't discuss vehicles.' Then: 'Be careful, though.'",
+            "sanity": -3
+          }
+        ],
+        "truth_override": {
+          "husband_alive": {
+            "text": "Bisola: 'It's not Madam's. It's her husband's man. He's alive. In Abuja. Delete this.'",
+            "saw_truth": true,
+            "sanity": -15
+          },
+          "three_men": {
+            "text": "Bisola: 'Madam's driver. He checks on all three of you. Sorry. Two of you. I mean--'",
+            "saw_truth": true,
+            "sanity": -10
+          },
+          "widow": {
+            "text": "Bisola: 'Madam's driver. Since the accident she can't stand anyone she likes on the road. It's grief, not spying.'",
+            "trust": 8,
+            "attachment": 4
+          }
+        }
+      },
+      {
+        "id": "runs_balogun",
+        "label": "[Runs] Lose him through Balogun Market.",
+        "vibe": "runs",
+        "receipt": "You lost the Hilux in Balogun Market.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Through the fabric section, out the back, onto a keke. He's lost. You're a legend. One of your shoes is still in Balogun.",
+            "sanity": 5,
+            "clout": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "folake_rf_phone",
+    "character": "madam_folake",
+    "slot": "red_flag",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "expression": "charming",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Her Ikoyi house. She slides a box across the marble: the newest phone, still sealed. Bisola has already set it up."
+      },
+      {
+        "who": "partner",
+        "text": "Your old phone embarrasses me. This one has everything you need. Mostly me."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "husband_alive": {
+        "id": "t_fh_ring",
+        "text": "Under the charger in the box: a man's wedding ring. 'For luck,' she says, and pockets it fast."
+      },
+      "three_men": {
+        "id": "t_f3_shirts",
+        "text": "Bisola's handbag is open on the counter. Two more identical boxes inside."
+      },
+      "widow": {
+        "id": "t_fw_abuja",
+        "text": "Pre-saved contacts: 'Madam', 'Bisola', 'Dr. Okoye'. Nobody in Abuja. 'I don't go to Abuja,' she says. You didn't ask."
+      }
+    },
+    "choices": [
+      {
+        "id": "take",
+        "label": "Take it. Use it. Say thank you.",
+        "tags": [
+          "excuse",
+          "discreet"
+        ],
+        "receipt": "You took the phone Madam gave you and put yours away.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She kisses your cheek. Your old phone goes into a drawer. Bisola has the drawer key.",
+            "attachment": 12,
+            "sanity": -6,
+            "set": [
+              {
+                "flag": "took_phone",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "widow": {
+            "text": "She sets it up with you, slowly. 'I just want to reach you. That's all it is.' It might be.",
+            "attachment": 10,
+            "trust": 4,
+            "set": [
+              {
+                "flag": "took_phone",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "keep_old",
+        "label": "\"Thank you, but I'll keep my phone.\"",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You refused Madam's phone.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She closes the box. 'Hm.' She doesn't argue. She also doesn't call you for a day.",
+            "attachment": -8,
+            "sanity": 6
+          }
+        ],
+        "truth_override": {
+          "widow": {
+            "text": "'Fair. I'm too much sometimes.' She gives it to Bisola, whose phone screen has been cracked since 2022.",
+            "trust": 8,
+            "attachment": 2
+          }
+        }
+      },
+      {
+        "id": "whats_on",
+        "label": "\"What else is installed on it?\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked what was installed on Madam's phone.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Nothing. Location sharing. Normal things.' Normal.",
+            "trust": 3
+          }
+        ],
+        "truth_override": {
+          "husband_alive": {
+            "text": "Settings: location shared with 'Madam', 'Bisola' and an Abuja number with no name.",
+            "saw_truth": true,
+            "sanity": -10
+          },
+          "three_men": {
+            "text": "Location shared with Madam. And a group chat already on it: 'Madam's Boys 🌹'. Three members.",
+            "saw_truth": true,
+            "sanity": -10
+          },
+          "widow": {
+            "text": "'Location, so I know you're safe. Turn it off if you want.' You check. It turns off. She means it.",
+            "trust": 10,
+            "attachment": 4
+          }
+        }
+      },
+      {
+        "id": "runs_two",
+        "label": "[Runs] Take it. Keep your SIM in the old one.",
+        "vibe": "runs",
+        "receipt": "You took Madam's phone and kept your own SIM.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Two phones. One for Madam, one for life. She never finds out. Probably.",
+            "attachment": 6,
+            "sanity": -3,
+            "set": [
+              {
+                "flag": "took_phone",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "folake_mt_flat",
+    "character": "madam_folake",
+    "slot": "money_trap",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "afternoon",
+      "expression": "charming",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "A furnished flat off Bourdillon Road. Two years' rent, paid. Bisola holds out the keys and a printed list of 'house rules'."
+      },
+      {
+        "who": "partner",
+        "text": "It's yours. Bisola keeps a spare key. No visitors after ten. That's all."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "husband_alive": {
+        "id": "t_fh_abuja",
+        "text": "The lease is signed 'A. Adeyemi, Abuja'. Not by her. She covers the signature with her thumb."
+      },
+      "three_men": {
+        "id": "t_f3_slot",
+        "text": "The doorman, carrying your box: 'Flat 2B? Ah. 2A is Madam's Yaba friend. Tuesdays.'"
+      },
+      "widow": {
+        "id": "t_fw_pa",
+        "text": "Rule 4 on Bisola's list: 'Madam may call at 9pm only.' Rule 5: 'Madam is not to be left alone on Sundays.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "accept",
+        "label": "Take the keys. Ikoyi is Ikoyi.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You moved into the flat Madam pays for.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You move in Friday. The view is criminal. Bisola visits 'to check the plumbing' twice a day.",
+            "attachment": 15,
+            "sanity": -8,
+            "set": [
+              {
+                "flag": "took_flat",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              },
+              {
+                "flag": "accepted_kept",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "widow": {
+            "text": "You move in. The rules sheet disappears on day two. 'Bisola overdoes it,' Folake says, embarrassed.",
+            "attachment": 12,
+            "trust": 6,
+            "set": [
+              {
+                "flag": "took_flat",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              },
+              {
+                "flag": "accepted_kept",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "husband_alive": {
+            "text": "You move in. Night one, the grey Hilux parks outside. It already knew the address.",
+            "attachment": 10,
+            "sanity": -15,
+            "set": [
+              {
+                "flag": "took_flat",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              },
+              {
+                "flag": "accepted_kept",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "own_rent",
+        "label": "\"I'll pay my own rent, thank you.\"",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You turned down the flat and kept paying your own rent.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Bisola looks at Madam like you've spoken Latin. Madam: 'Your pride is expensive. Keep it.' She sounds half impressed.",
+            "attachment": -6,
+            "sanity": 8,
+            "trust": 4,
+            "clout": 5
+          }
+        ],
+        "truth_override": {
+          "widow": {
+            "text": "'Good.' She tears the rules sheet in half. 'I didn't want to buy you. I wanted you safe. Different thing.'",
+            "trust": 12,
+            "attachment": 6
+          }
+        }
+      },
+      {
+        "id": "if_end",
+        "label": "\"What happens to the flat if we end?\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked what happens to the flat if it ends.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Then it ends.' She smiles. 'Everything in Lagos has a notice period. Mine is one hour.'",
+            "trust": 4,
+            "sanity": -3
+          }
+        ],
+        "truth_override": {
+          "widow": {
+            "text": "'Then it's still yours. I'm not a landlord. I'm a woman who likes you.' Bisola writes that down.",
+            "trust": 12,
+            "attachment": 5
+          },
+          "husband_alive": {
+            "text": "'Then you leave fast. Before anyone asks whose flat it was.' She isn't joking.",
+            "sanity": -8
+          }
+        }
+      },
+      {
+        "id": "half",
+        "label": "Take it, but pay half the rent.",
+        "cost": 150000,
+        "broke_text": "Half of Ikoyi rent is still Ikoyi rent.",
+        "receipt": "You paid half the rent on Madam's flat.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She laughs at the alert. 'Half? You're a strange one.' She keeps it. That's respect, in her currency.",
+            "attachment": 8,
+            "trust": 6,
+            "set": [
+              {
+                "flag": "took_flat",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ask_bisola",
+        "label": "Ask Bisola, privately: \"Whose name is on the lease?\"",
+        "tags": [
+          "investigate"
+        ],
+        "requires": {
+          "flags": [
+            "trusts_bisola"
+          ]
+        },
+        "receipt": "You asked Bisola whose name was on the lease.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Bisola: 'Madam's company.' She hands you the keys anyway. 'Lock the door. Always.'",
+            "trust": 2
+          }
+        ],
+        "truth_override": {
+          "husband_alive": {
+            "text": "Bisola, whispering: 'Her husband's company. He pays. He'll know you're here before you unpack.'",
+            "saw_truth": true,
+            "sanity": -12
+          },
+          "three_men": {
+            "text": "Bisola: 'Madam's. Same as 2A and the one in GRA. She buys in bulk.'",
+            "saw_truth": true,
+            "sanity": -8
+          },
+          "widow": {
+            "text": "Bisola: 'Yours. She put it in your name yesterday. She'll pretend she didn't.'",
+            "trust": 10,
+            "attachment": 4
+          }
+        }
+      },
+      {
+        "id": "runs_locks",
+        "label": "[Runs] Take it. Change the locks on day one.",
+        "vibe": "runs",
+        "receipt": "You changed the locks on Madam's flat.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Bisola's key doesn't work on Monday. Madam calls: 'Clever.' It's the first time she sounds afraid of you.",
+            "attachment": 5,
+            "control": -1,
+            "set": [
+              {
+                "flag": "took_flat",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "folake_mt_nda",
+    "character": "madam_folake",
+    "slot": "money_trap",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "morning",
+      "expression": "charming",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Breakfast at her Ikoyi house. Beside your plate: a contract. 'Brand Consultant, Folake Events. ₦500k monthly.' And an NDA. Twelve pages."
+      },
+      {
+        "who": "partner",
+        "text": "Sign, darling. It's just paperwork. It protects us both."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "husband_alive": {
+        "id": "t_fh_abuja",
+        "text": "Clause 9: 'Consultant may be required to relocate on short notice.' Her phone buzzes: 'Abuja Office'. She lets it ring."
+      },
+      "three_men": {
+        "id": "t_f3_name",
+        "text": "Page three, top line: 'Consultant: Dapo A--' crossed out, your name handwritten above."
+      },
+      "widow": {
+        "id": "t_fw_pa",
+        "text": "Bisola has initialled every page. 'I read everything before Madam signs. Since 2021.' Since 2021?"
+      }
+    },
+    "choices": [
+      {
+        "id": "sign",
+        "label": "Sign. ₦500k is ₦500k.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You signed Madam's contract and NDA.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Bisola stamps it. First salary lands in an hour. You've never been paid so well to never mention someone.",
+            "wallet": 250000,
+            "attachment": 10,
+            "sanity": -8,
+            "set": [
+              {
+                "flag": "signed_nda",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "husband_alive": {
+            "text": "Paid. Clause 12, which you didn't read: 'Consultant consents to monitoring for security purposes.' Security from whom?",
+            "wallet": 250000,
+            "attachment": 10,
+            "sanity": -12,
+            "tricked": true,
+            "set": [
+              {
+                "flag": "signed_nda",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "widow": {
+            "text": "It's a real job. On Monday she uses your ideas and credits you in front of her staff. Bisola nods at you like a colleague.",
+            "wallet": 250000,
+            "attachment": 10,
+            "trust": 8,
+            "set": [
+              {
+                "flag": "signed_nda",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "lawyer",
+        "label": "\"My lawyer reads it first.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked for your lawyer to read the contract.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Bring your lawyer.' She seems almost relieved that someone is careful.",
+            "trust": 6,
+            "attachment": 2
+          }
+        ],
+        "truth_override": {
+          "husband_alive": {
+            "text": "Your lawyer calls back: 'Clauses 9, 12 and 14. Who is she hiding you from?'",
+            "saw_truth": true,
+            "sanity": -6
+          },
+          "three_men": {
+            "text": "Your lawyer: 'The document metadata has two previous consultants' names. Both men. Both under 30.'",
+            "saw_truth": true,
+            "sanity": -6
+          }
+        }
+      },
+      {
+        "id": "negotiate",
+        "label": "\"₦800k, weekends free, my phone stays mine.\"",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You negotiated Madam's contract.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "She laughs. 'A negotiator.' She signs your version. You have weekends now.",
+            "wallet": 400000,
+            "attachment": 6,
+            "trust": 6,
+            "clout": 5
+          },
+          {
+            "chance": 0.4,
+            "text": "'This is not a market.' She takes the contract back. Breakfast ends early.",
+            "bad": true,
+            "attachment": -10
+          }
+        ]
+      },
+      {
+        "id": "rip",
+        "label": "Tear it up: \"I'm not your staff.\"",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You tore up Madam's contract.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Bisola actually gasps. Madam watches the pieces fall. 'Then what are you?' You don't have an answer yet.",
+            "attachment": -10,
+            "sanity": 8,
+            "clout": 5
+          }
+        ],
+        "truth_override": {
+          "widow": {
+            "text": "Silence. Then: 'You're right. I'm sorry. I don't know how to do this without paperwork.'",
+            "trust": 12,
+            "attachment": 4
+          }
+        }
+      },
+      {
+        "id": "corp_redline",
+        "label": "[Corporate] Redline it. Return it in an hour.",
+        "vibe": "corporate",
+        "receipt": "You redlined Madam's contract.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Track changes. Forty comments. She reads every one. 'Bisola, hire this one properly.'",
+            "trust": 8,
+            "attachment": 8
+          }
+        ],
+        "truth_override": {
+          "husband_alive": {
+            "text": "Your redline deletes Clause 12. She deletes your redline. 'That clause isn't mine to remove.'",
+            "saw_truth": true,
+            "trust": 3
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "folake_mt_fuel",
+    "character": "madam_folake",
+    "slot": "money_trap",
+    "presentation": "text",
+    "scene": {
+      "location": "mainland_street",
+      "time": "night",
+      "expression": "suspicious",
+      "mood": "negative",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Darling. Embarrassing. My accounts are frozen 'for review'. Six trucks are stuck at Ibafo on the expressway. ₦300k for diesel tonight. Monday, you'll have it back."
+      },
+      {
+        "who": "narration",
+        "text": "The richest person you know is asking you for money. At 11pm."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "husband_alive": {
+        "id": "t_fh_abuja",
+        "text": "'Abuja froze-- the bank froze it.' She corrects herself in the very next message."
+      },
+      "three_men": {
+        "id": "t_f3_name",
+        "text": "A second message: 'Thank you Tobi ❤️'. Deleted. 'Sorry. Autocorrect.'"
+      },
+      "widow": {
+        "id": "t_fw_abuja",
+        "text": "'It's the estate case. In Abuja. I won't go there. Bisola is handling it.' She deletes two voice notes."
+      }
+    },
+    "choices": [
+      {
+        "id": "send",
+        "label": "Send ₦300k. She'd do it for you.",
+        "cost": 300000,
+        "broke_text": "Your account said 'fuel? I'm the one on reserve.'",
+        "receipt": "You sent Madam ₦300k for diesel.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Sent.",
+            "sanity": -3
+          }
+        ],
+        "truth_override": {
+          "husband_alive": [
+            {
+              "chance": 0.5,
+              "text": "Monday: ₦600k back. 'Never tell anyone I asked.' She's scared, not broke.",
+              "wallet": 600000,
+              "scaled": true,
+              "attachment": 12,
+              "trust": 6
+            },
+            {
+              "chance": 0.5,
+              "text": "Monday: nothing. Tuesday: 'My husband-- the bank is being difficult.' Husband. She said husband.",
+              "bad": true,
+              "tricked": true,
+              "saw_truth": true,
+              "sanity": -15,
+              "set": [
+                {
+                  "flag": "lent_madam",
+                  "knows": [
+                    "player",
+                    "partner"
+                  ]
+                }
+              ]
+            }
+          ],
+          "three_men": {
+            "text": "Monday: ₦300k back with a note: 'You passed.' Passed what? Bisola: 'She asked all three. You sent the most.'",
+            "wallet": 300000,
+            "scaled": true,
+            "attachment": 12,
+            "saw_truth": true
+          },
+          "widow": {
+            "text": "Monday, 8am: ₦500k back and a voice note, half crying: 'You trusted me. People only ever take from me.'",
+            "wallet": 500000,
+            "scaled": true,
+            "attachment": 15,
+            "trust": 12
+          }
+        }
+      },
+      {
+        "id": "small",
+        "label": "Send ₦30k: \"It's what I have.\"",
+        "tags": [
+          "budget"
+        ],
+        "cost": 30000,
+        "receipt": "You sent Madam ₦30k.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Every little helps,' she says. She has never said that sentence before in her life.",
+            "attachment": 5
+          }
+        ]
+      },
+      {
+        "id": "station",
+        "label": "Pay the filling station at Ibafo directly.",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You tried to pay the filling station directly.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The station manager: 'Which trucks? No trucks here.' You keep your money.",
+            "sanity": -5
+          }
+        ],
+        "truth_override": {
+          "widow": {
+            "text": "The manager confirms six of her trucks. You pay ₦50k direct; she covers the rest by morning. 'Smart,' she says.",
+            "trust": 10,
+            "attachment": 6
+          },
+          "husband_alive": {
+            "text": "'Madam's trucks? Her husband's people took them back to Abuja last week.' Her husband.",
+            "saw_truth": true,
+            "sanity": -10
+          },
+          "three_men": {
+            "text": "'Madam's trucks are fine. One young man already paid. Another one is paying now.'",
+            "saw_truth": true,
+            "sanity": -5
+          }
+        }
+      },
+      {
+        "id": "no",
+        "label": "\"Madam, I'm not your bank.\"",
+        "receipt": "You told Madam you're not her bank.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Of course not. You're my sweetheart.' She doesn't call for a day. It feels like punishment. It is.",
+            "attachment": -8,
+            "sanity": 3
+          }
+        ],
+        "truth_override": {
+          "widow": {
+            "text": "'Fair.' A long pause. 'Nobody says no to me. Thank you for that too.'",
+            "trust": 6,
+            "attachment": -2
+          }
+        }
+      },
+      {
+        "id": "trucks",
+        "label": "\"You said you never sleep till the trucks arrive.\"",
+        "tags": [
+          "cautious"
+        ],
+        "requires": {
+          "flags": [
+            "knows_trucks"
+          ]
+        },
+        "receipt": "You remembered Madam never sleeps till her trucks arrive.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'I haven't slept. Two nights.' You stay on the phone till 3am. She doesn't mention the money again.",
+            "trust": 10,
+            "attachment": 8
+          }
+        ],
+        "truth_override": {
+          "husband_alive": {
+            "text": "'They're not my trucks anymore,' she whispers. 'Don't ask whose.'",
+            "saw_truth": true,
+            "trust": 4
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "folake_pd_rival",
+    "character": "madam_folake",
+    "slot": "public_drama",
+    "scene": {
+      "location": "mainland_street",
+      "time": "golden",
+      "expression": "suspicious",
+      "mood": "negative",
+      "npc": {
+        "name": "Dapo"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Owambe in Surulere. You're on Madam's arm in navy. A younger man walks in. Also navy. Same tailor. Same buttons."
+      },
+      {
+        "who": "Dapo",
+        "text": "Madam! You didn't tell me we were matching today. Who's this one?"
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "three_men": {
+        "id": "t_f3_shirts",
+        "text": "Dapo's navy is the same cut as yours. One size smaller. Bisola is suddenly very busy with her phone."
+      },
+      "husband_alive": {
+        "id": "t_fh_hilux",
+        "text": "Through the hall's open doors: the grey Hilux, engine running. The driver is filming the high table."
+      },
+      "widow": {
+        "id": "t_fw_ring",
+        "text": "Dapo kisses her ring hand: 'Mummy, you still wear it?' She nods. Quietly. Mummy?"
+      }
+    },
+    "choices": [
+      {
+        "id": "square",
+        "label": "Step to him: \"Who are YOU?\"",
+        "tags": [
+          "public_embarrassment",
+          "toxic"
+        ],
+        "receipt": "You squared up to Dapo at the owambe.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The music stops. Aunties lean in. Dapo laughs. Madam's face goes cold enough to store fish.",
+            "clout": 15,
+            "exposure": 15,
+            "attachment": -8
+          }
+        ],
+        "truth_override": {
+          "three_men": {
+            "text": "'I'm Tuesday,' Dapo grins. 'You must be Saturday.' The aunty at table four chokes on her jollof.",
+            "saw_truth": true,
+            "truth_exposed": true,
+            "goal": {
+              "revenge": 30
+            },
+            "clout": 20,
+            "exposure": 20,
+            "set": [
+              {
+                "flag": "met_dapo",
+                "knows": [
+                  "player",
+                  "partner",
+                  "world"
+                ]
+              }
+            ]
+          },
+          "widow": {
+            "text": "'I'm her nephew, abeg calm down.' The hall laughs. Folake looks at you like you've disappointed her mother.",
+            "clout": -5,
+            "exposure": 10
+          }
+        }
+      },
+      {
+        "id": "ask",
+        "label": "Ask Madam quietly: \"Who is he?\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You quietly asked Madam who Dapo was.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'A family friend.' She fixes your collar instead of looking at you.",
+            "trust": 3
+          }
+        ],
+        "truth_override": {
+          "three_men": {
+            "text": "'A friend from Yaba.' The way she says Yaba, it's an address and a timetable.",
+            "sanity": -8,
+            "set": [
+              {
+                "flag": "met_dapo",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "widow": {
+            "text": "'My nephew. My late husband's brother's son. He thinks he's funny.' He is, a bit.",
+            "trust": 8,
+            "attachment": 4
+          },
+          "husband_alive": {
+            "text": "'Nobody. Smile. People are watching.' Her eyes are on the door, not on Dapo.",
+            "sanity": -6
+          }
+        }
+      },
+      {
+        "id": "outdance",
+        "label": "Out-dance him. In front of everyone.",
+        "receipt": "You had a dance-off with Dapo.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "The aunties pick a winner. It's you. Madam sprays you first, then Dapo, as consolation.",
+            "clout": 15,
+            "attachment": 8
+          },
+          {
+            "chance": 0.4,
+            "text": "You pull something in your back mid-Shaku. Dapo helps you up. It's worse that he's nice.",
+            "bad": true,
+            "clout": -10,
+            "sanity": -5
+          }
+        ]
+      },
+      {
+        "id": "leave",
+        "label": "Leave her with him. Take a keke home.",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You left Madam at the owambe and went home.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She calls nine times before you reach Ojuelegba. The tenth call is Bisola: 'Madam would like to know where you are.'",
+            "attachment": -5,
+            "sanity": 3
+          }
+        ],
+        "truth_override": {
+          "widow": {
+            "text": "She calls once: 'He's my nephew, you know. Come back. I'll make him dance with the aunties as punishment.'",
+            "trust": 6
+          }
+        }
+      },
+      {
+        "id": "board",
+        "label": "\"Is he Tuesday's 'board meeting'?\"",
+        "tags": [
+          "call_out"
+        ],
+        "requires": {
+          "flags": [
+            "knows_tue_thu"
+          ]
+        },
+        "receipt": "You asked if Dapo was her Tuesday board meeting.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She stares at you. 'You listen too well.' She doesn't answer.",
+            "trust": 2
+          }
+        ],
+        "truth_override": {
+          "three_men": {
+            "text": "Madam doesn't answer. Dapo does: 'Tuesdays, yes. Who told you?'",
+            "saw_truth": true,
+            "sanity": -5,
+            "set": [
+              {
+                "flag": "met_dapo",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "widow": {
+            "text": "She laughs, shocked. 'Tuesday IS my board meeting! He sits on the board.' He does. Badly.",
+            "trust": 8,
+            "attachment": 4
+          }
+        }
+      },
+      {
+        "id": "matching",
+        "label": "\"Nice navy. Same tailor? Same sponsor?\"",
+        "tags": [
+          "call_out"
+        ],
+        "requires": {
+          "flags": [
+            "wore_navy"
+          ]
+        },
+        "receipt": "You asked Dapo if you shared a tailor and a sponsor.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Dapo laughs. 'Same everything, my friend.' Madam pinches the bridge of her nose.",
+            "clout": 10
+          }
+        ],
+        "truth_override": {
+          "three_men": {
+            "text": "'Same sponsor,' Dapo says, and toasts you. Madam closes her eyes. Bisola starts typing.",
+            "saw_truth": true,
+            "clout": 10,
+            "set": [
+              {
+                "flag": "met_dapo",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "widow": {
+            "text": "'Same aunty,' Dapo says. 'She dressed me for my wedding too. She dresses everyone she loves.'",
+            "trust": 8,
+            "attachment": 4
+          }
+        }
+      },
+      {
+        "id": "bigboy_spray",
+        "label": "[Big Boy] Spray Dapo. Bigger notes. Make it clear.",
+        "vibe": "bigboy",
+        "cost": 100000,
+        "receipt": "You outsprayed Dapo at the owambe.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The hall roars. Dapo bows, collects every note and leaves. A professional.",
+            "clout": 25,
+            "attachment": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "folake_pd_shoes",
+    "character": "madam_folake",
+    "slot": "public_drama",
+    "scene": {
+      "location": "vi_club_vip",
+      "time": "night",
+      "expression": "angry",
+      "mood": "negative",
+      "npc": {
+        "name": "Bisola"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Her VIP lounge in VI, full of her clients. Madam looks at your shoes. Then at the room."
+      },
+      {
+        "who": "partner",
+        "text": "Darling. Those shoes. Go and change. Bisola has a pair in the car. Now, please."
+      },
+      {
+        "who": "Bisola",
+        "text": "Size already confirmed, Madam."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "husband_alive": {
+        "id": "t_fh_abuja",
+        "text": "Her phone buzzes on the table: 'Abuja Office'. She goes pale and pushes it under a napkin."
+      },
+      "three_men": {
+        "id": "t_f3_slot",
+        "text": "Bisola, to the waiter: 'Same order as last Thursday's guest. And Tuesday's.'"
+      },
+      "widow": {
+        "id": "t_fw_ring",
+        "text": "She twists her wedding ring while she says it. Round and round. Like she's somewhere else."
+      }
+    },
+    "choices": [
+      {
+        "id": "change",
+        "label": "Change the shoes. Smile at the clients.",
+        "tags": [
+          "excuse",
+          "discreet"
+        ],
+        "receipt": "You changed your shoes because Madam told you to.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The new shoes are better. That's the worst part. She squeezes your hand: 'Thank you.' The room approves.",
+            "attachment": 10,
+            "sanity": -8,
+            "set": [
+              {
+                "flag": "accepted_kept",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "push",
+        "label": "\"I dress myself, Madam.\" Loudly.",
+        "tags": [
+          "public_embarrassment"
+        ],
+        "receipt": "You told Madam off in front of her clients.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The lounge goes quiet. Somebody laughs. Madam doesn't. 'Bisola, the bill.' The night is over.",
+            "clout": 10,
+            "attachment": -10
+          }
+        ],
+        "truth_override": {
+          "widow": {
+            "text": "She blinks. Then, to the room: 'This one has opinions. I like opinions.' Later, alone: 'Sorry. I panic in rooms.'",
+            "trust": 8,
+            "attachment": 2,
+            "clout": 10
+          }
+        }
+      },
+      {
+        "id": "later",
+        "label": "Keep your shoes. Talk to her later, alone.",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You kept your shoes and spoke to Madam privately.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "In the car: 'Don't correct me in front of people. Correct me here.' She listens. Not long. But she listens.",
+            "trust": 6,
+            "attachment": 2
+          }
+        ],
+        "truth_override": {
+          "widow": {
+            "text": "In the car she says: 'My husband wore shoes like that. It hurt to look at.' Oh.",
+            "trust": 12,
+            "attachment": 6
+          }
+        }
+      },
+      {
+        "id": "carry",
+        "label": "Wear Bisola's shoes. Carry yours in your hand.",
+        "receipt": "You wore her shoes and carried your own.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The clients find it hilarious. Madam pretends not to. She fails.",
+            "attachment": 6,
+            "clout": 8,
+            "chemistry": 3
+          }
+        ]
+      },
+      {
+        "id": "amala",
+        "label": "\"Let's leave. Amala in Surulere. Shoes optional.\"",
+        "requires": {
+          "flags": [
+            "knows_amala"
+          ]
+        },
+        "receipt": "You took Madam out for amala in Surulere.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She stares. Then she kicks off her heels under the table. 'Bisola, cancel everything.' Best night in years, she says.",
+            "attachment": 12,
+            "trust": 10,
+            "chemistry": 4
+          }
+        ]
+      },
+      {
+        "id": "bigboy_shoes",
+        "label": "[Big Boy] Buy every client in the lounge new shoes.",
+        "vibe": "bigboy",
+        "cost": 150000,
+        "receipt": "You bought shoes for Madam's entire lounge.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Twelve clients. Twelve pairs. Madam is speechless for the first time in recorded history.",
+            "clout": 30,
+            "attachment": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "folake_pd_kept",
+    "character": "madam_folake",
+    "slot": "public_drama",
+    "scene": {
+      "location": "mainland_street",
+      "time": "morning",
+      "mood": "negative",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "The Parlour, 9am: you stepping out of her Range Rover. Caption: 'Madam Folake's new pet 🐶 Kept in Ikoyi.' 3,000 likes."
+      },
+      {
+        "who": "narration",
+        "text": "Your group chat: 'Kept and content 😂'. Your cousin: 'Ask if she has a sister.'"
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "husband_alive": {
+        "id": "t_fh_hilux",
+        "text": "Second photo in the post: you at a bus stop, shot from inside a grey Hilux. Who took that one?"
+      },
+      "three_men": {
+        "id": "t_f3_name",
+        "text": "Top comment, from @dapo_spins: 'Welcome to the team 🤝'. 400 likes."
+      },
+      "widow": {
+        "id": "t_fw_pa",
+        "text": "Bisola texts at 9:04: 'Madam has seen it. She's asking if you're okay. She is not asking anything else.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "own_it",
+        "label": "Repost it: \"Kept? I'm employed. Different thing.\"",
+        "receipt": "You flexed on the Parlour about being kept.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "The Parlour loves it. You go from punchline to icon in an hour.",
+            "clout": 20,
+            "exposure": 10,
+            "set": [
+              {
+                "flag": "secret_kept_flex",
+                "knows": [
+                  "player",
+                  "world"
+                ]
+              }
+            ]
+          },
+          {
+            "chance": 0.4,
+            "text": "Madam sees it. 'You think this is funny?' It was. Until now.",
+            "bad": true,
+            "clout": 10,
+            "exposure": 15,
+            "attachment": -8,
+            "set": [
+              {
+                "flag": "secret_kept_flex",
+                "knows": [
+                  "player",
+                  "world"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "deny",
+        "label": "Comment: \"Fake. That's my aunty.\"",
+        "receipt": "You told the Parlour Madam was your aunty.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She sees it. 'Your aunty.' She doesn't speak to you until evening, and then only about logistics.",
+            "attachment": -10,
+            "clout": -5,
+            "sanity": -3
+          }
+        ]
+      },
+      {
+        "id": "tell_her",
+        "label": "Send it to Madam: \"Can you handle this?\"",
+        "tags": [
+          "contact_partner",
+          "cautious"
+        ],
+        "receipt": "You asked Madam to make the post disappear.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "It's gone in twenty minutes. The blog posts an apology. Nobody knows how. Everybody suspects.",
+            "attachment": 6,
+            "control": 1
+          }
+        ],
+        "truth_override": {
+          "husband_alive": {
+            "text": "'I can't. Not this one. Stay indoors today.' She's frightened. Of a blog?",
+            "sanity": -10
+          },
+          "widow": {
+            "text": "Gone in ten minutes. Then she calls: 'Are you okay? I'm sorry my life lands on you.'",
+            "trust": 10,
+            "attachment": 5
+          }
+        }
+      },
+      {
+        "id": "silent",
+        "label": "Say nothing. Go to work. Let it die.",
+        "tags": [
+          "discreet"
+        ],
+        "receipt": "You ignored the Parlour post.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "It dies by Thursday. Your coworkers call you 'Ikoyi' for the rest of your career.",
+            "sanity": -5,
+            "exposure": 5
+          }
+        ]
+      },
+      {
+        "id": "content",
+        "label": "Comment: \"Kept AND content. Next question.\"",
+        "requires": {
+          "flags": [
+            "accepted_kept"
+          ]
+        },
+        "receipt": "You owned being kept on the Parlour.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The Parlour can't roast someone who agrees. Madam screenshots it and sends it to Bisola with three crowns.",
+            "clout": 15,
+            "attachment": 10,
+            "sanity": 5
+          }
+        ],
+        "truth_override": {
+          "husband_alive": {
+            "text": "The Parlour loves it. So does a grey Hilux account that follows you within the hour.",
+            "clout": 15,
+            "attachment": 8,
+            "exposure": 10
+          }
+        }
+      },
+      {
+        "id": "ask_her",
+        "label": "Call her and ask how SHE feels about it.",
+        "tags": [
+          "cautious"
+        ],
+        "requires": {
+          "flags": [
+            "knows_ask_day"
+          ]
+        },
+        "receipt": "You asked Madam how she felt about the post.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She's quiet. 'Nobody asks me that.' Then: 'Embarrassed. For you. Not of you.'",
+            "trust": 10,
+            "attachment": 8
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "folake_cf_husband",
+    "character": "madam_folake",
+    "slot": "confrontation",
+    "scene": {
+      "location": "mainland_street",
+      "time": "morning",
+      "mood": "negative",
+      "partner_present": false,
+      "npc": {
+        "name": "Mr. Sule"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "6am. A man in a grey kaftan at your gate. Polite. Patient. He has clearly been here before."
+      },
+      {
+        "who": "Mr. Sule",
+        "text": "I work for Engineer Adeyemi. Madam's husband, in Abuja. He'd like this to stop. This envelope is ₦1m. The other one has photographs."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "requires": {
+      "truth": [
+        "husband_alive"
+      ]
+    },
+    "tells": {
+      "husband_alive": {
+        "id": "t_fh_hilux",
+        "text": "Behind him at your gate: the grey Hilux. FCT plates. Engine running, like always."
+      }
+    },
+    "choices": [
+      {
+        "id": "take",
+        "label": "Take the ₦1m. Leave Lagos for a while.",
+        "receipt": "You took the husband's ₦1m to disappear.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You take the money and the next bus to Ibadan. Madam calls forty times. You let it ring. You're paid and you're alive.",
+            "wallet": 1000000,
+            "saw_truth": true,
+            "attachment": -30,
+            "trust": -20,
+            "sanity": -5
+          }
+        ]
+      },
+      {
+        "id": "call_her",
+        "label": "Call Madam on speaker. In front of him.",
+        "tags": [
+          "contact_partner"
+        ],
+        "receipt": "You called Madam on speaker in front of her husband's man.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She picks up crying before you speak. 'I'm sorry. I thought he wouldn't bother with you. Go inside. Lock the door.'",
+            "saw_truth": true,
+            "sanity": -10,
+            "trust": 6,
+            "attachment": 5
+          }
+        ]
+      },
+      {
+        "id": "stand",
+        "label": "\"Tell the Engineer I'm not scared.\"",
+        "receipt": "You told her husband's man you weren't scared.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "Mr. Sule nods, almost respectful. 'I'll tell him.' That night your landlord gives you notice. No reason given.",
+            "saw_truth": true,
+            "sanity": -15,
+            "attachment": 10
+          },
+          {
+            "chance": 0.5,
+            "text": "'You should be,' he says, gently. The Hilux follows you to work. And home. And to church.",
+            "bad": true,
+            "saw_truth": true,
+            "sanity": -25,
+            "attachment": 10
+          }
+        ]
+      },
+      {
+        "id": "post",
+        "label": "Photograph him. Post it on the Parlour.",
+        "tags": [
+          "toxic",
+          "public_embarrassment"
+        ],
+        "receipt": "You posted her husband's man on the Parlour.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The Parlour explodes: 'Madam Folake's HUSBAND is alive?!' By noon, her bookings are cancelling. By night, so are you.",
+            "saw_truth": true,
+            "truth_exposed": true,
+            "goal": {
+              "revenge": 50
+            },
+            "exposure": 30,
+            "clout": 20,
+            "attachment": -20,
+            "sanity": -10
+          }
+        ]
+      },
+      {
+        "id": "leave",
+        "label": "Hand back the envelopes. Close the gate. Block her.",
+        "receipt": "You returned the envelopes and walked away from Madam.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You hand both envelopes back unopened, lock the gate and block her number. The Hilux leaves. It doesn't come back.",
+            "end": "walked_away",
+            "saw_truth": true,
+            "sanity": 10
+          }
+        ]
+      },
+      {
+        "id": "plate",
+        "label": "\"Your plate's been in my phone since day two.\"",
+        "tags": [
+          "call_out"
+        ],
+        "requires": {
+          "flags": [
+            "secret_hilux_plate"
+          ]
+        },
+        "receipt": "You showed Mr. Sule the plate photo you'd taken.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He reads his own plate off your screen and stops smiling. 'Nobody needs police.' He leaves. The Hilux doesn't come back.",
+            "saw_truth": true,
+            "sanity": 10,
+            "control": -1
+          }
+        ]
+      },
+      {
+        "id": "hilux",
+        "label": "\"She said the Hilux wasn't hers. Now I know whose.\"",
+        "tags": [
+          "call_out"
+        ],
+        "requires": {
+          "flags": [
+            "asked_hilux"
+          ]
+        },
+        "receipt": "You told Mr. Sule you'd worked out whose Hilux it was.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Mr. Sule: 'She told you the truth, then. That's new.' He almost sounds sorry for both of you.",
+            "saw_truth": true,
+            "sanity": -5,
+            "trust": 5
+          }
+        ]
+      },
+      {
+        "id": "ten",
+        "label": "\"So he's the ten o'clock call.\"",
+        "tags": [
+          "call_out"
+        ],
+        "requires": {
+          "flags": [
+            "knows_10pm"
+          ]
+        },
+        "receipt": "You worked out who calls Madam at 10pm.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Mr. Sule's eyebrows lift. 'Every night at ten, he checks on her. Now he checks on you.'",
+            "saw_truth": true,
+            "sanity": -8
+          }
+        ]
+      },
+      {
+        "id": "clause",
+        "label": "\"Clause 12. 'Monitoring for security.' That was him.\"",
+        "tags": [
+          "call_out"
+        ],
+        "requires": {
+          "flags": [
+            "signed_nda"
+          ]
+        },
+        "receipt": "You connected the NDA's monitoring clause to her husband.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He smiles for the first time. 'You read your contract. Most don't.' He tears up the photographs in front of you.",
+            "saw_truth": true,
+            "sanity": 5
+          }
+        ]
+      },
+      {
+        "id": "refund",
+        "label": "\"Tell the Engineer to refund my diesel money.\"",
+        "requires": {
+          "flags": [
+            "lent_madam"
+          ]
+        },
+        "receipt": "You asked her husband's man to refund your money.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "Mr. Sule makes one call. The alert lands before he reaches the Hilux. 'The Engineer pays his wife's debts. Then he collects.'",
+            "wallet": 300000,
+            "scaled": true,
+            "saw_truth": true
+          },
+          {
+            "chance": 0.5,
+            "text": "'The Engineer doesn't pay for his wife's friends.' He leaves. So does your money, forever.",
+            "bad": true,
+            "saw_truth": true,
+            "sanity": -10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "folake_cf_three",
+    "character": "madam_folake",
+    "slot": "confrontation",
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "night",
+      "expression": "caught",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Her birthday dinner on the Ikoyi rooftop. Bisola made one mistake: she seated all three of you at the same table."
+      },
+      {
+        "who": "narration",
+        "text": "Name cards: 'Tuesday'. 'Thursday'. 'Saturday'. You're Saturday."
+      },
+      {
+        "who": "partner",
+        "text": "Bisola. My office. Tomorrow. Everyone else: happy birthday to me."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "requires": {
+      "truth": [
+        "three_men"
+      ]
+    },
+    "tells": {
+      "three_men": {
+        "id": "t_f3_name",
+        "text": "She looks down the table: 'Dapo, Tobi, darling--' It's the first time she's gotten all three right."
+      }
+    },
+    "choices": [
+      {
+        "id": "toast",
+        "label": "Raise a glass: \"To the schedule!\"",
+        "tags": [
+          "public_embarrassment",
+          "call_out"
+        ],
+        "receipt": "You toasted Madam's schedule in front of the whole rooftop.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Dapo laughs first, then Tobi. The whole terrace toasts the schedule. Madam doesn't laugh. Then, finally, she does.",
+            "saw_truth": true,
+            "truth_exposed": true,
+            "goal": {
+              "revenge": 40
+            },
+            "clout": 25,
+            "attachment": -10
+          }
+        ]
+      },
+      {
+        "id": "invoice",
+        "label": "Team up with Dapo and Tobi. Invoice her together.",
+        "receipt": "You invoiced Madam together with her other two men.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Three invoices, one total: 'emotional logistics'. She pays your share, ₦1m, with a smile that will haunt you.",
+            "wallet": 1000000,
+            "saw_truth": true,
+            "attachment": -30,
+            "trust": -15
+          }
+        ]
+      },
+      {
+        "id": "which",
+        "label": "Ask her quietly which of you she actually loves.",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked Madam which of you she loved.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "She looks at the three of you for a long time. 'Saturday.' Dapo and Tobi leave together, comparing receipts.",
+            "saw_truth": true,
+            "attachment": 20,
+            "trust": 12
+          },
+          {
+            "chance": 0.5,
+            "text": "'All of you. Differently.' She means it. That's worse.",
+            "bad": true,
+            "saw_truth": true,
+            "attachment": -10,
+            "sanity": -15
+          }
+        ]
+      },
+      {
+        "id": "walk",
+        "label": "Leave your name card on the cake. Walk.",
+        "receipt": "You left your name card and walked out of her birthday.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You leave 'Saturday' face up beside the candles. Your Saturdays are yours again.",
+            "end": "walked_away",
+            "saw_truth": true,
+            "sanity": 10
+          }
+        ]
+      },
+      {
+        "id": "dapo",
+        "label": "\"Tuesday. Dapo. We've met. Nice tailor.\"",
+        "tags": [
+          "call_out"
+        ],
+        "requires": {
+          "flags": [
+            "met_dapo"
+          ]
+        },
+        "receipt": "You greeted Dapo like an old colleague.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Dapo high-fives you. Tobi asks for your tailor's number. Madam realises she has lost control of her own birthday.",
+            "saw_truth": true,
+            "clout": 15,
+            "trust": 5,
+            "attachment": 5
+          }
+        ]
+      },
+      {
+        "id": "board",
+        "label": "\"Board meetings. Tuesdays and Thursdays. Happy birthday.\"",
+        "tags": [
+          "call_out"
+        ],
+        "requires": {
+          "flags": [
+            "knows_tue_thu"
+          ]
+        },
+        "receipt": "You told Madam you'd known about her 'board meetings'.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Madam puts down her fork. 'You knew.' 'Since day two.' She looks at you differently now. Like an equal.",
+            "saw_truth": true,
+            "attachment": 12,
+            "trust": 10
+          }
+        ]
+      },
+      {
+        "id": "bisola",
+        "label": "\"Bisola told me. Tuesday's Yaba, Thursday's GRA.\"",
+        "tags": [
+          "call_out"
+        ],
+        "requires": {
+          "flags": [
+            "heard_slots"
+          ]
+        },
+        "receipt": "You revealed that Bisola had told you the schedule.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Bisola stands up, sits down, stands up again. Madam doesn't even look at her. She looks at you.",
+            "saw_truth": true,
+            "clout": 10,
+            "trust": 4
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "folake_cf_widow",
+    "character": "madam_folake",
+    "slot": "confrontation",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "expression": "sad",
+      "mood": "negative",
+      "npc": {
+        "name": "Bisola"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Midnight, her Ikoyi house. Bisola leaves a funeral programme on the table: 'Adewale, 1971–2021'. Then she leaves the room."
+      },
+      {
+        "who": "partner",
+        "text": "He died on the Lagos-Ibadan Expressway. In one of our trucks. I control everything now because I couldn't control that."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "requires": {
+      "truth": [
+        "widow"
+      ]
+    },
+    "tells": {
+      "widow": {
+        "id": "t_fw_ring",
+        "text": "She takes off the ring for the first time since you met her, and holds it out to you in her palm."
+      }
+    },
+    "choices": [
+      {
+        "id": "listen",
+        "label": "Sit with her. Listen till she's done.",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You sat with Madam and listened.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She talks till 3am: the trucks, the funeral, the five years. Then she falls asleep on your shoulder, ring in her hand.",
+            "trust": 18,
+            "attachment": 12,
+            "sanity": 5
+          }
+        ]
+      },
+      {
+        "id": "boundary",
+        "label": "\"I'm here. But my phone and my Saturdays stay mine.\"",
+        "tags": [
+          "cautious",
+          "independence"
+        ],
+        "receipt": "You stayed, and kept your phone and your Saturdays.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She laughs and cries at the same time. 'Deal. Bisola will hate it.' Bisola, from the corridor: 'I do.'",
+            "trust": 15,
+            "attachment": 10,
+            "control": -2
+          }
+        ]
+      },
+      {
+        "id": "post",
+        "label": "Post the programme: \"Grief or control? Discuss.\"",
+        "tags": [
+          "toxic",
+          "public_embarrassment"
+        ],
+        "receipt": "You posted her late husband's funeral programme on the Parlour.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The Parlour argues for a week. Folake reads every comment. She never calls again.",
+            "exposure": 20,
+            "clout": 10,
+            "attachment": -20,
+            "trust": -20
+          }
+        ]
+      },
+      {
+        "id": "leave",
+        "label": "\"This is too heavy for me.\" Leave gently.",
+        "receipt": "You left Madam gently.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You kiss her forehead and go. Bisola sees you out. 'Thank you for being gentle,' she says.",
+            "end": "walked_away",
+            "sanity": -5
+          }
+        ]
+      },
+      {
+        "id": "trucks",
+        "label": "\"That's why you don't sleep till the trucks arrive.\"",
+        "requires": {
+          "flags": [
+            "knows_trucks"
+          ]
+        },
+        "receipt": "You remembered why she waits up for her trucks.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She stares. 'You remembered that.' Then she cries properly, for the first time in five years.",
+            "trust": 18,
+            "attachment": 15,
+            "chemistry": 4
+          }
+        ]
+      },
+      {
+        "id": "day",
+        "label": "\"How was your day? Really.\"",
+        "tags": [
+          "cautious"
+        ],
+        "requires": {
+          "flags": [
+            "knows_ask_day"
+          ]
+        },
+        "receipt": "You asked Madam how her day really was.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Terrible,' she says, and laughs. 'Thank you for asking. Nobody asks. They invoice.'",
+            "trust": 12,
+            "attachment": 10
+          }
+        ]
+      },
+      {
+        "id": "navy",
+        "label": "\"Was navy his colour?\"",
+        "requires": {
+          "flags": [
+            "refused_outfit"
+          ]
+        },
+        "receipt": "You asked if navy had been her husband's colour.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Every Sunday for twenty years.' She touches your sleeve. 'I'll stop dressing you. I promise.'",
+            "trust": 12,
+            "attachment": 8,
+            "control": -1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "folake_po_paid",
+    "character": "madam_folake",
+    "slot": "payoff",
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "afternoon",
+      "expression": "charming",
+      "mood": "positive"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Bisola arrives at your office with an envelope: your exact bill, refunded, and a note in Madam's handwriting."
+      },
+      {
+        "who": "partner",
+        "text": "Nobody pays for me. I didn't sleep. Explain yourself. Thursday. My house. I'm cooking."
+      }
+    ],
+    "requires": {
+      "flags": [
+        "paid_own_date"
+      ],
+      "not_flags": [
+        "paid_done"
+      ],
+      "flag_age": {
+        "flag": "paid_own_date",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "paid_own_date"
+    ],
+    "priority": 5,
+    "choices": [
+      {
+        "id": "keep",
+        "label": "Keep the refund. Go on Thursday.",
+        "receipt": "You kept the refund and went to Madam's for dinner.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She cooks ewa agoyin herself, badly, and laughs at it with you. Bisola eats the leftovers in the car.",
+            "wallet": 60000,
+            "scaled": true,
+            "attachment": 8,
+            "set": [
+              "paid_done"
+            ]
+          }
+        ],
+        "truth_override": {
+          "three_men": {
+            "text": "She cooks. Halfway through, Bisola whispers: 'She has never cooked for the others.' The others.",
+            "wallet": 60000,
+            "scaled": true,
+            "attachment": 8,
+            "set": [
+              "paid_done"
+            ]
+          }
+        }
+      },
+      {
+        "id": "return",
+        "label": "Return the envelope: \"It was a gift.\"",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You returned Madam's refund.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Bisola brings it back. You return it. Bisola brings it back. On round four Madam calls: 'Fine. Stubborn. Thursday.'",
+            "attachment": 6,
+            "trust": 6,
+            "set": [
+              "paid_done"
+            ]
+          }
+        ],
+        "truth_override": {
+          "widow": {
+            "text": "On round four, Folake calls herself, laughing: 'Fine. You win. My husband was stubborn too.'",
+            "trust": 12,
+            "attachment": 8,
+            "set": [
+              "paid_done"
+            ]
+          },
+          "husband_alive": {
+            "text": "On round three Bisola whispers: 'Please take it. Madam says no receipts with your name on them. People check.'",
+            "sanity": -8,
+            "set": [
+              "paid_done"
+            ]
+          }
+        }
+      },
+      {
+        "id": "dessert",
+        "label": "\"I'll bring dessert. From Surulere.\"",
+        "tags": [
+          "budget"
+        ],
+        "cost": 5000,
+        "receipt": "You brought Madam puff-puff from Surulere.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You bring puff-puff in a nylon bag. She eats eleven. 'Don't tell Bisola.'",
+            "attachment": 10,
+            "chemistry": 4,
+            "set": [
+              "paid_done"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "folake_po_navy",
+    "character": "madam_folake",
+    "slot": "payoff",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "golden",
+      "mood": "neutral",
+      "partner_present": false,
+      "npc": {
+        "name": "Bisola"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "A garment bag at your door. Navy. Again. A note is pinned to it:"
+      },
+      {
+        "who": "Bisola",
+        "text": "Madam insists. Kindly wear it tonight. She has asked me to say please. Please."
+      }
+    ],
+    "requires": {
+      "flags": [
+        "refused_outfit"
+      ],
+      "not_flags": [
+        "navy_done"
+      ],
+      "flag_age": {
+        "flag": "refused_outfit",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "refused_outfit"
+    ],
+    "priority": 4,
+    "choices": [
+      {
+        "id": "wear",
+        "label": "Wear it. Pick your battles.",
+        "receipt": "You wore the navy outfit Madam sent.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She sees you and exhales. 'Thank you.' You look great. You hate that you look great.",
+            "attachment": 10,
+            "sanity": -6,
+            "set": [
+              "navy_done"
+            ]
+          }
+        ],
+        "truth_override": {
+          "husband_alive": {
+            "text": "'Navy is invisible,' she says, seating you at the back of her table. Invisible to whom?",
+            "attachment": 8,
+            "sanity": -8,
+            "set": [
+              "navy_done"
+            ]
+          }
+        }
+      },
+      {
+        "id": "return",
+        "label": "Return it with a note: \"I dress myself.\"",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You sent the navy outfit back.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Bisola sends a voice note: a long, tired sigh. Then: 'Madam says okay. Madam says... okay.'",
+            "attachment": -5,
+            "sanity": 6,
+            "set": [
+              "navy_done"
+            ]
+          }
+        ],
+        "truth_override": {
+          "widow": {
+            "text": "Folake calls: 'You're right. I'll stop. It was his colour. I'm sorry.'",
+            "trust": 12,
+            "attachment": 6,
+            "set": [
+              "navy_done"
+            ]
+          }
+        }
+      },
+      {
+        "id": "gele",
+        "label": "Send back a gele in your colours, for her.",
+        "tags": [
+          "budget"
+        ],
+        "cost": 15000,
+        "receipt": "You sent Madam a gele you chose.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She wears it to an owambe. The aunties ask who chose it. She says your name, loudly.",
+            "attachment": 10,
+            "trust": 6,
+            "chemistry": 3,
+            "set": [
+              "navy_done"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "folake_po_tracked",
+    "character": "madam_folake",
+    "slot": "payoff",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "mood": "negative",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "3am. The phone she gave you lights up on its own: 'Location shared with 3 people.' You only know two of them."
+      }
+    ],
+    "requires": {
+      "flags": [
+        "took_phone"
+      ],
+      "not_flags": [
+        "tracked_done"
+      ],
+      "flag_age": {
+        "flag": "took_phone",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "took_phone"
+    ],
+    "priority": 5,
+    "choices": [
+      {
+        "id": "check",
+        "label": "Open the settings. See who's watching.",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You checked who was tracking the phone Madam gave you.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Madam. Bisola. And 'Device 3', refreshing your location every minute.",
+            "sanity": -8,
+            "set": [
+              "tracked_done"
+            ]
+          }
+        ],
+        "truth_override": {
+          "husband_alive": {
+            "text": "Madam. Bisola. And an Abuja number with no name, refreshing every minute.",
+            "saw_truth": true,
+            "sanity": -12,
+            "set": [
+              "tracked_done"
+            ]
+          },
+          "three_men": {
+            "text": "Madam. Bisola. And 'Madam's iPad (GRA)'. The iPad is at an address in Ikeja GRA.",
+            "saw_truth": true,
+            "sanity": -8,
+            "set": [
+              "tracked_done"
+            ]
+          },
+          "widow": {
+            "text": "Madam, Bisola, and 'Dr. Okoye'. Her doctor. In case you collapse. She worries in very strange ways.",
+            "trust": 6,
+            "set": [
+              "tracked_done"
+            ]
+          }
+        }
+      },
+      {
+        "id": "off",
+        "label": "Turn sharing off. Go back to sleep.",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You turned off location sharing.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "At 6am Bisola calls: 'Madam noticed. She'd like to know why.'",
+            "attachment": -5,
+            "sanity": 3,
+            "set": [
+              "tracked_done"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "drawer",
+        "label": "Put her phone in a drawer. Use your old one.",
+        "receipt": "You put Madam's phone away and used your own.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Your old phone feels light. Free. It has 34 unread messages from your actual friends.",
+            "sanity": 8,
+            "attachment": -3,
+            "set": [
+              "tracked_done"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ask",
+        "label": "Text Madam: \"Who is the third person?\"",
+        "tags": [
+          "contact_partner",
+          "cautious"
+        ],
+        "receipt": "You asked Madam who the third tracker was.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She replies at 3:01am. Awake. 'Security. Go back to sleep, darling.'",
+            "sanity": -5,
+            "set": [
+              "tracked_done"
+            ]
+          }
+        ],
+        "truth_override": {
+          "widow": {
+            "text": "'My doctor. In case you fall. I lost someone on a road once.' You turn it off together, on the phone.",
+            "trust": 10,
+            "attachment": 6,
+            "set": [
+              "tracked_done"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "folake_po_kept_dm",
+    "character": "madam_folake",
+    "slot": "payoff",
+    "presentation": "text",
+    "scene": {
+      "location": "mainland_street",
+      "time": "night",
+      "mood": "negative",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "A DM from an account with no picture, replying to your 'Kept? I'm employed' post."
+      },
+      {
+        "who": "Unknown",
+        "text": "Funny post. Enjoy Ikoyi while it lasts."
+      }
+    ],
+    "requires": {
+      "flags": [
+        "secret_kept_flex"
+      ],
+      "not_flags": [
+        "kept_done"
+      ],
+      "flag_age": {
+        "flag": "secret_kept_flex",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "secret_kept_flex"
+    ],
+    "priority": 4,
+    "choices": [
+      {
+        "id": "who",
+        "label": "\"Who is this?\"",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You asked the stranger who they were.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Read. Then the account disappears.",
+            "sanity": -3,
+            "set": [
+              "kept_done"
+            ]
+          }
+        ],
+        "truth_override": {
+          "husband_alive": {
+            "text": "'Ask her husband how long things last.' Then a photo of your gate, taken this morning.",
+            "saw_truth": true,
+            "sanity": -15,
+            "set": [
+              "kept_done"
+            ]
+          },
+          "three_men": {
+            "text": "'It lasted a year for me. Then she found a Saturday. - D.'",
+            "saw_truth": true,
+            "sanity": -8,
+            "set": [
+              "kept_done"
+            ]
+          },
+          "widow": {
+            "text": "'Her late husband's sister. I post nonsense. Ignore me.' Then: 'Actually, look after her.'",
+            "sanity": 3,
+            "set": [
+              "kept_done"
+            ]
+          }
+        }
+      },
+      {
+        "id": "forward",
+        "label": "Forward it to Madam.",
+        "tags": [
+          "contact_partner",
+          "cautious"
+        ],
+        "receipt": "You forwarded the DM to Madam.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Delete your post, darling. Please.' It's the 'please' that scares you.",
+            "sanity": -3,
+            "set": [
+              "kept_done"
+            ],
+            "reveal": [
+              {
+                "flag": "secret_kept_flex",
+                "to": [
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "husband_alive": {
+            "text": "'Delete it. Now. And stay home tonight.' She's whispering.",
+            "sanity": -10,
+            "set": [
+              "kept_done"
+            ],
+            "reveal": [
+              {
+                "flag": "secret_kept_flex",
+                "to": [
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "widow": {
+            "text": "'That's my sister-in-law. She hates everyone I like. So she likes you a bit.'",
+            "trust": 6,
+            "attachment": 3,
+            "set": [
+              "kept_done"
+            ],
+            "reveal": [
+              {
+                "flag": "secret_kept_flex",
+                "to": [
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "delete",
+        "label": "Delete the post. Block. Breathe.",
+        "tags": [
+          "discreet"
+        ],
+        "receipt": "You deleted your post and blocked the stranger.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Deleted. The screenshots are not.",
+            "exposure": 5,
+            "sanity": -3,
+            "set": [
+              "kept_done"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "folake_es_week",
+    "character": "madam_folake",
+    "slot": "escalation",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "expression": "suspicious",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "Bisola",
+        "text": "Your week, from Madam: every evening booked. Your sister's birthday on Saturday has been declined on your behalf. Gift sent."
+      },
+      {
+        "who": "narration",
+        "text": "You never told Bisola you have a sister. Madam is watching you read it."
+      }
+    ],
+    "requires": {
+      "day_min": 3
+    },
+    "choices": [
+      {
+        "id": "stay",
+        "label": "Go along. Your sister will understand.",
+        "tags": [
+          "stay"
+        ],
+        "receipt": "You let Madam cancel your sister's birthday for you.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Your sister sends a voice note: 'So we don't see you again?' You listen to it twice, locked in Madam's bathroom.",
+            "attachment": 15,
+            "control": 2,
+            "sanity": -12
+          }
+        ]
+      },
+      {
+        "id": "sister",
+        "label": "\"I'm going to my sister's. Cancel me.\"",
+        "tags": [
+          "exit",
+          "cautious"
+        ],
+        "receipt": "You told Madam you were going to your sister's birthday.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Bisola: 'Madam has... noted.' Saturday you dance with your sister till 2am. Madam doesn't call. That is its own message.",
+            "attachment": -15,
+            "control": -2,
+            "sanity": 8,
+            "set": [
+              "boundary_set"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bestie",
+        "label": "Call your Bestie. Read the message out loud.",
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You read Madam's schedule to your Bestie.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Bestie: 'How does she know you have a sister? HOW?' You don't have an answer. You go to the party.",
+            "attachment": -8,
+            "control": -1,
+            "sanity": 6
+          }
+        ]
+      },
+      {
+        "id": "leave",
+        "label": "Block them both. Go to your sister's. Stay there.",
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You blocked Madam and her PA and went to your sister's.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You sleep on your sister's couch for a week. She asks no questions. She makes you eba every night.",
+            "end": "walked_away",
+            "sanity": 12
+          }
+        ]
+      },
+      {
+        "id": "afraid",
+        "label": "\"What are you scared of if I'm out of sight?\"",
+        "tags": [
+          "call_out"
+        ],
+        "requires": {
+          "flags": [
+            "knows_ask_day"
+          ]
+        },
+        "receipt": "You asked Madam what she was afraid of.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Silence. Then Madam, not Bisola: 'Everything.' It's the most honest thing she's said. It doesn't make the schedule okay.",
+            "control": -1,
+            "sanity": 5,
+            "attachment": -5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "folake_es_old_phone",
+    "character": "madam_folake",
+    "slot": "escalation",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "expression": "angry",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Your old phone. Give it to me. You don't need it. You have mine."
+      },
+      {
+        "who": "narration",
+        "text": "Her hand is out. Bisola holds a small bag, open, ready. Nobody is smiling."
+      }
+    ],
+    "requires": {
+      "day_min": 3
+    },
+    "choices": [
+      {
+        "id": "hand",
+        "label": "Hand it over. You don't need it.",
+        "tags": [
+          "stay"
+        ],
+        "receipt": "You handed Madam your own phone.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Bisola drops it in the bag. Your contacts, your photos, your mother's voice notes. Gone in one zip.",
+            "attachment": 15,
+            "control": 2,
+            "sanity": -15
+          }
+        ]
+      },
+      {
+        "id": "no",
+        "label": "\"No. My phone is mine.\"",
+        "tags": [
+          "exit",
+          "cautious"
+        ],
+        "receipt": "You refused to give Madam your phone.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Her hand stays out for a long time. Then it drops. 'Bisola, leave us.' You keep your phone. The room stays cold.",
+            "attachment": -15,
+            "control": -2,
+            "sanity": 5,
+            "set": [
+              "boundary_set"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bestie",
+        "label": "\"Let me back it up first.\" Call your Bestie.",
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You called your Bestie when Madam asked for your phone.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "From the toilet. Bestie: 'Back it up? Babe, LEAVE.' You don't hand it over. You go home.",
+            "attachment": -8,
+            "control": -1,
+            "sanity": 8
+          }
+        ]
+      },
+      {
+        "id": "leave",
+        "label": "Pocket your phone. Walk out.",
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You walked out of Madam's house with your phone.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Past Bisola, past the gate, onto Bourdillon Road. The phone in your pocket rings. It's your mum. You pick up.",
+            "end": "walked_away",
+            "sanity": 12
+          }
+        ]
+      },
+      {
+        "id": "gift",
+        "label": "\"You gave me your phone so you could take mine.\"",
+        "tags": [
+          "call_out"
+        ],
+        "requires": {
+          "flags": [
+            "took_phone"
+          ]
+        },
+        "receipt": "You named what the gift phone was for.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She doesn't deny it. 'I need to know where you are.' 'You already do,' you say. 'That's the problem.'",
+            "control": -1,
+            "sanity": 5,
+            "attachment": -5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "folake_es_driver",
+    "character": "madam_folake",
+    "slot": "escalation",
+    "scene": {
+      "location": "mainland_street",
+      "time": "golden",
+      "expression": "suspicious",
+      "mood": "negative",
+      "npc": {
+        "name": "Madam's driver"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "6pm, outside your office in Yaba. Her driver is at the gate. Engine on. Back door open."
+      },
+      {
+        "who": "Madam's driver",
+        "text": "Madam says I should carry you. Straight home. Only home. She'll call you there at seven to check."
+      }
+    ],
+    "requires": {
+      "day_min": 4
+    },
+    "choices": [
+      {
+        "id": "get_in",
+        "label": "Get in. It's easier.",
+        "tags": [
+          "stay"
+        ],
+        "receipt": "You let Madam's driver take you straight home.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The car smells of her perfume. At 7:00 exactly, the landline in the flat rings. You didn't know there was a landline.",
+            "attachment": 15,
+            "control": 2,
+            "sanity": -12
+          }
+        ]
+      },
+      {
+        "id": "brt",
+        "label": "\"Tell Madam I'll take the BRT.\" Walk.",
+        "tags": [
+          "exit",
+          "cautious"
+        ],
+        "receipt": "You refused Madam's driver and took the BRT.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He follows you to the BRT stop at walking pace. Then he drives off. You ride home with strangers. It feels like air.",
+            "attachment": -12,
+            "control": -2,
+            "sanity": 6,
+            "set": [
+              "boundary_set"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "colleagues",
+        "label": "Leave with your colleagues. Loudly. As a group.",
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You left work in a group to avoid Madam's driver.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Six of you, one danfo, one confused driver crawling behind. A colleague asks, 'Is that your security?' You laugh. You shouldn't have to.",
+            "attachment": -8,
+            "control": -1,
+            "sanity": 5
+          }
+        ]
+      },
+      {
+        "id": "leave",
+        "label": "Drop her phone in his window. \"We're done.\"",
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You returned Madam's phone through the driver and left.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Give it to Madam.' You walk to Ojuelegba. Nobody follows. You check three times. Nobody follows.",
+            "end": "walked_away",
+            "sanity": 12
+          }
+        ]
+      },
+      {
+        "id": "plate",
+        "label": "Photograph his plate. Tell him you did.",
+        "tags": [
+          "call_out"
+        ],
+        "requires": {
+          "flags": [
+            "secret_hilux_plate"
+          ]
+        },
+        "receipt": "You photographed Madam's driver's plate.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He sees the camera. 'Madam won't like that.' 'Madam can call me,' you say, and walk.",
+            "control": -1,
+            "sanity": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "folake_es_lock",
+    "character": "madam_folake",
+    "slot": "escalation",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "expression": "angry",
+      "mood": "negative",
+      "partner_present": false,
+      "npc": {
+        "name": "Bisola"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "You come home to the Ikoyi flat. Your key doesn't turn. New lock. A note on the door in Bisola's handwriting:"
+      },
+      {
+        "who": "Bisola",
+        "text": "Madam has your new key. She'd like you to collect it in person. Tonight. Alone."
+      }
+    ],
+    "requires": {
+      "day_min": 3,
+      "flags": [
+        "took_flat"
+      ]
+    },
+    "choices": [
+      {
+        "id": "collect",
+        "label": "Go to her house. Collect the key.",
+        "tags": [
+          "stay"
+        ],
+        "receipt": "You went to Madam's house to collect your new key.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She hands it over slowly, holding your fingers. 'Now you know whose door it is.' You nod. You don't sleep.",
+            "attachment": 15,
+            "control": 2,
+            "sanity": -15
+          }
+        ]
+      },
+      {
+        "id": "locksmith",
+        "label": "Call a locksmith. Pack your things tonight.",
+        "tags": [
+          "exit",
+          "cautious"
+        ],
+        "receipt": "You called a locksmith and packed your things.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The locksmith reads the lease: not in your name. He opens the door anyway, for ₦10k and pity. You pack before midnight.",
+            "attachment": -15,
+            "control": -2,
+            "sanity": 5,
+            "set": [
+              "boundary_set"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sister",
+        "label": "Sleep at your sister's. Call your Bestie on the way.",
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You slept at your sister's instead.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Bestie: 'She changed the LOCK?' Your sister opens the door without a word and hands you a wrapper.",
+            "attachment": -10,
+            "control": -1,
+            "sanity": 8
+          }
+        ]
+      },
+      {
+        "id": "leave",
+        "label": "Leave the old key under the mat. Never come back.",
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You left the key under the mat and never went back.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Everything you own in there is replaceable. You check. It is.",
+            "end": "walked_away",
+            "sanity": 12
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "folake_tt_amala",
+    "character": "madam_folake",
+    "slot": "talking_time",
+    "presentation": "voice_note",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "afternoon",
+      "mood": "positive",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Those Ikoyi restaurants bore me, you know. Underneath this gele, I'm a Bodija amala woman. Ewedu, gbegiri, the works. Don't tell my clients."
+      }
+    ],
+    "detail": {
+      "flag": "knows_amala",
+      "missed": {
+        "chemistry": -3
+      }
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Amala, ewedu, gbegiri. Your secret is safe.\"",
+        "caught": true,
+        "receipt": "You caught that Madam is an amala woman at heart.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'I knew you'd understand. You have amala energy.' Highest compliment she has.",
+            "attachment": 3,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "ikoyi",
+        "label": "\"Bodija? I thought you were Ikoyi-born.\"",
+        "receipt": "You assumed Madam was Ikoyi-born.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Nobody is Ikoyi-born, darling. We all arrived.'",
+            "attachment": -2
+          }
+        ]
+      },
+      {
+        "id": "outfit",
+        "label": "\"Send me something to wear for next time?\"",
+        "receipt": "You asked Madam to send you an outfit.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Bisola sends ₦50k 'for outfit' and your measurements. You still never sent your measurements.",
+            "wallet": 50000,
+            "control": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "folake_tt_ten",
+    "character": "madam_folake",
+    "slot": "talking_time",
+    "presentation": "voice_note",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Goodnight, darling. One rule: never call me at 10pm. Not 9:59, not 10:01. Ten o'clock is my quiet hour. Sleep well."
+      }
+    ],
+    "detail": {
+      "flag": "knows_10pm",
+      "missed": {
+        "sanity": -3
+      },
+      "red_flag": true
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Ten is your quiet hour. I won't call.\"",
+        "caught": true,
+        "receipt": "You noted Madam's 10pm rule.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Thank you.' The relief in her voice is too big for a rule about phone calls.",
+            "attachment": 3,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "why",
+        "label": "\"Quiet hour for what?\"",
+        "tags": [
+          "cautious"
+        ],
+        "caught": true,
+        "receipt": "You asked Madam what happens at 10pm.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'For me.' A long pause. 'Goodnight.'",
+            "attachment": -2,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "cheeky",
+        "label": "\"Can I call at 9:30 then? 😏\"",
+        "receipt": "You tried to negotiate a 9:30 call.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'You can call Bisola at 9:30.'",
+            "attachment": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "folake_tt_board",
+    "character": "madam_folake",
+    "slot": "talking_time",
+    "presentation": "text",
+    "scene": {
+      "location": "vi_club_vip",
+      "time": "afternoon",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Busy week. Tuesdays and Thursdays I have board meetings till late. Don't wait up. Saturday is ours 😊"
+      }
+    ],
+    "detail": {
+      "flag": "knows_tue_thu",
+      "missed": {
+        "sanity": -3
+      },
+      "red_flag": true
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Tuesday, Thursday: board. Saturday: us. Noted.\"",
+        "caught": true,
+        "receipt": "You noted Madam's Tuesday and Thursday 'board meetings'.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Exactly. You understand schedules. I like that in a person.'",
+            "attachment": 2,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "which",
+        "label": "\"Which boards meet at 9pm?\"",
+        "tags": [
+          "cautious"
+        ],
+        "caught": true,
+        "receipt": "You asked which boards meet at 9pm.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Important ones.' Then a single 😊. It doesn't help.",
+            "attachment": -2,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "wear",
+        "label": "\"Saturday! What should I wear?\"",
+        "receipt": "You asked Madam what to wear on Saturday.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Bisola will send it.' Of course she will.",
+            "attachment": 3,
+            "control": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "folake_tt_trucks",
+    "character": "madam_folake",
+    "slot": "talking_time",
+    "presentation": "voice_note",
+    "scene": {
+      "location": "prado_interior",
+      "time": "night",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Can't sleep. My trucks are on the Lagos-Ibadan Expressway tonight. I never sleep till all of them arrive. Old habit. Talk to me till they do?"
+      }
+    ],
+    "detail": {
+      "flag": "knows_trucks",
+      "missed": {
+        "chemistry": -3
+      }
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"I'll stay up till the last truck reaches Ibadan.\"",
+        "caught": true,
+        "receipt": "You stayed up with Madam until her trucks arrived.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You talk till 3am. At 3:04 she says 'All in.' Then she falls asleep mid-sentence.",
+            "attachment": 4,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "drivers",
+        "label": "\"Don't you trust your drivers?\"",
+        "receipt": "You asked Madam why she doesn't trust her drivers.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'I trust drivers. I don't trust roads.' She ends the call.",
+            "attachment": -2
+          }
+        ]
+      },
+      {
+        "id": "data",
+        "label": "\"Send me data so I can stay on the call 😅\"",
+        "receipt": "You asked Madam for data money.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "₦5k for data. 'You're funny. Stay on the line.'",
+            "wallet": 5000,
+            "attachment": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "folake_tt_day",
+    "character": "madam_folake",
+    "slot": "talking_time",
+    "presentation": "voice_note",
+    "scene": {
+      "location": "vi_club_vip",
+      "time": "night",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Seven meetings, two weddings, one fight with a caterer about small chops. Nobody ever asks me how my day was. They just ask for things. Anyway. How was yours?"
+      }
+    ],
+    "detail": {
+      "flag": "knows_ask_day",
+      "missed": {
+        "chemistry": -3
+      }
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Forget mine. How was YOUR day, really?\"",
+        "caught": true,
+        "receipt": "You asked Madam about her day and meant it.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She talks for twenty minutes. At the end: 'Thank you. That was nice.' She sounds surprised.",
+            "attachment": 4,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "mine",
+        "label": "\"Mine was long too! Let me tell you...\"",
+        "receipt": "You told Madam about your day instead.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She listens. She's good at it. She doesn't get a turn.",
+            "attachment": 1
+          }
+        ]
+      },
+      {
+        "id": "chops",
+        "label": "\"Small chops fight? Who won?\"",
+        "receipt": "You asked who won the small chops fight.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Me. I always win. That's the problem.'",
+            "attachment": 3,
+            "chemistry": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "folake_tt_bisola",
+    "character": "madam_folake",
+    "slot": "talking_time",
+    "presentation": "text",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "morning",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Bisola will call you about Saturday. Bisola has never lied to me in nine years. If Bisola says it, believe it. If I say it, check with Bisola 😂"
+      }
+    ],
+    "detail": {
+      "flag": "trusts_bisola",
+      "missed": {
+        "chemistry": -2
+      }
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Bisola: the source of truth. Got it.\"",
+        "caught": true,
+        "receipt": "You noted that Bisola never lies.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Exactly.' She doesn't realise what she just gave you.",
+            "attachment": 2,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "check",
+        "label": "\"Why would I need to check you?\"",
+        "receipt": "You asked why you'd need to check Madam's word.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Joke, darling. Mostly.'",
+            "attachment": 2
+          }
+        ]
+      },
+      {
+        "id": "transport",
+        "label": "\"Can Bisola send me transport?\"",
+        "receipt": "You asked Bisola for transport money.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "₦10k in thirty seconds, plus a template for 'future transport requests'.",
+            "wallet": 10000
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,86 @@
+{
+  "id": "madam_folake",
+  "cold_open": {
+    "duration": 18,
+    "scene": { "location": "mainland_street", "time": "golden", "expression": "charming", "mood": "neutral" },
+    "phone": [
+      { "at": 1.5, "kind": "text", "from": "Bisola (PA to Madam Folake)", "text": "Good evening. Madam will see you at 7. Wear the navy one. The car is outside." }
+    ],
+    "beats": [
+      { "at": 0.5, "who": "narration", "text": "You've never met anyone called Folake. Your phone disagrees." },
+      { "at": 5, "who": "narration", "text": "Outside your gate: a black Range Rover, engine purring. A garment bag hangs in the back window. Navy. Your size." },
+      { "at": 10, "who": "partner", "text": "Darling. I'm never late, so I've decided you aren't either. Get in." },
+      { "at": 14.5, "who": "narration", "text": "Nobody asked if you were free tonight. Somebody already knew you were." }
+    ]
+  },
+  "endings": {
+    "locked_in": {
+      "title": "Booked Permanently",
+      "text": "Bisola deleted the schedule. Madam drove you to Bodija for amala herself: no driver, no PA, no navy. She still orders for you sometimes. Now you let her, because you choose to.",
+      "scene": { "location": "ikoyi_restaurant", "time": "night", "expression": "happy", "mood": "positive" },
+      "truths": {
+        "husband_alive": {
+          "title": "Locked In, Looking Over Your Shoulder",
+          "text": "Locked In. She moved you to a quiet flat in Ibadan and visits on Tuesdays. The grey Hilux found the address in a week. It parks outside now, like a neighbour who never waves."
+        },
+        "three_men": {
+          "title": "Promoted to Every Day",
+          "text": "Locked In. Tuesday and Thursday got 'severance'. Bisola printed a new calendar with one name on it. Yours. You still check it every morning, just in case."
+        },
+        "widow": {
+          "title": "Company and Respect",
+          "text": "She moved the ring to a chain around her neck. Sundays are amala in Bodija; Saturdays are yours to plan. Bisola cried at the first dinner you paid for."
+        }
+      }
+    },
+    "counter_con": {
+      "title": "Paid to Disappear",
+      "text": "You took the envelope and the next bus out before anyone could play you. In Ikoyi, Bisola is updating a spreadsheet with your name in red.",
+      "scene": { "location": "mainland_street", "time": "morning", "expression": "caught", "mood": "neutral" }
+    },
+    "survived": {
+      "title": "On the Calendar",
+      "text": "'You're my Saturday,' she says. It's a compliment. It's also a schedule.",
+      "scene": { "location": "prado_interior", "time": "night", "expression": "charming", "mood": "neutral" },
+      "truths": {
+        "widow": { "text": "'You're my Saturday,' she says. 'And maybe my Sunday. We'll see.' Bisola has started copying you on emails, which in her world is a proposal." },
+        "husband_alive": { "text": "'You're my Saturday,' she says. A grey Hilux is parked across from your gate. You've stopped noticing it. That's the problem." }
+      }
+    },
+    "scandal": {
+      "title": "Madam's Pet, Trending",
+      "text": "The Parlour named you, photographed you and found your mother's church. Folake Events released a statement calling you 'a former consultant'.",
+      "scene": { "location": "mainland_street", "time": "afternoon", "expression": "angry", "mood": "negative" }
+    },
+    "sapa": {
+      "title": "Kept, Then Cut",
+      "text": "Bisola cancelled the card, changed the locks and sent your old phone back in a nylon bag. You have ₦0 and very good shoes.",
+      "scene": { "location": "mainland_street", "time": "night", "mood": "negative", "partner_present": false }
+    },
+    "breakdown": {
+      "title": "Booked Solid",
+      "text": "Every hour was hers. You cried in the toilet of her event hall during a stranger's wedding. A bridesmaid gave you her tissue and her aso-ebi fan.",
+      "scene": { "location": "vi_club_vip", "time": "night", "expression": "sad", "mood": "negative" }
+    },
+    "ghosted": {
+      "title": "Unscheduled",
+      "text": "Bisola stopped sending invites. No goodbye. Your Saturday slot quietly went to someone else.",
+      "scene": { "location": "luxury_apartment", "time": "night", "mood": "negative", "partner_present": false }
+    },
+    "fumbled": {
+      "title": "Fumbled the Widow",
+      "text": "She wanted company and respect. You gave her a Parlour post and a phone search. She took the ring off its chain and put it back on her finger.",
+      "scene": { "location": "luxury_apartment", "time": "night", "expression": "sad", "mood": "negative" }
+    },
+    "obsession": {
+      "title": "Obsession",
+      "text": "Bisola plans your days. The driver takes you to work and back. Your phone is in her drawer and your sister has stopped calling. You told yourself this was being cared for. It isn't. When someone decides where you sleep, who you call and when you may leave, that is control, not love. Tell someone you trust today.",
+      "scene": { "location": "luxury_apartment", "time": "night", "expression": "suspicious", "mood": "negative" }
+    },
+    "walked_away": {
+      "title": "Walked Away",
+      "text": "You left the navy one on its hanger and the key under the mat. You took a danfo home. Nobody booked it for you.",
+      "scene": { "location": "mainland_street", "time": "golden", "mood": "neutral", "partner_present": false }
+    }
+  }
+}

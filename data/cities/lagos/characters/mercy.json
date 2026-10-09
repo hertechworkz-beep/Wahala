@@ -1,0 +1,95 @@
+{
+  "id": "mercy",
+  "expressions": ["charming", "suspicious", "angry", "caught", "happy", "sad"],
+  "chemistry_leaks": [
+    { "match": "build", "text": "She looks you up and down like a delivery she's about to sign for. 'Ehen. Correct package.'" },
+    { "match": "hair", "text": "'Who does your hair? Send me their number. For business. And for me.'" },
+    { "match": "style", "text": "'Is that outfit original or Balogun? Don't answer. I like it either way.'" },
+    { "match": "facial", "text": "'That beard is doing logistics for your whole face.'" },
+    { "match": "none", "text": "'We'll fix the outfit. I know a guy in Balogun. Two guys.'" },
+    { "match": "spark", "text": "She silences all three phones. At once. For you." }
+  ],
+  "cold_open": {
+    "duration": 16,
+    "scene": { "location": "mainland_street", "time": "golden", "expression": "charming", "mood": "neutral" },
+    "phone": [
+      { "at": 1.5, "kind": "text", "from": "Unknown number", "text": "Hi, it's Mercy 😊 Account number below. For transport. Yes, before we meet. Logistics is logistics." }
+    ],
+    "beats": [
+      { "at": 0.5, "who": "narration", "text": "Ojuelegba, rush hour. A dispatch bike cuts through three lanes of danfos and stops at your feet." },
+      { "at": 5, "who": "narration", "text": "The rider pulls off her helmet. Braids, gold earrings, three phones buzzing in three different pockets." },
+      { "at": 9, "who": "partner", "text": "You're the one. I'm late for four things, so you have ten minutes. Impress me." },
+      { "at": 13, "who": "narration", "text": "One phone keeps ringing. She doesn't check who it is. She already knows." }
+    ]
+  },
+  "endings": {
+    "locked_in": {
+      "title": "Head of Sales",
+      "text": "She took you to Benin to meet Mama. Mama asked for your surname and your blood group. Merci Luxe has a glass door now, and your name is on the lease beside hers.",
+      "scene": { "location": "lekki_salon", "time": "golden", "expression": "happy", "mood": "positive" },
+      "truths": {
+        "chief_sponsor": {
+          "title": "Out-Sponsored the Chief",
+          "text": "Locked In. She blocked Chief on all three phones and returned the gold bracelet in a pepper soup flask. He still sends a Christmas hamper addressed 'To my daughter and the competitor'."
+        },
+        "japa": {
+          "title": "Long Distance, Short Notice",
+          "text": "Locked In, across an ocean. She video-called you from Toronto arrivals in a puffer jacket: 'I've started your paperwork. Don't make me regret it.' You haven't. Yet."
+        },
+        "quitting": {
+          "title": "The Last Stop",
+          "text": "She quit every sponsor. Daddy Lekki sent one last voice note; she played it on speaker and laughed. Now it's suya on Fridays, Mama on Sundays, and you every day in between."
+        }
+      }
+    },
+    "counter_con": {
+      "title": "Out-Hustled the Hustler",
+      "text": "You walked off with the bag before she could play you. Somewhere in Lekki, Mercy is telling Ivie, 'Respect.' From her, that's practically a love letter.",
+      "scene": { "location": "mainland_street", "time": "golden", "expression": "caught", "mood": "neutral" }
+    },
+    "survived": {
+      "title": "Sponsor Number Four",
+      "text": "'You're my person,' she says. 'For now.' Weekends are still dark, but Monday mornings, akara and pap, are yours.",
+      "scene": { "location": "luxury_apartment", "time": "morning", "expression": "charming", "mood": "neutral" },
+      "truths": {
+        "chief_sponsor": { "text": "'You're my person. For now.' Monday mornings are yours. On Fridays, a tinted Prado still idles at the corner of her street." },
+        "quitting": { "text": "'You're my person. No for now.' She still flinches when a Prado passes. A bit less every week." }
+      }
+    },
+    "scandal": {
+      "title": "The Parlour's Favourite Triangle",
+      "text": "Trending: 'Mercy's sponsor number four.' Ivie posted the receipts, the live clip and your face. Your aunty shared it with a Bible verse.",
+      "scene": { "location": "mainland_street", "time": "afternoon", "expression": "angry", "mood": "negative" }
+    },
+    "sapa": {
+      "title": "Invested in Logistics",
+      "text": "You funded the bags, the bikes and the pop-up. You now own one helmet and zero naira. Mercy sent ₦5k 'for transport'. You took it.",
+      "scene": { "location": "mainland_street", "time": "night", "mood": "negative", "partner_present": false }
+    },
+    "breakdown": {
+      "title": "Ring Light Breakdown",
+      "text": "You cried on Mercy's live by accident. 4,000 viewers. She ended the stream, sat you down and made banga. It didn't fix anything. It helped.",
+      "scene": { "location": "luxury_apartment", "time": "night", "expression": "sad", "mood": "negative" }
+    },
+    "ghosted": {
+      "title": "Delivered, Not Read",
+      "text": "All three phones went quiet at once. Last seen: Friday, 6:59pm. It's been Friday for three weeks.",
+      "scene": { "location": "mainland_street", "time": "night", "mood": "negative", "partner_present": false }
+    },
+    "fumbled": {
+      "title": "Fumbled the Quitter",
+      "text": "She quit her sponsors for you. You went through her phone, posted her business and called her a hustler in public. She was. She was also yours.",
+      "scene": { "location": "luxury_apartment", "time": "night", "expression": "sad", "mood": "negative" }
+    },
+    "obsession": {
+      "title": "Obsession",
+      "text": "You started tracking her phones, her Fridays, every Prado on her street. She stopped laughing around you. Watching someone isn't the same as keeping them. Control isn't love.",
+      "scene": { "location": "luxury_apartment", "time": "night", "expression": "suspicious", "mood": "negative" }
+    },
+    "walked_away": {
+      "title": "Walked Away",
+      "text": "For once, you left first. Dispatch bikes still make you look twice. You don't follow them anymore.",
+      "scene": { "location": "mainland_street", "time": "golden", "mood": "neutral", "partner_present": false }
+    }
+  }
+}

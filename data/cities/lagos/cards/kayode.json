@@ -1,0 +1,4483 @@
+[
+  {
+    "id": "kay_d1_lounge",
+    "character": "kayode",
+    "slot": "first_date",
+    "scene": {
+      "location": "vi_club_vip",
+      "time": "night",
+      "expression": "charming",
+      "mood": "positive"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "VIP lounge on Ozumba Mbadiwe. His bottle arrives with sparklers and a placard with your name on it. Spelt wrong. The DJ shouts him out twice."
+      },
+      {
+        "who": "partner",
+        "text": "Anything you want tonight, just point. I don't do menus."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "yahoo": {
+        "id": "t_yahoo_phones",
+        "text": "Three phones on the table, all face down. One keeps vibrating like it owes somebody money."
+      },
+      "gambler": {
+        "id": "t_gamble_odds",
+        "text": "Mid-toast his eyes drop to his phone. Live odds. Chelsea are a goal down. He swears into his champagne."
+      },
+      "trust_fund": {
+        "id": "t_tf_calls",
+        "text": "His phone lights up: 'Daddy'. He flips it face down so fast the sparkler wobbles."
+      }
+    },
+    "choices": [
+      {
+        "id": "dance",
+        "label": "Dance with him till the sparklers die.",
+        "receipt": "You danced with him till the sparklers died.",
+        "outcomes": [
+          {
+            "chance": 0.7,
+            "text": "He dances badly and with total confidence. Lagos rewards confidence. So do you.",
+            "attachment": 12,
+            "chemistry": 4
+          },
+          {
+            "chance": 0.3,
+            "text": "A girl in a bonnet hugs him: 'Kay! Long time!' He introduces her as his cousin. Every girl here is his cousin.",
+            "bad": true,
+            "attachment": 6,
+            "sanity": -8
+          }
+        ]
+      },
+      {
+        "id": "contracts",
+        "label": "\"What kind of contracts, exactly?\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked what 'contracts' actually means.",
+        "outcomes": [
+          {
+            "text": "He laughs, then actually answers. Ten minutes on supply contracts. You learn things. He likes that you asked.",
+            "trust": 8,
+            "attachment": 4,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "yahoo": {
+            "text": "'Foreign clients. Very foreign.' Then he changes the topic to your lashes. Beautifully. Completely.",
+            "trust": 5,
+            "attachment": 2
+          },
+          "gambler": {
+            "text": "'Crypto. I'm early on everything.' He shows you a wallet app. The balance is real. So is the folder beside it called 'Sports'.",
+            "trust": 6,
+            "attachment": 3
+          },
+          "trust_fund": {
+            "text": "He goes shy. 'Honestly? My dad's money. I'm trying to build my own thing.' First time all night he sounds 28.",
+            "trust": 10,
+            "attachment": 6
+          }
+        }
+      },
+      {
+        "id": "status",
+        "label": "Film the sparklers for your status. Tag the lounge.",
+        "receipt": "You posted him on your status on the first night.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "1,400 views in an hour. 'Who's the Benz guy?' Your DMs are a marketplace.",
+            "clout": 25,
+            "exposure": 10,
+            "set": [
+              {
+                "flag": "secret_sparkler_video",
+                "knows": [
+                  "player",
+                  "world"
+                ]
+              }
+            ]
+          },
+          {
+            "chance": 0.4,
+            "text": "He sees the phone. 'No faces, please. I have enemies.' He laughs. Nobody else does.",
+            "bad": true,
+            "clout": 10,
+            "exposure": 15,
+            "trust": -8,
+            "expression": "suspicious",
+            "set": [
+              {
+                "flag": "secret_sparkler_video",
+                "knows": [
+                  "player",
+                  "world",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bigboy_bottle",
+        "label": "[Big Boy] Send a bigger bottle to his table.",
+        "vibe": "bigboy",
+        "cost": 80000,
+        "broke_text": "Your card would decline in front of the DJ. Not today.",
+        "receipt": "You sent a bigger bottle to his table.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "He sends an even bigger one back. The DJ is thriving. You found a date and a rival in one man.",
+            "attachment": 12,
+            "clout": 20
+          },
+          {
+            "chance": 0.4,
+            "text": "He doesn't send one back. He just stares: 'Who are you trying to impress?' Two egos, one lounge, zero winners.",
+            "bad": true,
+            "attachment": -10,
+            "clout": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "kay_d1_benz",
+    "character": "kayode",
+    "slot": "first_date",
+    "scene": {
+      "location": "prado_interior",
+      "time": "night",
+      "expression": "charming",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "His Benz roars up Admiralty Way, exhaust popping like Christmas bangers. The bass is so loud your gateman starts dancing."
+      },
+      {
+        "who": "partner",
+        "text": "Enter, enter. If police flag us down, just smile. Don't talk."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "yahoo": {
+        "id": "t_yahoo_names",
+        "text": "His dashboard flashes a WhatsApp: 'Good morning my darling Gregory, Texas misses you.' He swipes it away, smiling."
+      },
+      "gambler": {
+        "id": "t_gamble_watch",
+        "text": "His wrist is bare. 'The Rolex? Servicing. Abroad.' There's a pale strip where it used to live."
+      },
+      "trust_fund": {
+        "id": "t_tf_run",
+        "text": "A siren wails two streets away. He floors it, takes three side roads, then laughs too loud: 'Shortcut.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "smile",
+        "label": "Smile. Enjoy the AC. Ask nothing.",
+        "tags": [
+          "excuse",
+          "discreet"
+        ],
+        "receipt": "You smiled and asked nothing.",
+        "outcomes": [
+          {
+            "text": "He plays your favourite song before you name it. He's done his research. Or someone has.",
+            "attachment": 10,
+            "sanity": -5,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "why_police",
+        "label": "\"Why are you so scared of police?\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked why he's scared of police.",
+        "outcomes": [
+          {
+            "text": "He grips the wheel. 'Lagos police don't need a reason.' Fair. He checks the mirror for ten minutes anyway.",
+            "trust": 6,
+            "attachment": -2,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "yahoo": {
+            "text": "'Who's scared?' He turns the music up. The question stays in the car with you all the way to VI.",
+            "trust": 4,
+            "attachment": -3
+          },
+          "gambler": {
+            "text": "'Scared? I owe nobody.' Then, quietly, to the windscreen: 'Not police, anyway.'",
+            "trust": 6
+          },
+          "trust_fund": {
+            "text": "Long pause. 'My dad was a judge. One arrest and I'm cut off. Don't laugh.' You don't. He notices.",
+            "trust": 12,
+            "attachment": 8
+          }
+        }
+      },
+      {
+        "id": "drive",
+        "label": "\"Let me drive your Benz.\"",
+        "receipt": "You drove his Benz on the first night.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "He hands over the keys. Third Mainland at 110, your hand out of the window. Main character behaviour.",
+            "chemistry": 6,
+            "clout": 15,
+            "attachment": 8
+          },
+          {
+            "chance": 0.5,
+            "text": "LASTMA flags you at Falomo. Kayode ducks so low he's basically in the boot. He settles them, shaking.",
+            "bad": true,
+            "sanity": -10,
+            "attachment": 4
+          }
+        ]
+      },
+      {
+        "id": "runs_dashcam",
+        "label": "[Runs] Check his dashcam while he buys fuel.",
+        "vibe": "runs",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You checked his dashcam on the first night.",
+        "outcomes": [
+          {
+            "text": "Dashcam: two hours of you singing. Nothing else. You feel slightly mad.",
+            "sanity": -3,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "yahoo": {
+            "text": "Dashcam audio: Kayode in an American accent. 'Yes ma'am, it's just the customs fee.' You close the app very slowly.",
+            "saw_truth": true,
+            "sanity": -10
+          },
+          "gambler": {
+            "text": "Dashcam audio: 'Kunle, put everything on Arsenal. Everything.' Arsenal lost that night.",
+            "saw_truth": true,
+            "sanity": -8
+          },
+          "trust_fund": {
+            "text": "Dashcam audio: him rehearsing a speech. 'Daddy, I'm serious this time.' Seven takes. You feel like a thief.",
+            "sanity": 5,
+            "attachment": 3
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "kay_d1_rooftop",
+    "character": "kayode",
+    "slot": "first_date",
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "night",
+      "expression": "charming",
+      "mood": "positive"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Rooftop in Ikoyi. Kayode orders the whole left side of the menu and two bottles nobody at the table can pronounce."
+      },
+      {
+        "who": "partner",
+        "text": "Order anything. I've never looked at a price in my life. It's a condition."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "yahoo": {
+        "id": "t_yahoo_efcc",
+        "text": "The TV above the bar: EFCC parades nine young men from a Lekki estate. Kayode goes quiet and asks for the bill early."
+      },
+      "gambler": {
+        "id": "t_gamble_borrow",
+        "text": "When the bill comes he winks: 'You pay tonight, I'll double it for you by midnight. I have a sure one.'"
+      },
+      "trust_fund": {
+        "id": "t_tf_soft",
+        "text": "The violinist plays something sad. His eyes water. 'Pepper in the suya,' he says. There is no suya."
+      }
+    },
+    "choices": [
+      {
+        "id": "let_pay",
+        "label": "Let him pay. Order the lobster.",
+        "receipt": "You let him pay and ordered the lobster.",
+        "outcomes": [
+          {
+            "text": "He pays by tapping his phone without looking. You take leftovers home for your whole compound.",
+            "attachment": 8,
+            "sanity": 5,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "gambler": {
+            "text": "His card declines twice. The third one works. 'I keep my money moving,' he winks. You keep your lobster.",
+            "attachment": 6,
+            "sanity": -5
+          }
+        }
+      },
+      {
+        "id": "split",
+        "label": "Insist on splitting. Pride is cheap tonight.",
+        "tags": [
+          "budget",
+          "independence"
+        ],
+        "cost": 30000,
+        "broke_text": "Your half is more than your whole account.",
+        "receipt": "You insisted on splitting the bill.",
+        "outcomes": [
+          {
+            "text": "He stares like you slapped him. Then he grins. 'Nobody has ever split with me.' Respect: unlocked.",
+            "trust": 10,
+            "attachment": -2,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "ask_dad",
+        "label": "\"So who taught you to spend like this?\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked who taught him to spend.",
+        "outcomes": [
+          {
+            "text": "'Lagos.' Then: boarding school, a big house in Ikoyi, a dad who 'speaks in verdicts'.",
+            "trust": 8,
+            "attachment": 4,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "yahoo": {
+            "text": "'Self-made.' He says it the way people say 'Amen'. Nobody asks follow-up questions in church.",
+            "trust": 5
+          },
+          "gambler": {
+            "text": "'Crypto taught me. Buy low, sell... well.' He laughs at something only he can see.",
+            "trust": 6,
+            "attachment": 2
+          },
+          "trust_fund": {
+            "text": "'My father. By refusing to.' A retired judge who gave him money but never a hug. He says it lightly. It isn't.",
+            "trust": 12,
+            "attachment": 8
+          }
+        }
+      },
+      {
+        "id": "sugar_takeaway",
+        "label": "[Sugar] \"Pack two takeaways. For my sister.\"",
+        "vibe": "sugar",
+        "receipt": "You asked him to pack takeaways for your 'sister'.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "He packs four. 'For your sisters.' Plus ₦50k for 'their transport'.",
+            "wallet": 50000,
+            "attachment": 4
+          },
+          {
+            "chance": 0.4,
+            "text": "'Your sister eats lobster thermidor?' The waiter smirks. So does Kayode. Not the cute kind.",
+            "bad": true,
+            "attachment": -10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "kay_rf_phones",
+    "character": "kayode",
+    "slot": "red_flag",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "expression": "suspicious",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "His Lekki flat. Three phones on the glass table, all face down. He heads for the shower."
+      },
+      {
+        "who": "partner",
+        "text": "Don't touch my phones o. Business phones. Very boring."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "yahoo": {
+        "id": "t_yahoo_names",
+        "text": "One screen lights up through the glass: 'Hello my darling Gregory.' His name is Kayode."
+      },
+      "gambler": {
+        "id": "t_gamble_odds",
+        "text": "One phone buzzes: 'Your bet slip has been settled.' The shower stops for a second, then starts again."
+      },
+      "trust_fund": {
+        "id": "t_tf_calls",
+        "text": "The middle phone rings: 'Daddy'. Six missed calls. He shouts from the shower: 'Don't answer that one!'"
+      }
+    },
+    "choices": [
+      {
+        "id": "ignore",
+        "label": "Scroll your own phone. Mind your business.",
+        "tags": [
+          "excuse",
+          "discreet"
+        ],
+        "receipt": "You ignored his three phones.",
+        "outcomes": [
+          {
+            "text": "You watch three reels about red flags. The irony is not lost on you. It is ignored.",
+            "attachment": 5,
+            "sanity": -8,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "ask",
+        "label": "\"Why do you need three phones?\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked him why he needs three phones.",
+        "outcomes": [
+          {
+            "text": "'One for work, one for family, one for you.' He says it like a love song. It's a spreadsheet.",
+            "trust": 6,
+            "attachment": -2,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "yahoo": {
+            "text": "'Clients in different time zones. Texas. Ohio. Sometimes Gregory.' He catches it. 'A colleague. Gregory is a colleague.'",
+            "trust": 4,
+            "sanity": -5
+          },
+          "gambler": {
+            "text": "'Crypto alerts. Very volatile.' One buzzes: 'Odds updated.' He puts it in a drawer.",
+            "trust": 4,
+            "sanity": -3
+          },
+          "trust_fund": {
+            "text": "He sighs. 'One is for my dad. He tracks it. I'm 28 and I'm tracked.' He looks embarrassed. You like him more.",
+            "trust": 12,
+            "attachment": 6
+          }
+        }
+      },
+      {
+        "id": "snoop",
+        "label": "Unlock one while the shower runs.",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You went through his phone while he showered.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "Banking apps and one aunty's voice notes. You put it back feeling like a criminal.",
+            "sanity": -5
+          },
+          {
+            "chance": 0.4,
+            "text": "The shower stops. He's in the doorway, dripping. 'I said don't touch it.'",
+            "bad": true,
+            "trust": -15,
+            "expression": "angry",
+            "set": [
+              {
+                "flag": "secret_snooped_phone",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "yahoo": [
+            {
+              "chance": 0.6,
+              "text": "Forty chats. Forty 'my darling's. Profile pictures of a white man in a pilot uniform. Kayode's pilot era.",
+              "saw_truth": true,
+              "sanity": -15,
+              "set": [
+                {
+                  "flag": "saw_gregory",
+                  "knows": [
+                    "player"
+                  ]
+                }
+              ]
+            },
+            {
+              "chance": 0.4,
+              "text": "The shower stops. He's in the doorway, dripping. 'I said don't touch it.'",
+              "bad": true,
+              "trust": -15,
+              "expression": "angry",
+              "set": [
+                {
+                  "flag": "secret_snooped_phone",
+                  "knows": [
+                    "player",
+                    "partner"
+                  ]
+                }
+              ]
+            }
+          ],
+          "gambler": [
+            {
+              "chance": 0.6,
+              "text": "A betting app. Last week: -₦9.2m. Tuesday alone: -₦4m. Wednesday: 'Deposit ₦50k.'",
+              "saw_truth": true,
+              "sanity": -12
+            },
+            {
+              "chance": 0.4,
+              "text": "The shower stops. He's in the doorway, dripping. 'I said don't touch it.'",
+              "bad": true,
+              "trust": -15,
+              "expression": "angry",
+              "set": [
+                {
+                  "flag": "secret_snooped_phone",
+                  "knows": [
+                    "player",
+                    "partner"
+                  ]
+                }
+              ]
+            }
+          ],
+          "trust_fund": [
+            {
+              "chance": 0.6,
+              "text": "Daddy's texts: 'Your allowance has conditions. Remember them.' And a note titled 'Things I like about this one'. You're in it.",
+              "sanity": 5
+            },
+            {
+              "chance": 0.4,
+              "text": "The shower stops. He's in the doorway, dripping. He doesn't shout. He just looks hurt.",
+              "bad": true,
+              "trust": -15,
+              "expression": "suspicious",
+              "set": [
+                {
+                  "flag": "secret_snooped_phone",
+                  "knows": [
+                    "player",
+                    "partner"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "runs_sims",
+        "label": "[Runs] Count the SIM cards in his drawer instead.",
+        "vibe": "runs",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You counted the SIM cards in his drawer.",
+        "outcomes": [
+          {
+            "text": "Two SIMs. Normal Lagos behaviour. You close the drawer, mildly disappointed.",
+            "sanity": -2,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "yahoo": {
+            "text": "Eleven SIMs, labelled 'TX', 'OH', 'Widow 2'. You close the drawer very gently.",
+            "saw_truth": true,
+            "sanity": -10,
+            "set": [
+              {
+                "flag": "saw_gregory",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          },
+          "gambler": {
+            "text": "Two SIMs and forty crumpled bet slips. 'SURE ODDS' in his handwriting. None were sure.",
+            "saw_truth": true,
+            "sanity": -8
+          },
+          "trust_fund": {
+            "text": "Two SIMs and a letter: 'Allowance terms. Signed, Justice A. Ogunleye (rtd).' He wasn't exaggerating.",
+            "sanity": 5
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "kay_rf_match",
+    "character": "kayode",
+    "slot": "red_flag",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "expression": "charming",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Champions League night at his flat. Suya, cold Hennessy, your head on his chest."
+      },
+      {
+        "who": "partner",
+        "text": "If they score this penalty, I'm taking you to Dubai. Watch."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "yahoo": {
+        "id": "t_yahoo_phones",
+        "text": "Three phones line the armrest. Every time one buzzes, he types fast and flips it back over."
+      },
+      "gambler": {
+        "id": "t_gamble_odds",
+        "text": "Mid-kiss, his thumb is still moving. You open one eye. Live odds. Over 2.5 goals."
+      },
+      "trust_fund": {
+        "id": "t_tf_soft",
+        "text": "At half-time he flips to a Nollywood film and tears up at a funeral scene. 'Hay fever,' he says. In Lagos."
+      }
+    },
+    "choices": [
+      {
+        "id": "watch",
+        "label": "Watch the match. Eat the suya. Don't ask.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You watched the match and asked nothing.",
+        "outcomes": [
+          {
+            "text": "They miss the penalty. No Dubai. The suya was elite, though.",
+            "attachment": 6,
+            "sanity": -5,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "gambler": {
+            "text": "They miss. He goes silent for twenty minutes, then orders more suya with his jaw tight.",
+            "attachment": 4,
+            "sanity": -10
+          }
+        }
+      },
+      {
+        "id": "phone_down",
+        "label": "\"Put the phone down. I'm right here.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked him to put his phone down.",
+        "outcomes": [
+          {
+            "text": "He puts it down. Actually down. For the whole second half, you're the match.",
+            "trust": 8,
+            "attachment": 6,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "yahoo": {
+            "text": "He puts two phones down. The third goes in his pocket. Progress, Lagos style.",
+            "trust": 4,
+            "attachment": 3
+          },
+          "gambler": {
+            "text": "He puts it down. His leg bounces for 45 minutes like it's placing bets on its own.",
+            "trust": 6,
+            "attachment": 3
+          }
+        }
+      },
+      {
+        "id": "bet_him",
+        "label": "\"Bet you ₦20k they miss.\"",
+        "cost": 20000,
+        "broke_text": "You can't bet money that is still a rumour.",
+        "receipt": "You bet him ₦20k on a penalty.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "They miss. He pays you double, laughing. 'You're bad luck. I like bad luck.'",
+            "wallet": 40000,
+            "attachment": 8
+          },
+          {
+            "chance": 0.5,
+            "text": "They score. He screams. Your ₦20k is gone and he's dancing on the couch.",
+            "bad": true,
+            "attachment": 6
+          }
+        ],
+        "truth_override": {
+          "gambler": [
+            {
+              "chance": 0.5,
+              "text": "They miss. He pays, but his eyes light up wrong. 'Again? Next match? Double or nothing?'",
+              "wallet": 40000,
+              "sanity": -5,
+              "set": [
+                {
+                  "flag": "gamble_buddy",
+                  "knows": [
+                    "player",
+                    "partner"
+                  ]
+                }
+              ]
+            },
+            {
+              "chance": 0.5,
+              "text": "They score. He doesn't celebrate. He just whispers 'finally', like a man who has been praying.",
+              "bad": true,
+              "attachment": 4,
+              "set": [
+                {
+                  "flag": "gamble_buddy",
+                  "knows": [
+                    "player",
+                    "partner"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "movie",
+        "label": "Switch to that Nollywood film he mentioned.",
+        "requires": {
+          "flags": [
+            "knows_nollywood"
+          ]
+        },
+        "receipt": "You switched to the Nollywood film he loves.",
+        "outcomes": [
+          {
+            "text": "He pretends to complain, then narrates every scene. By the end you're both crying. Nobody admits it.",
+            "attachment": 10,
+            "trust": 8,
+            "chemistry": 4,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "yahoo": {
+            "text": "Halfway through, the villain turns out to be a yahoo boy. Kayode changes the channel. 'Boring film.'",
+            "attachment": 6,
+            "trust": 4,
+            "sanity": -5
+          }
+        }
+      },
+      {
+        "id": "mum",
+        "label": "Ask about his mum. Gently.",
+        "tags": [
+          "cautious"
+        ],
+        "requires": {
+          "flags": [
+            "knows_lilies"
+          ]
+        },
+        "receipt": "You asked about his late mum.",
+        "outcomes": [
+          {
+            "text": "He talks about her for an hour. White lilies, her laugh, her pounded yam. The match plays to nobody.",
+            "attachment": 10,
+            "trust": 10,
+            "chance": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "kay_rf_efcc",
+    "character": "kayode",
+    "slot": "red_flag",
+    "scene": {
+      "location": "prado_interior",
+      "time": "morning",
+      "expression": "suspicious",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Monday, Lekki-Epe Expressway. Radio: 'EFCC operatives arrest suspects in a Lekki estate.' Kayode switches it off."
+      },
+      {
+        "who": "partner",
+        "text": "Babe, if anybody ever asks, we met in church. Okay? Church."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "yahoo": {
+        "id": "t_yahoo_efcc",
+        "text": "He doesn't speak again until Ajah. His knuckles stay white on the steering wheel."
+      },
+      "gambler": {
+        "id": "t_gamble_borrow",
+        "text": "At the next light: 'Small thing. Can you lend me ₦50k? I'll double it by night. Promise.'"
+      },
+      "trust_fund": {
+        "id": "t_tf_run",
+        "text": "A police van pulls alongside. He swerves into a filling station and pretends to buy fuel. The tank is full."
+      }
+    },
+    "choices": [
+      {
+        "id": "church",
+        "label": "\"Church it is. Which one, sef?\"",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You agreed to say you met in church.",
+        "outcomes": [
+          {
+            "text": "'Any one. Lagos has plenty.' He kisses your hand at the next light. You're now a liar with good skin.",
+            "attachment": 8,
+            "sanity": -8,
+            "set": [
+              {
+                "flag": "promised_church",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ],
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "why_lie",
+        "label": "\"Why would anybody ask how we met?\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked why anyone would ask how you met.",
+        "outcomes": [
+          {
+            "text": "'Lagos people are amebo.' He laughs. The laugh arrives late.",
+            "trust": 6,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "yahoo": {
+            "text": "He searches the dashboard for a reason. 'Because I'm... private.' You file it under 'later'.",
+            "trust": 4,
+            "sanity": -5
+          },
+          "trust_fund": {
+            "text": "'Because my father asks everything. If he hears the word club, I'm finished.' He is not joking.",
+            "trust": 10,
+            "attachment": 4
+          }
+        }
+      },
+      {
+        "id": "efcc_joke",
+        "label": "\"Imagine if EFCC stopped us now. Hahaha.\"",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You joked about EFCC in his car.",
+        "outcomes": [
+          {
+            "text": "He laughs. You laugh. Two normal people, laughing normally.",
+            "attachment": 2,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "yahoo": {
+            "text": "He doesn't laugh. He pulls over, breathes, and says: 'Don't joke like that. Ever.'",
+            "sanity": -8,
+            "attachment": -4,
+            "expression": "angry"
+          },
+          "gambler": {
+            "text": "'EFCC doesn't care about crypto.' He's wrong. But that's not what he's scared of.",
+            "sanity": -3
+          },
+          "trust_fund": {
+            "text": "'Don't even joke. If my father saw me in any van, it's over.' He looks genuinely ill.",
+            "attachment": 4
+          }
+        }
+      },
+      {
+        "id": "corp_bvn",
+        "label": "[Corporate] Offer to 'check his BVN for loan offers'.",
+        "vibe": "corporate",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You offered to check his BVN.",
+        "outcomes": [
+          {
+            "text": "'My BVN is my business.' Fair. Rude, but fair.",
+            "attachment": -4,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "yahoo": {
+            "text": "He laughs too hard. 'Which one?' Then he hears himself and turns the radio back on.",
+            "saw_truth": true,
+            "sanity": -5
+          },
+          "gambler": {
+            "text": "'No need.' Three loan apps already have it. They text him while you're talking.",
+            "saw_truth": true,
+            "sanity": -3
+          },
+          "trust_fund": {
+            "text": "'My dad's accountant has it. Long story.' He's blushing. At 28.",
+            "trust": 4
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "kay_mt_double",
+    "character": "kayode",
+    "slot": "money_trap",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "afternoon",
+      "expression": "charming",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Saturday afternoon. He's pacing his flat, phone hot in his hand."
+      },
+      {
+        "who": "partner",
+        "text": "Babe, send me ₦50k. Just till evening. I'll double it by night. Sure thing."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "yahoo": {
+        "id": "t_yahoo_phones",
+        "text": "Behind him, three phones charging in a row. One screen reads: 'Transfer pending: Ohio'."
+      },
+      "gambler": {
+        "id": "t_gamble_borrow",
+        "text": "'Double by night,' he repeats. It's the third time this week you've heard 'double'."
+      },
+      "trust_fund": {
+        "id": "t_tf_calls",
+        "text": "His phone rings: 'Daddy'. He silences it. 'My card is... frozen. Small matter at home.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "send",
+        "label": "Send the ₦50k. Love is a long game.",
+        "tags": [
+          "excuse"
+        ],
+        "cost": 50000,
+        "broke_text": "Your ₦50k is currently a ₦12k.",
+        "receipt": "You sent him ₦50k to 'double'.",
+        "outcomes": [
+          {
+            "text": "'You're the realest.' A kissing emoji, then he goes offline for six hours.",
+            "attachment": 10,
+            "sanity": -5,
+            "set": [
+              {
+                "flag": "sent_double",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ],
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "small",
+        "label": "Send ₦10k. \"Double that one.\"",
+        "tags": [
+          "budget"
+        ],
+        "cost": 10000,
+        "broke_text": "Your account balance said 'be serious'.",
+        "receipt": "You sent him ₦10k instead.",
+        "outcomes": [
+          {
+            "text": "He laughs. 'Small but mighty.' It vanishes the way ₦10k always vanishes in Lagos.",
+            "attachment": 4,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "no",
+        "label": "\"Double it with your own money.\"",
+        "receipt": "You told him to double his own money.",
+        "outcomes": [
+          {
+            "text": "He sulks for an hour, then sends a meme of a sad goat. You win, technically.",
+            "attachment": -6,
+            "sanity": 5,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "trust_fund": {
+            "text": "He laughs. 'Fair. My dad says the same thing.' He calls that night just to talk.",
+            "trust": 6,
+            "attachment": 2
+          }
+        }
+      },
+      {
+        "id": "ask_what",
+        "label": "\"Double it how, exactly?\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked exactly how he'd double it.",
+        "outcomes": [
+          {
+            "text": "'Business.' Then: 'Trading.' Then: 'You ask too many questions.' Three answers. Zero answers.",
+            "attachment": -4,
+            "trust": 4,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "yahoo": {
+            "text": "'A client is paying tonight. Big client. Very lonely.' He hears himself. 'Very busy, I mean.'",
+            "saw_truth": true,
+            "trust": 2
+          },
+          "gambler": {
+            "text": "He shows you the slip: Arsenal, Bayern, a Turkish second-division team, over 3.5 goals. Odds: 47.0.",
+            "saw_truth": true,
+            "trust": 4,
+            "sanity": -5
+          },
+          "trust_fund": {
+            "text": "He sighs. 'Daddy froze my card for a week because I bought a jet ski. I need fuel money. I'm embarrassed.'",
+            "trust": 10,
+            "attachment": 4
+          }
+        }
+      },
+      {
+        "id": "bigboy_triple",
+        "label": "[Big Boy] \"Send me ₦100k. I'll triple yours.\"",
+        "vibe": "bigboy",
+        "receipt": "You tried to out-hustle his hustle.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "He actually sends it. No questions. Two Big Boys, zero sense, one very confused bank.",
+            "wallet": 100000,
+            "attachment": 4
+          },
+          {
+            "chance": 0.5,
+            "text": "He screenshots it to his boys: 'This one wan scam me.' Your name is in a group chat now.",
+            "bad": true,
+            "clout": -10,
+            "attachment": -6
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "kay_mt_account",
+    "character": "kayode",
+    "slot": "money_trap",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "expression": "charming",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "He's on the balcony, three calls deep. He comes back sweet."
+      },
+      {
+        "who": "partner",
+        "text": "Babe, I need your account. A client is paying in ₦4.5m. You keep ₦300k for your trouble."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "yahoo": {
+        "id": "t_yahoo_names",
+        "text": "The payment note on his screen: 'For Gregory, with love, Barbara.'"
+      },
+      "gambler": {
+        "id": "t_gamble_watch",
+        "text": "He gestures with a bare wrist. 'The watch? Still servicing.' Same answer as last week."
+      },
+      "trust_fund": {
+        "id": "t_tf_calls",
+        "text": "'Daddy reads my statements,' he mutters. 'Every alert. Every single one.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "yes",
+        "label": "Send your account number. ₦300k is ₦300k.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You let him use your bank account.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "It lands. You forward the rest. You keep your cut and a strange feeling.",
+            "wallet": 300000,
+            "sanity": -8,
+            "set": [
+              {
+                "flag": "lent_account",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          {
+            "chance": 0.4,
+            "text": "It lands. Your bank freezes your account for 'suspicious inflow'. Kayode stops picking up.",
+            "bad": true,
+            "sanity": -15,
+            "exposure": 10,
+            "set": [
+              {
+                "flag": "lent_account",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "yahoo": [
+            {
+              "chance": 0.5,
+              "text": "₦4.5m from a 'Barbara Jenkins, Ohio'. You forward the rest. You are now part of something.",
+              "wallet": 300000,
+              "sanity": -10,
+              "set": [
+                {
+                  "flag": "lent_account",
+                  "knows": [
+                    "player",
+                    "partner"
+                  ]
+                }
+              ]
+            },
+            {
+              "chance": 0.5,
+              "text": "Barbara's bank recalls it. Your account is frozen. Your name is on a fraud report in Ohio.",
+              "bad": true,
+              "tricked": true,
+              "sanity": -20,
+              "exposure": 20,
+              "set": [
+                {
+                  "flag": "lent_account",
+                  "knows": [
+                    "player",
+                    "partner"
+                  ]
+                }
+              ]
+            }
+          ],
+          "gambler": {
+            "text": "It lands. He asks you to send it all to 'Kunle Odds'. You watch ₦4.2m go to a betting agent in Surulere.",
+            "wallet": 300000,
+            "sanity": -10,
+            "saw_truth": true,
+            "set": [
+              {
+                "flag": "lent_account",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "trust_fund": {
+            "text": "It's from his cousin Tunde: 'jet ski money'. You forward it. He takes you to Ikoyi for lunch to say thank you.",
+            "wallet": 300000,
+            "trust": 8,
+            "attachment": 8,
+            "set": [
+              {
+                "flag": "lent_account",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "keep_all",
+        "label": "Let it land. Keep it all. Block him.",
+        "receipt": "You kept his client's money and blocked him.",
+        "outcomes": [
+          {
+            "text": "It lands. You block him. Your heart is racing. Your balance is glowing.",
+            "wallet": 2000000,
+            "saw_truth": true,
+            "trust": -30,
+            "attachment": -25,
+            "sanity": -10,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "yahoo": [
+            {
+              "chance": 0.5,
+              "text": "It lands. You block him. Two days later EFCC calls your mum. Still: liquid.",
+              "wallet": 2000000,
+              "saw_truth": true,
+              "exposure": 25,
+              "sanity": -10,
+              "trust": -30,
+              "attachment": -25
+            },
+            {
+              "chance": 0.5,
+              "text": "It lands, then reverses: 'Recalled by sender.' He has screenshots of your block. Awkward.",
+              "bad": true,
+              "saw_truth": true,
+              "trust": -30,
+              "attachment": -20,
+              "sanity": -10
+            }
+          ],
+          "gambler": {
+            "text": "It lands. You block him. He can't report it: the money was a payout he already owed Kunle Odds.",
+            "wallet": 2000000,
+            "saw_truth": true,
+            "trust": -30,
+            "attachment": -25,
+            "sanity": -5
+          },
+          "trust_fund": {
+            "text": "It lands. You block him. His father's lawyer calls by noon. The money was very traceable. And very much his.",
+            "trust": -45,
+            "attachment": -30,
+            "sanity": -20,
+            "exposure": 15
+          }
+        }
+      },
+      {
+        "id": "no",
+        "label": "\"Use your own account, Kayode.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You told him to use his own account.",
+        "outcomes": [
+          {
+            "text": "'Mine is... complicated.' He finds another account by midnight. You see her new wig on Sunday.",
+            "attachment": -8,
+            "trust": 4,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "gambler": {
+            "text": "'Complicated' means three loan apps already own it. He doesn't say that. You guess.",
+            "attachment": -6,
+            "trust": 4,
+            "sanity": -3
+          },
+          "trust_fund": {
+            "text": "'Fair. Daddy would say the same.' He uses Tunde's account and sends you ₦50k for 'being sensible'.",
+            "trust": 10,
+            "wallet": 50000
+          }
+        }
+      },
+      {
+        "id": "runs_cut",
+        "label": "[Runs] \"Fifty-fifty, or no account.\"",
+        "vibe": "runs",
+        "receipt": "You demanded half of his 'client' money.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "He agrees too fast. Half of it is yours. You sleep badly, in a brand new bonnet.",
+            "wallet": 1000000,
+            "saw_truth": true,
+            "sanity": -15,
+            "exposure": 15,
+            "set": [
+              {
+                "flag": "lent_account",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          {
+            "chance": 0.5,
+            "text": "'Fifty-fifty? You think I'm mumu?' He uses someone else. And tells her about you.",
+            "bad": true,
+            "attachment": -15
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "kay_mt_friends",
+    "character": "kayode",
+    "slot": "money_trap",
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "night",
+      "expression": "charming",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "You said dinner for two. He arrives with five guys, two girls and a hype man with a ring light."
+      },
+      {
+        "who": "partner",
+        "text": "My guys! Babe, order for everybody. My card is in the other Benz."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "yahoo": {
+        "id": "t_yahoo_phones",
+        "text": "Every one of his guys has three phones face down. It looks like a board meeting."
+      },
+      "gambler": {
+        "id": "t_gamble_borrow",
+        "text": "He leans in: 'Cover tonight. Tomorrow I'll double it. I have a sure one.'"
+      },
+      "trust_fund": {
+        "id": "t_tf_calls",
+        "text": "'Daddy' calls. He steps out. Through the glass you watch him nodding like a schoolboy."
+      }
+    },
+    "choices": [
+      {
+        "id": "pay_all",
+        "label": "Pay for everybody. Be the main character.",
+        "tags": [
+          "luxury"
+        ],
+        "cost": 300000,
+        "broke_text": "The bill is bigger than your rent and your courage.",
+        "receipt": "You paid for his whole crew.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "His guys chant your name. One calls you 'Chairman'. Kayode looks at you like a fresh contract.",
+            "clout": 25,
+            "attachment": 12
+          },
+          {
+            "chance": 0.5,
+            "text": "Tomorrow comes. The 'other Benz' never does. The hype man's video of you paying has 30k views.",
+            "bad": true,
+            "tricked": true,
+            "clout": 15,
+            "exposure": 15,
+            "sanity": -10
+          }
+        ],
+        "truth_override": {
+          "trust_fund": {
+            "text": "Next morning: a full refund and a voice note. 'Daddy says a gentleman never lets anyone pay. He's right, for once.'",
+            "wallet": 300000,
+            "scaled": true,
+            "trust": 10,
+            "attachment": 10,
+            "clout": 15
+          }
+        }
+      },
+      {
+        "id": "split_table",
+        "label": "\"Everybody pays for what they ate.\"",
+        "tags": [
+          "budget"
+        ],
+        "cost": 20000,
+        "broke_text": "Your account balance said 'be serious'.",
+        "receipt": "You made everybody pay for what they ate.",
+        "outcomes": [
+          {
+            "text": "The hype man stops filming. Two guys 'go to the toilet' and never return. Kayode laughs, impressed.",
+            "trust": 8,
+            "attachment": -4,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "leave",
+        "label": "Walk out. \"Enjoy your board meeting.\"",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You walked out of his group dinner.",
+        "outcomes": [
+          {
+            "text": "You're on a danfo to Obalende, pride intact, stomach empty.",
+            "attachment": -10,
+            "sanity": 8,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "trust_fund": {
+            "text": "He chases you down three flights of stairs. 'They invited themselves. I'm bad at saying no.'",
+            "attachment": 4,
+            "trust": 6,
+            "sanity": 5
+          }
+        }
+      },
+      {
+        "id": "amala",
+        "label": "\"Ditch them. Amala in Ojuelegba?\"",
+        "requires": {
+          "flags": [
+            "knows_amala"
+          ]
+        },
+        "receipt": "You took him for amala in Ojuelegba.",
+        "outcomes": [
+          {
+            "text": "His eyes light up. You leave the crew with the bill. Amala, ewedu, gbegiri, ₦3,500 for two. Best date yet.",
+            "attachment": 12,
+            "trust": 8,
+            "chemistry": 4,
+            "chance": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "kay_mt_checkpoint",
+    "character": "kayode",
+    "slot": "money_trap",
+    "scene": {
+      "location": "mainland_street",
+      "time": "night",
+      "expression": "caught",
+      "mood": "negative",
+      "npc": {
+        "name": "Inspector Bassey"
+      },
+      "fx": [
+        "sirens"
+      ]
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Ojuelegba checkpoint, 11pm. Two officers circle the Benz. Kayode won't look up from his lap."
+      },
+      {
+        "who": "Inspector Bassey",
+        "text": "Oga, your particulars. Or your 'cooperation'. ₦200k."
+      },
+      {
+        "who": "partner",
+        "text": "Babe, please. Just pay them. I'll refund you. I can't enter any station."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "yahoo": {
+        "id": "t_yahoo_efcc",
+        "text": "The officer taps his laptop bag: 'Ehen. And this one?' Kayode stops breathing."
+      },
+      "gambler": {
+        "id": "t_gamble_watch",
+        "text": "'Fine watch,' the officer says, pointing at his bare wrist. 'Oh. Sorry.' Kayode laughs. Badly."
+      },
+      "trust_fund": {
+        "id": "t_tf_run",
+        "text": "His hand is on the door handle. You realise he's about to sprint. From a parked car."
+      }
+    },
+    "choices": [
+      {
+        "id": "pay",
+        "label": "Pay the ₦200k. Get him home.",
+        "cost": 150000,
+        "broke_text": "Your account would make the officers pity you.",
+        "receipt": "You paid off the checkpoint for him.",
+        "outcomes": [
+          {
+            "text": "Paid. The officers wave like old friends. Kayode doesn't speak again until Lekki.",
+            "attachment": 8,
+            "sanity": -5,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "yahoo": [
+            {
+              "chance": 0.5,
+              "text": "Next day, more than you paid lands. 'Interest.' You don't ask where interest comes from.",
+              "wallet": 200000,
+              "scaled": true,
+              "attachment": 8,
+              "sanity": -8
+            },
+            {
+              "chance": 0.5,
+              "text": "He'll refund you 'when the client pays'. The client is apparently on a long holiday.",
+              "bad": true,
+              "tricked": true,
+              "sanity": -10,
+              "attachment": 4
+            }
+          ],
+          "gambler": {
+            "text": "'I'll refund you after the weekend games.' The weekend games did not go well.",
+            "bad": true,
+            "tricked": true,
+            "sanity": -10,
+            "attachment": 4
+          },
+          "trust_fund": {
+            "text": "Next morning: refunded, plus a voice note, shaky: 'Thank you. You don't know what that just saved.'",
+            "wallet": 150000,
+            "scaled": true,
+            "trust": 12,
+            "attachment": 10
+          }
+        }
+      },
+      {
+        "id": "negotiate",
+        "label": "Negotiate. \"Officer, ₦5k for water.\"",
+        "tags": [
+          "budget"
+        ],
+        "cost": 5000,
+        "broke_text": "Your account balance said 'be serious'.",
+        "receipt": "You negotiated the checkpoint down to ₦5k.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "'You sabi Lagos.' ₦5k and a blessing. Kayode stares at you like you parted the lagoon.",
+            "attachment": 10,
+            "trust": 6
+          },
+          {
+            "chance": 0.4,
+            "text": "'You think we're beggars?' They tow the Benz to the station. Kayode takes a keke home, in designer slides.",
+            "bad": true,
+            "sanity": -10,
+            "attachment": -4
+          }
+        ]
+      },
+      {
+        "id": "papers",
+        "label": "\"Show them your papers, Kayode. Calmly.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You told him to show the police his papers.",
+        "outcomes": [
+          {
+            "text": "He hands everything over with shaking hands. All clean. 'Oga, you dey fear for nothing.'",
+            "trust": 6,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "yahoo": {
+            "text": "The officer opens the laptop bag. 'Who is Gregory?' A long, expensive conversation follows. Without you.",
+            "saw_truth": true,
+            "sanity": -15,
+            "exposure": 10
+          },
+          "gambler": {
+            "text": "Papers clean. The officer spots the betting app: 'You owe Kunle Odds? Everybody owes Kunle.'",
+            "saw_truth": true,
+            "sanity": -5,
+            "trust": 4
+          },
+          "trust_fund": {
+            "text": "Papers clean. The officer reads the name: 'Ogunleye? Justice Ogunleye's son?' He salutes. Kayode wants to evaporate.",
+            "trust": 10,
+            "attachment": 6
+          }
+        }
+      },
+      {
+        "id": "film",
+        "label": "Film the officers. Go live.",
+        "tags": [
+          "public_embarrassment",
+          "call_out"
+        ],
+        "receipt": "You went live at a police checkpoint.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "The live hits 8k viewers. The officers vanish like NEPA light.",
+            "clout": 25,
+            "exposure": 20
+          },
+          {
+            "chance": 0.5,
+            "text": "They grab your phone. Kayode is already sprinting down Ojuelegba bridge. Without you.",
+            "bad": true,
+            "sanity": -15,
+            "exposure": 15,
+            "attachment": -6
+          }
+        ]
+      },
+      {
+        "id": "bigboy_area",
+        "label": "[Big Boy] Call your guy at Area F.",
+        "vibe": "bigboy",
+        "receipt": "You called your guy at Area F.",
+        "outcomes": [
+          {
+            "text": "One call. The officers apologise to you, personally. Kayode looks at you like you have superpowers.",
+            "attachment": 12,
+            "clout": 10,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "trust_fund": {
+            "text": "One call. They apologise. Kayode exhales for the first time in ten minutes. 'You just saved my inheritance.'",
+            "attachment": 12,
+            "trust": 6,
+            "clout": 10
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "kay_pd_raid",
+    "character": "kayode",
+    "slot": "public_drama",
+    "scene": {
+      "location": "vi_club_vip",
+      "time": "night",
+      "expression": "caught",
+      "mood": "negative",
+      "fx": [
+        "sirens"
+      ]
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "2am, a VIP lounge on Ozumba Mbadiwe. Sirens outside. Kayode is already standing, eyes on the back exit, his phone in his hand and not his card. The tab is ₦640k."
+      },
+      {
+        "who": "partner",
+        "text": "Babe. Don't panic. Just... move."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "yahoo": {
+        "id": "t_yahoo_efcc",
+        "text": "Through the window: the van says EFCC, not police. Kayode's face goes from brown to grey."
+      },
+      "gambler": {
+        "id": "t_gamble_borrow",
+        "text": "He whispers: 'Pay it, I'll double it back tomorrow.' Then he's halfway to the exit."
+      },
+      "trust_fund": {
+        "id": "t_tf_run",
+        "text": "Before the second siren he's at the back exit. You've never seen a man in designer loafers move that fast."
+      }
+    },
+    "sets": [
+      {
+        "flag": "raid_night",
+        "knows": [
+          "player",
+          "partner"
+        ]
+      }
+    ],
+    "choices": [
+      {
+        "id": "run",
+        "label": "Run with him through the back exit.",
+        "receipt": "You ran out of a raid with him.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "Through the kitchen, past a cook who doesn't even look up. The Benz is waiting. He's laughing and shaking.",
+            "attachment": 15,
+            "sanity": -8,
+            "chemistry": 4,
+            "set": [
+              {
+                "flag": "ran_with_him",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          {
+            "chance": 0.4,
+            "text": "You lose a shoe in the kitchen and your dignity on Ozumba Mbadiwe. He makes it. You make the blogs.",
+            "bad": true,
+            "exposure": 20,
+            "sanity": -15,
+            "attachment": 6,
+            "set": [
+              {
+                "flag": "ran_with_him",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bouncer",
+        "label": "Stay and argue with the bouncer.",
+        "tags": [
+          "call_out"
+        ],
+        "receipt": "You stayed and argued with the bouncer.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "You argue so well the bouncer waives the tab. 'Just go. You're giving me headache.' Legend.",
+            "clout": 15,
+            "sanity": -5,
+            "set": [
+              {
+                "flag": "left_at_raid",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          {
+            "chance": 0.5,
+            "text": "The bouncer holds your phone till someone pays. You call three people. One answers. It's your mum.",
+            "bad": true,
+            "wallet": -60000,
+            "sanity": -15,
+            "set": [
+              {
+                "flag": "left_at_raid",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bigboy_pay",
+        "label": "[Big Boy] Pay the tab. Post \"I run this city.\"",
+        "vibe": "bigboy",
+        "tags": [
+          "luxury"
+        ],
+        "cost": 400000,
+        "broke_text": "Even your flex has a spending limit.",
+        "receipt": "You paid his tab during a raid and posted 'I run this city'.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "You pay with sirens for background music. 20k likes by sunrise. Kayode watches from the Benz, in love and in fear.",
+            "clout": 40,
+            "exposure": 15,
+            "attachment": 12,
+            "set": [
+              {
+                "flag": "secret_bigboy_post",
+                "knows": [
+                  "player",
+                  "world"
+                ]
+              }
+            ]
+          },
+          {
+            "chance": 0.4,
+            "text": "Your post shows the van behind you. Now you're 'the one who paid during the raid'. The comments are a courtroom.",
+            "bad": true,
+            "clout": 20,
+            "exposure": 35,
+            "set": [
+              {
+                "flag": "secret_bigboy_post",
+                "knows": [
+                  "player",
+                  "world"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "toilet",
+        "label": "Hide in the toilet and call your Bestie.",
+        "tags": [
+          "budget",
+          "discreet"
+        ],
+        "receipt": "You hid in the toilet and called your Bestie.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "Bestie stays on the line for forty minutes, narrating your life choices. You leave at 3am. Nobody arrested. Nobody paid.",
+            "sanity": 5,
+            "set": [
+              {
+                "flag": "left_at_raid",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          {
+            "chance": 0.4,
+            "text": "Bestie puts you on speaker. At her cousin's birthday. Twelve people now know exactly where you are.",
+            "bad": true,
+            "exposure": 15,
+            "sanity": -5,
+            "set": [
+              {
+                "flag": "left_at_raid",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "filling_station",
+        "label": "Meet him at the filling station, like he said.",
+        "requires": {
+          "flags": [
+            "knows_siren"
+          ]
+        },
+        "receipt": "You met him at the filling station, like he told you.",
+        "outcomes": [
+          {
+            "text": "He's there, hazard lights on. 'You remembered.' He kisses you like a man who expected to be abandoned.",
+            "attachment": 15,
+            "trust": 12,
+            "set": [
+              {
+                "flag": "ran_with_him",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ],
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "yahoo": {
+            "text": "He's there. On the back seat: two laptops and a duffel bag he won't explain. 'Drive,' he says. You're driving now.",
+            "attachment": 10,
+            "trust": 8,
+            "sanity": -10,
+            "saw_truth": true,
+            "set": [
+              {
+                "flag": "ran_with_him",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "kay_pd_rival",
+    "character": "kayode",
+    "slot": "public_drama",
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "golden",
+      "expression": "angry",
+      "mood": "neutral",
+      "npc": {
+        "name": "Dapo"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Sunday brunch in Ikoyi. A G-Wagon parks beside Kayode's Benz. Its owner, Dapo, sends a bottle to your table."
+      },
+      {
+        "who": "Dapo",
+        "text": "Kay, you're still renting girlfriends? This one is too fine for you."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "yahoo": {
+        "id": "t_yahoo_names",
+        "text": "Dapo grins: 'How's Gregory? Still in Texas?' Kayode's fork stops halfway to his mouth."
+      },
+      "gambler": {
+        "id": "t_gamble_odds",
+        "text": "Kayode immediately proposes a bet: 'Arsenal tonight. ₦2m.' His hands are already shaking."
+      },
+      "trust_fund": {
+        "id": "t_tf_calls",
+        "text": "Dapo winks: 'Does your daddy know you're here?' Kayode's phone buzzes. Daddy. Of course."
+      }
+    },
+    "choices": [
+      {
+        "id": "back_kay",
+        "label": "Hold Kayode's hand. Send the bottle back.",
+        "receipt": "You sent the rival's bottle back.",
+        "outcomes": [
+          {
+            "text": "Dapo laughs, takes his bottle and his G-Wagon. Kayode squeezes your hand under the table for an hour.",
+            "attachment": 12,
+            "trust": 6,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "accept",
+        "label": "Accept Dapo's bottle. Watch Kayode's face.",
+        "receipt": "You accepted a rival's bottle in front of him.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "Kayode orders three bigger bottles. The waiters are having the best day of their lives. So is Dapo.",
+            "attachment": -6,
+            "clout": 15,
+            "chemistry": 3,
+            "set": [
+              {
+                "flag": "secret_dapo_bottle",
+                "knows": [
+                  "player",
+                  "world"
+                ]
+              }
+            ]
+          },
+          {
+            "chance": 0.5,
+            "text": "Kayode leaves you with Dapo and the bill. Dapo also leaves. The bill stays.",
+            "bad": true,
+            "wallet": -50000,
+            "attachment": -12,
+            "sanity": -8,
+            "set": [
+              {
+                "flag": "secret_dapo_bottle",
+                "knows": [
+                  "player",
+                  "world"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "roast",
+        "label": "Roast Dapo in front of everyone.",
+        "tags": [
+          "public_embarrassment"
+        ],
+        "receipt": "You roasted his rival in public.",
+        "outcomes": [
+          {
+            "text": "'Nice G-Wagon. Whose is it?' The terrace explodes. Dapo laughs, barely. Kayode is in love and slightly scared.",
+            "clout": 20,
+            "attachment": 10,
+            "exposure": 10,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "ask_dapo",
+        "label": "Ask Dapo quietly what he knows.",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You asked his rival what he knows about him.",
+        "outcomes": [
+          {
+            "text": "'Kay? Good guy. Spends like his account has no floor.'",
+            "sanity": -2,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "yahoo": {
+            "text": "Dapo lowers his voice: 'Ask him about Gregory. And Barbara. And the widow in Ohio.' Then he winks and leaves.",
+            "saw_truth": true,
+            "sanity": -10
+          },
+          "gambler": {
+            "text": "'He owes me ₦3m from the Chelsea game. Tell him I said hi.'",
+            "saw_truth": true,
+            "sanity": -6
+          },
+          "trust_fund": {
+            "text": "'Kay? We were in school together. His dad is the strictest man in Lagos. He's soft. Don't break him.'",
+            "sanity": 5,
+            "attachment": 4
+          }
+        }
+      },
+      {
+        "id": "bigboy_outflex",
+        "label": "[Big Boy] Out-flex both of them.",
+        "vibe": "bigboy",
+        "tags": [
+          "luxury"
+        ],
+        "cost": 100000,
+        "broke_text": "Your account balance said 'be serious'.",
+        "receipt": "You out-flexed two Big Boys at brunch.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "You order the bottle neither of them can pronounce. Dapo leaves. Kayode stays, competitive and charmed.",
+            "clout": 30,
+            "attachment": 8
+          },
+          {
+            "chance": 0.5,
+            "text": "Kayode feels outshone at his own brunch. He goes quiet. Big Boys don't share the spotlight.",
+            "bad": true,
+            "clout": 20,
+            "attachment": -10
+          }
+        ]
+      },
+      {
+        "id": "budget_juice",
+        "label": "Order a ₦3k Chapman and enjoy the show.",
+        "tags": [
+          "budget"
+        ],
+        "cost": 3000,
+        "broke_text": "Your account balance said 'be serious'.",
+        "receipt": "You ordered a Chapman and watched the show.",
+        "outcomes": [
+          {
+            "text": "You sip and watch two men spend ₦900k to win an argument nobody started. Free cinema.",
+            "sanity": 6,
+            "clout": 5,
+            "chance": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "kay_pd_wedding",
+    "character": "kayode",
+    "slot": "public_drama",
+    "scene": {
+      "location": "mainland_street",
+      "time": "afternoon",
+      "expression": "caught",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "His cousin's wedding in Surulere. Kayode in white agbada, spraying dollars. Then a black Peugeot pulls up and he freezes."
+      },
+      {
+        "who": "partner",
+        "text": "Babe. That's my dad. You're my... colleague. From church."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "yahoo": {
+        "id": "t_yahoo_efcc",
+        "text": "The MC jokes: 'All yahoo boys, EFCC is at the gate!' Everybody laughs. Kayode is already behind a canopy."
+      },
+      "gambler": {
+        "id": "t_gamble_watch",
+        "text": "The man's first words: 'Where is the watch I gave you?' Kayode: 'Servicing, sir.'"
+      },
+      "trust_fund": {
+        "id": "t_tf_calls",
+        "text": "He shows you his screen: 14 missed calls from 'Daddy'. Daddy is now ten feet away."
+      }
+    },
+    "choices": [
+      {
+        "id": "colleague",
+        "label": "Play along. Colleague. From church.",
+        "tags": [
+          "excuse",
+          "discreet"
+        ],
+        "receipt": "You pretended to be his colleague from church.",
+        "outcomes": [
+          {
+            "text": "You shake the man's hand like a deacon. Kayode relaxes for the first time all day.",
+            "attachment": 10,
+            "sanity": -5,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "trust_fund": {
+            "text": "His father squints. 'Colleague. Hm.' Retired judge. He knows a lie. He also lets it slide.",
+            "attachment": 10,
+            "trust": 4
+          }
+        }
+      },
+      {
+        "id": "honest",
+        "label": "Introduce yourself properly: \"I'm the one he's dating.\"",
+        "receipt": "You introduced yourself honestly to his father.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "The man laughs, a real one. 'Finally, somebody with sense.'",
+            "trust": 10,
+            "attachment": 6
+          },
+          {
+            "chance": 0.5,
+            "text": "Silence. Kayode says nothing. His father says nothing. The jollof says nothing.",
+            "bad": true,
+            "attachment": -8,
+            "trust": 6
+          }
+        ],
+        "truth_override": {
+          "yahoo": {
+            "text": "The man is not his father. It's 'Uncle Bright', who pays him monthly. Uncle Bright looks at you like fresh stock.",
+            "saw_truth": true,
+            "sanity": -10
+          },
+          "gambler": {
+            "text": "His father: 'Then tell him to pay back his sister's ₦2m.' Silence. Then jollof.",
+            "saw_truth": true,
+            "trust": 6
+          },
+          "trust_fund": {
+            "text": "Justice Ogunleye (rtd) shakes your hand. 'Honest. Good. He needs that.' Kayode nearly faints, then grins all evening.",
+            "trust": 14,
+            "attachment": 10
+          }
+        }
+      },
+      {
+        "id": "spray",
+        "label": "Spray him. Make the videographer happy.",
+        "tags": [
+          "luxury"
+        ],
+        "cost": 50000,
+        "broke_text": "Your account balance said 'be serious'.",
+        "receipt": "You sprayed money at his cousin's wedding.",
+        "outcomes": [
+          {
+            "text": "The videographer worships you. You're on every aunty's WhatsApp status by sunset.",
+            "clout": 25,
+            "attachment": 8,
+            "exposure": 15,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "spray_small",
+        "label": "Spray crisp ₦500s. Slowly. Strategically.",
+        "tags": [
+          "budget"
+        ],
+        "cost": 5000,
+        "broke_text": "Your account balance said 'be serious'.",
+        "receipt": "You sprayed ₦500 notes, slowly.",
+        "outcomes": [
+          {
+            "text": "From far away it looks like serious money. The aunties approve of your mathematics.",
+            "clout": 8,
+            "attachment": 3,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "tunde",
+        "label": "Find cousin Tunde. He always knows.",
+        "requires": {
+          "flags": [
+            "knows_tunde"
+          ]
+        },
+        "receipt": "You asked cousin Tunde for the gist.",
+        "outcomes": [
+          {
+            "text": "Tunde, three Smirnoffs deep: 'Kay? Good guy. Too scared of his papa.'",
+            "sanity": 5,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "yahoo": {
+            "text": "Tunde, drunk: 'Kay's clients are all in America. All women. All lonely.' He laughs. You don't.",
+            "saw_truth": true,
+            "sanity": -10
+          },
+          "gambler": {
+            "text": "Tunde: 'He owes me ₦800k. And Dapo. And his sister. Don't lend him anything, I beg.'",
+            "saw_truth": true,
+            "sanity": -5
+          },
+          "trust_fund": {
+            "text": "Tunde: 'His dad cut his older brother off for one arrest. Kay's been running ever since.' It suddenly makes sense.",
+            "trust": 8,
+            "attachment": 6,
+            "sanity": 8
+          }
+        }
+      },
+      {
+        "id": "sunday",
+        "label": "\"Sir, I've heard all about Sunday lunch.\"",
+        "requires": {
+          "flags": [
+            "knows_sunday"
+          ]
+        },
+        "receipt": "You told his father you'd heard about Sunday lunch.",
+        "outcomes": [
+          {
+            "text": "The man blinks. 'Has he? Hm.' Kayode looks at you like you just passed an exam.",
+            "trust": 8,
+            "attachment": 6,
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "yahoo": {
+            "text": "'Sunday lunch? With me? I haven't seen this boy on a Sunday since 2021.' Interesting.",
+            "saw_truth": true,
+            "sanity": -8
+          },
+          "gambler": {
+            "text": "'Sunday lunch? He comes to borrow, not to eat.' Kayode laughs too loud.",
+            "saw_truth": true,
+            "sanity": -5,
+            "trust": 4
+          },
+          "trust_fund": {
+            "text": "His father softens. 'He told you about Sunday? He never tells anyone anything.'",
+            "trust": 12,
+            "attachment": 8
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "kay_cf_efcc",
+    "character": "kayode",
+    "slot": "confrontation",
+    "requires": {
+      "truth": [
+        "yahoo"
+      ]
+    },
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "morning",
+      "expression": "caught",
+      "mood": "negative",
+      "npc": {
+        "name": "EFCC Officer"
+      },
+      "fx": [
+        "sirens"
+      ]
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "6am. Hammering on his door. Navy jackets with yellow letters."
+      },
+      {
+        "who": "EFCC Officer",
+        "text": "We're looking for Kayode Ogunleye. Also known as Gregory. Also known as Captain Mark."
+      },
+      {
+        "who": "partner",
+        "text": "Babe, hide the laptop. Please. Please."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "yahoo": {
+        "id": "t_yahoo_efcc",
+        "text": "The officer holds up a printout: your face, lifted from Kayode's Instagram, beside a fake pilot profile."
+      }
+    },
+    "choices": [
+      {
+        "id": "hide",
+        "label": "Hide the laptop in your bag.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You hid his laptop from EFCC.",
+        "outcomes": [
+          {
+            "chance": 0.4,
+            "text": "They don't search you. He kisses you like you saved his life. You probably did. That's the problem.",
+            "attachment": 20,
+            "trust": 10,
+            "sanity": -20
+          },
+          {
+            "chance": 0.6,
+            "text": "They search your bag first. 'You're coming with us too.'",
+            "bad": true,
+            "exposure": 30,
+            "sanity": -25
+          }
+        ]
+      },
+      {
+        "id": "truth",
+        "label": "Tell the officers everything you know.",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You told EFCC everything you knew.",
+        "outcomes": [
+          {
+            "text": "You talk for an hour. 'You're a witness, not a suspect. Keep your phone on.' Kayode can't look at you.",
+            "saw_truth": true,
+            "sanity": 10,
+            "attachment": -20,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "stand_by",
+        "label": "\"Get a lawyer. I'm not going anywhere.\"",
+        "receipt": "You stood by him during the EFCC raid.",
+        "outcomes": [
+          {
+            "text": "They take him for questioning. He calls from Ikoyi office: 'Nobody has ever stayed.' You're either loyal or mad. Possibly both.",
+            "saw_truth": true,
+            "trust": 15,
+            "attachment": 15,
+            "sanity": -15,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "leave",
+        "label": "Walk out past the officers. Block him in the lift.",
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You walked out and blocked him in the lift.",
+        "outcomes": [
+          {
+            "text": "You don't look back. In the lift you delete 300 photos and one future.",
+            "saw_truth": true,
+            "sanity": 10,
+            "end": "walked_away",
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "livestream",
+        "label": "Go live: \"EFCC is at Gregory's house.\"",
+        "tags": [
+          "toxic",
+          "public_embarrassment"
+        ],
+        "receipt": "You livestreamed his EFCC arrest.",
+        "outcomes": [
+          {
+            "text": "40,000 viewers. The officers wave. Kayode hides his face behind a throw pillow that says LIVE LAUGH LOVE.",
+            "clout": 35,
+            "exposure": 30,
+            "truth_exposed": true,
+            "saw_truth": true,
+            "goal": {
+              "revenge": 50
+            },
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "my_account",
+        "label": "\"My account was in this. Am I on your list?\"",
+        "tags": [
+          "cautious"
+        ],
+        "requires": {
+          "flags": [
+            "lent_account"
+          ]
+        },
+        "receipt": "You asked EFCC if your account was on their list.",
+        "outcomes": [
+          {
+            "text": "The officer checks. Your account number is there. 'Come to the Ikoyi office Monday. Bring a lawyer.'",
+            "saw_truth": true,
+            "sanity": -15,
+            "exposure": 10,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "screenshots",
+        "label": "Hand over your Gregory screenshots.",
+        "tags": [
+          "cautious"
+        ],
+        "requires": {
+          "flags": [
+            "saw_gregory"
+          ]
+        },
+        "receipt": "You handed EFCC your screenshots.",
+        "outcomes": [
+          {
+            "text": "The officer smiles for the first time. 'You've done our job for us.' Kayode looks at you like a stranger.",
+            "saw_truth": true,
+            "sanity": 5,
+            "clout": 10,
+            "attachment": -25,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "church_story",
+        "label": "Stick to the story: \"We met in church.\"",
+        "requires": {
+          "flags": [
+            "promised_church"
+          ]
+        },
+        "receipt": "You told EFCC you met in church.",
+        "outcomes": [
+          {
+            "text": "'Which church?' You both answer at the same time. Different churches. Different denominations.",
+            "saw_truth": true,
+            "exposure": 15,
+            "sanity": -10,
+            "chance": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "kay_cf_bookie",
+    "character": "kayode",
+    "slot": "confrontation",
+    "requires": {
+      "truth": [
+        "gambler"
+      ]
+    },
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "expression": "caught",
+      "mood": "negative",
+      "npc": {
+        "name": "Kunle Odds"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Midnight. A man in a football jersey is on Kayode's couch, eating Kayode's suya."
+      },
+      {
+        "who": "Kunle Odds",
+        "text": "Kayode owes ₦9m since Tuesday. Today is Friday. Is it you that will pay?"
+      },
+      {
+        "who": "partner",
+        "text": "Babe, it's a misunderstanding. Crypto will pump by Monday."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "gambler": {
+        "id": "t_gamble_watch",
+        "text": "Kunle is wearing a gold Rolex. Kayode's Rolex. 'Servicing,' indeed."
+      }
+    },
+    "choices": [
+      {
+        "id": "pay_some",
+        "label": "Pay ₦100k to buy him a week.",
+        "tags": [
+          "excuse"
+        ],
+        "cost": 100000,
+        "broke_text": "Kunle laughs at your balance. Then asks for your mum's number.",
+        "receipt": "You paid his bookie to buy him a week.",
+        "outcomes": [
+          {
+            "text": "Kunle counts it and eats another suya. 'One week.' Kayode swears it was his last bet. It wasn't even his last bet today.",
+            "saw_truth": true,
+            "attachment": 12,
+            "sanity": -15,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "help",
+        "label": "\"You need help, not money. I'll come with you.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You told him he needs help, and offered to go with him.",
+        "outcomes": [
+          {
+            "text": "He cries, properly. Then deletes four apps in front of you and hands you his card. 'Keep it. I can't be trusted with it.'",
+            "saw_truth": true,
+            "trust": 15,
+            "attachment": 10,
+            "sanity": -5,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "leave",
+        "label": "Pack your bag. Leave them to it.",
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You packed your bag and left.",
+        "outcomes": [
+          {
+            "text": "You leave Kunle and Kayode arguing about Arsenal's back four. Somebody had to leave first.",
+            "saw_truth": true,
+            "sanity": 10,
+            "end": "walked_away",
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "livestream",
+        "label": "Go live: \"Lekki Big Boy owes ₦9m.\"",
+        "tags": [
+          "toxic",
+          "public_embarrassment"
+        ],
+        "receipt": "You livestreamed his gambling debt.",
+        "outcomes": [
+          {
+            "text": "The Parlour crashes. Kunle waves at the camera, advertising. Kayode's crypto group chat leaves him on read.",
+            "clout": 30,
+            "exposure": 30,
+            "truth_exposed": true,
+            "saw_truth": true,
+            "goal": {
+              "revenge": 50
+            },
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "bet_buddy",
+        "label": "\"I bet with you too. I'm part of this.\"",
+        "tags": [
+          "cautious"
+        ],
+        "requires": {
+          "flags": [
+            "gamble_buddy"
+          ]
+        },
+        "receipt": "You admitted you'd gambled with him too.",
+        "outcomes": [
+          {
+            "text": "He laughs and cries at the same time. 'You're the only one who ever bet with me and stayed.' You both swear off. Together.",
+            "saw_truth": true,
+            "trust": 12,
+            "attachment": 12,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "my_50k",
+        "label": "\"Where's my ₦50k that you 'doubled'?\"",
+        "requires": {
+          "flags": [
+            "sent_double"
+          ]
+        },
+        "receipt": "You asked where your 'doubled' ₦50k went.",
+        "outcomes": [
+          {
+            "text": "Kunle answers for him: 'Your ₦50k? Galatasaray. Second half. Lost.'",
+            "saw_truth": true,
+            "sanity": -10,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "call_tunde",
+        "label": "Call cousin Tunde to come and help.",
+        "tags": [
+          "cautious"
+        ],
+        "requires": {
+          "flags": [
+            "knows_tunde"
+          ]
+        },
+        "receipt": "You called his cousin Tunde to help.",
+        "outcomes": [
+          {
+            "text": "Tunde arrives in boxers with ₦300k and a cousin's fury. 'Kay. This is the last time.' Kunle leaves with half. Kayode cries into Tunde's shoulder.",
+            "saw_truth": true,
+            "trust": 8,
+            "attachment": 8,
+            "sanity": 5,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "corp_plan",
+        "label": "[Corporate] Restructure his debt on a spreadsheet.",
+        "vibe": "corporate",
+        "receipt": "You built a repayment plan for his gambling debt.",
+        "outcomes": [
+          {
+            "text": "By 3am there's a nine-month repayment plan with formulas. Kunle is impressed. Kayode is in love.",
+            "saw_truth": true,
+            "trust": 12,
+            "attachment": 10,
+            "chance": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "kay_cf_daddy",
+    "character": "kayode",
+    "slot": "confrontation",
+    "requires": {
+      "truth": [
+        "trust_fund"
+      ]
+    },
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "afternoon",
+      "expression": "caught",
+      "mood": "neutral",
+      "npc": {
+        "name": "Justice Ogunleye"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Lunch in Ikoyi. His father, a retired judge, orders water and studies you like a case file."
+      },
+      {
+        "who": "Justice Ogunleye",
+        "text": "My son runs at every siren because I said one arrest and he is cut off. Tell me honestly. Is he in trouble?"
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "trust_fund": {
+        "id": "t_tf_soft",
+        "text": "Beside you, Kayode is blinking very fast. 'Allergies,' he says. To his father."
+      }
+    },
+    "choices": [
+      {
+        "id": "truth",
+        "label": "Tell the truth: he's soft, not criminal.",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You told his father the truth: he's soft, not criminal.",
+        "outcomes": [
+          {
+            "text": "The judge is quiet a long time. 'Soft. His mother was soft.' He pays the bill. Kayode looks at you like you raised the dead.",
+            "trust": 15,
+            "attachment": 12,
+            "sanity": 10,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "defend",
+        "label": "\"With respect, sir, your rules made him run.\"",
+        "tags": [
+          "call_out"
+        ],
+        "receipt": "You told a retired judge his rules made his son run.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "One eyebrow rises. Then he laughs, once. 'Finally, someone argues back.'",
+            "trust": 10,
+            "attachment": 10
+          },
+          {
+            "chance": 0.5,
+            "text": "'Young person, I have jailed better speakers.' Kayode kicks you under the table. Softly. Lovingly.",
+            "bad": true,
+            "attachment": -6,
+            "sanity": -8
+          }
+        ]
+      },
+      {
+        "id": "allowance",
+        "label": "\"Sir, is the allowance negotiable for two?\"",
+        "receipt": "You asked a retired judge about the allowance.",
+        "outcomes": [
+          {
+            "chance": 0.4,
+            "text": "He chokes on his water. Then, to Kayode: 'This one is bold. Your mother was bold.'",
+            "attachment": 8,
+            "clout": 10
+          },
+          {
+            "chance": 0.6,
+            "text": "'So you're here for the money.' Kayode spends the rest of lunch apologising to two people.",
+            "bad": true,
+            "trust": -10,
+            "attachment": -8
+          }
+        ]
+      },
+      {
+        "id": "selfie",
+        "label": "Post a selfie with the judge. Caption it.",
+        "tags": [
+          "toxic",
+          "public_embarrassment"
+        ],
+        "receipt": "You posted a selfie with his father.",
+        "outcomes": [
+          {
+            "text": "'With the in-laws ⚖️' goes viral. The judge's grandchildren see it. The judge sees it. Kayode sees nothing; he's left.",
+            "clout": 20,
+            "exposure": 25,
+            "bond": -15,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "ran_together",
+        "label": "\"I ran with him once. He was scared, not guilty.\"",
+        "tags": [
+          "cautious"
+        ],
+        "requires": {
+          "flags": [
+            "ran_with_him"
+          ]
+        },
+        "receipt": "You told his father you ran with him from a raid.",
+        "outcomes": [
+          {
+            "text": "The judge looks at his son a long time. 'You ran because of me.' First time Kayode has seen him look sorry.",
+            "trust": 12,
+            "attachment": 12,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "nollywood",
+        "label": "\"He cries at Nollywood films, sir. He's harmless.\"",
+        "requires": {
+          "flags": [
+            "knows_nollywood"
+          ]
+        },
+        "receipt": "You told his father he cries at Nollywood films.",
+        "outcomes": [
+          {
+            "text": "Kayode: 'Betrayal.' The judge, smiling for the first time: 'His mother did too.'",
+            "trust": 10,
+            "attachment": 8,
+            "sanity": 8,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "lilies",
+        "label": "Give the judge white lilies. \"For her.\"",
+        "requires": {
+          "flags": [
+            "knows_lilies"
+          ]
+        },
+        "receipt": "You brought white lilies for his late mother.",
+        "outcomes": [
+          {
+            "text": "The old man holds them for a long time. 'He told you about his mother.' He nods at Kayode. 'Keep this one.'",
+            "trust": 14,
+            "attachment": 12,
+            "sanity": 8,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "church",
+        "label": "\"We met in church, sir.\"",
+        "requires": {
+          "flags": [
+            "promised_church"
+          ]
+        },
+        "receipt": "You told the judge you met in church.",
+        "outcomes": [
+          {
+            "text": "'Did you.' Not a question. A verdict. Kayode confesses everything in four minutes. The judge almost smiles.",
+            "trust": 6,
+            "sanity": -5,
+            "chance": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "kay_po_sparkler",
+    "character": "kayode",
+    "slot": "payoff",
+    "presentation": "text",
+    "requires": {
+      "any_flags": [
+        "secret_sparkler_video",
+        "secret_bigboy_post"
+      ],
+      "not_flags": [
+        "sparkler_seen"
+      ],
+      "day_min": 3
+    },
+    "payoff_of": [
+      "secret_sparkler_video",
+      "secret_bigboy_post"
+    ],
+    "scene": {
+      "location": "mainland_street",
+      "time": "afternoon",
+      "mood": "negative",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "A DM from a stranger with no profile picture."
+      },
+      {
+        "who": "Unknown",
+        "text": "That guy in your video. Benz, waves, gold chain. Where do you know him from?"
+      }
+    ],
+    "priority": 5,
+    "choices": [
+      {
+        "id": "flex",
+        "label": "\"He's my man. Problem?\"",
+        "receipt": "You told a stranger he's your man.",
+        "outcomes": [
+          {
+            "text": "Seen. No reply. Somehow that's worse.",
+            "sanity": -5,
+            "set": [
+              {
+                "flag": "sparkler_seen",
+                "knows": [
+                  "player"
+                ]
+              }
+            ],
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "yahoo": {
+            "text": "'Tell Gregory my aunty in Houston wants her $8,000 back.' Receipts follow. Lots of receipts.",
+            "saw_truth": true,
+            "sanity": -10,
+            "set": [
+              {
+                "flag": "sparkler_seen",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          },
+          "gambler": {
+            "text": "'Tell him Kunle Odds is looking for him. Nice location tag, by the way.'",
+            "saw_truth": true,
+            "sanity": -10,
+            "exposure": 10,
+            "set": [
+              {
+                "flag": "sparkler_seen",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          },
+          "trust_fund": {
+            "text": "'Tell him his father's driver saw your video. Good luck to you both.'",
+            "sanity": -3,
+            "set": [
+              {
+                "flag": "sparkler_seen",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "delete",
+        "label": "Delete the video. Block the stranger.",
+        "tags": [
+          "discreet",
+          "cautious"
+        ],
+        "receipt": "You deleted the video and blocked the stranger.",
+        "outcomes": [
+          {
+            "text": "Deleted. Somebody screenshotted it first. Somebody always does.",
+            "exposure": -10,
+            "sanity": -5,
+            "set": [
+              {
+                "flag": "sparkler_seen",
+                "knows": [
+                  "player"
+                ]
+              }
+            ],
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "who",
+        "label": "\"Why? Who's asking?\"",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You asked the stranger who was asking.",
+        "outcomes": [
+          {
+            "text": "No reply. The account disappears an hour later.",
+            "sanity": -3,
+            "set": [
+              {
+                "flag": "sparkler_seen",
+                "knows": [
+                  "player"
+                ]
+              }
+            ],
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "yahoo": {
+            "text": "'A lawyer. For a woman in Ohio.' Then the chat is deleted from her side.",
+            "saw_truth": true,
+            "sanity": -10,
+            "set": [
+              {
+                "flag": "sparkler_seen",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          },
+          "gambler": {
+            "text": "'Someone he owes. Tell him Friday is the deadline.'",
+            "saw_truth": true,
+            "sanity": -8,
+            "set": [
+              {
+                "flag": "sparkler_seen",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          },
+          "trust_fund": {
+            "text": "'His sister. Daddy saw it. And Daddy is smiling, for once. Don't tell Kay I said that.'",
+            "sanity": 8,
+            "set": [
+              {
+                "flag": "sparkler_seen",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "forward",
+        "label": "Forward it to Kayode: \"Who is this?\"",
+        "tags": [
+          "contact_partner"
+        ],
+        "receipt": "You forwarded the stranger's DM to him.",
+        "outcomes": [
+          {
+            "text": "He calls immediately. 'Ignore it.' You can't.",
+            "trust": 4,
+            "set": [
+              {
+                "flag": "sparkler_seen",
+                "knows": [
+                  "player"
+                ]
+              }
+            ],
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "yahoo": {
+            "text": "He calls in a panic: 'Delete it. Delete everything with my face.' You hear him deleting his own Instagram.",
+            "saw_truth": true,
+            "sanity": -10,
+            "exposure": -5,
+            "set": [
+              {
+                "flag": "sparkler_seen",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          },
+          "gambler": {
+            "text": "'Ignore it. Small debt.' He says 'small' the way Lagos says 'small traffic'.",
+            "trust": 6,
+            "sanity": -5,
+            "set": [
+              {
+                "flag": "sparkler_seen",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          },
+          "trust_fund": {
+            "text": "He laughs, then groans. 'My sister. So Daddy knows about you now. Brace.'",
+            "trust": 8,
+            "attachment": 6,
+            "set": [
+              {
+                "flag": "sparkler_seen",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "kay_po_raid_after",
+    "character": "kayode",
+    "slot": "payoff",
+    "presentation": "voice_note",
+    "requires": {
+      "flags": [
+        "raid_night"
+      ],
+      "not_flags": [
+        "raid_talked"
+      ],
+      "flag_age": {
+        "flag": "raid_night",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "raid_night",
+      "left_at_raid",
+      "ran_with_him"
+    ],
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "afternoon",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "About the other night. I know how it looked. I can't explain on the phone. Can I see you? Please."
+      }
+    ],
+    "priority": 4,
+    "choices": [
+      {
+        "id": "see_him",
+        "label": "\"Come and explain in person.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You let him come and explain the raid.",
+        "outcomes": [
+          {
+            "text": "He comes with flowers and a story. You listen.",
+            "trust": 6,
+            "set": [
+              {
+                "flag": "raid_talked",
+                "knows": [
+                  "player"
+                ]
+              }
+            ],
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "yahoo": {
+            "text": "He comes with flowers and a story about 'a misunderstanding with a client'. By dessert there are three versions.",
+            "trust": 5,
+            "sanity": -5,
+            "set": [
+              {
+                "flag": "raid_talked",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          },
+          "gambler": {
+            "text": "He comes with flowers and asks, casually, if the lounge ever chased the tab. His eyes say he owes them too.",
+            "trust": 6,
+            "sanity": -3,
+            "set": [
+              {
+                "flag": "raid_talked",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          },
+          "trust_fund": {
+            "text": "He sits on your bed and tells you everything: his father, his brother, the one-arrest rule. Then he cries. Then he denies it.",
+            "trust": 14,
+            "attachment": 12,
+            "set": [
+              {
+                "flag": "raid_talked",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "block_day",
+        "label": "Block him for 24 hours. Let him sweat.",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You blocked him for a day after the raid.",
+        "outcomes": [
+          {
+            "text": "He sends 41 messages through your Bestie. She forwards all of them, with commentary.",
+            "attachment": 6,
+            "trust": -6,
+            "sanity": 5,
+            "set": [
+              {
+                "flag": "raid_talked",
+                "knows": [
+                  "player"
+                ]
+              }
+            ],
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "half_tab",
+        "label": "\"Send me something for my trauma.\"",
+        "receipt": "You asked him to pay for your trauma.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "₦100k in ten seconds. 'Sorry is not enough. Here is more sorry.'",
+            "wallet": 100000,
+            "set": [
+              {
+                "flag": "raid_talked",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          },
+          {
+            "chance": 0.5,
+            "text": "'Of course, babe!' Nothing arrives. 'Network.' Lagos network never fails like this for incoming.",
+            "bad": true,
+            "tricked": true,
+            "sanity": -8,
+            "set": [
+              {
+                "flag": "raid_talked",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "yahoo": {
+            "text": "₦200k lands from an account named 'Barbara Jenkins'. You stare at the name for a long time.",
+            "wallet": 200000,
+            "saw_truth": true,
+            "sanity": -8,
+            "set": [
+              {
+                "flag": "raid_talked",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          },
+          "trust_fund": {
+            "text": "₦150k and a four-paragraph essay. Paragraph three is just 'I'm sorry' eleven times.",
+            "wallet": 150000,
+            "trust": 4,
+            "set": [
+              {
+                "flag": "raid_talked",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "abandoned",
+        "label": "\"You left me there, Kayode. Alone.\"",
+        "tags": [
+          "call_out",
+          "cautious"
+        ],
+        "requires": {
+          "flags": [
+            "left_at_raid"
+          ]
+        },
+        "receipt": "You told him he abandoned you at the raid.",
+        "outcomes": [
+          {
+            "text": "Long silence. 'I know. I'll spend the rest of the week making it up to you.' He does. Mostly.",
+            "trust": 8,
+            "attachment": 6,
+            "set": [
+              {
+                "flag": "raid_talked",
+                "knows": [
+                  "player"
+                ]
+              }
+            ],
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "gambler": {
+            "text": "'I know. I panicked. I owe that lounge money too.' Too.",
+            "saw_truth": true,
+            "trust": 6,
+            "set": [
+              {
+                "flag": "raid_talked",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "ride",
+        "label": "\"We survived together. Dinner's on you.\"",
+        "requires": {
+          "flags": [
+            "ran_with_him"
+          ]
+        },
+        "receipt": "You told him you survived the raid together.",
+        "outcomes": [
+          {
+            "text": "He books the rooftop in Ikoyi and orders exactly what you had the first night. He remembered.",
+            "attachment": 10,
+            "trust": 8,
+            "set": [
+              {
+                "flag": "raid_talked",
+                "knows": [
+                  "player"
+                ]
+              }
+            ],
+            "chance": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "kay_po_double",
+    "character": "kayode",
+    "slot": "payoff",
+    "presentation": "text",
+    "requires": {
+      "flags": [
+        "sent_double"
+      ],
+      "not_flags": [
+        "double_settled"
+      ],
+      "flag_age": {
+        "flag": "sent_double",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "sent_double"
+    ],
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "morning",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Babe, about your ₦50k 😅 Good news and bad news. Which one first?"
+      }
+    ],
+    "priority": 4,
+    "choices": [
+      {
+        "id": "good",
+        "label": "\"Good news first.\"",
+        "receipt": "You asked for the good news first.",
+        "outcomes": [
+          {
+            "text": "'Here's your ₦50k back.' That's it. That was the good news.",
+            "wallet": 50000,
+            "set": [
+              {
+                "flag": "double_settled",
+                "knows": [
+                  "player"
+                ]
+              }
+            ],
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "yahoo": {
+            "text": "'₦100k, as promised!' The sender name is 'Mrs Linda Hoffmann'. He won't explain the bad news.",
+            "wallet": 100000,
+            "saw_truth": true,
+            "sanity": -5,
+            "set": [
+              {
+                "flag": "double_settled",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          },
+          "gambler": {
+            "text": "'Good news: I nearly won. Bad news: nearly.' Your ₦50k died on a Turkish second-division match.",
+            "bad": true,
+            "tricked": true,
+            "saw_truth": true,
+            "sanity": -10,
+            "set": [
+              {
+                "flag": "double_settled",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          },
+          "trust_fund": {
+            "text": "'Good news: here's ₦100k. Bad news: Daddy found out I borrowed and lectured me for an hour. Worth it.'",
+            "wallet": 100000,
+            "trust": 8,
+            "set": [
+              {
+                "flag": "double_settled",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "bad",
+        "label": "\"Bad news first. I'm Lagos-strong.\"",
+        "receipt": "You asked for the bad news first.",
+        "outcomes": [
+          {
+            "text": "'Bad news: it took longer than I said.' ₦50k lands. No interest. No shame.",
+            "wallet": 50000,
+            "set": [
+              {
+                "flag": "double_settled",
+                "knows": [
+                  "player"
+                ]
+              }
+            ],
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "yahoo": {
+            "text": "'Bad news: the client is processing.' ₦60k lands from a stranger's account. 'Good news: here's something.'",
+            "wallet": 60000,
+            "saw_truth": true,
+            "sanity": -5,
+            "set": [
+              {
+                "flag": "double_settled",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          },
+          "gambler": {
+            "text": "'Bad news: it's gone. Good news: I have a new sure one. Send ₦50k more?'",
+            "bad": true,
+            "tricked": true,
+            "saw_truth": true,
+            "sanity": -12,
+            "set": [
+              {
+                "flag": "double_settled",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          },
+          "trust_fund": {
+            "text": "'Bad news: I'm terrible at business. Good news: I paid you back from my allowance, with interest.'",
+            "wallet": 80000,
+            "trust": 6,
+            "set": [
+              {
+                "flag": "double_settled",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "just_send",
+        "label": "\"Keep the news. Send my money.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You told him to skip the news and send your money.",
+        "outcomes": [
+          {
+            "text": "₦50k lands. No emoji. Respectful, but cold.",
+            "wallet": 50000,
+            "attachment": -3,
+            "set": [
+              {
+                "flag": "double_settled",
+                "knows": [
+                  "player"
+                ]
+              }
+            ],
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "gambler": {
+            "text": "'Give me till Friday.' Friday has been booked since 2019.",
+            "bad": true,
+            "tricked": true,
+            "sanity": -8,
+            "set": [
+              {
+                "flag": "double_settled",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "kay_po_dapo",
+    "character": "kayode",
+    "slot": "payoff",
+    "presentation": "text",
+    "requires": {
+      "flags": [
+        "secret_dapo_bottle"
+      ],
+      "not_flags": [
+        "dapo_dm"
+      ],
+      "flag_age": {
+        "flag": "secret_dapo_bottle",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "secret_dapo_bottle"
+    ],
+    "scene": {
+      "location": "vi_club_vip",
+      "time": "night",
+      "mood": "neutral",
+      "partner_present": false,
+      "npc": {
+        "name": "Dapo"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "1am. Dapo slides into your DMs."
+      },
+      {
+        "who": "Dapo",
+        "text": "You and Kay are not serious. Come and see Ikoyi from a G-Wagon. Tonight."
+      }
+    ],
+    "priority": 3,
+    "choices": [
+      {
+        "id": "go",
+        "label": "Go. One ride.",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You took a night ride with his rival.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "One ride becomes a night drive down Lekki-Epe and back. Dapo talks about himself for two hours. Your Bestie loves the gist.",
+            "clout": 10,
+            "exposure": 15,
+            "sanity": -5,
+            "set": [
+              {
+                "flag": "dapo_dm",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          },
+          {
+            "chance": 0.5,
+            "text": "Tunde sees you in the G-Wagon at a red light. By sunrise, Kayode has the photo.",
+            "bad": true,
+            "trust": -20,
+            "attachment": -10,
+            "exposure": 15,
+            "set": [
+              {
+                "flag": "dapo_dm",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "screenshot",
+        "label": "Screenshot it to Kayode.",
+        "tags": [
+          "contact_partner",
+          "cautious"
+        ],
+        "receipt": "You showed him his rival's DM.",
+        "outcomes": [
+          {
+            "text": "Kayode calls Dapo. You hear the shouting from your side of Lekki. Then: 'Thank you for telling me.'",
+            "trust": 10,
+            "attachment": 8,
+            "set": [
+              {
+                "flag": "dapo_dm",
+                "knows": [
+                  "player"
+                ]
+              }
+            ],
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "gambler": {
+            "text": "Kayode: 'Dapo? I'll beat him at FIFA for ₦500k.' Of course he will. Of course it's a bet.",
+            "trust": 8,
+            "attachment": 4,
+            "set": [
+              {
+                "flag": "dapo_dm",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "ignore",
+        "label": "Leave Dapo on read. Forever.",
+        "receipt": "You left his rival on read.",
+        "outcomes": [
+          {
+            "text": "He sends a sad emoji, then a voice note of himself singing. Badly. You screenshot it for the group chat.",
+            "sanity": 5,
+            "clout": 5,
+            "set": [
+              {
+                "flag": "dapo_dm",
+                "knows": [
+                  "player"
+                ]
+              }
+            ],
+            "chance": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "kay_po_snooped",
+    "character": "kayode",
+    "slot": "payoff",
+    "requires": {
+      "partner_knows": [
+        "secret_snooped_phone"
+      ],
+      "not_flags": [
+        "snoop_talked"
+      ],
+      "flag_age": {
+        "flag": "secret_snooped_phone",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "secret_snooped_phone"
+    ],
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "expression": "angry",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "You went through my phone. I said don't. So go on. What did you find?"
+      }
+    ],
+    "priority": 6,
+    "partner_reacts_to": [
+      "secret_snooped_phone"
+    ],
+    "choices": [
+      {
+        "id": "sorry",
+        "label": "\"I'm sorry. I got scared.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You apologised for going through his phone.",
+        "outcomes": [
+          {
+            "text": "He's quiet. 'Next time ask me. I might even answer.'",
+            "attachment": -4,
+            "sanity": 5,
+            "set": [
+              {
+                "flag": "snoop_talked",
+                "knows": [
+                  "player"
+                ]
+              }
+            ],
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "trust_fund": {
+            "text": "'Scared of what? Daddy's texts?' He laughs, a little hurt. 'Ask me anything. Just ask.'",
+            "trust": 6,
+            "set": [
+              {
+                "flag": "snoop_talked",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "found",
+        "label": "\"Enough to have questions. Answer them.\"",
+        "tags": [
+          "call_out"
+        ],
+        "receipt": "You demanded answers after snooping.",
+        "outcomes": [
+          {
+            "text": "He answers some. You believe some.",
+            "sanity": -3,
+            "set": [
+              {
+                "flag": "snoop_talked",
+                "knows": [
+                  "player"
+                ]
+              }
+            ],
+            "chance": 1
+          }
+        ],
+        "truth_override": {
+          "yahoo": {
+            "text": "An hour on 'foreign clients'. Not one sentence is true. Every one of them is smooth.",
+            "saw_truth": true,
+            "trust": -5,
+            "sanity": -10,
+            "set": [
+              {
+                "flag": "snoop_talked",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          },
+          "gambler": {
+            "text": "He admits the betting. 'Like, ten percent of what you think.' It's ninety.",
+            "saw_truth": true,
+            "trust": 4,
+            "set": [
+              {
+                "flag": "snoop_talked",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          },
+          "trust_fund": {
+            "text": "He answers everything. Daddy, the allowance, the note about you. You feel stupid and loved.",
+            "trust": 6,
+            "attachment": 6,
+            "set": [
+              {
+                "flag": "snoop_talked",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "again",
+        "label": "\"And I'll check again if I need to.\"",
+        "tags": [
+          "toxic"
+        ],
+        "receipt": "You told him you'd snoop again.",
+        "outcomes": [
+          {
+            "text": "He changes his passcode in front of you. Then again. Then he sleeps in the other room.",
+            "bond": -15,
+            "set": [
+              {
+                "flag": "snoop_talked",
+                "knows": [
+                  "player"
+                ]
+              }
+            ],
+            "chance": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "kay_tt_amala",
+    "character": "kayode",
+    "slot": "talking_time",
+    "presentation": "voice_note",
+    "scene": {
+      "location": "mainland_street",
+      "time": "afternoon",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Babe, I'm tired of these Ikoyi restaurants. Real talk? Give me amala in Ojuelegba any day. ₦3,500 and I'm a happy man."
+      }
+    ],
+    "detail": {
+      "flag": "knows_amala",
+      "missed": {
+        "chemistry": -3
+      },
+      "red_flag": false
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Amala man in a Benz? Noted 😂\"",
+        "caught": true,
+        "receipt": "You noted his amala confession.",
+        "outcomes": [
+          {
+            "text": "'Don't tell my guys.' He sends a picture of ewedu like it's a love letter.",
+            "attachment": 3,
+            "trust": 4,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "ikoyi",
+        "label": "\"Ikoyi is fine by me, sha.\"",
+        "receipt": "You told him Ikoyi was fine by you.",
+        "outcomes": [
+          {
+            "text": "'Ikoyi it is, then.' He sounds slightly disappointed.",
+            "attachment": 2,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "send",
+        "label": "\"Send ₦20k, let me buy you some.\"",
+        "receipt": "You asked him to send amala money.",
+        "outcomes": [
+          {
+            "text": "₦20k lands. 'Buy two wraps. One is yours.'",
+            "wallet": 20000,
+            "chance": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "kay_tt_siren",
+    "character": "kayode",
+    "slot": "talking_time",
+    "presentation": "voice_note",
+    "scene": {
+      "location": "vi_club_vip",
+      "time": "night",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "If I ever disappear when there's wahala, don't take it personal. Meet me at the filling station on Ozumba Mbadiwe. Always. Okay?"
+      }
+    ],
+    "detail": {
+      "flag": "knows_siren",
+      "missed": {
+        "sanity": -3
+      },
+      "red_flag": true
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Filling station. Got it. But why?\"",
+        "caught": true,
+        "receipt": "You noted his filling-station plan.",
+        "outcomes": [
+          {
+            "text": "'Just in case.' Two words, and he goes offline.",
+            "attachment": 3,
+            "trust": 4,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "who",
+        "label": "\"Disappear?? Who are you running from?\"",
+        "receipt": "You asked who he's running from.",
+        "outcomes": [
+          {
+            "text": "He sends a laughing emoji and nothing else. Loud.",
+            "attachment": -2,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "dramatic",
+        "label": "\"You're so dramatic. Goodnight 😂\"",
+        "receipt": "You called him dramatic and said goodnight.",
+        "outcomes": [
+          {
+            "text": "'Goodnight, my peace.' Then he's typing for ten minutes. Nothing arrives.",
+            "attachment": 2,
+            "chance": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "kay_tt_tunde",
+    "character": "kayode",
+    "slot": "talking_time",
+    "presentation": "text",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "afternoon",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Phone is dying. If you ever can't reach me, call my cousin Tunde. He always knows where I am. Always."
+      }
+    ],
+    "detail": {
+      "flag": "knows_tunde",
+      "missed": {
+        "chemistry": -2
+      },
+      "red_flag": true
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Cousin Tunde. Saved. 📱\"",
+        "caught": true,
+        "receipt": "You saved his cousin Tunde's number.",
+        "outcomes": [
+          {
+            "text": "'You're organised. I like that.' He sends Tunde's number twice.",
+            "attachment": 3,
+            "trust": 4,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "charge",
+        "label": "\"Charge your phone like an adult.\"",
+        "receipt": "You told him to charge his phone.",
+        "outcomes": [
+          {
+            "text": "'Yes, boss.' He sends a selfie with a power bank like a trophy.",
+            "attachment": 2,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "airtime",
+        "label": "\"Send airtime so I can call you.\"",
+        "receipt": "You asked him for airtime.",
+        "outcomes": [
+          {
+            "text": "₦5k airtime. 'Call me, not Tunde.'",
+            "wallet": 5000,
+            "chance": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "kay_tt_nollywood",
+    "character": "kayode",
+    "slot": "talking_time",
+    "presentation": "voice_note",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Don't laugh, but I'm watching that new Nollywood film tonight. The one with the mother. I'm not crying. The AC is just strong."
+      }
+    ],
+    "detail": {
+      "flag": "knows_nollywood",
+      "missed": {
+        "chemistry": -3
+      },
+      "red_flag": false
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"The AC. Of course 😭 Save it for us.\"",
+        "caught": true,
+        "receipt": "You promised to watch his Nollywood film with him.",
+        "outcomes": [
+          {
+            "text": "'Don't tell anybody.' He sends a voice note sniffing. 'Allergies.'",
+            "attachment": 3,
+            "trust": 4,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "laugh",
+        "label": "\"Big Boy crying? I'm screenshotting this.\"",
+        "receipt": "You laughed at him for crying.",
+        "outcomes": [
+          {
+            "text": "'Delete!' He sends ten crying-laughing emojis.",
+            "attachment": 2,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "netflix",
+        "label": "\"Send your Netflix password then.\"",
+        "receipt": "You asked for his streaming password.",
+        "outcomes": [
+          {
+            "text": "He sends it. It's '17Kayode17'. Of course it is.",
+            "attachment": 1,
+            "chance": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "kay_tt_sunday",
+    "character": "kayode",
+    "slot": "talking_time",
+    "presentation": "text",
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "afternoon",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Sunday lunch at my dad's. Every Sunday, 1pm, no phones at the table. If I'm off, that's why. Don't vex."
+      }
+    ],
+    "detail": {
+      "flag": "knows_sunday",
+      "missed": {
+        "chemistry": -3
+      },
+      "red_flag": true
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Sunday at 1, no phones. Greet your dad.\"",
+        "caught": true,
+        "receipt": "You noted his Sunday lunch with his dad.",
+        "outcomes": [
+          {
+            "text": "'He'd like you. That's the scary part.'",
+            "attachment": 3,
+            "trust": 4,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "me_too",
+        "label": "\"Can I come to Sunday lunch?\"",
+        "receipt": "You asked to come to Sunday lunch.",
+        "outcomes": [
+          {
+            "text": "Twenty minutes of typing. Then: 'Soon. 😅'",
+            "attachment": 1,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "whatever",
+        "label": "\"Okay. Bring me jollof.\"",
+        "receipt": "You asked him to bring back jollof.",
+        "outcomes": [
+          {
+            "text": "'If there's any left. My dad eats like a judge.'",
+            "attachment": 2,
+            "chance": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "kay_tt_lilies",
+    "character": "kayode",
+    "slot": "talking_time",
+    "presentation": "voice_note",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "morning",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Today is my mum's remembrance. White lilies, every year. I don't really talk about it. Just... be gentle with me today."
+      }
+    ],
+    "detail": {
+      "flag": "knows_lilies",
+      "missed": {
+        "chemistry": -3
+      },
+      "red_flag": false
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"White lilies. I'm here. Talk when you're ready.\"",
+        "caught": true,
+        "receipt": "You were gentle on his mum's remembrance day.",
+        "outcomes": [
+          {
+            "text": "He doesn't reply for an hour. Then: 'Thank you.' Just that.",
+            "attachment": 4,
+            "trust": 4,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "hug",
+        "label": "\"Sending hugs 🤗\"",
+        "receipt": "You sent him hugs.",
+        "outcomes": [
+          {
+            "text": "He sends a heart. A small one.",
+            "attachment": 2,
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "id": "outing",
+        "label": "\"Let's go out tonight. Distract you.\"",
+        "receipt": "You invited him out on his mum's remembrance.",
+        "outcomes": [
+          {
+            "text": "'Maybe.' He doesn't come. You go anyway.",
+            "attachment": -2,
+            "clout": 5,
+            "chance": 1
+          }
+        ]
+      }
+    ]
+  }
+]

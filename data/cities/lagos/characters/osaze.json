@@ -1,0 +1,83 @@
+{
+  "id": "osaze",
+  "cold_open": {
+    "duration": 17,
+    "scene": { "location": "ikoyi_restaurant", "time": "golden", "expression": "charming", "mood": "neutral" },
+    "phone": [{ "at": 1.5, "kind": "text", "from": "Unknown number", "text": "Buonasera. I'm at the window table. You'll know me by the shoes. - Osaze" }],
+    "beats": [
+      { "at": 0.5, "who": "narration", "text": "Golden hour on an Ikoyi rooftop. Every man here is on his phone. One is reading a paperback in Italian." },
+      { "at": 5, "who": "narration", "text": "Navy jacket. Locs tied back. Loafers so polished they reflect the lagoon. He stands when he sees you." },
+      { "at": 9, "who": "partner", "text": "Ciao, bella. Sit. Six months back in Lagos and you're the first thing that feels like Milan." },
+      { "at": 13.5, "who": "narration", "text": "His phone buzzes face down. He doesn't check it. He looks at you like he's memorising you for somewhere far away." }
+    ]
+  },
+  "endings": {
+    "locked_in": {
+      "title": "Ciao, Lagos",
+      "text": "He hummed 'Volare' at your door with pepper soup in a cooler. Utazi, not uziza. He calls you 'amore' now, and his mama calls you every Sunday at 7.",
+      "scene": { "location": "ikoyi_restaurant", "time": "golden", "expression": "charming", "mood": "positive" },
+      "truths": {
+        "never_left": {
+          "title": "Made in Aba, Loved in Lagos",
+          "text": "Locked In with a man who has never left Nigeria. He confessed on a crate in Balogun. Now the shoe stall has an Instagram page, and the bio finally says 'Lagos-made'."
+        },
+        "wife_abroad": {
+          "title": "The Lagos Business",
+          "text": "Locked In. Officially, you're his Lagos girlfriend. Unofficially, Torino still gets a transfer every two weeks. He says the marriage is 'dead but Italian'. You hope Ivie got the memo."
+        },
+        "japa_real": {
+          "title": "Japa Loading",
+          "text": "Locked In, with a visa to prove it. Your biometrics are done, the spare key is cut and Mama has blessed the trip on speakerphone. Milan, two seats. One of them is yours."
+        }
+      }
+    },
+    "counter_con": {
+      "title": "The Counter-Con",
+      "text": "He asked you to hold his money. So you held it. Forever. He's somewhere practising his Italian on a new person. You're in Lekki with a new fridge and no regrets.",
+      "scene": { "location": "luxury_apartment", "time": "morning", "expression": "caught", "mood": "neutral" }
+    },
+    "survived": {
+      "title": "Survived Phase 1",
+      "text": "Still together. Still 'Euro time'. He calls you bella, you call him 'my returnee', and you have never once seen a passport stamp.",
+      "scene": { "location": "ikoyi_restaurant", "time": "night", "expression": "charming", "mood": "neutral" },
+      "truths": {
+        "japa_real": { "text": "Still together. He's still queuing at 5am, still humming when he thinks you can't hear. Whatever he's planning, your name is somewhere in it." }
+      }
+    },
+    "scandal": {
+      "title": "Public Scandal",
+      "text": "'Euro boo exposed' is trending, and your face is in the thumbnail. Somebody found your Accra photos and added a clown filter. Your church group has seen it.",
+      "scene": { "location": "mainland_street", "time": "golden", "expression": "angry", "mood": "negative" }
+    },
+    "sapa": {
+      "title": "Sapa Eviction",
+      "text": "Goods at Tin Can, papers, asoebi, a three-tier cake. Your account is empty and your landlord has never heard of Milan. The goods have still not cleared.",
+      "scene": { "location": "mainland_street", "time": "night", "mood": "negative", "partner_present": false }
+    },
+    "breakdown": {
+      "title": "Public Breakdown",
+      "text": "You cried in a Lekki short-let at 3am while he whispered on the balcony in a language you don't speak. The pepper soup went cold. So did you.",
+      "scene": { "location": "luxury_apartment", "time": "night", "mood": "negative", "partner_present": false }
+    },
+    "ghosted": {
+      "title": "Ghosted",
+      "text": "His last seen says 'Europe time'. His status says 'Ciao, Lagos'. Nobody can confirm which country he's ghosting you from.",
+      "scene": { "location": "ikoyi_restaurant", "time": "night", "expression": "suspicious", "mood": "negative", "partner_present": false }
+    },
+    "fumbled": {
+      "title": "Fumbled It",
+      "text": "He really was going, and he really wanted you to come. You snooped, posted and accused. The second seat on the flight to Milan went empty.",
+      "scene": { "location": "luxury_apartment", "time": "morning", "expression": "suspicious", "mood": "negative" }
+    },
+    "obsession": {
+      "title": "Obsession",
+      "text": "He took your passport 'for the visa' and never gave it back. Every plan was his plan. Every door needed his key. This was never love, and it was never Milan.",
+      "scene": { "location": "luxury_apartment", "time": "night", "expression": "suspicious", "mood": "negative" }
+    },
+    "walked_away": {
+      "title": "Walked Away",
+      "text": "You left the Italian, the papers and the 3am calls behind. You blocked him at CMS bus stop. No visa needed to leave a man.",
+      "scene": { "location": "mainland_street", "time": "golden", "mood": "neutral", "partner_present": false }
+    }
+  }
+}
