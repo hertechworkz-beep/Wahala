@@ -401,6 +401,7 @@ export interface TitleRule {
   endings?: EndingId[];
   goals?: GoalId[];
   vibes?: VibeId[];
+  player_gender?: Gender[];
   good_one?: boolean;
   weight?: number;
 }

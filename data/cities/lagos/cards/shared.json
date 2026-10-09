@@ -2554,5 +2554,242 @@
         ]
       }
     ]
+  },
+  {
+    "id": "shared_in_friends",
+    "slot": "interrupt",
+    "presentation": "text",
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "night",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Babe, I'm coming with my friends. Just four. They're hungry. Is that ok? 🥺"
+      },
+      {
+        "who": "narration",
+        "text": "You booked a table for two. The menu has no prices, which means the prices are violent."
+      }
+    ],
+    "choices": [
+      {
+        "id": "yes",
+        "label": "\"Bring them. I'm a big person.\"",
+        "cost": 60000,
+        "tags": [
+          "luxury"
+        ],
+        "broke_text": "Your account said 'which friends?'",
+        "receipt": "You fed {partner}'s four friends.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "The friends love you. One of them is now your biggest defender in the group chat.",
+            "attachment": 8,
+            "clout": 10
+          },
+          {
+            "chance": 0.4,
+            "bad": true,
+            "text": "The friends order cocktails in pairs. Nobody says thank you. One asks for 'takeaway for my sister'.",
+            "attachment": 3,
+            "sanity": -10
+          }
+        ]
+      },
+      {
+        "id": "split",
+        "label": "\"Everybody pays for themselves. Lagos rules.\"",
+        "tags": [
+          "budget",
+          "cautious"
+        ],
+        "receipt": "You told {partner}'s friends to pay their own bills.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The friends go quiet. {Partner} laughs, then respects you a little more, then a little less.",
+            "attachment": -3,
+            "trust": 3
+          }
+        ]
+      },
+      {
+        "id": "two",
+        "label": "\"Table for two. Tell them happy weekend.\"",
+        "receipt": "You kept the date to two.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "{Partner} arrives alone, slightly annoyed, then stays till closing. Worth it.",
+            "attachment": 4
+          }
+        ]
+      },
+      {
+        "id": "bigboy_buyout",
+        "label": "[Big Boy] Book the whole section. Invite their friends' friends.",
+        "vibe": "bigboy",
+        "cost": 150000,
+        "tags": [
+          "luxury"
+        ],
+        "receipt": "You booked the whole section for {partner}'s friends.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You are now a legend in a group chat you're not in.",
+            "clout": 25,
+            "attachment": 6
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shared_in_sister_birthday",
+    "slot": "interrupt",
+    "presentation": "voice_note",
+    "scene": {
+      "location": "mainland_street",
+      "time": "afternoon",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Sweetheart, my third sister's birthday is Saturday. You know how family is. Something small. Like ₦50k. Or a cake. Or both."
+      }
+    ],
+    "choices": [
+      {
+        "id": "cake",
+        "label": "Send a nice cake with her name on it",
+        "cost": 15000,
+        "tags": [
+          "budget"
+        ],
+        "receipt": "You sent a cake for {partner}'s third sister.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The sister posts the cake with 'my in-law 😍'. You have been promoted without an interview.",
+            "attachment": 6,
+            "clout": 5
+          }
+        ]
+      },
+      {
+        "id": "cash",
+        "label": "Send the ₦50k. Family is family.",
+        "cost": 50000,
+        "receipt": "You sent ₦50k for the third sister's birthday.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "Thank-you voice notes from three sisters. All of them have birthdays this month, apparently.",
+            "attachment": 8
+          },
+          {
+            "chance": 0.4,
+            "bad": true,
+            "tricked": true,
+            "text": "The 'sister' has had four birthdays this year. You've funded two.",
+            "sanity": -10
+          }
+        ]
+      },
+      {
+        "id": "which",
+        "label": "\"Which number sister is this again?\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked which sister was having a birthday.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "{Partner} sends a family photo. There are seven sisters. It is a real question.",
+            "trust": 2,
+            "attachment": -2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shared_in_account_number",
+    "slot": "interrupt",
+    "presentation": "text",
+    "scene": {
+      "location": "prado_interior",
+      "time": "night",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Before we go out tomorrow. Here's my account number. For transport. And 'getting ready'. You understand. 😘"
+      }
+    ],
+    "choices": [
+      {
+        "id": "send",
+        "label": "Send transport money. It's Lagos.",
+        "cost": 10000,
+        "tags": [
+          "budget"
+        ],
+        "receipt": "You sent {partner} transport money before the date.",
+        "outcomes": [
+          {
+            "chance": 0.7,
+            "text": "{Partner} arrives on time, looking expensive. The ₦10k was a good investment.",
+            "attachment": 5
+          },
+          {
+            "chance": 0.3,
+            "bad": true,
+            "text": "{Partner} arrives by keke. The transport money became a wig deposit.",
+            "sanity": -5
+          }
+        ]
+      },
+      {
+        "id": "pickup",
+        "label": "\"I'll send a ride to your gate.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You booked {partner} a ride instead of sending cash.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "{Partner} sends 'ok' with one full stop. The ride was free. The full stop was not.",
+            "trust": 3,
+            "attachment": -2
+          }
+        ]
+      },
+      {
+        "id": "flip",
+        "label": "Send back your own account number",
+        "receipt": "You sent {partner} your own account number back.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Three minutes of silence. Then a laughing emoji. Then ₦2k, 'for your own transport'. Respect.",
+            "clout": 8,
+            "attachment": 3
+          }
+        ]
+      }
+    ]
   }
 ]

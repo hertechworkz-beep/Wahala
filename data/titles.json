@@ -1,43 +1,412 @@
 [
-  { "title": "Certified Mumu of Lekki Phase 1", "endings": ["sapa", "ghosted"], "goals": ["love", "ring"] },
-  { "title": "Senior Clown, Island Branch", "endings": ["ghosted", "survived"] },
-  { "title": "Sapa's Favourite Child", "endings": ["sapa"] },
-  { "title": "Director of Wahala", "endings": ["scandal"], "goals": ["revenge"] },
-  { "title": "Side Piece Emeritus", "endings": ["survived", "locked_in"], "good_one": false },
-  { "title": "Bag Secured, Dignity Pending", "endings": ["counter_con", "survived"], "goals": ["bag"] },
-  { "title": "Love Scammer's Final Boss", "endings": ["counter_con"] },
-  { "title": "Chief's Wife's Most Wanted", "endings": ["scandal"] },
-  { "title": "Ghosted with Honours", "endings": ["ghosted"] },
-  { "title": "Japa'd On", "endings": ["ghosted", "walked_away"] },
-  { "title": "Pastor Is Praying For You", "endings": ["breakdown", "sapa"] },
-  { "title": "Main Character, Wrong Movie", "endings": ["scandal", "breakdown", "survived"] },
-  { "title": "Fumbled a Good Thing", "endings": ["fumbled"] },
-  { "title": "Had Gold, Chose Gist", "endings": ["fumbled"] },
-  { "title": "Your Own Red Flag", "endings": ["fumbled"] },
-  { "title": "Supermarket Sunday Soloist", "endings": ["breakdown"] },
-  { "title": "Third Mainland Bridge Survivor", "endings": ["survived"] },
-  { "title": "Exclusive (Terms and Conditions Apply)", "endings": ["survived", "locked_in"] },
-  { "title": "Madam Official", "endings": ["locked_in"], "goals": ["ring", "love"] },
-  { "title": "Locked In, Key Thrown in the Lagoon", "endings": ["locked_in"] },
-  { "title": "CEO of Situationships", "endings": ["survived"], "goals": ["ring"] },
-  { "title": "Logistics and Luxury, Mostly Logistics", "endings": ["counter_con", "sapa"], "vibes": ["runs"] },
-  { "title": "Contracts and Crypto and Crying", "endings": ["sapa", "breakdown"], "vibes": ["bigboy"] },
-  { "title": "Per My Last Heartbreak", "endings": ["ghosted", "breakdown", "survived"], "vibes": ["corporate"] },
-  { "title": "Customer Care for a Man Who Didn't Care", "endings": ["ghosted", "sapa", "survived"], "vibes": ["lover"] },
-  { "title": "Sugar Without the Daddy", "endings": ["ghosted", "sapa"], "vibes": ["sugar"] },
-  { "title": "Gave Love, Got a Voice Note", "endings": ["ghosted", "survived"], "goals": ["love"] },
-  { "title": "Came for the Bag, Left with the Bill", "endings": ["sapa", "ghosted", "survived", "breakdown"], "goals": ["bag"] },
-  { "title": "Planned a War, Started a WhatsApp Group", "endings": ["survived", "ghosted", "locked_in"], "goals": ["revenge"] },
-  { "title": "Wanted a Ring, Got a Read Receipt", "endings": ["ghosted", "survived", "sapa"], "goals": ["ring"] },
-  { "title": "Trending for the Wrong Reasons", "endings": ["scandal"] },
-  { "title": "Blogger's Employee of the Month", "endings": ["scandal"] },
-  { "title": "Single by Executive Decision", "endings": ["walked_away"] },
-  { "title": "Left on a Danfo, Arrived Free", "endings": ["walked_away"] },
-  { "title": "The One Who Saw It Coming", "endings": ["counter_con"] },
-  { "title": "Owambe Survivor", "endings": ["survived", "locked_in"] },
-  { "title": "Insured, Not Assured", "endings": ["counter_con", "survived"], "vibes": ["runs", "bigboy"] },
-  { "title": "Promoted to Girlfriend, Demoted to Cousin", "endings": ["survived", "ghosted"], "good_one": false },
-  { "title": "Soft Life, Hard Lessons", "endings": ["sapa", "breakdown", "ghosted"] },
-  { "title": "Love Is Blind, Lagos Is Not", "endings": ["scandal", "ghosted", "survived"] },
-  { "title": "Accidentally Wholesome", "endings": ["locked_in", "survived"], "good_one": true }
+  {
+    "title": "Certified Mumu of Lekki Phase 1",
+    "endings": [
+      "sapa",
+      "ghosted"
+    ],
+    "goals": [
+      "love",
+      "ring"
+    ]
+  },
+  {
+    "title": "Senior Clown, Island Branch",
+    "endings": [
+      "ghosted",
+      "survived"
+    ]
+  },
+  {
+    "title": "Sapa's Favourite Child",
+    "endings": [
+      "sapa"
+    ]
+  },
+  {
+    "title": "Director of Wahala",
+    "endings": [
+      "scandal"
+    ],
+    "goals": [
+      "revenge"
+    ]
+  },
+  {
+    "title": "Side Piece Emeritus",
+    "endings": [
+      "survived",
+      "locked_in"
+    ],
+    "good_one": false
+  },
+  {
+    "title": "Bag Secured, Dignity Pending",
+    "endings": [
+      "counter_con",
+      "survived"
+    ],
+    "goals": [
+      "bag"
+    ]
+  },
+  {
+    "title": "Love Scammer's Final Boss",
+    "endings": [
+      "counter_con"
+    ]
+  },
+  {
+    "title": "Chief's Wife's Most Wanted",
+    "endings": [
+      "scandal"
+    ]
+  },
+  {
+    "title": "Ghosted with Honours",
+    "endings": [
+      "ghosted"
+    ]
+  },
+  {
+    "title": "Japa'd On",
+    "endings": [
+      "ghosted",
+      "walked_away"
+    ]
+  },
+  {
+    "title": "Pastor Is Praying For You",
+    "endings": [
+      "breakdown",
+      "sapa"
+    ]
+  },
+  {
+    "title": "Main Character, Wrong Movie",
+    "endings": [
+      "scandal",
+      "breakdown",
+      "survived"
+    ]
+  },
+  {
+    "title": "Fumbled a Good Thing",
+    "endings": [
+      "fumbled"
+    ]
+  },
+  {
+    "title": "Had Gold, Chose Gist",
+    "endings": [
+      "fumbled"
+    ]
+  },
+  {
+    "title": "Your Own Red Flag",
+    "endings": [
+      "fumbled"
+    ]
+  },
+  {
+    "title": "Supermarket Sunday Soloist",
+    "endings": [
+      "breakdown"
+    ]
+  },
+  {
+    "title": "Third Mainland Bridge Survivor",
+    "endings": [
+      "survived"
+    ]
+  },
+  {
+    "title": "Exclusive (Terms and Conditions Apply)",
+    "endings": [
+      "survived",
+      "locked_in"
+    ]
+  },
+  {
+    "title": "Madam Official",
+    "endings": [
+      "locked_in"
+    ],
+    "goals": [
+      "ring",
+      "love"
+    ]
+  },
+  {
+    "title": "Locked In, Key Thrown in the Lagoon",
+    "endings": [
+      "locked_in"
+    ]
+  },
+  {
+    "title": "CEO of Situationships",
+    "endings": [
+      "survived"
+    ],
+    "goals": [
+      "ring"
+    ]
+  },
+  {
+    "title": "Logistics and Luxury, Mostly Logistics",
+    "endings": [
+      "counter_con",
+      "sapa"
+    ],
+    "vibes": [
+      "runs"
+    ]
+  },
+  {
+    "title": "Contracts and Crypto and Crying",
+    "endings": [
+      "sapa",
+      "breakdown"
+    ],
+    "vibes": [
+      "bigboy"
+    ]
+  },
+  {
+    "title": "Per My Last Heartbreak",
+    "endings": [
+      "ghosted",
+      "breakdown",
+      "survived"
+    ],
+    "vibes": [
+      "corporate"
+    ]
+  },
+  {
+    "title": "Customer Care for a Man Who Didn't Care",
+    "endings": [
+      "ghosted",
+      "sapa",
+      "survived"
+    ],
+    "vibes": [
+      "lover"
+    ]
+  },
+  {
+    "title": "Sugar Without the Daddy",
+    "endings": [
+      "ghosted",
+      "sapa"
+    ],
+    "vibes": [
+      "sugar"
+    ]
+  },
+  {
+    "title": "Gave Love, Got a Voice Note",
+    "endings": [
+      "ghosted",
+      "survived"
+    ],
+    "goals": [
+      "love"
+    ]
+  },
+  {
+    "title": "Came for the Bag, Left with the Bill",
+    "endings": [
+      "sapa",
+      "ghosted",
+      "survived",
+      "breakdown"
+    ],
+    "goals": [
+      "bag"
+    ]
+  },
+  {
+    "title": "Planned a War, Started a WhatsApp Group",
+    "endings": [
+      "survived",
+      "ghosted",
+      "locked_in"
+    ],
+    "goals": [
+      "revenge"
+    ]
+  },
+  {
+    "title": "Wanted a Ring, Got a Read Receipt",
+    "endings": [
+      "ghosted",
+      "survived",
+      "sapa"
+    ],
+    "goals": [
+      "ring"
+    ]
+  },
+  {
+    "title": "Trending for the Wrong Reasons",
+    "endings": [
+      "scandal"
+    ]
+  },
+  {
+    "title": "Blogger's Employee of the Month",
+    "endings": [
+      "scandal"
+    ]
+  },
+  {
+    "title": "Single by Executive Decision",
+    "endings": [
+      "walked_away"
+    ]
+  },
+  {
+    "title": "Left on a Danfo, Arrived Free",
+    "endings": [
+      "walked_away"
+    ]
+  },
+  {
+    "title": "The One Who Saw It Coming",
+    "endings": [
+      "counter_con"
+    ]
+  },
+  {
+    "title": "Owambe Survivor",
+    "endings": [
+      "survived",
+      "locked_in"
+    ]
+  },
+  {
+    "title": "Insured, Not Assured",
+    "endings": [
+      "counter_con",
+      "survived"
+    ],
+    "vibes": [
+      "runs",
+      "bigboy"
+    ]
+  },
+  {
+    "title": "Promoted to Girlfriend, Demoted to Cousin",
+    "endings": [
+      "survived",
+      "ghosted"
+    ],
+    "good_one": false
+  },
+  {
+    "title": "Soft Life, Hard Lessons",
+    "endings": [
+      "sapa",
+      "breakdown",
+      "ghosted"
+    ]
+  },
+  {
+    "title": "Love Is Blind, Lagos Is Not",
+    "endings": [
+      "scandal",
+      "ghosted",
+      "survived"
+    ]
+  },
+  {
+    "title": "Accidentally Wholesome",
+    "endings": [
+      "locked_in",
+      "survived"
+    ],
+    "good_one": true
+  },
+  {
+    "title": "ATM of the Year",
+    "endings": [
+      "sapa",
+      "ghosted",
+      "survived"
+    ],
+    "player_gender": [
+      "man"
+    ]
+  },
+  {
+    "title": "Certified Mumu Boyfriend",
+    "endings": [
+      "ghosted",
+      "sapa",
+      "scandal"
+    ],
+    "player_gender": [
+      "man"
+    ]
+  },
+  {
+    "title": "Odogwu, Unbothered",
+    "endings": [
+      "walked_away",
+      "counter_con",
+      "survived"
+    ],
+    "player_gender": [
+      "man"
+    ]
+  },
+  {
+    "title": "Transport Fare Philanthropist",
+    "endings": [
+      "sapa",
+      "ghosted",
+      "survived"
+    ]
+  },
+  {
+    "title": "Kept and Content",
+    "endings": [
+      "locked_in",
+      "survived"
+    ],
+    "vibes": [
+      "sugar",
+      "lover"
+    ]
+  },
+  {
+    "title": "Pride Intact, Wallet Empty",
+    "endings": [
+      "sapa",
+      "walked_away"
+    ]
+  },
+  {
+    "title": "Funded His Data Plan",
+    "endings": [
+      "sapa",
+      "ghosted",
+      "survived"
+    ],
+    "player_gender": [
+      "woman"
+    ]
+  },
+  {
+    "title": "Paid for Her Own Date, Again",
+    "endings": [
+      "sapa",
+      "survived",
+      "ghosted"
+    ],
+    "player_gender": [
+      "woman"
+    ]
+  }
 ]

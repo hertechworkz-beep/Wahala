@@ -124,7 +124,7 @@ function defaultEndingText(e: EndingId): string {
 }
 
 function specificity(rule: { goals?: unknown[]; vibes?: unknown[]; good_one?: boolean }): number {
-  return (rule.goals ? 2 : 0) + (rule.vibes ? 2 : 0) + (rule.good_one !== undefined ? 1 : 0);
+  return (rule.goals ? 2 : 0) + (rule.vibes ? 2 : 0) + ((rule as { player_gender?: unknown }).player_gender ? 2 : 0) + (rule.good_one !== undefined ? 1 : 0);
 }
 
 /** Titles are picked by ending + goal + vibe, so the same ending titles differently per player. */
@@ -135,6 +135,7 @@ export function pickTitle(content: CityContent, s: RunState): string {
       (!t.endings || t.endings.includes(e)) &&
       (!t.goals || t.goals.includes(s.player.goal)) &&
       (!t.vibes || t.vibes.includes(s.player.vibe)) &&
+      (!t.player_gender || t.player_gender.includes(s.player.gender)) &&
       (t.good_one === undefined || t.good_one === s.goodOne),
   );
   if (!pool.length) return ENDING_NAMES[e];
