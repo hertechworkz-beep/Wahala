@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { Suspense, lazy, useEffect, useState } from 'react';
 import { lagos } from '../content/browser';
 import { getCharacter } from '../engine/engine';
 import { naira } from '../engine/text';
@@ -10,9 +10,19 @@ import { RunScreen } from './run/RunScreen';
 import { ErrorBoundary } from './ErrorBoundary';
 import { useRun } from './session';
 import { Setup } from './setup/Setup';
-import { decodeCard } from './verdict/payload';
-import { VerdictCard } from './verdict/VerdictCard';
-import { ScaledCard, VerdictScreen, encodeCard, useChallengeFromUrl } from './verdict/VerdictScreen';
+import { decodeCard, encodeCard } from './verdict/payload';
+
+// Sharing code (html-to-image, QR) loads only when a Verdict is shown: faster first load on 3G.
+const VerdictScreen = lazy(() => import('./verdict/VerdictScreen').then((m) => ({ default: m.VerdictScreen })));
+const SharedCard = lazy(() => import('./verdict/SharedCard'));
+const Loading = () => <div className="flex h-full items-center justify-center text-white/40">Loading…</div>;
+
+function useChallengeFromUrl() {
+  useEffect(() => {
+    const p = new URLSearchParams(location.search).get('challenge');
+    if (p && decodeCard(p)) storage.set('wahala.challenge', p);
+  }, []);
+}
 
 function usePath() {
   const [path, setPath] = useState(location.pathname);
@@ -92,6 +102,7 @@ function Play() {
   if (!session.run) return <Setup preselect={preselect} onStart={(p, c) => (sound.unlock(), session.start(p, c), setView('run'))} />;
   if (view === 'verdict' && session.run.status === 'ended')
     return (
+      <Suspense fallback={<Loading />}>
       <VerdictScreen
         run={session.run}
         onAgain={() => {
@@ -101,6 +112,7 @@ function Play() {
         }}
         onNewCharacter={() => session.reset()}
       />
+      </Suspense>
     );
   return <RunScreen key={session.run.seed} session={session} onVerdict={() => setView('verdict')} />;
 }
@@ -127,11 +139,9 @@ function ShareLanding({ payload }: { payload: string }) {
         <Logo size={28} />
         <span className="text-[11px] uppercase tracking-widest text-white/40">{card.n}'s Verdict</span>
       </div>
-      <div className="overflow-hidden rounded-[22px] shadow-[0_30px_80px_rgba(0,0,0,0.6)]">
-        <ScaledCard width={360} height={640}>
-          <VerdictCard c={card} url={location.href} />
-        </ScaledCard>
-      </div>
+      <Suspense fallback={<Loading />}>
+        <SharedCard c={card} />
+      </Suspense>
       <div className="mt-5 space-y-2">
         <Btn className="w-full" onClick={() => navigate(`/play?date=${card.c}`)}>
           Date {first} yourself

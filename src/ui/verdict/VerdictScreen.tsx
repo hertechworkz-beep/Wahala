@@ -6,7 +6,7 @@ import type { EndingId, RunState } from '../../engine/types';
 import { backend, storage } from '../../backend';
 import { sound } from '../audio';
 import { Btn } from '../kit';
-import { decodeCard, encodeCard, shareUrl, toCard, type CardData } from './payload';
+import { decodeCard, shareUrl, toCard, type CardData } from './payload';
 import { ReceiptsCard, VerdictCard, WideCard } from './VerdictCard';
 
 export async function exportPng(node: HTMLElement, scale: number): Promise<string> {
@@ -204,11 +204,4 @@ function ShareBtn({ icon, label, onClick, tone }: { icon: string; label: string;
   );
 }
 
-export function useChallengeFromUrl() {
-  useEffect(() => {
-    const p = new URLSearchParams(location.search).get('challenge');
-    if (p && decodeCard(p)) storage.set('wahala.challenge', p);
-  }, []);
-}
-
-export { encodeCard, type CardData };
+export type { CardData };
