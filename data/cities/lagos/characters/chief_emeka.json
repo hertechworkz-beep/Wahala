@@ -3,7 +3,7 @@
   "cold_open": {
     "duration": 16,
     "scene": { "location": "prado_interior", "time": "night", "expression": "charming", "mood": "neutral", "props": ["window_half"] },
-    "phone": [{ "at": 1.5, "kind": "text", "from": "Unknown number", "text": "Madam, Oga is outside. Black Prado. - Musa" }],
+    "phone": [{ "at": 1.5, "kind": "text", "from": "Unknown number", "text": "Oga is outside. Black Prado. Come down. - Musa" }],
     "beats": [
       { "at": 0.5, "who": "narration", "text": "7:00pm. A tinted Prado slides to a stop outside your gate. Nobody gets out." },
       { "at": 4.5, "who": "narration", "text": "The back window lowers halfway. A gold Rolex. A red cap. A smile you can only half see." },

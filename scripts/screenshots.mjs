@@ -35,9 +35,8 @@ try {
   await page.getByText('Start dating').click();
   await shot('age-gate');
   await page.getByText("Yes, I'm 18+").click();
-  await page.getByPlaceholder('e.g. Lekki Baddie').fill('Adaeze_O');
-  await shot('identity');
-  await page.getByText('Next', { exact: true }).click();
+  await page.getByLabel('Display name').fill('Adaeze_O');
+  await page.getByLabel('Skin tone s9').click();
   await page.getByText('Curvy / Thick').click();
   await page.getByText('30-inch Bone Straight').click();
   await shot('avatar');
@@ -45,17 +44,20 @@ try {
   await page.getByText('Men', { exact: true }).click();
   await page.getByText('Next', { exact: true }).click();
   await page.getByText(VIBE, { exact: true }).click();
-  await shot('vibe');
-  await page.getByText('Next', { exact: true }).click();
   await page.getByText('Secure the Bag').click();
-  await shot('goal');
-  await page.getByText('Find me someone').click();
+  await shot('vibe-goal');
+  await page.getByText('Pick your date').click();
   await page.waitForTimeout(500);
   await shot('roster');
   await page.getByLabel('Date').click();
   await page.waitForTimeout(700);
   await shot('match');
   await page.getByText('Day 1 →').click();
+  await page.waitForTimeout(5500);
+  await shot('cold-open-a');
+  await page.waitForTimeout(5000);
+  await shot('cold-open-b');
+  await page.locator('[data-skip-cold]').click();
 
   let shots = 0;
   let openedPhone = false;
@@ -136,6 +138,16 @@ try {
   console.log('saved run:', url);
   await page.goto(`http://localhost:${PORT}/advertise`);
   await shot('advertise');
+
+  // Under-18 path: no names, numbers or emails may be collected.
+  const kid = await (await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2 })).newPage();
+  await kid.goto(`http://localhost:${PORT}/play`);
+  await kid.getByText('No', { exact: true }).click();
+  await kid.waitForTimeout(500);
+  const inputs = await kid.locator('input, textarea, form').count();
+  if (inputs) throw new Error(`under-18 screen has ${inputs} input fields`);
+  await kid.screenshot({ path: `${OUT}/${String(++n).padStart(2, '0')}-under-18.png` });
+  console.log('under-18 path: no inputs');
 } catch (e) {
   console.error('E2E FAILED:', e);
   await shot('failure');

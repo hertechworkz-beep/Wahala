@@ -11,17 +11,17 @@ function hash(s: string): number {
 /** The player's own avatar, built from the three setup taps. */
 export function playerLook(p: Pick<PlayerSetup, 'avatar' | 'name'>): PortraitLook {
   const a = p.avatar;
-  const skin = SKINS[hash(p.name || 'you') % SKINS.length];
-  const hairMap: Record<string, Pick<PortraitLook, 'hair' | 'hairColor'> & { beard?: boolean }> = {
+  const skin = a.skin ?? SKINS[hash(p.name || 'you') % SKINS.length];
+  const hairMap: Record<string, Pick<PortraitLook, 'hair' | 'hairColor'>> = {
     '30-inch Bone Straight': { hair: 'frontal', hairColor: '#17100b' },
     'Knotless Braids': { hair: 'braids', hairColor: '#1a120c' },
-    'Natural / Low Cut': { hair: 'low', hairColor: '#120c08' },
+    Natural: { hair: 'natural', hairColor: '#140d08' },
+    'Natural / Low Cut': { hair: 'natural', hairColor: '#140d08' },
     'Coloured Frontal': { hair: 'frontal', hairColor: '#b5452a' },
     Locs: { hair: 'locs', hairColor: '#1e140c' },
     'Low Cut': { hair: 'low', hairColor: '#0f0a07' },
     Waves: { hair: 'waves', hairColor: '#0f0a07' },
     'Clean Bald': { hair: 'bald', hairColor: '#0f0a07' },
-    'Beard Gang': { hair: 'low', hairColor: '#0f0a07', beard: true },
   };
   const styleMap: Record<string, Pick<PortraitLook, 'outfit' | 'outfitAccent' | 'outfitStyle'>> = {
     'Designer Glam': { outfit: '#121212', outfitAccent: '#e8c14a', outfitStyle: 'dress' },
@@ -29,7 +29,15 @@ export function playerLook(p: Pick<PlayerSetup, 'avatar' | 'name'>): PortraitLoo
     'Smart Casual': { outfit: '#e9e4da', outfitAccent: '#1d2b3a', outfitStyle: 'shirt' },
     'Owambe Traditional': { outfit: '#7b2fa3', outfitAccent: '#f2c84b', outfitStyle: 'agbada' },
     'Designer Drip': { outfit: '#111111', outfitAccent: '#c9a86a', outfitStyle: 'jacket' },
+    Agbada: { outfit: '#efe7d6', outfitAccent: '#b8862b', outfitStyle: 'agbada' },
+    Senator: { outfit: '#1f4d3a', outfitAccent: '#e7d29a', outfitStyle: 'senator' },
     'Agbada / Senator': { outfit: '#1f4d3a', outfitAccent: '#e7d29a', outfitStyle: 'senator' },
+  };
+  const facialMap: Record<string, Pick<PortraitLook, 'beard' | 'beardStyle'>> = {
+    'Clean Shaven': { beard: false },
+    Stubble: { beard: true, beardStyle: 'stubble' },
+    'Full Beard': { beard: true, beardStyle: 'full' },
+    Goatee: { beard: true, beardStyle: 'goatee' },
   };
   const broad = ['Curvy / Thick', 'Soft and Full', 'Big Daddy', 'Gym Rat'].includes(a.build);
   const slim = ['Slim and Trim', 'Petite Baddie', 'Lean and Clean', 'Tall and Slim'].includes(a.build);
@@ -38,7 +46,7 @@ export function playerLook(p: Pick<PlayerSetup, 'avatar' | 'name'>): PortraitLoo
     skin,
     hair: h.hair,
     hairColor: h.hairColor,
-    beard: h.beard,
+    ...(a.facial ? facialMap[a.facial] ?? {} : a.hair === 'Beard Gang' ? { beard: true, beardStyle: 'full' as const } : {}),
     ...(styleMap[a.style] ?? styleMap['Smart Casual']),
     accessory: a.set === 'woman' ? 'earrings' : undefined,
     build: broad ? 'broad' : slim ? 'slim' : 'average',

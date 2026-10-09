@@ -9,7 +9,7 @@ import { Btn, Logo, navigate } from './kit';
 import { RunScreen } from './run/RunScreen';
 import { ErrorBoundary } from './ErrorBoundary';
 import { useRun } from './session';
-import { Setup } from './setup/Setup';
+import { AgeBadge, Setup } from './setup/Setup';
 import { decodeCard, encodeCard } from './verdict/payload';
 
 // Sharing code (html-to-image, QR) loads only when a Verdict is shown: faster first load on 3G.
@@ -50,24 +50,35 @@ export function App() {
 
 function Home() {
   const saved = storage.get<unknown>('wahala.run.v1', null);
-  const chief = getCharacter(lagos, 'chief_emeka');
+  const cast = ['kayode', 'chief_emeka', 'tiwa'].map((id) => getCharacter(lagos, id));
   return (
     <div className="relative flex h-full flex-col overflow-hidden">
-      <div className="absolute inset-0" style={{ background: 'radial-gradient(90% 50% at 50% 30%, rgba(244,63,94,0.35), transparent 70%), radial-gradient(70% 40% at 80% 90%, rgba(245,158,11,0.25), transparent 70%)' }} />
-      <div className="relative flex flex-1 flex-col items-center px-6 pt-14 text-center">
-        <Logo size={72} />
-        <div className="mt-2 text-[12px] font-bold uppercase tracking-[0.35em] text-white/55">The Dating Survival Sim</div>
-        <div className="mt-1 text-[11px] uppercase tracking-[0.3em] text-[#F59E0B]">{lagos.season}</div>
-        <div className="relative mt-6">
-          <div className="absolute inset-0 rounded-full bg-[#F43F5E]/25 blur-3xl" />
-          <Portrait look={chief.look} artId="chief" size={230} expression="charming" />
+      <div className="absolute inset-0" style={{ background: 'radial-gradient(90% 50% at 50% 38%, rgba(244,63,94,0.32), transparent 70%), radial-gradient(70% 40% at 80% 90%, rgba(245,158,11,0.22), transparent 70%), radial-gradient(60% 40% at 10% 80%, rgba(16,185,129,0.14), transparent 70%)' }} />
+      <div className="relative flex flex-1 flex-col items-center px-6 pt-10 text-center">
+        <Logo size={64} />
+        <div className="mt-3 flex items-center gap-2">
+          <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-white/55">The Dating Survival Sim</span>
+          <AgeBadge />
         </div>
-        <p className="font-display mt-2 text-[22px] font-extrabold leading-tight">
-          7 days. One Lagos lover.
+        {/* Opening screen: Chief in traditional attire, a stylish younger man and a glamorous woman, together. */}
+        <div className="relative mt-4 flex h-[300px] w-full items-end justify-center">
+          <div className="absolute bottom-0 left-[-6%] opacity-95">
+            <Portrait look={cast[0].look} artId="kayode" size={190} expression="charming" />
+          </div>
+          <div className="absolute bottom-0 right-[-6%] opacity-95">
+            <Portrait look={cast[2].look} feminine artId="tiwa" size={190} expression="charming" />
+          </div>
+          <div className="relative z-10">
+            <Portrait look={cast[1].look} artId="chief" size={230} expression="charming" />
+          </div>
+          <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#08090D] to-transparent" />
+        </div>
+        <p className="font-display mt-3 text-[22px] font-extrabold leading-tight">
+          7 days. One Lagos love story.
           <br />
           <span className="text-[#F43F5E]">Survive the wahala.</span>
         </p>
-        <p className="mt-2 max-w-xs text-[14px] text-white/55">No sign-up. 3 to 5 minutes. Ends with a Verdict Card you'll want to post. 18+.</p>
+        <p className="mt-2 max-w-xs text-[14px] text-white/55">No sign-up. 3 to 5 minutes. Ends with a Verdict Card you'll want to post.</p>
       </div>
       <div className="relative space-y-2 p-5 pb-[max(20px,env(safe-area-inset-bottom))]">
         {saved ? (

@@ -12,6 +12,8 @@ import { NotifStack, PhoneSheet, type Notif } from '../phone/Phone';
 import { SceneBackdrop } from '../scene/Scene';
 import type { useRun } from '../session';
 import { Hud } from './Hud';
+import { ColdOpen } from './ColdOpen';
+import { storage } from '../../backend';
 
 type Session = ReturnType<typeof useRun>;
 type Phase = 'intro' | 'choices' | 'outcome' | 'night' | 'bailout' | 'ending';
@@ -22,6 +24,8 @@ const location = (id: string) => lagos.locations.find((l) => l.id === id) ?? lag
 export function RunScreen({ session, onVerdict }: { session: Session; onVerdict: () => void }) {
   const run = session.run!;
   const ch = getCharacter(lagos, run.characterId);
+  const coldKey = `wahala.cold.${run.seed}`;
+  const [cold, setCold] = useState(() => !!ch.cold_open && run.day === 1 && run.log.length === 0 && !storage.get(coldKey, false));
   const [card, setCard] = useState<ResolvedCard | null>(() => resolveCard(lagos, run) ?? null);
   const [phase, setPhase] = useState<Phase>(() => (run.status === 'card' ? 'intro' : run.status === 'day_end' ? 'night' : run.status === 'bailout' ? 'bailout' : 'ending'));
   const [outcome, setOutcome] = useState<{ label: string; result: ChoiceResult } | null>(null);
@@ -51,9 +55,10 @@ export function RunScreen({ session, onVerdict }: { session: Session; onVerdict:
   const sceneLoc = phase === 'ending' ? (ch.endings[run.ending!]?.scene?.location ?? 'mainland_street') : (card?.location ?? 'mainland_street');
   const loc = location(sceneLoc);
   useEffect(() => {
+    if (cold) return;
     sound.unlock();
     sound.setAmbience(fx.includes('blackout') ? ['generator', ...loc.ambience.slice(0, 1)] : loc.ambience, `${loc.id}:${fx.join(',')}`);
-  }, [loc.id, fx.join(',')]);
+  }, [loc.id, fx.join(','), cold]);
   useEffect(() => () => sound.stopAmbience(), []);
 
   const push = useCallback((events: PhoneEvent[]) => {
@@ -68,7 +73,7 @@ export function RunScreen({ session, onVerdict }: { session: Session; onVerdict:
 
   // Entering a card: expression, fx, sounds.
   useEffect(() => {
-    if (!card || phase !== 'intro') return;
+    if (!card || phase !== 'intro' || cold) return;
     setExpression(card.expression);
     const f = card.card.scene.fx ?? [];
     setFx(f);
@@ -83,7 +88,7 @@ export function RunScreen({ session, onVerdict }: { session: Session; onVerdict:
       const g = lagos.gossip[(run.seed + run.log.length) % lagos.gossip.length];
       setTimeout(() => push([{ kind: 'gist', from: 'The Parlour', text: g }]), 2600);
     }
-  }, [card?.card.id, phase]);
+  }, [card?.card.id, phase, cold]);
 
   function feedback(result: ChoiceResult) {
     const d = result.deltas;
@@ -203,6 +208,19 @@ export function RunScreen({ session, onVerdict }: { session: Session; onVerdict:
   const time = (phase === 'ending' ? ch.endings[run.ending!]?.scene?.time : card?.time) ?? 'night';
   const mood = phase === 'ending' ? (ch.endings[run.ending!]?.scene?.mood ?? 'negative') : (card?.card.scene.mood ?? 'neutral');
   const presentation = card?.card.presentation ?? 'scene';
+
+  if (cold)
+    return (
+      <ColdOpen
+        ch={ch}
+        player={run.player}
+        reduced={reduced}
+        onDone={() => {
+          storage.set(coldKey, true);
+          setCold(false);
+        }}
+      />
+    );
 
   return (
     <div key={shake} className={`relative h-full overflow-hidden ${shake ? 'anim-shake' : ''} ${reduced ? 'reduced' : ''}`}>

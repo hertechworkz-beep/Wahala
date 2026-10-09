@@ -6,33 +6,39 @@ import { naira } from '../../engine/text';
 import { Portrait } from '../art/Portrait';
 import { playerLook } from '../art/looks';
 import { sound } from '../audio';
-import { Btn, Chip, Logo, StepHeader, navigate } from '../kit';
+import { Btn, Chip, Logo, StepHeader } from '../kit';
 
-type Step = 'age' | 'teen' | 'identity' | 'avatar' | 'pref' | 'vibe' | 'goal' | 'roster' | 'match';
-const ORDER: Step[] = ['identity', 'avatar', 'pref', 'vibe', 'goal'];
+type Step = 'age' | 'teen' | 'avatar' | 'pref' | 'vibegoal' | 'roster' | 'match';
+const ORDER: Step[] = ['avatar', 'pref', 'vibegoal'];
 
 export function Setup({ onStart, preselect }: { onStart: (p: PlayerSetup, characterId: string) => void; preselect?: string }) {
   const remembered = storage.get<Partial<PlayerSetup> | null>('wahala.player', null);
-  const [step, setStep] = useState<Step>(storage.get('wahala.age_ok', false) ? 'identity' : 'age');
+  const [step, setStep] = useState<Step>(storage.get('wahala.age_ok', false) ? 'avatar' : 'age');
   const [gender, setGender] = useState<Gender>(remembered?.gender ?? 'woman');
   const [name, setName] = useState(remembered?.name ?? '');
-  const [set, setSet] = useState<'woman' | 'man'>(remembered?.avatar?.set ?? 'woman');
   const opts = lagos.avatar;
-  const [build, setBuild] = useState(remembered?.avatar?.build ?? opts.build.woman[2]);
-  const [hair, setHair] = useState(remembered?.avatar?.hair ?? opts.hair.woman[0]);
-  const [style, setStyle] = useState(remembered?.avatar?.style ?? opts.style.woman[0]);
+  const valid = (set: 'woman' | 'man', a?: Partial<PlayerSetup['avatar']>) =>
+    !!a && a.set === set && opts.build[set].includes(a.build!) && opts.hair[set].includes(a.hair!) && opts.style[set].includes(a.style!);
+  const rem = remembered?.avatar && valid(remembered.avatar.set as 'woman' | 'man', remembered.avatar) ? remembered.avatar : undefined;
+  const [set, setSet] = useState<'woman' | 'man'>(rem?.set ?? 'woman');
+  const [skin, setSkin] = useState(rem?.skin ?? opts.skins[7].hex);
+  const [build, setBuild] = useState(rem?.build ?? opts.build.woman[2]);
+  const [hair, setHair] = useState(rem?.hair ?? opts.hair.woman[0]);
+  const [facial, setFacial] = useState(rem?.facial ?? opts.facial.man[2]);
+  const [style, setStyle] = useState(rem?.style ?? opts.style.woman[0]);
   const [pref, setPref] = useState<DatePref>(remembered?.datePref ?? 'men');
   const [vibe, setVibe] = useState<VibeId>(remembered?.vibe ?? 'lover');
   const [goal, setGoal] = useState<GoalId>(remembered?.goal ?? 'love');
   const [matched, setMatched] = useState<Character | null>(null);
   const started = useRef(Date.now());
 
-  const player: PlayerSetup = { name: name.trim() || 'You', gender, datePref: pref, vibe, goal, avatar: { set, build, hair, style } };
+  const player: PlayerSetup = { name: name.trim() || 'You', gender, datePref: pref, vibe, goal, avatar: { set, skin, build, hair, style, ...(set === 'man' ? { facial } : {}) } };
   const idx = ORDER.indexOf(step);
   const back = idx > 0 ? () => setStep(ORDER[idx - 1]) : undefined;
   const nameCheck = nameAllowed(name);
 
   function switchSet(s: 'woman' | 'man') {
+    if (s === set) return;
     setSet(s);
     setBuild(opts.build[s][s === 'woman' ? 2 : 0]);
     setHair(opts.hair[s][0]);
@@ -52,12 +58,16 @@ export function Setup({ onStart, preselect }: { onStart: (p: PlayerSetup, charac
   if (step === 'age')
     return (
       <div className="flex h-full flex-col items-center justify-center px-8 text-center anim-fade">
-        <Logo size={56} />
-        <p className="mt-2 text-sm uppercase tracking-[0.3em] text-white/50">The Dating Survival Sim</p>
+        <Logo size={52} />
+        <div className="mt-3 flex items-center gap-2">
+          <span className="text-[12px] uppercase tracking-[0.3em] text-white/50">{lagos.brand.name}: {lagos.brand.edition}</span>
+          <AgeBadge />
+        </div>
         <div className="card-surface mt-10 w-full p-6">
-          <div className="text-5xl">🔞</div>
-          <h1 className="font-display mt-3 text-2xl font-extrabold">This game is 18+.</h1>
-          <p className="mt-2 text-white/60">Raw Lagos dating. Messy, brutal, funny. Are you 18 or older?</p>
+          <p className="text-[17px] leading-snug text-white/85">
+            {lagos.brand.name}: {lagos.brand.edition} is an 18+ interactive story game with romance, secrets and choices that have consequences.
+          </p>
+          <h1 className="font-display mt-4 text-2xl font-extrabold">Are you 18 or older?</h1>
           <div className="mt-6 flex gap-3">
             <Btn tone="ghost" className="flex-1" onClick={() => setStep('teen')}>
               No
@@ -66,7 +76,7 @@ export function Setup({ onStart, preselect }: { onStart: (p: PlayerSetup, charac
               className="flex-1"
               onClick={() => {
                 storage.set('wahala.age_ok', true);
-                setStep('identity');
+                setStep('avatar');
               }}
             >
               Yes, I'm 18+
@@ -76,82 +86,90 @@ export function Setup({ onStart, preselect }: { onStart: (p: PlayerSetup, charac
       </div>
     );
 
-  if (step === 'teen')
+  // No path: no names, numbers or emails are collected here, ever.
+  if (step === 'teen') {
+    const links = lagos.brand.social.filter((x) => x.url);
     return (
       <div className="flex h-full flex-col items-center justify-center px-8 text-center anim-fade">
-        <div className="text-6xl">🎒</div>
-        <h1 className="font-display mt-4 text-3xl font-extrabold">Teen edition coming soon</h1>
-        <p className="mt-3 text-white/60">A calmer Wahala for 16 to 18, built separately. We'll let you know.</p>
-        <Btn className="mt-8 w-full" tone="gold" onClick={() => alert("Noted! We'll tell you when it's ready.")}>
-          Notify me
-        </Btn>
-        <button className="mt-4 text-sm text-white/40 underline" onClick={() => navigate('/')}>
-          Back
-        </button>
+        <Logo size={44} />
+        <h1 className="font-display mt-8 text-3xl font-extrabold">{lagos.brand.name} High is coming.</h1>
+        <p className="mt-3 text-white/60">Follow us for news.</p>
+        <div className="mt-6 flex flex-wrap justify-center gap-2">
+          {links.length ? (
+            links.map((l) => (
+              <a key={l.name} href={l.url!} target="_blank" rel="noopener noreferrer" className="press pill border-2 border-white/15 px-5 py-3 font-bold">
+                {l.name}
+              </a>
+            ))
+          ) : (
+            <span className="text-sm text-white/40">Our socials are announced soon.</span>
+          )}
+        </div>
       </div>
     );
+  }
 
   if (step === 'match' && matched) return <MatchReveal c={matched} onGo={() => onStart(player, matched.id)} />;
-  if (step === 'roster') return <Roster pref={pref} onMatch={(c) => (setMatched(c), setStep('match'))} onBack={() => setStep('goal')} />;
+  if (step === 'roster') return <Roster pref={pref} onMatch={(c) => (setMatched(c), setStep('match'))} onBack={() => setStep('vibegoal')} />;
 
   return (
     <div className="flex h-full flex-col">
-      {step === 'identity' && (
+      {step === 'avatar' && (
         <>
-          <StepHeader step={1} total={5} title="Who are you?" sub="Your name shows in the Parlour. Keep it fun, keep it you." />
-          <div className="flex-1 overflow-y-auto px-5 pt-6 no-scrollbar">
+          <StepHeader step={1} total={3} title="Create your avatar." sub="You play yourself. Someone in Lagos has a type; you'll only see a +Chemistry." />
+          <div className="relative -mb-2 flex justify-center">
+            <div className="absolute inset-x-0 top-6 mx-auto h-28 w-28 rounded-full bg-[#F43F5E]/20 blur-3xl" />
+            <Portrait look={playerLook(player)} feminine={set === 'woman'} size={128} expression="charming" />
+          </div>
+          <div className="flex-1 space-y-3.5 overflow-y-auto px-5 pb-2 no-scrollbar">
             <div className="flex gap-2">
               {(['woman', 'man', 'nonbinary'] as Gender[]).map((g) => (
-                <Chip key={g} active={gender === g} onClick={() => (setGender(g), g !== 'nonbinary' && switchSet(g))} className="flex-1">
+                <Chip key={g} active={gender === g} onClick={() => (setGender(g), g !== 'nonbinary' && switchSet(g))} className="flex-1 !min-h-[44px]">
                   {{ woman: 'Woman', man: 'Man', nonbinary: 'Non-binary' }[g]}
                 </Chip>
               ))}
             </div>
-            <label className="mt-6 block text-sm font-medium text-white/60">Display name</label>
-            <input
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder="e.g. Lekki Baddie"
-              maxLength={18}
-              className="mt-2 h-14 w-full rounded-2xl border-2 border-white/12 bg-white/5 px-4 text-lg outline-none focus:border-[#F43F5E]"
-            />
-            {name && !nameCheck.ok && <p className="mt-2 text-sm text-[#EF4444]">{nameCheck.reason}</p>}
-          </div>
-          <div className="p-5">
-            <Btn className="w-full" disabled={!nameCheck.ok} onClick={() => setStep('avatar')}>
-              Next
-            </Btn>
-          </div>
-        </>
-      )}
-
-      {step === 'avatar' && (
-        <>
-          <StepHeader step={2} total={5} title="Three taps. Look the part." sub="Someone in Lagos has a type. You'll see a +Chemistry if it's you." onBack={back} />
-          <div className="flex justify-center">
-            <div className="relative -mb-4 mt-1">
-              <div className="absolute inset-0 rounded-full bg-[#F43F5E]/20 blur-3xl" />
-              <Portrait look={playerLook(player)} feminine={set === 'woman'} size={150} expression="charming" />
-            </div>
-          </div>
-          <div className="flex-1 space-y-4 overflow-y-auto px-5 pb-2 no-scrollbar">
             {gender === 'nonbinary' && (
               <div className="flex gap-2">
-                <Chip active={set === 'woman'} onClick={() => switchSet('woman')} className="flex-1">
-                  Femme options
+                <Chip active={set === 'woman'} onClick={() => switchSet('woman')} className="flex-1 !min-h-[44px]">
+                  Femme looks
                 </Chip>
-                <Chip active={set === 'man'} onClick={() => switchSet('man')} className="flex-1">
-                  Masc options
+                <Chip active={set === 'man'} onClick={() => switchSet('man')} className="flex-1 !min-h-[44px]">
+                  Masc looks
                 </Chip>
               </div>
             )}
+            <input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Display name, e.g. Lekki Baddie"
+              maxLength={18}
+              aria-label="Display name"
+              className="h-12 w-full rounded-2xl border-2 border-white/12 bg-white/5 px-4 text-[16px] outline-none focus:border-[#F43F5E]"
+            />
+            {name && !nameCheck.ok && <p className="-mt-2 text-sm text-[#EF4444]">{nameCheck.reason}</p>}
+            <div>
+              <div className="mb-2 text-xs font-bold uppercase tracking-widest text-white/45">Skin tone</div>
+              <div className="flex justify-between gap-1">
+                {opts.skins.map((sk) => (
+                  <button
+                    key={sk.id}
+                    aria-label={`Skin tone ${sk.id}`}
+                    onClick={() => (sound.play('tap'), setSkin(sk.hex))}
+                    className={`press h-7 flex-1 rounded-full border-2 ${skin === sk.hex ? 'border-white scale-110' : 'border-transparent'}`}
+                    style={{ background: sk.hex }}
+                  />
+                ))}
+              </div>
+            </div>
             <TapRow label="Build" options={opts.build[set]} value={build} onPick={setBuild} />
             <TapRow label="Hair" options={opts.hair[set]} value={hair} onPick={setHair} />
+            {set === 'man' && <TapRow label="Facial hair" options={opts.facial.man} value={facial} onPick={setFacial} />}
             <TapRow label="Style" options={opts.style[set]} value={style} onPick={setStyle} />
           </div>
-          <div className="p-5">
-            <Btn className="w-full" onClick={() => setStep('pref')}>
-              Looking good
+          <div className="p-5 pt-3">
+            <Btn className="w-full" disabled={!nameCheck.ok} onClick={() => setStep('pref')}>
+              {nameCheck.ok ? 'Looking good' : 'Pick a display name'}
             </Btn>
           </div>
         </>
@@ -159,7 +177,7 @@ export function Setup({ onStart, preselect }: { onStart: (p: PlayerSetup, charac
 
       {step === 'pref' && (
         <>
-          <StepHeader step={3} total={5} title="Who do you date?" onBack={back} />
+          <StepHeader step={2} total={3} title="Who do you date?" onBack={back} />
           <div className="flex-1 space-y-3 px-5 pt-8">
             {(['men', 'women', 'both'] as DatePref[]).map((p) => (
               <Chip key={p} active={pref === p} onClick={() => setPref(p)} className="w-full text-lg">
@@ -168,69 +186,59 @@ export function Setup({ onStart, preselect }: { onStart: (p: PlayerSetup, charac
             ))}
           </div>
           <div className="p-5">
-            <Btn className="w-full" onClick={() => setStep('vibe')}>
+            <Btn className="w-full" onClick={() => setStep('vibegoal')}>
               Next
             </Btn>
           </div>
         </>
       )}
 
-      {step === 'vibe' && (
+      {step === 'vibegoal' && (
         <>
-          <StepHeader step={4} total={5} title="What's your vibe?" sub="Sets your money, your job, and how they first see you." onBack={back} />
-          <div className="flex-1 space-y-2.5 overflow-y-auto px-5 pt-5 pb-2 no-scrollbar">
+          <StepHeader step={3} total={3} title="Your vibe. Your secret goal." sub="The vibe sets your money and how they first see you. Nobody knows your goal; your Verdict judges it." onBack={back} />
+          <div className="flex-1 space-y-2 overflow-y-auto px-5 pt-4 pb-2 no-scrollbar">
+            <div className="text-xs font-bold uppercase tracking-widest text-white/45">Vibe</div>
             {lagos.vibes.map((v) => (
               <button
                 key={v.id}
                 onClick={() => (sound.play('tap'), setVibe(v.id))}
-                className={`press w-full rounded-3xl border-2 p-4 text-left ${vibe === v.id ? 'border-[#F43F5E] bg-[#F43F5E]/10' : 'border-white/10 bg-white/[0.03]'}`}
+                className={`press w-full rounded-3xl border-2 px-4 py-3 text-left ${vibe === v.id ? 'border-[#F43F5E] bg-[#F43F5E]/10' : 'border-white/10 bg-white/[0.03]'}`}
               >
                 <div className="flex items-baseline justify-between">
-                  <span className="font-display text-xl font-extrabold">{v.label[gender]}</span>
+                  <span className="font-display text-lg font-extrabold">{v.label[gender]}</span>
                   <span className="num text-[#10B981]">
                     {naira(v.wallet, { short: true })}
                     {v.volatile ? '*' : ''}
                   </span>
                 </div>
-                <div className="mt-1 text-sm text-white/55">
+                <div className="mt-0.5 text-[13px] text-white/55">
                   {v.job} · They see: <i>{v.first_seen}</i>
                 </div>
-                <div className="mt-2 flex gap-3 text-xs text-white/50">
-                  <span>Sanity {v.sanity}%</span>
-                  <span className="text-[#F43F5E]">Clout {v.clout}%</span>
-                  {v.volatile && <span className="text-[#F59E0B]">*volatile</span>}
-                </div>
               </button>
             ))}
+            <div className="pt-3 text-xs font-bold uppercase tracking-widest text-white/45">Secret goal</div>
+            <div className="grid grid-cols-2 gap-2">
+              {lagos.goals.map((g) => (
+                <button key={g.id} onClick={() => (sound.play('tap'), setGoal(g.id))} className={`press rounded-3xl border-2 p-3 text-left ${goal === g.id ? 'border-[#F59E0B] bg-[#F59E0B]/10' : 'border-white/10 bg-white/[0.03]'}`}>
+                  <div className="font-display text-[16px] font-extrabold leading-tight">{g.label}</div>
+                  <div className="mt-1 text-[11.5px] leading-snug text-white/50">{g.wins}</div>
+                </button>
+              ))}
+            </div>
           </div>
-          <div className="p-5">
-            <Btn className="w-full" onClick={() => setStep('goal')}>
-              Next
-            </Btn>
-          </div>
-        </>
-      )}
-
-      {step === 'goal' && (
-        <>
-          <StepHeader step={5} total={5} title="Your secret goal." sub="Nobody in the game knows it. Your Verdict Card will judge you on it." onBack={back} />
-          <div className="flex-1 space-y-2.5 px-5 pt-5">
-            {lagos.goals.map((g) => (
-              <button key={g.id} onClick={() => (sound.play('tap'), setGoal(g.id))} className={`press w-full rounded-3xl border-2 p-4 text-left ${goal === g.id ? 'border-[#F59E0B] bg-[#F59E0B]/10' : 'border-white/10 bg-white/[0.03]'}`}>
-                <div className="font-display text-xl font-extrabold">{g.label}</div>
-                <div className="mt-1 text-sm text-white/55">{g.wins}</div>
-              </button>
-            ))}
-          </div>
-          <div className="p-5">
+          <div className="p-5 pt-3">
             <Btn tone="gold" className="w-full" onClick={finishSetup}>
-              Find me someone 🔥
+              Pick your date 🔥
             </Btn>
           </div>
         </>
       )}
     </div>
   );
+}
+
+export function AgeBadge() {
+  return <span className="rounded-md border-2 border-[#EF4444] px-1.5 py-0.5 text-[11px] font-extrabold leading-none text-[#EF4444]">18+</span>;
 }
 
 function TapRow({ label, options, value, onPick }: { label: string; options: string[]; value: string; onPick: (v: string) => void }) {

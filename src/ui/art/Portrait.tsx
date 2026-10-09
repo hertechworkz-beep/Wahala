@@ -154,13 +154,31 @@ export function Portrait({
         )}
 
         {/* Beard */}
-        {look.beard && (
-          <path
-            d={`M${150 - headRx + 6} 150 Q${150 - headRx + 10} 205 150 214 Q${150 + headRx - 10} 205 ${150 + headRx - 6} 150 Q${150 + headRx - 14} 192 168 190 Q150 184 132 190 Q${150 - headRx + 14} 192 ${150 - headRx + 6} 150 Z`}
-            fill={look.hair === 'cap' && look.hairColor !== '#f2efe6' ? '#2a2320' : hair === '#f2efe6' ? '#1d1714' : hair}
-            opacity="0.92"
-          />
-        )}
+        {look.beard && (() => {
+          const beardFill = look.hair === 'cap' && look.hairColor !== '#f2efe6' ? '#2a2320' : hair === '#f2efe6' || look.hair === 'gele' || look.hair === 'hijab' ? '#1d1714' : hair;
+          if (look.beardStyle === 'goatee')
+            return (
+              <g fill={beardFill} opacity="0.92">
+                <path d="M134 190 Q150 184 166 190 L164 196 Q150 192 136 196 Z" />
+                <path d="M138 206 Q150 224 162 206 Q150 212 138 206 Z" />
+              </g>
+            );
+          if (look.beardStyle === 'stubble')
+            return (
+              <path
+                d={`M${150 - headRx + 6} 150 Q${150 - headRx + 10} 205 150 214 Q${150 + headRx - 10} 205 ${150 + headRx - 6} 150 Q${150 + headRx - 14} 192 168 190 Q150 184 132 190 Q${150 - headRx + 14} 192 ${150 - headRx + 6} 150 Z`}
+                fill={beardFill}
+                opacity="0.35"
+              />
+            );
+          return (
+            <path
+              d={`M${150 - headRx + 6} 150 Q${150 - headRx + 10} 205 150 214 Q${150 + headRx - 10} 205 ${150 + headRx - 6} 150 Q${150 + headRx - 14} 192 168 190 Q150 184 132 190 Q${150 - headRx + 14} 192 ${150 - headRx + 6} 150 Z`}
+              fill={beardFill}
+              opacity="0.92"
+            />
+          );
+        })()}
 
         {/* Eyes */}
         {[0, 1].map((i) => {
@@ -396,6 +414,26 @@ function frontHair(look: PortraitLook, hair: string, rx: number) {
       );
     case 'hijab':
       return <path d={`M${150 - rx - 14} 150 Q${150 - rx - 14} 50 150 48 Q${150 + rx + 14} 50 ${150 + rx + 14} 150 Q${150 + rx - 2} 84 150 80 Q${150 - rx + 2} 84 ${150 - rx - 14} 150 Z`} fill={hair} />;
+    case 'natural':
+      return (
+        <g fill={hair}>
+          <ellipse cx="150" cy="86" rx={rx + 18} ry="50" />
+          {[-44, -22, 0, 22, 44].map((dx) => (
+            <circle key={dx} cx={150 + dx} cy={52 + Math.abs(dx) / 3} r="16" opacity="0.6" fill={shade(hair, 18)} />
+          ))}
+        </g>
+      );
+    case 'gele':
+      return (
+        <g>
+          <path d={`M${150 - rx - 6} 118 Q${150 - rx - 10} 70 150 64 Q${150 + rx + 10} 70 ${150 + rx + 6} 118 Q150 100 ${150 - rx - 6} 118 Z`} fill={hair} />
+          <path d={`M${150 - rx - 30} 84 Q${150 - 40} 10 150 22 Q${150 + 50} 0 ${150 + rx + 34} 70 Q${150 + 30} 52 150 60 Q${150 - 40} 52 ${150 - rx - 30} 84 Z`} fill={shade(hair, 22)} />
+          {[0, 1, 2, 3].map((i) => (
+            <path key={i} d={`M${108 + i * 24} ${46 - (i % 2) * 8} q 10 -14 22 0`} stroke={shade(hair, -30)} strokeWidth="2.5" fill="none" />
+          ))}
+          <path d={`M${150 - rx - 30} 84 Q150 74 ${150 + rx + 34} 70`} stroke={look.outfitAccent} strokeWidth="3" fill="none" opacity="0.8" />
+        </g>
+      );
     case 'curls':
       return (
         <g fill={hair}>

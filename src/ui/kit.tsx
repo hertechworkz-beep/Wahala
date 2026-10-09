@@ -82,12 +82,19 @@ export function StepHeader({ step, total, title, sub, onBack }: { step: number; 
   );
 }
 
-export function Logo({ size = 64 }: { size?: number }) {
+export function Logo({ size = 64, edition = true }: { size?: number; edition?: boolean }) {
   return (
-    <div className="font-display font-extrabold leading-none tracking-tight" style={{ fontSize: size }}>
-      <span className="text-white">WAHA</span>
-      <span className="text-[#F43F5E]">LA</span>
-      <span className="text-[#F59E0B]">.</span>
+    <div className="font-display flex flex-col items-center font-extrabold leading-none tracking-tight">
+      <div style={{ fontSize: size }}>
+        <span className="text-white">WAHA</span>
+        <span className="text-[#F43F5E]">LA</span>
+        <span className="text-[#F59E0B]">:</span>
+      </div>
+      {edition && (
+        <div className="mt-1 tracking-[0.4em] text-[#F59E0B]" style={{ fontSize: Math.max(12, size * 0.3) }}>
+          LAGOS
+        </div>
+      )}
     </div>
   );
 }
