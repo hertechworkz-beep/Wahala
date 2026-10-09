@@ -1,0 +1,4032 @@
+[
+  {
+    "id": "blessing_d1_queue",
+    "character": "blessing",
+    "slot": "first_date",
+    "scene": {
+      "location": "vi_club_vip",
+      "time": "night",
+      "expression": "charming",
+      "mood": "positive"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Ozumba Mbadiwe, midnight. The queue is two hundred deep. Blessing takes your hand and walks past all of it. The bouncer says 'Madam B' and lifts the rope."
+      },
+      {
+        "who": "partner",
+        "text": "Stick with me. Tonight, you be somebody."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "dj_ex": {
+        "id": "t_dj_song",
+        "text": "The DJ cuts the music: 'Shout out to my Amor, Blessing! Forever my own!' She laughs too fast. 'He dey do like that for everybody.'"
+      },
+      "event_money": {
+        "id": "t_em_table",
+        "text": "At the table she leans in: 'Babe, minimum spend na ₦400k. Help me cover the table deposit? I go sort you.'"
+      },
+      "fierce_loyal": {
+        "id": "t_fl_fight",
+        "text": "A girl at the bar touches your arm. Blessing is between you in 0.8 seconds: 'Sister, find your own.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "cover_table",
+        "label": "Cover the table. Bottles, sparklers, the works.",
+        "tags": [
+          "luxury"
+        ],
+        "cost": 200000,
+        "broke_text": "The table minimum laughed at your balance.",
+        "receipt": "You covered the VIP table on your first night out with Blessing.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Sparklers. Your name on the LED screen. Blessing dances on the couch. The whole VIP knows who you came with.",
+            "attachment": 12,
+            "clout": 25,
+            "exposure": 5,
+            "set": [
+              {
+                "flag": "funded_event",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "event_money": {
+            "text": "The bottles go to 'her table', which is 'her event', which you just funded. She calls you 'my sponsor' into the mic.",
+            "attachment": 10,
+            "clout": 20,
+            "set": [
+              {
+                "flag": "funded_event",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "dj_ex": {
+            "text": "Sparklers, bottles, your name on the screen. The DJ reads it out. Slowly. Like he's memorising it.",
+            "attachment": 10,
+            "clout": 20,
+            "sanity": -5,
+            "set": [
+              {
+                "flag": "funded_event",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "fierce_loyal": {
+            "text": "She stops the waiter at the third bottle. 'Enough. My person no be ATM.' Then she pays for the fourth herself.",
+            "attachment": 10,
+            "trust": 8,
+            "clout": 15,
+            "set": [
+              {
+                "flag": "funded_event",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "one_bottle",
+        "label": "One bottle. Make it last till 4am.",
+        "tags": [
+          "budget"
+        ],
+        "cost": 30000,
+        "receipt": "You bought one bottle and nursed it till 4am.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Corporate energy,' she laughs. Then she makes one bottle look like ten. That's a promoter skill.",
+            "attachment": 4,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "dance_floor",
+        "label": "Skip the table. Drag her to the dance floor.",
+        "receipt": "You skipped the table and danced with Blessing.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Sweat, Afrobeats, her hand on the back of your neck. No bottles. Somehow better.",
+            "attachment": 8,
+            "trust": 3
+          }
+        ],
+        "truth_override": {
+          "dj_ex": {
+            "text": "On the floor, the DJ plays her song. Twice. She stops dancing to look at the booth.",
+            "attachment": 4,
+            "sanity": -5
+          }
+        }
+      },
+      {
+        "id": "ask_warri",
+        "label": "Ask her about Warri. Shout it over the music.",
+        "receipt": "You asked Blessing about Warri over the music.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She drags you to the smoking area to answer properly. Twenty minutes on Warri, her mama, her first event. 'You actually listen, eh?'",
+            "attachment": 6,
+            "trust": 6
+          }
+        ]
+      },
+      {
+        "id": "bigboy_kayode",
+        "label": "[Big Boy] Get her to book you Kayode's table.",
+        "tags": [
+          "luxury"
+        ],
+        "vibe": "bigboy",
+        "cost": 150000,
+        "receipt": "You got Blessing to book you Kayode's table.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Kayode waves you in: 'Any friend of Madam B.' You are now sitting in the loudest booth in Lagos.",
+            "attachment": 12,
+            "clout": 30,
+            "exposure": 10
+          }
+        ]
+      },
+      {
+        "id": "runs_guestlist",
+        "label": "[Runs] \"I know people too. Put me on the list.\"",
+        "vibe": "runs",
+        "receipt": "You asked Blessing for her guest list on night one.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She tests you: 'Name three DJs.' You name four. She's impressed and suspicious, in that order.",
+            "attachment": 6,
+            "trust": 2,
+            "clout": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "blessing_d1_suya",
+    "character": "blessing",
+    "slot": "first_date",
+    "scene": {
+      "location": "mainland_street",
+      "time": "night",
+      "expression": "charming",
+      "mood": "positive"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "3am after her event. Suya under the Ojuelegba bridge. A guy on an okada slows down to catcall you. Blessing puts down her suya."
+      },
+      {
+        "who": "partner",
+        "text": "Oya come back here. Apologise to my person. Now now."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "fierce_loyal": {
+        "id": "t_fl_fight",
+        "text": "She has his okada key in her hand. Nobody saw her take it. He apologises twice: once to you, once to the key."
+      },
+      "dj_ex": {
+        "id": "t_dj_late",
+        "text": "Her phone buzzes: 'Crew bus leaving. You dey come?' from 'Jiro Crew 🎧'. She types 'Later.' Not 'no'. Later."
+      },
+      "event_money": {
+        "id": "t_em_refund",
+        "text": "She pays for the suya with a ₦5k note. Then: 'Babe, send me ₦5k. I'll refund you after the event.' For the suya she just bought you."
+      }
+    },
+    "choices": [
+      {
+        "id": "let_her",
+        "label": "Let her handle it. Eat your suya.",
+        "tags": [
+          "discreet"
+        ],
+        "receipt": "You let Blessing handle the okada man.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He apologises three times. She hands you a stick of suya like a trophy. 'Nobody go disrespect you for my front.'",
+            "attachment": 10,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "calm",
+        "label": "\"Babe, leave am. E no worth am.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You calmed Blessing down before it became a fight.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She takes a breath. Tosses him back his key. 'You lucky my person is soft.' She's smiling at you, though.",
+            "attachment": 3,
+            "trust": 6
+          }
+        ]
+      },
+      {
+        "id": "film",
+        "label": "Film him. Post him for the internet.",
+        "tags": [
+          "toxic",
+          "public_embarrassment"
+        ],
+        "receipt": "You filmed the okada man and posted him.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "50k views by sunrise. Blessing: 'Next time, ask me before you post my matter.' She's not smiling.",
+            "attachment": -5,
+            "clout": 15,
+            "exposure": 15
+          }
+        ]
+      },
+      {
+        "id": "suya_all",
+        "label": "Buy suya for everybody. Even the okada man.",
+        "tags": [
+          "budget"
+        ],
+        "cost": 5000,
+        "receipt": "You bought suya for everyone, including the okada man.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The okada man becomes your friend. The suya man gives you extra yaji. Blessing: 'You're weird. I like it.'",
+            "attachment": 6,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "lover_walk",
+        "label": "[Lover] Hold her hand. Walk her home to Surulere.",
+        "vibe": "lover",
+        "receipt": "You walked Blessing home from Ojuelegba.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Forty minutes of walking and gist. Warri, her mama's shop, her first flop event. Her phone never comes out once.",
+            "attachment": 12,
+            "trust": 8
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "blessing_d1_crew",
+    "character": "blessing",
+    "slot": "first_date",
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "night",
+      "expression": "charming",
+      "mood": "positive"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "You booked a quiet table for two in Ikoyi. Blessing arrives with six promoters, a hype man and a photographer."
+      },
+      {
+        "who": "partner",
+        "text": "I'm coming with my friends nau! Na family. Waiter, menu for nine!"
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "event_money": {
+        "id": "t_em_flyer",
+        "text": "The photographer shoots you for 'the flyer'. 'What flyer?' 'For Friday. You're the sponsor, abi?'"
+      },
+      "dj_ex": {
+        "id": "t_dj_hoodie",
+        "text": "She's wearing a hoodie over her dress: 'JIRO WORLD TOUR 2023'. 'It's cold,' she says. It's Lagos."
+      },
+      "fierce_loyal": {
+        "id": "t_fl_post",
+        "text": "One of her girls says you look 'cheap'. Blessing: 'Say it again. Say it again so I can post you.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "pay_all",
+        "label": "Pay for all nine. It's love.",
+        "tags": [
+          "luxury"
+        ],
+        "cost": 180000,
+        "receipt": "You paid dinner for Blessing and eight of her friends.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The hype man hypes you for two hours. The bill could buy a Keke. Blessing calls you 'my odogwu' in front of everyone.",
+            "attachment": 12,
+            "clout": 20,
+            "set": [
+              {
+                "flag": "funded_event",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "event_money": {
+            "text": "By midnight the photographer's flyer drops: 'Sponsored by {name}'. You've been sponsoring since the starters.",
+            "attachment": 10,
+            "clout": 20,
+            "exposure": 5,
+            "set": [
+              {
+                "flag": "funded_event",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "fierce_loyal": {
+            "text": "When you go to pay, half is already settled. 'My people, my bill. You pay for us two.'",
+            "attachment": 10,
+            "trust": 10,
+            "set": [
+              {
+                "flag": "funded_event",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "pay_two",
+        "label": "Pay for you two. The crew has hands.",
+        "tags": [
+          "budget"
+        ],
+        "cost": 25000,
+        "receipt": "You paid for you and Blessing only.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The hype man hypes your stinginess. Blessing laughs loudest. 'I like this one. They no dey fear me.'",
+            "attachment": 4,
+            "trust": 5
+          }
+        ]
+      },
+      {
+        "id": "asked_two",
+        "label": "\"Blessing. I booked for two.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You told Blessing you'd booked for two.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She looks at you for a long time. 'Crew, move to the bar.' They go. You just won a war nobody announced.",
+            "attachment": 2,
+            "trust": 8,
+            "clout": 5
+          }
+        ],
+        "truth_override": {
+          "fierce_loyal": {
+            "text": "'Ehen! Finally, somebody who can talk to me.' She sends the crew home in one Hiace. You get her full attention.",
+            "attachment": 8,
+            "trust": 10
+          }
+        }
+      },
+      {
+        "id": "photo",
+        "label": "Pose for the photographer. Flex for the flyer.",
+        "receipt": "You posed for Blessing's event photographer.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You look expensive. Your face will be on a flyer by Friday. You don't know that yet.",
+            "clout": 15,
+            "exposure": 10,
+            "set": [
+              {
+                "flag": "secret_on_flyer",
+                "knows": [
+                  "player",
+                  "partner",
+                  "world"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "corp_split",
+        "label": "[Corporate] Split the bill by app. Nine ways.",
+        "vibe": "corporate",
+        "receipt": "You split the bill nine ways by app.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The hype man pays ₦4,200 and leaves a one-star review of your soul. Blessing respects it.",
+            "attachment": 4,
+            "trust": 6
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "blessing_rf_shoutout",
+    "character": "blessing",
+    "slot": "red_flag",
+    "scene": {
+      "location": "vi_club_vip",
+      "time": "night",
+      "expression": "suspicious",
+      "mood": "negative",
+      "npc": {
+        "name": "DJ Jiro"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Her event. You're at the VIP rail. The DJ grabs the mic mid-song."
+      },
+      {
+        "who": "DJ Jiro",
+        "text": "This one goes to my Amor, my forever, my Warri babe! Blessing, I see you o!"
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "dj_ex": {
+        "id": "t_dj_song",
+        "text": "She waves at the booth. Small. Familiar. Then to you: 'He's mad. Don't mind him.'"
+      },
+      "event_money": {
+        "id": "t_em_flyer",
+        "text": "The LED screen behind him flashes: 'Tonight sponsored by {name}.' You did not sponsor tonight."
+      },
+      "fierce_loyal": {
+        "id": "t_fl_dj",
+        "text": "She marches to the booth and takes the mic: 'Jiro, I don tell you. Stop am.' The whole club goes 'Oooooh'."
+      }
+    },
+    "choices": [
+      {
+        "id": "smile",
+        "label": "Smile. Sip. Pretend you didn't hear.",
+        "tags": [
+          "excuse",
+          "discreet"
+        ],
+        "receipt": "You pretended you didn't hear the DJ's shout-out.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She kisses your cheek. The DJ plays 'her song'. You count the minutes till 4am.",
+            "attachment": 6,
+            "sanity": -8
+          }
+        ]
+      },
+      {
+        "id": "forever",
+        "label": "\"Who's your forever, Blessing?\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked Blessing who her 'forever' was.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Na DJ talk. Everybody be forever for this club.'",
+            "trust": 3
+          }
+        ],
+        "truth_override": {
+          "dj_ex": {
+            "text": "'My ex. E never move on.' She doesn't look at you when she says it.",
+            "attachment": 2,
+            "sanity": -5
+          },
+          "event_money": {
+            "text": "'Him? Na business. He plays, I pay.' Then, quietly: 'You pay, I mean. Small small.'",
+            "trust": 2,
+            "sanity": -3
+          },
+          "fierce_loyal": {
+            "text": "'My ex. Begging for months.' She shows you the chat: his paragraphs, her single reply: 'I have somebody.'",
+            "attachment": 6,
+            "trust": 12
+          }
+        }
+      },
+      {
+        "id": "request",
+        "label": "Walk to the booth. Request a song for her.",
+        "receipt": "You walked up to the DJ booth to request her a song.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Jiro smiles at you like he knows something. 'For Blessing? Don't worry. I know what she likes.'",
+            "clout": 10,
+            "sanity": -10
+          }
+        ],
+        "truth_override": {
+          "fierce_loyal": {
+            "text": "Blessing grabs your hand before you reach the booth. 'Not him. Never him. Come dance.'",
+            "attachment": 4,
+            "trust": 6
+          }
+        }
+      },
+      {
+        "id": "leave",
+        "label": "Leave without telling her. Let her notice.",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You left her event without saying goodbye.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Fourteen calls. Voice note fifteen: 'If you ever leave me for club again ehn!' Translation: she noticed.",
+            "attachment": -5,
+            "sanity": 5
+          }
+        ],
+        "truth_override": {
+          "fierce_loyal": {
+            "text": "She leaves the event, her own event, to find you at the taxi rank in her heels.",
+            "attachment": 10,
+            "trust": 8
+          }
+        }
+      },
+      {
+        "id": "thursday",
+        "label": "\"Is he the Thursday studio guy?\"",
+        "requires": {
+          "flags": [
+            "knows_thursday"
+          ]
+        },
+        "receipt": "You asked if the DJ was her Thursday studio partner.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Studio people are many.' She changes the subject to the bar.",
+            "trust": 2
+          }
+        ],
+        "truth_override": {
+          "dj_ex": {
+            "text": "She goes still. 'Who told you Jiro has the studio?' You never said Jiro.",
+            "sanity": -10,
+            "saw_truth": true
+          },
+          "event_money": {
+            "text": "'No, Thursdays are planning.' She's not lying, just not telling you who pays for the planning.",
+            "trust": 3
+          },
+          "fierce_loyal": {
+            "text": "'Yes. I record drops with him. Only work. Come with me Thursday and see.'",
+            "attachment": 6,
+            "trust": 10
+          }
+        }
+      },
+      {
+        "id": "soup",
+        "label": "Bring catfish pepper soup to the booth at 4am.",
+        "requires": {
+          "flags": [
+            "knows_pepper_soup"
+          ]
+        },
+        "receipt": "You brought Blessing catfish pepper soup at the end of her event.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She opens the pot. The crew goes quiet. She eats it sitting on a speaker, eyes closed. 'You remember?'",
+            "attachment": 14,
+            "trust": 10,
+            "set": [
+              {
+                "flag": "brought_pepper_soup",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "dj_ex": {
+            "text": "She eats it on a speaker with her eyes closed. Jiro watches from the booth. He doesn't play another shout-out.",
+            "attachment": 12,
+            "trust": 6,
+            "set": [
+              {
+                "flag": "brought_pepper_soup",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "blessing_rf_hoodie",
+    "character": "blessing",
+    "slot": "red_flag",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "morning",
+      "expression": "suspicious",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Saturday, 10am. She turns up at yours for breakfast in a hoodie, last night's makeup, smelling of smoke and somebody's cologne."
+      },
+      {
+        "who": "partner",
+        "text": "No look me like that. I came straight from work."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "dj_ex": {
+        "id": "t_dj_hoodie",
+        "text": "The hoodie says 'DJ JIRO WORLD TOUR'. It's warm. Like somebody just took it off."
+      },
+      "event_money": {
+        "id": "t_em_refund",
+        "text": "She drops an invoice on your table: 'Event cost ₦600k. Your share ₦200k. Refund after the event, I promise.'"
+      },
+      "fierce_loyal": {
+        "id": "t_fl_post",
+        "text": "She shows you her phone: a draft post with a blogger's face. 'This one wrote rubbish about you. Say the word.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "breakfast",
+        "label": "Make her breakfast. No questions.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You made Blessing breakfast and asked nothing.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She eats like she hasn't since Thursday. Falls asleep on your couch in the hoodie.",
+            "attachment": 8,
+            "sanity": -5
+          }
+        ]
+      },
+      {
+        "id": "whose",
+        "label": "\"Whose hoodie, Blessing?\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked Blessing whose hoodie she was wearing.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Merch. From an event. You want one? ₦25k.'",
+            "trust": 2
+          }
+        ],
+        "truth_override": {
+          "dj_ex": {
+            "text": "'Jiro's. Old one.' 'It's warm.' 'It's Lagos.' The argument ends. The question doesn't.",
+            "sanity": -6
+          },
+          "fierce_loyal": {
+            "text": "'My ex's. Only one that fits. You want me to burn it? I'll burn it.' She means it. She has a lighter.",
+            "attachment": 6,
+            "trust": 10
+          }
+        }
+      },
+      {
+        "id": "sniff",
+        "label": "Sniff the hoodie. Loudly.",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You sniffed Blessing's hoodie to check the cologne.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She takes it off and throws it at you. 'Sniff it well. Then apologise.'",
+            "attachment": -5,
+            "trust": -8
+          }
+        ],
+        "truth_override": {
+          "dj_ex": [
+            {
+              "chance": 0.6,
+              "text": "Cologne. Expensive. Not yours, not hers. And a club wristband from last night's after-party in the pocket.",
+              "sanity": -10,
+              "saw_truth": true
+            },
+            {
+              "chance": 0.4,
+              "text": "She catches you mid-sniff. 'You dey smell me like dog?' She leaves with your spare key.",
+              "bad": true,
+              "trust": -15,
+              "expression": "angry"
+            }
+          ]
+        }
+      },
+      {
+        "id": "swap",
+        "label": "Hand her your hoodie. Swap.",
+        "receipt": "You swapped your hoodie for hers.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She holds it for a second. Then she puts yours on. 'This one smells like home.'",
+            "attachment": 10,
+            "trust": 5
+          }
+        ],
+        "truth_override": {
+          "dj_ex": {
+            "text": "She puts yours on. She folds his into her bag, carefully. Like it's coming back out.",
+            "attachment": 6,
+            "sanity": -5
+          }
+        }
+      },
+      {
+        "id": "old_merch",
+        "label": "\"The old merch you only sleep in?\"",
+        "tags": [
+          "call_out"
+        ],
+        "requires": {
+          "flags": [
+            "knows_hoodie"
+          ]
+        },
+        "receipt": "You quoted her 'old merch I only sleep in' line back to her.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Yes. Merch. Na business.' She shrugs.",
+            "trust": 2
+          }
+        ],
+        "truth_override": {
+          "dj_ex": {
+            "text": "'Yes. I slept in it.' She hears herself. 'I mean—' She doesn't finish.",
+            "sanity": -8,
+            "saw_truth": true
+          },
+          "fierce_loyal": {
+            "text": "'And I'm throwing it away today. Watch me.' It goes in the bin, then the generator fire.",
+            "attachment": 8,
+            "trust": 10
+          }
+        }
+      },
+      {
+        "id": "sugar_breakfast",
+        "label": "[Sugar] \"You came from work? Pay for breakfast then.\"",
+        "vibe": "sugar",
+        "receipt": "You made Blessing pay for breakfast.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She laughs so hard she chokes. Then she orders Chowdeck for both of you. On her card.",
+            "attachment": 6,
+            "wallet": 8000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "blessing_rf_crew_bus",
+    "character": "blessing",
+    "slot": "red_flag",
+    "scene": {
+      "location": "vi_club_vip",
+      "time": "night",
+      "expression": "suspicious",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "4am, end of her event. You've been waiting by the car. She comes out with the DJ crew, loading speakers into their bus."
+      },
+      {
+        "who": "partner",
+        "text": "Babe, go home. I'll ride with the crew. Na work."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "dj_ex": {
+        "id": "t_dj_late",
+        "text": "She climbs into the bus. The DJ climbs in after her. The door closes. The bus doesn't move for a while."
+      },
+      "event_money": {
+        "id": "t_em_table",
+        "text": "Before she goes: 'Oh, the venue wants ₦250k table deposit for next week. Cover me? Refund Monday.'"
+      },
+      "fierce_loyal": {
+        "id": "t_fl_fight",
+        "text": "A crew guy grabs her arm to pull her in. She shakes him off so hard he apologises to the bus."
+      }
+    },
+    "choices": [
+      {
+        "id": "go_home",
+        "label": "Go home. Trust the process.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You went home and let her ride with the DJ crew.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You sleep. She texts at 7am: 'Home 😴'. Which home is not specified.",
+            "attachment": 4,
+            "sanity": -8
+          }
+        ]
+      },
+      {
+        "id": "follow",
+        "label": "Follow the bus in a Bolt.",
+        "tags": [
+          "investigate"
+        ],
+        "cost": 8000,
+        "receipt": "You followed the DJ crew's bus in a Bolt.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The bus stops at a shawarma spot. Everybody eats. You eat too, alone, in a Bolt.",
+            "sanity": -5
+          }
+        ],
+        "truth_override": {
+          "dj_ex": [
+            {
+              "chance": 0.6,
+              "text": "The bus stops above a shop in Yaba. A studio. The lights upstairs go off. Nobody comes back down.",
+              "sanity": -15,
+              "saw_truth": true
+            },
+            {
+              "chance": 0.4,
+              "text": "She spots the Bolt at the first junction. 'You're FOLLOWING me?' Her face, through the window.",
+              "bad": true,
+              "trust": -15,
+              "expression": "angry"
+            }
+          ],
+          "event_money": {
+            "text": "The bus stops at a venue on Admiralty Way. She's negotiating next week's date. You hear your name.",
+            "sanity": -6,
+            "saw_truth": true
+          },
+          "fierce_loyal": {
+            "text": "The bus drops everybody, her last, at her cousin's in Surulere. You feel stupid. You are.",
+            "sanity": -5
+          }
+        }
+      },
+      {
+        "id": "come_along",
+        "label": "\"I'm coming with you. Make space.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You squeezed into the crew bus with her.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She hesitates. Then makes space. The crew goes very quiet.",
+            "attachment": 3,
+            "trust": 4
+          }
+        ],
+        "truth_override": {
+          "dj_ex": {
+            "text": "She looks at Jiro. Jiro looks at you. 'Another time,' she says, and climbs back out.",
+            "attachment": 2,
+            "trust": 2,
+            "sanity": -4
+          },
+          "fierce_loyal": {
+            "text": "'Finally! Come, meet my people.' She introduces you to every speaker by name.",
+            "attachment": 8,
+            "trust": 10
+          }
+        }
+      },
+      {
+        "id": "drive_her",
+        "label": "\"Leave the crew. I'll drop you.\"",
+        "receipt": "You offered to drive Blessing home yourself.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She looks at the bus. Then at you. She gets in your car and falls asleep before the Link Bridge.",
+            "attachment": 6,
+            "trust": 3
+          }
+        ],
+        "truth_override": {
+          "dj_ex": {
+            "text": "She hesitates a beat too long. 'Next time.' The bus pulls off with her laughing at something.",
+            "attachment": -4,
+            "sanity": -6
+          }
+        }
+      },
+      {
+        "id": "soup",
+        "label": "Bring catfish pepper soup to the bus.",
+        "requires": {
+          "flags": [
+            "knows_pepper_soup"
+          ]
+        },
+        "receipt": "You brought Blessing pepper soup at the end of her event.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She opens the pot. She gets out of the bus and eats with you on the kerb. The bus leaves without her.",
+            "attachment": 15,
+            "trust": 10,
+            "set": [
+              {
+                "flag": "brought_pepper_soup",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "dj_ex": {
+            "text": "She eats with you on the kerb. The bus leaves without her. The DJ's face, in the back window.",
+            "attachment": 12,
+            "trust": 6,
+            "saw_truth": true,
+            "set": [
+              {
+                "flag": "brought_pepper_soup",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "ese",
+        "label": "Call Ese. \"Where is she going?\"",
+        "tags": [
+          "cautious"
+        ],
+        "requires": {
+          "flags": [
+            "knows_ese"
+          ]
+        },
+        "receipt": "You called Ese to ask where Blessing was going.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Ese: 'Studio. Then home. Relax.'",
+            "trust": 2
+          }
+        ],
+        "truth_override": {
+          "dj_ex": {
+            "text": "Ese sighs. 'I've told her to leave that DJ alone. She doesn't listen.'",
+            "sanity": -8,
+            "saw_truth": true
+          },
+          "event_money": {
+            "text": "Ese: 'Studio. Then she's paying the venue with... oh. Your money? Okay, I didn't say that.'",
+            "sanity": -5,
+            "saw_truth": true
+          },
+          "fierce_loyal": {
+            "text": "Ese: 'She's going to scold the crew for owing you money. She's crazy about you, it's annoying.'",
+            "attachment": 5,
+            "trust": 10
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "blessing_mt_deposit",
+    "character": "blessing",
+    "slot": "money_trap",
+    "scene": {
+      "location": "vi_club_vip",
+      "time": "afternoon",
+      "expression": "charming",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Empty club, afternoon. Chairs on tables. Blessing walks you through her next event like a general."
+      },
+      {
+        "who": "partner",
+        "text": "Table deposit na ₦300k. Help me cover am. Refund Monday after the event, I swear with my edges."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "event_money": {
+        "id": "t_em_refund",
+        "text": "'Refund Monday' is the third Monday she's promised this month. Her edges are fine."
+      },
+      "dj_ex": {
+        "id": "t_dj_song",
+        "text": "Sound check. The DJ plays a voice tag: 'Jiro and Blessing, always.' She shouts 'Stop that!' He doesn't."
+      },
+      "fierce_loyal": {
+        "id": "t_fl_post",
+        "text": "The venue manager tries a ₦50k 'service charge'. Blessing: 'Add it again and I post this venue.' He removes it."
+      }
+    },
+    "choices": [
+      {
+        "id": "pay",
+        "label": "Pay the ₦300k. Believe in the vision.",
+        "tags": [
+          "luxury"
+        ],
+        "cost": 300000,
+        "receipt": "You paid Blessing's ₦300k table deposit.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She lifts you off the floor. 'You're my partner now. Business and pleasure.'",
+            "attachment": 15,
+            "set": [
+              {
+                "flag": "funded_event",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              },
+              {
+                "flag": "promised_refund",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "event_money": {
+            "text": "Her phone pings: 'Deposit received.' Then she transfers ₦150k to 'Hair by Ada'. Business and pleasure.",
+            "attachment": 12,
+            "sanity": -5,
+            "tricked": true,
+            "set": [
+              {
+                "flag": "funded_event",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              },
+              {
+                "flag": "promised_refund",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "dj_ex": {
+            "text": "Your ₦300k pays the DJ's fee. The DJ is Jiro. He sends you a thank-you voice note. With bass.",
+            "attachment": 10,
+            "sanity": -6,
+            "tricked": true,
+            "set": [
+              {
+                "flag": "funded_event",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              },
+              {
+                "flag": "promised_refund",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "fierce_loyal": {
+            "text": "She writes 'IOU ₦300k' on a napkin and signs it like a contract. 'Monday. Mark me.'",
+            "attachment": 12,
+            "trust": 5,
+            "set": [
+              {
+                "flag": "funded_event",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              },
+              {
+                "flag": "promised_refund",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "half",
+        "label": "Pay ₦50k. Half belief.",
+        "tags": [
+          "budget"
+        ],
+        "cost": 50000,
+        "receipt": "You put ₦50k towards her table deposit.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Fifty?' She takes it with dignity. 'Okay. Shares at fifty-k rate.'",
+            "attachment": 2,
+            "trust": 3,
+            "set": [
+              {
+                "flag": "promised_refund",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "contract",
+        "label": "\"Write it down. Signed. With dates.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked Blessing to put the refund in writing.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She writes it on venue letterhead. 'You think I'm a scammer?' 'I think you're a promoter.'",
+            "attachment": -4,
+            "trust": 6
+          }
+        ],
+        "truth_override": {
+          "event_money": {
+            "text": "She can't write a date. She tries three times. 'Monday is... a vibe.'",
+            "trust": 4,
+            "saw_truth": true
+          },
+          "fierce_loyal": {
+            "text": "She writes it and adds 10% interest herself. 'Because you asked properly.'",
+            "attachment": 5,
+            "trust": 10
+          }
+        }
+      },
+      {
+        "id": "refuse",
+        "label": "\"No. I'm your partner, not your bank.\"",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You refused to fund her table deposit.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Okay.' Just okay. She leaves the club without you.",
+            "attachment": -10,
+            "sanity": 5
+          }
+        ],
+        "truth_override": {
+          "fierce_loyal": {
+            "text": "'Good. Finally, somebody who says no to me.' She kisses you in front of the venue manager.",
+            "attachment": 6,
+            "trust": 8
+          }
+        }
+      },
+      {
+        "id": "monday",
+        "label": "\"Like last Monday's refund?\"",
+        "tags": [
+          "call_out"
+        ],
+        "requires": {
+          "flags": [
+            "knows_refund_monday"
+          ]
+        },
+        "receipt": "You reminded Blessing about the last Monday refund.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Monday is coming,' she says, like weather.",
+            "trust": 2
+          }
+        ],
+        "truth_override": {
+          "event_money": {
+            "text": "She opens her mouth. Closes it. 'That Monday was a different Monday.'",
+            "sanity": -4,
+            "saw_truth": true
+          },
+          "dj_ex": {
+            "text": "'The last one went to... the sound guy.' The sound guy is Jiro.",
+            "sanity": -6,
+            "saw_truth": true
+          },
+          "fierce_loyal": {
+            "text": "She transfers ₦50k on the spot. 'I don't play with my word. Ever.'",
+            "wallet": 50000,
+            "trust": 10
+          }
+        }
+      },
+      {
+        "id": "mama",
+        "label": "\"Is this for Mama in Warri?\"",
+        "requires": {
+          "flags": [
+            "knows_mama_warri"
+          ]
+        },
+        "receipt": "You asked if the money was for her mama in Warri.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Mama is fine.' She doesn't elaborate.",
+            "trust": 2
+          }
+        ],
+        "truth_override": {
+          "event_money": {
+            "text": "'Mama is... fine. This one is for the event.' She can't look at you.",
+            "sanity": -4,
+            "saw_truth": true
+          },
+          "dj_ex": {
+            "text": "'No. Mama no know say I still dey this life.' Something else crosses her face.",
+            "sanity": -5
+          },
+          "fierce_loyal": {
+            "text": "'Mama's money comes from my pocket, not yours. Never yours.' She's offended you asked. Then touched.",
+            "attachment": 4,
+            "trust": 8
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "blessing_mt_flyer",
+    "character": "blessing",
+    "slot": "money_trap",
+    "scene": {
+      "location": "mainland_street",
+      "time": "golden",
+      "expression": "suspicious",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Ojuelegba junction. A giant flyer on the side of a danfo: 'BLESSING PRESENTS: WARRI TO LAGOS. Sponsored by {name}.' Your face. Your name."
+      },
+      {
+        "who": "partner",
+        "text": "Surprise! You're my official sponsor! Now the vendors know who to call."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "event_money": {
+        "id": "t_em_flyer",
+        "text": "The small print: 'All sponsorship enquiries: {name}.' And your phone number."
+      },
+      "dj_ex": {
+        "id": "t_dj_song",
+        "text": "Headliner, in gold: 'DJ JIRO — Blessing's favourite.' The flyer says it. Out loud."
+      },
+      "fierce_loyal": {
+        "id": "t_fl_post",
+        "text": "Before you speak: 'I posted the blogger that mocked your face on the first draft. He apologised. Twice.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "fund",
+        "label": "Fund it properly. Be the sponsor.",
+        "tags": [
+          "luxury"
+        ],
+        "cost": 400000,
+        "receipt": "You funded Blessing's event as the official sponsor.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Your name goes gold on the reprint. Blessing calls you 'my backbone' on her story.",
+            "attachment": 15,
+            "clout": 20,
+            "set": [
+              {
+                "flag": "funded_event",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              },
+              {
+                "flag": "promised_refund",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "event_money": {
+            "text": "The money lands. Within the hour: new frontal, new phone, old vendors still unpaid.",
+            "attachment": 12,
+            "clout": 15,
+            "sanity": -8,
+            "tricked": true,
+            "set": [
+              {
+                "flag": "funded_event",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              },
+              {
+                "flag": "promised_refund",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "dj_ex": {
+            "text": "₦400k. Jiro's fee is ₦350k. The flyer gets reprinted: 'Headliner: DJ JIRO, Blessing's favourite.'",
+            "attachment": 10,
+            "sanity": -8,
+            "tricked": true,
+            "set": [
+              {
+                "flag": "funded_event",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              },
+              {
+                "flag": "promised_refund",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "fierce_loyal": {
+            "text": "She refunds ₦200k next morning. 'Your face sold the tickets. Your money no need.'",
+            "wallet": 200000,
+            "attachment": 12,
+            "trust": 8,
+            "set": [
+              {
+                "flag": "funded_event",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              },
+              {
+                "flag": "promised_refund",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "small_chops",
+        "label": "Sponsor the small chops only. ₦40k.",
+        "tags": [
+          "budget"
+        ],
+        "cost": 40000,
+        "receipt": "You sponsored the small chops at Blessing's event.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The flyer gets a sticker: 'Small chops by {name}'. Humble. Iconic.",
+            "attachment": 3,
+            "clout": 5
+          }
+        ]
+      },
+      {
+        "id": "take_off",
+        "label": "\"Take my name off. Today.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You told Blessing to take your name off her flyer.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She sulks for an hour. Then a new flyer: 'Sponsored by Anonymous ❤️'.",
+            "attachment": -5,
+            "trust": 5
+          }
+        ],
+        "truth_override": {
+          "event_money": {
+            "text": "She takes it down. Too late. Three vendors have already saved your number as 'Sponsor'.",
+            "trust": 4,
+            "sanity": -6,
+            "saw_truth": true
+          },
+          "fierce_loyal": {
+            "text": "Done in ten minutes. 'Sorry, I was excited.' She sends you the new flyer: just her face, scowling. Perfect.",
+            "attachment": 2,
+            "trust": 8
+          }
+        }
+      },
+      {
+        "id": "post_back",
+        "label": "Post it: 'I never agreed to this'.",
+        "tags": [
+          "toxic",
+          "public_embarrassment"
+        ],
+        "receipt": "You publicly disowned Blessing's flyer.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Her followers drag you. Your followers drag her. Tickets sell out. Everybody loses except the event.",
+            "trust": -10,
+            "clout": 20,
+            "exposure": 20
+          }
+        ],
+        "truth_override": {
+          "event_money": {
+            "text": "The internet digs. Three other 'sponsors' come forward. A blog runs 'Promoter or Pyramid?'",
+            "clout": 25,
+            "exposure": 20,
+            "saw_truth": true,
+            "truth_exposed": true,
+            "goal": {
+              "revenge": 40
+            }
+          }
+        }
+      },
+      {
+        "id": "frame",
+        "label": "Take a picture beside the danfo. Frame it.",
+        "receipt": "You took a picture with your own face on a danfo.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The conductor charges you ₦200 'to stand near my bus'. Worth it. You look like a Nollywood poster.",
+            "clout": 8,
+            "attachment": 4
+          }
+        ]
+      },
+      {
+        "id": "runs_sell",
+        "label": "[Runs] Sell the sponsor slot to a betting company.",
+        "vibe": "runs",
+        "receipt": "You sold Blessing's sponsor slot to a betting brand.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "₦250k from a betting brand. Your face is gone. Blessing is furious and impressed in equal measure.",
+            "wallet": 250000,
+            "attachment": -5,
+            "clout": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "blessing_mt_mama",
+    "character": "blessing",
+    "slot": "money_trap",
+    "scene": {
+      "location": "lekki_salon",
+      "time": "afternoon",
+      "expression": "suspicious",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "She's under a dryer at the salon, crying on the phone in Urhobo. She hangs up and looks at you."
+      },
+      {
+        "who": "partner",
+        "text": "Mama's shop for Warri don flood. Everything. I no wan ask you, but... ₦150k?"
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "event_money": {
+        "id": "t_em_table",
+        "text": "While she cries, her screen lights up: 'Venue Manager: Table deposit by 5pm or I give your date to another promoter.'"
+      },
+      "dj_ex": {
+        "id": "t_dj_hoodie",
+        "text": "She's crying into a hoodie sleeve. 'JIRO WORLD TOUR'. It's always that hoodie."
+      },
+      "fierce_loyal": {
+        "id": "t_fl_post",
+        "text": "Her other thumb is typing a post dragging the Warri landlord who refused Mama an extension. She deletes it. Retypes it."
+      }
+    },
+    "choices": [
+      {
+        "id": "send",
+        "label": "Send ₦150k. Now. For Mama.",
+        "tags": [
+          "luxury"
+        ],
+        "cost": 150000,
+        "receipt": "You sent Blessing ₦150k for her mama's flooded shop.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She holds the phone to her chest. 'You no even ask question.' She calls Mama straight away.",
+            "attachment": 12,
+            "trust": 5,
+            "set": [
+              {
+                "flag": "sent_mama",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "event_money": {
+            "text": "Mama gets ₦20k. The venue gets ₦130k. You find out from Ese, much later.",
+            "attachment": 10,
+            "sanity": -10,
+            "tricked": true,
+            "set": [
+              {
+                "flag": "sent_mama",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "dj_ex": {
+            "text": "Mama gets ₦30k. A new mixer appears in Jiro's studio story the same evening.",
+            "attachment": 8,
+            "sanity": -10,
+            "tricked": true,
+            "set": [
+              {
+                "flag": "sent_mama",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "fierce_loyal": {
+            "text": "She refuses it. You insist. She sends a video: Mama in Warri restocking garri, saying your name wrong. Best video ever.",
+            "attachment": 15,
+            "trust": 12,
+            "set": [
+              {
+                "flag": "sent_mama",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "part",
+        "label": "Send ₦30k. \"For the first bags of garri.\"",
+        "tags": [
+          "budget"
+        ],
+        "cost": 30000,
+        "receipt": "You sent ₦30k towards restocking her mama's shop.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'God bless you.' She means it, mostly. It covers the garri.",
+            "attachment": 4,
+            "trust": 4,
+            "set": [
+              {
+                "flag": "sent_mama",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "direct",
+        "label": "\"Send Mama's account. I'll pay her direct.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked for her mama's account details to pay directly.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She pauses. Just a second. Then she sends it.",
+            "trust": 3
+          }
+        ],
+        "truth_override": {
+          "event_money": {
+            "text": "The account name: 'ISLAND VENUES LTD'. 'Mama... uses their account.' You don't send.",
+            "trust": 3,
+            "saw_truth": true
+          },
+          "dj_ex": {
+            "text": "The account name: 'EJIRO OGHENE'. 'Mama... trusts him with money.' You don't send.",
+            "sanity": -10,
+            "saw_truth": true
+          },
+          "fierce_loyal": {
+            "text": "Account name: 'OGHENEKARO ROSE'. Her mama. You send a little. Mama sends fourteen voice notes of prayer.",
+            "attachment": 10,
+            "trust": 12,
+            "set": [
+              {
+                "flag": "sent_mama",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "broke",
+        "label": "\"I'm sorry, I'm broke this month.\"",
+        "receipt": "You told Blessing you were broke.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Okay. No wahala.' She goes back to crying in Urhobo.",
+            "attachment": -6
+          }
+        ],
+        "truth_override": {
+          "fierce_loyal": {
+            "text": "'I didn't ask so you'd pay. I asked because I needed to tell somebody.' She holds your hand under the dryer.",
+            "attachment": 4,
+            "trust": 6
+          }
+        }
+      },
+      {
+        "id": "month_end",
+        "label": "\"Is this the month-end money for Mama?\"",
+        "requires": {
+          "flags": [
+            "knows_mama_warri"
+          ]
+        },
+        "receipt": "You asked if this was her usual month-end money for Mama.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Something like that.'",
+            "trust": 2
+          }
+        ],
+        "truth_override": {
+          "event_money": {
+            "text": "'This one is... extra.' Very extra. She can't hold your eye.",
+            "sanity": -4,
+            "saw_truth": true
+          },
+          "dj_ex": {
+            "text": "'Yes. Some of it.' Which means not all of it.",
+            "sanity": -5
+          },
+          "fierce_loyal": {
+            "text": "'You remember?' She sends you Mama's number. 'Greet her yourself. She'll like you.'",
+            "attachment": 8,
+            "trust": 10
+          }
+        }
+      },
+      {
+        "id": "ese",
+        "label": "Text Ese: \"Is this real?\"",
+        "requires": {
+          "flags": [
+            "knows_ese"
+          ]
+        },
+        "receipt": "You texted Ese to check if the flood was real.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Ese: 'Ask her yourself.' Fair.",
+            "trust": 1
+          }
+        ],
+        "truth_override": {
+          "event_money": {
+            "text": "Ese: 'There was rain in Warri. There was no flood. There is an event on Friday.'",
+            "sanity": -6,
+            "saw_truth": true
+          },
+          "dj_ex": {
+            "text": "Ese: 'Flood is real. But please, send it to Mama directly. Not through her. Long story.'",
+            "sanity": -5
+          },
+          "fierce_loyal": {
+            "text": "Ese sends a news link: Warri flooding. Then: 'She'd never ask unless she was desperate. Trust me.'",
+            "attachment": 4,
+            "trust": 8
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "blessing_pd_fight",
+    "character": "blessing",
+    "slot": "public_drama",
+    "scene": {
+      "location": "vi_club_vip",
+      "time": "night",
+      "expression": "angry",
+      "mood": "negative",
+      "npc": {
+        "name": "Tare"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "A girl in a silver dress leans close at the bar. 'You're cute. Are you with her?' Blessing is already there."
+      },
+      {
+        "who": "partner",
+        "text": "With me. Very with me. Sister, step back before I scatter this club."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "fierce_loyal": {
+        "id": "t_fl_fight",
+        "text": "She has the girl's drink in her hand. The girl doesn't remember handing it over."
+      },
+      "dj_ex": {
+        "id": "t_dj_late",
+        "text": "The girl laughs: 'Relax. Jiro's girl doesn't own the whole club.' Blessing doesn't correct her."
+      },
+      "event_money": {
+        "id": "t_em_table",
+        "text": "The girl: 'You still owe me ₦200k from last month's table, Blessing. Is this the one paying?'"
+      }
+    },
+    "choices": [
+      {
+        "id": "pull_back",
+        "label": "Pull Blessing back. \"Not worth it, babe.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You pulled Blessing back from a fight at the bar.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She lets you. Barely. 'Only because you said.' Her hand is shaking in yours.",
+            "attachment": 4,
+            "trust": 6
+          }
+        ]
+      },
+      {
+        "id": "film",
+        "label": "Let her cook. Film it.",
+        "tags": [
+          "toxic"
+        ],
+        "receipt": "You filmed Blessing squaring up to a girl at the bar.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Thirty seconds of pure Warri. Your camera roll now holds a weapon.",
+            "clout": 10,
+            "set": [
+              {
+                "flag": "secret_filmed_fight",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "smile",
+        "label": "Smile at the girl. Just to see.",
+        "receipt": "You smiled at the girl Blessing was warning off.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Blessing turns. Slowly. 'You dey smile?' The girl wins. You lose. Everybody watches.",
+            "attachment": -10,
+            "trust": -15,
+            "sanity": -10,
+            "clout": 5
+          }
+        ]
+      },
+      {
+        "id": "leave_together",
+        "label": "Take Blessing's hand. Leave together.",
+        "tags": [
+          "discreet"
+        ],
+        "receipt": "You took Blessing's hand and left the club.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Outside, she's still fuming. Then she laughs: 'You saw my face? I was going to finish her.'",
+            "attachment": 10,
+            "trust": 5
+          }
+        ],
+        "truth_override": {
+          "dj_ex": {
+            "text": "Outside, she keeps looking back at the booth. 'Who was she?' you ask. 'Jiro's new girl.' Silence.",
+            "attachment": 4,
+            "sanity": -8,
+            "saw_truth": true
+          }
+        }
+      },
+      {
+        "id": "ese",
+        "label": "Text Ese: \"Come and collect your friend.\"",
+        "requires": {
+          "flags": [
+            "knows_ese"
+          ]
+        },
+        "receipt": "You texted Ese to come and collect Blessing.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Ese arrives in four minutes, in slippers, and drags Blessing home. Texts you: 'She likes you. That's why.'",
+            "attachment": 6,
+            "trust": 8
+          }
+        ],
+        "truth_override": {
+          "dj_ex": {
+            "text": "Ese drags her out. Texts you: 'The girl is Jiro's new one. Blessing isn't over it. I'm sorry.'",
+            "sanity": -10,
+            "saw_truth": true
+          },
+          "event_money": {
+            "text": "Ese drags her out. Texts you: 'The girl is a promoter Blessing owes ₦200k. Don't lend her anything this week.'",
+            "sanity": -5,
+            "saw_truth": true
+          }
+        }
+      },
+      {
+        "id": "bigboy_send",
+        "label": "[Big Boy] Send the girl a bottle. Far from here.",
+        "vibe": "bigboy",
+        "cost": 60000,
+        "receipt": "You sent the girl a bottle at the far end of the club.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The girl leaves with the bottle. Blessing: 'You just paid for peace? That's... actually sexy.'",
+            "attachment": 8,
+            "clout": 15
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "blessing_pd_live",
+    "character": "blessing",
+    "slot": "public_drama",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "expression": "angry",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Your ex comments 'lol good luck' under Blessing's post about you. Blessing is already on IG Live. 18,000 watching."
+      },
+      {
+        "who": "partner",
+        "text": "Somebody's ex wan play with me tonight. Guys, should I post their face?"
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "fierce_loyal": {
+        "id": "t_fl_post",
+        "text": "Your ex's photo is ready on her screen. Cropped. Captioned. 'Say the word,' she mouths to you."
+      },
+      "dj_ex": {
+        "id": "t_dj_song",
+        "text": "A comment from @djjiro: 'My Amor, calm down 😂'. She pins it. Then unpins it, fast."
+      },
+      "event_money": {
+        "id": "t_em_flyer",
+        "text": "Behind her on the wall: the flyer, 'Sponsored by {name}'. 18,000 people can read it."
+      }
+    },
+    "choices": [
+      {
+        "id": "stop",
+        "label": "\"End the live. Please. For me.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked Blessing to end her live.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She ends it mid-sentence. 'Okay. For you.' Her followers are furious. She isn't.",
+            "attachment": 4,
+            "trust": 8
+          }
+        ]
+      },
+      {
+        "id": "join",
+        "label": "Join the live. Drag your ex together.",
+        "tags": [
+          "toxic",
+          "public_embarrassment"
+        ],
+        "receipt": "You joined Blessing's live to drag your ex.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Your ex gets dragged by 18,000 people. Your mum calls. Blessing calls you 'my partner in crime'.",
+            "attachment": 8,
+            "clout": 25,
+            "exposure": 20
+          }
+        ]
+      },
+      {
+        "id": "private",
+        "label": "Message your ex privately. Handle it yourself.",
+        "tags": [
+          "independence",
+          "discreet"
+        ],
+        "receipt": "You handled your ex privately instead of on the live.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Your ex deletes the comment. Blessing: 'You handled it? Without me? ...Respect.'",
+            "attachment": -2,
+            "trust": 6
+          }
+        ]
+      },
+      {
+        "id": "kiss",
+        "label": "Laugh. Kiss her on the live.",
+        "receipt": "You kissed Blessing on her live.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "18,000 people screaming. Your ex leaves the live. Blessing goes quiet, then shy, which is new.",
+            "attachment": 10,
+            "clout": 15,
+            "exposure": 10
+          }
+        ],
+        "truth_override": {
+          "dj_ex": {
+            "text": "18,000 people scream. One comment from @djjiro: '😐'. She sees it. She keeps kissing you anyway. Harder.",
+            "attachment": 8,
+            "clout": 15,
+            "exposure": 10,
+            "sanity": -4
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "blessing_pd_raid",
+    "character": "blessing",
+    "slot": "public_drama",
+    "scene": {
+      "location": "vi_club_vip",
+      "time": "night",
+      "expression": "caught",
+      "mood": "negative",
+      "npc": {
+        "name": "Kayode",
+        "look": "kayode"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "She booked you Kayode's table. 2am. Sirens on Ozumba Mbadiwe. Kayode is already moving towards the back exit."
+      },
+      {
+        "who": "Kayode",
+        "text": "Madam B, the bill is ₦640k. Your guest is paying, abi? I have... a meeting."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "event_money": {
+        "id": "t_em_table",
+        "text": "Blessing: 'Babe, just cover the table. I'll refund you after the event.' The event is this. It's ending."
+      },
+      "dj_ex": {
+        "id": "t_dj_late",
+        "text": "Blessing isn't next to you. She's at the booth, helping the DJ crew carry the decks out the back."
+      },
+      "fierce_loyal": {
+        "id": "t_fl_fight",
+        "text": "Blessing steps between you and the bouncer: 'Touch my person and I'll scatter this club.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "run",
+        "label": "Run with Kayode. Back exit.",
+        "receipt": "You ran out the back during the raid.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You make it to the car park. Blessing makes it with you, heels in hand, laughing like a madwoman.",
+            "attachment": 8,
+            "sanity": -10,
+            "set": [
+              {
+                "flag": "secret_ran_raid",
+                "knows": [
+                  "player",
+                  "world"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pay",
+        "label": "Pay the tab. Walk out the front door.",
+        "tags": [
+          "luxury"
+        ],
+        "cost": 300000,
+        "receipt": "You paid Kayode's tab and walked out the front.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The police salute you. Blessing salutes you. Kayode texts from a keke: 'Legend.'",
+            "attachment": 12,
+            "clout": 25
+          }
+        ]
+      },
+      {
+        "id": "own_drinks",
+        "label": "Pay for your own drinks only.",
+        "tags": [
+          "budget"
+        ],
+        "cost": 30000,
+        "receipt": "You paid only for your own drinks during the raid.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The bouncer accepts it with deep spiritual disappointment.",
+            "attachment": 2,
+            "sanity": -5
+          }
+        ]
+      },
+      {
+        "id": "hide",
+        "label": "Hide in the toilet. Call your Bestie.",
+        "receipt": "You hid in the club toilet during the raid.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Forty minutes on a toilet seat on Ozumba Mbadiwe. Blessing finds you: 'You hid? From police? Where your Warri spirit?'",
+            "attachment": -5,
+            "sanity": -5
+          }
+        ],
+        "truth_override": {
+          "fierce_loyal": {
+            "text": "Blessing finds you in four minutes, kicks the door open: 'Come. I've settled them. Nobody touches my person.'",
+            "attachment": 8,
+            "trust": 8
+          }
+        }
+      },
+      {
+        "id": "bigboy_post",
+        "label": "[Big Boy] Pay, then post 'I run this city'.",
+        "tags": [
+          "luxury"
+        ],
+        "vibe": "bigboy",
+        "cost": 300000,
+        "receipt": "You paid the raid tab and posted 'I run this city'.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "500k views. Kayode reposts. Blessing books you as 'special guest' for her next event.",
+            "attachment": 10,
+            "clout": 40,
+            "exposure": 15
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "blessing_cf_dj_ex",
+    "character": "blessing",
+    "slot": "confrontation",
+    "requires": {
+      "truth": [
+        "dj_ex"
+      ]
+    },
+    "scene": {
+      "location": "mainland_street",
+      "time": "night",
+      "expression": "caught",
+      "mood": "negative",
+      "npc": {
+        "name": "DJ Jiro"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Thursday, 4am. A studio above a shop in Yaba. You came with pepper soup. Blessing opens the door in the hoodie. Behind her, Jiro, shirtless."
+      },
+      {
+        "who": "DJ Jiro",
+        "text": "Ah. The sponsor. Come in, the soup will get cold."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "dj_ex": {
+        "id": "t_dj_late",
+        "text": "Her phone in her hand shows an Uber she cancelled at 11pm. She was always staying."
+      }
+    },
+    "choices": [
+      {
+        "id": "walk",
+        "label": "Hand Jiro the soup. Walk away.",
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You handed the DJ your pepper soup and walked away.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You walk down the stairs into Yaba at 4am. A danfo conductor shouts 'Oyingbo!' You get in. You don't know where Oyingbo is. Freedom.",
+            "sanity": 10,
+            "saw_truth": true,
+            "end": "walked_away"
+          }
+        ]
+      },
+      {
+        "id": "choose",
+        "label": "\"Blessing. Him or me. Now.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You made Blessing choose between you and the DJ.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "She looks at Jiro for a long time. Then pulls off the hoodie and throws it at him. 'Me. I choose me. And you.'",
+            "attachment": 15,
+            "trust": 12,
+            "saw_truth": true
+          },
+          {
+            "chance": 0.5,
+            "text": "'Babe, it's complicated.' It's not. You leave the soup.",
+            "bad": true,
+            "attachment": -20,
+            "sanity": -15,
+            "saw_truth": true
+          }
+        ]
+      },
+      {
+        "id": "live",
+        "label": "Go live from the doorway.",
+        "tags": [
+          "toxic",
+          "public_embarrassment"
+        ],
+        "receipt": "You went live from the DJ's studio doorway.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Warri's biggest promoter, caught at 4am.' The whole of Lagos nightlife is watching before Jiro finds a shirt.",
+            "attachment": -25,
+            "clout": 30,
+            "exposure": 25,
+            "saw_truth": true,
+            "truth_exposed": true,
+            "goal": {
+              "revenge": 50
+            }
+          }
+        ]
+      },
+      {
+        "id": "pretend",
+        "label": "\"I'll pretend I didn't see. Eat the soup.\"",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You pretended not to see and ate pepper soup with them.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Three of you eat pepper soup in silence. She holds your hand under the table. Jiro holds her other one.",
+            "attachment": 10,
+            "sanity": -25
+          }
+        ]
+      },
+      {
+        "id": "silence",
+        "label": "\"Jiro. My silence costs ₦1m.\"",
+        "receipt": "You charged the DJ for your silence.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Jiro laughs. Then he sees your face. ₦1m arrives from a promoter's account. 'Tell nobody.'",
+            "wallet": 1000000,
+            "attachment": -20,
+            "saw_truth": true
+          }
+        ]
+      },
+      {
+        "id": "hoodie",
+        "label": "\"Old merch you only sleep in, abi?\"",
+        "tags": [
+          "call_out"
+        ],
+        "requires": {
+          "flags": [
+            "knows_hoodie"
+          ]
+        },
+        "receipt": "You quoted her 'old merch' line in the studio doorway.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She looks down at the hoodie. Then at you. 'I'm sorry. I'm so sorry.' For once, she has no comeback.",
+            "attachment": 5,
+            "trust": 5,
+            "saw_truth": true
+          }
+        ]
+      },
+      {
+        "id": "thursday",
+        "label": "\"Recording drops till 4am. Every Thursday.\"",
+        "tags": [
+          "call_out"
+        ],
+        "requires": {
+          "flags": [
+            "knows_thursday"
+          ]
+        },
+        "receipt": "You quoted her 'recording drops on Thursdays' line.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Jiro laughs: 'Drops? Is that what she calls it?' Blessing slaps his arm. Nobody laughs after that.",
+            "clout": 10,
+            "saw_truth": true
+          }
+        ]
+      },
+      {
+        "id": "ese",
+        "label": "Call Ese on speaker.",
+        "requires": {
+          "flags": [
+            "knows_ese"
+          ]
+        },
+        "receipt": "You called Ese on speaker from the studio.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Ese: 'Blessing. I told you. I told you this would happen.' Ese is now on your side, permanently.",
+            "sanity": 10,
+            "saw_truth": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "blessing_cf_event_money",
+    "character": "blessing",
+    "slot": "confrontation",
+    "requires": {
+      "truth": [
+        "event_money"
+      ]
+    },
+    "scene": {
+      "location": "vi_club_vip",
+      "time": "night",
+      "expression": "caught",
+      "mood": "negative",
+      "npc": {
+        "name": "Vendor"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "The event is sold out. Your name on every screen. A vendor hands you an invoice: '₦1.4m outstanding. Sponsor pays.'"
+      },
+      {
+        "who": "partner",
+        "text": "Babe, no look the invoice. Look the crowd. We did this!"
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "event_money": {
+        "id": "t_em_flyer",
+        "text": "The invoice is addressed to you. The flyer named you sponsor. Ese says that's 'a vibe, not a contract'. Probably."
+      }
+    },
+    "choices": [
+      {
+        "id": "pay",
+        "label": "Pay a chunk. Event night is sacred.",
+        "cost": 150000,
+        "receipt": "You paid part of the vendor's invoice on event night.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The vendor bows. Blessing kisses you on stage. You funded a party you didn't know you were throwing.",
+            "attachment": 15,
+            "sanity": -15,
+            "saw_truth": true
+          }
+        ]
+      },
+      {
+        "id": "refund",
+        "label": "\"Where's my refund, Blessing?\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked Blessing for your refund in the middle of her event.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She shows you the gate takings: ₦3.1m. 'Okay. Okay. Here.' ₦500k. She'd never planned to.",
+            "wallet": 500000,
+            "attachment": -5,
+            "trust": 5,
+            "saw_truth": true
+          }
+        ]
+      },
+      {
+        "id": "mic",
+        "label": "Grab the mic. Tell the crowd who really paid.",
+        "tags": [
+          "toxic",
+          "public_embarrassment"
+        ],
+        "receipt": "You told her whole event who really paid.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "1,200 people hear it. The DJ drops a siren effect. Blessing's career flatlines on live video.",
+            "attachment": -30,
+            "clout": 30,
+            "exposure": 25,
+            "saw_truth": true,
+            "truth_exposed": true,
+            "goal": {
+              "revenge": 50
+            }
+          }
+        ]
+      },
+      {
+        "id": "partner",
+        "label": "\"Make me a real partner. 40% of the door.\"",
+        "receipt": "You demanded 40% of the door as a real partner.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She thinks. Then shakes on it. 'Business and pleasure. Separate accounts.' ₦800k by sunrise.",
+            "wallet": 800000,
+            "attachment": 8,
+            "trust": 8,
+            "saw_truth": true
+          }
+        ]
+      },
+      {
+        "id": "leave",
+        "label": "Leave the invoice on the bar. Walk.",
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You left the invoice on the bar and walked out.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Ozumba Mbadiwe at 3am. The bass follows you to the junction. Then it doesn't.",
+            "sanity": 10,
+            "saw_truth": true,
+            "end": "walked_away"
+          }
+        ]
+      },
+      {
+        "id": "monday",
+        "label": "\"It's Monday, Blessing. Refund.\"",
+        "requires": {
+          "flags": [
+            "knows_refund_monday"
+          ]
+        },
+        "receipt": "You told Blessing it was finally Monday.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She laughs, then sees your face. ₦300k, right there. 'I hate that you remember things.'",
+            "wallet": 300000,
+            "trust": 5,
+            "saw_truth": true
+          }
+        ]
+      },
+      {
+        "id": "books",
+        "label": "\"I funded this. Show me the books.\"",
+        "tags": [
+          "call_out"
+        ],
+        "requires": {
+          "flags": [
+            "funded_event"
+          ]
+        },
+        "receipt": "You asked to see the books for the events you funded.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Ese opens a spreadsheet. Your money is in every row. Next to 'Blessing - hair', 'Blessing - Dubai'.",
+            "sanity": -10,
+            "saw_truth": true
+          }
+        ]
+      },
+      {
+        "id": "mama",
+        "label": "\"Did any of it reach Mama?\"",
+        "requires": {
+          "flags": [
+            "knows_mama_warri"
+          ]
+        },
+        "receipt": "You asked if any of your money reached her mama.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She goes quiet. 'Some. Not enough.' Then she cries, which you did not expect, in the middle of her own event.",
+            "attachment": 5,
+            "trust": 5,
+            "saw_truth": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "blessing_cf_loyal",
+    "character": "blessing",
+    "slot": "confrontation",
+    "requires": {
+      "truth": [
+        "fierce_loyal"
+      ]
+    },
+    "scene": {
+      "location": "vi_club_vip",
+      "time": "night",
+      "expression": "angry",
+      "mood": "negative",
+      "npc": {
+        "name": "DJ Jiro"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Jiro grabs the mic at her event: 'Blessing's new person is a fraud. Ask them about their ex.' Two hundred heads turn to you."
+      },
+      {
+        "who": "partner",
+        "text": "Jiro. Come down from that booth. Now."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "fierce_loyal": {
+        "id": "t_fl_dj",
+        "text": "She holds up her phone to the crowd: 47 missed calls from Jiro. 'This is who's talking.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "watch",
+        "label": "Let her handle it. Watch her work.",
+        "receipt": "You let Blessing handle the DJ.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She takes the mic and ends Jiro's career in four sentences. Then: 'My person, come here.' The crowd cheers you up the steps.",
+            "attachment": 15,
+            "trust": 15,
+            "clout": 20
+          }
+        ]
+      },
+      {
+        "id": "go",
+        "label": "\"Let's just go. He's not worth your event.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked Blessing to leave her own event with you.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She hands the mic to Ese and walks out with you. Her own event. 'Nothing is worth you.'",
+            "attachment": 15,
+            "trust": 15
+          }
+        ]
+      },
+      {
+        "id": "ask",
+        "label": "\"Is he lying, Blessing? Tell me now.\"",
+        "receipt": "You asked Blessing, in front of the DJ, if he was lying.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'You're asking me? In front of him?' She answers anyway: 'He's lying.' Something small cracks.",
+            "attachment": -5,
+            "trust": -8
+          }
+        ]
+      },
+      {
+        "id": "fight",
+        "label": "Climb into the booth. Fight Jiro yourself.",
+        "tags": [
+          "toxic",
+          "public_embarrassment"
+        ],
+        "receipt": "You climbed into the booth to fight the DJ.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You swing. You miss. The video is everywhere. Blessing pulls you out: 'I had it! I HAD IT!'",
+            "clout": 15,
+            "exposure": 20
+          }
+        ]
+      },
+      {
+        "id": "leave",
+        "label": "Leave. This is too much drama for you.",
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You left Blessing's event during the DJ drama.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You leave. Behind you, she's still defending your name to a man with a microphone. She'll never know you didn't stay to hear it.",
+            "sanity": 8,
+            "end": "walked_away"
+          }
+        ]
+      },
+      {
+        "id": "soup",
+        "label": "\"After this, pepper soup. My treat.\"",
+        "requires": {
+          "flags": [
+            "knows_pepper_soup"
+          ]
+        },
+        "receipt": "You promised Blessing pepper soup mid-showdown.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She laughs mid-war. 'You remember?' She drops the mic. Literally. It's the loudest thing all night.",
+            "attachment": 15,
+            "trust": 15
+          }
+        ]
+      },
+      {
+        "id": "ese",
+        "label": "Text Ese: \"Cut the DJ's sound.\"",
+        "requires": {
+          "flags": [
+            "knows_ese"
+          ]
+        },
+        "receipt": "You got Ese to cut the DJ's sound.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The music dies. Jiro is shouting into a dead mic. Blessing looks at you: 'You and Ese? Planning things? I love it.'",
+            "attachment": 10,
+            "trust": 12,
+            "clout": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "blessing_po_refund",
+    "character": "blessing",
+    "slot": "payoff",
+    "presentation": "text",
+    "priority": 6,
+    "requires": {
+      "flags": [
+        "promised_refund"
+      ],
+      "not_flags": [
+        "refund_settled"
+      ],
+      "flag_age": {
+        "flag": "promised_refund",
+        "min": 2
+      }
+    },
+    "payoff_of": [
+      "promised_refund"
+    ],
+    "scene": {
+      "location": "mainland_street",
+      "time": "morning",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Monday. Refund day. Your phone is face up on the table like a court exhibit."
+      },
+      {
+        "who": "partner",
+        "text": "Babe I dey come. Check your account in five minutes."
+      }
+    ],
+    "choices": [
+      {
+        "id": "check",
+        "label": "Check your account. Hope.",
+        "receipt": "You checked your account for Blessing's refund.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Nothing. Then nothing. Then a sticker of a praying cat.",
+            "sanity": -4,
+            "set": [
+              "refund_settled"
+            ]
+          }
+        ],
+        "truth_override": {
+          "event_money": {
+            "text": "Nothing. Then: 'Next Monday for real. The event didn't break even.' It sold out.",
+            "sanity": -10,
+            "saw_truth": true,
+            "set": [
+              "refund_settled"
+            ]
+          },
+          "dj_ex": {
+            "text": "₦150k arrives. Sender: 'EJIRO OGHENE'. Your refund came from the DJ's account.",
+            "wallet": 150000,
+            "sanity": -10,
+            "saw_truth": true,
+            "set": [
+              "refund_settled"
+            ]
+          },
+          "fierce_loyal": {
+            "text": "All of it, plus 10% and a voice note: 'Interest for trusting a Warri babe. Na so we dey do.'",
+            "wallet": 110000,
+            "attachment": 8,
+            "trust": 12,
+            "set": [
+              "refund_settled"
+            ]
+          }
+        }
+      },
+      {
+        "id": "remind",
+        "label": "\"Monday don reach o. Refund?\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You reminded Blessing that Monday had arrived.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'I know what day it is!' Then ₦20k. 'Balance Friday.'",
+            "wallet": 20000,
+            "attachment": -3,
+            "set": [
+              "refund_settled"
+            ]
+          }
+        ],
+        "truth_override": {
+          "fierce_loyal": {
+            "text": "'I was literally sending it.' Screenshot of a pending transfer. Then the alert. Then a heart.",
+            "wallet": 100000,
+            "trust": 8,
+            "set": [
+              "refund_settled"
+            ]
+          }
+        }
+      },
+      {
+        "id": "forgive",
+        "label": "\"Keep it. Consider it love.\"",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You told Blessing to keep the refund.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'You mean am?' A long pause. 'Okay. I'll remember this.' She will.",
+            "attachment": 10,
+            "sanity": -5,
+            "set": [
+              "refund_settled"
+            ]
+          }
+        ],
+        "truth_override": {
+          "fierce_loyal": {
+            "text": "She refunds it anyway. 'Love is not a loan, my dear.'",
+            "wallet": 100000,
+            "attachment": 8,
+            "trust": 8,
+            "set": [
+              "refund_settled"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "blessing_po_vendors",
+    "character": "blessing",
+    "slot": "payoff",
+    "priority": 6,
+    "requires": {
+      "any_flags": [
+        "funded_event",
+        "secret_on_flyer"
+      ],
+      "not_flags": [
+        "vendors_called"
+      ],
+      "day_min": 3
+    },
+    "payoff_of": [
+      "funded_event",
+      "secret_on_flyer"
+    ],
+    "scene": {
+      "location": "mainland_street",
+      "time": "morning",
+      "mood": "negative",
+      "partner_present": false,
+      "npc": {
+        "name": "Vendor"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "8am. Unknown number. Then another. Then another."
+      },
+      {
+        "who": "Vendor",
+        "text": "Good morning. You're the sponsor on Blessing's flyer? Sound, lights and small chops balance: ₦480k."
+      }
+    ],
+    "choices": [
+      {
+        "id": "pay",
+        "label": "Pay something. Your name is on it.",
+        "cost": 50000,
+        "receipt": "You paid one of Blessing's vendors because your name was on the flyer.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The vendor sends a thank-you and a photo of the speakers. Your name, now on an invoice too.",
+            "sanity": -6,
+            "set": [
+              "vendors_called"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "forward",
+        "label": "\"Call Blessing. I'm just a guest.\"",
+        "tags": [
+          "contact_partner",
+          "cautious"
+        ],
+        "receipt": "You told the vendor to call Blessing instead.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The vendor hangs up. Two minutes later Blessing texts: 'I've handled it. Sorry babe.'",
+            "trust": 3,
+            "set": [
+              "vendors_called"
+            ]
+          }
+        ],
+        "truth_override": {
+          "event_money": {
+            "text": "'She gave us your number. She said you're the money.' You are, apparently, the money.",
+            "sanity": -8,
+            "saw_truth": true,
+            "set": [
+              "vendors_called"
+            ]
+          },
+          "dj_ex": {
+            "text": "'She said call you or call Jiro. Jiro isn't picking.' Why would Jiro be the other option?",
+            "sanity": -8,
+            "saw_truth": true,
+            "set": [
+              "vendors_called"
+            ]
+          },
+          "fierce_loyal": {
+            "text": "Ten minutes later, Blessing on the vendor's line, in full Warri: 'Who give you my person's number?' The vendors stop calling forever.",
+            "attachment": 8,
+            "trust": 10,
+            "set": [
+              "vendors_called"
+            ]
+          }
+        }
+      },
+      {
+        "id": "block",
+        "label": "Block every unknown number.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You blocked every unknown number on your phone.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Peace. Also, your mum couldn't reach you all day. She's furious.",
+            "sanity": 4,
+            "set": [
+              "vendors_called"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "blessing_po_soup",
+    "character": "blessing",
+    "slot": "payoff",
+    "priority": 5,
+    "requires": {
+      "flags": [
+        "brought_pepper_soup"
+      ],
+      "not_flags": [
+        "soup_posted"
+      ],
+      "flag_age": {
+        "flag": "brought_pepper_soup",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "brought_pepper_soup"
+    ],
+    "scene": {
+      "location": "mainland_street",
+      "time": "golden",
+      "expression": "charming",
+      "mood": "positive"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Her story, 6am: your pot of pepper soup on top of a speaker. Caption: 'Some people bring flowers. Mine brought catfish. Warri approved.'"
+      },
+      {
+        "who": "partner",
+        "text": "My girls are jealous. Mama wants your number. Wetin you do me?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "number",
+        "label": "\"Give Mama my number.\"",
+        "receipt": "You asked to meet her mama by phone.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Mama calls at 6:15am and prays for you in Urhobo for seven minutes. You feel blessed, specifically.",
+            "attachment": 10,
+            "trust": 8,
+            "sanity": 8,
+            "set": [
+              "soup_posted"
+            ]
+          }
+        ],
+        "truth_override": {
+          "dj_ex": {
+            "text": "Mama calls: 'Are you the one with soup? Not Ejiro?' Blessing grabs the phone back very fast.",
+            "attachment": 6,
+            "sanity": -4,
+            "set": [
+              "soup_posted"
+            ]
+          }
+        }
+      },
+      {
+        "id": "repost",
+        "label": "Repost it: 'My promoter, my problem'.",
+        "receipt": "You reposted Blessing's pepper soup story.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Her followers find you. 'Soup bae' trends in her comments. You're now a Lagos nightlife meme.",
+            "attachment": 8,
+            "clout": 15,
+            "exposure": 5,
+            "set": [
+              "soup_posted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "again",
+        "label": "Order another pot for her crew.",
+        "cost": 12000,
+        "receipt": "You sent her whole crew pepper soup.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The crew sends a group voice note: 'WE LOVE YOU'. Blessing: 'You're stealing my people.'",
+            "attachment": 8,
+            "trust": 6,
+            "set": [
+              "soup_posted"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "blessing_po_fight_video",
+    "character": "blessing",
+    "slot": "payoff",
+    "priority": 7,
+    "requires": {
+      "flags": [
+        "secret_filmed_fight"
+      ],
+      "not_flags": [
+        "video_handled"
+      ],
+      "flag_age": {
+        "flag": "secret_filmed_fight",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "secret_filmed_fight"
+    ],
+    "partner_reacts_to": [
+      "secret_filmed_fight"
+    ],
+    "discovers": [
+      {
+        "flag": "secret_filmed_fight",
+        "to": [
+          "partner",
+          "world"
+        ]
+      }
+    ],
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "afternoon",
+      "expression": "angry",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "The bar fight is trending: 'Warri babe defends her person', 2 million views. The original upload has your username."
+      },
+      {
+        "who": "partner",
+        "text": "You filmed me? Instead of holding me back? Explain yourself."
+      }
+    ],
+    "choices": [
+      {
+        "id": "sorry",
+        "label": "\"I panicked. I'm sorry. Let me take it down.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You apologised for filming Blessing's fight and took it down.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Deleted. The reposts aren't. 'Next time, hold my hand, not your phone.'",
+            "attachment": -4,
+            "trust": 4,
+            "exposure": -5,
+            "set": [
+              "video_handled"
+            ]
+          }
+        ],
+        "truth_override": {
+          "event_money": {
+            "text": "'Take it down? It sold 400 tickets for Friday. Leave it up. Actually, do it again.'",
+            "attachment": 6,
+            "clout": 10,
+            "set": [
+              "video_handled"
+            ]
+          }
+        }
+      },
+      {
+        "id": "viral",
+        "label": "\"You went viral. You're welcome.\"",
+        "tags": [
+          "toxic"
+        ],
+        "receipt": "You told Blessing she should thank you for going viral.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Welcome?' She leaves. She comes back. She leaves again. The door is tired.",
+            "attachment": -12,
+            "trust": -10,
+            "clout": 10,
+            "set": [
+              "video_handled"
+            ]
+          }
+        ],
+        "truth_override": {
+          "dj_ex": {
+            "text": "Jiro has reposted it: 'My Warri babe 😂'. She's furious at you both, but only blocks you.",
+            "attachment": -12,
+            "trust": -10,
+            "saw_truth": true,
+            "set": [
+              "video_handled"
+            ]
+          }
+        }
+      },
+      {
+        "id": "protect",
+        "label": "\"I filmed it in case she pressed charges.\"",
+        "receipt": "You told Blessing you filmed it as evidence to protect her.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She thinks about it. 'Lawyer brain.' She doesn't fully buy it. She doesn't fully not.",
+            "trust": 2,
+            "set": [
+              "video_handled"
+            ]
+          }
+        ],
+        "truth_override": {
+          "fierce_loyal": {
+            "text": "'Evidence? For me?' She laughs. 'Okay, Barrister. Next time, film her first.'",
+            "attachment": 6,
+            "trust": 6,
+            "set": [
+              "video_handled"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "blessing_po_raid_blog",
+    "character": "blessing",
+    "slot": "payoff",
+    "priority": 4,
+    "requires": {
+      "flags": [
+        "secret_ran_raid"
+      ],
+      "not_flags": [
+        "raid_handled"
+      ],
+      "flag_age": {
+        "flag": "secret_ran_raid",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "secret_ran_raid"
+    ],
+    "scene": {
+      "location": "mainland_street",
+      "time": "afternoon",
+      "mood": "negative",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "A gossip blog posts the raid: 'Big Boys flee VIP lounge on Ozumba Mbadiwe'. Frame 14: you, mid-sprint, holding Blessing's shoe."
+      },
+      {
+        "who": "Your Bestie",
+        "text": "Babe. BABE. Is that you running with one shoe?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "own_it",
+        "label": "\"Yes. And I'd do it again.\"",
+        "receipt": "You owned being in the raid video.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Your Bestie screenshots it as your new profile picture. You let her.",
+            "clout": 10,
+            "exposure": 5,
+            "set": [
+              "raid_handled"
+            ]
+          }
+        ],
+        "truth_override": {
+          "fierce_loyal": {
+            "text": "Blessing reposts it: 'My person saved my shoe. Loyalty.' 40k likes.",
+            "attachment": 8,
+            "trust": 6,
+            "clout": 10,
+            "set": [
+              "raid_handled"
+            ]
+          }
+        }
+      },
+      {
+        "id": "takedown",
+        "label": "Ask the blog to blur your face.",
+        "tags": [
+          "discreet",
+          "cautious"
+        ],
+        "receipt": "You asked the blog to blur your face.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "They blur it. Badly. You now look like a fugitive potato. Still you.",
+            "exposure": -5,
+            "sanity": -3,
+            "set": [
+              "raid_handled"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ask_blessing",
+        "label": "Ask Blessing why she wasn't in frame.",
+        "tags": [
+          "contact_partner"
+        ],
+        "receipt": "You asked Blessing why she wasn't in the raid video.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'I was behind you, nau.' She was.",
+            "trust": 2,
+            "set": [
+              "raid_handled"
+            ]
+          }
+        ],
+        "truth_override": {
+          "dj_ex": {
+            "text": "Frame 22: Blessing in the DJ crew's bus, waving. 'I was helping with the decks,' she says. At 2am. During a raid.",
+            "sanity": -8,
+            "saw_truth": true,
+            "set": [
+              "raid_handled"
+            ]
+          },
+          "event_money": {
+            "text": "'I was collecting the gate money before police took it.' Your tab, she does not mention.",
+            "sanity": -5,
+            "saw_truth": true,
+            "set": [
+              "raid_handled"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "blessing_po_mama_call",
+    "character": "blessing",
+    "slot": "payoff",
+    "presentation": "call",
+    "priority": 5,
+    "requires": {
+      "flags": [
+        "sent_mama"
+      ],
+      "not_flags": [
+        "mama_called"
+      ],
+      "flag_age": {
+        "flag": "sent_mama",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "sent_mama"
+    ],
+    "scene": {
+      "location": "mainland_street",
+      "time": "golden",
+      "mood": "neutral",
+      "partner_present": false,
+      "npc": {
+        "name": "Mama"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "A Warri number calls you. A woman's voice, warm and loud, over a generator."
+      },
+      {
+        "who": "Mama",
+        "text": "Na you be Blessing friend wey send money? God go bless you, my pikin."
+      }
+    ],
+    "choices": [
+      {
+        "id": "greet",
+        "label": "Greet her properly. \"Migwo, Mama.\"",
+        "receipt": "You greeted Blessing's mama in Urhobo.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She screams with joy. She tells you everything about the shop. Most of it in Urhobo. You agree to all of it.",
+            "sanity": 10,
+            "set": [
+              "mama_called"
+            ]
+          }
+        ],
+        "truth_override": {
+          "event_money": {
+            "text": "'Thank you for the ₦20k, my child.' ₦20k. You sent more than ₦20k.",
+            "sanity": -8,
+            "saw_truth": true,
+            "set": [
+              "mama_called"
+            ]
+          },
+          "dj_ex": {
+            "text": "'Are you Ejiro's friend? Tell him to call me, he promised to fix my shop.' Ejiro. Jiro.",
+            "sanity": -8,
+            "saw_truth": true,
+            "set": [
+              "mama_called"
+            ]
+          },
+          "fierce_loyal": {
+            "text": "Mama prays for you for seven minutes. Then: 'My daughter has never brought anybody to my ears. Take care of her.'",
+            "attachment": 10,
+            "trust": 10,
+            "sanity": 12,
+            "set": [
+              "mama_called"
+            ]
+          }
+        }
+      },
+      {
+        "id": "ask_amount",
+        "label": "Ask how much reached her.",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You asked Blessing's mama how much money reached her.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Enough, my child. Enough.' Mothers never answer that question.",
+            "trust": 2,
+            "set": [
+              "mama_called"
+            ]
+          }
+        ],
+        "truth_override": {
+          "event_money": {
+            "text": "'₦20k. She said the rest is coming after her event.'",
+            "sanity": -6,
+            "saw_truth": true,
+            "set": [
+              "mama_called"
+            ]
+          },
+          "fierce_loyal": {
+            "text": "'All of it. And she added her own. That girl, she gives until she has nothing.'",
+            "attachment": 6,
+            "trust": 8,
+            "set": [
+              "mama_called"
+            ]
+          }
+        }
+      },
+      {
+        "id": "brief",
+        "label": "\"You're welcome, Ma.\" Keep it short.",
+        "receipt": "You kept the call with Blessing's mama short.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Short and sweet. Like my late husband.' She hangs up. You feel strangely rated.",
+            "sanity": 4,
+            "set": [
+              "mama_called"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "blessing_tt_hoodie",
+    "character": "blessing",
+    "slot": "talking_time",
+    "presentation": "text",
+    "detail": {
+      "flag": "knows_hoodie",
+      "missed": {
+        "sanity": -3
+      },
+      "red_flag": true
+    },
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Lol no mind the hoodie for my pics. Na old merch from one gig. I only sleep in am. Abeg no start 😂"
+      }
+    ],
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Old merch you only sleep in. Okay 👀\"",
+        "receipt": "You noted her 'old merch' hoodie explanation.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Why the eyes?' 'No reason.' 'Hmm.' You both know there's a reason.",
+            "attachment": 1,
+            "trust": 4
+          }
+        ],
+        "caught": true
+      },
+      {
+        "id": "cute",
+        "label": "\"You look fine in anything sha\"",
+        "receipt": "You told Blessing she looks fine in anything.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'I know 😌' Then a selfie. In the hoodie.",
+            "attachment": 3
+          }
+        ]
+      },
+      {
+        "id": "buy",
+        "label": "\"I'll buy you a better hoodie\"",
+        "receipt": "You offered to buy Blessing a new hoodie.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Oya, ₦45k. Off-White. Send link?' She sends the link.",
+            "attachment": 2,
+            "trust": -1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "blessing_tt_thursday",
+    "character": "blessing",
+    "slot": "talking_time",
+    "presentation": "voice_note",
+    "detail": {
+      "flag": "knows_thursday",
+      "missed": {
+        "sanity": -3
+      },
+      "red_flag": true
+    },
+    "scene": {
+      "location": "vi_club_vip",
+      "time": "night",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Thursdays I dey studio for Yaba till 4am, recording drops for my events. No wait up for me o, I go dey dead."
+      }
+    ],
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Yaba studio, Thursdays, till 4am. Noted.\"",
+        "receipt": "You noted her Thursday studio nights in Yaba.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'You dey write am down?' Laughing emoji. Then, quieter: 'Okay. Good.'",
+            "attachment": 1,
+            "trust": 4
+          }
+        ],
+        "caught": true
+      },
+      {
+        "id": "drops",
+        "label": "\"Send me the drops when you're done 🔥\"",
+        "receipt": "You asked to hear her event drops.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She sends one. Mostly bass. A man's voice says 'Blessing' at the end.",
+            "attachment": 3
+          }
+        ]
+      },
+      {
+        "id": "sleep",
+        "label": "\"Sleep is also important o\"",
+        "receipt": "You told Blessing to get some sleep.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Sleep na for people wey get salary.' A voice note of her yawning.",
+            "attachment": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "blessing_tt_refund",
+    "character": "blessing",
+    "slot": "talking_time",
+    "presentation": "text",
+    "detail": {
+      "flag": "knows_refund_monday",
+      "missed": {
+        "sanity": -3
+      },
+      "red_flag": true
+    },
+    "scene": {
+      "location": "vi_club_vip",
+      "time": "afternoon",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Any money you put for my events, I refund Monday after. Promoter's honour. I swear with my edges 😤"
+      }
+    ],
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Monday. Your edges are witnesses. Noted.\"",
+        "receipt": "You noted that her refunds come 'Monday after the event'.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'My edges are innocent!' She sends a selfie of her edges as collateral.",
+            "attachment": 2,
+            "trust": 4
+          }
+        ],
+        "caught": true
+      },
+      {
+        "id": "trust",
+        "label": "\"I trust you, no wahala\"",
+        "receipt": "You told Blessing you trusted her with refunds.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'See? This is why I like you.' A heart. Then a flyer.",
+            "attachment": 3
+          }
+        ]
+      },
+      {
+        "id": "never",
+        "label": "\"I'm not putting money in your events lol\"",
+        "receipt": "You told Blessing you won't fund her events.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Who asked you?' A pause. 'Yet.'",
+            "attachment": -1,
+            "trust": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "blessing_tt_mama",
+    "character": "blessing",
+    "slot": "talking_time",
+    "presentation": "voice_note",
+    "detail": {
+      "flag": "knows_mama_warri",
+      "missed": {
+        "chemistry": -3
+      },
+      "red_flag": false
+    },
+    "scene": {
+      "location": "mainland_street",
+      "time": "golden",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Mama for Warri don call me three times today. Month end na my own, I dey send her money. Na why I dey hustle like this."
+      }
+    ],
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Month end is Mama's. Respect. Greet her for me.\"",
+        "receipt": "You remembered she sends her mama money every month end.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "A long pause. 'You want me to greet Mama for you?' Another pause. 'Okay. I go greet am.'",
+            "attachment": 3,
+            "trust": 4
+          }
+        ],
+        "caught": true
+      },
+      {
+        "id": "hustle",
+        "label": "\"You're a hustler for real\"",
+        "receipt": "You called Blessing a real hustler.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Warri no dey carry last.' A voice note with a generator behind it.",
+            "attachment": 3
+          }
+        ]
+      },
+      {
+        "id": "money",
+        "label": "\"Send me Mama's number, let me greet her\"",
+        "receipt": "You asked for her mama's number on day two.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Ehn? You dey rush.' She laughs, but she doesn't send it.",
+            "attachment": 1,
+            "trust": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "blessing_tt_ese",
+    "character": "blessing",
+    "slot": "talking_time",
+    "presentation": "voice_note",
+    "detail": {
+      "flag": "knows_ese",
+      "missed": {
+        "chemistry": -2
+      },
+      "red_flag": false
+    },
+    "scene": {
+      "location": "vi_club_vip",
+      "time": "night",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "If anything happen to me for club, call Ese. Ese na my lawyer, my bouncer and my alibi. Whatever Ese talk, na gospel."
+      }
+    ],
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Ese: lawyer, bouncer, alibi. Saving her number.\"",
+        "receipt": "You saved Ese's number, her best friend and alibi.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She sends Ese's contact card. Ese's picture is a woman holding a bat. Perfect.",
+            "attachment": 2,
+            "trust": 4
+          }
+        ],
+        "caught": true
+      },
+      {
+        "id": "safe",
+        "label": "\"Nothing will happen to you. I dey\"",
+        "receipt": "You promised Blessing nothing would happen to her.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Awww. Okay, bouncer.' A flexing emoji. She likes it.",
+            "attachment": 3
+          }
+        ]
+      },
+      {
+        "id": "alibi",
+        "label": "\"Why do you need an alibi? 😂\"",
+        "receipt": "You asked Blessing why she needs an alibi.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Lagos.' That's the whole answer.",
+            "attachment": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "blessing_tt_soup",
+    "character": "blessing",
+    "slot": "talking_time",
+    "presentation": "text",
+    "detail": {
+      "flag": "knows_pepper_soup",
+      "missed": {
+        "chemistry": -3
+      },
+      "red_flag": false
+    },
+    "scene": {
+      "location": "mainland_street",
+      "time": "night",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "After every event I need catfish pepper soup by 4am or I go die. Not small chops. Real food. Note am."
+      }
+    ],
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Catfish pepper soup, 4am. Noted 📝\"",
+        "receipt": "You noted her 4am catfish pepper soup rule.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'I said note am and you actually noted am?' Three crying-laughing faces.",
+            "attachment": 3,
+            "trust": 4
+          }
+        ],
+        "caught": true
+      },
+      {
+        "id": "small_chops",
+        "label": "\"Small chops are food too sha\"",
+        "receipt": "You defended small chops.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Small chops na decoration.' She is not open to debate.",
+            "attachment": 1
+          }
+        ]
+      },
+      {
+        "id": "dramatic",
+        "label": "\"You won't die. You're from Warri.\"",
+        "receipt": "You told Blessing Warri people don't die of hunger.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Facts.' Then a sticker of a woman fighting a shark.",
+            "attachment": 2
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,3970 @@
+[
+  {
+    "id": "tiwa_d1_brunch",
+    "character": "tiwa",
+    "slot": "first_date",
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "afternoon",
+      "expression": "charming",
+      "mood": "positive"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Sunday brunch, rooftop off Bourdillon. Ten minutes before, she texts: 'Babe I'm coming with my friends 🥰'."
+      },
+      {
+        "who": "partner",
+        "text": "Meet Simi, Teni and Lola. They're starving. We're all starving."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "main_boyfriend": {
+        "id": "t_mb_story",
+        "text": "Lola scrolls Tiwa's close-friends story at the table: a man's hand on a steering wheel, a Patek on the wrist. Lola locks the phone fast."
+      },
+      "vendor_debt": {
+        "id": "t_vd_calls",
+        "text": "Her phone buzzes on the table. 'Hair Vendor 🦋' — nine missed calls. She flips it face down and orders the lobster."
+      },
+      "tester": {
+        "id": "t_test_ask",
+        "text": "While the friends order, Tiwa leans in: 'Send 50k. Let me see something.' She watches your face, not your phone."
+      }
+    },
+    "choices": [
+      {
+        "id": "pay_squad",
+        "label": "Pay for the whole squad. Bottomless mimosas.",
+        "tags": [
+          "luxury"
+        ],
+        "cost": 120000,
+        "broke_text": "Your account looked at the mimosa menu and fainted.",
+        "receipt": "You paid brunch for Tiwa and three friends you'd just met.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Four girls, one bill. The friends post you as 'Tiwa's new sponsor 🤑'. Tiwa glows like a ring light.",
+            "attachment": 12,
+            "clout": 10,
+            "exposure": 5
+          }
+        ],
+        "truth_override": {
+          "tester": {
+            "text": "She watches you pay without blinking. In the car: 'You didn't even ask why I brought them.' She sounds disappointed, not grateful.",
+            "attachment": 2,
+            "trust": -3
+          }
+        }
+      },
+      {
+        "id": "pay_tiwa",
+        "label": "Pay for Tiwa. The friends can pay for the friends.",
+        "tags": [
+          "budget"
+        ],
+        "cost": 25000,
+        "receipt": "You paid for Tiwa only and left the friends to their own cards.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Simi gasps like you slapped her. Teni's card declines twice. Tiwa laughs into her napkin and doesn't defend them.",
+            "attachment": 4,
+            "trust": 5,
+            "clout": -5
+          }
+        ],
+        "truth_override": {
+          "tester": {
+            "text": "Tiwa laughs so hard she cries. 'Finally. Somebody with sense.' The friends leave early. She doesn't.",
+            "attachment": 10,
+            "trust": 8
+          }
+        }
+      },
+      {
+        "id": "invited_you",
+        "label": "\"I invited you, Tiwa. Not the group chat.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You told Tiwa you invited her, not her group chat.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Silence. Lola mutters 'it's giving broke'. Tiwa sends them to the bar. Dignity cost: ₦0. Vibes cost: some.",
+            "attachment": -3,
+            "trust": 6,
+            "sanity": 5
+          }
+        ],
+        "truth_override": {
+          "tester": {
+            "text": "She sends them away with a wink. They were never staying. 'You passed. Small.'",
+            "attachment": 8,
+            "trust": 10
+          }
+        }
+      },
+      {
+        "id": "ask_mum",
+        "label": "Ignore the squad. Ask Tiwa about her mum.",
+        "receipt": "You ignored the squad and asked about her mum.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "For one full minute she forgets the camera. Her mum sells adire in Abeokuta. Then Simi says, 'Is this an interview?'",
+            "attachment": 6,
+            "trust": 5
+          }
+        ]
+      },
+      {
+        "id": "lover_napkin",
+        "label": "[Lover] Write her a poem on a napkin. Slide it over.",
+        "vibe": "lover",
+        "receipt": "You wrote Tiwa a poem on a brunch napkin.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She reads it twice and puts it in her bag, not on her story. Later you find out it's still in there.",
+            "attachment": 10,
+            "trust": 6
+          }
+        ]
+      },
+      {
+        "id": "bigboy_tower",
+        "label": "[Big Boy] Order a champagne tower. Let Lagos see.",
+        "tags": [
+          "luxury"
+        ],
+        "vibe": "bigboy",
+        "cost": 300000,
+        "receipt": "You ordered a champagne tower on your first date.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The rooftop films you. The friends film you. Tiwa films you. You are content now.",
+            "attachment": 14,
+            "clout": 30,
+            "exposure": 12
+          }
+        ],
+        "truth_override": {
+          "tester": {
+            "text": "She doesn't film it. She just looks at you: 'So this is how you get people.'",
+            "attachment": 4,
+            "trust": -5,
+            "clout": 15
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "tiwa_d1_transport",
+    "character": "tiwa",
+    "slot": "first_date",
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "night",
+      "expression": "charming",
+      "mood": "positive"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Three hours before your first date, a text: her account number. Then: 'For transport 🥺 Lekki to Ikoyi is far.' It is eleven minutes."
+      },
+      {
+        "who": "partner",
+        "text": "Babe, you know how Lagos is. I just want to arrive looking fresh for you."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "main_boyfriend": {
+        "id": "t_mb_name",
+        "text": "Her voice note after the account number: 'Thank you, Deji— babe. Thank you, babe.'"
+      },
+      "vendor_debt": {
+        "id": "t_vd_blocked",
+        "text": "You check her page while you wait. Under her latest post: 'Tiwa pay me my money. Lashes since January 😡'."
+      },
+      "tester": {
+        "id": "t_test_ask",
+        "text": "A second text: 'Actually, send 50k. Let me see something.' Then: 'Kidding. Unless?'"
+      }
+    },
+    "choices": [
+      {
+        "id": "send_10k",
+        "label": "Send ₦10k. Uber, not Uber Black.",
+        "tags": [
+          "budget"
+        ],
+        "cost": 10000,
+        "receipt": "You sent Tiwa ₦10k for transport before the first date.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Voice note, laughing: 'Ten thousand. Okay, Budget Bae.' She still comes. On time, even. In something that cost more than your rent.",
+            "attachment": 3,
+            "trust": 4
+          }
+        ],
+        "truth_override": {
+          "tester": {
+            "text": "She arrives in a ₦3,500 Bolt and shows you the receipt. 'Change is yours.' She keeps the change anyway.",
+            "attachment": 8,
+            "trust": 8
+          }
+        }
+      },
+      {
+        "id": "send_50k",
+        "label": "Send ₦50k. \"Keep the change, fine girl.\"",
+        "tags": [
+          "luxury"
+        ],
+        "cost": 50000,
+        "receipt": "You sent Tiwa ₦50k 'for transport'.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She arrives in a G-Wagon that is definitely not an Uber. 'Thank you baby 😘'. The ₦50k was for vibes.",
+            "attachment": 10,
+            "set": [
+              {
+                "flag": "sent_test_money",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "main_boyfriend": {
+            "text": "A G-Wagon drops her off. The driver doesn't look at you. He looks at her like he's parking his own property.",
+            "attachment": 8,
+            "sanity": -5,
+            "set": [
+              {
+                "flag": "sent_test_money",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "vendor_debt": {
+            "text": "She arrives in a Bolt. The ₦50k went to someone called 'Bisola Lash' four minutes after you sent it. You find out later.",
+            "attachment": 8,
+            "set": [
+              {
+                "flag": "sent_test_money",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "tester": {
+            "text": "She arrives in a ₦4k Bolt and looks at you for a long time. 'You send money like it's nothing. Who taught you that?'",
+            "attachment": 4,
+            "trust": -2,
+            "set": [
+              {
+                "flag": "sent_test_money",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "book_ride",
+        "label": "\"Send your location. I'll book the ride.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You offered to book her ride instead of sending cash.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She sends a pin in Lekki Phase 1. The driver waits 40 minutes. She comes down in full glam: 'Lagos traffic, babe.' She lives downstairs.",
+            "attachment": -2,
+            "trust": 6
+          }
+        ],
+        "truth_override": {
+          "tester": {
+            "text": "She gets in the car laughing: 'You don't trust me with ₦10k?' 'No.' 'Good.' She smiles all through dinner.",
+            "attachment": 8,
+            "trust": 10
+          }
+        }
+      },
+      {
+        "id": "pick_up",
+        "label": "Borrow your cousin's Corolla. Pick her up yourself.",
+        "receipt": "You picked Tiwa up in a borrowed Corolla.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She sees the Corolla. Five full seconds of silence. Then she gets in and says, 'It's giving honest.'",
+            "attachment": 5,
+            "trust": 5,
+            "clout": -5
+          }
+        ],
+        "truth_override": {
+          "main_boyfriend": {
+            "text": "She makes you park two streets away. 'My estate is strict.' No estate in Lekki is that strict.",
+            "attachment": 3,
+            "trust": -2
+          }
+        }
+      },
+      {
+        "id": "corp_breakdown",
+        "label": "[Corporate] Send ₦7,850 with an itemised breakdown.",
+        "vibe": "corporate",
+        "cost": 8000,
+        "receipt": "You sent Tiwa an itemised transport budget.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She screenshots it to the group chat: 'This one sent me a SPREADSHEET.' Lowkey, she's impressed.",
+            "attachment": 6,
+            "trust": 5,
+            "clout": 5
+          }
+        ]
+      },
+      {
+        "id": "runs_screenshot",
+        "label": "[Runs] Send ₦5k and a 'network issue' screenshot.",
+        "vibe": "runs",
+        "cost": 5000,
+        "receipt": "You sent ₦5k and a fake failed-transfer screenshot.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She sends back a better fake screenshot. 'Amateur.' You've met your match. Dinner is electric.",
+            "attachment": 8,
+            "trust": -2,
+            "clout": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tiwa_d1_ring_light",
+    "character": "tiwa",
+    "slot": "first_date",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "expression": "charming",
+      "mood": "positive"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Date night at her glass flat in Lekki Phase 1. Two ring lights, a tripod, a wine glass she never drinks from."
+      },
+      {
+        "who": "partner",
+        "text": "Just act natural. We're doing 'my date cooks for me'. You're cooking. Smile with your teeth."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "main_boyfriend": {
+        "id": "t_mb_weekend",
+        "text": "You suggest Saturday next time. 'Saturdays no. My weekends are for my family.' She angles the camera away from the men's slides by the door."
+      },
+      "vendor_debt": {
+        "id": "t_vd_car",
+        "text": "Through the glass, the parking bay with her name on it is empty. 'G-Wagon is with the mechanic,' she says, before you ask."
+      },
+      "tester": {
+        "id": "t_test_return",
+        "text": "On her shelf, a perfume box with a sticky note: 'Return to Kunle.' 'He gave it on the second date,' she says. 'Too fast.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "play_along",
+        "label": "Cook on camera. Be the content.",
+        "receipt": "You cooked on camera for Tiwa's page.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Your burnt jollof does 80k views. Comments: 'Who is this fine chef 😍'. Tiwa tags you. You are public property now.",
+            "attachment": 10,
+            "clout": 20,
+            "exposure": 10,
+            "set": [
+              {
+                "flag": "secret_on_her_page",
+                "knows": [
+                  "player",
+                  "partner",
+                  "world"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "off_camera",
+        "label": "\"Turn it off. I came for you, not your followers.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked Tiwa to switch off the ring light.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She looks at you over the ring light. Then she switches it off. The flat is suddenly very dark and very quiet.",
+            "attachment": -2,
+            "trust": 8
+          }
+        ],
+        "truth_override": {
+          "tester": {
+            "text": "She switches it off. Her face changes without the light. Softer. Younger. 'Okay. Hi.'",
+            "attachment": 10,
+            "trust": 12
+          },
+          "main_boyfriend": {
+            "text": "She switches it off. Her phone lights up face down on the counter, twice. She lets it ring. You both pretend it isn't.",
+            "attachment": -2,
+            "trust": 5
+          }
+        }
+      },
+      {
+        "id": "suya",
+        "label": "Cancel the cooking show. Order suya.",
+        "tags": [
+          "budget"
+        ],
+        "cost": 8000,
+        "receipt": "You cancelled the cooking video and ordered suya.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Suya on a ₦4m couch. She eats the onions first. 'Don't tell anybody I eat onions.' You have leverage now.",
+            "attachment": 6,
+            "trust": 5
+          }
+        ]
+      },
+      {
+        "id": "bigboy_chef",
+        "label": "[Big Boy] Hire a private chef. Let her film him.",
+        "tags": [
+          "luxury"
+        ],
+        "vibe": "bigboy",
+        "cost": 200000,
+        "receipt": "You hired a private chef for your first date.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The chef plates. She films. You eat lobster in a glass box above Lekki. It's a lot. It's working.",
+            "attachment": 14,
+            "clout": 15,
+            "exposure": 5
+          }
+        ]
+      },
+      {
+        "id": "runs_pitch",
+        "label": "[Runs] Pitch her: you'll split the brand deals.",
+        "vibe": "runs",
+        "receipt": "You pitched Tiwa a brand-deal partnership on date one.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Her eyes light up for the first time all night. Business partners. Romance pending. Contract by Friday.",
+            "attachment": 8,
+            "clout": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tiwa_rf_lash_story",
+    "character": "tiwa",
+    "slot": "red_flag",
+    "sets": [
+      {
+        "flag": "sent_test_money",
+        "knows": [
+          "player",
+          "partner"
+        ]
+      }
+    ],
+    "scene": {
+      "location": "mainland_street",
+      "time": "golden",
+      "expression": "charming",
+      "mood": "negative",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "You sent ₦50k for her 'lash appointment'. Thirty minutes later, her story: a rooftop lounge in VI. A man's wrist. A Patek. Caption: 'Good men still exist 🥹'."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "main_boyfriend": {
+        "id": "t_mb_story",
+        "text": "Zoom in: the same Patek is in three of her stories this month. Always Saturday. Always on her thigh."
+      },
+      "vendor_debt": {
+        "id": "t_vd_blocked",
+        "text": "First comment under the story: 'Bisola Lash Studio: Tiwa, the lashes you're wearing, pay for them first 🙏'."
+      },
+      "tester": {
+        "id": "t_test_ask",
+        "text": "Her next message lands before you can react: 'Send 50k. Let me see something.' Then 'typing...' forever."
+      }
+    },
+    "choices": [
+      {
+        "id": "clown",
+        "label": "Reply to her story with a clown emoji 🤡",
+        "tags": [
+          "call_out"
+        ],
+        "receipt": "You replied to her story with a clown emoji.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Seen 4:02pm. No reply. Then her story updates: 'Some people can't handle soft life.' Subtweeted in HD.",
+            "trust": -5,
+            "clout": 5,
+            "set": [
+              {
+                "flag": "secret_clown_reply",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "main_boyfriend": {
+            "text": "Seen. Then a whispered voice note: 'Are you mad? He can see my phone.' He.",
+            "trust": -5,
+            "saw_truth": true,
+            "set": [
+              {
+                "flag": "secret_clown_reply",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "tester": {
+            "text": "She replies with a clown too. Then: 'Fair. That's my uncle Tunde. Brunch Sunday, you'll meet him.'",
+            "trust": 5,
+            "attachment": 5,
+            "set": [
+              {
+                "flag": "secret_clown_reply",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "refund",
+        "label": "\"Lash appointment, abi? Send my ₦50k back.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked Tiwa to send your ₦50k back.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Wow. It's always the ones who send small.' Nothing returns. She mutes you for an hour.",
+            "attachment": -8,
+            "trust": 2
+          }
+        ],
+        "truth_override": {
+          "main_boyfriend": {
+            "text": "₦50k returns in four minutes from an account named 'DEJI A.'. She didn't even pay you back herself.",
+            "wallet": 50000,
+            "attachment": -8,
+            "saw_truth": true
+          },
+          "vendor_debt": {
+            "text": "'I'll send it Friday.' Friday is a concept. ₦12k arrives with 'small small 🙏'.",
+            "wallet": 12000,
+            "attachment": -5
+          },
+          "tester": {
+            "text": "₦50k returns with a voice note: 'Good. Never let anybody finish your money and post another person.' She sounds proud.",
+            "wallet": 50000,
+            "trust": 10,
+            "attachment": 6
+          }
+        }
+      },
+      {
+        "id": "another_50k",
+        "label": "Send another ₦50k. \"I trust you.\"",
+        "tags": [
+          "excuse"
+        ],
+        "cost": 50000,
+        "receipt": "You sent another ₦50k with 'I trust you'.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Awww 🥹 you're so different.' Her next story: the same lounge, a second bottle.",
+            "attachment": 10,
+            "sanity": -10
+          }
+        ],
+        "truth_override": {
+          "main_boyfriend": {
+            "text": "'You're the best.' The next story: a bottle with sparklers. The Patek is holding it.",
+            "attachment": 8,
+            "sanity": -12,
+            "tricked": true
+          },
+          "vendor_debt": {
+            "text": "The ₦100k goes straight to Bisola Lash. Tiwa sends a heart. Bisola sends 'thank you, sponsor 🙏'.",
+            "attachment": 6,
+            "sanity": -8,
+            "tricked": true
+          },
+          "tester": {
+            "text": "No reply for an hour. Then: 'Why would you do that? You just watched me lie.' She sounds disappointed in you.",
+            "attachment": -4,
+            "trust": -6
+          }
+        }
+      },
+      {
+        "id": "pull_up",
+        "label": "Pull up. Taxi to VI. Now.",
+        "tags": [
+          "investigate"
+        ],
+        "cost": 6000,
+        "receipt": "You pulled up to the lounge in VI.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "By the time you arrive the table is empty. The waiter: 'She left with her people.'",
+            "sanity": -5
+          }
+        ],
+        "truth_override": {
+          "main_boyfriend": [
+            {
+              "chance": 0.6,
+              "text": "You see her before she sees you. The Patek man feeds her chips. She calls him 'Daddy D'. You leave unseen.",
+              "sanity": -15,
+              "saw_truth": true,
+              "set": [
+                "saw_lounge"
+              ]
+            },
+            {
+              "chance": 0.4,
+              "text": "She sees you. Her face does four things. The man asks who you are. She says, 'My driver.'",
+              "bad": true,
+              "trust": -15,
+              "sanity": -10,
+              "expression": "caught",
+              "set": [
+                "saw_lounge"
+              ]
+            }
+          ],
+          "vendor_debt": {
+            "text": "The manager is holding her bag hostage until someone pays ₦180k. She sees you. 'Babe. Thank God.' The lashes were never booked.",
+            "sanity": -8,
+            "saw_truth": true,
+            "set": [
+              "saw_lounge"
+            ]
+          },
+          "tester": {
+            "text": "The Patek man is sixty, bald and her uncle. 'Uncle Tunde, this is the one I told you about.' He shakes your hand too hard.",
+            "trust": 8,
+            "attachment": 8
+          }
+        }
+      },
+      {
+        "id": "call_bisola",
+        "label": "Call Bisola, her Yaba lash girl. Verify.",
+        "tags": [
+          "cautious"
+        ],
+        "requires": {
+          "flags": [
+            "knows_lash_girl"
+          ]
+        },
+        "receipt": "You called Bisola, her lash girl in Yaba, to check.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Bisola: 'Tiwa? She cancelled this morning.'",
+            "sanity": -5
+          }
+        ],
+        "truth_override": {
+          "main_boyfriend": {
+            "text": "Bisola: 'She cancelled. Said her boyfriend is taking her out. Are you the boyfriend?' Pause. 'Ah. Sorry.'",
+            "sanity": -10,
+            "saw_truth": true
+          },
+          "vendor_debt": {
+            "text": "Bisola: 'Tell her to pay me ₦85k first before she books again. Since January!'",
+            "sanity": -5,
+            "saw_truth": true
+          },
+          "tester": {
+            "text": "Bisola: 'She came, she paid, she left. Who are you?' Then: 'Oh. You're the one she likes.'",
+            "trust": 10,
+            "attachment": 6
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "tiwa_rf_wrong_name",
+    "character": "tiwa",
+    "slot": "red_flag",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "expression": "charming",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "1am. Her couch. Netflix asking 'Are you still watching?' She's half asleep on your shoulder, frontal on your shirt."
+      },
+      {
+        "who": "partner",
+        "text": "Mm. Thank you for today..."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "main_boyfriend": {
+        "id": "t_mb_name",
+        "text": "'...Deji.' She called you Deji. She's asleep, or she's pretending."
+      },
+      "vendor_debt": {
+        "id": "t_vd_calls",
+        "text": "Her phone buzzes nine times on the table. 'Hair Vendor 🦋'. She declines every call without opening her eyes."
+      },
+      "tester": {
+        "id": "t_test_cry",
+        "text": "She whispers 'Dayo', then opens her eyes. They're wet. 'Never mind.' She won't say more."
+      }
+    },
+    "choices": [
+      {
+        "id": "say_again",
+        "label": "Wake her gently. \"Say that again?\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You woke her up and asked her to say it again.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Say what? I said thank you.' She goes back to sleep. Or back to pretending.",
+            "trust": 2
+          }
+        ],
+        "truth_override": {
+          "main_boyfriend": {
+            "text": "'I said darling. D for darling.' Nobody in the history of Lagos has said D for darling.",
+            "sanity": -6,
+            "set": [
+              "heard_deji"
+            ]
+          },
+          "vendor_debt": {
+            "text": "She wakes up, sees nine missed calls and goes pale. 'Just the hair girl. She's dramatic.' She's shaking.",
+            "trust": 4,
+            "attachment": 2
+          },
+          "tester": {
+            "text": "She sits up. 'Dayo is my brother. He died in 2021. Sorry.' She tells you everything until 4am. You don't check your phone once.",
+            "trust": 15,
+            "attachment": 10
+          }
+        }
+      },
+      {
+        "id": "let_sleep",
+        "label": "Let her sleep. Lagos is tiring.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You let it go and let her sleep.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You pick the next episode. She drools on your shirt. It's sweet, mostly. You'll think about it at 3am.",
+            "attachment": 6,
+            "sanity": -5
+          }
+        ]
+      },
+      {
+        "id": "check_phone",
+        "label": "Check her phone while she sleeps.",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You went through Tiwa's phone while she slept.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Face ID. Your face is not her face. You learn nothing but humility.",
+            "sanity": -3
+          }
+        ],
+        "truth_override": {
+          "main_boyfriend": [
+            {
+              "chance": 0.6,
+              "text": "Lock screen: a man's hand, a Patek, a ring emoji and 'Deji 🔒'. You put it down like it's hot.",
+              "sanity": -10,
+              "saw_truth": true,
+              "set": [
+                "heard_deji"
+              ]
+            },
+            {
+              "chance": 0.4,
+              "text": "She opens one eye. 'Are you okay?' Her phone is in your hand. Nobody is okay.",
+              "bad": true,
+              "trust": -18,
+              "expression": "angry"
+            }
+          ],
+          "vendor_debt": [
+            {
+              "chance": 0.6,
+              "text": "41 notifications. 'Final notice'. 'Mama Kemi'. 'Car Dealer Ikate'. ₦4.2m across nine contacts.",
+              "sanity": -10,
+              "saw_truth": true
+            },
+            {
+              "chance": 0.4,
+              "text": "She opens one eye. 'Are you okay?' Her phone is in your hand. Nobody is okay.",
+              "bad": true,
+              "trust": -18,
+              "expression": "angry"
+            }
+          ],
+          "tester": [
+            {
+              "chance": 0.6,
+              "text": "Notes app, open: 'Things I want: someone who stays when it's not fun.' You put it back gently.",
+              "sanity": -3
+            },
+            {
+              "chance": 0.4,
+              "text": "She opens one eye. 'Are you okay?' Her phone is in your hand. Nobody is okay.",
+              "bad": true,
+              "trust": -15,
+              "expression": "angry"
+            }
+          ]
+        }
+      },
+      {
+        "id": "go_home",
+        "label": "Save her as 'Not Mine'. Go home.",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You saved her number as 'Not Mine' and went home at 1am.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You leave at 1:30am. She texts at 9: 'You left?? 🥺' You made your point. Points are lonely.",
+            "attachment": -6,
+            "sanity": 5,
+            "trust": 2
+          }
+        ],
+        "truth_override": {
+          "tester": {
+            "text": "She calls at 9am, worried: 'Did I say something?' She did. You don't tell her what. She sends breakfast.",
+            "attachment": 2,
+            "trust": 4
+          }
+        }
+      },
+      {
+        "id": "sugar_snack",
+        "label": "[Sugar] Order midnight shawarma on her app. Her card.",
+        "vibe": "sugar",
+        "receipt": "You ordered midnight shawarma on her account.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She wakes up to shawarma and laughs. 'You're bold.' Bold is her love language too.",
+            "attachment": 8,
+            "clout": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tiwa_rf_gwagon",
+    "character": "tiwa",
+    "slot": "red_flag",
+    "scene": {
+      "location": "lekki_salon",
+      "time": "afternoon",
+      "expression": "suspicious",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Admiralty Way. You arrive to pick her up from the salon. No G-Wagon outside. Again."
+      },
+      {
+        "who": "partner",
+        "text": "It's with the mechanic. Abeg book us a Bolt. And can you send for a week of Bolts? I'll pay you back."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "vendor_debt": {
+        "id": "t_vd_car",
+        "text": "Third time this month the G-Wagon is 'with the mechanic'. The salon girl mutters: 'Mechanic wey dey repossess.'"
+      },
+      "main_boyfriend": {
+        "id": "t_mb_weekend",
+        "text": "'Mechanic brings it back Saturday. I'm with family on weekends anyway.' Which family drives her car?"
+      },
+      "tester": {
+        "id": "t_test_return",
+        "text": "She hands back the AirPods you bought her. 'Return them. Use the money for the rides.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "bolt_week",
+        "label": "Send ₦35k for a week of Bolts.",
+        "tags": [
+          "excuse"
+        ],
+        "cost": 35000,
+        "receipt": "You sent Tiwa ₦35k for a week of rides.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Kiss emoji. That evening her story is from a G-Wagon: 'Mechanic was fast 😌'.",
+            "attachment": 8,
+            "sanity": -5
+          }
+        ],
+        "truth_override": {
+          "vendor_debt": {
+            "text": "Next day you spot her at the bus stop on Admiralty Way, in full glam. Your Bolt money is paying for something else.",
+            "attachment": 5,
+            "sanity": -6,
+            "tricked": true
+          },
+          "tester": {
+            "text": "She returns ₦20k the next day: 'I only used three rides.' Who returns change in Lagos?",
+            "wallet": 20000,
+            "trust": 10,
+            "attachment": 6
+          }
+        }
+      },
+      {
+        "id": "share_ride",
+        "label": "Share one Bolt. Ride with her.",
+        "tags": [
+          "budget"
+        ],
+        "cost": 4000,
+        "receipt": "You shared a ride home with her.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Twenty minutes on the Lekki-Epe Expressway. Her head on your shoulder. The driver plays Asa. It's a moment.",
+            "attachment": 6,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "see_car",
+        "label": "\"Which mechanic? Let's go and see the car.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked to go and see the car at the mechanic.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'You don't believe me?' She sulks, but she goes quiet in a way that means you hit something.",
+            "attachment": -4,
+            "trust": 3
+          }
+        ],
+        "truth_override": {
+          "vendor_debt": {
+            "text": "There is no mechanic. There's a car dealer in Ikate who wants ₦1.9m in arrears. She tells you on the expressway, crying.",
+            "attachment": 4,
+            "trust": 6,
+            "saw_truth": true
+          },
+          "main_boyfriend": {
+            "text": "'It's my uncle's mechanic. He's... far.' Uncle has a Patek in her stories.",
+            "trust": -2,
+            "sanity": -4
+          },
+          "tester": {
+            "text": "She takes you to a real mechanic in Lekki. The car is real. The bill is real. She's paying it herself, in instalments.",
+            "trust": 10,
+            "attachment": 6
+          }
+        }
+      },
+      {
+        "id": "walk",
+        "label": "\"Let's walk to the junction. Like real people.\"",
+        "receipt": "You made Tiwa walk to the junction with you.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She walks in heels on Admiralty Way and complains the whole time. By the junction, she's holding your hand.",
+            "attachment": 4,
+            "trust": 3
+          }
+        ]
+      },
+      {
+        "id": "weekends_q",
+        "label": "\"Back by Saturday? You said weekends are family.\"",
+        "tags": [
+          "call_out"
+        ],
+        "requires": {
+          "flags": [
+            "knows_weekends"
+          ]
+        },
+        "receipt": "You reminded her that her weekends are 'for family'.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Yes. Family drives me.' She shrugs. Fair enough, maybe.",
+            "trust": 3
+          }
+        ],
+        "truth_override": {
+          "main_boyfriend": {
+            "text": "She freezes. 'Family friends. Family... whatever.' She knows you know.",
+            "trust": -4,
+            "saw_truth": true
+          }
+        }
+      },
+      {
+        "id": "corp_loan",
+        "label": "[Corporate] Offer a documented loan for the repairs.",
+        "vibe": "corporate",
+        "receipt": "You offered Tiwa a documented car-repair loan.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She signs a promissory note with a heart over the i. Legally adorable.",
+            "attachment": 4,
+            "trust": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tiwa_mt_sister",
+    "character": "tiwa",
+    "slot": "money_trap",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "golden",
+      "expression": "charming",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "She's on FaceTime with her sisters. Then she turns the phone to you."
+      },
+      {
+        "who": "partner",
+        "text": "Funmi's birthday is this month! My third sister. She wants a small surprise. Like a Birkin. Or ₦250k. Whichever is easier for you 🥰"
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "main_boyfriend": {
+        "id": "t_mb_weekend",
+        "text": "The party is Saturday. 'Family only, babe. My weekends are for my family.' Funmi coughs on FaceTime."
+      },
+      "vendor_debt": {
+        "id": "t_vd_blocked",
+        "text": "Under the birthday flyer, the cake vendor: 'Balance first before I bake o 🙏'."
+      },
+      "tester": {
+        "id": "t_test_ask",
+        "text": "Funmi, on FaceTime, mouths something at Tiwa. It looks like: 'Is this the test?'"
+      }
+    },
+    "choices": [
+      {
+        "id": "send_250",
+        "label": "Send the ₦250k. Sisters are sacred.",
+        "tags": [
+          "luxury"
+        ],
+        "cost": 250000,
+        "receipt": "You sent ₦250k for her third sister's birthday.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Funmi sends a 40-second scream. Tiwa calls you 'my person' for the first time.",
+            "attachment": 15,
+            "set": [
+              {
+                "flag": "sent_test_money",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "main_boyfriend": {
+            "text": "Funmi says thank you. The party photos: Tiwa in a new frontal beside a Patek. Funmi got a cake.",
+            "attachment": 10,
+            "sanity": -10,
+            "tricked": true,
+            "set": [
+              {
+                "flag": "sent_test_money",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "vendor_debt": {
+            "text": "₦180k goes to the cake vendor's old balance. Funmi gets a cupcake and your name in the caption.",
+            "attachment": 8,
+            "sanity": -6,
+            "tricked": true,
+            "set": [
+              {
+                "flag": "sent_test_money",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "tester": {
+            "text": "She stares at the alert. 'You haven't even met Funmi.' She sends ₦200k back. Keeps ₦50k 'for the cake'.",
+            "wallet": 200000,
+            "attachment": 6,
+            "trust": 6
+          }
+        }
+      },
+      {
+        "id": "cake",
+        "label": "Send a ₦20k cake from Yaba. Name spelt right.",
+        "tags": [
+          "budget"
+        ],
+        "cost": 20000,
+        "receipt": "You sent Funmi a ₦20k cake instead of cash.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Funmi posts it: 'From my sister's babe 🥰'. Small cake. Big credit.",
+            "attachment": 5,
+            "trust": 5
+          }
+        ],
+        "truth_override": {
+          "tester": {
+            "text": "Funmi FaceTimes you herself. 'You're the first one who didn't just send cash. Tiwa is crying.'",
+            "attachment": 10,
+            "trust": 12
+          }
+        }
+      },
+      {
+        "id": "two_sisters",
+        "label": "\"Wait. You told me you have two sisters.\"",
+        "tags": [
+          "call_out",
+          "cautious"
+        ],
+        "receipt": "You asked how a two-sister family got a third sister.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Funmi is third. Ronke is second. Bimpe— you don't listen to me!' You now know of four sisters.",
+            "attachment": -3,
+            "trust": 3
+          }
+        ],
+        "truth_override": {
+          "main_boyfriend": {
+            "text": "'Cousin-sister.' Funmi, still on FaceTime: 'From Deji's side.' The call ends very fast.",
+            "trust": -3,
+            "saw_truth": true
+          },
+          "vendor_debt": {
+            "text": "'Okay fine, it's not for Funmi. The cake vendor will sue me.' She actually says it out loud.",
+            "trust": 5,
+            "saw_truth": true
+          },
+          "tester": {
+            "text": "'Two sisters and a cousin who thinks she's a sister. You were listening. Funmi, they listen!'",
+            "attachment": 6,
+            "trust": 8
+          }
+        }
+      },
+      {
+        "id": "funmi_21",
+        "label": "Send Funmi a gift. \"Happy 21st, third of four.\"",
+        "requires": {
+          "flags": [
+            "knows_sister"
+          ]
+        },
+        "cost": 15000,
+        "receipt": "You remembered Funmi was turning 21 and sent a gift.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'You remembered she's 21?' Tiwa goes quiet. 'Nobody remembers Funmi.'",
+            "attachment": 12,
+            "trust": 10
+          }
+        ],
+        "truth_override": {
+          "main_boyfriend": {
+            "text": "'You remembered?' She smiles for real. Then she leaves the room to take another call.",
+            "attachment": 8,
+            "trust": 6
+          }
+        }
+      },
+      {
+        "id": "bigboy_birkin",
+        "label": "[Big Boy] Buy Funmi an actual Birkin. Watch the family fold.",
+        "tags": [
+          "luxury"
+        ],
+        "vibe": "bigboy",
+        "cost": 900000,
+        "receipt": "You bought her sister an actual Birkin.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Her mother calls you 'our in-law'. Three aunties follow you. You are now a family asset.",
+            "attachment": 20,
+            "clout": 30,
+            "exposure": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tiwa_mt_vendor",
+    "character": "tiwa",
+    "slot": "money_trap",
+    "scene": {
+      "location": "lekki_salon",
+      "time": "afternoon",
+      "expression": "caught",
+      "mood": "negative",
+      "npc": {
+        "name": "Mama Kemi"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Admiralty Way salon. Mama Kemi, the hair vendor, has Tiwa's 30-inch frontal in one hand and scissors in the other."
+      },
+      {
+        "who": "Mama Kemi",
+        "text": "₦350k today or I cut it. On her head. On camera."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "vendor_debt": {
+        "id": "t_vd_calls",
+        "text": "Tiwa's bag keeps ringing: 'Car Vendor', 'Lash Vendor', 'Mama Kemi 2'. Mama Kemi is standing right here."
+      },
+      "main_boyfriend": {
+        "id": "t_mb_name",
+        "text": "Tiwa, panicking, calls you 'Deji' twice. 'Babe. Babe. You, babe.'"
+      },
+      "tester": {
+        "id": "t_test_cry",
+        "text": "Tiwa isn't panicking. She's watching you. When Mama Kemi turns away, Tiwa's eyes are wet anyway."
+      }
+    },
+    "choices": [
+      {
+        "id": "pay_all",
+        "label": "Pay the ₦350k. Save the frontal.",
+        "tags": [
+          "luxury"
+        ],
+        "cost": 350000,
+        "receipt": "You paid Mama Kemi ₦350k to save Tiwa's frontal.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Mama Kemi counts it twice, kisses the frontal, hands it back. Tiwa hugs you like you pulled her off Third Mainland.",
+            "attachment": 15,
+            "set": [
+              {
+                "flag": "paid_vendor",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "main_boyfriend": {
+            "text": "Tiwa thanks you. On the way out she whispers into her phone: 'Sorted, babe. No, I didn't use yours.'",
+            "attachment": 8,
+            "sanity": -10,
+            "tricked": true,
+            "set": [
+              {
+                "flag": "paid_vendor",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "vendor_debt": {
+            "text": "Mama Kemi takes it. 'That's March. What of April?' Tiwa's face falls off with the edges.",
+            "attachment": 10,
+            "sanity": -10,
+            "saw_truth": true,
+            "set": [
+              {
+                "flag": "paid_vendor",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "tester": {
+            "text": "Mama Kemi winks at Tiwa. Tiwa winks back. Wait. That night ₦350k returns: 'She's my aunty. Sorry. I had to know.'",
+            "wallet": 350000,
+            "attachment": 8,
+            "trust": 5
+          }
+        }
+      },
+      {
+        "id": "pay_part",
+        "label": "Pay ₦50k. \"Mama, take this one and breathe.\"",
+        "tags": [
+          "budget"
+        ],
+        "cost": 50000,
+        "receipt": "You paid Mama Kemi ₦50k to calm things down.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Mama Kemi lowers the scissors. Not all the way.",
+            "attachment": 4,
+            "trust": 3,
+            "set": [
+              {
+                "flag": "paid_vendor",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "tester": {
+            "text": "Mama Kemi laughs: 'This one is wise.' Tiwa laughs too. Something here is staged.",
+            "attachment": 4,
+            "trust": 6
+          }
+        }
+      },
+      {
+        "id": "plan",
+        "label": "\"Mama, let's talk payment plan. Tiwa, sit.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You brokered a payment plan between Tiwa and her vendor.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You draw a 6-month plan on a salon napkin. Mama Kemi respects it. Tiwa is mortified and grateful.",
+            "attachment": -2,
+            "trust": 8
+          }
+        ],
+        "truth_override": {
+          "vendor_debt": {
+            "text": "Mama Kemi opens a notebook: 'Car, lashes, hair, bags. ₦4.2m total.' Tiwa stares at the floor tiles.",
+            "trust": 8,
+            "saw_truth": true
+          },
+          "tester": {
+            "text": "Mama Kemi tears up the napkin. 'She doesn't owe me. She wanted to see what you'd do.' Tiwa: 'Sorry.'",
+            "attachment": 6,
+            "trust": 10
+          }
+        }
+      },
+      {
+        "id": "walk_out",
+        "label": "Walk out. Not your frontal, not your wahala.",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You walked out on the frontal hostage situation.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You hear the scissors from the car park. Then a scream. An hour later her story: 'Pixie cut era 😌'.",
+            "attachment": -10,
+            "sanity": 5
+          }
+        ],
+        "truth_override": {
+          "tester": {
+            "text": "Her story an hour later: a pixie cut. Caption: 'Some people show you who they are.' It's about you.",
+            "attachment": -10,
+            "trust": -5
+          }
+        }
+      },
+      {
+        "id": "dont_pick",
+        "label": "\"Mama Kemi? The one I shouldn't pick?\"",
+        "tags": [
+          "call_out"
+        ],
+        "requires": {
+          "flags": [
+            "knows_mama_kemi"
+          ]
+        },
+        "receipt": "You told Mama Kemi that Tiwa warned you not to pick her calls.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Tiwa turns grey. Mama Kemi turns to her: 'You told people not to pick my calls?'",
+            "sanity": -3
+          }
+        ],
+        "truth_override": {
+          "vendor_debt": {
+            "text": "Mama Kemi to Tiwa: 'You told people not to pick my calls?' Tiwa: 'Mummy, please.' The whole salon knows now.",
+            "saw_truth": true,
+            "clout": 5
+          },
+          "main_boyfriend": {
+            "text": "'I said that because she calls Deji too.' Mama Kemi: 'Your boyfriend owes me nothing. You owe me.'",
+            "saw_truth": true,
+            "sanity": -6
+          },
+          "tester": {
+            "text": "Mama Kemi bursts out laughing. 'She told you that? I'm her aunty! This girl plays too much.'",
+            "attachment": 6,
+            "trust": 8
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "tiwa_mt_supper_club",
+    "character": "tiwa",
+    "slot": "money_trap",
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "afternoon",
+      "expression": "charming",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "She slides a pitch deck across the brunch table. 'Soft Life Supper Club. Pop-up dinners in VI. ₦500k gets you 20%.'"
+      },
+      {
+        "who": "partner",
+        "text": "Babe, I'm building something. Be my first investor. Be my co-founder. Be my everything."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "vendor_debt": {
+        "id": "t_vd_car",
+        "text": "Slide 9, 'Assets': a G-Wagon. The same G-Wagon that is 'with the mechanic'."
+      },
+      "main_boyfriend": {
+        "id": "t_mb_story",
+        "text": "Slide 2, 'Our Team': a photo cropped tight. You can still see a man's wrist. And a Patek."
+      },
+      "tester": {
+        "id": "t_test_ask",
+        "text": "Last slide: 'Ask: ₦500k.' Underneath, tiny: 'or 50k. Let me see something.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "invest",
+        "label": "Invest ₦500k. Co-founder energy.",
+        "tags": [
+          "luxury"
+        ],
+        "cost": 500000,
+        "receipt": "You invested ₦500k in Tiwa's supper club.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She screams, hugs you, posts 'My investor 💼'. The pop-up never pops.",
+            "attachment": 15,
+            "set": [
+              {
+                "flag": "sent_test_money",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "main_boyfriend": {
+            "text": "The 'supper club' is one dinner, on Saturday, for Deji's birthday. Your money bought the cake.",
+            "attachment": 8,
+            "sanity": -15,
+            "tricked": true,
+            "set": [
+              {
+                "flag": "sent_test_money",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "vendor_debt": {
+            "text": "₦500k splits into nine vendor transfers inside an hour. Your 20% is 20% of debt.",
+            "attachment": 8,
+            "sanity": -15,
+            "tricked": true,
+            "set": [
+              {
+                "flag": "sent_test_money",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "tester": {
+            "text": "She opens a business account with you as director and shows you every receipt. It's real. Tiny, but real.",
+            "attachment": 12,
+            "trust": 15
+          }
+        }
+      },
+      {
+        "id": "small",
+        "label": "Invest ₦50k. Prove it first.",
+        "tags": [
+          "budget"
+        ],
+        "cost": 50000,
+        "receipt": "You put ₦50k into her supper club as a test.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Fifty?' She takes it. Your 2% is honest work.",
+            "attachment": 2,
+            "trust": 4,
+            "set": [
+              {
+                "flag": "sent_test_money",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "tester": {
+            "text": "She sends a Google Sheet with your ₦50k in green. Two weeks later the first pop-up sells out.",
+            "attachment": 8,
+            "trust": 10
+          }
+        }
+      },
+      {
+        "id": "plan",
+        "label": "\"Send me the business plan and the invoices.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked for the business plan and the invoices.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Business plan?' She looks at you like you asked for her BVN.",
+            "attachment": -4,
+            "trust": 3,
+            "set": [
+              {
+                "flag": "asked_invoice",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "vendor_debt": {
+            "text": "The 'invoices' she sends are vendor demand letters. Wrong folder. Or the right one.",
+            "trust": 5,
+            "saw_truth": true,
+            "set": [
+              {
+                "flag": "asked_invoice",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "tester": {
+            "text": "A 22-page plan by midnight. Cash flow, menus, a bank pitch. She is serious and she wanted you to see it.",
+            "attachment": 5,
+            "trust": 10,
+            "set": [
+              {
+                "flag": "asked_invoice",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "laugh",
+        "label": "Laugh. \"Babe, your supper club is a group chat.\"",
+        "receipt": "You laughed at Tiwa's supper club pitch.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She laughs too. Then she doesn't. 'You think I'm unserious.' She orders the most expensive thing on the menu.",
+            "attachment": -6,
+            "trust": -2
+          }
+        ],
+        "truth_override": {
+          "tester": {
+            "text": "'Everyone thinks that.' She closes the laptop. 'You're the first to say it to my face.'",
+            "trust": 6,
+            "attachment": -2
+          }
+        }
+      },
+      {
+        "id": "agoyin",
+        "label": "\"Forget brunch. Ewa agoyin under the bridge?\"",
+        "requires": {
+          "flags": [
+            "knows_agoyin"
+          ]
+        },
+        "receipt": "You took Tiwa for ewa agoyin instead of brunch.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Twenty minutes later she's on a bench under Ojuelegba bridge with a plate of beans and no ring light. 'Don't tell anybody.'",
+            "attachment": 12,
+            "trust": 8,
+            "set": [
+              {
+                "flag": "brought_agoyin",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "runs_interest",
+        "label": "[Runs] \"I'll invest. With interest. In writing.\"",
+        "vibe": "runs",
+        "cost": 100000,
+        "receipt": "You offered Tiwa a loan with interest, in writing.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She signs. You both know you'll never see it. You both enjoy the theatre.",
+            "attachment": 6,
+            "trust": -2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tiwa_pd_rival",
+    "character": "tiwa",
+    "slot": "public_drama",
+    "sets": [
+      {
+        "flag": "met_deji",
+        "knows": [
+          "player",
+          "partner"
+        ]
+      }
+    ],
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "afternoon",
+      "expression": "suspicious",
+      "mood": "neutral",
+      "npc": {
+        "name": "Deji"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Brunch, rooftop off Bourdillon. A white G-Wagon double-parks outside. A man in a Patek walks in with roses."
+      },
+      {
+        "who": "Deji",
+        "text": "Tiwa. My car is outside. Your seat is in it."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "main_boyfriend": {
+        "id": "t_mb_story",
+        "text": "The Patek. You've seen it before, in her stories, on her thigh."
+      },
+      "vendor_debt": {
+        "id": "t_vd_car",
+        "text": "Deji jangles the keys: 'And tell your mechanic I want my car back.' It's his G-Wagon. She's been 'leasing'."
+      },
+      "tester": {
+        "id": "t_test_return",
+        "text": "Tiwa hands him the roses back without looking up. 'I returned your gifts already, Deji. All of them.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "hold_hand",
+        "label": "Hold her hand on the table. Say nothing.",
+        "tags": [
+          "discreet"
+        ],
+        "receipt": "You held Tiwa's hand while Deji stood there.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Deji looks at your hand. Then at her. He leaves the roses. 'Enjoy your Corolla.'",
+            "attachment": 8,
+            "trust": 4
+          }
+        ],
+        "truth_override": {
+          "main_boyfriend": {
+            "text": "She slides her hand out of yours. 'Give me five minutes.' She is gone for forty.",
+            "attachment": -8,
+            "sanity": -10,
+            "saw_truth": true
+          },
+          "vendor_debt": {
+            "text": "Deji: 'Fine. ₦1.9m by Friday or I collect my car.' Tiwa grips your hand harder.",
+            "attachment": 8,
+            "sanity": -5,
+            "saw_truth": true
+          },
+          "tester": {
+            "text": "She squeezes back. Hard. 'Thank you for not making it a fight.'",
+            "attachment": 12,
+            "trust": 10
+          }
+        }
+      },
+      {
+        "id": "outspend",
+        "label": "Order the priciest bottle. Send him one too.",
+        "tags": [
+          "luxury"
+        ],
+        "cost": 150000,
+        "receipt": "You out-ordered the man in the G-Wagon.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The waiter brings two bottles and a sparkler. Deji raises his glass at you. Respect, or war.",
+            "attachment": 10,
+            "clout": 20
+          }
+        ],
+        "truth_override": {
+          "main_boyfriend": {
+            "text": "Deji pays for both bottles with a card he doesn't look at. You've been outspent at your own flex.",
+            "clout": -10,
+            "sanity": -10,
+            "saw_truth": true
+          },
+          "tester": {
+            "text": "She puts her hand over the menu. 'Stop. You don't have to buy me back. I'm not for sale.'",
+            "attachment": 2,
+            "trust": 4
+          }
+        }
+      },
+      {
+        "id": "small_chops",
+        "label": "Share your small chops. Stay unbothered.",
+        "tags": [
+          "budget"
+        ],
+        "receipt": "You kept eating small chops while Deji waited.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You keep eating. Deji waits. Nobody gets up. He leaves. The small chops were excellent.",
+            "attachment": 2,
+            "clout": 5,
+            "sanity": 5
+          }
+        ],
+        "truth_override": {
+          "tester": {
+            "text": "She takes a puff-puff off your plate. Deji leaves. 'You didn't even flinch.' She's impressed.",
+            "attachment": 8,
+            "trust": 6
+          }
+        }
+      },
+      {
+        "id": "call_out",
+        "label": "Stand up. \"Oga, she's on a date.\"",
+        "tags": [
+          "public_embarrassment",
+          "call_out"
+        ],
+        "receipt": "You stood up and called Deji out on the rooftop.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The rooftop goes silent. Two phones start recording. Deji laughs: 'Ask her whose rent she's on.'",
+            "attachment": 4,
+            "clout": 15,
+            "exposure": 15
+          }
+        ],
+        "truth_override": {
+          "main_boyfriend": {
+            "text": "'Ask her where she sleeps on Saturdays.' Forty brunch tables now know. She picks up her bag.",
+            "clout": 20,
+            "exposure": 20,
+            "saw_truth": true,
+            "truth_exposed": true,
+            "goal": {
+              "revenge": 30
+            }
+          },
+          "vendor_debt": {
+            "text": "'Ask her about my car payment!' The whole rooftop now knows about the car.",
+            "clout": 20,
+            "exposure": 20,
+            "saw_truth": true,
+            "truth_exposed": true,
+            "goal": {
+              "revenge": 30
+            }
+          }
+        }
+      },
+      {
+        "id": "bigboy_keys",
+        "label": "[Big Boy] Toss him your G-Wagon keys. \"Mine's newer.\"",
+        "vibe": "bigboy",
+        "receipt": "You flexed your own G-Wagon on Deji.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The rooftop gasps. Deji leaves. Tiwa looks at you like a new episode just dropped.",
+            "attachment": 12,
+            "clout": 25,
+            "exposure": 10
+          }
+        ]
+      },
+      {
+        "id": "lover_dance",
+        "label": "[Lover] Ask her to dance. Right there, by the rail.",
+        "vibe": "lover",
+        "receipt": "You asked Tiwa to dance in front of Deji.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "No music, just the DJ's playlist. She dances anyway. Deji's roses wilt on the table.",
+            "attachment": 10,
+            "trust": 4
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tiwa_pd_live",
+    "character": "tiwa",
+    "slot": "public_drama",
+    "scene": {
+      "location": "lekki_salon",
+      "time": "afternoon",
+      "expression": "charming",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Admiralty Way salon. Her ring light snaps on. She's live. 40,000 people watching."
+      },
+      {
+        "who": "partner",
+        "text": "Guys, meet my... my person! Say hi to the babies 🥰"
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "vendor_debt": {
+        "id": "t_vd_blocked",
+        "text": "A comment floats up: 'Tiwa pay your lash girl before you introduce anybody 😂'. Forty laughing emojis follow."
+      },
+      "main_boyfriend": {
+        "id": "t_mb_story",
+        "text": "A comment: 'Isn't this the Patek guy's babe? 👀' Tiwa blocks the account mid-sentence."
+      },
+      "tester": {
+        "id": "t_test_cry",
+        "text": "When the live ends, the ring light stays on. She stares into it. Her eyes are wet. 'It's the light,' she says."
+      }
+    },
+    "choices": [
+      {
+        "id": "wave",
+        "label": "Wave. Do the dance she taught you.",
+        "receipt": "You danced on Tiwa's live.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "15,000 likes. The comments ship you. A blog screenshots it. You are now 'Tiwa's new one'.",
+            "attachment": 8,
+            "clout": 20,
+            "exposure": 15,
+            "set": [
+              {
+                "flag": "secret_on_her_page",
+                "knows": [
+                  "player",
+                  "partner",
+                  "world"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "step_out",
+        "label": "Step out of frame. \"Not on camera, babe.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You stepped out of Tiwa's live.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She keeps smiling for the live, but her eyes follow you out. After: 'You're embarrassed of me?'",
+            "attachment": -6,
+            "trust": 5
+          }
+        ],
+        "truth_override": {
+          "tester": {
+            "text": "She ends the live early. 'I love that you don't want them. I'm so tired of them.'",
+            "attachment": 8,
+            "trust": 10
+          }
+        }
+      },
+      {
+        "id": "read_comment",
+        "label": "Read the nastiest comment out loud. Live.",
+        "tags": [
+          "public_embarrassment",
+          "toxic"
+        ],
+        "receipt": "You read a vendor's comment out loud on Tiwa's live.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "40,000 people hear 'pay your lash girl'. She smiles through it like a hostage. The live ends.",
+            "attachment": -10,
+            "clout": 15,
+            "exposure": 20
+          }
+        ],
+        "truth_override": {
+          "vendor_debt": {
+            "text": "40,000 people hear 'pay your lash girl'. Then twelve more vendors join the comments. The live ends itself.",
+            "attachment": -10,
+            "clout": 15,
+            "exposure": 20,
+            "saw_truth": true,
+            "truth_exposed": true,
+            "goal": {
+              "revenge": 30
+            }
+          }
+        }
+      },
+      {
+        "id": "hold_ring",
+        "label": "Hold the ring light for her. Be crew.",
+        "receipt": "You held Tiwa's ring light through her live.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Two hours, one arm, zero credit. Afterwards she kisses your shoulder: 'Best crew I've ever had.'",
+            "attachment": 6,
+            "trust": 4,
+            "sanity": -3
+          }
+        ]
+      },
+      {
+        "id": "ring_off",
+        "label": "\"Your ring light's off. Talk to me.\"",
+        "requires": {
+          "flags": [
+            "knows_ring_light"
+          ]
+        },
+        "receipt": "You noticed her ring light was off and asked her to talk.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "After the live, the light clicks off. 'Okay. Okay. Let me tell you.'",
+            "attachment": 8,
+            "trust": 10
+          }
+        ],
+        "truth_override": {
+          "main_boyfriend": {
+            "text": "'You noticed?' She almost tells you something. Then her phone rings. 'Later.'",
+            "attachment": 5,
+            "trust": 5,
+            "sanity": -5
+          },
+          "vendor_debt": {
+            "text": "She tells you about the ₦4.2m. Every vendor. Every lie. It takes an hour and a whole box of tissues.",
+            "attachment": 8,
+            "trust": 12,
+            "saw_truth": true
+          },
+          "tester": {
+            "text": "'Nobody ever remembers that.' She cries, finally, for real. Then laughs at herself.",
+            "attachment": 12,
+            "trust": 15
+          }
+        }
+      },
+      {
+        "id": "runs_plug",
+        "label": "[Runs] Plug your hustle in her comments.",
+        "vibe": "runs",
+        "receipt": "You plugged your business on Tiwa's live.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Your WhatsApp gets 300 messages. Tiwa sends you an invoice for 'airtime'. She's not joking.",
+            "attachment": -2,
+            "clout": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tiwa_pd_owambe",
+    "character": "tiwa",
+    "slot": "public_drama",
+    "scene": {
+      "location": "mainland_street",
+      "time": "golden",
+      "expression": "charming",
+      "mood": "neutral",
+      "npc": {
+        "name": "Aunty Bisi"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Her cousin's owambe in Surulere. The aso-ebi nobody told you about costs ₦45k. Aunty Bisi has you by the wrist."
+      },
+      {
+        "who": "Aunty Bisi",
+        "text": "So you are the one? When are you coming to see her father?"
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "main_boyfriend": {
+        "id": "t_mb_weekend",
+        "text": "Aunty Bisi, louder: 'Tiwa, where is the other one? The one who comes every weekend?' Tiwa: 'Aunty, jollof is finishing.'"
+      },
+      "vendor_debt": {
+        "id": "t_vd_blocked",
+        "text": "The aso-ebi coordinator corners Tiwa by the canopy: 'Your balance since March. I won't shout in front of your guest.' She shouts."
+      },
+      "tester": {
+        "id": "t_test_cry",
+        "text": "Her mother hugs you too long. Tiwa disappears to the car. When she comes back her mascara is fixed. Her eyes aren't."
+      }
+    },
+    "choices": [
+      {
+        "id": "aso_ebi",
+        "label": "Buy the aso-ebi. Dance with the aunties.",
+        "tags": [
+          "luxury"
+        ],
+        "cost": 45000,
+        "receipt": "You bought aso-ebi and danced with her aunties.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Aunty Bisi sprays you ₦500 notes. Tiwa watches you dance with her family and forgets to film.",
+            "attachment": 12,
+            "clout": 10
+          }
+        ],
+        "truth_override": {
+          "main_boyfriend": {
+            "text": "The aunties love you. One asks, loudly, if you're 'the weekday one'. Tiwa laughs too long.",
+            "attachment": 8,
+            "sanity": -8
+          }
+        }
+      },
+      {
+        "id": "jeans",
+        "label": "Come in jeans. Dance anyway.",
+        "tags": [
+          "budget"
+        ],
+        "receipt": "You danced at the owambe in jeans.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The aunties call you 'the one in jeans'. By the end of the night it's affectionate.",
+            "attachment": 4,
+            "trust": 4,
+            "clout": -5
+          }
+        ]
+      },
+      {
+        "id": "kola",
+        "label": "\"Next month, Aunty. I'll bring kola.\"",
+        "receipt": "You promised Aunty Bisi you'd come and see Tiwa's father.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Aunty Bisi announces it to the canopy. Tiwa chokes on her Chapman. You are engaged now, culturally.",
+            "attachment": 15,
+            "trust": -3,
+            "sanity": -5
+          }
+        ],
+        "truth_override": {
+          "tester": {
+            "text": "Tiwa doesn't laugh it off. She looks at you like she's checking whether you meant it.",
+            "attachment": 12,
+            "trust": 8
+          },
+          "main_boyfriend": {
+            "text": "Tiwa drags you to the car. 'Why would you say that?' Not 'are you serious'. Why.",
+            "attachment": -5,
+            "sanity": -10,
+            "saw_truth": true
+          }
+        }
+      },
+      {
+        "id": "agoyin",
+        "label": "Find her ewa agoyin. Not jollof.",
+        "requires": {
+          "flags": [
+            "knows_agoyin"
+          ]
+        },
+        "receipt": "You found Tiwa a plate of ewa agoyin at the owambe.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She stares at the beans. 'You remembered?' She eats it in her gele, on the kerb, happiest you've ever seen her.",
+            "attachment": 15,
+            "trust": 10,
+            "set": [
+              {
+                "flag": "brought_agoyin",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sugar_spray",
+        "label": "[Sugar] Let the aunties spray you. Collect quietly.",
+        "vibe": "sugar",
+        "receipt": "You collected the aunties' owambe spray money.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "₦38k in ₦500 notes. Tiwa is impressed and slightly threatened.",
+            "wallet": 38000,
+            "clout": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tiwa_cf_main_boyfriend",
+    "character": "tiwa",
+    "slot": "confrontation",
+    "requires": {
+      "truth": [
+        "main_boyfriend"
+      ]
+    },
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "expression": "caught",
+      "mood": "negative",
+      "npc": {
+        "name": "Deji"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Her flat, Saturday, 10pm. A key turns in the door. Not hers. A man in a Patek walks in carrying groceries."
+      },
+      {
+        "who": "Deji",
+        "text": "Tiwa, who is this? And why are they wearing my slippers?"
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "main_boyfriend": {
+        "id": "t_mb_name",
+        "text": "Tiwa, frozen, says the only thing she can: 'Deji, babe, this is— Deji.' She says his name twice. Neither time to you."
+      }
+    },
+    "choices": [
+      {
+        "id": "choose",
+        "label": "\"Tiwa. Choose. Now.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You told Tiwa to choose, right there.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "She looks at Deji. Then at you. 'Deji, give me my key.' He does. He leaves. Then she cries on your chest for an hour.",
+            "attachment": 15,
+            "trust": 12,
+            "saw_truth": true
+          },
+          {
+            "chance": 0.5,
+            "text": "She looks at Deji for too long. That's the answer. You let yourself out.",
+            "bad": true,
+            "attachment": -20,
+            "sanity": -15,
+            "saw_truth": true
+          }
+        ]
+      },
+      {
+        "id": "silence_fee",
+        "label": "\"I'll leave quietly. For a fee.\"",
+        "receipt": "You charged Deji for your silence.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Deji transfers ₦1m without looking up. 'Don't come back.' Tiwa doesn't stop you.",
+            "wallet": 1000000,
+            "attachment": -20,
+            "saw_truth": true
+          }
+        ]
+      },
+      {
+        "id": "post_it",
+        "label": "Post the whole thing. Slippers and all.",
+        "tags": [
+          "toxic",
+          "public_embarrassment"
+        ],
+        "receipt": "You posted the main boyfriend showdown online.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The Parlour feasts: 'ATM meets the main character.' Her 200k followers watch her get exposed in HD.",
+            "attachment": -25,
+            "clout": 30,
+            "exposure": 25,
+            "saw_truth": true,
+            "truth_exposed": true,
+            "goal": {
+              "revenge": 50
+            }
+          }
+        ]
+      },
+      {
+        "id": "weekday",
+        "label": "\"It's fine. I'm the weekday one.\"",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You agreed to be Tiwa's weekday one.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Deji shrugs. Tiwa exhales. You've just signed up for weekdays only. She's sweeter to you than ever.",
+            "attachment": 15,
+            "trust": 5,
+            "sanity": -20
+          }
+        ]
+      },
+      {
+        "id": "barefoot",
+        "label": "Take off his slippers. Walk out barefoot.",
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You took off Deji's slippers and walked out.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Admiralty Way at night, barefoot. A keke driver asks no questions. Respect.",
+            "sanity": 10,
+            "saw_truth": true,
+            "end": "walked_away"
+          }
+        ]
+      },
+      {
+        "id": "deji_named",
+        "label": "\"Deji. The G-Wagon. Of course.\"",
+        "tags": [
+          "call_out"
+        ],
+        "requires": {
+          "any_flags": [
+            "met_deji",
+            "heard_deji"
+          ]
+        },
+        "receipt": "You called Deji by name before anyone introduced him.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Deji: 'You know me?' Tiwa: 'They know everything.' You do, actually.",
+            "trust": -5,
+            "clout": 10,
+            "saw_truth": true
+          }
+        ]
+      },
+      {
+        "id": "weekends",
+        "label": "\"Weekends are for family. You're the family?\"",
+        "tags": [
+          "call_out"
+        ],
+        "requires": {
+          "flags": [
+            "knows_weekends"
+          ]
+        },
+        "receipt": "You quoted her 'weekends are for family' line at Deji.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Deji laughs, bitterly. 'Family? I'm the boyfriend. Weekdays are for her sponsors.' Sponsors. Plural.",
+            "sanity": -10,
+            "saw_truth": true
+          }
+        ]
+      },
+      {
+        "id": "lounge",
+        "label": "\"I saw you both at the lounge in VI.\"",
+        "requires": {
+          "flags": [
+            "saw_lounge"
+          ]
+        },
+        "receipt": "You told them you'd seen them at the lounge in VI.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Tiwa sits down on the floor. 'I'm tired. I'm so tired of this.' Deji, for the first time, looks at her properly.",
+            "attachment": 6,
+            "trust": 6,
+            "saw_truth": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tiwa_cf_vendor_debt",
+    "character": "tiwa",
+    "slot": "confrontation",
+    "requires": {
+      "truth": [
+        "vendor_debt"
+      ]
+    },
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "morning",
+      "expression": "caught",
+      "mood": "negative",
+      "npc": {
+        "name": "Mama Kemi"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "7am. Banging on her door: Mama Kemi, the lash girl, the car dealer's boy and a man with a tow truck."
+      },
+      {
+        "who": "Mama Kemi",
+        "text": "₦4.2 million! Today! Or we carry everything, including your new babe!"
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "vendor_debt": {
+        "id": "t_vd_car",
+        "text": "Through the window, the G-Wagon is already on the tow truck. It was never with the mechanic."
+      }
+    },
+    "choices": [
+      {
+        "id": "plan",
+        "label": "Sit them down. Make a payment plan together.",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You sat down with her vendors and made a payment plan.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Three hours on her floor with a calculator. She signs everything. 'Nobody has ever stayed for the boring part.'",
+            "attachment": 12,
+            "trust": 15,
+            "sanity": -5,
+            "saw_truth": true
+          }
+        ]
+      },
+      {
+        "id": "pay_one",
+        "label": "Pay one vendor. Buy her an hour.",
+        "cost": 100000,
+        "receipt": "You paid one of Tiwa's vendors to buy her time.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Mama Kemi takes it and goes. The others stay. One hour bought. Tiwa holds your arm the whole hour.",
+            "attachment": 10,
+            "saw_truth": true
+          }
+        ]
+      },
+      {
+        "id": "sell_gist",
+        "label": "Sell the gist to a blog. ₦800k.",
+        "tags": [
+          "toxic",
+          "public_embarrassment"
+        ],
+        "receipt": "You sold Tiwa's debt story to a blog.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The blog pays. 'Soft-life influencer owes ₦4.2m.' You're rich and you're the villain.",
+            "wallet": 800000,
+            "attachment": -30,
+            "exposure": 15,
+            "saw_truth": true,
+            "truth_exposed": true,
+            "goal": {
+              "revenge": 50
+            }
+          }
+        ]
+      },
+      {
+        "id": "fence",
+        "label": "Climb out the back. Block everyone.",
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You climbed over her back fence and blocked everyone.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Your shirt doesn't make it over the fence. You do. Lekki Phase 1 at 7am, half dressed, free.",
+            "sanity": 8,
+            "saw_truth": true,
+            "end": "walked_away"
+          }
+        ]
+      },
+      {
+        "id": "mechanic",
+        "label": "\"Your car is with the mechanic, abi?\"",
+        "tags": [
+          "call_out"
+        ],
+        "receipt": "You asked if the car was 'with the mechanic'.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She laughs. Then cries. Then laughs. 'The mechanic is a tow truck.'",
+            "attachment": -4,
+            "trust": 5,
+            "saw_truth": true
+          }
+        ]
+      },
+      {
+        "id": "invoices",
+        "label": "\"No invoices. Now I know why.\"",
+        "requires": {
+          "flags": [
+            "asked_invoice"
+          ]
+        },
+        "receipt": "You told her you finally understood the missing invoices.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'I sent the wrong folder on purpose. I wanted you to find out without me saying it.'",
+            "attachment": 5,
+            "trust": 10,
+            "saw_truth": true
+          }
+        ]
+      },
+      {
+        "id": "paid_before",
+        "label": "\"Mama Kemi, I paid you last week!\"",
+        "requires": {
+          "flags": [
+            "paid_vendor"
+          ]
+        },
+        "receipt": "You reminded Mama Kemi you'd already paid her.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Mama Kemi: 'You paid March. This is the April of March.' She leaves the frontal. Nobody leaves the car.",
+            "sanity": -8,
+            "saw_truth": true
+          }
+        ]
+      },
+      {
+        "id": "dont_pick",
+        "label": "\"Mama Kemi. The one I shouldn't pick.\"",
+        "requires": {
+          "flags": [
+            "knows_mama_kemi"
+          ]
+        },
+        "receipt": "You told Mama Kemi that Tiwa said not to pick her calls.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Mama Kemi turns to Tiwa: 'You told people not to pick me?' Tiwa: 'Mummy, please.' Even the tow man laughs.",
+            "clout": 5,
+            "saw_truth": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tiwa_cf_tester",
+    "character": "tiwa",
+    "slot": "confrontation",
+    "requires": {
+      "truth": [
+        "tester"
+      ]
+    },
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "expression": "charming",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Her flat. On the table: an envelope, the AirPods, the perfume, a list of every naira you ever sent. Her ring light is off."
+      },
+      {
+        "who": "partner",
+        "text": "I test everybody. With money. I'm sorry. You're the first one I wanted to pass."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "tester": {
+        "id": "t_test_return",
+        "text": "The envelope is fat. Every transfer, in cash, counted twice. A note: 'Returned. Not because I don't want you.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "hug",
+        "label": "Pick up the envelope. Then pick her up.",
+        "receipt": "You forgave the tests and hugged her.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She laughs into your neck. 'You're supposed to be angry.' 'Tomorrow.' The envelope stays on the table.",
+            "attachment": 15,
+            "trust": 15
+          }
+        ]
+      },
+      {
+        "id": "exam",
+        "label": "\"You tested me? Like an exam?\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked Tiwa why she tested you like an exam.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Yes. Like an exam. Because the last four all failed.' She says it without blinking. Then she blinks a lot.",
+            "attachment": -3,
+            "trust": 4,
+            "sanity": 5
+          }
+        ]
+      },
+      {
+        "id": "take_go",
+        "label": "Take the envelope. Leave. \"Test passed, babe.\"",
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You took the envelope and left Tiwa.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You take the money and the moral high ground. Both feel lighter than you expected.",
+            "wallet": 60000,
+            "end": "walked_away"
+          }
+        ]
+      },
+      {
+        "id": "post",
+        "label": "Post it: 'She tested me 😂'.",
+        "tags": [
+          "toxic",
+          "public_embarrassment"
+        ],
+        "receipt": "You posted about Tiwa testing you.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The Parlour roasts her for a week. She deletes her page. The envelope is still on the table.",
+            "attachment": -20,
+            "clout": 20,
+            "exposure": 15
+          }
+        ]
+      },
+      {
+        "id": "go_live",
+        "label": "Switch the ring light on. \"Say it to them too.\"",
+        "requires": {
+          "flags": [
+            "knows_ring_light"
+          ]
+        },
+        "receipt": "You turned on her ring light and asked her to say it publicly.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She goes live. No filter, no frontal. 'I'm done testing people. I found one.' 40k people watch her mean it.",
+            "attachment": 20,
+            "trust": 15,
+            "clout": 15
+          }
+        ]
+      },
+      {
+        "id": "agoyin",
+        "label": "\"Let's discuss it over ewa agoyin.\"",
+        "requires": {
+          "flags": [
+            "knows_agoyin"
+          ]
+        },
+        "receipt": "You talked it out with Tiwa over ewa agoyin.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Beans on her marble floor at midnight. She tells you every test. You tell her which ones you noticed.",
+            "attachment": 15,
+            "trust": 20
+          }
+        ]
+      },
+      {
+        "id": "tested_back",
+        "label": "\"Every transfer, I was testing you back.\"",
+        "requires": {
+          "flags": [
+            "sent_test_money"
+          ]
+        },
+        "receipt": "You told Tiwa every transfer was you testing her back.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She stares. Then laughs. 'Liar.' 'A little.' 'Okay. You're my person.'",
+            "attachment": 10,
+            "trust": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tiwa_po_test_money",
+    "character": "tiwa",
+    "slot": "payoff",
+    "presentation": "text",
+    "priority": 6,
+    "requires": {
+      "flags": [
+        "sent_test_money"
+      ],
+      "not_flags": [
+        "money_traced"
+      ],
+      "flag_age": {
+        "flag": "sent_test_money",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "sent_test_money"
+    ],
+    "scene": {
+      "location": "mainland_street",
+      "time": "morning",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "A day after your last transfer to Tiwa, your phone buzzes twice."
+      },
+      {
+        "who": "partner",
+        "text": "Babe, can we talk about the money you sent?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "open",
+        "label": "Open the chat. Brace.",
+        "receipt": "You opened Tiwa's message about the money.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Thank you again 🥰' That's it. That's the whole message.",
+            "attachment": 3,
+            "set": [
+              "money_traced"
+            ]
+          }
+        ],
+        "truth_override": {
+          "main_boyfriend": {
+            "text": "'Can you send it again? The first one... went somewhere.' A Patek glints in her selfie.",
+            "sanity": -6,
+            "set": [
+              "money_traced"
+            ]
+          },
+          "vendor_debt": {
+            "text": "Mama Kemi texts you directly: 'Thank you for paying Tiwa's hair balance. She still owes ₦3.8m. Your number is in my book now.'",
+            "sanity": -10,
+            "saw_truth": true,
+            "set": [
+              "money_traced"
+            ]
+          },
+          "tester": {
+            "text": "A transfer: every naira back, plus ₦5k. 'Interest. You passed the money part. Now the hard part: just be here.'",
+            "wallet": 60000,
+            "attachment": 10,
+            "trust": 15,
+            "set": [
+              "money_traced"
+            ]
+          }
+        }
+      },
+      {
+        "id": "ignore",
+        "label": "Leave it on read. Money talk is cursed.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You left Tiwa's money message on read.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She sends a sticker of a crying cat. Then nothing. Peace, sort of.",
+            "attachment": -3,
+            "sanity": 5,
+            "set": [
+              "money_traced"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ask_back",
+        "label": "\"Actually, can I have it back?\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked Tiwa for your money back.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Wow.' Then ₦20k. Then 'Don't speak to me today.'",
+            "wallet": 20000,
+            "attachment": -6,
+            "set": [
+              "money_traced"
+            ]
+          }
+        ],
+        "truth_override": {
+          "main_boyfriend": {
+            "text": "Nothing. Then a ₦0.01 transfer from 'DEJI A.' with the narration 'lol'.",
+            "attachment": -6,
+            "saw_truth": true,
+            "set": [
+              "money_traced"
+            ]
+          },
+          "tester": {
+            "text": "All of it, instantly, with a voice note: 'Good. Ask for what's yours. I like that.'",
+            "wallet": 50000,
+            "attachment": 4,
+            "trust": 10,
+            "set": [
+              "money_traced"
+            ]
+          }
+        }
+      },
+      {
+        "id": "say_love",
+        "label": "\"It's yours. I just want you.\"",
+        "receipt": "You told Tiwa the money was hers and you just wanted her.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Three hearts. Then a long voice note that is mostly breathing and 'you're so silly'.",
+            "attachment": 8,
+            "trust": 3,
+            "set": [
+              "money_traced"
+            ]
+          }
+        ],
+        "truth_override": {
+          "main_boyfriend": {
+            "text": "Three hearts. Then 'Can't talk, family stuff.' It's Saturday.",
+            "attachment": 4,
+            "sanity": -5,
+            "set": [
+              "money_traced"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "tiwa_po_clown",
+    "character": "tiwa",
+    "slot": "payoff",
+    "priority": 7,
+    "requires": {
+      "partner_knows": [
+        "secret_clown_reply"
+      ],
+      "not_flags": [
+        "clown_answered"
+      ],
+      "flag_age": {
+        "flag": "secret_clown_reply",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "secret_clown_reply"
+    ],
+    "partner_reacts_to": [
+      "secret_clown_reply"
+    ],
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "expression": "angry",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "A clown emoji. On my story. My cousins saw it. My followers saw it. Explain yourself."
+      }
+    ],
+    "choices": [
+      {
+        "id": "own_it",
+        "label": "\"You posted another person with my lash money.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You owned the clown emoji and explained why.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She opens her mouth. Closes it. 'Okay. That's... fair.' She doesn't like how fair it is.",
+            "trust": 5,
+            "attachment": -3,
+            "set": [
+              "clown_answered"
+            ]
+          }
+        ],
+        "truth_override": {
+          "tester": {
+            "text": "She laughs. 'Fair. The caption was cringe.' Then: 'Uncle Tunde said you have sense.'",
+            "trust": 10,
+            "attachment": 6,
+            "set": [
+              "clown_answered"
+            ]
+          }
+        }
+      },
+      {
+        "id": "sorry",
+        "label": "\"Sorry. Jealousy. It won't happen again.\"",
+        "receipt": "You apologised for the clown emoji.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'It better not.' She makes you pick brunch for Sunday. She picks the most expensive one anyway.",
+            "attachment": 6,
+            "trust": -2,
+            "set": [
+              "clown_answered"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "double",
+        "label": "Send another clown. Bigger.",
+        "tags": [
+          "toxic"
+        ],
+        "receipt": "You sent a second, bigger clown emoji.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She blocks you for six hours. Then unblocks you to send '🤡 yourself'. Romance is dead. Clowns live.",
+            "attachment": -15,
+            "trust": -10,
+            "clout": 5,
+            "set": [
+              "clown_answered"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tiwa_po_deji_dm",
+    "character": "tiwa",
+    "slot": "payoff",
+    "presentation": "text",
+    "priority": 5,
+    "requires": {
+      "flags": [
+        "met_deji"
+      ],
+      "not_flags": [
+        "deji_handled"
+      ],
+      "flag_age": {
+        "flag": "met_deji",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "met_deji"
+    ],
+    "scene": {
+      "location": "mainland_street",
+      "time": "afternoon",
+      "mood": "negative",
+      "partner_present": false,
+      "npc": {
+        "name": "Deji"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "A DM from a verified account. Profile picture: a white G-Wagon."
+      },
+      {
+        "who": "Deji",
+        "text": "Let's talk about Tiwa. Just us. Lunch on me."
+      }
+    ],
+    "choices": [
+      {
+        "id": "meet",
+        "label": "Meet him. Hear him out.",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You met Deji, the man from the G-Wagon.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He talks about his car for an hour. You learn nothing about Tiwa and everything about torque.",
+            "sanity": -3,
+            "set": [
+              "deji_handled"
+            ]
+          }
+        ],
+        "truth_override": {
+          "main_boyfriend": {
+            "text": "He scrolls their couple photos back to 2022. 'You're the fourth this year. She always comes back.'",
+            "sanity": -15,
+            "saw_truth": true,
+            "set": [
+              "deji_handled"
+            ]
+          },
+          "vendor_debt": {
+            "text": "'She owes me ₦1.9m for the car. Help me collect and I'll give you 20%.' He pays for lunch in advance, ₦150k.",
+            "wallet": 150000,
+            "saw_truth": true,
+            "set": [
+              "deji_handled"
+            ]
+          },
+          "tester": {
+            "text": "'She returned everything I ever bought her. Everything. What did you do?' He sounds genuinely wounded.",
+            "attachment": 6,
+            "trust": 8,
+            "set": [
+              "deji_handled"
+            ]
+          }
+        }
+      },
+      {
+        "id": "forward",
+        "label": "Forward the DM to Tiwa.",
+        "tags": [
+          "contact_partner",
+          "cautious"
+        ],
+        "receipt": "You forwarded Deji's DM to Tiwa.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Ignore him.' Short. Firm. You do.",
+            "trust": 2,
+            "set": [
+              "deji_handled"
+            ]
+          }
+        ],
+        "truth_override": {
+          "main_boyfriend": {
+            "text": "'Ignore him. He's obsessed.' He is. With her. Because she's his.",
+            "trust": -4,
+            "sanity": -5,
+            "set": [
+              "deji_handled"
+            ]
+          },
+          "vendor_debt": {
+            "text": "'He wants his car. I'll handle it.' She can't. You can hear that she can't.",
+            "trust": 4,
+            "saw_truth": true,
+            "set": [
+              "deji_handled"
+            ]
+          },
+          "tester": {
+            "text": "She three-ways him: 'Deji, it's over. Stop texting my person.' Click. Cinema.",
+            "attachment": 10,
+            "trust": 12,
+            "set": [
+              "deji_handled"
+            ]
+          }
+        }
+      },
+      {
+        "id": "block",
+        "label": "Block him. Lunch is not free.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You blocked Deji without replying.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Blocked. Somewhere in Lekki, a G-Wagon revs in frustration.",
+            "sanity": 3,
+            "set": [
+              "deji_handled"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tiwa_po_page_clip",
+    "character": "tiwa",
+    "slot": "payoff",
+    "priority": 4,
+    "requires": {
+      "flags": [
+        "secret_on_her_page"
+      ],
+      "not_flags": [
+        "clip_handled"
+      ],
+      "flag_age": {
+        "flag": "secret_on_her_page",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "secret_on_her_page"
+    ],
+    "scene": {
+      "location": "mainland_street",
+      "time": "afternoon",
+      "mood": "negative",
+      "partner_present": false,
+      "npc": {
+        "name": "Your boss"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Your boss forwards a TikTok to the office WhatsApp group. It's you. On Tiwa's page. 312,000 views."
+      },
+      {
+        "who": "Your boss",
+        "text": "Is this why your Monday reports are late? 😂"
+      }
+    ],
+    "choices": [
+      {
+        "id": "own_it",
+        "label": "\"Yes, that's me. Chef and co-star.\"",
+        "receipt": "You owned your appearance on Tiwa's page at work.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The office group explodes with 😂. HR sends a sticker. You are now a work legend.",
+            "clout": 10,
+            "exposure": 5,
+            "set": [
+              "clip_handled"
+            ]
+          }
+        ],
+        "truth_override": {
+          "main_boyfriend": {
+            "text": "Under the clip, a comment: 'Deji, see your babe with another person 😂'. 300 likes.",
+            "clout": 5,
+            "exposure": 10,
+            "sanity": -6,
+            "set": [
+              "clip_handled"
+            ]
+          },
+          "vendor_debt": {
+            "text": "A vendor comments under the clip: 'Is this the new sponsor? Tell them to pay her balance.'",
+            "exposure": 10,
+            "sanity": -5,
+            "set": [
+              "clip_handled"
+            ]
+          }
+        }
+      },
+      {
+        "id": "take_down",
+        "label": "Ask Tiwa to take it down.",
+        "tags": [
+          "contact_partner",
+          "cautious"
+        ],
+        "receipt": "You asked Tiwa to take the clip down.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Take down my best-performing post?' She archives it. Grudgingly. Engagement mourns.",
+            "attachment": -4,
+            "trust": 4,
+            "exposure": -10,
+            "set": [
+              "clip_handled"
+            ]
+          }
+        ],
+        "truth_override": {
+          "tester": {
+            "text": "Already archived. 'I saw your boss in the comments. Sorry.' She noticed before you did.",
+            "trust": 8,
+            "attachment": 4,
+            "exposure": -10,
+            "set": [
+              "clip_handled"
+            ]
+          }
+        }
+      },
+      {
+        "id": "deny",
+        "label": "\"Lol that's my twin.\"",
+        "receipt": "You told your boss the clip was your twin.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Your boss: 'Your twin has your exact birthmark?' The group is quiet. Too quiet.",
+            "sanity": -5,
+            "exposure": 5,
+            "set": [
+              "clip_handled"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tiwa_po_agoyin",
+    "character": "tiwa",
+    "slot": "payoff",
+    "priority": 5,
+    "requires": {
+      "flags": [
+        "brought_agoyin"
+      ],
+      "not_flags": [
+        "agoyin_posted"
+      ],
+      "flag_age": {
+        "flag": "brought_agoyin",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "brought_agoyin"
+    ],
+    "scene": {
+      "location": "mainland_street",
+      "time": "morning",
+      "expression": "charming",
+      "mood": "positive"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Her story, 7am: an empty bowl of ewa agoyin. Caption: 'Best date of my life. No brunch. No filter.' 220,000 views."
+      },
+      {
+        "who": "partner",
+        "text": "Don't let it enter your head. ...Okay, let it enter small."
+      }
+    ],
+    "choices": [
+      {
+        "id": "heart",
+        "label": "Reply with one heart. Keep it soft.",
+        "receipt": "You replied to her agoyin story with a heart.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She replies with a bean emoji. It's your thing now. You have a thing.",
+            "attachment": 8,
+            "trust": 6,
+            "set": [
+              "agoyin_posted"
+            ]
+          }
+        ],
+        "truth_override": {
+          "main_boyfriend": {
+            "text": "A reply from a Patek-wristed account appears on her story: '??'. She deletes the story by noon.",
+            "sanity": -6,
+            "saw_truth": true,
+            "set": [
+              "agoyin_posted"
+            ]
+          }
+        }
+      },
+      {
+        "id": "repost",
+        "label": "Repost it: 'My person 🫘'.",
+        "receipt": "You reposted Tiwa's agoyin story.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Her followers find your page. Your followers find hers. A bean shop in Ojuelegba gets 40 new orders.",
+            "attachment": 10,
+            "clout": 10,
+            "exposure": 5,
+            "set": [
+              "agoyin_posted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "another_bowl",
+        "label": "Send her another bowl. Same woman, same bridge.",
+        "cost": 3000,
+        "receipt": "You sent Tiwa another bowl of ewa agoyin.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The dispatch rider sends you a photo of her face when she opens it. You will keep that photo forever.",
+            "attachment": 8,
+            "trust": 8,
+            "set": [
+              "agoyin_posted"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tiwa_tt_lash",
+    "character": "tiwa",
+    "slot": "talking_time",
+    "presentation": "voice_note",
+    "detail": {
+      "flag": "knows_lash_girl",
+      "missed": {
+        "chemistry": -3
+      },
+      "red_flag": false
+    },
+    "scene": {
+      "location": "mainland_lash_tech",
+      "time": "afternoon",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Babe, I'm at Bisola's in Yaba. She's the only lash girl in Lagos I trust. Island lash techs are scammers. Okay bye, kisses 💋"
+      }
+    ],
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Bisola in Yaba. The trusted one. Noted 😌\"",
+        "receipt": "You noted Bisola, her lash girl in Yaba.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Look at you, listening.' She sends a blurry lash selfie as a reward.",
+            "attachment": 2,
+            "trust": 4
+          }
+        ],
+        "caught": true
+      },
+      {
+        "id": "pics",
+        "label": "\"Send pics when you're done 😍\"",
+        "receipt": "You asked for lash pics.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Eleven pictures. Same angle. You say all eleven are your favourite.",
+            "attachment": 3
+          }
+        ]
+      },
+      {
+        "id": "price",
+        "label": "\"How much are lashes these days?\"",
+        "receipt": "You asked Tiwa how much lashes cost.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Why? You want to sponsor?' Every ₦0 conversation is her nightmare.",
+            "attachment": -2,
+            "trust": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tiwa_tt_weekends",
+    "character": "tiwa",
+    "slot": "talking_time",
+    "presentation": "text",
+    "detail": {
+      "flag": "knows_weekends",
+      "missed": {
+        "sanity": -3
+      },
+      "red_flag": true
+    },
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "golden",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Hey you 🥰 heads up, I don't really text on weekends. Family things in Ikeja GRA. Don't be weird about it, okay?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Weekends are family. Got it 👍\"",
+        "receipt": "You noted that Tiwa's weekends are 'for family'.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'See? Easy.' A heart. You file it away anyway.",
+            "attachment": 2,
+            "trust": 4
+          }
+        ],
+        "caught": true
+      },
+      {
+        "id": "family",
+        "label": "\"Family is everything 🙏\"",
+        "receipt": "You told Tiwa family is everything.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Exactly!!' Three praying hands. Nobody mentions which family.",
+            "attachment": 3
+          }
+        ]
+      },
+      {
+        "id": "free",
+        "label": "\"Weekends are the only time I'm free though 😩\"",
+        "receipt": "You complained that weekends are your only free time.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Weekdays are better for us anyway.' Us. Weekdays.",
+            "attachment": -2,
+            "trust": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tiwa_tt_mama_kemi",
+    "character": "tiwa",
+    "slot": "talking_time",
+    "presentation": "voice_note",
+    "detail": {
+      "flag": "knows_mama_kemi",
+      "missed": {
+        "sanity": -3
+      },
+      "red_flag": true
+    },
+    "scene": {
+      "location": "lekki_salon",
+      "time": "afternoon",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "If anybody called Mama Kemi calls your number, don't pick. She's this crazy aunty from the salon. Long story. Miss you, bye!"
+      }
+    ],
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"How does Mama Kemi have my number? 👀\"",
+        "receipt": "You asked how Mama Kemi got your number.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Lagos is small!' Laughing emoji. Not an answer. You remember the name.",
+            "attachment": 1,
+            "trust": 4
+          }
+        ],
+        "caught": true
+      },
+      {
+        "id": "ok",
+        "label": "\"Okay, I won't pick 😂\"",
+        "receipt": "You promised not to pick Mama Kemi's calls.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Good. You're my favourite.' Crisis managed. Hers, not yours.",
+            "attachment": 3
+          }
+        ]
+      },
+      {
+        "id": "miss",
+        "label": "\"Miss you more 🥺\"",
+        "receipt": "You told Tiwa you missed her more.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "A voice note of her singing 'miss you more' badly. You play it twice.",
+            "attachment": 4
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tiwa_tt_agoyin",
+    "character": "tiwa",
+    "slot": "talking_time",
+    "presentation": "text",
+    "detail": {
+      "flag": "knows_agoyin",
+      "missed": {
+        "chemistry": -3
+      },
+      "red_flag": false
+    },
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Can I confess something? I hate brunch. I'd kill for ewa agoyin from the woman under Ojuelegba bridge. Don't tell my followers 🤫"
+      }
+    ],
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Ewa agoyin under the bridge. Your secret is safe.\"",
+        "receipt": "You kept Tiwa's ewa agoyin secret.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Swear?' 'Swear.' She sends a voice note that's just her laughing for nine seconds.",
+            "attachment": 3,
+            "trust": 4
+          }
+        ],
+        "caught": true
+      },
+      {
+        "id": "brunch",
+        "label": "\"But your brunch pictures are so cute though\"",
+        "receipt": "You told her the brunch pictures were cute.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Exactly. Pictures.' She leaves you on read, thoughtfully.",
+            "attachment": 1
+          }
+        ]
+      },
+      {
+        "id": "send",
+        "label": "\"Send me your account number for beans 😂\"",
+        "receipt": "You joked about sending money for beans.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She actually sends it. ₦0 was transferred. A friendship was tested.",
+            "attachment": -1,
+            "trust": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tiwa_tt_ring_light",
+    "character": "tiwa",
+    "slot": "talking_time",
+    "presentation": "voice_note",
+    "detail": {
+      "flag": "knows_ring_light",
+      "missed": {
+        "chemistry": -3
+      },
+      "red_flag": false
+    },
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Random thing. If my ring light is off and I'm not posting, I'm not okay. Call, don't text. Anyway! Brunch Sunday?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Ring light off means call. I'll call.\"",
+        "receipt": "You promised to call when her ring light is off.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She goes quiet for a second. 'Thank you.' Then, fast: 'Brunch though?'",
+            "attachment": 2,
+            "trust": 5
+          }
+        ],
+        "caught": true
+      },
+      {
+        "id": "brunch",
+        "label": "\"Brunch Sunday, yes! Where?\"",
+        "receipt": "You said yes to Sunday brunch.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She sends four restaurant links. All in VI. All 'small chops from ₦18k'.",
+            "attachment": 3
+          }
+        ]
+      },
+      {
+        "id": "lol",
+        "label": "\"Lol you're so dramatic\"",
+        "receipt": "You called Tiwa dramatic.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Lol yes 😂' Too fast. She changes the subject to shoes.",
+            "attachment": -1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tiwa_tt_sister",
+    "character": "tiwa",
+    "slot": "talking_time",
+    "presentation": "text",
+    "detail": {
+      "flag": "knows_sister",
+      "missed": {
+        "chemistry": -2
+      },
+      "red_flag": false
+    },
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "golden",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Funmi turns 21 this month 😭 my baby sister. Third of four girls. Everybody forgets her. Not me."
+      }
+    ],
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"21! Third of four. Tell Funmi I said hi.\"",
+        "receipt": "You remembered Funmi, the third of four sisters.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Why are you so sweet?' She screenshots it to the sisters' group.",
+            "attachment": 3,
+            "trust": 4
+          }
+        ],
+        "caught": true
+      },
+      {
+        "id": "party",
+        "label": "\"Are we partying? 🎉\"",
+        "receipt": "You asked if there would be a party.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'We? Hmm.' A thinking emoji. You are pending.",
+            "attachment": 1
+          }
+        ]
+      },
+      {
+        "id": "birthday",
+        "label": "\"Everybody in your family has a birthday every month 😂\"",
+        "receipt": "You joked about her family's birthday frequency.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Are you calling my family scammers?' A pause. 'Okay, maybe Ronke.'",
+            "attachment": 1,
+            "trust": 1
+          }
+        ]
+      }
+    ]
+  }
+]

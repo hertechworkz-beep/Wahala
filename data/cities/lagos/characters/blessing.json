@@ -1,0 +1,93 @@
+{
+  "id": "blessing",
+  "cold_open": {
+    "duration": 16,
+    "scene": { "location": "vi_club_vip", "time": "night", "expression": "charming", "mood": "neutral" },
+    "phone": [
+      { "at": 12.5, "kind": "text", "from": "Unknown number", "text": "You're with me tonight. Don't embarrass me. - B" }
+    ],
+    "beats": [
+      { "at": 0.5, "who": "narration", "text": "Ozumba Mbadiwe, midnight. The queue outside the club is two hundred people deep and going nowhere." },
+      { "at": 4, "who": "narration", "text": "A red frontal cuts through it. The security guard sees her, says 'Madam B', and parts the crowd like the Red Sea." },
+      { "at": 8.5, "who": "partner", "text": "You. Yes, you, with the face. Come. You dey with me." },
+      { "at": 12, "who": "narration", "text": "Two hundred people watch you skip the line. One of them is already filming." }
+    ]
+  },
+  "chemistry_leaks": [
+    { "match": "build", "text": "She looks you up and down like a bouncer deciding. 'You go fit stand beside me.'" },
+    { "match": "hair", "text": "'Your hair dey do me somehow. In a good way. Don't let it enter your head.'" },
+    { "match": "style", "text": "'Who styled you? Give me their number. I need them for my events.'" },
+    { "match": "none", "text": "She frowns at your outfit. 'Okay. We go work on am.'" },
+    { "match": "spark", "text": "She forgets to check her guest list for a whole hour. Ese texts to ask if she's been kidnapped." }
+  ],
+  "endings": {
+    "locked_in": {
+      "title": "On Her List. Permanently.",
+      "text": "She put your name on every guest list in Lagos and dragged the one blogger who laughed. Her mama calls you on Sundays. You've never been safer, or louder.",
+      "scene": { "location": "vi_club_vip", "time": "night", "expression": "charming", "mood": "positive" },
+      "truths": {
+        "dj_ex": {
+          "title": "Plus One, Minus Jiro",
+          "text": "She threw the hoodie in the generator fire in front of you. Jiro still shouts her out at every event. Every time, she shouts back: 'Taken!' You still count the Thursdays."
+        },
+        "event_money": {
+          "title": "Business and Pleasure",
+          "text": "Locked In, with separate accounts and a signed partnership deal. Your name is on every flyer now, in gold. This time, you get paid first."
+        },
+        "fierce_loyal": {
+          "title": "Ride or Die, Warri Edition",
+          "text": "She fought two clubs, a DJ and a blogger for you. She brought you to Warri. Mama killed a chicken. You are family now, and God help whoever disrespects you."
+        }
+      }
+    },
+    "counter_con": {
+      "title": "Promoted Yourself",
+      "text": "You saw the hustle and out-hustled it. The door money, the silence money, the refund with interest. Blessing is dragging you on IG Live. You're watching it from a VIP table you paid for. With her money.",
+      "scene": { "location": "vi_club_vip", "time": "night", "expression": "caught", "mood": "neutral", "partner_present": false }
+    },
+    "survived": {
+      "title": "Guest List, Not Plus One",
+      "text": "You survived her Friday. And her Saturday. She calls you 'my person' at the door and 'that one' to her girls. Promotion pending.",
+      "scene": { "location": "vi_club_vip", "time": "night", "expression": "charming", "mood": "neutral" },
+      "truths": {
+        "dj_ex": { "text": "You survived. She still does Thursdays in Yaba. You still don't ask. The DJ still shouts her out. You still clap." },
+        "event_money": { "text": "You survived the week. Your name is still on two flyers you never agreed to. Monday has not arrived." }
+      }
+    },
+    "scandal": {
+      "title": "Dragged on Live",
+      "text": "18,000 people watched. Then 2 million. Your face is a sticker in Lagos nightlife group chats. A bouncer on Ozumba Mbadiwe recognised you and laughed.",
+      "scene": { "location": "vi_club_vip", "time": "night", "expression": "angry", "mood": "negative", "partner_present": false }
+    },
+    "sapa": {
+      "title": "Sponsored Into Sapa",
+      "text": "Table deposits, flyer sponsorships, nine-person dinners, one flooded shop in Warri. Your account has ₦640. The refund is coming Monday. Which Monday, nobody knows.",
+      "scene": { "location": "mainland_street", "time": "night", "mood": "negative", "partner_present": false }
+    },
+    "breakdown": {
+      "title": "Too Much Volume",
+      "text": "Every night was an event. Every event was a fight. You fell asleep in a club toilet on Ozumba Mbadiwe and woke up to a cleaner praying over you.",
+      "scene": { "location": "mainland_street", "time": "morning", "mood": "negative", "partner_present": false }
+    },
+    "ghosted": {
+      "title": "Removed From the List",
+      "text": "No drag, no live, no voice note. Just your name gone from every guest list in VI. The bouncer who used to say 'Oga' now says 'Queue dey there.'",
+      "scene": { "location": "vi_club_vip", "time": "night", "expression": "suspicious", "mood": "negative", "partner_present": false }
+    },
+    "fumbled": {
+      "title": "Fumbled a Soldier",
+      "text": "She would have fought all of Lagos for you. Instead you sniffed her hoodie, filmed her fights and believed the DJ. She didn't even drag you. That's how you know it's over.",
+      "scene": { "location": "vi_club_vip", "time": "night", "expression": "angry", "mood": "negative" }
+    },
+    "obsession": {
+      "title": "Obsession",
+      "text": "This one isn't funny. Someone started tracking every club, every guest list, every exit. Loud love and controlling love are not the same thing. Control isn't love.",
+      "scene": { "location": "vi_club_vip", "time": "night", "expression": "suspicious", "mood": "negative" }
+    },
+    "walked_away": {
+      "title": "Left Before the Encore",
+      "text": "You walked out of the noise and into a danfo at Obalende. No bass, no flyer, no Monday refund. Just a conductor shouting 'CMS!' and your phone on silent. Peace has a sound.",
+      "scene": { "location": "mainland_street", "time": "golden", "mood": "neutral", "partner_present": false }
+    }
+  }
+}

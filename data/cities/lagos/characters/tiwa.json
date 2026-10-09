@@ -1,0 +1,94 @@
+{
+  "id": "tiwa",
+  "cold_open": {
+    "duration": 15,
+    "scene": { "location": "luxury_apartment", "time": "golden", "expression": "charming", "mood": "neutral" },
+    "phone": [
+      { "at": 1, "kind": "voice_note", "from": "Tiwa", "text": "Hiii, it's Tiwa from the brunch. So I was thinking, Sunday, you and me...", "seconds": 14 },
+      { "at": 11, "kind": "text", "from": "Tiwa", "text": "Wear something cute. We're live 😘" }
+    ],
+    "beats": [
+      { "at": 0.5, "who": "narration", "text": "Golden hour. A voice note from a number you saved as 'Tiwa Brunch 🥂'. You press play." },
+      { "at": 4.5, "who": "narration", "text": "Mid-sentence, a ring light clicks on behind her voice. A phone camera shutter. Then another." },
+      { "at": 8, "who": "partner", "text": "Say hi to my followers, babe. They've been asking about you since Tuesday." },
+      { "at": 12, "who": "narration", "text": "You haven't met her yet. She's already filming you." }
+    ]
+  },
+  "chemistry_leaks": [
+    { "match": "build", "text": "She angles her phone to get you in the frame. 'You photograph well. That's rare.'" },
+    { "match": "hair", "text": "'Who does your hair? Don't lie. I'll know.'" },
+    { "match": "style", "text": "She checks the label on your sleeve without asking. She approves without saying so." },
+    { "match": "none", "text": "She looks you up and down once, the way a vendor checks a transfer receipt." },
+    { "match": "spark", "text": "She forgets to film the first ten minutes. She never forgets to film." }
+  ],
+  "endings": {
+    "locked_in": {
+      "title": "Soft Life, Hard Launch",
+      "text": "She hard-launched you: your hand, her nails, no filter. The caption just says 'mine'. Her followers are still recovering.",
+      "scene": { "location": "ikoyi_restaurant", "time": "afternoon", "expression": "charming", "mood": "positive" },
+      "truths": {
+        "main_boyfriend": {
+          "title": "The Upgrade",
+          "text": "She returned Deji's key in a Ziploc bag and blocked the G-Wagon. You're the main one now. You still check her close-friends list. Just in case."
+        },
+        "vendor_debt": {
+          "title": "Co-Signed",
+          "text": "Locked In, with a payment plan. Mama Kemi now sends you Christmas cards. Twelve vendors have your number. Love is a shared spreadsheet."
+        },
+        "tester": {
+          "title": "Passed Every Test",
+          "text": "She stopped testing you. She started bringing you ewa agoyin on Sundays instead of brunch. The ring light is mostly off now. She's never been happier."
+        }
+      }
+    },
+    "counter_con": {
+      "title": "Soft Life, Your Account",
+      "text": "You saw the game and played it better. She's posting 'Some people are snakes 🐍' to 200k followers. You're reading it from a rooftop in VI. With her money.",
+      "scene": { "location": "ikoyi_restaurant", "time": "golden", "expression": "caught", "mood": "neutral", "partner_present": false }
+    },
+    "survived": {
+      "title": "Close Friends Only",
+      "text": "You made her close-friends list. Not her grid. Not yet. She says 'we'll see' like a woman with options.",
+      "scene": { "location": "luxury_apartment", "time": "night", "expression": "charming", "mood": "neutral" },
+      "truths": {
+        "main_boyfriend": { "text": "You made her close-friends list. So did a Patek. Weekdays are yours. Weekends are 'family'." },
+        "vendor_debt": { "text": "You survived the week and so did her frontal, barely. Mama Kemi has started greeting you by name." }
+      }
+    },
+    "scandal": {
+      "title": "Trending With Tiwa",
+      "text": "Her followers found your page, your workplace and your secondary school. A blog called you 'the soft-life sponsor'. Your aunty sent the link to the family group.",
+      "scene": { "location": "mainland_street", "time": "golden", "expression": "angry", "mood": "negative", "partner_present": false }
+    },
+    "sapa": {
+      "title": "Brunch Broke",
+      "text": "Lash appointments, sister birthdays, bottomless mimosas. Your account now has ₦312 and a debit alert from a supper club that never popped.",
+      "scene": { "location": "mainland_street", "time": "night", "mood": "negative", "partner_present": false }
+    },
+    "breakdown": {
+      "title": "Ring Light Burnout",
+      "text": "You started checking her stories every four minutes. Then her close friends. Then her cousin's. You cried in a Bolt on the Lekki-Epe Expressway and the driver turned off his music out of respect.",
+      "scene": { "location": "mainland_street", "time": "afternoon", "mood": "negative", "partner_present": false }
+    },
+    "ghosted": {
+      "title": "Archived",
+      "text": "She didn't block you. She archived every post you were in. Your story views stopped at 'Seen by 1'. Her new brunch photos have someone else's hand in them.",
+      "scene": { "location": "luxury_apartment", "time": "night", "expression": "suspicious", "mood": "negative", "partner_present": false }
+    },
+    "fumbled": {
+      "title": "Failed the Only Test That Mattered",
+      "text": "She was testing for one thing: whether you'd stay kind when she looked expensive. You snooped, you posted, you called her a gold-digger to the group chat. She returned every naira. With a receipt.",
+      "scene": { "location": "luxury_apartment", "time": "night", "expression": "angry", "mood": "negative" }
+    },
+    "obsession": {
+      "title": "Obsession",
+      "text": "This one isn't funny. Someone stopped letting the other one leave the flat without permission. Control isn't love, whoever is doing it.",
+      "scene": { "location": "luxury_apartment", "time": "night", "expression": "suspicious", "mood": "negative" }
+    },
+    "walked_away": {
+      "title": "Unfollowed, Unbothered",
+      "text": "You unfollowed, muted and archived. Then you bought yourself ewa agoyin under Ojuelegba bridge and ate it in peace. No ring light. No story. Bliss.",
+      "scene": { "location": "mainland_street", "time": "golden", "mood": "neutral", "partner_present": false }
+    }
+  }
+}
