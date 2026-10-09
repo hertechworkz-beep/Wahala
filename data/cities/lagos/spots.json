@@ -1,0 +1,176 @@
+[
+  {
+    "id": "clinic",
+    "name": "Glow Clinic",
+    "icon": "✨",
+    "blurb": "Glow up. Bolder choices. Chemistry.",
+    "location": "aesthetic_clinic",
+    "options": [
+      {
+        "id": "lash_tech",
+        "label": "Mainland lash tech, Yaba. ₦15k.",
+        "cost": 15000,
+        "tags": ["budget"],
+        "receipt": "You went to a ₦15k lash tech in Yaba.",
+        "outcomes": [
+          { "chance": 0.6, "text": "Honestly? Fire. Mainland excellence. The fan blew one lash off and she glued it back for free.", "glow": 1, "clout": 5, "chemistry": 3 },
+          { "chance": 0.4, "bad": true, "text": "NEPA took light halfway. She finished by phone torch. You'll see the damage tomorrow.", "set": [{ "flag": "clinic_botched", "knows": ["player"] }] }
+        ]
+      },
+      {
+        "id": "facial",
+        "label": "Awolowo Road facial and lashes. ₦80k.",
+        "cost": 80000,
+        "receipt": "You booked an ₦80k facial on Awolowo Road.",
+        "outcomes": [
+          { "chance": 0.9, "text": "Marble, cucumber water, a woman who calls you 'my dear' in a whisper. You glow.", "glow": 1, "clout": 10, "chemistry": 5 },
+          { "chance": 0.1, "bad": true, "text": "A reaction. Your face is having opinions. Tomorrow will be interesting.", "glow": 1, "set": [{ "flag": "clinic_botched", "knows": ["player"] }] }
+        ]
+      },
+      {
+        "id": "full_glow",
+        "label": "Full glow-up package. ₦250k.",
+        "cost": 250000,
+        "tags": ["luxury"],
+        "receipt": "You spent ₦250k on a full glow-up.",
+        "outcomes": [
+          { "chance": 0.9, "text": "Skin, lashes, brows, a hair appointment you didn't know you needed. Strangers open doors for you.", "glow": 2, "clout": 20, "chemistry": 8 },
+          { "chance": 0.1, "bad": true, "text": "Glowing, but the brow tech went rogue. One brow is surprised. Permanently.", "glow": 1, "clout": 5, "set": [{ "flag": "clinic_botched", "knows": ["player"] }] }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bestie",
+    "name": "Bestie on Speed Dial",
+    "icon": "📞",
+    "blurb": "Free. Sanity, advice, and occasionally terrible ideas.",
+    "options": [
+      {
+        "id": "vent",
+        "label": "Vent for an hour",
+        "receipt": "You vented to your Bestie.",
+        "outcomes": [{ "chance": 1, "text": "She listens, gasps in the right places, and says 'you deserve better' four times.", "sanity": 15 }]
+      },
+      {
+        "id": "gist",
+        "label": "\"What have you heard about {partner}?\"",
+        "tags": ["investigate"],
+        "receipt": "You asked your Bestie for gist about {partner}.",
+        "outcomes": [{ "chance": 1, "text": "She lowers her voice even though you're on the phone.", "sanity": 5, "intel": "bestie" }]
+      },
+      {
+        "id": "plan",
+        "label": "\"Help me plan something petty.\"",
+        "requires": { "bestie": ["toxic"] },
+        "tags": ["toxic"],
+        "receipt": "You let your toxic Bestie plan something petty.",
+        "outcomes": [{ "chance": 1, "text": "She has a whole PowerPoint. Slide 3 is titled 'EXPOSE HIM'. You feel powerful and slightly unwell.", "sanity": 5, "clout": 10, "goal": { "revenge": 20 } }]
+      },
+      {
+        "id": "reality",
+        "label": "\"Tell me the truth, even if it hurts.\"",
+        "requires": { "bestie": ["genius"] },
+        "receipt": "You asked your Bestie for the hard truth.",
+        "outcomes": [{ "chance": 1, "text": "'You keep explaining things he never explained.' Silence. She's right. She's always right.", "sanity": 10, "intel": "tell" }]
+      }
+    ]
+  },
+  {
+    "id": "amebo",
+    "name": "Amebo Network",
+    "icon": "👀",
+    "blurb": "₦30k for one tell. Gist cuts both ways.",
+    "options": [
+      {
+        "id": "buy_tell",
+        "label": "Buy one tell about {partner}. ₦30k.",
+        "cost": 30000,
+        "receipt": "You paid the Amebo Network for gist.",
+        "outcomes": [
+          { "chance": 0.75, "text": "The Amebo sends a voice note in a whisper. She's eating something crunchy.", "intel": "tell" },
+          { "chance": 0.25, "bad": true, "text": "You get your gist. Then the Amebo sells some of yours.", "intel": "tell", "leak_secret": true }
+        ]
+      },
+      {
+        "id": "plant",
+        "label": "Plant a rumour about yourself. ₦30k.",
+        "cost": 30000,
+        "receipt": "You paid the Amebo to plant a rumour about you.",
+        "outcomes": [
+          { "chance": 0.6, "text": "By evening, Lekki thinks you're dating a footballer. {Partner} suddenly texts more.", "clout": 15, "attachment": 6 },
+          { "chance": 0.4, "bad": true, "text": "The rumour mutates. Now you're dating a pastor. Who is married.", "exposure": 15, "sanity": -5 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "therapist",
+    "name": "Therapist / Deliverance",
+    "icon": "🕊️",
+    "blurb": "₦40k. Heal it, name it, or pray it away.",
+    "location": "aesthetic_clinic",
+    "options": [
+      {
+        "id": "therapy",
+        "label": "Therapy session. ₦40k.",
+        "cost": 40000,
+        "receipt": "You went to therapy.",
+        "outcomes": [{ "chance": 1, "text": "She asks 'and how did that make you feel?' and you cry for 40 minutes. Worth every naira.", "sanity": 25 }]
+      },
+      {
+        "id": "name_pattern",
+        "label": "\"Name what he's doing to me.\" ₦40k.",
+        "cost": 40000,
+        "tags": ["cautious"],
+        "receipt": "You asked your therapist to name the pattern.",
+        "outcomes": [{ "chance": 1, "text": "She draws a triangle on her notepad. 'Triangulation. Intermittent reward. Control.' Now you have words. Words are weapons.", "sanity": 15, "set": [{ "flag": "named_tactic", "knows": ["player"] }] }]
+      },
+      {
+        "id": "deliverance",
+        "label": "Deliverance: pastor prays for the relationship. ₦40k.",
+        "cost": 40000,
+        "requires": { "not_flags": ["prayed_once"] },
+        "receipt": "You paid a pastor to pray for the relationship.",
+        "outcomes": [
+          { "chance": 0.8, "text": "He prays with his whole chest. By evening {partner} calls, softer than usual. Coincidence? Sure.", "attachment": 20, "trust": 10, "set": ["prayed_once"] },
+          { "chance": 0.2, "bad": true, "text": "The pastor squints: 'Brother {partner}? He's a member here.' Lagos is a village with traffic.", "attachment": 10, "sanity": -10, "set": ["prayed_once"] }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "club",
+    "name": "Club Night",
+    "icon": "🪩",
+    "blurb": "₦80k+. Clout, temptation, and maybe {partner}.",
+    "location": "vi_club_vip",
+    "options": [
+      {
+        "id": "vip",
+        "label": "VIP booth on Ozumba Mbadiwe. ₦80k.",
+        "cost": 80000,
+        "tags": ["independence"],
+        "receipt": "You booked a VIP booth on a night out.",
+        "outcomes": [
+          { "chance": 0.75, "text": "Sparklers, a DJ shout-out, and a stranger named Tunde who 'just wants to talk'.", "clout": 20, "sanity": 5, "set": [{ "flag": "club_night", "knows": ["player", "world"] }] },
+          { "chance": 0.25, "bad": true, "text": "You spot {partner} two booths away. With company. {He} sees you see {him}.", "clout": 10, "sanity": -20, "set": [{ "flag": "club_night", "knows": ["player", "world", "partner"] }] }
+        ],
+        "truth_override": {
+          "good_one": [
+            { "chance": 0.75, "text": "Sparklers, a DJ shout-out, and a stranger named Tunde who 'just wants to talk'.", "clout": 20, "sanity": 5, "set": [{ "flag": "club_night", "knows": ["player", "world"] }] },
+            { "chance": 0.25, "text": "{Partner} is there with business people. {He} waves you over and introduces you as 'my person'.", "clout": 15, "attachment": 8, "set": [{ "flag": "club_night", "knows": ["player", "world", "partner"] }] }
+          ]
+        }
+      },
+      {
+        "id": "dance_floor",
+        "label": "Just the dance floor. ₦20k at the door.",
+        "cost": 20000,
+        "tags": ["budget", "independence"],
+        "receipt": "You hit the dance floor without a booth.",
+        "outcomes": [{ "chance": 1, "text": "No booth, no sparklers, pure vibes. Your feet will file a complaint.", "clout": 8, "sanity": 8 }]
+      }
+    ]
+  }
+]

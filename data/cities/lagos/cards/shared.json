@@ -1,0 +1,2558 @@
+[
+  {
+    "id": "shared_tm_timi_dm",
+    "slot": "temptation",
+    "presentation": "text",
+    "scene": {
+      "location": "vi_club_vip",
+      "time": "night",
+      "mood": "neutral",
+      "partner_present": false,
+      "npc": {
+        "name": "Timi"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Timi, the Afrobeats star everyone is streaming, slides into your DMs."
+      },
+      {
+        "who": "Timi",
+        "text": "Saw you on Ozumba Mbadiwe last night. Backstage pass is yours tonight. Come alone."
+      },
+      {
+        "who": "narration",
+        "text": "{Partner} hasn't replied in 9 hours."
+      }
+    ],
+    "choices": [
+      {
+        "id": "go",
+        "label": "Go backstage",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You went backstage with Timi.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "Timi sings one line to you, live. 40 people film it.",
+            "clout": 30,
+            "exposure": 20,
+            "set": [
+              {
+                "flag": "secret_timi_backstage",
+                "knows": [
+                  "player",
+                  "world"
+                ]
+              }
+            ]
+          },
+          {
+            "chance": 0.5,
+            "bad": true,
+            "text": "'Backstage' is a hotel lobby and a ring light. Timi asks if you have a friend.",
+            "sanity": -10,
+            "exposure": 25,
+            "set": [
+              {
+                "flag": "secret_timi_backstage",
+                "knows": [
+                  "player",
+                  "world"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "screenshot",
+        "label": "Screenshot it. Send it to {partner}.",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You sent Timi's DM to {partner}.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "{Partner} replies in four seconds. Funny how that works.",
+            "attachment": 10,
+            "sanity": 5
+          }
+        ]
+      },
+      {
+        "id": "thirst",
+        "label": "Ignore him. Post a thirst trap instead.",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You posted a thirst trap instead of replying to Timi.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Timi likes it. {Partner} likes it. Your aunty comments 'cover up'.",
+            "clout": 15,
+            "sanity": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shared_tm_ex_returns",
+    "slot": "temptation",
+    "presentation": "text",
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "night",
+      "mood": "neutral",
+      "partner_present": false,
+      "npc": {
+        "name": "Your ex"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Your ex. The one who 'needed space' in 2023."
+      },
+      {
+        "who": "Your ex",
+        "text": "I've changed. Dinner off Bourdillon? My treat. I just want to talk."
+      }
+    ],
+    "choices": [
+      {
+        "id": "go",
+        "label": "Go. Free food is free food.",
+        "receipt": "You went to dinner with your ex.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "He has changed. Into someone who now owes you an apology and ₦40k. He pays. Shocking.",
+            "sanity": 5,
+            "set": [
+              {
+                "flag": "secret_ex_dinner",
+                "knows": [
+                  "player",
+                  "world"
+                ]
+              }
+            ]
+          },
+          {
+            "chance": 0.5,
+            "bad": true,
+            "text": "He hasn't changed. The bill comes. His card is 'at home'.",
+            "wallet": -40000,
+            "sanity": -10,
+            "set": [
+              {
+                "flag": "secret_ex_dinner",
+                "knows": [
+                  "player",
+                  "world"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "read",
+        "label": "Leave on read. Screenshot for the group chat.",
+        "tags": [
+          "discreet"
+        ],
+        "receipt": "You left your ex on read.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The group chat throws a party. Somebody makes a sticker of his face.",
+            "sanity": 10,
+            "clout": 5
+          }
+        ]
+      },
+      {
+        "id": "tell",
+        "label": "Tell {partner}: \"My ex is back. Should I worry?\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You told {partner} about your ex.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "{Partner}: 'Should HE worry?' You've never been so attracted to a reply.",
+            "trust": 8,
+            "attachment": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shared_tm_ikoyi_oga",
+    "slot": "temptation",
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "night",
+      "mood": "neutral",
+      "partner_present": false,
+      "npc": {
+        "name": "Silver-haired oga"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "A silver-haired oga sends a card to your table. The waiter won't meet your eye."
+      },
+      {
+        "who": "Silver-haired oga",
+        "text": "₦500k for your company this weekend. Nothing more. Probably."
+      }
+    ],
+    "choices": [
+      {
+        "id": "accept",
+        "label": "Accept. A weekend is a weekend.",
+        "receipt": "You took the silver-haired oga's weekend offer.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "He talks about golf for two days. You leave richer and very informed about golf.",
+            "wallet": 500000,
+            "sanity": -10,
+            "exposure": 20,
+            "set": [
+              {
+                "flag": "secret_weekend_oga",
+                "knows": [
+                  "player",
+                  "world"
+                ]
+              }
+            ]
+          },
+          {
+            "chance": 0.4,
+            "bad": true,
+            "text": "His wife's cousin is at the next table. The photo travels faster than the money.",
+            "wallet": 250000,
+            "exposure": 35,
+            "sanity": -15,
+            "set": [
+              {
+                "flag": "secret_weekend_oga",
+                "knows": [
+                  "player",
+                  "world"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "decline",
+        "label": "Send the card back with a smile",
+        "receipt": "You declined the oga's offer.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He raises his glass. Respect, and an invitation for 'another time'.",
+            "sanity": 5
+          }
+        ]
+      },
+      {
+        "id": "photo_card",
+        "label": "Photograph the card. Send it to {partner}.",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You sent {partner} the oga's offer.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "{Partner} calls immediately. 'Where are you? Don't move.' It feels like being wanted.",
+            "attachment": 10,
+            "control": 1
+          }
+        ]
+      },
+      {
+        "id": "runs_negotiate",
+        "label": "[Runs] \"₦800k, and I bring my own driver.\"",
+        "vibe": "runs",
+        "receipt": "You negotiated the oga up to ₦800k.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "He agrees. Respect is a currency, and you just got paid in both.",
+            "wallet": 800000,
+            "exposure": 25,
+            "set": [
+              {
+                "flag": "secret_weekend_oga",
+                "knows": [
+                  "player",
+                  "world"
+                ]
+              }
+            ]
+          },
+          {
+            "chance": 0.5,
+            "bad": true,
+            "text": "He laughs and leaves. The waiter brings your bill. He didn't pay it.",
+            "wallet": -30000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shared_tm_trainer",
+    "slot": "temptation",
+    "scene": {
+      "location": "mainland_street",
+      "time": "morning",
+      "mood": "neutral",
+      "partner_present": false,
+      "npc": {
+        "name": "Femi"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Morning run on the Ojuelegba bridge. Femi, your trainer, matches your pace."
+      },
+      {
+        "who": "Femi",
+        "text": "Your form is perfect. My DMs are open. My schedule too."
+      }
+    ],
+    "choices": [
+      {
+        "id": "flirt",
+        "label": "Flirt back. Harmless cardio.",
+        "receipt": "You flirted back with your trainer.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "Your confidence is up 40%. So is your heart rate.",
+            "sanity": 10,
+            "clout": 5
+          },
+          {
+            "chance": 0.4,
+            "bad": true,
+            "text": "Femi posts a gym selfie with you in the background, captioned 'motivation'.",
+            "exposure": 20,
+            "set": [
+              {
+                "flag": "secret_trainer_selfie",
+                "knows": [
+                  "player",
+                  "world"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pro",
+        "label": "\"Strictly squats, Femi.\"",
+        "receipt": "You kept it strictly squats with Femi.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He respects it. He also adds 20 burpees. Petty.",
+            "sanity": 5,
+            "glow": 1
+          }
+        ]
+      },
+      {
+        "id": "bring",
+        "label": "Invite {partner} to your next session",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You invited {partner} to the gym.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "{Partner} lasts six minutes. You've never laughed harder. Neither has Femi.",
+            "attachment": 8,
+            "chemistry": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shared_tm_work_dinner",
+    "slot": "temptation",
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "golden",
+      "mood": "neutral",
+      "partner_present": false,
+      "npc": {
+        "name": "Your boss"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Your boss invites you to a 'strategy dinner'. Candles. One other chair."
+      },
+      {
+        "who": "Your boss",
+        "text": "Let's discuss your promotion. Somewhere more relaxed."
+      }
+    ],
+    "choices": [
+      {
+        "id": "go",
+        "label": "Go. It's about the promotion. Right?",
+        "receipt": "You went to the 'strategy dinner'.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "It was about the promotion. Mostly. You get it.",
+            "wallet": 50000,
+            "sanity": -5,
+            "work_note": "Got promoted at a candlelit 'strategy dinner'."
+          },
+          {
+            "chance": 0.5,
+            "bad": true,
+            "text": "It was not about the promotion. You leave before dessert. Monday will be awkward.",
+            "sanity": -15,
+            "work_note": "Walked out on the boss's 'strategy dinner'."
+          }
+        ]
+      },
+      {
+        "id": "office",
+        "label": "\"Let's discuss it in the office. 9am.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You told your boss to discuss it at the office.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "9am. HR is in the meeting. You get half the raise and all the respect.",
+            "wallet": 25000,
+            "sanity": 5
+          }
+        ]
+      },
+      {
+        "id": "bring_partner",
+        "label": "Bring {partner} as your 'plus one'",
+        "tags": [
+          "public_embarrassment"
+        ],
+        "receipt": "You brought {partner} to your boss's dinner.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Your boss and {partner} compare watches for two hours. You eat alone, promoted by default.",
+            "attachment": 5,
+            "work_note": "Got promoted because the boss liked {partner}'s watch."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shared_tm_kayode_lounge",
+    "slot": "temptation",
+    "requires": {
+      "not_character": [
+        "kayode"
+      ]
+    },
+    "scene": {
+      "location": "vi_club_vip",
+      "time": "night",
+      "mood": "neutral",
+      "partner_present": false,
+      "npc": {
+        "name": "Kayode",
+        "look": "kayode"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Ozumba Mbadiwe. Kayode, the loudest Benz in Lekki, sends a bottle to your table with sparklers."
+      },
+      {
+        "who": "Kayode",
+        "text": "Whoever they are, they're not giving you sparklers. I'm giving you sparklers."
+      }
+    ],
+    "choices": [
+      {
+        "id": "dance",
+        "label": "Dance with Kayode. One song.",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You danced with Kayode.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "One song becomes four. The DJ shouts you out. You feel like a music video.",
+            "clout": 25,
+            "exposure": 15,
+            "set": [
+              {
+                "flag": "secret_kayode_dance",
+                "knows": [
+                  "player",
+                  "world"
+                ]
+              }
+            ]
+          },
+          {
+            "chance": 0.5,
+            "bad": true,
+            "text": "Sirens outside. Kayode is gone before the chorus. The ₦640k tab is on your table.",
+            "wallet": -60000,
+            "sanity": -15,
+            "set": [
+              {
+                "flag": "secret_kayode_dance",
+                "knows": [
+                  "player",
+                  "world"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "send_back",
+        "label": "Send the bottle back. Keep the sparklers.",
+        "receipt": "You sent Kayode's bottle back.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Kayode laughs, impressed. 'Hard. I like hard.' You like that he leaves.",
+            "clout": 10,
+            "sanity": 5
+          }
+        ]
+      },
+      {
+        "id": "photo",
+        "label": "Take a picture of the bottle for {partner}",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You sent {partner} a picture of Kayode's bottle.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "{Partner} replies with a voice note. Tone: unreadable. Volume: high.",
+            "attachment": 8,
+            "control": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shared_pd_lastma",
+    "slot": "public_drama",
+    "scene": {
+      "location": "mainland_street",
+      "time": "golden",
+      "mood": "negative",
+      "fx": [
+        "sirens"
+      ],
+      "npc": {
+        "name": "LASTMA officer"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "LASTMA stops the car at Ojuelegba. {Partner} is driving. The officer leans in."
+      },
+      {
+        "who": "LASTMA officer",
+        "text": "You crossed the yellow line. Come down. Or... find something for the boys."
+      }
+    ],
+    "choices": [
+      {
+        "id": "pay",
+        "label": "Pay \"something for the boys\". ₦10k.",
+        "cost": 10000,
+        "tags": [
+          "budget"
+        ],
+        "receipt": "You paid LASTMA something for the boys.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Smooth. The officer salutes. {Partner} says 'you didn't have to.' You did.",
+            "attachment": 5
+          }
+        ]
+      },
+      {
+        "id": "argue",
+        "label": "Argue. Loudly. Quote the traffic law.",
+        "tags": [
+          "public_embarrassment"
+        ],
+        "receipt": "You argued with LASTMA on the road.",
+        "outcomes": [
+          {
+            "chance": 0.4,
+            "text": "The officer gives up. Danfo drivers applaud you.",
+            "clout": 20,
+            "sanity": 5
+          },
+          {
+            "chance": 0.6,
+            "bad": true,
+            "text": "Forty minutes. A crowd. A TikTok. The car is towed anyway.",
+            "clout": 10,
+            "exposure": 15,
+            "sanity": -15
+          }
+        ]
+      },
+      {
+        "id": "let_partner",
+        "label": "Sit back. Let {partner} handle it.",
+        "receipt": "You let {partner} handle LASTMA.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "{Partner} handles it with a handshake you're not meant to see. Everything is a transaction.",
+            "sanity": -3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shared_pd_viral",
+    "slot": "public_drama",
+    "presentation": "text",
+    "scene": {
+      "location": "mainland_street",
+      "time": "afternoon",
+      "mood": "negative",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "A video of you and {partner} arguing at a Lekki petrol station is on the Parlour. 30k views. Someone added sad violin music."
+      }
+    ],
+    "choices": [
+      {
+        "id": "own_it",
+        "label": "Repost it with \"Lagos love is a contact sport\"",
+        "receipt": "You reposted your viral argument.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "The Parlour loves you. Brands want to 'collab'.",
+            "clout": 30,
+            "exposure": 15
+          },
+          {
+            "chance": 0.5,
+            "bad": true,
+            "text": "{Partner} did not find it funny. At all.",
+            "clout": 20,
+            "exposure": 20,
+            "trust": -15
+          }
+        ]
+      },
+      {
+        "id": "takedown",
+        "label": "Report it. Beg the uploader. Pay if needed.",
+        "cost": 20000,
+        "tags": [
+          "discreet"
+        ],
+        "receipt": "You paid to take the viral video down.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Gone in an hour. The screenshots are forever, but the violin is gone.",
+            "exposure": -10,
+            "attachment": 5
+          }
+        ]
+      },
+      {
+        "id": "ignore",
+        "label": "Log off. Touch grass. Third Mainland grass.",
+        "receipt": "You logged off when you went viral.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "By evening, a different couple is trending. Lagos moves fast.",
+            "sanity": 10,
+            "exposure": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shared_pd_bill",
+    "slot": "public_drama",
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "night",
+      "mood": "negative",
+      "partner_present": false,
+      "npc": {
+        "name": "Waiter"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "The bill comes: ₦380k. {Partner} went to the toilet fifteen minutes ago. The waiter is standing very close."
+      }
+    ],
+    "choices": [
+      {
+        "id": "pay",
+        "label": "Pay it. Post the receipt later as evidence.",
+        "cost": 120000,
+        "tags": [
+          "luxury"
+        ],
+        "broke_text": "Your card would decline in front of the waiter. Not today.",
+        "receipt": "You paid the bill when {partner} disappeared.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "{Partner} returns: 'Ah, you paid? You shouldn't have!' {He} lets you, though.",
+            "sanity": -10,
+            "attachment": 5
+          }
+        ]
+      },
+      {
+        "id": "split",
+        "label": "Pay your half only. ₦20k. Leave.",
+        "cost": 20000,
+        "tags": [
+          "budget"
+        ],
+        "receipt": "You paid your half of the bill and left.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You leave the other half and your dignity intact. {Partner} calls twice. You don't pick.",
+            "sanity": 5,
+            "attachment": -8
+          }
+        ]
+      },
+      {
+        "id": "toilet",
+        "label": "Go knock on the toilet door",
+        "tags": [
+          "public_embarrassment"
+        ],
+        "receipt": "You knocked on the toilet door for {partner}.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "{Partner} comes out 'on a call'. Pays. Glares. The whole restaurant watched.",
+            "clout": 10,
+            "trust": -5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shared_pd_mercy_rival",
+    "slot": "public_drama",
+    "requires": {
+      "not_character": [
+        "mercy"
+      ]
+    },
+    "scene": {
+      "location": "vi_club_vip",
+      "time": "night",
+      "mood": "negative",
+      "npc": {
+        "name": "Mercy",
+        "look": "mercy"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Mercy, Lekki's hustle queen, slides into your booth uninvited."
+      },
+      {
+        "who": "Mercy",
+        "text": "I know {partner} well. Very well. Do you want the gist, or do you want to stay happy?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "gist",
+        "label": "\"Give me the gist.\"",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You took gist from Mercy.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Mercy whispers for five minutes. Half is true. You can't tell which half.",
+            "sanity": -8,
+            "intel": "bestie"
+          }
+        ]
+      },
+      {
+        "id": "throw_drink",
+        "label": "Throw your drink. Lagos style.",
+        "tags": [
+          "public_embarrassment",
+          "toxic"
+        ],
+        "receipt": "You threw your drink at Mercy.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The booth gasps. Mercy laughs, wet and delighted. Phones are already out.",
+            "clout": 20,
+            "exposure": 25,
+            "sanity": -5
+          }
+        ]
+      },
+      {
+        "id": "happy",
+        "label": "\"I'll stay happy, thanks.\" Turn your back.",
+        "tags": [
+          "discreet"
+        ],
+        "receipt": "You turned your back on Mercy's gist.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Mercy shrugs and leaves. Her perfume stays. So does the question.",
+            "sanity": -3,
+            "clout": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shared_pd_blessing_drag",
+    "slot": "public_drama",
+    "requires": {
+      "not_character": [
+        "blessing"
+      ]
+    },
+    "scene": {
+      "location": "vi_club_vip",
+      "time": "night",
+      "mood": "negative",
+      "partner_present": false,
+      "npc": {
+        "name": "Blessing",
+        "look": "blessing"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Blessing the promoter is on IG Live. She's holding up your name."
+      },
+      {
+        "who": "Blessing",
+        "text": "This one booked a table with {partner} and didn't pay the deposit. Twenty-four hours, or I'm posting faces."
+      }
+    ],
+    "choices": [
+      {
+        "id": "pay",
+        "label": "Pay the deposit. ₦50k. End it.",
+        "cost": 50000,
+        "receipt": "You paid Blessing's table deposit.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Blessing ends the live: 'Paid. Respect.' You are now on her 'good list'. Scary list.",
+            "clout": 5
+          }
+        ]
+      },
+      {
+        "id": "partner_pays",
+        "label": "Forward it to {partner}: \"Your table, your wahala.\"",
+        "tags": [
+          "contact_partner"
+        ],
+        "receipt": "You forwarded Blessing's live to {partner}.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "{Partner} pays and sends you a flower emoji. Crisis outsourced.",
+            "attachment": 3
+          },
+          {
+            "chance": 0.5,
+            "bad": true,
+            "text": "{Partner}: 'What table?' Blessing posts your face at midnight.",
+            "exposure": 25,
+            "sanity": -10
+          }
+        ]
+      },
+      {
+        "id": "go_live",
+        "label": "Go live yourself. Drag her back.",
+        "tags": [
+          "public_embarrassment",
+          "toxic"
+        ],
+        "receipt": "You went live to drag Blessing back.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Two lives. 9,000 viewers. Nobody wins. Everybody watches.",
+            "clout": 25,
+            "exposure": 30,
+            "sanity": -10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shared_pd_owambe_ex",
+    "slot": "public_drama",
+    "scene": {
+      "location": "mainland_street",
+      "time": "golden",
+      "mood": "neutral",
+      "npc": {
+        "name": "Your ex"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Your ex's wedding owambe in Surulere. You came with {partner}. The aso-ebi is loud. So are the aunties."
+      },
+      {
+        "who": "Your ex",
+        "text": "Ah. You came. With... wow. Okay."
+      }
+    ],
+    "choices": [
+      {
+        "id": "spray",
+        "label": "Spray the couple. Big notes. Big smile.",
+        "cost": 40000,
+        "tags": [
+          "luxury"
+        ],
+        "receipt": "You sprayed your ex at his own wedding.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The videographer zooms in. You won the wedding. It wasn't yours.",
+            "clout": 25,
+            "attachment": 5
+          }
+        ]
+      },
+      {
+        "id": "envelope",
+        "label": "Drop a ₦5k envelope in the gift box",
+        "cost": 5000,
+        "tags": [
+          "budget"
+        ],
+        "receipt": "You gave your ex a ₦5k envelope.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Your name is on the envelope in very large letters. Petty, but polite.",
+            "sanity": 5
+          }
+        ]
+      },
+      {
+        "id": "dance",
+        "label": "Dance with {partner} in front of the high table",
+        "receipt": "You danced with {partner} at your ex's wedding.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "The aunties approve. One asks {partner} for a business card.",
+            "clout": 15,
+            "attachment": 8
+          },
+          {
+            "chance": 0.4,
+            "bad": true,
+            "text": "{Partner} trips over a cooler of zobo. The video has a remix by morning.",
+            "clout": -5,
+            "exposure": 10,
+            "trust": -5
+          }
+        ]
+      },
+      {
+        "id": "leave",
+        "label": "Eat the small chops. Leave early.",
+        "tags": [
+          "discreet"
+        ],
+        "receipt": "You left your ex's wedding early.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You took a takeaway pack. Peace, and puff-puff.",
+            "sanity": 8
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shared_in_nepa",
+    "slot": "interrupt",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "mood": "neutral",
+      "fx": [
+        "blackout",
+        "generator"
+      ]
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "NEPA takes light mid-sentence. Pitch black. The generator coughs, then roars. {Partner} is laughing in the dark."
+      }
+    ],
+    "choices": [
+      {
+        "id": "kiss",
+        "label": "Use the dark. Steal a kiss.",
+        "receipt": "You kissed {partner} when NEPA took light.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The generator is loud. Your heartbeat is louder.",
+            "attachment": 8,
+            "chemistry": 3
+          }
+        ]
+      },
+      {
+        "id": "torch",
+        "label": "Phone torch on. Candid photo of {partner}.",
+        "receipt": "You took a candid photo by torchlight.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The best photo anyone's ever taken of {him}. {He} asks you not to post it. You don't.",
+            "attachment": 5,
+            "trust": 5
+          }
+        ]
+      },
+      {
+        "id": "fuel",
+        "label": "\"Who bought fuel this week?\" Start the audit.",
+        "receipt": "You audited the generator fuel.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The audit reveals: nobody. The generator dies. You both laugh until NEPA returns.",
+            "sanity": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shared_in_traffic",
+    "slot": "interrupt",
+    "presentation": "text",
+    "scene": {
+      "location": "mainland_street",
+      "time": "golden",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Third Mainland Bridge. Not moving. You're meant to meet {partner} in 20 minutes. Your danfo driver has turned off the engine to 'save fuel'."
+      }
+    ],
+    "choices": [
+      {
+        "id": "okada",
+        "label": "Jump on an okada. Risk it.",
+        "cost": 3000,
+        "tags": [
+          "budget"
+        ],
+        "receipt": "You jumped on an okada through traffic.",
+        "outcomes": [
+          {
+            "chance": 0.7,
+            "text": "You arrive early. Windblown. Iconic.",
+            "attachment": 5,
+            "sanity": 5
+          },
+          {
+            "chance": 0.3,
+            "bad": true,
+            "text": "The okada nearly clips a BRT. You arrive with one shoe and a new religion.",
+            "sanity": -15
+          }
+        ]
+      },
+      {
+        "id": "voice_note",
+        "label": "Send {partner} a voice note of the traffic",
+        "receipt": "You sent {partner} a voice note from traffic.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "{He} replies: 'Lagos.' Just 'Lagos.' Love language unlocked.",
+            "attachment": 3
+          }
+        ]
+      },
+      {
+        "id": "cancel",
+        "label": "Cancel. Go home. Lagos won.",
+        "receipt": "You cancelled because of traffic.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "{Partner} is gracious about it. Suspiciously gracious.",
+            "attachment": -5,
+            "sanity": 8
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shared_in_flood",
+    "slot": "interrupt",
+    "scene": {
+      "location": "mainland_street",
+      "time": "afternoon",
+      "mood": "neutral",
+      "fx": [
+        "rain"
+      ],
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Rain floods the Lekki-Epe Expressway. Cars are boats now. {Partner} offers to send a driver. In a Prado. Through a river."
+      }
+    ],
+    "choices": [
+      {
+        "id": "driver",
+        "label": "Accept the driver. Arrive like royalty.",
+        "receipt": "You let {partner}'s driver rescue you from the flood.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Water to the doors, AC on full. Somehow romantic.",
+            "attachment": 5,
+            "control": 1
+          }
+        ]
+      },
+      {
+        "id": "wade",
+        "label": "Wade through. Shoes in hand. Independent.",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You waded through the flood yourself.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You post a video wading through Lekki. 'Soft life,' you caption it. The Parlour dies laughing.",
+            "clout": 15,
+            "sanity": -5
+          }
+        ]
+      },
+      {
+        "id": "stay",
+        "label": "Stay home. Indomie and Netflix.",
+        "receipt": "You stayed home during the flood.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The best date you've had all week, and it was with yourself.",
+            "sanity": 12
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shared_in_work_call",
+    "slot": "interrupt",
+    "presentation": "call",
+    "scene": {
+      "location": "prado_interior",
+      "time": "night",
+      "mood": "neutral",
+      "partner_present": false,
+      "npc": {
+        "name": "Your MD"
+      }
+    },
+    "beats": [
+      {
+        "who": "Your MD",
+        "text": "Emergency meeting. Tonight. 8pm. Everybody."
+      },
+      {
+        "who": "narration",
+        "text": "Tonight is the night {partner} finally invited you to {his} place in Ikoyi."
+      }
+    ],
+    "choices": [
+      {
+        "id": "work",
+        "label": "Go to the meeting. Rent is rent.",
+        "receipt": "You chose the emergency meeting over {partner}.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You save the quarter. {Partner} sends 'ok.' with a full stop.",
+            "wallet": 30000,
+            "attachment": -12,
+            "work_note": "Saved the quarter, lost the vibe."
+          }
+        ]
+      },
+      {
+        "id": "love",
+        "label": "Skip it. \"I'm sick.\" Go to Ikoyi.",
+        "receipt": "You faked sick to go to {partner}'s.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "Nobody notices. The night is worth it.",
+            "attachment": 12,
+            "sanity": 5
+          },
+          {
+            "chance": 0.4,
+            "bad": true,
+            "text": "Your MD sees your status. From Ikoyi. Promotion: postponed.",
+            "attachment": 12,
+            "wallet": -20000,
+            "sanity": -10,
+            "work_note": "Lost a promotion for a night in Ikoyi."
+          }
+        ]
+      },
+      {
+        "id": "both",
+        "label": "Join the meeting on mute from {partner}'s sofa",
+        "receipt": "You joined the work meeting from {partner}'s sofa.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "Multitasking legend. Camera off, heart on.",
+            "attachment": 5,
+            "sanity": -5
+          },
+          {
+            "chance": 0.5,
+            "bad": true,
+            "text": "You unmute by accident. Your MD hears {partner} ask 'who is that man shouting?'",
+            "sanity": -15,
+            "work_note": "Got caught unmuted on {partner}'s sofa."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shared_in_bestie_drama",
+    "slot": "interrupt",
+    "presentation": "call",
+    "scene": {
+      "location": "mainland_lash_tech",
+      "time": "afternoon",
+      "mood": "neutral",
+      "partner_present": false,
+      "npc": {
+        "name": "Bestie"
+      }
+    },
+    "beats": [
+      {
+        "who": "Bestie",
+        "text": "Babe. BABE. My own man is cheating. I'm outside his house. Bring a bat. Or wine. Or both."
+      }
+    ],
+    "choices": [
+      {
+        "id": "go",
+        "label": "Go. Bring both.",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You dropped everything for your Bestie's crisis.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You spend the night on her floor. {Partner} texts 'where are you' three times.",
+            "sanity": 5,
+            "attachment": -5
+          }
+        ]
+      },
+      {
+        "id": "phone",
+        "label": "Stay on the phone. Talk her down.",
+        "receipt": "You talked your Bestie down on the phone.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Two hours. She goes home. You're exhausted and a saint.",
+            "sanity": -5
+          }
+        ]
+      },
+      {
+        "id": "later",
+        "label": "\"Babe, I'm on a date. Call you at 10.\"",
+        "receipt": "You put your Bestie on hold for a date.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "She sends 'ok' with no emoji. You'll pay for that later. Probably in wine.",
+            "attachment": 3
+          },
+          {
+            "chance": 0.4,
+            "bad": true,
+            "text": "She posts a sad status about 'fake friends'. Your mutuals have questions.",
+            "sanity": -8,
+            "clout": -5
+          }
+        ]
+      },
+      {
+        "id": "intel",
+        "label": "\"Before the bat: what gist did you hear about {partner}?\"",
+        "requires": {
+          "flags": [
+            "has_intel"
+          ]
+        },
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You asked your Bestie to explain her gist about {partner}.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She stops crying instantly. 'Oh, THAT gist.' She tells it again, louder, with new details.",
+            "sanity": -5,
+            "intel": "bestie"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shared_in_parlour_leak",
+    "slot": "interrupt",
+    "presentation": "text",
+    "scene": {
+      "location": "mainland_street",
+      "time": "afternoon",
+      "mood": "negative",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "The Parlour: 'Someone on Admiralty Way is dating a {partner} lookalike. Spill?' Your bestie tags you. Seven times."
+      }
+    ],
+    "choices": [
+      {
+        "id": "spill",
+        "label": "Spill. Anonymously. Mostly.",
+        "tags": [
+          "toxic"
+        ],
+        "receipt": "You spilled gist about {partner} on the Parlour.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The thread hits 1,000 comments. Anonymous lasted eleven minutes.",
+            "clout": 20,
+            "exposure": 25,
+            "goal": {
+              "revenge": 15
+            }
+          }
+        ]
+      },
+      {
+        "id": "untag",
+        "label": "Untag yourself. Mute the thread.",
+        "tags": [
+          "discreet"
+        ],
+        "receipt": "You muted the Parlour thread.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Silence. Your bestie calls you 'boring'. You're boring and safe.",
+            "sanity": 5
+          }
+        ]
+      },
+      {
+        "id": "decoy",
+        "label": "Post a decoy. Different area, different hair.",
+        "receipt": "You posted a decoy in the Parlour.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "The Parlour chases a girl in Ikeja for two days. Sorry, Ikeja girl.",
+            "exposure": -5,
+            "clout": 5
+          },
+          {
+            "chance": 0.4,
+            "bad": true,
+            "text": "Someone recognises your writing style. 'Babe, we know it's you.'",
+            "exposure": 15
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shared_in_mama_nonso",
+    "slot": "interrupt",
+    "presentation": "call",
+    "scene": {
+      "location": "mainland_street",
+      "time": "morning",
+      "mood": "positive",
+      "partner_present": false,
+      "npc": {
+        "name": "Mama Nonso"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Your neighbour hands you her phone. It's Mama Nonso. On speaker. For you."
+      },
+      {
+        "who": "Mama Nonso",
+        "text": "My daughter! Are you married? My son Nonso is a doctor. Almost. He's single. Very single."
+      }
+    ],
+    "choices": [
+      {
+        "id": "polite",
+        "label": "\"I'm seeing someone, Mama.\"",
+        "receipt": "You told Mama Nonso you're taken.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Seeing is not marrying!' She adds you to her prayer list anyway.",
+            "sanity": 5
+          }
+        ]
+      },
+      {
+        "id": "number",
+        "label": "Take Nonso's number. For research.",
+        "receipt": "You took Nonso's number.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Nonso texts in 30 seconds: 'Mummy said you're my wife.' Delete or keep? Keep.",
+            "clout": 5,
+            "set": [
+              {
+                "flag": "secret_nonso_number",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pray",
+        "label": "\"Mama, pray for my current relationship.\"",
+        "receipt": "You asked Mama Nonso to pray for your relationship.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She prays for 14 minutes on speaker. A danfo conductor says 'Amen' from the road.",
+            "sanity": 10,
+            "attachment": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shared_in_okada",
+    "slot": "interrupt",
+    "scene": {
+      "location": "mainland_street",
+      "time": "night",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Ojuelegba at night. An okada nearly clips you. Your phone flies. It lands screen-up: a text from {partner}. 'Where are you?'"
+      }
+    ],
+    "choices": [
+      {
+        "id": "truth",
+        "label": "\"Ojuelegba. Nearly died. Love you.\"",
+        "receipt": "You told {partner} you nearly got hit.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "{Partner} calls immediately. Real worry. It feels good to be worried about.",
+            "attachment": 6,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "lie",
+        "label": "\"At home. Sleeping.\"",
+        "receipt": "You told {partner} you were home when you weren't.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "'Okay, sleep well.' The lie works. You feel weird about how easily.",
+            "sanity": -3,
+            "set": [
+              {
+                "flag": "secret_lied_location",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          },
+          {
+            "chance": 0.4,
+            "bad": true,
+            "text": "'Funny. I can hear okadas.' Oops.",
+            "trust": -12,
+            "set": [
+              {
+                "flag": "secret_lied_location",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "suya",
+        "label": "Ignore it. Buy suya. Survive first.",
+        "receipt": "You ignored {partner}'s text and bought suya.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The suya man gives you extra yaji 'for shock'. Medicine.",
+            "sanity": 8,
+            "attachment": -3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shared_po_debt_collectors",
+    "slot": "payoff",
+    "priority": 9,
+    "presentation": "call",
+    "requires": {
+      "flags": [
+        "loan_taken"
+      ],
+      "not_flags": [
+        "loan_called"
+      ],
+      "flag_age": {
+        "flag": "loan_taken",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "loan_taken"
+    ],
+    "scene": {
+      "location": "mainland_street",
+      "time": "morning",
+      "mood": "negative",
+      "partner_present": false,
+      "npc": {
+        "name": "QuickCash Recovery"
+      }
+    },
+    "beats": [
+      {
+        "who": "QuickCash Recovery",
+        "text": "Good morning. Your loan is overdue. We have messaged your contacts. Your mother says hello. So does your MD."
+      }
+    ],
+    "choices": [
+      {
+        "id": "repay",
+        "label": "Repay what you can. Right now.",
+        "receipt": "You repaid the loan app.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Partial payment. They stop calling your mother. They keep calling you.",
+            "wallet": -50000,
+            "debt": -60000,
+            "sanity": -5,
+            "set": [
+              "loan_called"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ignore",
+        "label": "Block the number. They have 40 more.",
+        "receipt": "You blocked the loan app's recovery line.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "bad": true,
+            "text": "They message your family WhatsApp: 'This person is a debtor. Pray for them.' Your aunty prays loudly.",
+            "sanity": -20,
+            "exposure": 20,
+            "clout": -10,
+            "set": [
+              "loan_called"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ask_partner",
+        "label": "Ask {partner} to clear it",
+        "receipt": "You asked {partner} to clear your loan.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "{Partner} clears it without a word. You feel rescued and owned at the same time.",
+            "debt": -150000,
+            "control": 2,
+            "attachment": 5,
+            "set": [
+              "loan_called"
+            ]
+          },
+          {
+            "chance": 0.5,
+            "bad": true,
+            "text": "'A loan app? You?' {Partner} looks at you differently now.",
+            "trust": -10,
+            "sanity": -10,
+            "set": [
+              "loan_called"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shared_po_clinic_botched",
+    "slot": "payoff",
+    "priority": 8,
+    "requires": {
+      "flags": [
+        "clinic_botched"
+      ],
+      "not_flags": [
+        "botch_handled"
+      ],
+      "flag_age": {
+        "flag": "clinic_botched",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "clinic_botched"
+    ],
+    "scene": {
+      "location": "mainland_lash_tech",
+      "time": "morning",
+      "mood": "negative",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "You wake up. One lash is in your eye. The other side of your face is having a different day. {Partner} wants a video call."
+      }
+    ],
+    "choices": [
+      {
+        "id": "sunglasses",
+        "label": "Sunglasses indoors. Confidence.",
+        "receipt": "You hid the botched glow-up behind sunglasses.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Why are you in sunglasses?' 'I'm photosensitive.' You are not.",
+            "sanity": -5,
+            "chemistry": -3,
+            "set": [
+              "botch_handled"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "fix",
+        "label": "Pay to fix it. Awolowo Road, properly.",
+        "cost": 60000,
+        "receipt": "You paid to fix the botched job.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Fixed. Expensive lesson: the cheap one costs twice.",
+            "glow": 1,
+            "set": [
+              "botch_handled"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "laugh",
+        "label": "Video call anyway. Laugh first.",
+        "receipt": "You showed {partner} the botched job and laughed.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "{Partner} laughs so hard {he} snorts. Intimacy unlocked.",
+            "attachment": 6,
+            "chemistry": 2,
+            "set": [
+              "botch_handled"
+            ]
+          },
+          {
+            "chance": 0.4,
+            "bad": true,
+            "text": "{Partner} screenshots it. For 'memories'. It's in a group chat by noon.",
+            "exposure": 10,
+            "chemistry": -4,
+            "set": [
+              "botch_handled"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shared_po_club_follow",
+    "slot": "payoff",
+    "priority": 7,
+    "presentation": "text",
+    "requires": {
+      "flags": [
+        "club_night"
+      ],
+      "not_flags": [
+        "club_followed"
+      ],
+      "flag_age": {
+        "flag": "club_night",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "club_night"
+    ],
+    "scene": {
+      "location": "vi_club_vip",
+      "time": "night",
+      "mood": "neutral",
+      "partner_present": false,
+      "npc": {
+        "name": "Tunde from the VIP"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "A text from the stranger who shared your booth last night."
+      },
+      {
+        "who": "Tunde from the VIP",
+        "text": "Last night was fun. Same booth tonight? I'll be there by 11. Bring your energy."
+      }
+    ],
+    "choices": [
+      {
+        "id": "go",
+        "label": "Go back. Just to dance.",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You went back to the club for the stranger.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Just to dance becomes just one drink becomes just one photo.",
+            "clout": 15,
+            "set": [
+              "club_followed",
+              {
+                "flag": "secret_club_second_night",
+                "knows": [
+                  "player",
+                  "world"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ignore",
+        "label": "Leave him on read",
+        "tags": [
+          "discreet"
+        ],
+        "receipt": "You ignored the stranger from the club.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He sends a sad emoji at 2am. Then a 'wyd'. Then nothing. Peace.",
+            "sanity": 5,
+            "set": [
+              "club_followed"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tell",
+        "label": "Tell {partner} someone's trying you",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You told {partner} a stranger was trying you.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "{Partner} goes quiet, then: 'Which club?' The question has teeth.",
+            "attachment": 6,
+            "control": 1,
+            "set": [
+              "club_followed"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shared_po_club_end",
+    "slot": "payoff",
+    "priority": 7,
+    "requires": {
+      "flags": [
+        "secret_club_second_night"
+      ],
+      "not_flags": [
+        "club_ended"
+      ],
+      "flag_age": {
+        "flag": "secret_club_second_night",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "secret_club_second_night"
+    ],
+    "discovers": [
+      {
+        "flag": "secret_club_second_night",
+        "to": [
+          "partner"
+        ]
+      }
+    ],
+    "partner_reacts_to": [
+      "secret_club_second_night"
+    ],
+    "scene": {
+      "location": "mainland_street",
+      "time": "afternoon",
+      "expression": "angry",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "A blog posts the photo: you and Tunde, VIP booth, sparklers. {Partner} sends you the link. No caption."
+      },
+      {
+        "who": "partner",
+        "text": "Explain this."
+      }
+    ],
+    "choices": [
+      {
+        "id": "truth",
+        "label": "\"I danced. That's all. I'm sorry I didn't say.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You told {partner} the truth about the club photo.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Silence. Then: 'Okay.' Not fine. But okay.",
+            "attachment": -8,
+            "sanity": 3,
+            "set": [
+              "club_ended"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "deny",
+        "label": "\"That's not me. Lagos has twins.\"",
+        "receipt": "You denied the club photo.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "bad": true,
+            "text": "{Partner} zooms in on your bag. {He} bought you that bag.",
+            "trust": -20,
+            "sanity": -10,
+            "set": [
+              "club_ended"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "flip",
+        "label": "\"Where were YOU on Friday?\"",
+        "tags": [
+          "toxic"
+        ],
+        "receipt": "You flipped the club photo into an accusation.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The fight lasts till 3am. Nobody wins. Everybody's tired.",
+            "trust": -10,
+            "sanity": -10,
+            "set": [
+              "club_ended"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shared_po_timi_blog",
+    "slot": "payoff",
+    "priority": 6,
+    "requires": {
+      "flags": [
+        "secret_timi_backstage"
+      ],
+      "not_flags": [
+        "timi_blogged"
+      ],
+      "flag_age": {
+        "flag": "secret_timi_backstage",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "secret_timi_backstage"
+    ],
+    "discovers": [
+      {
+        "flag": "secret_timi_backstage",
+        "to": [
+          "partner"
+        ]
+      }
+    ],
+    "partner_reacts_to": [
+      "secret_timi_backstage"
+    ],
+    "scene": {
+      "location": "prado_interior",
+      "time": "night",
+      "expression": "suspicious",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Headline: 'TIMI SPOTTED WITH MYSTERY LOVER BACKSTAGE'. {Partner} has read it. Twice."
+      },
+      {
+        "who": "partner",
+        "text": "So. Timi."
+      }
+    ],
+    "choices": [
+      {
+        "id": "nothing",
+        "label": "\"It was a photo. Nothing happened.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You told {partner} nothing happened with Timi.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "{Partner} wants to believe you. {He} almost does.",
+            "trust": -5,
+            "set": [
+              "timi_blogged"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "flex",
+        "label": "\"Jealous? Timi has taste.\"",
+        "receipt": "You flexed Timi at {partner}.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "{Partner} laughs, but not with you. Clout up. Something else down.",
+            "clout": 15,
+            "trust": -15,
+            "set": [
+              "timi_blogged"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sorry",
+        "label": "\"I was bored and you weren't answering.\"",
+        "receipt": "You told {partner} you went because {he} wasn't answering.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "That lands. Hard. On both of you.",
+            "attachment": 5,
+            "trust": -5,
+            "sanity": -5,
+            "set": [
+              "timi_blogged"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shared_po_seen_out",
+    "slot": "payoff",
+    "priority": 4,
+    "requires": {
+      "any_flags": [
+        "secret_ex_dinner",
+        "secret_weekend_oga",
+        "secret_trainer_selfie",
+        "secret_kayode_dance"
+      ],
+      "not_flags": [
+        "seen_out_handled"
+      ],
+      "day_min": 3
+    },
+    "payoff_of": [
+      "secret_ex_dinner",
+      "secret_weekend_oga",
+      "secret_trainer_selfie",
+      "secret_kayode_dance"
+    ],
+    "presentation": "text",
+    "scene": {
+      "location": "mainland_street",
+      "time": "afternoon",
+      "mood": "negative",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "The Parlour: 'Saw somebody's somebody out with somebody else this week 👀.' The picture is blurry. Your outfit is not."
+      }
+    ],
+    "choices": [
+      {
+        "id": "comment",
+        "label": "Comment \"Lagos is small 😂\" and move on",
+        "receipt": "You laughed off the Parlour post about you.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Bold. It works on everybody except the three people who know you.",
+            "exposure": 10,
+            "clout": 5,
+            "set": [
+              "seen_out_handled"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pre_empt",
+        "label": "Tell {partner} first, before the Parlour does",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You told {partner} before the Parlour could.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "{Partner} is annoyed, then grateful. 'At least you told me.' Honesty: expensive but cheaper.",
+            "attachment": -5,
+            "trust": 5,
+            "set": [
+              "seen_out_handled"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pay_admin",
+        "label": "Pay the Parlour admin to delete it",
+        "cost": 25000,
+        "receipt": "You paid the Parlour admin to delete the post.",
+        "outcomes": [
+          {
+            "chance": 0.7,
+            "text": "Deleted. Admin says 'pleasure doing business'. Chilling.",
+            "exposure": -15,
+            "set": [
+              "seen_out_handled"
+            ]
+          },
+          {
+            "chance": 0.3,
+            "bad": true,
+            "text": "Admin deletes it, then posts 'someone paid me to delete a post 👀'. Worse.",
+            "exposure": 15,
+            "set": [
+              "seen_out_handled"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shared_po_scandal_brewing",
+    "slot": "payoff",
+    "priority": 3,
+    "requires": {
+      "min": {
+        "exposure": 50
+      },
+      "not_flags": [
+        "scandal_warned"
+      ],
+      "day_min": 3
+    },
+    "presentation": "text",
+    "scene": {
+      "location": "mainland_street",
+      "time": "night",
+      "mood": "negative",
+      "partner_present": false,
+      "npc": {
+        "name": "Amebo"
+      }
+    },
+    "beats": [
+      {
+        "who": "Amebo",
+        "text": "Babe. A blog is putting together a thread about you. Pictures, names, timeline. You have a few hours."
+      }
+    ],
+    "choices": [
+      {
+        "id": "lay_low",
+        "label": "Lay low. Delete. Private account. Pray.",
+        "tags": [
+          "discreet"
+        ],
+        "receipt": "You went private when a blog came for you.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You vanish for a day. The blog finds a juicier story. Thank God for other people's wahala.",
+            "exposure": -20,
+            "clout": -10,
+            "set": [
+              "scandal_warned"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pay",
+        "label": "Pay the blog to kill it",
+        "cost": 80000,
+        "receipt": "You paid a blog to kill a story about you.",
+        "outcomes": [
+          {
+            "chance": 0.7,
+            "text": "Killed. Blogs, like everything in Lagos, have a price.",
+            "exposure": -30,
+            "set": [
+              "scandal_warned"
+            ]
+          },
+          {
+            "chance": 0.3,
+            "bad": true,
+            "text": "They take the money and run the story anyway. With a watermark.",
+            "exposure": 15,
+            "set": [
+              "scandal_warned"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "feed",
+        "label": "Feed them a bigger story about someone else",
+        "tags": [
+          "toxic"
+        ],
+        "receipt": "You fed a blog someone else's gist to save yourself.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "It works. Somebody else trends. Your karma just opened a tab.",
+            "exposure": -15,
+            "sanity": -5,
+            "set": [
+              "scandal_warned"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shared_po_nonso_calls",
+    "slot": "payoff",
+    "priority": 3,
+    "presentation": "call",
+    "requires": {
+      "flags": [
+        "secret_nonso_number"
+      ],
+      "not_flags": [
+        "nonso_handled"
+      ],
+      "flag_age": {
+        "flag": "secret_nonso_number",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "secret_nonso_number"
+    ],
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "night",
+      "mood": "neutral",
+      "npc": {
+        "name": "Nonso"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Mid-date with {partner}. Your phone lights up on the table: 'NONSO (MAMA'S SON)'. {Partner} reads it upside down."
+      },
+      {
+        "who": "partner",
+        "text": "Who is Nonso? And why is his mama involved?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "truth",
+        "label": "\"His mother is trying to marry me off.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You explained Nonso to {partner}.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "{Partner} laughs so hard the waiter laughs too. Then: 'Block him. Respectfully.'",
+            "attachment": 4,
+            "set": [
+              "nonso_handled"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "decline",
+        "label": "Decline the call. Smile. Change the subject.",
+        "receipt": "You declined Nonso's call mid-date.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "Smooth. Nonso sends 'ok ma'. Of course he does.",
+            "set": [
+              "nonso_handled"
+            ]
+          },
+          {
+            "chance": 0.4,
+            "bad": true,
+            "text": "He calls again. And again. Mama is clearly coaching him.",
+            "trust": -8,
+            "set": [
+              "nonso_handled"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "answer",
+        "label": "Answer it. Put Nonso on speaker.",
+        "tags": [
+          "toxic"
+        ],
+        "receipt": "You put Nonso on speaker on your date.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Good evening, my future wife.' The table goes silent. The pepper soup goes cold.",
+            "clout": 10,
+            "trust": -12,
+            "set": [
+              "nonso_handled"
+            ]
+          }
+        ]
+      }
+    ],
+    "discovers": [
+      {
+        "flag": "secret_nonso_number",
+        "to": [
+          "partner"
+        ]
+      }
+    ],
+    "partner_reacts_to": [
+      "secret_nonso_number"
+    ]
+  },
+  {
+    "id": "shared_po_location_lie",
+    "slot": "payoff",
+    "priority": 5,
+    "requires": {
+      "flags": [
+        "secret_lied_location"
+      ],
+      "not_flags": [
+        "lie_surfaced"
+      ],
+      "flag_age": {
+        "flag": "secret_lied_location",
+        "min": 2
+      }
+    },
+    "payoff_of": [
+      "secret_lied_location"
+    ],
+    "discovers": [
+      {
+        "flag": "secret_lied_location",
+        "to": [
+          "partner"
+        ]
+      }
+    ],
+    "partner_reacts_to": [
+      "secret_lied_location"
+    ],
+    "scene": {
+      "location": "prado_interior",
+      "time": "night",
+      "expression": "suspicious",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "{Partner}'s driver mentions, casually, that he saw you at Ojuelegba the night you were 'sleeping'."
+      },
+      {
+        "who": "partner",
+        "text": "So. You were home?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "admit",
+        "label": "\"I wasn't. I didn't want a lecture.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You admitted you lied about where you were.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Next time, just tell me.' The car feels smaller, but it's still moving.",
+            "attachment": -4,
+            "set": [
+              "lie_surfaced"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "double",
+        "label": "Double down. \"Your driver needs glasses.\"",
+        "receipt": "You doubled down on the location lie.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "The driver suddenly can't remember anything. Loyal man.",
+            "set": [
+              "lie_surfaced"
+            ]
+          },
+          {
+            "chance": 0.5,
+            "bad": true,
+            "text": "The driver shows a photo. Your hair is unmistakable.",
+            "trust": -18,
+            "sanity": -8,
+            "set": [
+              "lie_surfaced"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "counter",
+        "label": "\"Why is your driver tracking me?\"",
+        "tags": [
+          "call_out"
+        ],
+        "receipt": "You asked why {partner}'s driver was watching you.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "{Partner} has no good answer to that. Neither of you sleeps well.",
+            "trust": -5,
+            "control": -1,
+            "set": [
+              "lie_surfaced"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

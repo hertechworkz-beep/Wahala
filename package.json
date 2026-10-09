@@ -1,0 +1,40 @@
+{
+  "name": "wahala",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Wahala: The Dating Survival Sim. Season 1: Lagos.",
+  "scripts": {
+    "dev": "vite",
+    "validate": "tsx scripts/validate-content.ts",
+    "simulate": "tsx scripts/simulate.ts",
+    "rarity": "tsx scripts/simulate.ts --write-rarity",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "prebuild": "npm run validate",
+    "build": "vite build",
+    "preview": "vite preview",
+    "icons": "node scripts/make-icons.mjs",
+    "shots": "node scripts/screenshots.mjs"
+  },
+  "dependencies": {
+    "html-to-image": "1.11.11",
+    "qrcode": "1.5.4",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "22.9.0",
+    "@types/qrcode": "1.5.5",
+    "@types/react": "18.3.12",
+    "@types/react-dom": "18.3.1",
+    "@vitejs/plugin-react": "4.3.4",
+    "autoprefixer": "10.4.20",
+    "postcss": "8.4.49",
+    "tailwindcss": "3.4.15",
+    "tsx": "4.19.2",
+    "typescript": "5.6.3",
+    "vite": "5.4.11",
+    "vitest": "2.1.5"
+  }
+}

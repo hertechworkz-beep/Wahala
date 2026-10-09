@@ -1,0 +1,82 @@
+[
+  {
+    "id": "ikoyi_restaurant",
+    "name": "Rooftop restaurant",
+    "place": "Ikoyi, off Bourdillon Road",
+    "palette": { "sky": ["#0b1530", "#23305e", "#c46a3a"], "ground": "#1a1410", "accent": "#F59E0B", "glow": "#ffcf7a" },
+    "layers": ["skyline", "lagoon", "city_lights", "candles", "table", "bokeh"],
+    "ambience": ["restaurant", "lagoon_breeze"],
+    "brand_slots": ["date_venue_host", "gifts"],
+    "transition": "fade"
+  },
+  {
+    "id": "vi_club_vip",
+    "name": "VIP lounge",
+    "place": "Ozumba Mbadiwe Avenue, Victoria Island",
+    "palette": { "sky": ["#12001f", "#2a0838", "#5b0d4a"], "ground": "#0a0010", "accent": "#F43F5E", "glow": "#ff4fd8" },
+    "layers": ["neon", "lasers", "crowd", "booth", "sparklers", "smoke"],
+    "ambience": ["club_bass", "crowd"],
+    "brand_slots": ["club_playlist"],
+    "transition": "flash"
+  },
+  {
+    "id": "prado_interior",
+    "name": "Chief's Prado",
+    "place": "Crossing the Lekki-Ikoyi Link Bridge",
+    "palette": { "sky": ["#05070f", "#0f1730", "#1d2a50"], "ground": "#0b0b0d", "accent": "#7aa2ff", "glow": "#ffd28a" },
+    "layers": ["bridge_cables", "streaks", "billboard", "car_window", "dashboard_glow"],
+    "ambience": ["car_engine", "afrobeats_radio"],
+    "brand_slots": ["bridge_billboard", "phone_apps"],
+    "transition": "slide"
+  },
+  {
+    "id": "lekki_salon",
+    "name": "Upscale salon",
+    "place": "Admiralty Way, Lekki Phase 1",
+    "palette": { "sky": ["#2a1a22", "#4a2a38", "#7a4a5a"], "ground": "#2a2024", "accent": "#F43F5E", "glow": "#fff1f5" },
+    "layers": ["mirrors", "ring_lights", "dryers", "salon_shelf"],
+    "ambience": ["salon_chatter", "hair_dryer"],
+    "brand_slots": ["glow_spots"],
+    "transition": "fade"
+  },
+  {
+    "id": "mainland_street",
+    "name": "Busy junction",
+    "place": "Ojuelegba, Surulere",
+    "palette": { "sky": ["#3a1c40", "#c2573a", "#f2a65a"], "ground": "#2b2420", "accent": "#facc15", "glow": "#ffb347" },
+    "layers": ["sunset", "kiosks", "poster", "danfos", "okadas", "suya_smoke"],
+    "ambience": ["traffic", "conductors", "generator"],
+    "brand_slots": ["street_poster"],
+    "transition": "slide"
+  },
+  {
+    "id": "luxury_apartment",
+    "name": "Glass flat",
+    "place": "Lekki Phase 1",
+    "palette": { "sky": ["#071425", "#123150", "#2c5b7a"], "ground": "#14181c", "accent": "#10B981", "glow": "#cfe9ff" },
+    "layers": ["skyline", "glass_wall", "rain", "sofa", "lamp"],
+    "ambience": ["rain", "ac_hum"],
+    "brand_slots": ["gifts"],
+    "transition": "iris"
+  },
+  {
+    "id": "aesthetic_clinic",
+    "name": "Skin clinic",
+    "place": "Awolowo Road, Ikoyi",
+    "palette": { "sky": ["#e9e4dc", "#f6f2ec", "#ffffff"], "ground": "#d8d2c8", "accent": "#F59E0B", "glow": "#ffffff" },
+    "layers": ["marble", "clinic_lights", "plants", "sparkle"],
+    "ambience": ["clinic_calm"],
+    "brand_slots": ["glow_spots"],
+    "transition": "fade"
+  },
+  {
+    "id": "mainland_lash_tech",
+    "name": "Lash kiosk",
+    "place": "Near Tejuosho Market, Yaba",
+    "palette": { "sky": ["#1d1208", "#3a2412", "#5a3a1c"], "ground": "#24180e", "accent": "#facc15", "glow": "#ffe08a" },
+    "layers": ["string_lights", "ceiling_fan", "kiosk_wall", "poster"],
+    "ambience": ["market", "generator", "fan"],
+    "brand_slots": ["street_poster", "glow_spots"],
+    "transition": "fade"
+  }
+]

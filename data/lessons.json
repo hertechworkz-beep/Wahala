@@ -1,0 +1,20 @@
+[
+  { "text": "A man who hides you on weekends is not busy. He is booked.", "truths": ["serial_sponsor"] },
+  { "text": "If you're saved as a number, you're one of several.", "truths": ["serial_sponsor"] },
+  { "text": "\"I'll refund you tomorrow\" has never once been followed by tomorrow.", "truths": ["broke"] },
+  { "text": "Rich men don't need your signature. Broke men do.", "truths": ["broke"] },
+  { "text": "Not every locked phone is hiding a lover. Some are hiding a man who is tired.", "truths": ["divorced"] },
+  { "text": "Loud men are not always dangerous. Quiet ones are not always safe.", "good_one": true },
+  { "text": "Sometimes the wahala is you.", "endings": ["fumbled"] },
+  { "text": "Checking once is caution. Checking again is a hobby. Posting it is a war.", "endings": ["fumbled"] },
+  { "text": "Control isn't love. Leaving isn't failure.", "endings": ["obsession", "walked_away"] },
+  { "text": "If her love language is alerts, you are a subscription.", "endings": ["sapa"] },
+  { "text": "Every \"emergency\" that needs your money is someone else's plan.", "endings": ["sapa"] },
+  { "text": "Sanity is a currency too. You spent all of it on him.", "endings": ["breakdown"] },
+  { "text": "Blue ticks are a full sentence.", "endings": ["ghosted"] },
+  { "text": "The Parlour doesn't forget. It just waits for a better picture.", "endings": ["scandal"] },
+  { "text": "You read the signs before they read you. That's not luck. That's attention.", "endings": ["counter_con"] },
+  { "text": "Exclusive is a status, not a promise.", "endings": ["survived"] },
+  { "text": "Being chosen feels good. Make sure you chose too.", "endings": ["locked_in"] },
+  { "text": "You saw the signs. Next time, believe them.", "endings": ["ghosted", "survived", "sapa"] }
+]

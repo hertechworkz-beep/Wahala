@@ -1,0 +1,14 @@
+[
+  { "text": "You saw the signs. You sponsored the signs.", "endings": ["sapa", "ghosted", "survived"], "missed_min": 2 },
+  { "text": "Seven days. Seven red flags. Zero exits taken.", "endings": ["survived", "ghosted"], "missed_min": 3 },
+  { "text": "He was faithful. You were curious. Curiosity won.", "endings": ["fumbled"] },
+  { "text": "You walked into Lagos with a bag and left with a lesson.", "endings": ["sapa"] },
+  { "text": "The Parlour has your face. The Parlour has your full name.", "endings": ["scandal"] },
+  { "text": "You read him like a bank statement. And then you withdrew.", "endings": ["counter_con"] },
+  { "text": "From talking stage to locked in. Phase 2 is going to be loud.", "endings": ["locked_in"] },
+  { "text": "Blue ticks. Then one tick. Then a lesson.", "endings": ["ghosted"] },
+  { "text": "The supermarket on a Sunday has seen things. Now it has seen you.", "endings": ["breakdown"] },
+  { "text": "Exclusive. For now. Read the fine print.", "endings": ["survived"] },
+  { "text": "You chose the danfo over the Prado. Correct.", "endings": ["walked_away"] },
+  { "text": "This one isn't funny. Control isn't love.", "endings": ["obsession"] }
+]

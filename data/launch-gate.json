@@ -1,0 +1,142 @@
+{
+  "chief_emeka": {
+    "pass": true,
+    "errors": []
+  },
+  "kayode": {
+    "pass": false,
+    "errors": [
+      "deck not written yet",
+      "first_date: 0/3",
+      "red_flag: 0/3",
+      "money_trap: 0/3",
+      "payoff: 0/2",
+      "talking_time: 0/3",
+      "no confrontation for truth yahoo",
+      "no confrontation for truth gambler",
+      "no confrontation for truth trust_fund",
+      "needs at least 2 payoff cards tied to earlier choices"
+    ]
+  },
+  "bello": {
+    "pass": false,
+    "errors": [
+      "deck not written yet",
+      "first_date: 0/3",
+      "red_flag: 0/3",
+      "money_trap: 0/3",
+      "payoff: 0/2",
+      "talking_time: 0/3",
+      "no confrontation for truth arranged",
+      "no confrontation for truth kano_wife",
+      "no confrontation for truth defiant_love",
+      "needs at least 2 payoff cards tied to earlier choices"
+    ]
+  },
+  "ovie": {
+    "pass": false,
+    "errors": [
+      "deck not written yet",
+      "first_date: 0/3",
+      "red_flag: 0/3",
+      "money_trap: 0/3",
+      "payoff: 0/2",
+      "talking_time: 0/3",
+      "no confrontation for truth controlling",
+      "no confrontation for truth baby_mamas",
+      "no confrontation for truth loyal",
+      "controlling temperament but no escalation cards",
+      "needs at least 2 payoff cards tied to earlier choices"
+    ]
+  },
+  "osaze": {
+    "pass": false,
+    "errors": [
+      "deck not written yet",
+      "first_date: 0/3",
+      "red_flag: 0/3",
+      "money_trap: 0/3",
+      "payoff: 0/2",
+      "talking_time: 0/3",
+      "no confrontation for truth never_left",
+      "no confrontation for truth wife_abroad",
+      "no confrontation for truth japa_real",
+      "needs at least 2 payoff cards tied to earlier choices"
+    ]
+  },
+  "tiwa": {
+    "pass": false,
+    "errors": [
+      "deck not written yet",
+      "first_date: 0/3",
+      "red_flag: 0/3",
+      "money_trap: 0/3",
+      "payoff: 0/2",
+      "talking_time: 0/3",
+      "no confrontation for truth main_boyfriend",
+      "no confrontation for truth vendor_debt",
+      "no confrontation for truth tester",
+      "needs at least 2 payoff cards tied to earlier choices"
+    ]
+  },
+  "adaeze": {
+    "pass": false,
+    "errors": [
+      "deck not written yet",
+      "first_date: 0/3",
+      "red_flag: 0/3",
+      "money_trap: 0/3",
+      "payoff: 0/2",
+      "talking_time: 0/3",
+      "no confrontation for truth engaged",
+      "no confrontation for truth collapsing",
+      "no confrontation for truth tired",
+      "needs at least 2 payoff cards tied to earlier choices"
+    ]
+  },
+  "zainab": {
+    "pass": false,
+    "errors": [
+      "deck not written yet",
+      "first_date: 0/3",
+      "red_flag: 0/3",
+      "money_trap: 0/3",
+      "payoff: 0/2",
+      "talking_time: 0/3",
+      "no confrontation for truth family_no",
+      "no confrontation for truth wild_life",
+      "no confrontation for truth dangerous_ex",
+      "needs at least 2 payoff cards tied to earlier choices"
+    ]
+  },
+  "blessing": {
+    "pass": false,
+    "errors": [
+      "deck not written yet",
+      "first_date: 0/3",
+      "red_flag: 0/3",
+      "money_trap: 0/3",
+      "payoff: 0/2",
+      "talking_time: 0/3",
+      "no confrontation for truth dj_ex",
+      "no confrontation for truth event_money",
+      "no confrontation for truth fierce_loyal",
+      "needs at least 2 payoff cards tied to earlier choices"
+    ]
+  },
+  "mercy": {
+    "pass": false,
+    "errors": [
+      "deck not written yet",
+      "first_date: 0/3",
+      "red_flag: 0/3",
+      "money_trap: 0/3",
+      "payoff: 0/2",
+      "talking_time: 0/3",
+      "no confrontation for truth chief_sponsor",
+      "no confrontation for truth japa",
+      "no confrontation for truth quitting",
+      "needs at least 2 payoff cards tied to earlier choices"
+    ]
+  }
+}

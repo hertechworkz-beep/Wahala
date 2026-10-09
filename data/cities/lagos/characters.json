@@ -1,0 +1,510 @@
+[
+  {
+    "id": "chief_emeka",
+    "name": "Chief Emeka",
+    "short": "Chief",
+    "age": 49,
+    "gender": "man",
+    "group": "Igbo",
+    "pronouns": { "he": "he", "him": "him", "his": "his" },
+    "public_card": "Real estate and import-export. Tinted Prado, promises an Ikoyi flat.",
+    "signature_catch": "Flight mode Friday 7pm to Monday; the first wife is hunting.",
+    "archetype": "The Sponsor",
+    "temperament": { "id": "possessive_patron", "controlling": true, "description": "He pays, so he thinks he owns. More attachment makes him tighter, not softer." },
+    "taste": {
+      "fixed": {
+        "woman": { "build": "Curvy / Thick", "hair": "30-inch Bone Straight" },
+        "man": { "build": "Big Daddy", "style": "Agbada / Senator" }
+      },
+      "pool": ["Owambe Traditional", "Designer Glam", "Soft and Full", "Clean Bald", "Beard Gang"],
+      "high_maintenance": true
+    },
+    "vibe_start": {
+      "lover": { "attachment": 40, "trust": 55, "line": "Chief smiles like he's found a bargain. 'You're sweet. Sweet things don't last in Lagos.'" },
+      "sugar": { "attachment": 45, "trust": 35, "line": "Chief already has his wallet out. 'Let's not waste each other's time, abi?'" },
+      "bigboy": { "attachment": 35, "trust": 30, "line": "Chief sizes up your watch. 'New money. I like confidence. I don't trust it.'" },
+      "runs": { "attachment": 40, "trust": 30, "line": "Chief narrows his eyes. 'I know your type. Funny thing: I'm also your type.'" },
+      "corporate": { "attachment": 35, "trust": 60, "line": "Chief nods slowly. 'A bank person. Stable. My mother would like you.'" }
+    },
+    "truths": [
+      {
+        "id": "serial_sponsor",
+        "kind": "flawed",
+        "label": "Serial sponsor",
+        "reveal": "HIDDEN TRUTH: You were number four. There are three others in Lekki, and he told all of them you're his cousin from the East.",
+        "lesson": "A man who hides you on weekends is not busy. He is booked.",
+        "tells": [
+          { "id": "t_sponsor_numbers", "text": "His phone lights up on the table: 'Lekki 1'. Then 'Lekki 3'. No names. Just numbers.", "hint": "Check how he saves his contacts. Numbers, not names." },
+          { "id": "t_sponsor_bracelet", "text": "There's a gold bracelet in the glovebox, still in its box. It is not your size.", "hint": "Ask who the other gift in the Prado is for." },
+          { "id": "t_sponsor_driver", "text": "Musa the driver greets you: 'Good evening, Madam Thurs-- Madam.' He coughs for a long time.", "hint": "Ask the driver what day of the week you are." }
+        ]
+      },
+      {
+        "id": "broke",
+        "kind": "flawed",
+        "label": "Secretly broke",
+        "reveal": "HIDDEN TRUTH: His containers have been stuck at Apapa for eleven months. The Prado is rented by the week. He needed your name on a loan, not your heart.",
+        "lesson": "\"I'll refund you tomorrow\" has never once been followed by tomorrow.",
+        "tells": [
+          { "id": "t_broke_card", "text": "His card is declined. He laughs too loud: 'These banks sef. Network.' He pays with a transfer that takes nine minutes.", "hint": "Watch his face when the bill comes." },
+          { "id": "t_broke_apapa", "text": "He takes a call about 'demurrage' at Apapa port. He goes grey, then smiles at you like nothing happened.", "hint": "Ask him how the containers at Apapa are doing." },
+          { "id": "t_broke_prado", "text": "There's a peeling sticker on the Prado's back glass: '...CAR HIRE, IKEJA. Weekly rates.'", "hint": "Read the back windscreen of the Prado." }
+        ]
+      },
+      {
+        "id": "divorced",
+        "kind": "good_one",
+        "label": "Divorced and lonely",
+        "reveal": "HIDDEN TRUTH: He's divorced. The 'first wife' is his ex, still angry, still in the family WhatsApp. Flight mode was his weekends with his kids.",
+        "lesson": "Not every locked phone is hiding a woman. Some are hiding a man who is tired.",
+        "tells": [
+          { "id": "t_div_weekends", "text": "Friday, 6:58pm: 'Going off-grid till Monday. Don't overthink it.' Then his last seen freezes.", "hint": "Ask where he actually goes at weekends." },
+          { "id": "t_div_ring", "text": "There's a pale band on his ring finger, where a ring sat for a long time.", "hint": "Look at his left hand. Then ask about it, gently." },
+          { "id": "t_div_voice", "text": "A voice note plays by accident on his speaker. A woman: 'Emeka, you are a disgrace to this family!'", "hint": "Ask who still sends him angry voice notes, and why." }
+        ]
+      }
+    ],
+    "rules": [
+      { "id": "punishes_public_embarrassment", "description": "Chief punishes public embarrassment.", "when": { "tag": "public_embarrassment" }, "effect": { "trust": -15, "attachment": -8, "expression": "angry" }, "note": "Chief does not forget public embarrassment. He goes quiet in a way that costs money." },
+      { "id": "weekend_flight_mode", "description": "From Friday (Day 5) his phone is off; chasing him costs you.", "when": { "tag": "contact_partner", "day_min": 5 }, "effect": { "sanity": -6 }, "note": "His phone is off. Friday flight mode, as always." },
+      { "id": "rewards_discretion", "description": "Rewards discretion.", "when": { "tag": "discreet" }, "effect": { "attachment": 6 }, "note": "He likes someone who knows how to keep quiet." },
+      { "id": "possessive_about_club", "description": "Gets possessive when you go out without him.", "when": { "spot": "club", "min": { "attachment": 60 } }, "effect": { "trust": -10, "control": 1 }, "note": "Chief saw your status from the club. 'Who are you dressing for?'" },
+      { "id": "possessive_about_independence", "description": "Hooked and controlling, he punishes independence.", "when": { "tag": "independence", "min": { "attachment": 70 } }, "effect": { "trust": -6, "control": 1 }, "note": "'I don't like it when I can't find you.'" }
+    ],
+    "look": { "skin": "#5b3a26", "hair": "cap", "hairColor": "#a3131a", "outfit": "#7a1d22", "outfitAccent": "#e7b54a", "outfitStyle": "agbada", "accessory": "watch", "beard": true, "build": "broad" },
+    "expressions": ["charming", "suspicious", "angry", "caught", "happy", "sad"],
+    "chemistry_leaks": [
+      { "match": "build", "text": "He keeps looking at you like you're a plot of land in Ikoyi." },
+      { "match": "hair", "text": "'This hair. Brazilian? Don't tell me. Let me dream.'" },
+      { "match": "style", "text": "He touches your sleeve. 'Who is your tailor? I want his number.'" },
+      { "match": "none", "text": "He squints. 'Why are you dressed like my nephew who makes TikToks?'" },
+      { "match": "spark", "text": "He forgets his phone exists for a full hour. His driver looks worried." }
+    ],
+    "endings": {
+      "locked_in": { "title": "Made Official", "text": "He deleted the other numbers in front of you. You met his boys at the Ikoyi Club. One of them called you 'Madam' without irony.", "scene": { "location": "ikoyi_restaurant", "time": "night", "expression": "happy", "mood": "positive" } },
+      "counter_con": { "title": "The Counter-Con", "text": "You walked off with the money before he could play you. He's still calling. You're on flight mode now. See how it feels.", "scene": { "location": "luxury_apartment", "time": "morning", "expression": "caught", "mood": "neutral" } },
+      "survived": { "title": "Survived Phase 1", "text": "'You're exclusive. For now.' He says it like a contract with a renewal clause.", "scene": { "location": "prado_interior", "time": "night", "expression": "charming", "mood": "neutral" } },
+      "scandal": { "title": "Public Scandal", "text": "Trending in the Parlour. His wife has your photo, your full name and your mother's church.", "scene": { "location": "mainland_street", "time": "golden", "expression": "angry", "mood": "negative" } },
+      "sapa": { "title": "Sapa Eviction", "text": "Locked out of the flat he 'bought' you. The landlord has never heard of any Chief Emeka.", "scene": { "location": "mainland_street", "time": "night", "expression": "suspicious", "mood": "negative", "partner_present": false } },
+      "breakdown": { "title": "Public Breakdown", "text": "Crying in a Lekki supermarket on a Sunday. A security guard brought you a cold drink. He was kinder than Chief.", "scene": { "location": "mainland_street", "time": "afternoon", "mood": "negative", "partner_present": false } },
+      "ghosted": { "title": "Ghosted", "text": "Double blue ticks. Then just one. Then nothing. His driver still waves when he sees you.", "scene": { "location": "prado_interior", "time": "night", "expression": "suspicious", "mood": "negative", "partner_present": false } },
+      "fumbled": { "title": "Fumbled It", "text": "He was faithful. The 'wife' was his ex. You checked his phone, found nothing, and posted him anyway.", "scene": { "location": "luxury_apartment", "time": "night", "expression": "sad", "mood": "negative" } },
+      "obsession": { "title": "Obsession", "text": "He bought the flat next to yours. He knows your bank balance and your mother's prayer schedule. You stopped going out. You told yourself it was love.", "scene": { "location": "luxury_apartment", "time": "night", "expression": "suspicious", "mood": "negative" } },
+      "walked_away": { "title": "Walked Away", "text": "You packed one bag and left the keys on the marble. You blocked him from a danfo at Obalende. Best ride of your life.", "scene": { "location": "mainland_street", "time": "golden", "mood": "neutral", "partner_present": false } }
+    }
+  },
+  {
+    "id": "kayode",
+    "name": "Kayode",
+    "short": "Kayode",
+    "age": 28,
+    "gender": "man",
+    "group": "Yoruba",
+    "pronouns": { "he": "he", "him": "him", "his": "his" },
+    "public_card": "Lekki Big Boy. \"Contracts and crypto.\" Azul at the club, loud Benz.",
+    "signature_catch": "Paranoid about police; sprints out during raids.",
+    "archetype": "The Big Boy",
+    "temperament": { "id": "flashy_flighty", "controlling": false, "description": "Loves loud. Leaves louder." },
+    "taste": { "fixed": { "woman": { "build": "Slim and Trim", "style": "Designer Glam" }, "man": { "build": "Gym Rat", "style": "Designer Drip" } }, "pool": ["Coloured Frontal", "Petite Baddie", "Waves", "Low Cut"] },
+    "vibe_start": {
+      "lover": { "attachment": 45, "trust": 50, "line": "'You're too sweet for this city. Stay close.'" },
+      "sugar": { "attachment": 50, "trust": 40, "line": "'I like spenders. Let's spend.'" },
+      "bigboy": { "attachment": 40, "trust": 30, "line": "'Two big boys in one Benz? Lagos no fit hold us.'" },
+      "runs": { "attachment": 45, "trust": 30, "line": "'I see you. You see me. Let's not lie to ourselves.'" },
+      "corporate": { "attachment": 35, "trust": 55, "line": "'A banker? Do me a favour, don't look at my statements.'" }
+    },
+    "truths": [
+      { "id": "yahoo", "kind": "flawed", "label": "Yahoo money", "reveal": "HIDDEN TRUTH: The 'contracts' are romance scams. EFCC has his laptop's IP address and your face on his Instagram.", "tells": [
+        { "id": "t_yahoo_phones", "text": "Three phones on the table, all face down.", "hint": "Count his phones." },
+        { "id": "t_yahoo_names", "text": "A notification on his laptop: 'Hello my darling Gregory.' His name is not Gregory.", "hint": "Ask why he is called a different name online." },
+        { "id": "t_yahoo_efcc", "text": "He reads an EFCC headline and goes very quiet.", "hint": "Mention EFCC casually. Watch." }
+      ] },
+      { "id": "gambler", "kind": "flawed", "label": "Gambling addict", "reveal": "HIDDEN TRUTH: The crypto money is real. So is the gambling. He lost ₦9m on a Tuesday.", "tells": [
+        { "id": "t_gamble_odds", "text": "He checks football odds during a kiss.", "hint": "Watch his phone during the match." },
+        { "id": "t_gamble_borrow", "text": "'Babe, send me 50k, I'll double it by night.'", "hint": "Notice when he promises to double things." },
+        { "id": "t_gamble_watch", "text": "His Rolex is gone. 'It's being serviced.'", "hint": "Ask where his watch went." }
+      ] },
+      { "id": "trust_fund", "kind": "good_one", "label": "Soft trust-fund boy", "reveal": "HIDDEN TRUTH: Trust-fund boy with a strict father. He runs from police because his dad said one arrest and he's cut off.", "tells": [
+        { "id": "t_tf_calls", "text": "He hides every call from 'Daddy'.", "hint": "Ask who 'Daddy' is." },
+        { "id": "t_tf_run", "text": "He runs at the first siren.", "hint": "Ask why sirens scare him." },
+        { "id": "t_tf_soft", "text": "He cries at a Nollywood movie and denies it.", "hint": "Watch a sad movie with him." }
+      ] }
+    ],
+    "rules": [
+      { "id": "runs_from_raids", "description": "Panics at police.", "when": { "tag": "public_embarrassment" }, "effect": { "trust": -10 }, "note": "Kayode hates attention he can't control." },
+      { "id": "likes_flex", "description": "Rewards a flex.", "when": { "tag": "luxury" }, "effect": { "attachment": 5 } },
+      { "id": "cools_on_nagging", "description": "Cools if you keep calling.", "when": { "tag": "contact_partner" }, "effect": { "attachment": -4 } }
+    ],
+    "look": { "skin": "#6b4430", "hair": "waves", "hairColor": "#140c08", "outfit": "#111111", "outfitAccent": "#e2c044", "outfitStyle": "jacket", "accessory": "gold_chain", "beard": false, "build": "average" },
+    "expressions": ["charming", "suspicious", "angry", "caught"],
+    "endings": {}
+  },
+  {
+    "id": "bello",
+    "name": "Bello",
+    "short": "Bello",
+    "age": 33,
+    "gender": "man",
+    "group": "Hausa",
+    "pronouns": { "he": "he", "him": "him", "his": "his" },
+    "public_card": "Quiet oil and gas heir. Bespoke kaftans, oud, private lounges.",
+    "signature_catch": "The relationship must stay invisible.",
+    "archetype": "The Invisible Heir",
+    "temperament": { "id": "reserved", "controlling": false, "description": "Calm until cornered. Then gone." },
+    "taste": { "fixed": { "woman": { "style": "Owambe Traditional", "hair": "Natural / Low Cut" }, "man": { "style": "Agbada / Senator", "build": "Tall and Slim" } }, "pool": ["Soft and Full", "Smart Casual", "Clean Bald"] },
+    "vibe_start": {
+      "lover": { "attachment": 45, "trust": 55, "line": "'You are gentle. Good. Lagos is not.'" },
+      "sugar": { "attachment": 40, "trust": 35, "line": "'You will be comfortable. You will also be quiet.'" },
+      "bigboy": { "attachment": 30, "trust": 30, "line": "'You are loud. I am not.'" },
+      "runs": { "attachment": 35, "trust": 30, "line": "'I know what this is. Do you?'" },
+      "corporate": { "attachment": 40, "trust": 60, "line": "'Discreet. Professional. I like that.'" }
+    },
+    "truths": [
+      { "id": "arranged", "kind": "flawed", "label": "Arranged marriage", "reveal": "HIDDEN TRUTH: His family arranged his marriage last year. The wedding is in March.", "tells": [
+        { "id": "t_arr_cards", "text": "A box of wedding cards in his boot.", "hint": "Look in his car boot." },
+        { "id": "t_arr_mother", "text": "'My mother says I must be serious this year.'", "hint": "Ask what 'serious' means." },
+        { "id": "t_arr_date", "text": "He blocks out March in his calendar.", "hint": "Ask about March." }
+      ] },
+      { "id": "kano_wife", "kind": "flawed", "label": "Wife in Kano", "reveal": "HIDDEN TRUTH: He has a wife in Kano. You are the Lagos chapter.", "tells": [
+        { "id": "t_kano_flights", "text": "A boarding pass: LOS-KAN, every other Friday.", "hint": "Ask where he flies every other Friday." },
+        { "id": "t_kano_ring", "text": "A ring on a chain under his kaftan.", "hint": "Ask what's on the chain." },
+        { "id": "t_kano_call", "text": "'Ina kwana, Hajiya.' He hangs up fast.", "hint": "Ask who Hajiya is." }
+      ] },
+      { "id": "defiant_love", "kind": "good_one", "label": "Ready to defy his family", "reveal": "HIDDEN TRUTH: He's genuinely in love and ready to defy his family. The secrecy was protecting you.", "tells": [
+        { "id": "t_def_hide", "text": "He leaves through the kitchen.", "hint": "Ask who he's hiding from." },
+        { "id": "t_def_call", "text": "He argues with his uncle on the phone.", "hint": "Ask about his uncle." },
+        { "id": "t_def_ring", "text": "He's looking at rings online. Not with you.", "hint": "Ask who the ring is for." }
+      ] }
+    ],
+    "rules": [
+      { "id": "invisible", "description": "Punishes being seen.", "when": { "tag": "public_embarrassment" }, "effect": { "trust": -15 } },
+      { "id": "discretion", "description": "Rewards discretion.", "when": { "tag": "discreet" }, "effect": { "attachment": 6 } },
+      { "id": "club_cold", "description": "Cools if you go clubbing.", "when": { "spot": "club" }, "effect": { "attachment": -5 } }
+    ],
+    "look": { "skin": "#4a2e1e", "hair": "cap", "hairColor": "#f2efe6", "outfit": "#f2efe6", "outfitAccent": "#b08d57", "outfitStyle": "kaftan", "beard": true, "build": "slim" },
+    "expressions": ["charming", "suspicious", "angry", "caught"],
+    "endings": {}
+  },
+  {
+    "id": "ovie",
+    "name": "Ovie",
+    "short": "Ovie",
+    "age": 31,
+    "gender": "man",
+    "group": "Warri / Delta",
+    "pronouns": { "he": "he", "him": "him", "his": "his" },
+    "public_card": "Marine logistics and \"supply.\" Gold chain, direct cash, sharp pidgin.",
+    "signature_catch": "Hot temper; street boys watching your every move.",
+    "archetype": "The Warri Storm",
+    "temperament": { "id": "jealous", "controlling": true, "description": "Loves hard, watches harder." },
+    "taste": { "fixed": { "woman": { "build": "Athletic", "hair": "Knotless Braids" }, "man": { "build": "Gym Rat", "hair": "Low Cut" } }, "pool": ["Alté / Streetwear", "Petite Baddie", "Average Guy", "Beard Gang"] },
+    "vibe_start": {
+      "lover": { "attachment": 55, "trust": 50, "line": "'You be my person now. No shaking.'" },
+      "sugar": { "attachment": 45, "trust": 35, "line": "'Money no be problem. Disrespect na problem.'" },
+      "bigboy": { "attachment": 35, "trust": 25, "line": "'Who you be sef? Talk am.'" },
+      "runs": { "attachment": 45, "trust": 25, "line": "'I sabi your type. I still like you.'" },
+      "corporate": { "attachment": 45, "trust": 55, "line": "'Office person. Good. You go dey house by 6.'" }
+    },
+    "truths": [
+      { "id": "controlling", "kind": "flawed", "label": "Jealous and controlling", "reveal": "HIDDEN TRUTH: He tracks your phone. The 'street boys' report to him every hour.", "tells": [
+        { "id": "t_ctrl_where", "text": "He knows where you were before you tell him.", "hint": "Notice what he knows that you never said." },
+        { "id": "t_ctrl_boys", "text": "The same okada man is outside your office every day.", "hint": "Look outside your office." },
+        { "id": "t_ctrl_phone", "text": "'Unlock your phone. Just because.'", "hint": "Notice when 'just because' becomes a rule." }
+      ] },
+      { "id": "baby_mamas", "kind": "flawed", "label": "Two baby mamas", "reveal": "HIDDEN TRUTH: Two kids, two baby mamas, both still around, both still in his phone as 'Customer'.", "tells": [
+        { "id": "t_bm_school", "text": "A school fees receipt in his glovebox.", "hint": "Ask about the school fees." },
+        { "id": "t_bm_customer", "text": "'Customer' calls him at 11pm.", "hint": "Ask what customer calls at 11pm." },
+        { "id": "t_bm_toy", "text": "A toy car in the back seat.", "hint": "Ask whose toy it is." }
+      ] },
+      { "id": "loyal", "kind": "good_one", "label": "Most loyal man in Lagos", "reveal": "HIDDEN TRUTH: Loud outside, the most loyal man in Lagos. The 'street boys' were protecting you from his business rivals.", "tells": [
+        { "id": "t_loyal_boys", "text": "Street boys follow you home.", "hint": "Ask why the boys follow you." },
+        { "id": "t_loyal_temper", "text": "He shouts at a waiter.", "hint": "Ask what really made him angry." },
+        { "id": "t_loyal_calls", "text": "He calls you twelve times.", "hint": "Ask what he's afraid of." }
+      ] }
+    ],
+    "rules": [
+      { "id": "club_jealous", "description": "Gets jealous when you go to the Club.", "when": { "spot": "club" }, "effect": { "trust": -12, "control": 1 } },
+      { "id": "hates_disrespect", "description": "Punishes public disrespect.", "when": { "tag": "public_embarrassment" }, "effect": { "trust": -15, "attachment": 5 } },
+      { "id": "independence", "description": "Hooked and controlling, punishes independence.", "when": { "tag": "independence", "min": { "attachment": 60 } }, "effect": { "control": 1 } }
+    ],
+    "look": { "skin": "#5a3420", "hair": "low", "hairColor": "#120a06", "outfit": "#f5f5f5", "outfitAccent": "#e2b33a", "outfitStyle": "shirt", "accessory": "gold_chain", "beard": true, "build": "broad" },
+    "expressions": ["charming", "suspicious", "angry", "caught"],
+    "endings": {}
+  },
+  {
+    "id": "osaze",
+    "name": "Osaze",
+    "short": "Osaze",
+    "age": 30,
+    "gender": "man",
+    "group": "Edo",
+    "pronouns": { "he": "he", "him": "him", "his": "his" },
+    "public_card": "Euro-returnee. Italian shoes, \"connections in Milan and London.\"",
+    "signature_catch": "Always needs money to \"clear goods\" or fix papers.",
+    "archetype": "The Returnee",
+    "temperament": { "id": "smooth", "controlling": false, "description": "Charming until the transfer clears." },
+    "taste": { "fixed": { "woman": { "style": "Alté / Streetwear", "hair": "Locs" }, "man": { "style": "Alté / Streetwear", "hair": "Locs" } }, "pool": ["Slim and Trim", "Lean and Clean", "Smart Casual", "Waves"] },
+    "vibe_start": {
+      "lover": { "attachment": 45, "trust": 55, "line": "'Bella. You look like Milan.'" },
+      "sugar": { "attachment": 40, "trust": 35, "line": "'In Europe, we split. But for you...'" },
+      "bigboy": { "attachment": 35, "trust": 30, "line": "'You and me, we can do business.'" },
+      "runs": { "attachment": 40, "trust": 30, "line": "'You have a passport? Good.'" },
+      "corporate": { "attachment": 40, "trust": 55, "line": "'Bank? Perfect. I have a small transfer question.'" }
+    },
+    "truths": [
+      { "id": "never_left", "kind": "flawed", "label": "Never left Nigeria", "reveal": "HIDDEN TRUTH: He has never left Nigeria. The Italian shoes are from Balogun Market.", "tells": [
+        { "id": "t_nl_accent", "text": "His accent slips into pure Benin when he's angry.", "hint": "Make him laugh. Listen." },
+        { "id": "t_nl_shoes", "text": "His 'Italian' shoes say 'Made in Aba' inside.", "hint": "Look inside his shoes." },
+        { "id": "t_nl_passport", "text": "He has never shown you a passport stamp.", "hint": "Ask to see a passport stamp." }
+      ] },
+      { "id": "wife_abroad", "kind": "flawed", "label": "Wife and child abroad", "reveal": "HIDDEN TRUTH: He's funding a wife and child in Italy. Your money is their rent.", "tells": [
+        { "id": "t_wa_wu", "text": "A Western Union slip to Torino.", "hint": "Ask who's in Torino." },
+        { "id": "t_wa_time", "text": "He's always awake at 3am 'for Europe time'.", "hint": "Ask who he talks to at 3am." },
+        { "id": "t_wa_photo", "text": "His lockscreen is a child's drawing.", "hint": "Ask about his lockscreen." }
+      ] },
+      { "id": "japa_real", "kind": "good_one", "label": "Really going abroad", "reveal": "HIDDEN TRUTH: He really is going abroad and wants to take you. The 'papers' money was real.", "tells": [
+        { "id": "t_jr_money", "text": "'I need 200k for papers.'", "hint": "Ask to see the papers." },
+        { "id": "t_jr_secret", "text": "He won't tell his friends about the trip.", "hint": "Ask why it's a secret." },
+        { "id": "t_jr_embassy", "text": "He's at the embassy at 5am.", "hint": "Ask what the embassy said." }
+      ] }
+    ],
+    "rules": [
+      { "id": "money_requests", "description": "Warms when you pay.", "when": { "tag": "luxury" }, "effect": { "attachment": 4 } },
+      { "id": "hates_questions", "description": "Cools at investigation.", "when": { "tag": "investigate" }, "effect": { "attachment": -4 } },
+      { "id": "public", "description": "Hates public scenes.", "when": { "tag": "public_embarrassment" }, "effect": { "trust": -10 } }
+    ],
+    "look": { "skin": "#6a432c", "hair": "locs", "hairColor": "#1a110a", "outfit": "#2a3b5c", "outfitAccent": "#c9a86a", "outfitStyle": "jacket", "accessory": "glasses", "beard": false, "build": "slim" },
+    "expressions": ["charming", "suspicious", "angry", "caught"],
+    "endings": {}
+  },
+  {
+    "id": "tiwa",
+    "name": "Tiwa",
+    "short": "Tiwa",
+    "age": 24,
+    "gender": "woman",
+    "group": "Yoruba",
+    "pronouns": { "he": "she", "him": "her", "his": "her" },
+    "public_card": "Soft-life influencer. 30-inch frontal, Sunday brunch in VI.",
+    "signature_catch": "Love language is bank alerts; late transfer, new G-Wagon.",
+    "archetype": "The Soft Life",
+    "temperament": { "id": "transactional", "controlling": false, "description": "Warm when funded. Cold when not." },
+    "taste": { "fixed": { "man": { "style": "Designer Drip", "build": "Tall and Slim" }, "woman": { "hair": "30-inch Bone Straight", "style": "Designer Glam" } }, "pool": ["Waves", "Gym Rat", "Petite Baddie"] },
+    "vibe_start": {
+      "lover": { "attachment": 35, "trust": 50, "line": "'Aww. You're cute. Are you also liquid?'" },
+      "sugar": { "attachment": 30, "trust": 40, "line": "'Wait. Who's sponsoring who?'" },
+      "bigboy": { "attachment": 50, "trust": 35, "line": "'Finally. Someone who gets it.'" },
+      "runs": { "attachment": 40, "trust": 30, "line": "'I see game. I play game.'" },
+      "corporate": { "attachment": 35, "trust": 60, "line": "'Stable. Okay. Can stable afford brunch?'" }
+    },
+    "truths": [
+      { "id": "main_boyfriend", "kind": "flawed", "label": "Has a main boyfriend", "reveal": "HIDDEN TRUTH: She has a main boyfriend. You're the ATM.", "tells": [
+        { "id": "t_mb_story", "text": "Her story: a man's hand with a Patek.", "hint": "Zoom in on her stories." },
+        { "id": "t_mb_weekend", "text": "'My weekends are for my family.'", "hint": "Ask which family." },
+        { "id": "t_mb_name", "text": "She calls you by another name.", "hint": "Listen to what she calls you." }
+      ] },
+      { "id": "vendor_debt", "kind": "flawed", "label": "Drowning in vendor debt", "reveal": "HIDDEN TRUTH: She owes her hair, lash and car vendors ₦4.2m.", "tells": [
+        { "id": "t_vd_calls", "text": "'Hair vendor' calls nine times.", "hint": "Ask why vendors keep calling." },
+        { "id": "t_vd_car", "text": "The G-Wagon is 'with the mechanic'. Again.", "hint": "Ask about the G-Wagon." },
+        { "id": "t_vd_blocked", "text": "A vendor comments 'pay me my money' under her post.", "hint": "Read her comments." }
+      ] },
+      { "id": "tester", "kind": "good_one", "label": "Tests men with money", "reveal": "HIDDEN TRUTH: She tests people with money. She genuinely wants a real one.", "tells": [
+        { "id": "t_test_ask", "text": "'Send 50k. Let me see something.'", "hint": "Notice what she does with what you send." },
+        { "id": "t_test_return", "text": "She returns a gift.", "hint": "Ask why she returned it." },
+        { "id": "t_test_cry", "text": "She cries after brunch and won't say why.", "hint": "Ask, kindly." }
+      ] }
+    ],
+    "rules": [
+      { "id": "cools_without_funding", "description": "Cools fast if funding stops.", "when": { "tag": "budget" }, "effect": { "attachment": -6 } },
+      { "id": "loves_luxury", "description": "Warms to luxury.", "when": { "tag": "luxury" }, "effect": { "attachment": 6 } },
+      { "id": "public_drag", "description": "Hates being embarrassed online.", "when": { "tag": "public_embarrassment" }, "effect": { "trust": -12 } }
+    ],
+    "look": { "skin": "#8a5a3c", "hair": "frontal", "hairColor": "#1b120c", "outfit": "#f2c6d6", "outfitAccent": "#ffffff", "outfitStyle": "dress", "accessory": "earrings", "build": "slim" },
+    "expressions": ["charming", "suspicious", "angry", "caught"],
+    "endings": {}
+  },
+  {
+    "id": "adaeze",
+    "name": "Adaeze",
+    "short": "Adaeze",
+    "age": 29,
+    "gender": "woman",
+    "group": "Igbo",
+    "pronouns": { "he": "she", "him": "her", "his": "her" },
+    "public_card": "Corporate heiress. Range Rover, Island boutique empire.",
+    "signature_catch": "Treats dates like board meetings; family vets your pedigree.",
+    "archetype": "The Heiress",
+    "temperament": { "id": "exacting", "controlling": false, "description": "Everything is a KPI. Including you." },
+    "taste": { "fixed": { "man": { "style": "Smart Casual", "build": "Lean and Clean" }, "woman": { "style": "Smart Casual", "hair": "Natural / Low Cut" } }, "pool": ["Low Cut", "Average Guy", "Athletic"] },
+    "vibe_start": {
+      "lover": { "attachment": 35, "trust": 50, "line": "'Sweet. Noted. Next agenda item.'" },
+      "sugar": { "attachment": 25, "trust": 30, "line": "'I don't fund. I invest.'" },
+      "bigboy": { "attachment": 35, "trust": 30, "line": "'Show me audited accounts.'" },
+      "runs": { "attachment": 30, "trust": 25, "line": "'Interesting CV.'" },
+      "corporate": { "attachment": 45, "trust": 60, "line": "'Finally. Someone who reads emails.'" }
+    },
+    "truths": [
+      { "id": "engaged", "kind": "flawed", "label": "Engaged on paper", "reveal": "HIDDEN TRUTH: She's engaged on paper to a family pick.", "tells": [
+        { "id": "t_eng_ring", "text": "A ring in her bag, not on her hand.", "hint": "Ask what's in the ring box." },
+        { "id": "t_eng_uncle", "text": "'My uncle says the families are close.'", "hint": "Ask which families." },
+        { "id": "t_eng_invite", "text": "An introduction ceremony date on her calendar.", "hint": "Look at her calendar." }
+      ] },
+      { "id": "collapsing", "kind": "flawed", "label": "Company collapsing", "reveal": "HIDDEN TRUTH: The boutique empire is quietly collapsing. She needs your money for payroll.", "tells": [
+        { "id": "t_col_staff", "text": "Her staff WhatsApp: 'Ma, salary?'", "hint": "Ask about her staff." },
+        { "id": "t_col_rover", "text": "The Range Rover has a loan sticker.", "hint": "Look at her car's papers." },
+        { "id": "t_col_sale", "text": "70% off sign at her boutique.", "hint": "Walk past her boutique." }
+      ] },
+      { "id": "tired", "kind": "good_one", "label": "Tired of rich men", "reveal": "HIDDEN TRUTH: She's tired of rich men. She likes you because you're real.", "tells": [
+        { "id": "t_tired_test", "text": "She grills you about your salary.", "hint": "Notice what she does with the answer." },
+        { "id": "t_tired_hide", "text": "She hides you from her family.", "hint": "Ask why." },
+        { "id": "t_tired_cancel", "text": "She cancels a gala to eat amala with you.", "hint": "Ask why she cancelled." }
+      ] }
+    ],
+    "rules": [
+      { "id": "punctual", "description": "Punishes lateness.", "when": { "tag": "independence" }, "effect": { "trust": -5 } },
+      { "id": "public", "description": "Hates scenes.", "when": { "tag": "public_embarrassment" }, "effect": { "trust": -12 } },
+      { "id": "cautious_ok", "description": "Respects directness.", "when": { "tag": "cautious" }, "effect": { "attachment": 3 } }
+    ],
+    "look": { "skin": "#5e3a26", "hair": "bun", "hairColor": "#120c08", "outfit": "#1d2b3a", "outfitAccent": "#e8e1d0", "outfitStyle": "jacket", "accessory": "earrings", "build": "slim" },
+    "expressions": ["charming", "suspicious", "angry", "caught"],
+    "endings": {}
+  },
+  {
+    "id": "zainab",
+    "name": "Zainab",
+    "short": "Zainab",
+    "age": 27,
+    "gender": "woman",
+    "group": "Hausa",
+    "pronouns": { "he": "she", "him": "her", "his": "her" },
+    "public_card": "Lowkey luxury aesthetician. Owns a private skin clinic, old-money manners.",
+    "signature_catch": "Strict curfew; refuses to be seen in public.",
+    "archetype": "The Secret",
+    "temperament": { "id": "guarded", "controlling": false, "description": "Opens slowly. Closes instantly." },
+    "taste": { "fixed": { "man": { "style": "Agbada / Senator", "hair": "Beard Gang" }, "woman": { "style": "Owambe Traditional", "build": "Soft and Full" } }, "pool": ["Clean Bald", "Lean and Clean", "Knotless Braids"] },
+    "vibe_start": {
+      "lover": { "attachment": 40, "trust": 55, "line": "'You're kind. Be kind quietly.'" },
+      "sugar": { "attachment": 30, "trust": 30, "line": "'I pay for my own things.'" },
+      "bigboy": { "attachment": 30, "trust": 25, "line": "'Please lower your voice.'" },
+      "runs": { "attachment": 35, "trust": 25, "line": "'I know what you are. I'm curious anyway.'" },
+      "corporate": { "attachment": 45, "trust": 55, "line": "'Calm. Good.'" }
+    },
+    "truths": [
+      { "id": "family_no", "kind": "flawed", "label": "Family will never accept you", "reveal": "HIDDEN TRUTH: Her family will never accept you, and she already knows it.", "tells": [
+        { "id": "t_fn_photo", "text": "She deletes every photo of you.", "hint": "Check her gallery." },
+        { "id": "t_fn_brother", "text": "Her brother calls; she hangs up.", "hint": "Ask about her brother." },
+        { "id": "t_fn_future", "text": "She never says 'next year'.", "hint": "Ask about next year." }
+      ] },
+      { "id": "wild_life", "kind": "flawed", "label": "Secret wild Lagos life", "reveal": "HIDDEN TRUTH: She runs a second, wild Lagos life after curfew.", "tells": [
+        { "id": "t_wl_wristband", "text": "A club wristband on her vanity.", "hint": "Look at her vanity." },
+        { "id": "t_wl_curfew", "text": "Curfew at 9pm. Online at 3am.", "hint": "Check when she's online." },
+        { "id": "t_wl_name", "text": "A DJ shouts 'Zee!' at her.", "hint": "Ask who calls her Zee." }
+      ] },
+      { "id": "dangerous_ex", "kind": "good_one", "label": "Hiding from a dangerous ex", "reveal": "HIDDEN TRUTH: She's hiding you from a dangerous ex, not from shame.", "tells": [
+        { "id": "t_de_window", "text": "She checks the window before you leave.", "hint": "Ask what she's watching for." },
+        { "id": "t_de_number", "text": "Unknown numbers terrify her.", "hint": "Ask about unknown numbers." },
+        { "id": "t_de_hide", "text": "'Never post me. Please.'", "hint": "Ask, gently, why." }
+      ] }
+    ],
+    "rules": [
+      { "id": "invisible", "description": "Punishes being seen.", "when": { "tag": "public_embarrassment" }, "effect": { "trust": -15 } },
+      { "id": "curfew", "description": "Cools at independence.", "when": { "tag": "independence" }, "effect": { "attachment": -3 } },
+      { "id": "discreet", "description": "Rewards discretion.", "when": { "tag": "discreet" }, "effect": { "trust": 5 } }
+    ],
+    "look": { "skin": "#7a4e32", "hair": "hijab", "hairColor": "#3a2a4a", "outfit": "#efe6da", "outfitAccent": "#b08d57", "outfitStyle": "dress", "accessory": "earrings", "build": "slim" },
+    "expressions": ["charming", "suspicious", "angry", "caught"],
+    "endings": {}
+  },
+  {
+    "id": "blessing",
+    "name": "Blessing",
+    "short": "Blessing",
+    "age": 26,
+    "gender": "woman",
+    "group": "Warri / Delta",
+    "pronouns": { "he": "she", "him": "her", "his": "her" },
+    "public_card": "Nightlife promoter. Knows every DJ, club owner and celebrity.",
+    "signature_catch": "Will drag you publicly at the first sign of disrespect.",
+    "archetype": "The Promoter",
+    "temperament": { "id": "fiery", "controlling": false, "description": "All heat, no off switch." },
+    "taste": { "fixed": { "man": { "build": "Gym Rat", "hair": "Waves" }, "woman": { "hair": "Coloured Frontal", "build": "Curvy / Thick" } }, "pool": ["Alté / Streetwear", "Designer Drip", "Locs"] },
+    "vibe_start": {
+      "lover": { "attachment": 45, "trust": 45, "line": "'You fine sha. No do me anyhow.'" },
+      "sugar": { "attachment": 40, "trust": 35, "line": "'Who dey pay for table?'" },
+      "bigboy": { "attachment": 50, "trust": 35, "line": "'Big boy! Make we scatter Lagos.'" },
+      "runs": { "attachment": 45, "trust": 30, "line": "'I know everybody. Including your people.'" },
+      "corporate": { "attachment": 35, "trust": 50, "line": "'Corporate? You go survive my Friday?'" }
+    },
+    "truths": [
+      { "id": "dj_ex", "kind": "flawed", "label": "Still with her ex, a DJ", "reveal": "HIDDEN TRUTH: She's still sleeping with her ex, a DJ.", "tells": [
+        { "id": "t_dj_song", "text": "The DJ shouts her out by a pet name.", "hint": "Listen to the DJ's shout-outs." },
+        { "id": "t_dj_hoodie", "text": "She wears a hoodie with a DJ logo.", "hint": "Ask whose hoodie it is." },
+        { "id": "t_dj_late", "text": "She leaves the club with the DJ crew.", "hint": "Watch who she leaves with." }
+      ] },
+      { "id": "event_money", "kind": "flawed", "label": "Uses you for event money", "reveal": "HIDDEN TRUTH: She's using you to fund her events.", "tells": [
+        { "id": "t_em_table", "text": "'Babe, help me cover the table deposit.'", "hint": "Count the table deposits." },
+        { "id": "t_em_flyer", "text": "Your name is on a flyer as 'sponsor'.", "hint": "Read the flyer." },
+        { "id": "t_em_refund", "text": "'I'll refund you after the event.'", "hint": "Ask for the refund." }
+      ] },
+      { "id": "fierce_loyal", "kind": "good_one", "label": "Fiercely loyal", "reveal": "HIDDEN TRUTH: Fiercely loyal. She'll fight anyone for you.", "tells": [
+        { "id": "t_fl_fight", "text": "She nearly fights a girl who looked at you.", "hint": "Ask why she was so angry." },
+        { "id": "t_fl_dj", "text": "The DJ ex keeps calling.", "hint": "Ask what she tells the DJ." },
+        { "id": "t_fl_post", "text": "She threatens to post someone.", "hint": "Ask who she's protecting." }
+      ] }
+    ],
+    "rules": [
+      { "id": "drags", "description": "Drags you for public disrespect.", "when": { "tag": "public_embarrassment" }, "effect": { "trust": -15, "exposure": 10 } },
+      { "id": "club_home", "description": "Loves the club.", "when": { "spot": "club" }, "effect": { "attachment": 5 } },
+      { "id": "toxic_fire", "description": "Matches toxic energy.", "when": { "tag": "toxic" }, "effect": { "exposure": 5 } }
+    ],
+    "look": { "skin": "#6e4128", "hair": "frontal", "hairColor": "#c0392b", "outfit": "#111111", "outfitAccent": "#F43F5E", "outfitStyle": "top", "accessory": "earrings", "build": "average" },
+    "expressions": ["charming", "suspicious", "angry", "caught"],
+    "endings": {}
+  },
+  {
+    "id": "mercy",
+    "name": "Mercy",
+    "short": "Mercy",
+    "age": 27,
+    "gender": "woman",
+    "group": "Edo",
+    "pronouns": { "he": "she", "him": "her", "his": "her" },
+    "public_card": "Runs and hustle queen. \"Logistics and luxury retail.\"",
+    "signature_catch": "Juggling four sponsors; you're one of them.",
+    "archetype": "The Hustler",
+    "temperament": { "id": "strategic", "controlling": false, "description": "Always three moves ahead. Sometimes four." },
+    "taste": { "fixed": { "man": { "style": "Designer Drip", "hair": "Low Cut" }, "woman": { "style": "Designer Glam", "build": "Petite Baddie" } }, "pool": ["Big Daddy", "Average Guy", "Locs", "Coloured Frontal"] },
+    "vibe_start": {
+      "lover": { "attachment": 35, "trust": 50, "line": "'Lover? In this economy?'" },
+      "sugar": { "attachment": 30, "trust": 30, "line": "'Two hustlers. Who's paying?'" },
+      "bigboy": { "attachment": 50, "trust": 30, "line": "'Now we're talking.'" },
+      "runs": { "attachment": 45, "trust": 35, "line": "'Respect. Game recognise game.'" },
+      "corporate": { "attachment": 35, "trust": 55, "line": "'Salary person. Steady. Okay.'" }
+    },
+    "truths": [
+      { "id": "chief_sponsor", "kind": "flawed", "label": "Chief Emeka is her sponsor", "reveal": "HIDDEN TRUTH: Chief Emeka is one of her sponsors.", "tells": [
+        { "id": "t_cs_prado", "text": "A tinted Prado drops her off.", "hint": "Watch the car that drops her." },
+        { "id": "t_cs_friday", "text": "Unreachable Friday to Monday.", "hint": "Ask about her weekends." },
+        { "id": "t_cs_cap", "text": "A red chief's cap in her back seat.", "hint": "Look in her back seat." }
+      ] },
+      { "id": "japa", "kind": "flawed", "label": "Saving to japa", "reveal": "HIDDEN TRUTH: She's saving to japa and you're the last stop.", "tells": [
+        { "id": "t_jp_ielts", "text": "An IELTS book under her bed.", "hint": "Look under her bed." },
+        { "id": "t_jp_dollars", "text": "She converts every gift to dollars.", "hint": "Ask what she does with your gifts." },
+        { "id": "t_jp_canada", "text": "Her phone time-zone is Toronto.", "hint": "Check her clock." }
+      ] },
+      { "id": "quitting", "kind": "good_one", "label": "Quitting the life", "reveal": "HIDDEN TRUTH: She's quitting the life for you, but her sponsors won't let her go.", "tells": [
+        { "id": "t_q_calls", "text": "She declines a call from 'Daddy Lekki'.", "hint": "Ask who Daddy Lekki is." },
+        { "id": "t_q_gift", "text": "She returns a car key to someone.", "hint": "Ask about the key." },
+        { "id": "t_q_scared", "text": "She looks scared when a Prado passes.", "hint": "Ask why the Prado scares her." }
+      ] }
+    ],
+    "rules": [
+      { "id": "transactional", "description": "Warms to money.", "when": { "tag": "luxury" }, "effect": { "attachment": 4 } },
+      { "id": "hates_snooping", "description": "Hates snooping.", "when": { "tag": "toxic" }, "effect": { "trust": -5 } },
+      { "id": "public", "description": "Hates public scenes.", "when": { "tag": "public_embarrassment" }, "effect": { "trust": -10 } }
+    ],
+    "look": { "skin": "#6a4028", "hair": "braids", "hairColor": "#1a0f08", "outfit": "#c9a227", "outfitAccent": "#111111", "outfitStyle": "dress", "accessory": "earrings", "build": "slim" },
+    "expressions": ["charming", "suspicious", "angry", "caught"],
+    "endings": {}
+  }
+]

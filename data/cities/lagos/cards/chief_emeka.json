@@ -1,0 +1,4258 @@
+[
+  {
+    "id": "emeka_d1_ikoyi_dinner",
+    "character": "chief_emeka",
+    "slot": "first_date",
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "night",
+      "expression": "charming",
+      "mood": "positive"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "His driver picks you up at 7pm sharp. Rooftop in Ikoyi, the lagoon glittering below."
+      },
+      {
+        "who": "partner",
+        "text": "Leave your phone in your bag tonight. No pictures."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "serial_sponsor": {
+        "id": "t_sponsor_driver",
+        "text": "Musa the driver held the door: 'Good evening, Madam Thurs-- Madam.' He coughed for a long time."
+      },
+      "broke": {
+        "id": "t_broke_card",
+        "text": "The waiter returns: card declined. Chief laughs too loud. 'These banks sef. Network.' The transfer takes nine minutes."
+      },
+      "divorced": {
+        "id": "t_div_ring",
+        "text": "When he reaches for the wine, you notice a pale band on his ring finger. A ring lived there for years."
+      }
+    },
+    "choices": [
+      {
+        "id": "obey",
+        "label": "Obey. Phone in bag. Enjoy the wine.",
+        "tags": [
+          "discreet",
+          "excuse"
+        ],
+        "receipt": "You put your phone away like he asked.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He relaxes. At dessert he slides an envelope over: 'For transport.' It is not transport money.",
+            "wallet": 200000,
+            "sanity": -15,
+            "attachment": 5,
+            "expression": "happy",
+            "set": [
+              {
+                "flag": "promised_secrecy",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "broke": {
+            "text": "He relaxes. The envelope has ₦50k in mixed notes and a promise: 'Something bigger next week.'",
+            "wallet": 50000,
+            "sanity": -10,
+            "attachment": 5,
+            "expression": "happy",
+            "set": [
+              {
+                "flag": "promised_secrecy",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "rolex_video",
+        "label": "Sneak a video of his Rolex for your status",
+        "receipt": "You posted his Rolex on your status.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "2,000 views in an hour. 'Who's the Rolex?' DMs everywhere.",
+            "clout": 30,
+            "exposure": 10,
+            "set": [
+              {
+                "flag": "secret_rolex_video",
+                "knows": [
+                  "player",
+                  "world"
+                ]
+              }
+            ]
+          },
+          {
+            "chance": 0.5,
+            "bad": true,
+            "text": "His cousin views your status in four minutes. Chief's phone buzzes. His smile changes temperature.",
+            "clout": 10,
+            "exposure": 20,
+            "trust": -15,
+            "expression": "suspicious",
+            "set": [
+              {
+                "flag": "secret_rolex_video",
+                "knows": [
+                  "player",
+                  "world",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "location",
+        "label": "\"I post my location or I don't come.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You said you post your location or you don't come.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Date cancelled. He sends one word: 'Noted.' You eat noodles at home, dignified.",
+            "attachment": -20,
+            "sanity": 10,
+            "expression": "suspicious",
+            "set": [
+              {
+                "flag": "location_rule",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "runs_second_phone",
+        "label": "[Runs] Bag one phone. Keep the second phone recording.",
+        "vibe": "runs",
+        "receipt": "You recorded your first date on a second phone.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "Three hours of audio. Every promise, timestamped. Insurance.",
+            "wallet": 100000,
+            "sanity": -5,
+            "set": [
+              {
+                "flag": "secret_recording",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          },
+          {
+            "chance": 0.4,
+            "bad": true,
+            "text": "It vibrates during the toast. Chief stares at your pocket. 'Two phones? Like me?'",
+            "trust": -15,
+            "expression": "suspicious",
+            "set": [
+              {
+                "flag": "secret_recording",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "emeka_d1_prado_pickup",
+    "character": "chief_emeka",
+    "slot": "first_date",
+    "scene": {
+      "location": "prado_interior",
+      "time": "night",
+      "expression": "charming",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Tinted Prado, Link Bridge lights streaking past. Chief pats the seat beside him."
+      },
+      {
+        "who": "partner",
+        "text": "Sit close. Musa sees nothing. Now: Hermès bag, or cash? Choose with your chest."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "serial_sponsor": {
+        "id": "t_sponsor_bracelet",
+        "text": "The glovebox falls open on a bump. A gold bracelet in a box. It is not your size."
+      },
+      "broke": {
+        "id": "t_broke_prado",
+        "text": "On the back glass, a peeling sticker: '...CAR HIRE, IKEJA. Weekly rates.'"
+      },
+      "divorced": {
+        "id": "t_div_voice",
+        "text": "His phone plays a voice note by accident. A woman: 'Emeka, you are a disgrace to this family!' He kills it fast."
+      }
+    },
+    "choices": [
+      {
+        "id": "cash",
+        "label": "Cash. Bags don't pay rent.",
+        "receipt": "You took the cash over the bag.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He laughs. 'Practical!' Counts it out twice. Slowly. Like it hurts.",
+            "wallet": 150000,
+            "attachment": -5
+          }
+        ],
+        "truth_override": {
+          "broke": {
+            "text": "He counts out ₦60k. Some of it is ₦200 notes. 'Bank network,' he says, again.",
+            "wallet": 60000,
+            "attachment": -5
+          }
+        }
+      },
+      {
+        "id": "bag",
+        "label": "The bag. Then post the bag.",
+        "receipt": "You took the bag and posted it.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "The bag is real. Your status is unwell. Your cousin in Abuja is unwell.",
+            "clout": 25,
+            "chemistry": 5
+          },
+          {
+            "chance": 0.4,
+            "bad": true,
+            "text": "The bag is a very good fake. A trader from Balogun Market recognises the stitching in your comments.",
+            "clout": -10,
+            "sanity": -10,
+            "exposure": 10
+          }
+        ],
+        "truth_override": {
+          "broke": {
+            "bad": true,
+            "text": "The bag is a very good fake. A trader from Balogun Market recognises the stitching in your comments.",
+            "clout": -10,
+            "sanity": -10,
+            "exposure": 10
+          }
+        }
+      },
+      {
+        "id": "real_you",
+        "label": "\"Neither. Tell me about the real you.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked about the real him instead of the gift.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He talks for forty minutes. His father. His first container. A woman he doesn't name.",
+            "attachment": 10,
+            "trust": 10,
+            "chemistry": 2
+          }
+        ],
+        "truth_override": {
+          "divorced": {
+            "text": "He talks about his kids, then stops himself. 'Another day.' He looks out at the lagoon a long time.",
+            "attachment": 12,
+            "trust": 12,
+            "chemistry": 2
+          }
+        }
+      },
+      {
+        "id": "sugar_both",
+        "label": "[Sugar] \"Why not both?\"",
+        "vibe": "sugar",
+        "receipt": "You asked for the bag and the cash.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "He respects the audacity. Both. Musa nods in the mirror.",
+            "wallet": 100000,
+            "clout": 15
+          },
+          {
+            "chance": 0.5,
+            "bad": true,
+            "text": "'Greedy is not cute on day one.' You get neither, and the AC goes colder.",
+            "attachment": -15
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "emeka_d1_lekki_flat",
+    "character": "chief_emeka",
+    "slot": "first_date",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "expression": "charming",
+      "mood": "positive",
+      "fx": [
+        "rain"
+      ]
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "His Lekki flat. Glass walls, rain on the window, small chops for twenty people. Only you came."
+      },
+      {
+        "who": "partner",
+        "text": "This could be your view. Every night."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "serial_sponsor": {
+        "id": "t_sponsor_numbers",
+        "text": "His phone lights up on the marble: 'Lekki 1'. Then 'Lekki 3'. No names. Just numbers."
+      },
+      "broke": {
+        "id": "t_broke_apapa",
+        "text": "He takes a call about 'demurrage' at Apapa. He goes grey, then smiles at you like nothing happened."
+      },
+      "divorced": {
+        "id": "t_div_weekends",
+        "text": "He sets an alarm: 'FRIDAY. OFF-GRID. DON'T FORGET.' He turns the screen away when he sees you looking."
+      }
+    },
+    "choices": [
+      {
+        "id": "stay_night",
+        "label": "Stay the night. It's raining anyway.",
+        "receipt": "You stayed the night on day one.",
+        "outcomes": [
+          {
+            "chance": 0.7,
+            "text": "You wake to a ₦100k alert and a note: 'Musa will drop you.'",
+            "wallet": 100000,
+            "attachment": 15,
+            "sanity": -5
+          },
+          {
+            "chance": 0.3,
+            "bad": true,
+            "text": "3am. His phone rings six times. He takes it on the balcony in Igbo. You catch one word: 'cousin'.",
+            "attachment": 10,
+            "sanity": -15
+          }
+        ],
+        "truth_override": {
+          "divorced": [
+            {
+              "chance": 0.7,
+              "text": "You wake to a ₦100k alert and a note: 'Musa will drop you.'",
+              "wallet": 100000,
+              "attachment": 15,
+              "sanity": -5
+            },
+            {
+              "chance": 0.3,
+              "text": "3am. His phone rings. 'Ada, is she asleep? Put her on.' He sings to a child. Badly.",
+              "attachment": 15,
+              "sanity": 5
+            }
+          ]
+        }
+      },
+      {
+        "id": "papers",
+        "label": "\"Show me the papers for this flat first.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked for the flat's papers on day one.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He laughs, then stops laughing. 'You're not like the others.' It sounds like a warning.",
+            "attachment": -5,
+            "set": [
+              {
+                "flag": "asked_for_papers",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "broke": {
+            "text": "The papers are 'with the lawyer in Enugu'. All of them. Since 2019.",
+            "attachment": -5,
+            "sanity": -5,
+            "set": [
+              {
+                "flag": "asked_for_papers",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "mirror_selfie",
+        "label": "Mirror selfie with the view. Face hidden. Tag nothing.",
+        "tags": [
+          "discreet"
+        ],
+        "receipt": "You posted a mirror selfie in his flat.",
+        "outcomes": [
+          {
+            "chance": 0.7,
+            "text": "Clean flex. The Parlour asks 'whose flat?' You say nothing. Power.",
+            "clout": 20
+          },
+          {
+            "chance": 0.3,
+            "bad": true,
+            "text": "The glass reflects his face behind you. Zoom culture is undefeated.",
+            "clout": 10,
+            "exposure": 25,
+            "set": [
+              {
+                "flag": "secret_flat_selfie",
+                "knows": [
+                  "player",
+                  "world"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "corp_tax",
+        "label": "[Corporate] Ask about his company's tax filings. Casually.",
+        "vibe": "corporate",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You asked about his tax filings on a first date.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He blinks. 'Are you EFCC?' But he's smiling. Barely.",
+            "attachment": -5
+          }
+        ],
+        "truth_override": {
+          "broke": {
+            "text": "He changes the subject so fast he pulls a muscle. Filed last: 2021.",
+            "attachment": -5,
+            "set": [
+              {
+                "flag": "has_intel",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          },
+          "serial_sponsor": {
+            "text": "'My accountant handles that. And other things.' Other things.",
+            "attachment": -3
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "emeka_rf_second_phone",
+    "character": "chief_emeka",
+    "slot": "red_flag",
+    "scene": {
+      "location": "prado_interior",
+      "time": "night",
+      "expression": "suspicious",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Third Mainland Bridge, crawling. A second phone buzzes face-down under his thigh."
+      },
+      {
+        "who": "partner",
+        "text": "Business. Don't ever touch my phones. Ever."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "sets": [
+      {
+        "flag": "boundary_phone",
+        "knows": [
+          "player",
+          "partner"
+        ]
+      },
+      {
+        "flag": "saw_second_phone",
+        "knows": [
+          "player"
+        ]
+      }
+    ],
+    "tells": {
+      "serial_sponsor": "t_sponsor_bracelet",
+      "broke": "t_broke_apapa",
+      "divorced": {
+        "id": "t_div_voice",
+        "text": "It buzzes again. A voice note preview: 'Emeka, you are a disgrace...' He doesn't open it."
+      }
+    },
+    "choices": [
+      {
+        "id": "window",
+        "label": "\"Okay, Chief.\" Look out the window.",
+        "tags": [
+          "excuse",
+          "discreet"
+        ],
+        "receipt": "You ignored his second phone.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The lagoon lights blur past. So does your instinct.",
+            "attachment": 5,
+            "sanity": -10
+          }
+        ]
+      },
+      {
+        "id": "grab",
+        "label": "Grab it when he steps out at the fuel station",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You went through his second phone.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Nothing but a lock screen. You put it back.",
+            "sanity": -5
+          }
+        ],
+        "truth_override": {
+          "serial_sponsor": [
+            {
+              "chance": 0.6,
+              "text": "Lekki 1: 'Is she there now?' Lekki 2: 'You said Thursday.' You put it back with shaking hands.",
+              "sanity": -15,
+              "set": [
+                {
+                  "flag": "saw_lekki_texts",
+                  "knows": [
+                    "player"
+                  ]
+                }
+              ]
+            },
+            {
+              "chance": 0.4,
+              "bad": true,
+              "text": "The door opens while you're holding it. Silence for the whole bridge.",
+              "trust": -25,
+              "expression": "angry",
+              "set": [
+                {
+                  "flag": "secret_grabbed_phone",
+                  "knows": [
+                    "player",
+                    "partner"
+                  ]
+                }
+              ]
+            }
+          ],
+          "broke": [
+            {
+              "chance": 0.6,
+              "text": "Seventeen missed calls from 'Apapa Clearing'. One text: 'Final warning, oga.'",
+              "sanity": -10,
+              "set": [
+                {
+                  "flag": "has_intel",
+                  "knows": [
+                    "player"
+                  ]
+                }
+              ]
+            },
+            {
+              "chance": 0.4,
+              "bad": true,
+              "text": "The door opens while you're holding it. Silence for the whole bridge.",
+              "trust": -25,
+              "expression": "angry",
+              "set": [
+                {
+                  "flag": "secret_grabbed_phone",
+                  "knows": [
+                    "player",
+                    "partner"
+                  ]
+                }
+              ]
+            }
+          ],
+          "divorced": [
+            {
+              "chance": 0.6,
+              "text": "Texts from 'Ada (Kids)': 'Daddy are you coming Friday?' Nothing else. You feel like a criminal.",
+              "sanity": -10
+            },
+            {
+              "chance": 0.4,
+              "bad": true,
+              "text": "He sees. He doesn't shout. He just looks tired.",
+              "trust": -20,
+              "expression": "sad",
+              "set": [
+                {
+                  "flag": "secret_grabbed_phone",
+                  "knows": [
+                    "player",
+                    "partner"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "dashboard",
+        "label": "\"If it's business, put it on the dashboard.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked him to put the second phone on the dashboard.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He puts it on the dashboard, face down. A small win. A small war.",
+            "attachment": -5,
+            "sanity": 5
+          }
+        ]
+      },
+      {
+        "id": "bigboy_phone",
+        "label": "[Big Boy] Place your own second phone beside his.",
+        "vibe": "bigboy",
+        "receipt": "You matched his second phone with yours.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He laughs for the first time all night. 'Ah. A colleague.'",
+            "attachment": 10,
+            "clout": 10,
+            "trust": -5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "emeka_rf_flight_mode",
+    "character": "chief_emeka",
+    "slot": "red_flag",
+    "presentation": "text",
+    "scene": {
+      "location": "mainland_street",
+      "time": "night",
+      "expression": "suspicious",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Suya smoke at Ojuelegba. Danfo horns. Chief's last seen froze at 6:58pm."
+      },
+      {
+        "who": "partner",
+        "text": "Going off-grid till Monday. Family things. Don't overthink it."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "serial_sponsor": {
+        "id": "t_sponsor_numbers",
+        "text": "His WhatsApp shows 'typing…' at 9pm. Not to you."
+      },
+      "broke": {
+        "id": "t_broke_apapa",
+        "text": "A stranger texts you: 'Are you Chief Emeka's person? Tell him Apapa is looking for him.'"
+      },
+      "divorced": "t_div_weekends"
+    },
+    "choices": [
+      {
+        "id": "call_spam",
+        "label": "Call him. Again. And again.",
+        "tags": [
+          "contact_partner"
+        ],
+        "receipt": "You called him fourteen times on his off-grid night.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Straight to voicemail. Fourteen times. The suya man starts praying for you.",
+            "sanity": -12,
+            "attachment": -3
+          }
+        ]
+      },
+      {
+        "id": "thirst_trap",
+        "label": "Post a thirst trap. Let Monday see it.",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You posted a thirst trap while he was off-grid.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "Monday, 6:01am: 'Delete that picture.' Then: 'Where are you?' Then ₦50k.",
+            "clout": 20,
+            "attachment": 5,
+            "wallet": 50000
+          },
+          {
+            "chance": 0.4,
+            "bad": true,
+            "text": "The Parlour reposts it. Your aunty sees it before he does.",
+            "clout": 10,
+            "exposure": 15,
+            "sanity": -5
+          }
+        ]
+      },
+      {
+        "id": "sleep",
+        "label": "Sleep. Monday is Monday.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You let his weekend disappearance slide.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You sleep like a baby. A baby with trust issues.",
+            "sanity": 5
+          }
+        ]
+      },
+      {
+        "id": "ask_musa",
+        "label": "Text Musa. Chief said Musa never lies.",
+        "requires": {
+          "flags": [
+            "trusts_musa"
+          ]
+        },
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You asked Musa the driver where Chief goes at weekends.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Musa: 'Madam, I no fit talk.' Then he sends a praying-hands emoji.",
+            "sanity": -5
+          }
+        ],
+        "truth_override": {
+          "serial_sponsor": {
+            "text": "Musa: 'Madam, every Friday I carry Oga to Lekki. Three stops. Abeg no tell am I talk.'",
+            "sanity": -15,
+            "saw_truth": true
+          },
+          "broke": {
+            "text": "Musa: 'Oga don sell the real car. This one na rental. Him dey hide from people wey him owe.'",
+            "sanity": -10,
+            "saw_truth": true
+          },
+          "divorced": {
+            "text": "Musa: 'Weekends na him children, madam. Since the divorce.' The divorce?",
+            "sanity": 10,
+            "trust": 5
+          }
+        }
+      },
+      {
+        "id": "call_6pm",
+        "label": "Video call at 6:05pm. The hour he said never.",
+        "requires": {
+          "flags": [
+            "knows_6pm"
+          ]
+        },
+        "tags": [
+          "toxic",
+          "contact_partner"
+        ],
+        "receipt": "You called at the exact hour he told you not to.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He declines. Then texts: 'I said not 6pm.'",
+            "sanity": -5
+          }
+        ],
+        "truth_override": {
+          "serial_sponsor": {
+            "text": "A girl answers: 'Emeka is in the shower. Who is this?' She sounds bored. She's done this before.",
+            "sanity": -20,
+            "saw_truth": true
+          },
+          "broke": {
+            "text": "He answers from a crowded office: 'Oga, I beg, one more week--' Then he sees it's you. Hangs up.",
+            "sanity": -10,
+            "saw_truth": true
+          },
+          "divorced": {
+            "text": "He answers. Kids screaming. 'I said not 6pm! It's bath time!' Click. Someone is crying. It might be him.",
+            "sanity": -5
+          }
+        }
+      },
+      {
+        "id": "respect_friday",
+        "label": "Don't call. You know Fridays are family.",
+        "requires": {
+          "flags": [
+            "knows_friday"
+          ]
+        },
+        "tags": [
+          "discreet"
+        ],
+        "receipt": "You remembered his Friday rule and left him alone.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Monday he sends a voice note: 'You remembered.' He sounds surprised anybody does.",
+            "sanity": 5,
+            "attachment": 5,
+            "trust": 5
+          }
+        ]
+      },
+      {
+        "id": "lover_paragraph",
+        "label": "[Lover] Send a long paragraph about communication.",
+        "vibe": "lover",
+        "tags": [
+          "contact_partner"
+        ],
+        "receipt": "You sent him a paragraph about communication.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Monday he replies with one thumbs up. The paragraph had nine paragraphs.",
+            "sanity": -8,
+            "attachment": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "emeka_rf_salon_cousin",
+    "character": "chief_emeka",
+    "slot": "red_flag",
+    "scene": {
+      "location": "lekki_salon",
+      "time": "afternoon",
+      "expression": "caught",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Admiralty Way, 2pm. You're under the dryer when the Prado pulls up. Chief walks in. With a girl. He sees you."
+      },
+      {
+        "who": "partner",
+        "text": "Ah! My cousin! What a coincidence!"
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "serial_sponsor": {
+        "id": "t_sponsor_bracelet",
+        "text": "The girl's wrist: a gold bracelet. Brand new. You've seen that box before."
+      },
+      "broke": {
+        "id": "t_broke_card",
+        "text": "The girl holds a folder: 'LOAN APPLICATION — GUARANTOR COPY.'"
+      },
+      "divorced": {
+        "id": "t_div_ring",
+        "text": "The girl rolls her eyes at him exactly the way he rolls his eyes at waiters."
+      }
+    },
+    "choices": [
+      {
+        "id": "play_cousin",
+        "label": "\"Hello, cousin.\" Smile. Play along.",
+        "tags": [
+          "discreet",
+          "excuse"
+        ],
+        "receipt": "You played his cousin in a Lekki salon.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He winks on his way out. Later: ₦80k, no message.",
+            "wallet": 80000,
+            "attachment": 8,
+            "sanity": -12
+          }
+        ],
+        "truth_override": {
+          "divorced": {
+            "text": "'Cousin?' the girl says. 'Daddy, who is this?' Daddy. Oh.",
+            "attachment": 10,
+            "sanity": -5
+          }
+        }
+      },
+      {
+        "id": "stand_up",
+        "label": "Stand up, dryer cap on, ask who she is",
+        "tags": [
+          "public_embarrassment"
+        ],
+        "receipt": "You confronted him in the salon, dryer cap on.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The salon goes silent.",
+            "sanity": -10
+          }
+        ],
+        "truth_override": {
+          "serial_sponsor": {
+            "text": "She answers first: 'I'm Lekki-- I'm Chioma.' Lekki. The whole salon heard it.",
+            "sanity": -10,
+            "exposure": 15,
+            "set": [
+              {
+                "flag": "met_other_girl",
+                "knows": [
+                  "player",
+                  "partner",
+                  "world"
+                ]
+              }
+            ]
+          },
+          "broke": {
+            "text": "She's a loan officer. 'He said you'd sign as guarantor.' He did not say.",
+            "sanity": -10,
+            "set": [
+              {
+                "flag": "heard_guarantor",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "divorced": {
+            "text": "'I'm his daughter. Who are YOU?' Chief wants the tiles to swallow him.",
+            "sanity": -5
+          }
+        }
+      },
+      {
+        "id": "dryer_text",
+        "label": "Pull the dryer down. Text: \"We'll talk.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You texted 'We'll talk' from under the dryer.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He replies 'Don't be dramatic' before he's even left the salon.",
+            "sanity": -5,
+            "attachment": -3
+          }
+        ]
+      },
+      {
+        "id": "runs_plate",
+        "label": "[Runs] Photograph her car plate. Insurance.",
+        "vibe": "runs",
+        "receipt": "You photographed the other car's plate.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Plate saved. Future you will thank present you.",
+            "sanity": 5,
+            "set": [
+              {
+                "flag": "secret_plate_photo",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "emeka_mt_sign_papers",
+    "character": "chief_emeka",
+    "slot": "money_trap",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "afternoon",
+      "expression": "charming",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Papers on the marble. A gold pen. Very small print."
+      },
+      {
+        "who": "partner",
+        "text": "Just sign here. It's for your flat. In your name. Trust me."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "serial_sponsor": {
+        "id": "t_sponsor_numbers",
+        "text": "His phone buzzes on the papers: 'Lekki 2: did she sign yet?'"
+      },
+      "broke": {
+        "id": "t_broke_apapa",
+        "text": "Page 4 says 'Guarantor'. Page 5 says 'Apapa Port Demurrage Facility'."
+      },
+      "divorced": {
+        "id": "t_div_ring",
+        "text": "He signs his part with his left hand. The pale ring line is right there."
+      }
+    },
+    "choices": [
+      {
+        "id": "sign",
+        "label": "Sign. A flat is a flat.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You signed his papers without reading them.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Keys, eventually.",
+            "attachment": 10
+          }
+        ],
+        "truth_override": {
+          "serial_sponsor": [
+            {
+              "chance": 0.6,
+              "text": "You get keys. Shared keys. Someone's slippers are already by the door.",
+              "attachment": 10,
+              "sanity": -10,
+              "set": [
+                {
+                  "flag": "signed_papers",
+                  "knows": [
+                    "player",
+                    "partner"
+                  ]
+                },
+                {
+                  "flag": "has_flat",
+                  "knows": [
+                    "player",
+                    "partner"
+                  ]
+                }
+              ]
+            },
+            {
+              "chance": 0.4,
+              "bad": true,
+              "tricked": true,
+              "text": "The keys never come. 'Documentation,' he says. Every day.",
+              "sanity": -15,
+              "set": [
+                {
+                  "flag": "signed_papers",
+                  "knows": [
+                    "player",
+                    "partner"
+                  ]
+                }
+              ]
+            }
+          ],
+          "broke": {
+            "tricked": true,
+            "bad": true,
+            "text": "Congratulations. You're guarantor on an ₦18m demurrage loan. You own debt now.",
+            "debt": 300000,
+            "sanity": -15,
+            "attachment": 10,
+            "set": [
+              {
+                "flag": "signed_papers",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "divorced": {
+            "text": "It really is a flat. In your name. He just wants you safe. You feel strange about how suspicious you were.",
+            "attachment": 15,
+            "trust": 10,
+            "set": [
+              {
+                "flag": "signed_papers",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              },
+              {
+                "flag": "has_flat",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "lawyer_first",
+        "label": "\"My lawyer reads it first.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You said your lawyer reads it first.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He sighs like you've asked for a kidney. 'Fine. Bring your lawyer.'",
+            "attachment": -8
+          }
+        ],
+        "truth_override": {
+          "broke": {
+            "text": "He gathers the papers fast. 'Forget it. Another time.' There's no other time.",
+            "attachment": -8,
+            "sanity": 5
+          }
+        }
+      },
+      {
+        "id": "screenshot_bestie",
+        "label": "Screenshot every page to your Bestie first",
+        "receipt": "You sent his papers to your Bestie.",
+        "outcomes": [
+          {
+            "chance": 0.7,
+            "text": "Bestie: 'Babe... read page 4.' You read page 4. You don't sign.",
+            "sanity": -5,
+            "set": [
+              {
+                "flag": "has_intel",
+                "knows": [
+                  "player",
+                  "bestie"
+                ]
+              }
+            ]
+          },
+          {
+            "chance": 0.3,
+            "bad": true,
+            "text": "The screenshot sound. Loud. 'You don't trust me?'",
+            "trust": -15,
+            "expression": "angry"
+          }
+        ],
+        "truth_override": {
+          "broke": [
+            {
+              "chance": 0.7,
+              "text": "Bestie: 'Babe. Page 4. GUARANTOR.' You read it twice. Then you understand everything.",
+              "sanity": -5,
+              "saw_truth": true
+            },
+            {
+              "chance": 0.3,
+              "bad": true,
+              "text": "The screenshot sound. Loud. 'You don't trust me?'",
+              "trust": -15,
+              "expression": "angry"
+            }
+          ]
+        }
+      },
+      {
+        "id": "okafor",
+        "label": "Ask for Barrister Okafor, like he said",
+        "requires": {
+          "flags": [
+            "knows_lawyer"
+          ]
+        },
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked for his own lawyer, Barrister Okafor.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He blinks. 'You listen!' Okafor reviews it.",
+            "attachment": 5
+          }
+        ],
+        "truth_override": {
+          "serial_sponsor": {
+            "text": "Okafor reads it: a gift, with a clause. No visitors without Chief's permission.",
+            "attachment": 5,
+            "control": 1,
+            "saw_truth": true
+          },
+          "broke": {
+            "text": "Okafor calls you directly: 'Madam, don't sign anything for that man. He owes me too.'",
+            "sanity": 10,
+            "saw_truth": true
+          },
+          "divorced": {
+            "text": "Okafor: 'It's clean. He's a good man, madam. The divorce nearly killed him.'",
+            "trust": 15,
+            "attachment": 10
+          }
+        }
+      },
+      {
+        "id": "papers_again",
+        "label": "\"Day one, I asked for papers. Still waiting.\"",
+        "requires": {
+          "flags": [
+            "asked_for_papers"
+          ]
+        },
+        "tags": [
+          "cautious",
+          "call_out"
+        ],
+        "receipt": "You reminded him you'd asked for papers since day one.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He goes quiet. 'You don't forget anything.' It is not a compliment.",
+            "attachment": -5,
+            "sanity": 5
+          }
+        ],
+        "truth_override": {
+          "divorced": {
+            "text": "He brings a folder. Deed, survey, receipts. 'I should have shown you sooner.'",
+            "trust": 10,
+            "sanity": 5
+          }
+        }
+      },
+      {
+        "id": "guarantor_q",
+        "label": "\"Is this the guarantor form from the salon?\"",
+        "requires": {
+          "flags": [
+            "heard_guarantor"
+          ]
+        },
+        "tags": [
+          "call_out"
+        ],
+        "receipt": "You asked if it was the guarantor form.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He takes the pen back. Slowly. 'Who told you?'",
+            "saw_truth": true,
+            "trust": -10,
+            "expression": "caught"
+          }
+        ]
+      },
+      {
+        "id": "corp_cac",
+        "label": "[Corporate] Run a CAC search on his company first",
+        "vibe": "corporate",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You ran a CAC search on his company.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "CAC: company real, clean and boring. Ex-wife still listed as director. Awkward, legal.",
+            "trust": 5
+          }
+        ],
+        "truth_override": {
+          "broke": {
+            "text": "CAC: company status 'Inactive since 2023'. The flat is owned by a bank.",
+            "saw_truth": true
+          },
+          "serial_sponsor": {
+            "text": "Company is real. The flat has three previous 'occupants' on record this year.",
+            "saw_truth": true
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "emeka_mt_container",
+    "character": "chief_emeka",
+    "slot": "money_trap",
+    "scene": {
+      "location": "prado_interior",
+      "time": "night",
+      "expression": "suspicious",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Chief, sweating in full AC."
+      },
+      {
+        "who": "partner",
+        "text": "My container is stuck at Apapa. Clear ₦300k for me tonight. Monday, I return it double."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "serial_sponsor": {
+        "id": "t_sponsor_numbers",
+        "text": "While he talks, 'Lekki 3' calls. He declines it. Then 'Lekki 1'."
+      },
+      "broke": "t_broke_apapa",
+      "divorced": {
+        "id": "t_div_weekends",
+        "text": "'Monday,' he repeats. With him, everything important happens on Monday."
+      }
+    },
+    "choices": [
+      {
+        "id": "send_full",
+        "label": "Send it. Love is an investment.",
+        "cost": 300000,
+        "tags": [
+          "excuse"
+        ],
+        "broke_text": "Your account balance laughed in Yoruba.",
+        "receipt": "You sent him container money.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Sent.",
+            "sanity": -5
+          }
+        ],
+        "truth_override": {
+          "serial_sponsor": [
+            {
+              "chance": 0.5,
+              "text": "Monday: double returns. He was testing you. You passed. Barely.",
+              "wallet": 600000,
+              "scaled": true,
+              "attachment": 15
+            },
+            {
+              "chance": 0.5,
+              "bad": true,
+              "tricked": true,
+              "text": "Monday comes. Tuesday comes. The money doesn't. 'Lekki 2' has new lashes.",
+              "sanity": -15
+            }
+          ],
+          "broke": {
+            "tricked": true,
+            "bad": true,
+            "text": "'Tomorrow' becomes a lifestyle. The container is still at Apapa. So is your money.",
+            "sanity": -20,
+            "set": [
+              {
+                "flag": "sent_container_money",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "divorced": {
+            "text": "Monday, 9am: it's back, plus a voice note: 'Thank you for trusting me. Nobody does.'",
+            "wallet": 300000,
+            "scaled": true,
+            "attachment": 20,
+            "trust": 10
+          }
+        }
+      },
+      {
+        "id": "docs_first",
+        "label": "\"Send me the clearing documents first.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked for the clearing documents first.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He sends a photo of a document. Of a different container.",
+            "sanity": -5
+          }
+        ],
+        "truth_override": {
+          "broke": {
+            "text": "Nothing comes. Then: 'So you don't trust me.' Then: 'Send 100k at least.'",
+            "attachment": -5,
+            "sanity": -5
+          },
+          "divorced": {
+            "text": "Bill of lading, receipts, a selfie at the port. You feel... silly.",
+            "trust": 10
+          }
+        }
+      },
+      {
+        "id": "send_small",
+        "label": "Send ₦20k. \"This is what I have.\"",
+        "cost": 20000,
+        "tags": [
+          "budget"
+        ],
+        "receipt": "You sent him ₦20k instead.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He takes it. 'Every little helps.' A chief said that.",
+            "attachment": 3
+          }
+        ],
+        "truth_override": {
+          "serial_sponsor": {
+            "text": "'Keep it. I'll ask someone else.' Someone else.",
+            "attachment": -10
+          }
+        }
+      },
+      {
+        "id": "nothing",
+        "label": "\"Chief, I'm not your bank.\"",
+        "receipt": "You told him you're not his bank.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He laughs. Then doesn't call for a day.",
+            "attachment": -10,
+            "sanity": 5
+          }
+        ]
+      },
+      {
+        "id": "runs_apapa",
+        "label": "[Runs] \"I know people at Apapa. I'll clear it.\"",
+        "vibe": "runs",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You called your guy at Apapa about his container.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Your guy clears it in two hours. Chief stares at you like a miracle.",
+            "attachment": 20,
+            "wallet": 100000
+          }
+        ],
+        "truth_override": {
+          "broke": {
+            "text": "Your guy laughs: 'That container? Eleven months. Oga owes everybody.'",
+            "saw_truth": true
+          },
+          "serial_sponsor": {
+            "text": "Your guy: 'Container cleared last week. Oga lie.'",
+            "saw_truth": true,
+            "sanity": -5
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "emeka_mt_flat_fee",
+    "character": "chief_emeka",
+    "slot": "money_trap",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "afternoon",
+      "expression": "charming",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "An empty glass flat in Lekki Phase 1. An agent in a tight suit."
+      },
+      {
+        "who": "partner",
+        "text": "It's yours. Just pay the agency fee, ₦500k. I'll handle the rest."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "serial_sponsor": {
+        "id": "t_sponsor_driver",
+        "text": "The agent smiles: 'Oga, same arrangement as the other three?'"
+      },
+      "broke": {
+        "id": "t_broke_card",
+        "text": "The agent asks for 'the balance from last time'. Chief points at the view."
+      },
+      "divorced": {
+        "id": "t_div_voice",
+        "text": "A text on his screen: 'Daddy, is this the weekend flat for us?' He smiles and turns it over."
+      }
+    },
+    "choices": [
+      {
+        "id": "full_fee",
+        "label": "Pay the full fee. Keys today.",
+        "cost": 500000,
+        "tags": [
+          "luxury"
+        ],
+        "broke_text": "Your account said 'and who will pay for my own rent?'",
+        "receipt": "You paid the full agency fee for his flat.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Paid.",
+            "sanity": -5
+          }
+        ],
+        "truth_override": {
+          "serial_sponsor": [
+            {
+              "chance": 0.5,
+              "text": "Keys. A real flat. Shared with a girl who arrives on Thursdays.",
+              "attachment": 10,
+              "sanity": -20,
+              "set": [
+                {
+                  "flag": "has_flat",
+                  "knows": [
+                    "player",
+                    "partner"
+                  ]
+                }
+              ]
+            },
+            {
+              "chance": 0.5,
+              "bad": true,
+              "tricked": true,
+              "text": "The 'agent' vanishes with your money. Chief: 'Lagos is hard.'",
+              "sanity": -20
+            }
+          ],
+          "broke": {
+            "tricked": true,
+            "bad": true,
+            "text": "Your fee clears his demurrage. You have no flat. You have a view of a flat.",
+            "sanity": -25,
+            "set": [
+              {
+                "flag": "sent_container_money",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "divorced": {
+            "text": "Keys. He'd paid two years' rent; your fee was the only part he let you pay. 'So it's ours.'",
+            "attachment": 20,
+            "trust": 15,
+            "wallet": 250000,
+            "scaled": true,
+            "set": [
+              {
+                "flag": "has_flat",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "half_fee",
+        "label": "Pay half. Trust is a ladder.",
+        "cost": 250000,
+        "receipt": "You paid half the agency fee.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Paid.",
+            "sanity": -5
+          }
+        ],
+        "truth_override": {
+          "serial_sponsor": {
+            "text": "He pays the rest. You get a key. So did Thursday.",
+            "attachment": 8,
+            "sanity": -10,
+            "set": [
+              {
+                "flag": "has_flat",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "broke": {
+            "tricked": true,
+            "bad": true,
+            "text": "Half a fee buys half a flat, which is no flat. The agent stops answering.",
+            "sanity": -15,
+            "set": [
+              {
+                "flag": "sent_container_money",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "divorced": {
+            "text": "He matches it and signs the lease in both names. Old-fashioned. Sweet.",
+            "attachment": 15,
+            "trust": 10,
+            "set": [
+              {
+                "flag": "has_flat",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "curtains",
+        "label": "Offer to buy the curtains. ₦30k.",
+        "cost": 30000,
+        "tags": [
+          "budget"
+        ],
+        "receipt": "You offered to pay for the curtains.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He laughs so hard Musa comes upstairs. 'You're funny. I like funny.'",
+            "attachment": 5,
+            "clout": -5
+          }
+        ]
+      },
+      {
+        "id": "handle_it",
+        "label": "\"You said you'd handle it. Handle it.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You told him to handle the fee himself.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He handles it. By changing the subject for three days.",
+            "attachment": -10,
+            "sanity": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "emeka_pd_salon_wife",
+    "character": "chief_emeka",
+    "slot": "public_drama",
+    "scene": {
+      "location": "lekki_salon",
+      "time": "afternoon",
+      "mood": "negative",
+      "partner_present": false,
+      "npc": {
+        "name": "Woman in lace"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "You're under the dryer at a Lekki salon. A woman in matching lace walks in, loud about her husband 'Emeka' sponsoring someone on the Island."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "serial_sponsor": {
+        "id": "t_sponsor_numbers",
+        "text": "'He saves them as numbers!' she shouts. 'Lekki 1! Lekki 2! Like generators!'"
+      },
+      "broke": {
+        "id": "t_broke_prado",
+        "text": "'And that Prado is RENTED! With MY money!'"
+      },
+      "divorced": {
+        "id": "t_div_ring",
+        "text": "'Seven years I wore that man's ring!' Wore. Past tense. Nobody notices but you."
+      }
+    },
+    "choices": [
+      {
+        "id": "slip_out",
+        "label": "Cap low, pay double, slip out the back",
+        "cost": 40000,
+        "tags": [
+          "discreet"
+        ],
+        "receipt": "You paid double and slipped out of the salon.",
+        "outcomes": [
+          {
+            "chance": 0.7,
+            "text": "Clean escape. Your stylist charges a 'quiet fee'.",
+            "sanity": -5
+          },
+          {
+            "chance": 0.3,
+            "bad": true,
+            "text": "Her friend clocks your bag. Your photo is already in a group chat.",
+            "exposure": 30,
+            "set": [
+              {
+                "flag": "secret_salon_photo",
+                "knows": [
+                  "player",
+                  "world",
+                  "wife"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "hold_eye",
+        "label": "Stay seated. Hold her eye. Sip your wine.",
+        "receipt": "You held his wife's eye in the salon.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The whole salon goes silent. You are a legend and a target.",
+            "clout": 40,
+            "sanity": -50,
+            "exposure": 50
+          }
+        ],
+        "truth_override": {
+          "divorced": {
+            "text": "She stops, then laughs: 'You're the new one? Good luck. He's all yours.' She leaves.",
+            "sanity": 10,
+            "clout": 20
+          }
+        }
+      },
+      {
+        "id": "leak_rant",
+        "label": "Record her rant and leak it to the Parlour",
+        "tags": [
+          "toxic"
+        ],
+        "receipt": "You leaked her rant to the Parlour.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "The Parlour explodes. 400 reactions in an hour.",
+            "clout": 30,
+            "goal": {
+              "revenge": 30
+            },
+            "truth_exposed": true,
+            "set": [
+              {
+                "flag": "secret_leaked_rant",
+                "knows": [
+                  "player",
+                  "world"
+                ]
+              }
+            ]
+          },
+          {
+            "chance": 0.4,
+            "bad": true,
+            "text": "Chief sees it. He knows it was you.",
+            "bond": -40,
+            "exposure": 40,
+            "truth_exposed": true,
+            "set": [
+              {
+                "flag": "secret_leaked_rant",
+                "knows": [
+                  "player",
+                  "world",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "runs_blackmail",
+        "label": "[Runs] Text Chief: \"Your wife is here. 200k or I talk.\"",
+        "vibe": "runs",
+        "receipt": "You texted Chief for hush money.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "Alert drops in four minutes. No message.",
+            "wallet": 200000,
+            "bond": -30
+          },
+          {
+            "chance": 0.5,
+            "bad": true,
+            "text": "He blocks you. Then unblocks you. Then sends 50k.",
+            "wallet": 50000,
+            "bond": -50
+          }
+        ],
+        "truth_override": {
+          "divorced": {
+            "text": "He replies: 'She's my EX-wife. Talk all you want.' Then blocks you.",
+            "bond": -40
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "emeka_pd_owambe",
+    "character": "chief_emeka",
+    "slot": "public_drama",
+    "scene": {
+      "location": "mainland_street",
+      "time": "golden",
+      "expression": "happy",
+      "mood": "neutral",
+      "npc": {
+        "name": "Mercy",
+        "look": "mercy"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Saturday owambe in Surulere. Chief in full isiagu and red cap, spraying ₦1,000 notes like confetti."
+      },
+      {
+        "who": "Mercy",
+        "text": "So you're the new one. Cute. I'm Mercy."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "serial_sponsor": {
+        "id": "t_sponsor_bracelet",
+        "text": "Mercy raises her glass. Same gold bracelet as the one in his glovebox."
+      },
+      "broke": {
+        "id": "t_broke_card",
+        "text": "The MC jokes: 'Chief Emeka's cheque has... bounced!' Everybody laughs. Chief laughs loudest."
+      },
+      "divorced": {
+        "id": "t_div_voice",
+        "text": "A woman across the hall snaps at him in Igbo. He answers, tired: 'Not here, Nkechi.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "dance_spray",
+        "label": "Dance with Chief. Spray him back.",
+        "cost": 50000,
+        "tags": [
+          "luxury"
+        ],
+        "receipt": "You sprayed money at the owambe.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The crowd roars. The owambe videographer gets you from every angle.",
+            "clout": 25,
+            "attachment": 10,
+            "exposure": 20
+          }
+        ]
+      },
+      {
+        "id": "small_notes",
+        "label": "Spray ₦50 notes. Many of them. ₦5k.",
+        "cost": 5000,
+        "tags": [
+          "budget"
+        ],
+        "receipt": "You sprayed ₦50 notes at the owambe.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "It looks like a lot of money from far away. The aunties respect the strategy.",
+            "clout": 10,
+            "attachment": 3
+          }
+        ]
+      },
+      {
+        "id": "ask_mercy",
+        "label": "Pull Mercy aside: \"Where's that bracelet from?\"",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You asked Mercy where her bracelet came from.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Mercy shrugs. 'A gift.' She is enjoying this.",
+            "sanity": -5
+          }
+        ],
+        "truth_override": {
+          "serial_sponsor": {
+            "text": "Mercy smiles: 'Same place as yours, darling. Lekki 2. Nice to meet you.'",
+            "sanity": -15,
+            "saw_truth": true,
+            "set": [
+              {
+                "flag": "met_other_girl",
+                "knows": [
+                  "player",
+                  "world"
+                ]
+              }
+            ]
+          },
+          "broke": {
+            "text": "'From Chief? Please. I bought it. He borrowed ₦2m from me last month.'",
+            "saw_truth": true,
+            "sanity": -5
+          },
+          "divorced": {
+            "text": "'From my sponsor, a different chief. Why? Is yours married?' She laughs. 'Mine is.'",
+            "sanity": 5
+          }
+        }
+      },
+      {
+        "id": "watch",
+        "label": "Stay at the table. Eat the jollof. Watch everything.",
+        "tags": [
+          "discreet"
+        ],
+        "receipt": "You sat back at the owambe and watched.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You learn more in one hour of watching than a month of asking.",
+            "sanity": 5,
+            "intel": "tell"
+          }
+        ]
+      },
+      {
+        "id": "mama",
+        "label": "Find his mother. Wish her happy birthday in Igbo.",
+        "requires": {
+          "flags": [
+            "knows_mama_birthday"
+          ]
+        },
+        "receipt": "You remembered his mother's birthday.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Mama holds your face: 'Finally, one who greets!' Chief looks at you like a man who's been seen.",
+            "attachment": 20,
+            "trust": 10
+          }
+        ],
+        "truth_override": {
+          "serial_sponsor": {
+            "text": "Mama hugs you: 'Finally, one who greets! The others don't.' The others.",
+            "attachment": 15,
+            "saw_truth": true
+          }
+        }
+      },
+      {
+        "id": "bigboy_outspray",
+        "label": "[Big Boy] Outspray Chief. Make it a contest.",
+        "vibe": "bigboy",
+        "cost": 150000,
+        "tags": [
+          "luxury",
+          "public_embarrassment"
+        ],
+        "receipt": "You outsprayed Chief at his own owambe.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You win. Chief loses face in front of 300 guests and one videographer.",
+            "clout": 40,
+            "exposure": 15
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "emeka_pd_surprise_dinner",
+    "character": "chief_emeka",
+    "slot": "public_drama",
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "night",
+      "expression": "charming",
+      "mood": "positive"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Your turn to plan the date. The Ikoyi rooftop has a seafood special tonight. The whole terrace is watching the man in the red cap."
+      },
+      {
+        "who": "partner",
+        "text": "Surprise me."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "serial_sponsor": {
+        "id": "t_sponsor_numbers",
+        "text": "His phone, face-up for once: 'Lekki 3: Happy anniversary babe ❤️'. It is not your anniversary."
+      },
+      "broke": {
+        "id": "t_broke_card",
+        "text": "He keeps saying 'order anything' while quietly ordering the cheapest thing on the menu."
+      },
+      "divorced": {
+        "id": "t_div_weekends",
+        "text": "He keeps checking the time. 'I have to leave by ten. No, it's not what you think.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "seafood",
+        "label": "Seafood platter. Rich men love lobster.",
+        "cost": 120000,
+        "tags": [
+          "luxury"
+        ],
+        "receipt": "You ordered him the seafood platter.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "bad": true,
+            "text": "He pushes the lobster away like it insulted his father. 'I told you. Seafood.' Did he?",
+            "attachment": -10,
+            "chemistry": -5
+          }
+        ],
+        "truth_override": {}
+      },
+      {
+        "id": "amala",
+        "label": "Take him to an amala spot in Surulere. ₦8k.",
+        "cost": 8000,
+        "tags": [
+          "budget"
+        ],
+        "receipt": "You took Chief to an amala spot in Surulere.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "He eats with his hands and tells stories about his village. Best date yet, and it cost ₦8k.",
+            "attachment": 10,
+            "chemistry": 3
+          },
+          {
+            "chance": 0.4,
+            "bad": true,
+            "text": "NEPA takes light. The amala gets cold. He says 'next time, Ikoyi' like a man who has decided.",
+            "attachment": -3
+          }
+        ]
+      },
+      {
+        "id": "suya",
+        "label": "Suya by the lagoon. No seafood. You listened.",
+        "requires": {
+          "flags": [
+            "knows_no_seafood"
+          ]
+        },
+        "cost": 25000,
+        "tags": [
+          "budget"
+        ],
+        "receipt": "You remembered he hates seafood and got suya.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He eats with his hands, red cap off. 'You listened.' He says it twice.",
+            "attachment": 20,
+            "trust": 10,
+            "chemistry": 5,
+            "expression": "happy"
+          }
+        ]
+      },
+      {
+        "id": "let_him",
+        "label": "\"You pick. I'm just here for the view.\"",
+        "receipt": "You let him pick the date.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He picks pepper soup, the bill and the next three weekends. Easy.",
+            "attachment": 5,
+            "sanity": -5
+          }
+        ]
+      },
+      {
+        "id": "toast",
+        "label": "Stand and toast him to the whole terrace",
+        "tags": [
+          "public_embarrassment"
+        ],
+        "receipt": "You toasted him in front of the whole terrace.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "Applause. He hates attention but loves applause. Confusing man.",
+            "clout": 15
+          },
+          {
+            "chance": 0.5,
+            "bad": true,
+            "text": "A table of his business partners turns around. One of them knows his wife.",
+            "exposure": 20,
+            "clout": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "emeka_cf_sponsor",
+    "character": "chief_emeka",
+    "slot": "confrontation",
+    "requires": {
+      "truth": [
+        "serial_sponsor"
+      ]
+    },
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "night",
+      "expression": "caught",
+      "mood": "negative",
+      "npc": {
+        "name": "Chioma"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Same rooftop. Halfway through the pepper soup, a girl walks up."
+      },
+      {
+        "who": "Chioma",
+        "text": "Emeka? You said you were in Abuja."
+      },
+      {
+        "who": "narration",
+        "text": "Behind her, two more girls. All wearing his gifts. {tell}"
+      }
+    ],
+    "tells": {
+      "serial_sponsor": {
+        "id": "t_sponsor_numbers",
+        "text": "His phone lights up between the four of you: 'Lekki 1 calling…'"
+      }
+    },
+    "choices": [
+      {
+        "id": "compare",
+        "label": "\"Ladies. Let's compare receipts.\"",
+        "tags": [
+          "public_embarrassment"
+        ],
+        "receipt": "You made the four of you compare receipts at his table.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Four of you, one table, one bill. He pays it. All of it. Then leaves through the kitchen.",
+            "clout": 30,
+            "sanity": -10,
+            "saw_truth": true,
+            "truth_exposed": true,
+            "goal": {
+              "revenge": 40
+            },
+            "expression": "caught"
+          }
+        ]
+      },
+      {
+        "id": "invoice",
+        "label": "Finish your soup. Then invoice him for your time.",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You invoiced him for 'emotional logistics'.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "₦500k for 'emotional logistics'. He pays ₦300k to keep you quiet.",
+            "wallet": 300000,
+            "sanity": -5,
+            "saw_truth": true
+          }
+        ]
+      },
+      {
+        "id": "abuja",
+        "label": "\"Abuja? Babe, eat.\" Pretend you didn't see.",
+        "tags": [
+          "excuse",
+          "discreet"
+        ],
+        "receipt": "You pretended you didn't see the other girls.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He squeezes your hand under the table. Grateful. Guilty. Generous.",
+            "wallet": 150000,
+            "attachment": 15,
+            "sanity": -20
+          }
+        ]
+      },
+      {
+        "id": "silence_price",
+        "label": "\"I kept your secret since day one. Price?\"",
+        "requires": {
+          "flags": [
+            "promised_secrecy"
+          ]
+        },
+        "receipt": "You named your price for keeping his secret.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He pays ₦800k before the girls reach the lift. Silence is the most expensive thing in Ikoyi.",
+            "wallet": 800000,
+            "saw_truth": true,
+            "attachment": -10
+          }
+        ]
+      },
+      {
+        "id": "lekki_numbers",
+        "label": "\"Lekki 1, 2 and 3, I presume.\"",
+        "requires": {
+          "any_flags": [
+            "saw_lekki_texts",
+            "met_other_girl"
+          ]
+        },
+        "tags": [
+          "call_out"
+        ],
+        "receipt": "You called the other girls by his contact names.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The girls gasp. Chief's face cycles through every expression he owns.",
+            "clout": 20,
+            "trust": -20,
+            "saw_truth": true,
+            "truth_exposed": true,
+            "goal": {
+              "revenge": 40
+            }
+          }
+        ]
+      },
+      {
+        "id": "play_recording",
+        "label": "Play the recording from your first date",
+        "requires": {
+          "flags": [
+            "secret_recording"
+          ]
+        },
+        "receipt": "You played his first-date promises to the other girls.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "His voice fills the rooftop: 'You're the only one.' The girls laugh. Then cry. Then laugh.",
+            "clout": 30,
+            "saw_truth": true,
+            "truth_exposed": true,
+            "goal": {
+              "revenge": 50
+            }
+          }
+        ]
+      },
+      {
+        "id": "plate",
+        "label": "Show Chioma her car plate from the salon",
+        "requires": {
+          "flags": [
+            "secret_plate_photo"
+          ]
+        },
+        "receipt": "You showed them the plate photo from the salon.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'That's my car. He bought it.' The others go quiet. They all have cars.",
+            "saw_truth": true,
+            "clout": 15
+          }
+        ]
+      },
+      {
+        "id": "triangulation",
+        "label": "\"This is triangulation. I'm leaving the triangle.\"",
+        "requires": {
+          "flags": [
+            "named_tactic"
+          ]
+        },
+        "tags": [
+          "call_out",
+          "exit"
+        ],
+        "receipt": "You named his tactic and walked out.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The therapist's word lands like a slap. He has no answer. You leave with your dignity and his pepper soup.",
+            "sanity": 20,
+            "saw_truth": true,
+            "attachment": -20
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "emeka_cf_broke",
+    "character": "chief_emeka",
+    "slot": "confrontation",
+    "requires": {
+      "truth": [
+        "broke"
+      ]
+    },
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "morning",
+      "expression": "caught",
+      "mood": "negative",
+      "npc": {
+        "name": "Bailiff"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "7am. Banging on the door. Two men with a court order."
+      },
+      {
+        "who": "Bailiff",
+        "text": "We're here for Chief Emeka's assets. The Prado is on the list. So is this TV."
+      },
+      {
+        "who": "partner",
+        "text": "Babe... talk to them. You have a good face."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "broke": {
+        "id": "t_broke_prado",
+        "text": "Outside, a tow truck is already hooking the Prado. A CAR HIRE man is shouting at it."
+      }
+    },
+    "choices": [
+      {
+        "id": "charm",
+        "label": "Talk to them. Charm. Lie.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You lied to the bailiffs for him.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "They leave with only the TV. Chief kisses your forehead: 'My lucky charm.'",
+            "attachment": 15,
+            "sanity": -15
+          },
+          {
+            "chance": 0.5,
+            "bad": true,
+            "text": "They take the TV, the Prado, and your phone charger.",
+            "sanity": -20
+          }
+        ]
+      },
+      {
+        "id": "how_much",
+        "label": "Ask the bailiffs how much he owes",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked the bailiffs how much he owes.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'₦47 million, madam. Plus interest. Plus the Prado.'",
+            "sanity": -10,
+            "saw_truth": true
+          }
+        ]
+      },
+      {
+        "id": "refund",
+        "label": "\"Refund my container money. Now.\"",
+        "requires": {
+          "flags": [
+            "sent_container_money"
+          ]
+        },
+        "receipt": "You demanded your money back as the bailiffs watched.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "He transfers it back before the bailiffs finish the list. Fastest he's ever moved.",
+            "wallet": 300000,
+            "scaled": true,
+            "saw_truth": true
+          },
+          {
+            "chance": 0.5,
+            "bad": true,
+            "text": "'Babe. They froze my account.' For once, he's telling the truth.",
+            "sanity": -10,
+            "saw_truth": true
+          }
+        ]
+      },
+      {
+        "id": "show_papers",
+        "label": "Show the bailiffs the papers you signed",
+        "requires": {
+          "flags": [
+            "signed_papers"
+          ]
+        },
+        "receipt": "You showed the bailiffs the papers you'd signed.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "bad": true,
+            "text": "They photograph your signature. 'You're the guarantor, madam. See you in court.'",
+            "debt": 200000,
+            "sanity": -15,
+            "saw_truth": true
+          }
+        ]
+      },
+      {
+        "id": "livestream",
+        "label": "Livestream the eviction to the Parlour",
+        "tags": [
+          "public_embarrassment",
+          "toxic"
+        ],
+        "receipt": "You livestreamed his eviction.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "12,000 viewers. Chief tries to hide behind the fridge. The fridge is also on the list.",
+            "clout": 35,
+            "exposure": 30,
+            "truth_exposed": true,
+            "saw_truth": true,
+            "goal": {
+              "revenge": 50
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "emeka_cf_divorced",
+    "character": "chief_emeka",
+    "slot": "confrontation",
+    "requires": {
+      "truth": [
+        "divorced"
+      ]
+    },
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "afternoon",
+      "expression": "sad",
+      "mood": "negative",
+      "partner_present": false,
+      "npc": {
+        "name": "Nkechi"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "A woman in expensive lace at your door. Two kids behind her."
+      },
+      {
+        "who": "Nkechi",
+        "text": "I'm Nkechi. Emeka's wife. For the children's sake, we should talk."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "divorced": {
+        "id": "t_div_ring",
+        "text": "Her ring finger has the same pale band as his."
+      }
+    },
+    "choices": [
+      {
+        "id": "tea",
+        "label": "Let her in. Make tea. Listen.",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You let her in and listened.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Two hours. The divorce in 2022. The weekends with the kids. He wasn't hiding you. He was hiding his pain.",
+            "trust": 15,
+            "attachment": 10,
+            "sanity": 10
+          }
+        ]
+      },
+      {
+        "id": "post_her",
+        "label": "Slam the door. Post her on the Parlour.",
+        "tags": [
+          "toxic",
+          "public_embarrassment"
+        ],
+        "receipt": "You posted his ex-wife on the Parlour.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The Parlour eats it up. Then Nkechi posts the divorce certificate. You posted an ex-wife.",
+            "clout": 20,
+            "exposure": 30,
+            "bond": -15
+          }
+        ]
+      },
+      {
+        "id": "speaker",
+        "label": "Call Chief on speaker. \"Explain. Now.\"",
+        "tags": [
+          "contact_partner",
+          "cautious"
+        ],
+        "receipt": "You called Chief on speaker in front of her.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He arrives in 20 minutes, shirt untucked. 'She's my ex. I should have told you. I was ashamed.'",
+            "trust": 5,
+            "attachment": 5
+          }
+        ]
+      },
+      {
+        "id": "two_phones",
+        "label": "\"Is she why you have two phones?\"",
+        "requires": {
+          "flags": [
+            "saw_second_phone"
+          ]
+        },
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked about the second phone.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Nkechi laughs. 'The second phone is for the children. So I can't reach him at weekends. Smart man.'",
+            "sanity": 10,
+            "trust": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "emeka_po_watch_recognised",
+    "character": "chief_emeka",
+    "slot": "payoff",
+    "priority": 5,
+    "presentation": "text",
+    "requires": {
+      "any_flags": [
+        "secret_rolex_video",
+        "secret_flat_selfie"
+      ],
+      "not_flags": [
+        "watch_recognised"
+      ],
+      "day_min": 3
+    },
+    "payoff_of": [
+      "secret_rolex_video",
+      "secret_flat_selfie"
+    ],
+    "scene": {
+      "location": "mainland_street",
+      "time": "afternoon",
+      "mood": "negative",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "A DM from a stranger."
+      },
+      {
+        "who": "Unknown",
+        "text": "That watch in your post. Gold Daytona, scratched bezel. I know that watch. Whose wrist is it?"
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "serial_sponsor": {
+        "id": "t_sponsor_numbers",
+        "text": "Her profile picture is cropped. You can just see a gold bracelet."
+      },
+      "broke": {
+        "id": "t_broke_apapa",
+        "text": "Her bio: 'Import finance. Apapa. DM for clearing.'"
+      },
+      "divorced": {
+        "id": "t_div_voice",
+        "text": "Her profile: a woman in lace with two kids. The same voice from his phone."
+      }
+    },
+    "choices": [
+      {
+        "id": "flex",
+        "label": "\"My man's. Jealous?\"",
+        "receipt": "You told a stranger the Rolex was your man's.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She replies with one eye emoji. Then screenshots your profile.",
+            "clout": 10,
+            "exposure": 15,
+            "set": [
+              {
+                "flag": "watch_recognised",
+                "knows": [
+                  "player",
+                  "world",
+                  "wife"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "delete",
+        "label": "Delete the post. Block the stranger.",
+        "tags": [
+          "discreet",
+          "cautious"
+        ],
+        "receipt": "You deleted the post and blocked the stranger.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Deleted. But the internet has a long memory and a short temper.",
+            "exposure": -10,
+            "sanity": -5,
+            "set": [
+              {
+                "flag": "watch_recognised",
+                "knows": [
+                  "player",
+                  "world"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "why",
+        "label": "\"Why do you know it?\"",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You asked the stranger how she knew the watch.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "No reply.",
+            "set": [
+              {
+                "flag": "watch_recognised",
+                "knows": [
+                  "player",
+                  "world"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "serial_sponsor": {
+            "text": "'Because my sister has the same video. Different date. Same table.'",
+            "sanity": -10,
+            "set": [
+              {
+                "flag": "watch_recognised",
+                "knows": [
+                  "player",
+                  "world",
+                  "wife"
+                ]
+              }
+            ]
+          },
+          "broke": {
+            "text": "'Because it was pawned at my uncle's shop in Ikeja last month. Somebody redeemed it on credit.'",
+            "sanity": -5,
+            "set": [
+              {
+                "flag": "watch_recognised",
+                "knows": [
+                  "player",
+                  "world"
+                ]
+              }
+            ]
+          },
+          "divorced": {
+            "text": "'Because I bought it for him. Long story. Tell him Nkechi says hi.'",
+            "set": [
+              {
+                "flag": "watch_recognised",
+                "knows": [
+                  "player",
+                  "world",
+                  "wife"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "emeka_po_woman_messages",
+    "character": "chief_emeka",
+    "slot": "payoff",
+    "priority": 6,
+    "presentation": "voice_note",
+    "requires": {
+      "flags": [
+        "watch_recognised"
+      ],
+      "not_flags": [
+        "woman_met"
+      ],
+      "flag_age": {
+        "flag": "watch_recognised",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "watch_recognised"
+    ],
+    "scene": {
+      "location": "lekki_salon",
+      "time": "afternoon",
+      "mood": "negative",
+      "partner_present": false,
+      "npc": {
+        "name": "The woman"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Voice note, 0:47. Unknown number."
+      },
+      {
+        "who": "The woman",
+        "text": "You. The one with the watch video. We need to talk about Emeka. Admiralty Way, 4pm. Come alone."
+      }
+    ],
+    "choices": [
+      {
+        "id": "meet",
+        "label": "Meet her at the salon",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You met the woman from the voice note.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She doesn't show.",
+            "set": [
+              "woman_met"
+            ]
+          }
+        ],
+        "truth_override": {
+          "serial_sponsor": {
+            "text": "His wife. Calm. Terrifying. She hands you a list: 'You're number four. I have the other three addresses too.'",
+            "sanity": -20,
+            "exposure": 15,
+            "saw_truth": true,
+            "set": [
+              "woman_met"
+            ]
+          },
+          "broke": {
+            "text": "A businesswoman. 'He owes me ₦12m. Help me find his assets and I'll cut you in.'",
+            "wallet": 150000,
+            "scaled": true,
+            "saw_truth": true,
+            "set": [
+              "woman_met"
+            ]
+          },
+          "divorced": {
+            "text": "His ex-wife. 'I'm not here to fight. I'm here to warn you: he works too much and he snores. Good luck.'",
+            "sanity": 10,
+            "trust": 5,
+            "set": [
+              "woman_met"
+            ]
+          }
+        }
+      },
+      {
+        "id": "forward",
+        "label": "Forward the voice note to Chief",
+        "tags": [
+          "contact_partner",
+          "cautious"
+        ],
+        "receipt": "You forwarded the voice note to Chief.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He reads it. Says nothing.",
+            "set": [
+              "woman_met"
+            ],
+            "reveal": [
+              {
+                "flag": "watch_recognised",
+                "to": [
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "serial_sponsor": {
+            "text": "He calls in 30 seconds. 'Delete it. Delete her. I'll send something.' He sends something.",
+            "wallet": 100000,
+            "trust": -5,
+            "set": [
+              "woman_met"
+            ],
+            "reveal": [
+              {
+                "flag": "watch_recognised",
+                "to": [
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "broke": {
+            "text": "'Don't meet her. She's trying to ruin me.' She is. He also owes her.",
+            "sanity": -5,
+            "set": [
+              "woman_met"
+            ],
+            "reveal": [
+              {
+                "flag": "watch_recognised",
+                "to": [
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "divorced": {
+            "text": "'That's Nkechi. My ex. I'm sorry she found you. I'll explain everything Sunday.'",
+            "trust": 10,
+            "set": [
+              "woman_met"
+            ],
+            "reveal": [
+              {
+                "flag": "watch_recognised",
+                "to": [
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "block",
+        "label": "Block her. Not your wahala.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You blocked the woman without listening.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Blocked. She'll find another way. They always find another way.",
+            "sanity": 5,
+            "set": [
+              "woman_met"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "emeka_po_leak_confront",
+    "character": "chief_emeka",
+    "slot": "payoff",
+    "priority": 7,
+    "requires": {
+      "partner_knows": [
+        "secret_leaked_rant"
+      ],
+      "not_flags": [
+        "leak_confronted"
+      ]
+    },
+    "payoff_of": [
+      "secret_leaked_rant"
+    ],
+    "partner_reacts_to": [
+      "secret_leaked_rant"
+    ],
+    "scene": {
+      "location": "prado_interior",
+      "time": "night",
+      "expression": "angry",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "You leaked that woman's rant. To the Parlour. With my name in it. Explain."
+      }
+    ],
+    "choices": [
+      {
+        "id": "deny",
+        "label": "\"It wasn't me. Lagos has eyes.\"",
+        "receipt": "You denied leaking the rant.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "He wants to believe you, so he does.",
+            "trust": -5,
+            "set": [
+              "leak_confronted"
+            ]
+          },
+          {
+            "chance": 0.5,
+            "bad": true,
+            "text": "He shows you the upload: your phone model, your ring light, your voice saying 'omo'.",
+            "trust": -20,
+            "sanity": -10,
+            "set": [
+              "leak_confronted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "defend",
+        "label": "\"She came for me. I defended myself.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You told him you were defending yourself.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He's quiet across the whole bridge. 'Next time, come to me first.'",
+            "attachment": -5,
+            "sanity": 5,
+            "set": [
+              "leak_confronted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "again",
+        "label": "\"And I'll do it again.\"",
+        "tags": [
+          "toxic"
+        ],
+        "receipt": "You told him you'd leak it again.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Musa stops the car. Chief gets out. Walks. On the Link Bridge. In agbada.",
+            "clout": 15,
+            "bond": -25,
+            "exposure": 10,
+            "set": [
+              "leak_confronted"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "emeka_po_guarantor",
+    "character": "chief_emeka",
+    "slot": "payoff",
+    "priority": 6,
+    "presentation": "call",
+    "requires": {
+      "flags": [
+        "signed_papers"
+      ],
+      "truth": [
+        "broke"
+      ],
+      "not_flags": [
+        "bank_called"
+      ],
+      "flag_age": {
+        "flag": "signed_papers",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "signed_papers"
+    ],
+    "scene": {
+      "location": "mainland_street",
+      "time": "morning",
+      "mood": "negative",
+      "partner_present": false,
+      "npc": {
+        "name": "Bank officer"
+      }
+    },
+    "beats": [
+      {
+        "who": "Bank officer",
+        "text": "Good morning, ma. You're guarantor on a defaulted facility. ₦18 million. When can you come in?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "hang_up",
+        "label": "Hang up. Block. Pray.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You hung up on the bank.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "They call your office line next. Then your mother.",
+            "sanity": -15,
+            "set": [
+              "bank_called"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "lawyer",
+        "label": "Pay a lawyer to fight it",
+        "cost": 60000,
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You paid a lawyer to fight the guarantor claim.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Your lawyer gets your name removed: 'signed under misrepresentation'. Chief is not invited to your birthday.",
+            "debt": -300000,
+            "saw_truth": true,
+            "set": [
+              "bank_called"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "confront",
+        "label": "Call Chief: \"Guarantor? GUARANTOR?\"",
+        "tags": [
+          "contact_partner"
+        ],
+        "receipt": "You called Chief about the guarantor loan.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Babe, it's a formality.' The bank officer is still on the other line, listening.",
+            "saw_truth": true,
+            "trust": -10,
+            "set": [
+              "bank_called"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "emeka_po_grabbed_phone",
+    "character": "chief_emeka",
+    "slot": "payoff",
+    "priority": 4,
+    "requires": {
+      "partner_knows": [
+        "secret_grabbed_phone"
+      ],
+      "not_flags": [
+        "phone_talk"
+      ],
+      "flag_age": {
+        "flag": "secret_grabbed_phone",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "secret_grabbed_phone"
+    ],
+    "partner_reacts_to": [
+      "secret_grabbed_phone"
+    ],
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "expression": "angry",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "I told you. Don't touch my phones. You did. So: what did you find?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "everything",
+        "label": "\"Enough.\" Hold his stare.",
+        "receipt": "You told him you found enough.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He blinks first. Then he sends ₦200k. Sorry money, or shut-up money. Same app.",
+            "wallet": 200000,
+            "trust": -5,
+            "set": [
+              "phone_talk"
+            ]
+          }
+        ],
+        "truth_override": {
+          "good_one": {
+            "text": "'Then you found my kids' school WhatsApp. Happy?' He goes to bed without you.",
+            "attachment": -10,
+            "set": [
+              "phone_talk"
+            ]
+          }
+        }
+      },
+      {
+        "id": "sorry",
+        "label": "\"Nothing. I'm sorry. I panicked.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You apologised for going through his phone.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He nods slowly. 'Trust is not a phone password.' He keeps both phones on him now.",
+            "attachment": -5,
+            "sanity": 5,
+            "set": [
+              "phone_talk"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "your_turn",
+        "label": "\"Give me your password. Fair is fair.\"",
+        "tags": [
+          "toxic"
+        ],
+        "receipt": "You demanded his password.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He laughs once. It is not a happy laugh. 'Goodnight.'",
+            "trust": -10,
+            "set": [
+              "phone_talk"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "emeka_po_wife_photo",
+    "character": "chief_emeka",
+    "slot": "payoff",
+    "priority": 5,
+    "presentation": "text",
+    "requires": {
+      "knows": [
+        {
+          "flag": "secret_salon_photo",
+          "who": "wife"
+        }
+      ],
+      "not_flags": [
+        "wife_photo_seen"
+      ],
+      "flag_age": {
+        "flag": "secret_salon_photo",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "secret_salon_photo"
+    ],
+    "scene": {
+      "location": "mainland_street",
+      "time": "night",
+      "mood": "negative",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Unknown number. A photo: you, cap low, leaving the salon. Caption:"
+      },
+      {
+        "who": "Unknown",
+        "text": "I know your face now."
+      }
+    ],
+    "choices": [
+      {
+        "id": "reply",
+        "label": "\"And I know your husband's.\"",
+        "tags": [
+          "toxic"
+        ],
+        "receipt": "You clapped back at the woman with your photo.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Three dots. For eleven minutes. Then she adds you to a WhatsApp group called 'EMEKA MATTER'.",
+            "clout": 10,
+            "exposure": 25,
+            "sanity": -10,
+            "set": [
+              "wife_photo_seen"
+            ]
+          }
+        ],
+        "truth_override": {
+          "divorced": {
+            "text": "'Ex-husband. Keep him. Return the Rolex.' She leaves the group she just created.",
+            "clout": 5,
+            "set": [
+              "wife_photo_seen"
+            ]
+          }
+        }
+      },
+      {
+        "id": "silent",
+        "label": "Screenshot it. Say nothing. Change your route.",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You stayed silent and changed your route.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You take the BRT for a week. Disguised. It's the most Lagos you've ever felt.",
+            "sanity": -5,
+            "set": [
+              "wife_photo_seen"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tell_chief",
+        "label": "Send it to Chief: \"Your wife has my face.\"",
+        "tags": [
+          "contact_partner"
+        ],
+        "receipt": "You sent Chief the photo his wife had of you.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'I'll handle her.' He doesn't say how. That's the scary part.",
+            "control": 1,
+            "attachment": 5,
+            "set": [
+              "wife_photo_seen"
+            ]
+          }
+        ],
+        "truth_override": {
+          "divorced": {
+            "text": "'That's Nkechi. My EX. I'll call her.' He does. She stops.",
+            "trust": 10,
+            "set": [
+              "wife_photo_seen"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "emeka_es_location",
+    "character": "chief_emeka",
+    "slot": "escalation",
+    "requires": {
+      "day_min": 3
+    },
+    "scene": {
+      "location": "prado_interior",
+      "time": "night",
+      "expression": "suspicious",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Share your live location with me. Always. I pay for this phone. I should know where it is."
+      },
+      {
+        "who": "narration",
+        "text": "He's smiling. His hand is on your phone."
+      }
+    ],
+    "choices": [
+      {
+        "id": "share",
+        "label": "Share it. He's just protective.",
+        "tags": [
+          "stay"
+        ],
+        "receipt": "You shared your live location with him. Permanently.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He kisses your forehead. Your phone feels heavier.",
+            "attachment": 15,
+            "control": 2,
+            "sanity": -8
+          }
+        ]
+      },
+      {
+        "id": "boundary",
+        "label": "\"No. My location is mine.\"",
+        "tags": [
+          "exit",
+          "cautious"
+        ],
+        "receipt": "You told him your location is yours.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The AC hums. Musa drives very carefully. Chief says nothing for the rest of the bridge.",
+            "attachment": -15,
+            "control": -2,
+            "sanity": 5,
+            "set": [
+              "boundary_set"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bestie",
+        "label": "\"Let me think.\" Call your Bestie from the toilet.",
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You called your Bestie when he pushed for your location.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Bestie: 'Is he paying for the phone or for you?' You don't share it.",
+            "sanity": 10,
+            "control": -1,
+            "attachment": -5
+          }
+        ]
+      },
+      {
+        "id": "location_rule_again",
+        "label": "\"Day one: I share location with friends. Not owners.\"",
+        "requires": {
+          "flags": [
+            "location_rule"
+          ]
+        },
+        "tags": [
+          "exit",
+          "call_out"
+        ],
+        "receipt": "You reminded him of your day-one location rule.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He remembers. You see him remember. He takes his hand off your phone.",
+            "control": -2,
+            "attachment": -5,
+            "sanity": 10,
+            "set": [
+              "boundary_set"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "leave",
+        "label": "\"Musa, stop the car.\" Get out. Leave.",
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You got out of the Prado and left.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You walk off the bridge and into a keke. You don't look back.",
+            "end": "walked_away",
+            "sanity": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "emeka_es_key",
+    "character": "chief_emeka",
+    "slot": "escalation",
+    "requires": {
+      "day_min": 3
+    },
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "expression": "suspicious",
+      "mood": "negative",
+      "fx": [
+        "rain"
+      ]
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "2am. You wake up. Chief is sitting at the end of your bed in the dark."
+      },
+      {
+        "who": "partner",
+        "text": "I have a key. I wanted to see you sleep. Is that a crime?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "tea",
+        "label": "Make him tea. He's had a long day.",
+        "tags": [
+          "stay"
+        ],
+        "receipt": "You made him tea at 2am instead of asking why he was there.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He drinks it watching you. 'This is what love looks like,' he says. You nod. You don't sleep.",
+            "attachment": 15,
+            "control": 2,
+            "sanity": -12
+          }
+        ]
+      },
+      {
+        "id": "key",
+        "label": "\"Give me the key. Now.\"",
+        "tags": [
+          "exit",
+          "cautious"
+        ],
+        "receipt": "You took back the key.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He puts it on the bedside table. Slowly. Like it costs him. It does.",
+            "attachment": -15,
+            "control": -2,
+            "sanity": 5,
+            "set": [
+              "boundary_set"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "security",
+        "label": "Call estate security. Then your sister.",
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You called estate security on him.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The security man knocks. Chief leaves, offended. Your sister stays on the phone till sunrise.",
+            "attachment": -20,
+            "control": -3,
+            "sanity": 10,
+            "set": [
+              "boundary_set"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "flat_his",
+        "label": "\"You said this flat was mine.\"",
+        "requires": {
+          "flags": [
+            "has_flat"
+          ]
+        },
+        "tags": [
+          "call_out"
+        ],
+        "receipt": "You reminded him he said the flat was yours.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'It is yours. And you are mine.' He says it like maths.",
+            "control": 1,
+            "sanity": -10,
+            "attachment": 5
+          }
+        ]
+      },
+      {
+        "id": "leave",
+        "label": "Pack one bag. Leave before sunrise.",
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You packed a bag and left before sunrise.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You leave the keys on the marble. The first danfo at Obalende has never sounded so good.",
+            "end": "walked_away",
+            "sanity": 15
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "emeka_es_phone_check",
+    "character": "chief_emeka",
+    "slot": "escalation",
+    "requires": {
+      "day_min": 4
+    },
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "night",
+      "expression": "angry",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Give me your phone. Unlock it. I want to see who you talk to when I'm not there."
+      },
+      {
+        "who": "narration",
+        "text": "The man who said 'never touch my phones' is holding out his hand."
+      }
+    ],
+    "choices": [
+      {
+        "id": "hand_over",
+        "label": "Hand it over. Nothing to hide.",
+        "tags": [
+          "stay"
+        ],
+        "receipt": "You unlocked your phone for him.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He reads for twenty minutes. Deletes two contacts. Hands it back: 'Good.'",
+            "attachment": 15,
+            "control": 2,
+            "sanity": -12
+          }
+        ]
+      },
+      {
+        "id": "no",
+        "label": "\"No. Same rule as yours.\"",
+        "tags": [
+          "exit",
+          "cautious"
+        ],
+        "receipt": "You refused to unlock your phone.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He stares. You stare. The waiter decides to come back later.",
+            "attachment": -15,
+            "control": -2,
+            "sanity": 5,
+            "set": [
+              "boundary_set"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "name_it",
+        "label": "\"This is control. My therapist has a word for it.\"",
+        "requires": {
+          "flags": [
+            "named_tactic"
+          ]
+        },
+        "tags": [
+          "exit",
+          "call_out"
+        ],
+        "receipt": "You named his control out loud.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Hearing it named, he looks smaller. Not sorry. Smaller.",
+            "control": -3,
+            "sanity": 15,
+            "attachment": -10,
+            "set": [
+              "boundary_set"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "leave",
+        "label": "Put your phone in your bag. Walk out.",
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You walked out of the restaurant.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You take the stairs, not the lift. Faster. You order a ride on the phone he wanted.",
+            "end": "walked_away",
+            "sanity": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "emeka_tt_6pm",
+    "character": "chief_emeka",
+    "slot": "talking_time",
+    "presentation": "voice_note",
+    "scene": {
+      "location": "prado_interior",
+      "time": "night",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Babe, how was your day? Mine was long. Don't call me around 6pm, I'm always in meetings. Talk later, sweet."
+      }
+    ],
+    "detail": {
+      "flag": "knows_6pm",
+      "missed": {
+        "chemistry": -3
+      },
+      "red_flag": true
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Noted: 6pm is meeting time 😌\"",
+        "caught": true,
+        "receipt": "You noted his 6pm rule.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Sharp.' He sends a heart. You've just learned his schedule.",
+            "attachment": 3
+          }
+        ]
+      },
+      {
+        "id": "miss_you",
+        "label": "\"Miss you already 🥺\"",
+        "receipt": "You sent him a 'miss you'.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He sends three hearts and a ₦10k 'for airtime'.",
+            "wallet": 10000,
+            "attachment": 3
+          }
+        ]
+      },
+      {
+        "id": "money",
+        "label": "\"Long day? Send something for my long day too.\"",
+        "receipt": "You asked him to send money for your long day.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "₦20k lands. No message. Efficient.",
+            "wallet": 20000,
+            "attachment": -2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "emeka_tt_seafood",
+    "character": "chief_emeka",
+    "slot": "talking_time",
+    "presentation": "text",
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "night",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "My boys want to take me to some seafood place in VI. I hate seafood places. The smell. Anyway, what are you eating?"
+      }
+    ],
+    "detail": {
+      "flag": "knows_no_seafood",
+      "missed": {
+        "chemistry": -3
+      }
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Then suya. Always suya. Never seafood.\"",
+        "caught": true,
+        "receipt": "You caught that he hates seafood.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'You understand me.' He sends a suya emoji. Then another.",
+            "attachment": 4
+          }
+        ]
+      },
+      {
+        "id": "pic",
+        "label": "Send a picture of your noodles",
+        "receipt": "You sent him a picture of your noodles.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Noodles?! Ah. Send account number.' ₦15k.",
+            "wallet": 15000
+          }
+        ]
+      },
+      {
+        "id": "lobster",
+        "label": "\"Lobster, obviously. Treat me.\"",
+        "receipt": "You asked him for lobster.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He leaves you on read for an hour.",
+            "attachment": -3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "emeka_tt_musa",
+    "character": "chief_emeka",
+    "slot": "talking_time",
+    "presentation": "voice_note",
+    "scene": {
+      "location": "prado_interior",
+      "time": "night",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Musa will pick you up tomorrow. Musa is the only man in Lagos I trust. If Musa says it, it's true."
+      }
+    ],
+    "detail": {
+      "flag": "trusts_musa",
+      "missed": {
+        "chemistry": -2
+      }
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Musa is the source of truth. Got it.\"",
+        "caught": true,
+        "receipt": "You caught that Musa never lies.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Exactly.' He doesn't realise what he just gave you.",
+            "attachment": 2
+          }
+        ]
+      },
+      {
+        "id": "flirt",
+        "label": "\"And me? Do you trust me?\"",
+        "receipt": "You asked if he trusts you.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Small small.' Honest, at least.",
+            "trust": 3
+          }
+        ]
+      },
+      {
+        "id": "own_driver",
+        "label": "\"Send money for Uber instead.\"",
+        "receipt": "You asked for Uber money instead of Musa.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "₦8k arrives. Musa arrives anyway.",
+            "wallet": 8000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "emeka_tt_mama",
+    "character": "chief_emeka",
+    "slot": "talking_time",
+    "presentation": "voice_note",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "morning",
+      "mood": "positive",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Good morning. My mother's birthday is Saturday. She likes people who greet properly. Unlike my nephews. Anyway. Breakfast?"
+      }
+    ],
+    "detail": {
+      "flag": "knows_mama_birthday",
+      "missed": {
+        "chemistry": -3
+      }
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Tell Mama I said happy early birthday 🎉\"",
+        "caught": true,
+        "receipt": "You remembered his mother's birthday.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'She will like you.' A pause. 'I like you.'",
+            "attachment": 5
+          }
+        ]
+      },
+      {
+        "id": "breakfast",
+        "label": "\"Breakfast? Send for akara.\"",
+        "receipt": "You asked him for akara money.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "₦5k for akara. He's laughing. You can hear it.",
+            "wallet": 5000,
+            "attachment": 2
+          }
+        ]
+      },
+      {
+        "id": "sleep",
+        "label": "Reply with a sleeping emoji",
+        "receipt": "You replied with a sleeping emoji.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He sends one too. Romance is dead. Long live romance.",
+            "sanity": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "emeka_tt_lawyer",
+    "character": "chief_emeka",
+    "slot": "talking_time",
+    "presentation": "text",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "afternoon",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Busy day. I sign nothing without my lawyer, Barrister Okafor. That's how you survive Lagos. Remember that."
+      }
+    ],
+    "detail": {
+      "flag": "knows_lawyer",
+      "missed": {
+        "chemistry": -2
+      },
+      "red_flag": true
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Barrister Okafor. Noted. Wise man.\"",
+        "caught": true,
+        "receipt": "You noted his lawyer's name.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Very wise.' He means himself.",
+            "attachment": 2
+          }
+        ]
+      },
+      {
+        "id": "busy",
+        "label": "\"Too busy for me? 🙄\"",
+        "receipt": "You complained he was too busy.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He sends a voice note apologising for 4 minutes. It has a car horn in it.",
+            "attachment": 3
+          }
+        ]
+      },
+      {
+        "id": "gift",
+        "label": "\"Survive Lagos? Help me survive this week.\"",
+        "receipt": "You asked him to help you survive the week.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "₦25k. 'Survive small.'",
+            "wallet": 25000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "emeka_tt_friday",
+    "character": "chief_emeka",
+    "slot": "talking_time",
+    "presentation": "voice_note",
+    "requires": {
+      "day_max": 5
+    },
+    "scene": {
+      "location": "prado_interior",
+      "time": "golden",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Heads up. From Friday evening my phone will be off. Family things. It's not you. Don't overthink it, eh?"
+      }
+    ],
+    "detail": {
+      "flag": "knows_friday",
+      "missed": {
+        "sanity": -3
+      },
+      "red_flag": true
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Friday is family. I won't call.\"",
+        "caught": true,
+        "receipt": "You promised not to call him on Fridays.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Thank you.' Two words. He sounds relieved.",
+            "attachment": 3
+          }
+        ]
+      },
+      {
+        "id": "which",
+        "label": "\"Which family, Chief?\"",
+        "tags": [
+          "cautious"
+        ],
+        "caught": true,
+        "receipt": "You asked him which family.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He sends a laughing emoji. Only a laughing emoji.",
+            "attachment": -2
+          }
+        ]
+      },
+      {
+        "id": "whatever",
+        "label": "\"Okay sha. Send weekend money.\"",
+        "receipt": "You asked for weekend money.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "₦30k. 'Enjoy your weekend.' Your weekend. Not ours.",
+            "wallet": 30000
+          }
+        ]
+      }
+    ]
+  }
+]

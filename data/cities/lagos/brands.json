@@ -1,0 +1,15 @@
+{
+  "house_ad": "Your brand here. Advertise on Wahala",
+  "slots": [
+    { "id": "street_poster", "name": "Street poster", "where": "Bus-stop posters, danfo panels and shop signs at Ojuelegba and Yaba", "rate": 10000, "cap_per_run": 3 },
+    { "id": "bridge_billboard", "name": "Bridge billboard", "where": "Digital billboards on the Lekki-Ikoyi Link Bridge and Third Mainland Bridge", "rate": 20000, "cap_per_run": 3 },
+    { "id": "gifts", "name": "Gift or outfit item", "where": "The partner sends a named perfume, drink or cake; outfit choices in date prep", "rate": 30000, "cap_per_run": 2 },
+    { "id": "club_playlist", "name": "Club playlist song", "where": "A sponsored song plays in the VIP club scene with a Now Playing chip", "rate": 50000, "cap_per_run": 2 },
+    { "id": "glow_spots", "name": "Glow spot", "where": "The Clinic, salon and lash spots", "rate": 75000, "cap_per_run": 3 },
+    { "id": "date_venue_host", "name": "Date venue host", "where": "A real restaurant or lounge hosts date scenes by name (positive scenes only)", "rate": 100000, "cap_per_run": 2 },
+    { "id": "phone_apps", "name": "Phone app skin", "where": "Bank alerts, ride and food apps inside the in-game phone", "rate": 150000, "cap_per_run": 5 },
+    { "id": "parlour_post", "name": "Parlour sponsored post", "where": "One clearly labelled sponsored post in the Parlour feed", "rate": 50000, "cap_per_run": 1 },
+    { "id": "verdict_strip", "name": "Verdict Card strip", "where": "A small sponsor line on the Verdict Card", "rate": 250000, "cap_per_run": 1 }
+  ],
+  "bookings": []
+}
