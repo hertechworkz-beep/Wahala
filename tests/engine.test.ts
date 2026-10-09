@@ -19,8 +19,12 @@ describe('content validation (rules 6, 13, 16, 17, 22)', () => {
   it('shared deck meets its minimums', () => {
     expect(report.shared.pass).toBe(true);
   });
-  it('characters without decks stay locked', () => {
-    for (const ch of content.characters.filter((c) => c.id !== 'chief_emeka')) expect(content.launch[ch.id]?.pass).toBe(false);
+  it('characters without decks stay locked; every character with a deck passes', () => {
+    for (const ch of content.characters) {
+      const hasDeck = content.cards.some((c) => c.character === ch.id);
+      if (!hasDeck) expect(content.launch[ch.id]?.pass).toBe(false);
+      else expect(report.characters[ch.id].errors).toEqual([]);
+    }
   });
 });
 
