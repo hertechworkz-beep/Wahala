@@ -69,34 +69,12 @@
     "errors": []
   },
   "adaeze": {
-    "pass": false,
-    "errors": [
-      "deck not written yet",
-      "first_date: 0/3",
-      "red_flag: 0/3",
-      "money_trap: 0/3",
-      "payoff: 0/2",
-      "talking_time: 0/3",
-      "no confrontation for truth engaged",
-      "no confrontation for truth collapsing",
-      "no confrontation for truth tired",
-      "needs at least 2 payoff cards tied to earlier choices"
-    ]
+    "pass": true,
+    "errors": []
   },
   "zainab": {
-    "pass": false,
-    "errors": [
-      "deck not written yet",
-      "first_date: 0/3",
-      "red_flag: 0/3",
-      "money_trap: 0/3",
-      "payoff: 0/2",
-      "talking_time: 0/3",
-      "no confrontation for truth family_no",
-      "no confrontation for truth wild_life",
-      "no confrontation for truth dangerous_ex",
-      "needs at least 2 payoff cards tied to earlier choices"
-    ]
+    "pass": true,
+    "errors": []
   },
   "blessing": {
     "pass": true,

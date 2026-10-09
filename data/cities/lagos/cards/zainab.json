@@ -1,0 +1,3945 @@
+[
+  {
+    "id": "zainab_d1_clinic",
+    "character": "zainab",
+    "slot": "first_date",
+    "scene": {
+      "location": "aesthetic_clinic",
+      "time": "night",
+      "expression": "charming",
+      "mood": "positive"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Her clinic on Awolowo Road, 8pm. Blinds down, lights low. She lets you in through the staff entrance and locks it behind you."
+      },
+      {
+        "who": "partner",
+        "text": "Phones face down. We have until 8:45. My curfew is nine, and I am never late."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "family_no": {
+        "id": "t_fn_photo",
+        "text": "You snap the orchids. She's in the corner of the frame. She asks for your phone, deletes it, hands it back, smiling."
+      },
+      "wild_life": {
+        "id": "t_wl_wristband",
+        "text": "Her desk drawer slides open: gloves, serums, and a neon wristband. 'VIP. ALL ACCESS.'"
+      },
+      "dangerous_ex": {
+        "id": "t_de_window",
+        "text": "Before she sits, she checks the window. Then the street. Then the window again."
+      }
+    },
+    "choices": [
+      {
+        "id": "curfew",
+        "label": "Watch the clock for her. Stand up at 8:40.",
+        "tags": [
+          "discreet"
+        ],
+        "receipt": "You honoured her curfew on the first date.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "At 8:40 you stand. She looks surprised. 'You were listening.' Nobody listens.",
+            "attachment": 5
+          }
+        ],
+        "truth_override": {
+          "dangerous_ex": {
+            "text": "At 8:40 you stand. She walks you to the back door and checks the street first. 'Text me when you're home. Please.'",
+            "attachment": 8,
+            "set": [
+              {
+                "flag": "promised_text_home",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "push",
+        "label": "'Curfew? You're 27. One more hour.'",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You pushed her to break curfew on the first date.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "She stays till 8:58, then runs like Cinderella with a driver.",
+            "attachment": 5,
+            "chemistry": 5
+          },
+          {
+            "chance": 0.5,
+            "bad": true,
+            "text": "'I said nine.' She's gone by 8:46. The orchids judge you.",
+            "attachment": -8
+          }
+        ],
+        "truth_override": {
+          "dangerous_ex": {
+            "text": "Her face changes. 'Please don't push me on this. Not this.' She's gone by 8:45, without the goodbye.",
+            "trust": -5,
+            "attachment": -5
+          },
+          "wild_life": {
+            "text": "She smirks. 'One hour? You couldn't handle one hour of my nights.' She leaves at 8:45. Smirking.",
+            "attachment": 3,
+            "chemistry": 5
+          }
+        }
+      },
+      {
+        "id": "facial",
+        "label": "Ask for a free facial. You're basically family now.",
+        "receipt": "You asked for a free facial on the first date.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "She does a full facial in silence. Charges you ₦0 and your number. Your skin has never been this calm.",
+            "attachment": 5,
+            "chemistry": 5,
+            "glow": 1
+          },
+          {
+            "chance": 0.4,
+            "bad": true,
+            "text": "She hands you a laminated price list. 'Family pays double.'",
+            "attachment": -3
+          }
+        ]
+      },
+      {
+        "id": "selfie",
+        "label": "Take one selfie together. Just for you.",
+        "receipt": "You took a selfie with her on the first date.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "She allows one. Face half-turned. 'Only for you. I mean it.'",
+            "attachment": 3,
+            "set": [
+              {
+                "flag": "secret_d1_selfie",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          },
+          {
+            "chance": 0.4,
+            "bad": true,
+            "text": "She sees Instagram open. 'Delete. Now.' You delete. She checks 'recently deleted' too.",
+            "trust": -10
+          }
+        ],
+        "truth_override": {
+          "family_no": {
+            "text": "She takes the phone, deletes it, empties 'recently deleted'. Then one more check. 'Habit. Sorry.'",
+            "trust": -3
+          },
+          "dangerous_ex": {
+            "text": "She goes white. 'Please. Never post me.' She lets you keep it, hidden, and holds your hand like an apology.",
+            "attachment": 3,
+            "set": [
+              {
+                "flag": "secret_d1_selfie",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "corp_margins",
+        "label": "[Corporate] Ask about the clinic's margins. Genuinely.",
+        "vibe": "corporate",
+        "receipt": "You asked about her clinic's margins.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Twenty minutes on hyperpigmentation, VAT and imported serums. It's the most she's ever said to anyone.",
+            "attachment": 8,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "bigboy_watch",
+        "label": "[Big Boy] Flash your watch: 'Fix my face, what's your price?'",
+        "vibe": "bigboy",
+        "receipt": "You flashed your watch at her clinic.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Please lower your voice.' She says it to the watch. Then she does your skin anyway, smiling at the wall.",
+            "attachment": 3,
+            "chemistry": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "zainab_d1_tint",
+    "character": "zainab",
+    "slot": "first_date",
+    "scene": {
+      "location": "prado_interior",
+      "time": "night",
+      "expression": "suspicious",
+      "mood": "neutral",
+      "npc": {
+        "name": "Garba (driver)"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Her driver Garba picks you up. Tinted windows, AC on ice. She's in the back seat in a big scarf and bigger sunglasses. At night."
+      },
+      {
+        "who": "partner",
+        "text": "We'll drive. We won't stop. Lagos looks better through tint."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "family_no": {
+        "id": "t_fn_brother",
+        "text": "Her phone: 'Abdulrahman (Brother)'. She declines. He calls again. She switches it off."
+      },
+      "wild_life": {
+        "id": "t_wl_curfew",
+        "text": "'Curfew is nine,' she says. Her WhatsApp, open on her lap: 'last seen today at 3:47am'."
+      },
+      "dangerous_ex": {
+        "id": "t_de_number",
+        "text": "An unknown number lights her phone. She flinches like it touched her. Garba changes lanes without being told."
+      }
+    },
+    "choices": [
+      {
+        "id": "ride",
+        "label": "Ride. Talk. Watch the bridge go by.",
+        "tags": [
+          "discreet"
+        ],
+        "receipt": "You rode the bridge with her behind tinted glass.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Three laps of the Link Bridge. She laughs twice. Garba pretends not to hear either time.",
+            "attachment": 6,
+            "chemistry": 3
+          }
+        ]
+      },
+      {
+        "id": "suya",
+        "label": "'Stop at the suya spot. I'm starving.'",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You made her driver stop for suya.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Garba stops. She stays in the car. You eat suya on the pavement, waving at tinted glass.",
+            "sanity": 5
+          }
+        ],
+        "truth_override": {
+          "dangerous_ex": {
+            "text": "'Not here. Not anywhere with lights.' She says it too fast. You eat suya later, alone, thinking about that.",
+            "trust": 3
+          }
+        }
+      },
+      {
+        "id": "why",
+        "label": "'Who are we hiding from, exactly?'",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked who she was hiding from.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Everyone.' Then: 'Lagos.' Then nothing.",
+            "trust": 2
+          }
+        ],
+        "truth_override": {
+          "family_no": {
+            "text": "'My family. They don't... you're not... it's not you.' It's you.",
+            "sanity": -5
+          },
+          "wild_life": {
+            "text": "'Hiding? Babe, this is the quiet part of my night.' She checks the time. It's 8:30.",
+            "chemistry": 3
+          },
+          "dangerous_ex": {
+            "text": "She looks at Garba in the mirror. Garba looks at the road. 'Someone who used to know where I was.'",
+            "trust": 8,
+            "attachment": 5
+          }
+        }
+      },
+      {
+        "id": "window",
+        "label": "Wind the window down. Let Lagos see her.",
+        "tags": [
+          "public_embarrassment"
+        ],
+        "receipt": "You wound down her tinted window on the bridge.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She winds it back up herself. Very slowly. 'Never do that again.'",
+            "attachment": -5
+          }
+        ],
+        "truth_override": {
+          "dangerous_ex": {
+            "text": "She grabs your wrist, hard, then lets go, shaking. 'Sorry. Sorry. Please just don't.' Garba takes the next exit.",
+            "attachment": -3,
+            "sanity": -5
+          }
+        }
+      },
+      {
+        "id": "lover_hand",
+        "label": "[Lover] Hold her hand. Say nothing for the whole bridge.",
+        "vibe": "lover",
+        "receipt": "You held her hand across the bridge.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She doesn't let go until her gate. Garba turns the music up so nobody has to talk.",
+            "attachment": 10,
+            "trust": 3
+          }
+        ]
+      },
+      {
+        "id": "runs_garba",
+        "label": "[Runs] Ask Garba what he's paid to see nothing.",
+        "vibe": "runs",
+        "receipt": "You asked her driver what he's paid to keep quiet.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Garba: 'Oga/Madam, I see road. Only road.' She laughs, properly. 'I know what you are. I'm curious anyway.'",
+            "attachment": 5,
+            "chemistry": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "zainab_d1_private_room",
+    "character": "zainab",
+    "slot": "first_date",
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "night",
+      "expression": "charming",
+      "mood": "positive"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "A private room in Ikoyi, booked under 'Mrs Abubakar'. Separate entrances. The waiter knocks before every plate."
+      },
+      {
+        "who": "partner",
+        "text": "I booked under my aunt's name. Order quietly. Leave five minutes after me."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "family_no": {
+        "id": "t_fn_future",
+        "text": "You mention Detty December. 'Let's see about this week first.' She always says this week."
+      },
+      "wild_life": {
+        "id": "t_wl_name",
+        "text": "The waiter sets down her drink: 'Your usual, Zee.' He catches himself. 'Madam.'"
+      },
+      "dangerous_ex": {
+        "id": "t_de_hide",
+        "text": "Someone in the corridor lifts a phone for a group photo. She turns to the wall. 'Never post me. Please. Promise.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "promise",
+        "label": "'I promise. Never.'",
+        "tags": [
+          "discreet"
+        ],
+        "receipt": "You promised never to post her.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She nods once, like a contract. Dessert arrives. She shares it.",
+            "attachment": 5,
+            "set": [
+              {
+                "flag": "promised_never_post",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "dangerous_ex": {
+            "text": "She exhales like she's held that breath since 2023. 'Thank you.' She shares dessert, and the good spoon.",
+            "attachment": 7,
+            "trust": 4,
+            "set": [
+              {
+                "flag": "promised_never_post",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "married",
+        "label": "'Why the hiding? Are you married?'",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked her if she was married.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'No.' A small laugh. 'Not married. Complicated.'",
+            "trust": 2
+          }
+        ],
+        "truth_override": {
+          "family_no": {
+            "text": "'Not married. Promised. To a family idea of who I'll marry.' She refills your water to stop talking.",
+            "sanity": -3
+          },
+          "wild_life": {
+            "text": "'Married? No. Busy.' The waiter coughs. She glares at him.",
+            "chemistry": 2
+          },
+          "dangerous_ex": {
+            "text": "'No. I nearly was. To the wrong man. That's all I can say tonight.' Her hand is cold.",
+            "trust": 6,
+            "attachment": 3
+          }
+        }
+      },
+      {
+        "id": "split",
+        "label": "Split it. Separate cards, separate exits.",
+        "cost": 30000,
+        "tags": [
+          "budget"
+        ],
+        "receipt": "You split the bill and left by separate exits.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Two receipts, two exits, one smile in the corridor that the CCTV will never understand.",
+            "attachment": 3,
+            "chemistry": 2
+          }
+        ]
+      },
+      {
+        "id": "pay",
+        "label": "Pay for everything. ₦150k. Quietly.",
+        "cost": 150000,
+        "tags": [
+          "luxury"
+        ],
+        "broke_text": "Your account says this room is too private for it.",
+        "receipt": "You paid ₦150k for the private room.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She lets you. 'Thank you. Quietly.' She never posts it, ever, which is somehow romantic.",
+            "attachment": 6
+          }
+        ]
+      },
+      {
+        "id": "loud",
+        "label": "Order loudly. Make the waiter say your name.",
+        "tags": [
+          "public_embarrassment"
+        ],
+        "receipt": "You ordered loudly in her private room.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The next room goes quiet to listen. She puts her scarf back on, at dinner.",
+            "clout": 5,
+            "attachment": -5
+          }
+        ]
+      },
+      {
+        "id": "sugar_fee",
+        "label": "[Sugar] 'Since we're hiding, hiding allowance?'",
+        "vibe": "sugar",
+        "receipt": "You asked her for a hiding allowance.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "She's appalled and amused. ₦25k lands. Reference: 'Hush.'",
+            "wallet": 25000,
+            "chemistry": 3
+          },
+          {
+            "chance": 0.5,
+            "bad": true,
+            "text": "'I pay for my own things. Not for yours.' She leaves first, and fast.",
+            "attachment": -10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "zainab_rf_three_am",
+    "character": "zainab",
+    "slot": "red_flag",
+    "presentation": "text",
+    "scene": {
+      "location": "mainland_street",
+      "time": "night",
+      "expression": "suspicious",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "9:02pm: 'Home. Goodnight. Curfew.' 3:12am, you wake up to pee. She's online."
+      },
+      {
+        "who": "partner",
+        "text": "(9:02pm) Sleep early o. Lagos is not safe at night."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "family_no": {
+        "id": "t_fn_brother",
+        "text": "3:14am her status updates by mistake: a screenshot, 'Abdulrahman: Answer your phone.' Deleted in a minute."
+      },
+      "wild_life": "t_wl_curfew",
+      "dangerous_ex": {
+        "id": "t_de_number",
+        "text": "3:15am she texts you by accident: 'Who is this? Stop calling me.' Then: 'Sorry. Wrong chat.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "text",
+        "label": "Text: 'You're up?'",
+        "tags": [
+          "cautious",
+          "contact_partner"
+        ],
+        "receipt": "You texted her at 3am.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Typing. Stops. 'Can't sleep.' Read at 3:16.",
+            "sanity": -3
+          }
+        ],
+        "truth_override": {
+          "family_no": {
+            "text": "'Family drama. Go back to sleep. Please don't ask tomorrow.'",
+            "sanity": -5
+          },
+          "wild_life": {
+            "text": "A voice note: three seconds of bass and somebody screaming 'ZEE!'. Then: 'Sorry, butt dial. In bed.'",
+            "sanity": -8
+          },
+          "dangerous_ex": {
+            "text": "'Someone keeps calling from new numbers. I'm fine. I'm fine.' She isn't. You stay on chat till she sleeps.",
+            "trust": 6,
+            "attachment": 4,
+            "set": [
+              {
+                "flag": "ex_calling",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "sleep",
+        "label": "Go back to sleep. Her nights aren't your business.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You ignored her 3am online status.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You sleep. Your phone doesn't.",
+            "sanity": 5,
+            "attachment": 2
+          }
+        ]
+      },
+      {
+        "id": "screenshot",
+        "label": "Screenshot her 'online'. Start a folder.",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You started screenshotting her 3am online status.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Your gallery now has a folder: 'Zainab 3am'. It's the most organised thing you own.",
+            "sanity": -8,
+            "set": [
+              {
+                "flag": "secret_online_receipts",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "call",
+        "label": "Call her. Right now.",
+        "tags": [
+          "contact_partner"
+        ],
+        "receipt": "You called her at 3am.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Declined. 'Asleep,' she texts. Awake enough to type.",
+            "attachment": -3
+          }
+        ],
+        "truth_override": {
+          "wild_life": {
+            "text": "She answers. A DJ shouts her name. She hangs up so fast the call log is confused.",
+            "sanity": -8,
+            "saw_truth": true
+          },
+          "dangerous_ex": {
+            "text": "First ring, whispering: 'Is it you? Oh thank God. Thank God it's you.' She asks you to stay on the line.",
+            "trust": 5,
+            "attachment": 5,
+            "set": [
+              {
+                "flag": "ex_calling",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "orchids",
+        "label": "Text one word back: 'Orchids?'",
+        "requires": {
+          "flags": [
+            "knows_orchids"
+          ]
+        },
+        "receipt": "You texted her the word she gave you.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'No. Not orchids. But thank you for remembering.' She sends a heart. Her first.",
+            "attachment": 6,
+            "trust": 6
+          }
+        ],
+        "truth_override": {
+          "dangerous_ex": {
+            "text": "A long pause. 'Not yet. But he's calling again. Stay up with me?' You do. Till sunrise.",
+            "attachment": 8,
+            "trust": 10,
+            "set": [
+              {
+                "flag": "ex_calling",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "wild_life": {
+            "text": "'Orchids? Lol. No. I'm... in bed.' Bass in the background. She laughs and doesn't explain.",
+            "sanity": -5
+          }
+        }
+      },
+      {
+        "id": "runs_clubs",
+        "label": "[Runs] Check which Ozumba Mbadiwe lounges are still open.",
+        "vibe": "runs",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You checked the VI lounges at 3am.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Four are open. Your guy at the door of one says: 'Never seen her.'",
+            "sanity": -3
+          }
+        ],
+        "truth_override": {
+          "wild_life": {
+            "text": "Your guy at the door: 'Zee? Booth 4, every Friday. She tips in dollars.'",
+            "saw_truth": true,
+            "sanity": -5
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "zainab_rf_gallery",
+    "character": "zainab",
+    "slot": "red_flag",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "afternoon",
+      "expression": "suspicious",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "She's at your place, finally. Lunch. Then she holds out her hand for your phone."
+      },
+      {
+        "who": "partner",
+        "text": "Your gallery. I'm deleting the pictures of me. Please don't take it personally."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "family_no": {
+        "id": "t_fn_photo",
+        "text": "She doesn't stop at photos of her. The one of you at her gate. The voice notes. The whole chat."
+      },
+      "wild_life": {
+        "id": "t_wl_wristband",
+        "text": "Her bag tips over: a neon wristband, 'VIP — ALL ACCESS', dated last night."
+      },
+      "dangerous_ex": {
+        "id": "t_de_hide",
+        "text": "'Location tags too. Every app. Please.' Her hands are shaking on your screen."
+      }
+    },
+    "choices": [
+      {
+        "id": "hand_over",
+        "label": "Hand it over. Her face, her rules.",
+        "tags": [
+          "discreet",
+          "excuse"
+        ],
+        "receipt": "You let her wipe herself from your phone.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She deletes, gives it back, kisses your cheek. Your phone is lighter. So is the relationship, somehow.",
+            "attachment": 5,
+            "sanity": -5
+          }
+        ]
+      },
+      {
+        "id": "together",
+        "label": "'My phone. Ask, and I'll delete them with you.'",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You deleted her photos together instead of handing over your phone.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She hesitates, then sits beside you. You delete them together, one by one.",
+            "trust": 5,
+            "attachment": 2
+          }
+        ],
+        "truth_override": {
+          "dangerous_ex": {
+            "text": "'Okay. Yes. Sorry.' She watches every delete like a hawk, then puts her head on your shoulder.",
+            "trust": 8,
+            "attachment": 4
+          }
+        }
+      },
+      {
+        "id": "keep_one",
+        "label": "Let her delete. Secretly keep one in a hidden folder.",
+        "receipt": "You secretly kept one photo of her.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She deletes everything she can see. One photo survives, in a folder called 'Receipts (Work)'.",
+            "attachment": 3,
+            "set": [
+              {
+                "flag": "secret_hidden_photo",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "scared",
+        "label": "'What are you scared of?'",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked her what she was scared of.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Nothing.' She deletes faster.",
+            "attachment": -2
+          }
+        ],
+        "truth_override": {
+          "family_no": {
+            "text": "'Not scared. Realistic. My family checks things. Everything.' She deletes the chat backup too.",
+            "sanity": -5
+          },
+          "wild_life": {
+            "text": "'Scared? I'm careful. They're different.' She keeps the wristband in her fist.",
+            "chemistry": 2
+          },
+          "dangerous_ex": {
+            "text": "She sits on the floor. 'If he finds a photo, he finds a place. If he finds a place, he finds me.'",
+            "trust": 10,
+            "attachment": 6,
+            "set": [
+              {
+                "flag": "ex_calling",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "corp_privacy",
+        "label": "[Corporate] Set up her privacy settings properly. All of them.",
+        "vibe": "corporate",
+        "receipt": "You locked down her privacy settings.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Forty minutes of settings menus. She watches like it's a love letter. In a way it is.",
+            "attachment": 8,
+            "trust": 6
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "zainab_rf_zee",
+    "character": "zainab",
+    "slot": "red_flag",
+    "scene": {
+      "location": "vi_club_vip",
+      "time": "night",
+      "expression": "caught",
+      "mood": "neutral",
+      "partner_present": false,
+      "npc": {
+        "name": "Amina"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "2am. A VIP lounge on Ozumba Mbadiwe, your friend's birthday. Through the smoke, a woman in silver who looks a lot like someone with a 9pm curfew."
+      },
+      {
+        "who": "DJ",
+        "text": "Make some noise for ZEEEE!"
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "family_no": {
+        "id": "t_fn_brother",
+        "text": "It's her cousin Amina. Her phone buzzes: 'Abdulrahman'. She declines it. 'He checks on all of us. Her most.'"
+      },
+      "wild_life": {
+        "id": "t_wl_name",
+        "text": "The DJ points straight at her: 'ZEE! My sister!' She raises a bottle like she owns the building."
+      },
+      "dangerous_ex": {
+        "id": "t_de_hide",
+        "text": "It's her cousin Amina, who grabs your arm: 'If you're Zainab's person, post nothing tonight. A man was asking for her here.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "go_over",
+        "label": "Walk over. 'Zainab?'",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You walked over to the woman in silver.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Not her. Close, though.",
+            "sanity": -3
+          }
+        ],
+        "truth_override": {
+          "wild_life": [
+            {
+              "chance": 0.6,
+              "text": "She smiles like a stranger. 'Zee. Nice to meet you.' Then, in your ear: 'Tomorrow. Not here.'",
+              "saw_truth": true,
+              "set": [
+                {
+                  "flag": "saw_zee",
+                  "knows": [
+                    "player",
+                    "partner"
+                  ]
+                }
+              ]
+            },
+            {
+              "chance": 0.4,
+              "bad": true,
+              "text": "Her crew closes around her like curtains. A bouncer explains Lagos to you, slowly.",
+              "sanity": -10,
+              "set": [
+                {
+                  "flag": "saw_zee",
+                  "knows": [
+                    "player",
+                    "partner"
+                  ]
+                }
+              ]
+            }
+          ],
+          "family_no": {
+            "text": "Amina laughs. 'She wishes. Her brother has her location on three apps.' She orders you a drink, pityingly.",
+            "sanity": -5
+          },
+          "dangerous_ex": {
+            "text": "Amina won't let go of your arm. 'Go home. Don't post the birthday. Please.' You go home. You don't post.",
+            "sanity": -5,
+            "set": [
+              {
+                "flag": "warned_by_amina",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "photo",
+        "label": "Snap a photo. Proof for later.",
+        "receipt": "You photographed her at the club at 2am.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Saved. 2:14am. Smoke, silver, a bottle in the air.",
+            "set": [
+              {
+                "flag": "secret_club_photo",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "dangerous_ex": {
+            "text": "Amina covers your lens. 'Don't. You don't understand who looks.' You save it anyway, by reflex.",
+            "sanity": -5,
+            "set": [
+              {
+                "flag": "secret_club_photo",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "post",
+        "label": "Post it: 'Curfew who? 👀'",
+        "tags": [
+          "toxic",
+          "public_embarrassment"
+        ],
+        "receipt": "You posted 'Curfew who?' from the club.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The Parlour loves a curfew joke. Nobody's sure who it is. Yet.",
+            "clout": 10,
+            "exposure": 10,
+            "sanity": -10
+          }
+        ],
+        "truth_override": {
+          "wild_life": {
+            "text": "200 reposts by 3am. Three people tag her real name. Zee's crew unfollows you in unison.",
+            "clout": 20,
+            "exposure": 20,
+            "saw_truth": true,
+            "truth_exposed": true,
+            "goal": {
+              "revenge": 30
+            },
+            "sanity": -10
+          },
+          "family_no": {
+            "text": "Her brother follows everybody. By breakfast Abdul has seen 'Zainab' at a club. It was Amina. Nobody believes Amina.",
+            "clout": 10,
+            "exposure": 15,
+            "sanity": -20
+          },
+          "dangerous_ex": {
+            "text": "Amina sees you post. Her face drains. 'Take it down. You don't know what you just did.' You take it down. Too late to know.",
+            "exposure": 15,
+            "sanity": -20
+          }
+        }
+      },
+      {
+        "id": "leave",
+        "label": "Leave the club. Not your night to ruin.",
+        "tags": [
+          "excuse",
+          "discreet"
+        ],
+        "receipt": "You left the club without saying anything.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You buy suya outside and eat it in the car, thinking very loudly.",
+            "sanity": 5
+          }
+        ]
+      },
+      {
+        "id": "text",
+        "label": "Text her from the bathroom: 'Where are you?'",
+        "tags": [
+          "cautious",
+          "contact_partner"
+        ],
+        "receipt": "You texted her from the club bathroom.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Home. Bed. Why?'",
+            "sanity": -3
+          }
+        ],
+        "truth_override": {
+          "wild_life": {
+            "text": "Across the room she checks her phone, laughs, types: 'Bed. Night night.' You watch her send it.",
+            "sanity": -10,
+            "saw_truth": true
+          },
+          "family_no": {
+            "text": "'Home. Abdul is here. Can't talk.' Amina, beside you, reads it over your shoulder and sighs.",
+            "sanity": -5
+          },
+          "dangerous_ex": {
+            "text": "'Home. Why? Where are you? Are you safe? Who's there?' Four messages in five seconds. You tell her you're fine.",
+            "trust": 5,
+            "attachment": 3
+          }
+        }
+      },
+      {
+        "id": "zee",
+        "label": "Shout 'Zee!' and see who turns.",
+        "requires": {
+          "flags": [
+            "knows_zee"
+          ]
+        },
+        "receipt": "You shouted 'Zee' across the club.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Three women turn. None of them is her. Lagos is full of Zees.",
+            "sanity": -3
+          }
+        ],
+        "truth_override": {
+          "wild_life": {
+            "text": "The woman in silver turns. Sees you. Doesn't look away. Lifts her glass, very slightly. Checkmate, both of you.",
+            "saw_truth": true,
+            "set": [
+              {
+                "flag": "saw_zee",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "zainab_rf_brother",
+    "character": "zainab",
+    "slot": "red_flag",
+    "scene": {
+      "location": "aesthetic_clinic",
+      "time": "afternoon",
+      "expression": "caught",
+      "mood": "negative",
+      "npc": {
+        "name": "Abdulrahman"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Her clinic, 4pm. A tall man in a crisp kaftan walks in without an appointment. She stiffens. 'My brother.'"
+      },
+      {
+        "who": "Abdulrahman",
+        "text": "And who is this? A client? You look like a client."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "family_no": {
+        "id": "t_fn_future",
+        "text": "Abdul: 'Next year, insha Allah, she'll be in Kano. Married. Settled.' She doesn't contradict him."
+      },
+      "wild_life": {
+        "id": "t_wl_curfew",
+        "text": "Abdul: 'Nine o'clock, she's home. I check.' She studies the floor like it owes her money."
+      },
+      "dangerous_ex": {
+        "id": "t_de_number",
+        "text": "Abdul, low: 'Has HE called again? Change the number again.' She nods. He's not policing her. He's guarding her."
+      }
+    },
+    "choices": [
+      {
+        "id": "client",
+        "label": "'Yes. Here for a facial.' Sit in the chair.",
+        "tags": [
+          "discreet",
+          "excuse"
+        ],
+        "receipt": "You pretended to be a client in front of her brother.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She gives you a full facial with her brother watching. Best facial of your life. Most terrifying.",
+            "attachment": 5,
+            "glow": 1
+          }
+        ]
+      },
+      {
+        "id": "truth",
+        "label": "'No. I'm seeing your sister.'",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You told her brother you're seeing her.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The room drops ten degrees. She doesn't look at you for the rest of the day.",
+            "trust": -5,
+            "set": [
+              {
+                "flag": "told_abdul",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "family_no": {
+            "text": "Abdul smiles, very politely. 'No, you aren't.' He leaves. She cries in the sterilisation room.",
+            "attachment": -8,
+            "sanity": -10,
+            "saw_truth": true,
+            "set": [
+              {
+                "flag": "told_abdul",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "wild_life": {
+            "text": "Abdul laughs. 'My sister doesn't see anybody. She's in bed by nine.' She coughs into her elbow for a long time.",
+            "trust": -3,
+            "set": [
+              {
+                "flag": "told_abdul",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "dangerous_ex": {
+            "text": "Abdul studies you a long time. 'Then be careful. Both of you.' He means it kindly. She looks terrified and relieved.",
+            "trust": 3,
+            "set": [
+              {
+                "flag": "told_abdul",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "kano",
+        "label": "Shake his hand. Ask about Kano.",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You made polite small talk with her brother.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Ten minutes on Kano. He relaxes a little. He still doesn't like you.",
+            "attachment": 3
+          }
+        ],
+        "truth_override": {
+          "family_no": {
+            "text": "He says 'Kano' like a sentence. 'She'll be back there next year.' She looks at the orchids.",
+            "sanity": -5
+          },
+          "dangerous_ex": {
+            "text": "'Kano is safer,' he says. She shoots him a look: not now.",
+            "trust": 3
+          }
+        }
+      },
+      {
+        "id": "back_door",
+        "label": "Leave through the back like a delivery man.",
+        "tags": [
+          "discreet"
+        ],
+        "receipt": "You left her clinic through the back door.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Hauwa the receptionist holds the door and hands you a parcel to make it convincing. It's gloves.",
+            "attachment": 3,
+            "sanity": -3
+          }
+        ]
+      },
+      {
+        "id": "arsenal",
+        "label": "Talk Arsenal with him. Hard.",
+        "requires": {
+          "flags": [
+            "knows_abdul"
+          ]
+        },
+        "receipt": "You talked Arsenal with her brother.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Twenty minutes on Arteta. He shakes your hand at the door. She stares at you like a magician.",
+            "attachment": 8,
+            "trust": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "zainab_mt_laser",
+    "character": "zainab",
+    "slot": "money_trap",
+    "scene": {
+      "location": "aesthetic_clinic",
+      "time": "afternoon",
+      "expression": "suspicious",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "A crated laser machine blocks her clinic hallway. Customs stickers everywhere. She's on the phone to Apapa, very calm, very angry."
+      },
+      {
+        "who": "partner",
+        "text": "Clearing is ₦400k. My account is frozen till Monday. I'll pay you back with interest. I hate asking."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "family_no": {
+        "id": "t_fn_brother",
+        "text": "'Abdul froze the family account,' she says. 'To make a point.' She doesn't say what point."
+      },
+      "wild_life": {
+        "id": "t_wl_curfew",
+        "text": "She yawns. 'Didn't sleep.' Last night's eyeliner is still on. Perfectly."
+      },
+      "dangerous_ex": {
+        "id": "t_de_number",
+        "text": "A withheld number rings. She drops the phone, then turns it face down with two fingers, like it's hot."
+      }
+    },
+    "choices": [
+      {
+        "id": "send",
+        "label": "Send the ₦400k. You trust her.",
+        "cost": 400000,
+        "tags": [
+          "luxury"
+        ],
+        "broke_text": "Your account is frozen too. Emotionally.",
+        "receipt": "You sent her ₦400k for the laser.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Sent.",
+            "attachment": 5
+          }
+        ],
+        "truth_override": {
+          "family_no": {
+            "text": "Monday: refunded with ₦40k interest and a note. 'Thank you. Abdul must never know you did this.'",
+            "wallet": 440000,
+            "scaled": true,
+            "attachment": 10,
+            "trust": 8
+          },
+          "wild_life": [
+            {
+              "chance": 0.5,
+              "text": "Monday: refunded, with interest. Also a bottle of champagne 'from Zee'. Who is Zee?",
+              "wallet": 440000,
+              "scaled": true,
+              "attachment": 8
+            },
+            {
+              "chance": 0.5,
+              "bad": true,
+              "tricked": true,
+              "text": "The laser clears. So does a VIP table on Ozumba Mbadiwe, same night, same amount.",
+              "sanity": -15,
+              "saw_truth": true
+            }
+          ],
+          "dangerous_ex": {
+            "text": "Monday: every kobo back, and a jar of shea butter. 'Nobody's ever helped me without wanting something.'",
+            "wallet": 400000,
+            "scaled": true,
+            "attachment": 15,
+            "trust": 12
+          }
+        }
+      },
+      {
+        "id": "small",
+        "label": "Send ₦40k. 'For the small part.'",
+        "cost": 40000,
+        "tags": [
+          "budget"
+        ],
+        "receipt": "You sent her ₦40k towards the laser.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'You didn't have to.' She repays it Tuesday, plus a free chemical peel you didn't ask for.",
+            "attachment": 4,
+            "glow": 1
+          }
+        ],
+        "truth_override": {
+          "dangerous_ex": {
+            "text": "She repays it in an hour. 'I just needed to know someone would.' That's the whole sentence.",
+            "attachment": 5,
+            "trust": 6,
+            "wallet": 40000,
+            "scaled": true
+          }
+        }
+      },
+      {
+        "id": "papers",
+        "label": "'Send me the clearing papers first.'",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked for the clearing papers first.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Papers in two minutes. Real. You feel small and sensible.",
+            "trust": 3
+          }
+        ],
+        "truth_override": {
+          "wild_life": {
+            "text": "Papers arrive. Real. Also in the photo: a VIP wristband on her desk, dated Saturday.",
+            "trust": 3,
+            "sanity": -3
+          }
+        }
+      },
+      {
+        "id": "no_business",
+        "label": "'I don't do business with feelings.'",
+        "receipt": "You refused to send money for the laser.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Understood.' She closes the subject like a clinic door. Polite. Final.",
+            "attachment": -5,
+            "sanity": 5
+          }
+        ]
+      },
+      {
+        "id": "corp_desk",
+        "label": "[Corporate] Call your bank's trade desk for her.",
+        "vibe": "corporate",
+        "receipt": "You got your bank's trade desk to clear her laser.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Cleared by four. She sends a photo of the laser with a bow on it. 'You're useful. And kind. Rare combo.'",
+            "attachment": 10,
+            "trust": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "zainab_mt_surge",
+    "character": "zainab",
+    "slot": "money_trap",
+    "presentation": "text",
+    "scene": {
+      "location": "mainland_street",
+      "time": "night",
+      "expression": "suspicious",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Garba is sick. Uber surge to Ikoyi is ₦38k. Can you send transport? Or come and drive me. Quietly."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "family_no": {
+        "id": "t_fn_brother",
+        "text": "'Don't call my line. Abdul checks my call log.' She's at an aunty's. The aunty is also checking."
+      },
+      "wild_life": {
+        "id": "t_wl_curfew",
+        "text": "It's 1:40am. Curfew was four hours ago. The pickup pin is on Ozumba Mbadiwe."
+      },
+      "dangerous_ex": {
+        "id": "t_de_window",
+        "text": "'Park two streets away. Flash your lights twice. I'll check from the window first.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "send_fare",
+        "label": "Send ₦38k. Surge is surge.",
+        "cost": 38000,
+        "receipt": "You sent her ₦38k for surge pricing.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Home. Thank you.' A heart. Just one. From her, that's a parade.",
+            "attachment": 5
+          }
+        ],
+        "truth_override": {
+          "wild_life": {
+            "tricked": true,
+            "bad": true,
+            "text": "Her location moves: VI to Lekki. Another lounge. Your ₦38k is now at a second party.",
+            "sanity": -15,
+            "saw_truth": true
+          },
+          "dangerous_ex": {
+            "text": "She texts when she's home. Then again: 'Thank you for not asking why.'",
+            "trust": 6,
+            "attachment": 6
+          }
+        }
+      },
+      {
+        "id": "drive",
+        "label": "Drive there yourself. Fuel is ₦10k.",
+        "cost": 10000,
+        "tags": [
+          "budget"
+        ],
+        "receipt": "You drove across Lagos at night to pick her up.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She gets in, scarf up, and holds your hand the whole way. Silent. Perfect.",
+            "attachment": 8,
+            "chemistry": 3,
+            "set": [
+              {
+                "flag": "drove_her",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "wild_life": {
+            "text": "She gets in smelling of shisha and somebody's cologne. 'Don't ask.' You ask. She laughs all the way to Ikoyi.",
+            "saw_truth": true,
+            "sanity": -5,
+            "attachment": 5,
+            "set": [
+              {
+                "flag": "drove_her",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "dangerous_ex": {
+            "text": "You flash twice. A curtain moves. She runs out and locks the doors before buckling. 'Go. Please. Go.'",
+            "trust": 8,
+            "attachment": 8,
+            "set": [
+              {
+                "flag": "drove_her",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "keke",
+        "label": "'Take keke. Character building.'",
+        "receipt": "You told her to take a keke home.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Wow.' An hour later: 'Keke was actually fun. Still wow.'",
+            "attachment": -6,
+            "sanity": 3
+          }
+        ],
+        "truth_override": {
+          "dangerous_ex": {
+            "text": "'I can't be on the street. I can't.' She stays where she is. You don't sleep much.",
+            "attachment": -3,
+            "sanity": -5
+          }
+        }
+      },
+      {
+        "id": "where",
+        "label": "'Where are you, exactly?'",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked where she was before sending anything.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'A friend's.' Which friend? 'A friend's.'",
+            "sanity": -3
+          }
+        ],
+        "truth_override": {
+          "wild_life": {
+            "text": "She sends the pin. It's a lounge. 'Okay, fine. Yes. Come or don't.'",
+            "saw_truth": true,
+            "sanity": -5
+          },
+          "dangerous_ex": {
+            "text": "'A friend's. Hiding. Long story. Not tonight.' Then: 'Thank you for asking first.'",
+            "trust": 6
+          }
+        }
+      },
+      {
+        "id": "gate_camera",
+        "label": "Drive. Park beyond her mother's gate camera.",
+        "requires": {
+          "flags": [
+            "knows_gate_camera"
+          ]
+        },
+        "cost": 10000,
+        "receipt": "You parked out of view of her family's gate camera.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She slips in through the side gate at 2:03. 'You remembered the camera.' She kisses your knuckles.",
+            "attachment": 10,
+            "trust": 6,
+            "set": [
+              {
+                "flag": "drove_her",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sugar_bill",
+        "label": "[Sugar] Send her the bill for YOUR Uber instead.",
+        "vibe": "sugar",
+        "receipt": "You invoiced her for your own Uber.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "She laughs and pays both. 'I pay for my own things. Apparently also yours.'",
+            "wallet": 15000,
+            "attachment": 2
+          },
+          {
+            "chance": 0.5,
+            "bad": true,
+            "text": "'Goodnight.' She takes a keke to prove a point. The point lands.",
+            "attachment": -8
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "zainab_mt_blog",
+    "character": "zainab",
+    "slot": "money_trap",
+    "presentation": "text",
+    "scene": {
+      "location": "mainland_street",
+      "time": "afternoon",
+      "expression": "suspicious",
+      "mood": "negative",
+      "partner_present": false,
+      "npc": {
+        "name": "Gossip page"
+      }
+    },
+    "beats": [
+      {
+        "who": "Gossip page",
+        "text": "We have a photo of you and a certain Awolowo Road clinic owner. ₦150k and it disappears. 2 hours."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "family_no": {
+        "id": "t_fn_brother",
+        "text": "She texts you the same minute: 'My brother just got the same DM. Don't reply to anything.'"
+      },
+      "wild_life": {
+        "id": "t_wl_name",
+        "text": "The blurry photo isn't of you two. It's her, at 3am, tagged 'Zee 🔥'. You're a shape in the corner."
+      },
+      "dangerous_ex": {
+        "id": "t_de_hide",
+        "text": "She calls, crying: 'Please. Make it go away. He reads those pages. He reads all of them.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "pay",
+        "label": "Pay the ₦150k. Make it disappear.",
+        "cost": 150000,
+        "tags": [
+          "luxury"
+        ],
+        "broke_text": "Your account is also blurry.",
+        "receipt": "You paid a gossip page ₦150k.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Paid. It disappears. For now.",
+            "sanity": -5
+          }
+        ],
+        "truth_override": {
+          "dangerous_ex": {
+            "text": "Gone. She sends ₦150k back within the hour, and a voice note that's mostly breathing. 'Thank you.'",
+            "wallet": 150000,
+            "scaled": true,
+            "trust": 10,
+            "attachment": 8
+          },
+          "wild_life": {
+            "tricked": true,
+            "bad": true,
+            "text": "Paid. It goes up anyway, new caption: 'Zee doesn't pay. Her fans do.'",
+            "exposure": 15,
+            "sanity": -20,
+            "saw_truth": true,
+            "truth_exposed": true
+          },
+          "family_no": {
+            "text": "Paid. So did Abdul. The page bought a generator with you both.",
+            "sanity": -10
+          }
+        }
+      },
+      {
+        "id": "haggle",
+        "label": "Haggle them down to ₦20k.",
+        "cost": 20000,
+        "tags": [
+          "budget"
+        ],
+        "receipt": "You haggled a gossip page down to ₦20k.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "₦20k and a promise. A Lagos promise, so: until Thursday.",
+            "sanity": -3
+          },
+          {
+            "chance": 0.4,
+            "bad": true,
+            "text": "They take the ₦20k and post it at 50% blur. 'Discount version.'",
+            "exposure": 10
+          }
+        ]
+      },
+      {
+        "id": "report",
+        "label": "Ignore it. Report the page.",
+        "tags": [
+          "discreet"
+        ],
+        "receipt": "You ignored and reported the gossip page.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "They post it with an eyes emoji. Nobody can tell who it is. Mostly.",
+            "exposure": 8
+          }
+        ],
+        "truth_override": {
+          "dangerous_ex": {
+            "text": "It's up for an hour before it's taken down. She doesn't leave her flat for two days.",
+            "exposure": 8,
+            "sanity": -10,
+            "attachment": 3
+          },
+          "wild_life": {
+            "text": "They post it. The comments: 'Is that Zee?? From booth 4??' Seven people say yes.",
+            "exposure": 15,
+            "saw_truth": true
+          }
+        }
+      },
+      {
+        "id": "tell_her",
+        "label": "Forward it to her before doing anything.",
+        "tags": [
+          "cautious",
+          "contact_partner"
+        ],
+        "receipt": "You forwarded the gossip page's DM to her first.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Leave it with me.' By evening the page has deleted its account. You don't ask how.",
+            "trust": 4
+          }
+        ],
+        "truth_override": {
+          "dangerous_ex": {
+            "text": "Silence. Then: 'Thank you for not handling it without me. My lawyer will.' The page is gone by dinner.",
+            "trust": 8,
+            "attachment": 5
+          },
+          "family_no": {
+            "text": "'Abdul is handling it.' That sentence closes a lot of doors.",
+            "sanity": -5
+          }
+        }
+      },
+      {
+        "id": "runs_admin",
+        "label": "[Runs] Find the admin. You know a guy at Computer Village.",
+        "vibe": "runs",
+        "receipt": "You tracked down the gossip page admin.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Your guy finds the admin: a 19-year-old in Yaba. He deletes it himself, crying, and follows you.",
+            "attachment": 8,
+            "clout": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "zainab_pd_aunty",
+    "character": "zainab",
+    "slot": "public_drama",
+    "scene": {
+      "location": "mainland_street",
+      "time": "morning",
+      "expression": "caught",
+      "mood": "neutral",
+      "npc": {
+        "name": "Aunty Hadiza"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "A supermarket on Admiralty Way, 10am. You're both in sunglasses, buying plantain. A big gele stops dead in the aisle."
+      },
+      {
+        "who": "Aunty Hadiza",
+        "text": "Zainab? Zainab Sani? Is that you? And who is this one?"
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "family_no": {
+        "id": "t_fn_brother",
+        "text": "Aunty Hadiza, already dialling: 'Your brother will be so happy I saw you. Let me call him now.'"
+      },
+      "wild_life": {
+        "id": "t_wl_name",
+        "text": "A boy at the till: 'Zee! You were MAD last night!' Aunty Hadiza hears 'last night'."
+      },
+      "dangerous_ex": {
+        "id": "t_de_window",
+        "text": "Zainab doesn't look at Aunty. She looks past her, through the glass, scanning every car in the car park."
+      }
+    },
+    "choices": [
+      {
+        "id": "driver",
+        "label": "Pretend you're her driver. 'Madam, the car is ready.'",
+        "tags": [
+          "discreet"
+        ],
+        "receipt": "You pretended to be her driver in front of her aunty.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Aunty nods, satisfied. Zainab bites her lip to stop laughing until the car door shuts.",
+            "attachment": 6,
+            "chemistry": 3
+          }
+        ],
+        "truth_override": {
+          "family_no": {
+            "text": "Aunty: 'Ah, a new driver. Abdul will want his number.' You are now employed by a family that hates you.",
+            "attachment": 4,
+            "sanity": -3
+          },
+          "dangerous_ex": {
+            "text": "In the car she grips your arm. 'You didn't even hesitate. Thank you.' She checks the mirror all the way home.",
+            "attachment": 6,
+            "trust": 4
+          }
+        }
+      },
+      {
+        "id": "introduce",
+        "label": "'Good morning ma. I'm her friend.'",
+        "tags": [
+          "public_embarrassment"
+        ],
+        "receipt": "You introduced yourself to her aunty.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Aunty takes a picture 'for the family group'. Zainab looks at the plantain like it betrayed her.",
+            "exposure": 15,
+            "attachment": -5
+          }
+        ],
+        "truth_override": {
+          "family_no": {
+            "text": "By evening there's a family meeting about 'the friend'. You aren't invited. You're the agenda.",
+            "exposure": 15,
+            "saw_truth": true,
+            "sanity": -20
+          },
+          "dangerous_ex": {
+            "text": "She goes grey. 'Aunty, please don't post it.' Aunty has already posted it. Zainab leaves the trolley.",
+            "exposure": 20,
+            "sanity": -20
+          }
+        }
+      },
+      {
+        "id": "split_up",
+        "label": "Abandon the trolley. Leave separately.",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You abandoned the trolley and left separately.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You meet in the car park twelve minutes later. No plantain. One laugh each.",
+            "sanity": -3
+          }
+        ]
+      },
+      {
+        "id": "ask_aunty",
+        "label": "Ask Aunty sweetly not to post. You promised her.",
+        "requires": {
+          "flags": [
+            "promised_never_post"
+          ]
+        },
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You charmed her aunty out of posting.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You carry Aunty's bags to her car. She deletes the photo 'for you, my dear'. Zainab watches like you defused a bomb.",
+            "trust": 6,
+            "attachment": 5
+          }
+        ],
+        "truth_override": {
+          "dangerous_ex": {
+            "text": "Aunty deletes it in front of you. In the car Zainab says nothing for a mile, then: 'You kept the promise. Even there.'",
+            "trust": 10,
+            "attachment": 6
+          }
+        }
+      },
+      {
+        "id": "runs_groceries",
+        "label": "[Runs] Pay for Aunty's groceries. Buy her silence.",
+        "vibe": "runs",
+        "cost": 30000,
+        "receipt": "You paid for her aunty's groceries.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Aunty accepts with dignity and a second trolley. 'I saw nothing. God bless you.' She means both.",
+            "attachment": 6,
+            "clout": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "zainab_pd_masks",
+    "character": "zainab",
+    "slot": "public_drama",
+    "scene": {
+      "location": "vi_club_vip",
+      "time": "night",
+      "expression": "charming",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "She finally takes you out. A VIP lounge on Ozumba Mbadiwe, 1am, masquerade night. Everyone's face is hidden. That's why she chose it."
+      },
+      {
+        "who": "partner",
+        "text": "Masks stay on. Phones stay in. Tonight I'm nobody."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "family_no": {
+        "id": "t_fn_photo",
+        "text": "A photographer flashes. She takes his camera, deletes the frame, hands it back with ₦5k. He's used to it."
+      },
+      "wild_life": {
+        "id": "t_wl_wristband",
+        "text": "Every bouncer knows her wristband. 'Zee's guest,' they say, and the rope drops."
+      },
+      "dangerous_ex": {
+        "id": "t_de_number",
+        "text": "Her phone buzzes. Unknown number: 'Nice mask. Who's that with you?' She goes completely still."
+      }
+    },
+    "choices": [
+      {
+        "id": "dance",
+        "label": "Dance. Be somebody else for one night.",
+        "receipt": "You danced with her at masquerade night.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Three songs, masks on. She laughs with her head back. You've never seen her neck before.",
+            "attachment": 8,
+            "chemistry": 5
+          }
+        ],
+        "truth_override": {
+          "dangerous_ex": {
+            "text": "You dance. She doesn't. She's watching the door. 'We need to go. Back exit. Now.'",
+            "attachment": 3,
+            "sanity": -5,
+            "set": [
+              {
+                "flag": "ex_calling",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "bottle",
+        "label": "Order a bottle. ₦120k. Match her energy.",
+        "cost": 120000,
+        "tags": [
+          "luxury"
+        ],
+        "broke_text": "Your account took its mask off. It's crying.",
+        "receipt": "You ordered a ₦120k bottle at masquerade night.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Sparklers. The DJ shouts something. Heads turn. She pulls her mask down tighter.",
+            "clout": 15,
+            "attachment": 4,
+            "exposure": 10
+          }
+        ]
+      },
+      {
+        "id": "water",
+        "label": "Water and a suya platter. ₦10k.",
+        "cost": 10000,
+        "tags": [
+          "budget"
+        ],
+        "receipt": "You ordered water and suya at the VIP lounge.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Suya in a VIP booth. The waiter is offended. She thinks it's the best order of the night.",
+            "attachment": 4,
+            "sanity": 5
+          }
+        ]
+      },
+      {
+        "id": "unmask",
+        "label": "Selfie with masks off. Just one.",
+        "tags": [
+          "public_embarrassment"
+        ],
+        "receipt": "You took a mask-off selfie with her at the club.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She takes the phone, deletes it, and walks out without you.",
+            "exposure": 10,
+            "attachment": -5
+          }
+        ]
+      },
+      {
+        "id": "till_five",
+        "label": "Stay till 5am. Match her stamina.",
+        "receipt": "You stayed out with her till 5am.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "5am, Ozumba Mbadiwe, sun coming up, shoes in hand. She's fresh. You are a former person.",
+            "attachment": 8,
+            "chemistry": 5,
+            "sanity": -35,
+            "exposure": 10
+          }
+        ],
+        "truth_override": {
+          "wild_life": {
+            "text": "5am. The crew carries you to the car. 'Zee's guest survived!' She posts nothing. Someone else posts everything.",
+            "attachment": 10,
+            "chemistry": 5,
+            "sanity": -35,
+            "exposure": 20,
+            "saw_truth": true
+          },
+          "dangerous_ex": {
+            "text": "She leaves at 1:30, shaking, after another unknown text. You stay till 5 because you don't know what else to do.",
+            "sanity": -40,
+            "attachment": -3
+          }
+        }
+      },
+      {
+        "id": "quiet",
+        "label": "'Let's go. Just us. Somewhere quiet.'",
+        "tags": [
+          "discreet"
+        ],
+        "receipt": "You took her somewhere quiet instead.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She takes your hand. Suya in the car, masks on the dashboard, Garba asleep in the front.",
+            "attachment": 6
+          }
+        ],
+        "truth_override": {
+          "dangerous_ex": {
+            "text": "She nearly cries with relief. 'Back exit. Garba's there.' She checks the street before you step out.",
+            "trust": 8,
+            "attachment": 8
+          },
+          "wild_life": {
+            "text": "'Quiet?' She looks at you like a new species. Then she comes. Zee goes quiet, for once.",
+            "attachment": 6,
+            "trust": 3
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "zainab_pd_hilux",
+    "character": "zainab",
+    "slot": "public_drama",
+    "scene": {
+      "location": "aesthetic_clinic",
+      "time": "afternoon",
+      "expression": "suspicious",
+      "mood": "negative",
+      "npc": {
+        "name": "Man from the Hilux"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "A dark Hilux has been parked across from her clinic for three days. Today, as you arrive, the driver gets out and walks toward you."
+      },
+      {
+        "who": "Man from the Hilux",
+        "text": "You're the one visiting Zainab. I just want to talk."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "family_no": {
+        "id": "t_fn_brother",
+        "text": "'Abdulrahman sent me,' he says. 'He wants your full name. For records.'"
+      },
+      "wild_life": {
+        "id": "t_wl_name",
+        "text": "'Tell Zee she owes for Saturday's table. ₦600k. Zee knows.'"
+      },
+      "dangerous_ex": {
+        "id": "t_de_number",
+        "text": "Your phone rings: unknown number. He's holding his own phone up, smiling. 'Just checking it's yours.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "inside",
+        "label": "Walk past him into the clinic. Lock the door.",
+        "tags": [
+          "cautious",
+          "discreet"
+        ],
+        "receipt": "You walked past the man and locked yourself in the clinic.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Inside, she's already at the window with Hauwa. 'Don't talk to him. Please.'",
+            "sanity": -5
+          }
+        ],
+        "truth_override": {
+          "dangerous_ex": {
+            "text": "She's at the window, phone in hand. 'I'm calling the police and my lawyer. Stay away from the glass.' She takes your hand. Hers is ice.",
+            "trust": 8,
+            "attachment": 5,
+            "sanity": -5,
+            "set": [
+              {
+                "flag": "ex_seen",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "talk",
+        "label": "Hear him out. Street, daylight, witnesses.",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You let the man from the Hilux talk to you.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He talks a lot and says nothing.",
+            "sanity": -5
+          }
+        ],
+        "truth_override": {
+          "family_no": {
+            "text": "He takes your name, your address and your mother's name. 'Thank you. The family will be in touch.'",
+            "saw_truth": true,
+            "sanity": -10
+          },
+          "wild_life": {
+            "text": "'₦600k for a VIP table. Or you pay. Zee says you're generous.' He winks. He's a promoter, not a problem. Mostly.",
+            "saw_truth": true,
+            "sanity": -5
+          },
+          "dangerous_ex": {
+            "text": "He smiles. 'Tell her I said hello. She knows I always find her.' He walks back to the Hilux and doesn't drive away.",
+            "sanity": -25,
+            "set": [
+              {
+                "flag": "ex_seen",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "square_up",
+        "label": "Square up: 'Leave. Now.'",
+        "tags": [
+          "public_embarrassment"
+        ],
+        "receipt": "You squared up to the man outside her clinic.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "A small crowd. A LASTMA officer films it. He leaves, smiling, like he won something.",
+            "clout": 10,
+            "exposure": 10
+          }
+        ],
+        "truth_override": {
+          "dangerous_ex": {
+            "text": "He laughs and doesn't move. Later she says, shaking: 'He hurts people who embarrass him. Please never do that again.'",
+            "exposure": 5,
+            "sanity": -10,
+            "set": [
+              {
+                "flag": "ex_seen",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "plate",
+        "label": "Photograph his plate. Send it to her.",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You photographed the Hilux's plate for her.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Plate saved. Sent.",
+            "trust": 2
+          }
+        ],
+        "truth_override": {
+          "dangerous_ex": {
+            "text": "She forwards it to her lawyer within a minute. 'That's evidence. Thank you. You're careful. I need careful.'",
+            "trust": 10,
+            "attachment": 5,
+            "set": [
+              {
+                "flag": "ex_seen",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "family_no": {
+            "text": "She replies: 'That's my brother's driver. Please delete it.' Even the car park is family.",
+            "saw_truth": true,
+            "sanity": -5
+          },
+          "wild_life": {
+            "text": "'Ignore him. He's a promoter. I'll sort it tonight.' Tonight.",
+            "sanity": -3
+          }
+        }
+      },
+      {
+        "id": "hauwa",
+        "label": "Call Hauwa at reception. Ask what to do.",
+        "requires": {
+          "flags": [
+            "knows_hauwa"
+          ]
+        },
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You called Hauwa at the clinic for help.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Hauwa: 'Come round the back. Don't run. Walk.' She meets you at the door with the keys.",
+            "trust": 5
+          }
+        ],
+        "truth_override": {
+          "dangerous_ex": {
+            "text": "Hauwa doesn't ask a single question. 'Back door. I've called the lawyer. She's safe. Walk, don't run.' This has happened before.",
+            "trust": 10,
+            "attachment": 6,
+            "set": [
+              {
+                "flag": "ex_seen",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "wild_life": {
+            "text": "Hauwa sighs. 'Promoter. Again. Madam's Saturday bills. Please don't tell her I said.'",
+            "saw_truth": true
+          }
+        }
+      },
+      {
+        "id": "keke",
+        "label": "Jump in a keke. Not your business.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You left in a keke when the man approached.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "From the keke you see her at the window, watching him, alone.",
+            "attachment": -5,
+            "sanity": -5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "zainab_cf_family_no",
+    "character": "zainab",
+    "slot": "confrontation",
+    "requires": {
+      "truth": [
+        "family_no"
+      ]
+    },
+    "scene": {
+      "location": "aesthetic_clinic",
+      "time": "night",
+      "expression": "caught",
+      "mood": "negative",
+      "npc": {
+        "name": "Abdulrahman"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "After hours. Her brother asked to meet you at the clinic. She's there too, eyes red, standing behind the desk like it's a wall."
+      },
+      {
+        "who": "Abdulrahman",
+        "text": "I'll be direct. Our family will never accept this. Never. Ask her. She's known from the first night."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "family_no": {
+        "id": "t_fn_future",
+        "text": "'Next year?' you ask her. She looks at the floor. 'I never said next year. Did you notice?'"
+      }
+    },
+    "choices": [
+      {
+        "id": "together",
+        "label": "'Then we'll be unaccepted together.'",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You told her you'd be unaccepted together.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She laughs through tears. Abdul leaves without a word. 'They won't change,' she says. 'Maybe we stop asking them.'",
+            "trust": 12,
+            "attachment": 10,
+            "saw_truth": true
+          }
+        ]
+      },
+      {
+        "id": "walk",
+        "label": "Thank her for the truth. Walk away.",
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You thanked her for the truth and walked away.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She walks you to the back door, like always. This time she doesn't check the street. There's nobody left to hide from.",
+            "end": "walked_away",
+            "sanity": 10,
+            "saw_truth": true
+          }
+        ]
+      },
+      {
+        "id": "price",
+        "label": "'How much is never worth to you, Abdul?'",
+        "receipt": "You asked her brother what 'never' was worth.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "Abdul writes a cheque without sitting. ₦900k. 'For your discretion.' She looks at you like a stranger.",
+            "wallet": 900000,
+            "saw_truth": true,
+            "attachment": -20
+          },
+          {
+            "chance": 0.4,
+            "bad": true,
+            "text": "Abdul laughs. 'You think we pay? We don't need to.' He's right. That's worse.",
+            "sanity": -20,
+            "saw_truth": true
+          }
+        ]
+      },
+      {
+        "id": "expose",
+        "label": "Post everything. Tag the family.",
+        "tags": [
+          "toxic",
+          "public_embarrassment"
+        ],
+        "receipt": "You posted her family's rejection online.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The Parlour picks sides. Her family's lawyer picks you. She deletes every trace of you, which takes four seconds now.",
+            "clout": 20,
+            "exposure": 30,
+            "bond": -25,
+            "saw_truth": true,
+            "truth_exposed": true,
+            "goal": {
+              "revenge": 50
+            },
+            "sanity": -15
+          }
+        ]
+      },
+      {
+        "id": "photo",
+        "label": "Show her the photo you kept. 'This was real.'",
+        "requires": {
+          "flags": [
+            "secret_hidden_photo"
+          ]
+        },
+        "receipt": "You showed her the photo you secretly kept.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She stares at it a long time. 'You kept one.' She can't decide if she's angry. Neither can you.",
+            "saw_truth": true,
+            "attachment": 10,
+            "trust": -3
+          }
+        ]
+      },
+      {
+        "id": "arsenal",
+        "label": "'Abdul. Arsenal was also \"never\". Look now.'",
+        "requires": {
+          "flags": [
+            "knows_abdul"
+          ]
+        },
+        "receipt": "You used Arsenal to soften her brother.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Abdul laughs despite himself. Once. It isn't a yes. It isn't never either.",
+            "saw_truth": true,
+            "trust": 8,
+            "attachment": 8
+          }
+        ]
+      },
+      {
+        "id": "this_week",
+        "label": "'You only ever plan this week. I noticed.'",
+        "requires": {
+          "flags": [
+            "knows_this_week"
+          ]
+        },
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You told her you'd noticed she only plans one week ahead.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Because a week was all I was allowed.' She holds your hand in front of her brother. First time. 'Next week, then.'",
+            "saw_truth": true,
+            "trust": 10,
+            "attachment": 8
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "zainab_cf_wild_life",
+    "character": "zainab",
+    "slot": "confrontation",
+    "requires": {
+      "truth": [
+        "wild_life"
+      ]
+    },
+    "scene": {
+      "location": "vi_club_vip",
+      "time": "night",
+      "expression": "caught",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "3am. You followed the pin to a VIP lounge on Ozumba Mbadiwe. She's standing on a table in silver, mid-song. She sees you. The whole booth sees you."
+      },
+      {
+        "who": "partner",
+        "text": "Okay. Yes. Zainab goes home at nine. Zee comes out at one. Are you staying?"
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "wild_life": {
+        "id": "t_wl_name",
+        "text": "The DJ cuts the music: 'Who's the stranger, Zee? Introduce us!'"
+      }
+    },
+    "choices": [
+      {
+        "id": "meet_zee",
+        "label": "Sit down. Meet Zee properly.",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You stayed and met Zee properly.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She climbs down. Introduces you as 'the one I curfew for'. The crew approves, loudly, with sparklers.",
+            "trust": 10,
+            "attachment": 12,
+            "saw_truth": true
+          }
+        ]
+      },
+      {
+        "id": "leave",
+        "label": "Walk out. You dated Zainab, not Zee.",
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You walked out on Zee.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You leave through the front, where she never goes. Ozumba Mbadiwe at 3am is very honest.",
+            "end": "walked_away",
+            "sanity": 5,
+            "saw_truth": true
+          }
+        ]
+      },
+      {
+        "id": "hush",
+        "label": "'What's my silence worth to Zainab's family?'",
+        "receipt": "You named a price for keeping Zee secret.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "She transfers ₦800k from the booth. 'For Zainab's reputation.' Zee never speaks to you again.",
+            "wallet": 800000,
+            "saw_truth": true,
+            "bond": -20
+          },
+          {
+            "chance": 0.4,
+            "bad": true,
+            "text": "'Tell them. They won't believe you. I'm in bed by nine.' She's right. That's the genius of it.",
+            "sanity": -20,
+            "saw_truth": true
+          }
+        ]
+      },
+      {
+        "id": "live",
+        "label": "Go live: 'Curfew queen, 3am!'",
+        "tags": [
+          "toxic",
+          "public_embarrassment"
+        ],
+        "receipt": "You livestreamed her at the club.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "6,000 viewers. Her mother is one of them. The table she's standing on is suddenly very high.",
+            "clout": 30,
+            "exposure": 25,
+            "bond": -25,
+            "saw_truth": true,
+            "truth_exposed": true,
+            "goal": {
+              "revenge": 50
+            },
+            "sanity": -15
+          }
+        ]
+      },
+      {
+        "id": "photo",
+        "label": "Show her your 2:14am photo. 'Since when?'",
+        "requires": {
+          "flags": [
+            "secret_club_photo"
+          ]
+        },
+        "receipt": "You showed her the club photo you'd kept.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Since forever. You had this and didn't post it?' She softens. A lot. She moves her bag so you can sit.",
+            "saw_truth": true,
+            "trust": 6,
+            "attachment": 8
+          }
+        ]
+      },
+      {
+        "id": "receipts",
+        "label": "'Online at 3am. Every night. I have screenshots.'",
+        "requires": {
+          "flags": [
+            "secret_online_receipts"
+          ]
+        },
+        "tags": [
+          "call_out"
+        ],
+        "receipt": "You showed her your 3am screenshots.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She laughs. 'So you were awake at 3am too. Every night. Who's the wild one?' Fair.",
+            "saw_truth": true,
+            "attachment": -3,
+            "clout": 5
+          }
+        ]
+      },
+      {
+        "id": "tomorrow",
+        "label": "'Tomorrow, not here, you said. It's tomorrow.'",
+        "requires": {
+          "flags": [
+            "saw_zee"
+          ]
+        },
+        "receipt": "You held her to her 'tomorrow'.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'I did say that.' She gets down, takes your hand, and walks you out the back. In the car she tells you everything.",
+            "saw_truth": true,
+            "trust": 10,
+            "attachment": 8
+          }
+        ]
+      },
+      {
+        "id": "drove",
+        "label": "'I've driven you home at 2am. I knew.'",
+        "requires": {
+          "flags": [
+            "drove_her"
+          ]
+        },
+        "receipt": "You told her you'd known since you drove her home.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'And you still came when I asked.' She steps off the table. 'Nobody comes. They just judge.'",
+            "saw_truth": true,
+            "trust": 8,
+            "attachment": 8
+          }
+        ]
+      },
+      {
+        "id": "never_zee",
+        "label": "'Never call you Zee, you said. Hi, Zee.'",
+        "requires": {
+          "flags": [
+            "knows_zee"
+          ]
+        },
+        "receipt": "You called her Zee to her face.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She laughs so hard the DJ restarts the song. 'You caught that? From one voice note?' She pulls you onto the table.",
+            "saw_truth": true,
+            "attachment": 10,
+            "chemistry": 5
+          }
+        ]
+      },
+      {
+        "id": "hauwa",
+        "label": "'Hauwa always knows where you are. So now do I.'",
+        "requires": {
+          "flags": [
+            "knows_hauwa"
+          ]
+        },
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You told her you'd found her through Hauwa.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Hauwa told you?' A pause. 'Hauwa approves of you, then. She's never approved of anybody.'",
+            "saw_truth": true,
+            "trust": 6,
+            "attachment": 6
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "zainab_cf_dangerous_ex",
+    "character": "zainab",
+    "slot": "confrontation",
+    "requires": {
+      "truth": [
+        "dangerous_ex"
+      ]
+    },
+    "scene": {
+      "location": "aesthetic_clinic",
+      "time": "night",
+      "expression": "suspicious",
+      "mood": "negative",
+      "fx": [
+        "rain"
+      ],
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "11pm. She calls, whispering. The Hilux is outside her clinic. She and Hauwa are locked in with the lights off."
+      },
+      {
+        "who": "partner",
+        "text": "His name is Kabiru. He broke my phone, then my door. I hid you so he'd never find you. Not shame. Never shame."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "dangerous_ex": {
+        "id": "t_de_window",
+        "text": "You can hear she's on the floor, below the window, so the street can't see her shadow."
+      }
+    },
+    "choices": [
+      {
+        "id": "police",
+        "label": "Call the police and her lawyer. Then go to her.",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You called the police and her lawyer, then went to her.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Two officers and her lawyer arrive before you. The Hilux leaves. She opens the door and holds on for a long time.",
+            "trust": 15,
+            "attachment": 12
+          }
+        ]
+      },
+      {
+        "id": "back_door",
+        "label": "Go to her. Back entrance. Stay on the phone.",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You went to her through the back entrance.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You come in the back. She's shaking. You sit on the floor with her and Hauwa until sunrise. Nobody posts anything, ever.",
+            "trust": 12,
+            "attachment": 12
+          }
+        ]
+      },
+      {
+        "id": "confront",
+        "label": "Drive over and confront him yourself.",
+        "receipt": "You went to confront her ex yourself.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "He rolls down the window, says your full name, and drives off. He already knew it. Later she says: 'Never do that. He'd hurt you to hurt me.'",
+            "sanity": -30,
+            "trust": -3
+          },
+          {
+            "chance": 0.5,
+            "bad": true,
+            "text": "He gets out. You get back in your car. Nothing happens. It is the worst nothing of your life. She doesn't sleep.",
+            "sanity": -35,
+            "trust": -5
+          }
+        ]
+      },
+      {
+        "id": "step_back",
+        "label": "'I can't be part of this.' Step back.",
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You told her you couldn't be part of it, and stepped back.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She says she understands, and she means it, and it still hurts her. You send Hauwa the police hotline before you block yourself out of her life.",
+            "end": "walked_away",
+            "sanity": -5
+          }
+        ]
+      },
+      {
+        "id": "lied",
+        "label": "'So you lied to me this whole time.'",
+        "tags": [
+          "toxic"
+        ],
+        "receipt": "You accused her of lying to you.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Quiet. 'I protected you this whole time.' The line goes dead. Hauwa texts: 'She's safe. Don't call.'",
+            "trust": -5
+          }
+        ]
+      },
+      {
+        "id": "believe",
+        "label": "'I've seen enough. I believe you. What do you need?'",
+        "requires": {
+          "any_flags": [
+            "ex_seen",
+            "ex_calling",
+            "warned_by_amina"
+          ]
+        },
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You told her you believed her and asked what she needed.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Nobody asks what I need. They ask what I did.' She tells you: a lawyer's number, a spare key, a new route. You take all three.",
+            "trust": 15,
+            "attachment": 15
+          }
+        ]
+      },
+      {
+        "id": "never_posted",
+        "label": "'I never posted you. I never will.'",
+        "requires": {
+          "flags": [
+            "promised_never_post"
+          ]
+        },
+        "receipt": "You reminded her you'd kept your promise never to post her.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She breathes out on the line, all of it. 'I know. That's why you're the one I called.'",
+            "trust": 12,
+            "attachment": 10
+          }
+        ]
+      },
+      {
+        "id": "orchids",
+        "label": "She said 'orchids'. You're already in the car.",
+        "requires": {
+          "flags": [
+            "knows_orchids"
+          ]
+        },
+        "receipt": "You came the moment she gave the word.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You don't ask. You come to the back, lights off, like she taught you. She gets in and finally cries. You drive until she says stop.",
+            "trust": 15,
+            "attachment": 15
+          }
+        ]
+      },
+      {
+        "id": "texted_home",
+        "label": "'Every night I texted when I got home. Tonight, you text me.'",
+        "requires": {
+          "flags": [
+            "promised_text_home"
+          ]
+        },
+        "receipt": "You asked her to text you when she was safe.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "At 2:41am: 'Home. Safe. Police came. Thank you for staying awake.' Then: 'Come tomorrow. In daylight. Through the front.'",
+            "trust": 12,
+            "attachment": 10
+          }
+        ]
+      },
+      {
+        "id": "route",
+        "label": "'Flash twice, two streets away. I know the drill.'",
+        "requires": {
+          "flags": [
+            "drove_her"
+          ]
+        },
+        "receipt": "You used your old pickup signal to get her out.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Two flashes. The clinic's side door opens. She and Hauwa run out and lock the doors. You drive. Nobody follows.",
+            "trust": 12,
+            "attachment": 12
+          }
+        ]
+      },
+      {
+        "id": "delete_photo",
+        "label": "'I kept one photo of you. Deleting it now.'",
+        "requires": {
+          "flags": [
+            "secret_hidden_photo"
+          ]
+        },
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You confessed and deleted the hidden photo.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Silence. Then: 'Thank you for telling me. And for deleting it.' She sends a photo of the orchids instead. 'Keep this one.'",
+            "trust": 8,
+            "attachment": 6
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "zainab_po_selfie",
+    "character": "zainab",
+    "slot": "payoff",
+    "priority": 6,
+    "requires": {
+      "flags": [
+        "secret_d1_selfie"
+      ],
+      "not_flags": [
+        "selfie_surfaced"
+      ],
+      "flag_age": {
+        "flag": "secret_d1_selfie",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "secret_d1_selfie"
+    ],
+    "scene": {
+      "location": "mainland_street",
+      "time": "afternoon",
+      "mood": "negative",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Your cousin posted a throwback dump from your shared family album. Slide 6: you, and half of Zainab's face. 340 likes."
+      }
+    ],
+    "choices": [
+      {
+        "id": "delete",
+        "label": "Get your cousin to delete it. Fast.",
+        "tags": [
+          "discreet"
+        ],
+        "receipt": "You got your cousin to delete the photo of her.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Down in nine minutes. Your cousin wants to know who 'Half Face' is. You change the subject to his haircut.",
+            "exposure": 5,
+            "set": [
+              "selfie_surfaced"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tell_her",
+        "label": "Tell her before she finds out.",
+        "tags": [
+          "cautious",
+          "contact_partner"
+        ],
+        "receipt": "You told her about the photo before she found it.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Thank you for telling me.' She's calm. Too calm. 'Get it down, please.'",
+            "trust": 4,
+            "set": [
+              "selfie_surfaced"
+            ]
+          }
+        ],
+        "truth_override": {
+          "dangerous_ex": {
+            "text": "Long silence. 'Thank you for telling me first. I'll have Garba take a different route this week.' Then: 'It's not your fault.'",
+            "trust": 10,
+            "attachment": 4,
+            "set": [
+              "selfie_surfaced"
+            ]
+          },
+          "family_no": {
+            "text": "'My brother follows your cousin.' A pause. 'He's seen it.' She doesn't sound angry. She sounds finished.",
+            "saw_truth": true,
+            "sanity": -8,
+            "set": [
+              "selfie_surfaced"
+            ]
+          },
+          "wild_life": {
+            "text": "'Half my face? Relax. Half of Lagos has seen the other half at 3am.' Then: 'Forget I said that.'",
+            "saw_truth": true,
+            "set": [
+              "selfie_surfaced"
+            ]
+          }
+        }
+      },
+      {
+        "id": "leave_it",
+        "label": "Leave it. Nobody can tell it's her.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You left the photo of her up.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Somebody can. Somebody always can. It gets 200 more likes overnight.",
+            "exposure": 15,
+            "trust": -8,
+            "set": [
+              "selfie_surfaced"
+            ],
+            "sanity": -10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "zainab_po_club_photo",
+    "character": "zainab",
+    "slot": "payoff",
+    "priority": 6,
+    "presentation": "text",
+    "requires": {
+      "flags": [
+        "secret_club_photo"
+      ],
+      "not_flags": [
+        "club_photo_handled"
+      ],
+      "flag_age": {
+        "flag": "secret_club_photo",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "secret_club_photo"
+    ],
+    "scene": {
+      "location": "mainland_street",
+      "time": "afternoon",
+      "mood": "negative",
+      "partner_present": false,
+      "npc": {
+        "name": "Gossip page"
+      }
+    },
+    "beats": [
+      {
+        "who": "Gossip page",
+        "text": "Heard you have a photo from Ozumba Mbadiwe, 2:14am. Silver dress. We pay ₦200k. Cash. Today."
+      }
+    ],
+    "choices": [
+      {
+        "id": "sell",
+        "label": "Sell it. ₦200k is ₦200k.",
+        "receipt": "You sold the club photo to a gossip page.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Paid. It's a blurry woman in silver. Nobody cares. You feel worse than ₦200k.",
+            "wallet": 200000,
+            "sanity": -5,
+            "set": [
+              "club_photo_handled"
+            ]
+          }
+        ],
+        "truth_override": {
+          "wild_life": {
+            "text": "Paid. 'ZEE UNMASKED: Ikoyi Clinic Owner By Day.' Her family wakes up to it. So does she.",
+            "wallet": 200000,
+            "exposure": 20,
+            "saw_truth": true,
+            "truth_exposed": true,
+            "goal": {
+              "revenge": 40
+            },
+            "set": [
+              "club_photo_handled"
+            ]
+          },
+          "dangerous_ex": {
+            "text": "Paid. An hour later Amina calls you screaming: 'A man has been asking that page where she goes.' You can't unsell it.",
+            "wallet": 200000,
+            "sanity": -30,
+            "exposure": 10,
+            "set": [
+              "club_photo_handled"
+            ]
+          }
+        }
+      },
+      {
+        "id": "delete",
+        "label": "Delete it from your phone. Block the page.",
+        "tags": [
+          "discreet"
+        ],
+        "receipt": "You deleted the club photo and blocked the page.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Gone. Your thumb hovered for a second. Nobody needs to know that.",
+            "sanity": 5,
+            "set": [
+              "club_photo_handled"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "show_her",
+        "label": "Send her the DM. 'Someone's hunting this.'",
+        "tags": [
+          "cautious",
+          "contact_partner"
+        ],
+        "receipt": "You warned her that a page wanted the club photo.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Which photo?' you realise she doesn't know you have one. Awkward. Honest, though.",
+            "trust": 2,
+            "set": [
+              "club_photo_handled"
+            ]
+          }
+        ],
+        "truth_override": {
+          "wild_life": {
+            "text": "'You have a photo of Zee and you DIDN'T sell it?' She calls you. First time she's ever called. 'Come out with us Friday.'",
+            "saw_truth": true,
+            "trust": 8,
+            "attachment": 6,
+            "set": [
+              "club_photo_handled"
+            ]
+          },
+          "dangerous_ex": {
+            "text": "'That wasn't me, it was Amina. But thank you. If they're hunting her photos, they're hunting mine.' She changes her number that night.",
+            "trust": 8,
+            "set": [
+              "club_photo_handled"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "zainab_po_abdul_lunch",
+    "character": "zainab",
+    "slot": "payoff",
+    "priority": 7,
+    "presentation": "text",
+    "requires": {
+      "flags": [
+        "told_abdul"
+      ],
+      "not_flags": [
+        "abdul_lunch_done"
+      ],
+      "flag_age": {
+        "flag": "told_abdul",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "told_abdul"
+    ],
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "afternoon",
+      "mood": "neutral",
+      "partner_present": false,
+      "npc": {
+        "name": "Abdulrahman"
+      }
+    },
+    "beats": [
+      {
+        "who": "Abdulrahman",
+        "text": "You told me the truth in her clinic. Respect. Lunch, Friday, 1pm. Just us. Don't tell her."
+      }
+    ],
+    "choices": [
+      {
+        "id": "go",
+        "label": "Go. Wear your best kaftan.",
+        "receipt": "You went to lunch alone with her brother.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He talks. You listen. He pays.",
+            "set": [
+              "abdul_lunch_done"
+            ]
+          }
+        ],
+        "truth_override": {
+          "family_no": {
+            "text": "He's polite for an hour. Then: 'She's promised to a family in Kano. Since she was nineteen. I'm telling you so you can leave with dignity.'",
+            "saw_truth": true,
+            "sanity": -10,
+            "set": [
+              "abdul_lunch_done"
+            ]
+          },
+          "wild_life": {
+            "text": "'Where does she go after nine? You know. I see it on your face.' He wants an informant. He offers ₦100k.",
+            "saw_truth": true,
+            "wallet": 100000,
+            "trust": -5,
+            "set": [
+              "abdul_lunch_done"
+            ]
+          },
+          "dangerous_ex": {
+            "text": "'There's a man. Kabiru. If he ever appears, call me first, then the police. She won't ask for help. I'm asking for her.' He gives you his number.",
+            "trust": 8,
+            "attachment": 6,
+            "set": [
+              "abdul_lunch_done"
+            ]
+          }
+        }
+      },
+      {
+        "id": "tell_her",
+        "label": "Tell her about the invitation first.",
+        "tags": [
+          "cautious",
+          "contact_partner"
+        ],
+        "receipt": "You told her about her brother's lunch invitation.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'He said don't tell me? And you told me.' She's quiet. Then: 'Go. But I'm coming. In disguise.'",
+            "trust": 6,
+            "set": [
+              "abdul_lunch_done"
+            ]
+          }
+        ],
+        "truth_override": {
+          "family_no": {
+            "text": "'Don't go. He'll be kind. That's worse.' She sends you a picture of her hand. No ring. Yet.",
+            "trust": 4,
+            "saw_truth": true,
+            "set": [
+              "abdul_lunch_done"
+            ]
+          }
+        }
+      },
+      {
+        "id": "decline",
+        "label": "'Thanks, I'm busy Friday.'",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You declined her brother's lunch.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Noted.' Two hours later she texts: 'Did you just decline my brother? Nobody declines my brother.' She sounds impressed.",
+            "attachment": 3,
+            "set": [
+              "abdul_lunch_done"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "arsenal",
+        "label": "'Only if we watch the Arsenal match after.'",
+        "requires": {
+          "flags": [
+            "knows_abdul"
+          ]
+        },
+        "receipt": "You made Arsenal a condition for lunch with her brother.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Lunch becomes four hours. Arsenal draws. He hugs you at the final whistle like family. Then remembers, and shakes your hand.",
+            "trust": 6,
+            "attachment": 8,
+            "set": [
+              "abdul_lunch_done"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "zainab_tt_orchids",
+    "character": "zainab",
+    "slot": "talking_time",
+    "presentation": "voice_note",
+    "scene": {
+      "location": "aesthetic_clinic",
+      "time": "night",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Random thing. If I ever text you just the word 'orchids', come and get me. Don't call. Don't ask. Just come. Okay. Goodnight."
+      }
+    ],
+    "detail": {
+      "flag": "knows_orchids",
+      "missed": {
+        "chemistry": -3
+      },
+      "red_flag": true
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "'Orchids means come. No calls, no questions. Got it.'",
+        "caught": true,
+        "receipt": "You memorised her 'orchids' code word.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "A long pause. 'Thank you.' Then a photo of an orchid, which is either nothing or everything.",
+            "attachment": 3,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "joke",
+        "label": "'Orchids? Babe, is this a riddle?'",
+        "receipt": "You joked about her orchids message.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Forget it. It's late.' She goes offline at 10:01.",
+            "attachment": -2
+          }
+        ]
+      },
+      {
+        "id": "flowers",
+        "label": "'Want me to buy you orchids? 🌸'",
+        "receipt": "You offered to buy her orchids.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'I have a clinic full of them. But that's sweet.' She didn't mean flowers.",
+            "attachment": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "zainab_tt_arsenal",
+    "character": "zainab",
+    "slot": "talking_time",
+    "presentation": "text",
+    "scene": {
+      "location": "aesthetic_clinic",
+      "time": "afternoon",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "My brother Abdul has watched Arsenal lose since 2004. If you ever meet him: football. Never me. Never us. Just Arsenal."
+      }
+    ],
+    "detail": {
+      "flag": "knows_abdul",
+      "missed": {
+        "chemistry": -2
+      }
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "'Abdul, Arsenal, never us. Studying the table now.'",
+        "caught": true,
+        "receipt": "You noted her brother's Arsenal obsession.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Please don't actually meet him.' Then: 'But if you do. Saka. He likes Saka.'",
+            "attachment": 3,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "chelsea",
+        "label": "'I'm Chelsea. Is that a dealbreaker?'",
+        "receipt": "You confessed you support Chelsea.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'For him? Yes. For me? I don't care about football.' She sends a laughing emoji. Then a worried one.",
+            "chemistry": 2
+          }
+        ]
+      },
+      {
+        "id": "meet",
+        "label": "'When am I meeting him?'",
+        "receipt": "You asked when you'd meet her brother.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Read. No reply for two hours. Then: 'This week is busy.'",
+            "attachment": -2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "zainab_tt_gate",
+    "character": "zainab",
+    "slot": "talking_time",
+    "presentation": "text",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "mood": "positive",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Home. 8:58. Made it. My mother counts down on the gate camera like it's New Year. I'm 27 years old."
+      }
+    ],
+    "detail": {
+      "flag": "knows_gate_camera",
+      "missed": {
+        "chemistry": -2
+      }
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "'Gate camera, Mummy countdown. I'll park out of frame. 😂'",
+        "caught": true,
+        "receipt": "You noted her family's gate camera.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'You're terrible.' Three minutes later: 'The blind spot is by the mango tree. Not that I'm telling you.'",
+            "attachment": 4,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "rebel",
+        "label": "'27 with a curfew? Rebel small.'",
+        "receipt": "You told her to rebel against her curfew.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'You sound like everybody who doesn't live here.' Read.",
+            "attachment": -3
+          }
+        ]
+      },
+      {
+        "id": "gn",
+        "label": "'Goodnight, Cinderella.'",
+        "receipt": "You called her Cinderella.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Cinderella got the prince. I get my mother.' A goodnight emoji.",
+            "attachment": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "zainab_tt_zee",
+    "character": "zainab",
+    "slot": "talking_time",
+    "presentation": "voice_note",
+    "scene": {
+      "location": "vi_club_vip",
+      "time": "night",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "(2:07am, loud bass) Sorry, wrong chat, go back to sleep. Also... never call me Zee. Nobody calls me that. Okay bye."
+      }
+    ],
+    "detail": {
+      "flag": "knows_zee",
+      "missed": {
+        "chemistry": -3
+      },
+      "red_flag": true
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "'Wrong chat at 2am. Never Zee. Noted. 👀'",
+        "caught": true,
+        "receipt": "You caught the 2am voice note and the name 'Zee'.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Deleted for everyone at 2:09am. Too late. 'You saw nothing,' she types. You saw something.",
+            "attachment": 2,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "sleep",
+        "label": "Sleep through it.",
+        "receipt": "You slept through her 2am voice note.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "In the morning it says 'This message was deleted.' Bliss is ignorance.",
+            "sanity": 3
+          }
+        ]
+      },
+      {
+        "id": "party",
+        "label": "'Where's the party?? Send location 🕺🏾'",
+        "receipt": "You asked for the party location at 2am.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'What party? I'm in bed.' There is definitely a DJ in her bed.",
+            "attachment": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "zainab_tt_hauwa",
+    "character": "zainab",
+    "slot": "talking_time",
+    "presentation": "text",
+    "scene": {
+      "location": "aesthetic_clinic",
+      "time": "morning",
+      "mood": "positive",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "If you ever can't reach me, call Hauwa at the clinic. She's the only person who always knows where I am. Don't flirt with her, she's married."
+      }
+    ],
+    "detail": {
+      "flag": "knows_hauwa",
+      "missed": {
+        "chemistry": -2
+      }
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "'Hauwa is the emergency line. Saving her number now.'",
+        "caught": true,
+        "receipt": "You saved Hauwa as her emergency contact.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Good.' Then: 'She says hello. She's read all our messages. Joking. Mostly.'",
+            "attachment": 3,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "jealous",
+        "label": "'Why does Hauwa know where you are and I don't?'",
+        "receipt": "You got jealous of her receptionist.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Because Hauwa has earned it.' Ouch. Fair, but ouch.",
+            "attachment": -3
+          }
+        ]
+      },
+      {
+        "id": "flirt",
+        "label": "'Is Hauwa single, though? Asking for a friend.'",
+        "receipt": "You joked about flirting with Hauwa.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'I said MARRIED.' Then a voice note of Hauwa laughing in the background. They're both laughing at you.",
+            "chemistry": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "zainab_tt_this_week",
+    "character": "zainab",
+    "slot": "talking_time",
+    "presentation": "voice_note",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "golden",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "You asked about December. I don't plan that far. I plan this week. This week is good. You're in it. That's what I have."
+      }
+    ],
+    "detail": {
+      "flag": "knows_this_week",
+      "missed": {
+        "chemistry": -3
+      },
+      "red_flag": true
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "'Only this week? Okay. Then I'll take every week.'",
+        "caught": true,
+        "receipt": "You noticed she only ever plans one week ahead.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "No reply for a while. Then: 'You noticed.' Like it's the first time anyone has.",
+            "attachment": 3,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "december",
+        "label": "'December in Kano, though? Sallah, family, everything?'",
+        "receipt": "You pushed her about December plans.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Let's see about this week first.' Same words. Same tone. Like a recording.",
+            "attachment": -2
+          }
+        ]
+      },
+      {
+        "id": "cute",
+        "label": "'Cute. Send a voice note every week then.'",
+        "receipt": "You asked her for a weekly voice note.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She sends one. It's eleven seconds of her humming. You play it four times.",
+            "attachment": 3,
+            "chemistry": 2
+          }
+        ]
+      }
+    ]
+  }
+]

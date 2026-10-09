@@ -1,0 +1,86 @@
+{
+  "id": "zainab",
+  "cold_open": {
+    "duration": 15,
+    "scene": { "location": "aesthetic_clinic", "time": "night", "expression": "suspicious", "mood": "neutral", "props": ["blinds_down"] },
+    "phone": [
+      { "at": 2, "kind": "text", "from": "Unknown number", "text": "Staff entrance. Side of the building. Don't knock. I'll see you." },
+      { "at": 11.5, "kind": "text", "from": "Unknown number", "text": "Delete this chat when you get in. Please." }
+    ],
+    "beats": [
+      { "at": 0.5, "who": "narration", "text": "8:04pm, Awolowo Road. Every shop is closing. One clinic's blinds are already down." },
+      { "at": 4.5, "who": "narration", "text": "The side door opens a hand's width. A woman in cream silk looks past you, up the street, both ways." },
+      { "at": 8.5, "who": "partner", "text": "Come in. Quickly. We have until 8:45, and nobody can know you were here." },
+      { "at": 12.5, "who": "narration", "text": "The lock turns behind you. Twice. She doesn't explain. She smiles like she'd like to." }
+    ]
+  },
+  "endings": {
+    "locked_in": {
+      "title": "Quietly Official",
+      "text": "No post, no announcement. Just a spare key to the clinic's back door, your name in her phone without an emoji to hide it, and Sunday breakfasts in daylight.",
+      "scene": { "location": "aesthetic_clinic", "time": "morning", "expression": "charming", "mood": "positive" },
+      "truths": {
+        "family_no": {
+          "title": "Unaccepted, Together",
+          "text": "Locked In. Her family still says never. She stopped asking them. You eat Sallah ram at Hauwa's house now, and Abdul sends one Arsenal meme a month. Progress, Kano style."
+        },
+        "wild_life": {
+          "title": "Zainab by Day, Zee by Night",
+          "text": "Locked In, with both of them. Clinic at nine, booth 4 at one, breakfast at noon. The crew calls you 'the one she curfews for'. Her mother still thinks she's asleep."
+        },
+        "dangerous_ex": {
+          "title": "Safe Here",
+          "text": "The restraining order came through. She walked out of the clinic's front door, in daylight, holding your hand, and didn't check the street once. That's the whole ending. It's enough."
+        }
+      }
+    },
+    "counter_con": {
+      "title": "Hush Money",
+      "text": "You learned what her secret was worth and you sent the invoice. Her family paid, or Zee did. You're richer and you're blocked everywhere a person can be blocked.",
+      "scene": { "location": "luxury_apartment", "time": "morning", "expression": "caught", "mood": "neutral" }
+    },
+    "survived": {
+      "title": "Still Behind the Tint",
+      "text": "Still together, still hidden. Three laps of the Link Bridge every Thursday. Garba knows your order now. Nobody else knows you exist.",
+      "scene": { "location": "prado_interior", "time": "night", "expression": "charming", "mood": "neutral" },
+      "truths": {
+        "family_no": { "text": "Still together, for this week. She still never says next year. You've stopped asking. You're not sure if that's peace or giving up." }
+      }
+    },
+    "scandal": {
+      "title": "Seen, Everywhere",
+      "text": "The one woman in Lagos who asked never to be posted is on every gossip page, and your name is in the caption. Her clinic's reviews are now about you.",
+      "scene": { "location": "mainland_street", "time": "golden", "expression": "angry", "mood": "negative" }
+    },
+    "sapa": {
+      "title": "Surge Pricing",
+      "text": "Uber surges, VIP tables, gossip-page ransoms. Your account hit zero at 2am on Ozumba Mbadiwe. You took a keke home. Character building.",
+      "scene": { "location": "mainland_street", "time": "night", "mood": "negative", "partner_present": false }
+    },
+    "breakdown": {
+      "title": "3am Breakdown",
+      "text": "Too many 3am screenshots, too many locked doors. You cried at a bus stop in Yaba. A woman selling agege bread gave you one for free and said 'e go better'.",
+      "scene": { "location": "mainland_street", "time": "afternoon", "mood": "negative", "partner_present": false }
+    },
+    "ghosted": {
+      "title": "Curfew Forever",
+      "text": "9:02pm: 'Home. Goodnight.' Then nothing, ever again. Her number now belongs to a man in Kano who sells generators. He's very nice about it.",
+      "scene": { "location": "aesthetic_clinic", "time": "night", "expression": "suspicious", "mood": "negative", "partner_present": false }
+    },
+    "fumbled": {
+      "title": "You Made Her Visible",
+      "text": "She was never ashamed of you. She was hiding you from someone dangerous, and asked only one thing: never post her. You did, or you snooped, or you shouted. She moved clinics. She is safe. She is gone.",
+      "scene": { "location": "aesthetic_clinic", "time": "night", "expression": "suspicious", "mood": "negative", "partner_present": false }
+    },
+    "obsession": {
+      "title": "Obsession",
+      "text": "This one isn't funny. Hiding became locking, and locking became your whole life. Control isn't love, even when it's quiet.",
+      "scene": { "location": "luxury_apartment", "time": "night", "expression": "suspicious", "mood": "negative" }
+    },
+    "walked_away": {
+      "title": "Walked Out the Front Door",
+      "text": "She always made you leave through the back. You left through the front, in daylight, and kept walking down Awolowo Road. Some doors you close so other people can stay safe. Some you close for you.",
+      "scene": { "location": "mainland_street", "time": "golden", "mood": "neutral", "partner_present": false }
+    }
+  }
+}

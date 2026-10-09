@@ -1,0 +1,3973 @@
+[
+  {
+    "id": "ada_d1_agenda",
+    "character": "adaeze",
+    "slot": "first_date",
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "night",
+      "expression": "charming",
+      "mood": "positive",
+      "npc": {
+        "name": "Chidinma (PA)"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Rooftop off Bourdillon Road. She's early. There's a printed agenda beside your plate. Item 4: 'Intentions.'"
+      },
+      {
+        "who": "partner",
+        "text": "Chidinma will take minutes. Ignore her. Shall we begin? Item 1: why are you three minutes late?"
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "engaged": {
+        "id": "t_eng_ring",
+        "text": "Her clutch falls open. A velvet ring box. She snaps it shut. Her fingers are bare."
+      },
+      "collapsing": {
+        "id": "t_col_staff",
+        "text": "Her phone lights up face-up: 'Ma, salary?' Then the same from three other numbers."
+      },
+      "tired": {
+        "id": "t_tired_test",
+        "text": "Item 2 is 'Salary'. She asks your exact take-home. Chidinma writes. Adaeze doesn't."
+      }
+    },
+    "choices": [
+      {
+        "id": "play_along",
+        "label": "Play along. Answer every item like a job interview.",
+        "receipt": "You answered her agenda like a job interview.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You score 7.5 out of 10. Chidinma underlines 'punctual (eventually)'.",
+            "attachment": 4,
+            "trust": 6
+          }
+        ],
+        "truth_override": {
+          "tired": {
+            "text": "'Finally, a straight answer.' She smiles for the first time. Chidinma types 'SMILED' in capitals.",
+            "attachment": 6,
+            "trust": 8
+          }
+        }
+      },
+      {
+        "id": "inflate",
+        "label": "Inflate your salary. Small small. It's Ikoyi.",
+        "receipt": "You inflated your salary on the first date.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Impressive.' Chidinma writes the number down. In pen.",
+            "attachment": 6,
+            "set": [
+              {
+                "flag": "secret_inflated_salary",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "tired": {
+            "text": "She hears the lie before you finish it. 'Please don't perform for me. I've had enough performers.'",
+            "trust": -8,
+            "set": [
+              {
+                "flag": "secret_inflated_salary",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          },
+          "collapsing": {
+            "text": "Her eyes light up a little too much. 'Interesting. Very, very interesting.' She orders more wine.",
+            "attachment": 9,
+            "set": [
+              {
+                "flag": "secret_inflated_salary",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "own_agenda",
+        "label": "Slide over your own agenda. Item 1: who's paying?",
+        "receipt": "You brought your own agenda to the date.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "She laughs so hard the waiter reverses. 'Motion noted. I'm paying. Item 2.'",
+            "attachment": 8,
+            "chemistry": 3
+          },
+          {
+            "chance": 0.4,
+            "bad": true,
+            "text": "Minutes: 'Candidate raised payment before starters.' She reads it back to you. Slowly.",
+            "attachment": -5
+          }
+        ]
+      },
+      {
+        "id": "no_minutes",
+        "label": "'No minutes. This is a date, not an AGM.'",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked her to stop the minutes.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She stares. Then sends Chidinma home in an Uber. The date gets slower, and better.",
+            "attachment": -2,
+            "trust": 5,
+            "set": [
+              {
+                "flag": "minutes_off",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "tired": {
+            "text": "'Nobody has ever said no to me at dinner.' She sends Chidinma home and slips her heels off under the table.",
+            "attachment": 6,
+            "trust": 8,
+            "set": [
+              {
+                "flag": "minutes_off",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "corp_pdf",
+        "label": "[Corporate] 'Send the minutes as PDF. Track changes on.'",
+        "vibe": "corporate",
+        "receipt": "You asked for the minutes with track changes.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Chidinma stops typing. Adaeze laughs into her napkin. 'You read emails. Marry me. Joking. Item 5.'",
+            "attachment": 10,
+            "chemistry": 3
+          }
+        ]
+      },
+      {
+        "id": "sugar_transport",
+        "label": "[Sugar] 'Item 5: my transport. Let's table it now.'",
+        "vibe": "sugar",
+        "receipt": "You tabled your transport money on the agenda.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "She transfers ₦30k. Reference: 'TRANSPORT (AGENDA ITEM 5)'. Chidinma attaches the receipt.",
+            "wallet": 30000,
+            "attachment": 2
+          },
+          {
+            "chance": 0.5,
+            "bad": true,
+            "text": "'I don't fund. I invest.' Minutes: 'Candidate is a cost centre.'",
+            "attachment": -10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ada_d1_pickup",
+    "character": "adaeze",
+    "slot": "first_date",
+    "scene": {
+      "location": "mainland_street",
+      "time": "golden",
+      "expression": "suspicious",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "A white Range Rover stops at your Ojuelegba bus stop. Danfo conductors stop shouting to look. The doors stay locked."
+      },
+      {
+        "who": "partner",
+        "text": "Before you get in: surname, state of origin, and your father's profession. In that order."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "engaged": {
+        "id": "t_eng_uncle",
+        "text": "'My uncle says the families are close,' she adds. Which families? You haven't mentioned yours."
+      },
+      "collapsing": {
+        "id": "t_col_rover",
+        "text": "On the windscreen, a sticker you weren't meant to read: 'ASSET FINANCE. DO NOT REMOVE.'"
+      },
+      "tired": {
+        "id": "t_tired_hide",
+        "text": "Her phone rings: 'Mummy'. She declines it. 'Don't take it personally. I'm hiding you on purpose.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "honest",
+        "label": "Tell the truth. Your dad sells phones at Computer Village.",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You told her your father sells phones at Computer Village.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She nods slowly. 'Commerce. Good.' The locks click open.",
+            "attachment": 3,
+            "trust": 6,
+            "set": [
+              {
+                "flag": "honest_pedigree",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "tired": {
+            "text": "She unlocks before you finish. 'A trader's child. Thank God. You know the price of things.'",
+            "attachment": 8,
+            "trust": 10,
+            "set": [
+              {
+                "flag": "honest_pedigree",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "engaged": {
+            "text": "The locks click. Then she texts someone: 'Surname fine. Village not confirmed.' She sees you see it.",
+            "trust": 3,
+            "set": [
+              {
+                "flag": "honest_pedigree",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "title",
+        "label": "Invent a chieftaincy title. 'Ichie' sounds correct.",
+        "receipt": "You invented a chieftaincy title on day one.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The locks open like a palace gate. 'Ichie. Uncle will be pleased.' Uncle will also check.",
+            "attachment": 8,
+            "set": [
+              {
+                "flag": "secret_fake_title",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "tired": {
+            "text": "'Ichie of where?' She looks exhausted. 'Every person I meet is a chief. I wanted a person.' She opens the door anyway.",
+            "attachment": -4,
+            "trust": -5,
+            "set": [
+              {
+                "flag": "secret_fake_title",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "ac_first",
+        "label": "'Ask me inside. The AC is the first agenda item.'",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You told her to ask you inside the car.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She laughs once. Unlocks. 'Fair. Lagos heat is not a negotiation.'",
+            "attachment": 3,
+            "sanity": 5
+          }
+        ]
+      },
+      {
+        "id": "runs_everywhere",
+        "label": "[Runs] 'My people are from everywhere.' Smile.",
+        "vibe": "runs",
+        "receipt": "You told her your people are from everywhere.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "'Interesting CV.' She opens the door. She's smiling at the windscreen, not at you. Progress.",
+            "attachment": 8,
+            "chemistry": 3
+          },
+          {
+            "chance": 0.5,
+            "bad": true,
+            "text": "'Everywhere is nowhere.' She drives one full lap of the roundabout before letting you in.",
+            "trust": -8
+          }
+        ]
+      },
+      {
+        "id": "bigboy_gwagon",
+        "label": "[Big Boy] Point across the road: 'Mine's the G-Wagon.'",
+        "vibe": "bigboy",
+        "receipt": "You flexed your G-Wagon at her Range Rover.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She looks at it. Then at you. 'Leased?' It is. You both laugh. She unlocks.",
+            "attachment": 5,
+            "clout": 5
+          }
+        ],
+        "truth_override": {
+          "tired": {
+            "text": "'Another one.' She drives off. Then reverses. 'Get in. Leave the car. Be a person tonight.'",
+            "attachment": 4,
+            "trust": 3
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ada_d1_boutique",
+    "character": "adaeze",
+    "slot": "first_date",
+    "scene": {
+      "location": "lekki_salon",
+      "time": "afternoon",
+      "expression": "charming",
+      "mood": "positive"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Her flagship boutique on Admiralty Way. Mirrors, mannequins, a security man who salutes. She hands you a garment bag."
+      },
+      {
+        "who": "partner",
+        "text": "Change into this. My people don't date in polo. Then we'll talk."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "engaged": {
+        "id": "t_eng_invite",
+        "text": "Behind the till, a desk calendar: 'SAT 14. INTRODUCTION. ENUGU.' Circled twice, in red."
+      },
+      "collapsing": {
+        "id": "t_col_sale",
+        "text": "Every rack has a red tag: 70% OFF. Even the security man is wearing one."
+      },
+      "tired": {
+        "id": "t_tired_cancel",
+        "text": "Her phone: 'Gala tonight 8pm, Madam?' She types 'Cancel. Something came up.' You are the something."
+      }
+    },
+    "choices": [
+      {
+        "id": "wear",
+        "label": "Wear it. It fits suspiciously well.",
+        "receipt": "You wore the outfit she picked for you.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She walks around you twice. 'Now you look like a decision.'",
+            "attachment": 5,
+            "chemistry": 5
+          }
+        ],
+        "truth_override": {
+          "collapsing": {
+            "text": "It fits. The tag says ₦380k, slashed to ₦114k. 'Keep it,' she says, a bit too quickly.",
+            "attachment": 5,
+            "chemistry": 3
+          }
+        }
+      },
+      {
+        "id": "as_myself",
+        "label": "'I came as myself. Take it or leave it.'",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You refused her outfit and stayed in your polo.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She sighs. 'Fine. But we're eating somewhere dark.'",
+            "attachment": -4,
+            "sanity": 5
+          }
+        ],
+        "truth_override": {
+          "tired": {
+            "text": "She stares. Then laughs. 'Nobody ever says no to the bag.' She hangs it back up herself.",
+            "attachment": 8,
+            "trust": 8
+          }
+        }
+      },
+      {
+        "id": "buy_it",
+        "label": "Insist on paying for it. ₦120k. Pride.",
+        "cost": 120000,
+        "tags": [
+          "luxury"
+        ],
+        "broke_text": "Your account said 'buy polo, it's cheaper'.",
+        "receipt": "You insisted on paying for the outfit.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She lets you. Chidinma texts her: 'Candidate pays.' Uncle will hear by dinner.",
+            "attachment": 8,
+            "clout": 10
+          }
+        ],
+        "truth_override": {
+          "collapsing": {
+            "text": "She takes your card fast. The POS prints 'ACCOUNT UNDER REVIEW', then approves. She exhales like she's been underwater.",
+            "attachment": 10,
+            "set": [
+              {
+                "flag": "paid_boutique",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "tired": {
+            "text": "She refunds you in front of you. 'You don't buy things from me. That's the rule.' Then she kisses your cheek.",
+            "wallet": 120000,
+            "scaled": true,
+            "attachment": 8,
+            "trust": 5
+          }
+        }
+      },
+      {
+        "id": "iron",
+        "label": "Offer to iron it yourself. Free labour.",
+        "tags": [
+          "budget"
+        ],
+        "receipt": "You offered to iron the outfit yourself.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'You're unserious.' She's grinning. 'I like unserious. In small doses.'",
+            "attachment": 4,
+            "chemistry": 2
+          }
+        ]
+      },
+      {
+        "id": "runs_discount",
+        "label": "[Runs] Ask for staff discount. You're basically staff.",
+        "vibe": "runs",
+        "receipt": "You asked for staff discount on day one.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "'Fine. 100% discount. Your salary is also 0%.' She throws in a tie.",
+            "attachment": 6,
+            "chemistry": 3
+          },
+          {
+            "chance": 0.5,
+            "bad": true,
+            "text": "The security man escorts you to the changing room. Then, gently, out.",
+            "attachment": -6
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ada_rf_balcony_call",
+    "character": "adaeze",
+    "slot": "red_flag",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "expression": "suspicious",
+      "mood": "negative",
+      "fx": [
+        "rain"
+      ]
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Her Lekki flat, 10pm. Mid-kiss, her phone: 'Uncle'. She takes it on the balcony, in Igbo, door shut. Forty minutes."
+      },
+      {
+        "who": "partner",
+        "text": "Family business. Don't wait up. Actually, wait up."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "engaged": {
+        "id": "t_eng_ring",
+        "text": "Her handbag is open on the sofa. A velvet ring box. She has never worn a ring around you."
+      },
+      "collapsing": {
+        "id": "t_col_staff",
+        "text": "Her laptop pings on the sofa: 'Ma, salary? It's the third month.' Fourteen unread."
+      },
+      "tired": {
+        "id": "t_tired_hide",
+        "text": "Through the glass: 'No, Uncle. You will not meet this one. Not until I'm sure you'll be kind.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "snoop",
+        "label": "Open the bag. Just one look.",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You went through her handbag.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Lipstick, a power bank, eleven receipts. You feel like a thief who stole nothing.",
+            "sanity": -3
+          }
+        ],
+        "truth_override": {
+          "engaged": [
+            {
+              "chance": 0.6,
+              "text": "A solitaire. Engraved inside: 'A & E. 14.06.' You are not E.",
+              "sanity": -12,
+              "saw_truth": true
+            },
+            {
+              "chance": 0.4,
+              "bad": true,
+              "text": "The balcony door slides open. She sees your hand in her bag. The rain is very loud.",
+              "trust": -20,
+              "expression": "angry",
+              "set": [
+                {
+                  "flag": "secret_bag_snoop",
+                  "knows": [
+                    "player",
+                    "partner"
+                  ]
+                }
+              ]
+            }
+          ],
+          "collapsing": [
+            {
+              "chance": 0.6,
+              "text": "Folded letters: 'NOTICE OF DEFAULT.' Three banks. One landlord. One very angry fabric supplier.",
+              "sanity": -8,
+              "saw_truth": true
+            },
+            {
+              "chance": 0.4,
+              "bad": true,
+              "text": "The balcony door slides open. She sees your hand in her bag. The rain is very loud.",
+              "trust": -20,
+              "expression": "angry",
+              "set": [
+                {
+                  "flag": "secret_bag_snoop",
+                  "knows": [
+                    "player",
+                    "partner"
+                  ]
+                }
+              ]
+            }
+          ],
+          "tired": [
+            {
+              "chance": 0.6,
+              "text": "A notebook. Page one: 'Things I like about this one.' Your name, underlined twice. You put it back, ashamed.",
+              "sanity": -5
+            },
+            {
+              "chance": 0.4,
+              "bad": true,
+              "text": "She catches you. She doesn't shout. She just looks tired.",
+              "trust": -20,
+              "set": [
+                {
+                  "flag": "secret_bag_snoop",
+                  "knows": [
+                    "player",
+                    "partner"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "wait",
+        "label": "Wait up. Like she said.",
+        "tags": [
+          "excuse",
+          "discreet"
+        ],
+        "receipt": "You waited up and didn't ask about the call.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She comes back at eleven and kisses you like an apology for something she won't name.",
+            "attachment": 5,
+            "sanity": -10
+          }
+        ]
+      },
+      {
+        "id": "ask",
+        "label": "'Who's Uncle, and why is he forty minutes?'",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked her about the forty-minute call.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Family.' One word. She sits closer, which is an answer and also isn't.",
+            "attachment": 2
+          }
+        ],
+        "truth_override": {
+          "engaged": {
+            "text": "'Uncle Obiora manages... family plans.' She changes the subject to your shoes. Your shoes are fine.",
+            "sanity": -5
+          },
+          "collapsing": {
+            "text": "'He's my guarantor.' She hears herself. 'For the boutique. It's nothing. It's handled.'",
+            "sanity": -3
+          },
+          "tired": {
+            "text": "'He thinks I should marry a bank. I think I should eat amala with you.' She means both sentences.",
+            "attachment": 5,
+            "trust": 8
+          }
+        }
+      },
+      {
+        "id": "leave",
+        "label": "Leave. She can call when she's done.",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You left while she was on the call.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You're in a keke at the Phase 1 gate when she texts: 'That was rude. Also fair.'",
+            "attachment": -4,
+            "sanity": 5
+          }
+        ]
+      },
+      {
+        "id": "amala_run",
+        "label": "Order amala from Ojuelegba. She'll be hungry.",
+        "requires": {
+          "flags": [
+            "knows_amala"
+          ]
+        },
+        "cost": 8000,
+        "receipt": "You ordered her secret amala while she was on the call.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She comes back to amala on the coffee table. Stops in the doorway. 'You remembered.' She eats with her hands.",
+            "attachment": 10,
+            "trust": 8,
+            "chemistry": 3
+          }
+        ]
+      },
+      {
+        "id": "lover_soup",
+        "label": "[Lover] Make pepper soup while you wait.",
+        "vibe": "lover",
+        "receipt": "You made her pepper soup during her call.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She comes back to pepper soup. Stops in the doorway. 'Who taught you to do this?' Your mother. Thank her.",
+            "attachment": 8,
+            "chemistry": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ada_rf_review",
+    "character": "adaeze",
+    "slot": "red_flag",
+    "presentation": "text",
+    "scene": {
+      "location": "mainland_street",
+      "time": "morning",
+      "expression": "charming",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "7:02am, an email. Subject: 'Q1 Relationship Review (CONFIDENTIAL).' From: Chidinma, PA to Adaeze."
+      },
+      {
+        "who": "Chidinma",
+        "text": "Strengths: punctual-ish. Development areas: shoes, your 'lol'. Rating: Meets Expectations. Kindly sign and return."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "engaged": {
+        "id": "t_eng_invite",
+        "text": "Attached by mistake: a calendar invite. 'Introduction ceremony, Enugu. Attendees: Adaeze, Ebuka N., both families.'"
+      },
+      "collapsing": {
+        "id": "t_col_staff",
+        "text": "CC'd by accident: a thread titled 'Ma, salary?' with 23 replies."
+      },
+      "tired": {
+        "id": "t_tired_test",
+        "text": "Section 3, in her own handwriting: 'Salary: modest. Notes: GOOD. DO NOT LET UNCLE SEE.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "sign",
+        "label": "Sign and return. Meets Expectations is a pass.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You signed your own relationship review.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Chidinma: 'Received with thanks.' Adaeze sends a heart, which in her company is a promotion.",
+            "attachment": 6,
+            "sanity": -5
+          }
+        ]
+      },
+      {
+        "id": "review_her",
+        "label": "Reply with your own review of her.",
+        "receipt": "You sent her a performance review back.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "She replies at 7:40: 'Development area: humility. Fair.' Then a voice note of her laughing.",
+            "attachment": 8,
+            "chemistry": 3
+          },
+          {
+            "chance": 0.4,
+            "bad": true,
+            "text": "You hit reply-all. Her uncle, her banker and her pastor now know her 'listening score'.",
+            "trust": -10,
+            "exposure": 10
+          }
+        ]
+      },
+      {
+        "id": "call",
+        "label": "Call her: 'What's this attachment?'",
+        "tags": [
+          "cautious",
+          "contact_partner"
+        ],
+        "receipt": "You called her about the attachment.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Admin error.' Pause. 'Chidinma will be spoken to.'",
+            "sanity": -3
+          }
+        ],
+        "truth_override": {
+          "engaged": {
+            "text": "'It's a family event. Everybody's introduction. Not mine. Mostly.' Mostly.",
+            "sanity": -8
+          },
+          "collapsing": {
+            "text": "'What thread?' Silence. 'Don't read things that aren't for you.' She hangs up first.",
+            "sanity": -5
+          },
+          "tired": {
+            "text": "'Oh God. Section 3.' She laughs till she coughs. 'Yes. Modest is the point. Don't you dare change.'",
+            "attachment": 5,
+            "trust": 8
+          }
+        }
+      },
+      {
+        "id": "ignore",
+        "label": "Leave it on read. Let HR chase you.",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You left her PA's review on read.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Chidinma follows up at 9am, 11am and 2pm. 'Gentle reminder.' Then 'Firm reminder.'",
+            "attachment": -3,
+            "sanity": 5
+          }
+        ]
+      },
+      {
+        "id": "father",
+        "label": "'You don't have to run us like your father ran yours.'",
+        "requires": {
+          "flags": [
+            "knows_father_minutes"
+          ]
+        },
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You told her she doesn't have to run you like her father did.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "No reply for an hour. Then: 'Chidinma, cancel the reviews. All of them.' Then, to you: 'Thank you.'",
+            "attachment": 6,
+            "trust": 8
+          }
+        ],
+        "truth_override": {
+          "tired": {
+            "text": "She calls. She's crying a bit. 'Nobody's ever said it.' Chidinma is quietly reassigned to inventory.",
+            "attachment": 10,
+            "trust": 12
+          }
+        }
+      },
+      {
+        "id": "corp_track",
+        "label": "[Corporate] Return it with tracked changes. Upgrade yourself.",
+        "vibe": "corporate",
+        "receipt": "You tracked-changed your own review to 'Exceeds'.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Chidinma escalates. Adaeze approves every change. You are now 'Exceeds Expectations'. She's in love with your formatting.",
+            "attachment": 10,
+            "trust": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ada_rf_investigator",
+    "character": "adaeze",
+    "slot": "red_flag",
+    "scene": {
+      "location": "mainland_street",
+      "time": "afternoon",
+      "expression": "suspicious",
+      "mood": "neutral",
+      "partner_present": false,
+      "npc": {
+        "name": "Mr Lawal"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "A man in a brown suit is waiting at your bus stop in Yaba. He has a clipboard and your secondary school photo."
+      },
+      {
+        "who": "Mr Lawal",
+        "text": "Family due diligence. Twelve questions. You may decline. It will be noted."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "engaged": {
+        "id": "t_eng_uncle",
+        "text": "His letterhead: 'Retained by Obiora & Co., on behalf of the families.' Families. Plural."
+      },
+      "collapsing": {
+        "id": "t_col_rover",
+        "text": "He came in her Range Rover. On the back glass: 'ASSET FINANCE. REPOSSESSION HOTLINE.'"
+      },
+      "tired": {
+        "id": "t_tired_test",
+        "text": "Question 12 is handwritten, in her writing: 'Are they kind to waiters?'"
+      }
+    },
+    "choices": [
+      {
+        "id": "answer",
+        "label": "Answer all twelve. Nothing to hide.",
+        "receipt": "You answered the family investigator's twelve questions.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Lawal shakes your hand. 'Clean. Boring. Recommended.'",
+            "attachment": 5,
+            "trust": 5
+          }
+        ],
+        "truth_override": {
+          "engaged": {
+            "text": "Lawal closes the clipboard. 'Clean. Pity.' You ask what that means. He's already in the car.",
+            "trust": 3,
+            "sanity": -5
+          },
+          "tired": {
+            "text": "That night: 'Lawal says you bought him Fanta. I'm sorry I sent him. I needed to know before I let myself like you.'",
+            "attachment": 6,
+            "trust": 10
+          }
+        }
+      },
+      {
+        "id": "decline",
+        "label": "'Tell her to ask me herself.'",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You refused the investigator and told her to ask you herself.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He writes 'UNCOOPERATIVE' in capitals. That night she calls you herself. Progress, apparently.",
+            "attachment": -3,
+            "trust": 5
+          }
+        ],
+        "truth_override": {
+          "tired": {
+            "text": "She calls in ten minutes. 'You're right. That was my uncle's method. I'm sorry. Ask me anything back.'",
+            "attachment": 5,
+            "trust": 10
+          }
+        }
+      },
+      {
+        "id": "bribe",
+        "label": "Slip him ₦20k: 'Write something nice.'",
+        "cost": 20000,
+        "receipt": "You bribed the family investigator.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "He writes 'Excellent family. Very tall.' You are not tall.",
+            "attachment": 6,
+            "set": [
+              {
+                "flag": "secret_bribed_pi",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          },
+          {
+            "chance": 0.4,
+            "bad": true,
+            "text": "He pockets it and writes 'Attempted bribery (₦20k).' Underlined. Twice.",
+            "trust": -12,
+            "set": [
+              {
+                "flag": "secret_bribed_pi",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "walk",
+        "label": "Put in your earphones. Board the danfo.",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You boarded a danfo and left the investigator standing.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He chases the danfo for a full bus stop, clipboard flapping. The conductor charges him anyway.",
+            "attachment": -3,
+            "sanity": 5,
+            "clout": 5
+          }
+        ]
+      },
+      {
+        "id": "runs_back",
+        "label": "[Runs] Investigate him back. Who pays his fuel?",
+        "vibe": "runs",
+        "receipt": "You investigated the investigator.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Lawal's fuel is paid by a family account. Not hers.",
+            "sanity": 3
+          }
+        ],
+        "truth_override": {
+          "engaged": {
+            "text": "Lawal's invoice is addressed to 'The Nwosu–Obi merger committee'. Merger. With a groom.",
+            "saw_truth": true
+          },
+          "collapsing": {
+            "text": "Lawal hasn't been paid in two months either. 'Join the queue,' he says.",
+            "saw_truth": true
+          },
+          "tired": {
+            "text": "Lawal shows you his WhatsApp: she paid him personally, with a note: 'Be gentle. I like this one.'",
+            "trust": 5
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ada_rf_shutters",
+    "character": "adaeze",
+    "slot": "red_flag",
+    "scene": {
+      "location": "lekki_salon",
+      "time": "afternoon",
+      "expression": "caught",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "2pm, Admiralty Way. Her boutique's shutters are half down. This morning she said she'd be 'in board meetings all day'."
+      },
+      {
+        "who": "partner",
+        "text": "Busy busy. Board. Talk tonight. xx"
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "engaged": {
+        "id": "t_eng_invite",
+        "text": "Through the glass, a tailor is pinning her into ivory lace. Introduction-ceremony ivory."
+      },
+      "collapsing": {
+        "id": "t_col_sale",
+        "text": "On the glass: 'EVERYTHING 70% OFF. FINAL DAYS.' A man is carrying out a mannequin 'for balance'."
+      },
+      "tired": {
+        "id": "t_tired_cancel",
+        "text": "On the counter: a gala invitation, torn in half. Beside it, two amala takeaway packs. Two."
+      }
+    },
+    "choices": [
+      {
+        "id": "knock",
+        "label": "Knock on the glass. Wave.",
+        "receipt": "You knocked on her boutique window.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She freezes. Then lifts the shutter.",
+            "attachment": 3
+          }
+        ],
+        "truth_override": {
+          "engaged": {
+            "text": "She steps out of the lace like it's hot. 'It's for a cousin.' The tailor says, 'Ma, your own measurements?'",
+            "sanity": -8
+          },
+          "collapsing": {
+            "text": "She lets you in. Sits on the floor between empty rails. 'Fine. You've seen it. Don't look at me like that.'",
+            "trust": 6,
+            "saw_truth": true
+          },
+          "tired": {
+            "text": "She lifts the shutter holding the second pack. 'I was about to call you. It's amala o. Not gala.'",
+            "attachment": 10,
+            "trust": 6
+          }
+        }
+      },
+      {
+        "id": "walk_on",
+        "label": "Keep walking. Busy is busy.",
+        "tags": [
+          "excuse",
+          "discreet"
+        ],
+        "receipt": "You walked past her half-shut boutique.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You buy a Fanta you don't want and drink it at the bus stop, thinking.",
+            "attachment": 3,
+            "sanity": -5
+          }
+        ]
+      },
+      {
+        "id": "photo",
+        "label": "Take a photo. Evidence for later.",
+        "receipt": "You photographed her boutique through the glass.",
+        "outcomes": [
+          {
+            "chance": 0.7,
+            "text": "Saved. Your gallery now has a folder called 'Adaeze (Evidence)'.",
+            "sanity": -3,
+            "set": [
+              {
+                "flag": "secret_shutter_photo",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          },
+          {
+            "chance": 0.3,
+            "bad": true,
+            "text": "Flash on. Broad daylight. She looks up, straight into your lens.",
+            "trust": -10,
+            "set": [
+              {
+                "flag": "secret_shutter_photo",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "post",
+        "label": "Post it: 'Board meeting, abi? 👀'",
+        "tags": [
+          "toxic",
+          "public_embarrassment"
+        ],
+        "receipt": "You posted her boutique's shutters online.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The Parlour zooms in. Nobody knows what they're looking at, so they make things up.",
+            "clout": 10,
+            "exposure": 15,
+            "sanity": -10
+          }
+        ],
+        "truth_override": {
+          "collapsing": {
+            "text": "The Parlour zooms in on the 70% sign: 'ADA BOUTIQUE IS FINISHED.' Her suppliers screenshot it by evening.",
+            "clout": 20,
+            "exposure": 15,
+            "saw_truth": true,
+            "truth_exposed": true,
+            "goal": {
+              "revenge": 30
+            },
+            "sanity": -10
+          },
+          "engaged": {
+            "text": "Someone zooms in on the lace: 'Bride loading? 👰🏾' Her aunties like it. All of them.",
+            "clout": 15,
+            "exposure": 15,
+            "saw_truth": true,
+            "truth_exposed": true,
+            "goal": {
+              "revenge": 30
+            },
+            "sanity": -10
+          }
+        }
+      },
+      {
+        "id": "sunday",
+        "label": "Ask Sunday Okon the security man what's happening.",
+        "requires": {
+          "flags": [
+            "knows_sunday_okon"
+          ]
+        },
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked Sunday the security man what was going on.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Oga/Madam, I no fit talk.' Then he talks for twenty minutes.",
+            "sanity": -3
+          }
+        ],
+        "truth_override": {
+          "engaged": {
+            "text": "'Na fitting, for her introduction. The groom family dey come Saturday.' He looks sorry for you.",
+            "sanity": -10,
+            "saw_truth": true
+          },
+          "collapsing": {
+            "text": "'Three months salary, nobody pay. But Madam dey try. She sell her own car last week.' He salutes the empty window.",
+            "saw_truth": true,
+            "trust": 4
+          },
+          "tired": {
+            "text": "'She cancel gala again. Na you she dey wait for. Go inside, abeg, the amala don cold.'",
+            "attachment": 8,
+            "trust": 8
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ada_mt_series_a",
+    "character": "adaeze",
+    "slot": "money_trap",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "afternoon",
+      "expression": "charming",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Her flat. A pitch deck on the TV. Slide 1: 'ADA BOUTIQUE: SERIES A.' Slide 2 is a photo of you."
+      },
+      {
+        "who": "partner",
+        "text": "Minimum ticket ₦500k. Five percent of the company. Chidinma has the DocuSign ready."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "engaged": {
+        "id": "t_eng_uncle",
+        "text": "Slide 9, 'Strategic Partners': 'The Nwosu family (merger pending).' Her uncle's name is in the footnote."
+      },
+      "collapsing": {
+        "id": "t_col_staff",
+        "text": "Her phone on the table: 'Ma, salary? We are at your gate.' She turns it over without looking."
+      },
+      "tired": {
+        "id": "t_tired_test",
+        "text": "Slide 7 is just your salary, circled: 'Too small to invest. Perfect.' She clicks past it, embarrassed."
+      }
+    },
+    "choices": [
+      {
+        "id": "invest",
+        "label": "Invest ₦500k. Equity is equity.",
+        "cost": 500000,
+        "tags": [
+          "luxury"
+        ],
+        "broke_text": "Your account is pre-seed. Pre-pre-seed.",
+        "receipt": "You invested ₦500k in her boutique.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Signed. You own five percent of something.",
+            "attachment": 8
+          }
+        ],
+        "truth_override": {
+          "engaged": [
+            {
+              "chance": 0.5,
+              "text": "Two weeks later her uncle buys you out at ₦900k 'ahead of the merger'. The merger is her wedding.",
+              "wallet": 900000,
+              "scaled": true,
+              "saw_truth": true,
+              "attachment": -5
+            },
+            {
+              "chance": 0.5,
+              "bad": true,
+              "tricked": true,
+              "text": "Your ₦500k becomes a 'family contribution' to the introduction. You're thanked in the programme. Page 4.",
+              "sanity": -25,
+              "saw_truth": true
+            }
+          ],
+          "collapsing": {
+            "tricked": true,
+            "bad": true,
+            "text": "Your ₦500k clears two months of salary arrears. Your five percent is of a company with no stock. 'I'll pay you back.' She means it. She can't.",
+            "sanity": -25,
+            "attachment": 12,
+            "set": [
+              {
+                "flag": "funded_her",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "tired": {
+            "text": "She tears up the DocuSign. 'I wanted to see if you'd do it. Never do it. Keep your money.' She refunds every kobo.",
+            "wallet": 500000,
+            "scaled": true,
+            "attachment": 15,
+            "trust": 10
+          }
+        }
+      },
+      {
+        "id": "angel",
+        "label": "Offer ₦20k. 'Angel round.'",
+        "cost": 20000,
+        "tags": [
+          "budget"
+        ],
+        "receipt": "You offered her a ₦20k angel round.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Chidinma logs you as 'Friends & Family, Tier 4'. Adaeze is trying not to laugh.",
+            "attachment": 3
+          }
+        ],
+        "truth_override": {
+          "collapsing": {
+            "text": "She takes it. It goes straight to the security man's salary. He salutes you every time now.",
+            "attachment": 6,
+            "set": [
+              {
+                "flag": "funded_her",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "audit",
+        "label": "'Send me the audited accounts first.'",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked for her audited accounts.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She sends audited accounts. They are audited. You're impressed and slightly attracted.",
+            "trust": 5
+          }
+        ],
+        "truth_override": {
+          "engaged": {
+            "text": "Clean accounts. Note 14: 'Proposed marriage-linked merger, Q3.' You read Note 14 three times.",
+            "sanity": -5,
+            "saw_truth": true
+          },
+          "collapsing": {
+            "text": "The accounts arrive three days late, unaudited, watermarked DRAFT. Revenue: 'pending'.",
+            "attachment": -5,
+            "saw_truth": true
+          },
+          "tired": {
+            "text": "She sends them in four minutes. 'Thank you for asking. Nobody asks. They just pay or they don't.'",
+            "attachment": 6,
+            "trust": 10
+          }
+        }
+      },
+      {
+        "id": "no_mix",
+        "label": "'I don't mix money and love.'",
+        "receipt": "You told her you don't mix money and love.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She closes the laptop. 'Noted.' The temperature in the flat drops two degrees.",
+            "attachment": -5,
+            "sanity": 5
+          }
+        ],
+        "truth_override": {
+          "tired": {
+            "text": "'Good. Neither do I. That was a test.' She closes the laptop. 'Let's eat. You pick.'",
+            "attachment": 5,
+            "trust": 8
+          }
+        }
+      },
+      {
+        "id": "confess",
+        "label": "Confess: 'My salary isn't what I told you.'",
+        "requires": {
+          "flags": [
+            "secret_inflated_salary"
+          ]
+        },
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You confessed you'd inflated your salary.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She blinks. 'Thank you for telling me before it cost you.' She deletes slide 2.",
+            "attachment": -2,
+            "trust": 8
+          }
+        ],
+        "truth_override": {
+          "tired": {
+            "text": "She laughs till she cries. 'I knew at dinner. I was waiting to see if you'd say it.'",
+            "attachment": 8,
+            "trust": 12
+          }
+        }
+      },
+      {
+        "id": "liquidity",
+        "label": "'Liquidity-challenged, you said. Show me the cashflow.'",
+        "requires": {
+          "flags": [
+            "knows_liquidity"
+          ]
+        },
+        "tags": [
+          "call_out"
+        ],
+        "receipt": "You asked about the liquidity joke she'd made.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She stops the slideshow. 'You remember everything.' It's not clear if that's good.",
+            "trust": 3
+          }
+        ],
+        "truth_override": {
+          "collapsing": {
+            "text": "She sits down. 'Three months of payroll. Two banks. One Range Rover I don't own.' Finally, the real deck.",
+            "saw_truth": true,
+            "trust": 8,
+            "attachment": 4
+          },
+          "tired": {
+            "text": "'It was a joke, but yes, my accountant hates me.' She shows you everything. It's fine. She's just dramatic.",
+            "trust": 8
+          }
+        }
+      },
+      {
+        "id": "bigboy_board",
+        "label": "[Big Boy] Counter: ₦250k for a board seat.",
+        "vibe": "bigboy",
+        "cost": 250000,
+        "tags": [
+          "luxury"
+        ],
+        "receipt": "You bought a board seat for ₦250k.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Your first board meeting is dinner. Your second is breakfast. You're not complaining.",
+            "attachment": 10,
+            "clout": 10
+          }
+        ],
+        "truth_override": {
+          "collapsing": {
+            "tricked": true,
+            "bad": true,
+            "text": "You're on the board of a company in receivership. Your first meeting is with the bank.",
+            "sanity": -10,
+            "saw_truth": true,
+            "set": [
+              {
+                "flag": "funded_her",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ada_mt_aso_ebi",
+    "character": "adaeze",
+    "slot": "money_trap",
+    "presentation": "text",
+    "scene": {
+      "location": "lekki_salon",
+      "time": "afternoon",
+      "expression": "charming",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "A WhatsApp broadcast from Chidinma: 'ASO-EBI FOR THE FAMILY EVENT. ₦180k per head. Gele not included. Pay by Friday.'"
+      },
+      {
+        "who": "partner",
+        "text": "Wear it. Uncle notices who didn't."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "engaged": {
+        "id": "t_eng_invite",
+        "text": "The flyer: 'Introduction Ceremony. Adaeze & —' The rest is cropped. Badly. You can see an 'E'."
+      },
+      "collapsing": {
+        "id": "t_col_staff",
+        "text": "The account number is the boutique's. Payment reference: 'SALARY ARREARS (ASO-EBI)'."
+      },
+      "tired": {
+        "id": "t_tired_hide",
+        "text": "A second text from her, private: 'Don't buy it. Don't come. I'm not ready to feed you to them.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "pay",
+        "label": "Pay ₦180k. Family is family.",
+        "cost": 180000,
+        "tags": [
+          "luxury"
+        ],
+        "broke_text": "Your account said 'which family? Not this one.'",
+        "receipt": "You paid ₦180k for aso-ebi.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Paid. The fabric is gorgeous. The aunties will rate you.",
+            "attachment": 8,
+            "clout": 5
+          }
+        ],
+        "truth_override": {
+          "engaged": {
+            "text": "Paid. Your aso-ebi arrives with a name tag: 'Groom's Friends'. The groom is not you.",
+            "sanity": -20,
+            "saw_truth": true
+          },
+          "collapsing": {
+            "tricked": true,
+            "bad": true,
+            "text": "Paid. No fabric arrives. Chidinma: 'Production delays.' Eleven cousins asked the same thing in the group.",
+            "sanity": -10,
+            "set": [
+              {
+                "flag": "funded_her",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "tired": {
+            "text": "She refunds it in five minutes with a voice note: 'I said don't. You're so stubborn. I like it, I hate it.'",
+            "wallet": 180000,
+            "scaled": true,
+            "attachment": 10,
+            "trust": 5
+          }
+        }
+      },
+      {
+        "id": "balogun",
+        "label": "Buy similar fabric at Balogun. ₦15k.",
+        "cost": 15000,
+        "tags": [
+          "budget"
+        ],
+        "receipt": "You bought lookalike aso-ebi at Balogun.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Close enough from far. The aunties at the back say 'is it the same?' for an hour.",
+            "attachment": 3,
+            "clout": 3
+          }
+        ]
+      },
+      {
+        "id": "whose",
+        "label": "'Whose event is this, exactly?'",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked whose event the aso-ebi was for.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Family.' Typing. Stops. Typing. 'It's complicated.'",
+            "sanity": -3
+          }
+        ],
+        "truth_override": {
+          "engaged": {
+            "text": "'A cousin's.' Typing. Stops. Typing. 'It's mine on paper. Don't come. Please.'",
+            "sanity": -10,
+            "saw_truth": true
+          },
+          "collapsing": {
+            "text": "'Mine. The company's. Just pay if you're paying. Sorry. Long week.'",
+            "sanity": -5
+          },
+          "tired": {
+            "text": "'Uncle's. He's hosting a lineup of suitable bachelors for me. I'm hiding you from it, on purpose.'",
+            "attachment": 5,
+            "trust": 8
+          }
+        }
+      },
+      {
+        "id": "mute",
+        "label": "Mute the broadcast. You have no fabric money.",
+        "receipt": "You muted the aso-ebi broadcast.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Muted. Chidinma notices. Chidinma notices everything.",
+            "attachment": -3,
+            "sanity": 5
+          }
+        ]
+      },
+      {
+        "id": "fourteenth",
+        "label": "'Is this the family thing on the 14th?'",
+        "requires": {
+          "flags": [
+            "knows_fourteenth"
+          ]
+        },
+        "tags": [
+          "call_out"
+        ],
+        "receipt": "You connected the aso-ebi to her 14th.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Read. No reply. Then: 'Yes. I'll explain in person.'",
+            "sanity": -3
+          }
+        ],
+        "truth_override": {
+          "engaged": {
+            "text": "A long pause. 'Yes. It's my introduction. To a man my uncle picked. I was going to tell you.' Were you?",
+            "saw_truth": true,
+            "sanity": -10,
+            "trust": 3
+          },
+          "tired": {
+            "text": "'Yes. Uncle's bachelor parade. I'm skipping it to eat amala with you. That's the plan.'",
+            "attachment": 6,
+            "trust": 8
+          }
+        }
+      },
+      {
+        "id": "sugar_mine",
+        "label": "[Sugar] 'Who's sponsoring MY aso-ebi?'",
+        "vibe": "sugar",
+        "receipt": "You asked her to sponsor your aso-ebi.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "She sends the fabric, the gele and ₦20k for the tailor. 'Don't embarrass me.'",
+            "wallet": 20000,
+            "attachment": 3
+          },
+          {
+            "chance": 0.5,
+            "bad": true,
+            "text": "'Interesting CV.' Read at 3:14pm. Nothing else, ever, about fabric.",
+            "attachment": -8
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ada_mt_calculator",
+    "character": "adaeze",
+    "slot": "money_trap",
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "night",
+      "expression": "suspicious",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "The bill: ₦240k. She pulls a calculator from her bag. An actual calculator. With a paper roll."
+      },
+      {
+        "who": "partner",
+        "text": "We split by consumption. You had the second bottle and most of the asun."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "engaged": {
+        "id": "t_eng_ring",
+        "text": "She signs with a fountain pen engraved: 'To my future wife. E.' She covers it with her thumb."
+      },
+      "collapsing": {
+        "id": "t_col_staff",
+        "text": "While the POS spins: 'Ma, salary? Even half?' She laughs too loudly at nothing."
+      },
+      "tired": {
+        "id": "t_tired_test",
+        "text": "She types your salary into the calculator, then divides. 'This bill is 40% of your month. Don't you dare.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "pay_all",
+        "label": "Pay the whole thing. Big energy.",
+        "cost": 240000,
+        "tags": [
+          "luxury"
+        ],
+        "broke_text": "Your card asked if you were joking.",
+        "receipt": "You paid the whole ₦240k bill.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She lets you. Chidinma's minutes, later: 'Candidate covered dinner.' Uncle will hear by breakfast.",
+            "attachment": 10,
+            "clout": 5
+          }
+        ],
+        "truth_override": {
+          "collapsing": {
+            "text": "Her card had been declined twice anyway. You've paid her tab, the tip, and last Thursday's. 'I'll make it up to you.'",
+            "attachment": 12,
+            "sanity": -5,
+            "set": [
+              {
+                "flag": "funded_her",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "tired": {
+            "text": "She snatches the POS back. 'I said don't.' She pays. Then kisses you in the lift like it's a hostile takeover.",
+            "wallet": 240000,
+            "scaled": true,
+            "attachment": 12,
+            "trust": 6
+          }
+        }
+      },
+      {
+        "id": "split",
+        "label": "Split by consumption. Produce your own calculator.",
+        "cost": 60000,
+        "tags": [
+          "budget"
+        ],
+        "receipt": "You split the bill by consumption, with your own calculator.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Two calculators, one table. The waiter films it for his status. She's delighted.",
+            "attachment": 6,
+            "chemistry": 3
+          }
+        ]
+      },
+      {
+        "id": "her_treat",
+        "label": "'You invited me. Your treat, abeg.'",
+        "receipt": "You told her it was her treat.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She pays. Minutes: 'Candidate is a cost centre.'",
+            "attachment": -3
+          }
+        ],
+        "truth_override": {
+          "collapsing": {
+            "text": "Declined. Declined. She calls Chidinma, who transfers from her own salary. Nobody speaks in the lift.",
+            "attachment": -5,
+            "sanity": -5
+          },
+          "tired": {
+            "text": "She pays, grinning. 'Finally. Someone who doesn't fight me for the bill to prove something.'",
+            "attachment": 6,
+            "trust": 6
+          }
+        }
+      },
+      {
+        "id": "amala_instead",
+        "label": "'Next time, Ojuelegba amala. My treat. ₦8k.'",
+        "requires": {
+          "flags": [
+            "knows_amala"
+          ]
+        },
+        "tags": [
+          "budget"
+        ],
+        "receipt": "You promised her amala at Ojuelegba next time.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She puts the calculator away. 'Don't tell my mother.' She's already picking a day.",
+            "attachment": 10,
+            "trust": 8,
+            "chemistry": 3
+          }
+        ]
+      },
+      {
+        "id": "runs_dash",
+        "label": "[Runs] 'Fire drill!' Grab her hand. Run.",
+        "vibe": "runs",
+        "receipt": "You tried to dine and dash with an heiress.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "You make it to the lift. She's laughing too hard to run. She goes back and pays, still laughing.",
+            "attachment": 8,
+            "chemistry": 5
+          },
+          {
+            "chance": 0.5,
+            "bad": true,
+            "text": "Security stops you at the lift. Her name is on the reservation. Her name is on everything.",
+            "trust": -10,
+            "exposure": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ada_pd_family_lunch",
+    "character": "adaeze",
+    "slot": "public_drama",
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "afternoon",
+      "expression": "suspicious",
+      "mood": "neutral",
+      "npc": {
+        "name": "Uncle Obiora"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Sunday lunch, Ikoyi. Twelve relatives on one side. One empty chair facing them. Chidinma is taking minutes on an iPad."
+      },
+      {
+        "who": "Uncle Obiora",
+        "text": "Sit. Surname. Village. Intentions. And who are your people in Enugu?"
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "engaged": {
+        "id": "t_eng_uncle",
+        "text": "Uncle raises his zobo: 'To strong families. The Nwosus and the Obis are very, very close.'"
+      },
+      "collapsing": {
+        "id": "t_col_rover",
+        "text": "Uncle, to the whole table: 'Adaeze, your car people called me again. AGAIN.'"
+      },
+      "tired": {
+        "id": "t_tired_test",
+        "text": "When Uncle asks your salary, she answers before you can: 'Enough, Uncle. It's enough.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "greet",
+        "label": "Greet everybody. Kneel. Prostrate. Both, to be safe.",
+        "tags": [
+          "discreet"
+        ],
+        "receipt": "You knelt and prostrated for her whole family.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The aunties approve. Uncle reserves judgement. The minutes say 'adequate knees'.",
+            "attachment": 6,
+            "clout": 5
+          }
+        ],
+        "truth_override": {
+          "engaged": {
+            "text": "An aunty pats your cheek. 'Such manners. Pity. If only you came first.' First.",
+            "attachment": 3,
+            "sanity": -8
+          }
+        }
+      },
+      {
+        "id": "straight",
+        "label": "Answer straight. No titles, no inflation.",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You answered her family straight.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Uncle grunts. 'Honest. Rare.' He writes nothing down, which is good.",
+            "trust": 6
+          }
+        ],
+        "truth_override": {
+          "tired": {
+            "text": "Under the table she grips your hand. In the car: 'You were the only real thing in that room.'",
+            "attachment": 8,
+            "trust": 10
+          }
+        }
+      },
+      {
+        "id": "flip",
+        "label": "Interview them back. 'Uncle, your intentions?'",
+        "tags": [
+          "public_embarrassment"
+        ],
+        "receipt": "You interviewed her uncle back at Sunday lunch.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The cousins scream. Uncle chokes on his zobo. She's trying very hard not to laugh.",
+            "clout": 15,
+            "chemistry": 3
+          }
+        ],
+        "truth_override": {
+          "tired": {
+            "text": "She laughs out loud, in front of them, for the first time in years. Uncle never forgets. Neither does she.",
+            "clout": 15,
+            "attachment": 12
+          }
+        }
+      },
+      {
+        "id": "computer_village",
+        "label": "'Same answer I gave her: Computer Village.'",
+        "requires": {
+          "flags": [
+            "honest_pedigree"
+          ]
+        },
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You told her family your father trades at Computer Village.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Uncle blinks. Then: 'My father sold radios at Ariaria.' The table goes quiet. Good quiet.",
+            "attachment": 5,
+            "trust": 8
+          }
+        ]
+      },
+      {
+        "id": "ichie",
+        "label": "Repeat the chieftaincy title. Commit to the bit.",
+        "requires": {
+          "flags": [
+            "secret_fake_title"
+          ]
+        },
+        "receipt": "You repeated your fake chieftaincy title to her family.",
+        "outcomes": [
+          {
+            "chance": 0.4,
+            "text": "Uncle salutes: 'Ichie!' The cousins bow. You'll be found out. Not today.",
+            "attachment": 8,
+            "clout": 10
+          },
+          {
+            "chance": 0.6,
+            "bad": true,
+            "text": "'Ichie of where? My in-law is from there.' Twelve faces. One fork hits the floor.",
+            "trust": -15,
+            "exposure": 10,
+            "sanity": -25
+          }
+        ]
+      },
+      {
+        "id": "uncle_rules",
+        "label": "Say very little. Eat two full plates.",
+        "requires": {
+          "flags": [
+            "knows_uncle_rules"
+          ]
+        },
+        "receipt": "You said little and ate two plates, like she warned.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Uncle watches you finish plate two. 'This one eats.' From him, that's a blessing.",
+            "attachment": 8,
+            "trust": 6
+          }
+        ]
+      },
+      {
+        "id": "chidinma_stop",
+        "label": "Ask Chidinma to stop typing. Like the first dinner.",
+        "requires": {
+          "flags": [
+            "minutes_off"
+          ]
+        },
+        "receipt": "You asked Chidinma to stop the minutes in front of the family.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Chidinma looks at Adaeze. Adaeze nods. The iPad goes dark. Uncle looks at you like a rival chairman.",
+            "attachment": 6,
+            "trust": 5
+          }
+        ]
+      },
+      {
+        "id": "corp_deck",
+        "label": "[Corporate] Present a one-page deck on yourself.",
+        "vibe": "corporate",
+        "receipt": "You presented a one-page deck on yourself to her family.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Uncle asks for a printed copy. An aunty asks if you're single. Adaeze answers for you.",
+            "attachment": 10,
+            "clout": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ada_pd_rival_bottle",
+    "character": "adaeze",
+    "slot": "public_drama",
+    "scene": {
+      "location": "vi_club_vip",
+      "time": "night",
+      "expression": "suspicious",
+      "mood": "neutral",
+      "npc": {
+        "name": "Ebuka"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "A VIP booth on Ozumba Mbadiwe. A man in white agbada sends over a bottle and a card: 'For Ada. Remember me? Ebuka.'"
+      },
+      {
+        "who": "partner",
+        "text": "Ignore him. Oil money. He thinks I'm a merger."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "engaged": {
+        "id": "t_eng_ring",
+        "text": "Ebuka raises his glass. On his pinky: a band engraved 'A & E'. Matching set. Hers is in her bag."
+      },
+      "collapsing": {
+        "id": "t_col_staff",
+        "text": "Ebuka, loud: 'Ada! I hear your staff are protesting? I can help. Terms apply!'"
+      },
+      "tired": {
+        "id": "t_tired_cancel",
+        "text": "Her phone: 'Gala 10pm, you're the keynote.' She types 'Sick.' She has never looked healthier."
+      }
+    },
+    "choices": [
+      {
+        "id": "send_back",
+        "label": "Send the bottle back with a thank-you note.",
+        "tags": [
+          "discreet"
+        ],
+        "receipt": "You sent the rival's bottle back with a note.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Ebuka reads the note, nods, tips the waiter, leaves. Classy rival. Annoying.",
+            "attachment": 5,
+            "clout": 5
+          }
+        ]
+      },
+      {
+        "id": "outspend",
+        "label": "Send him a bigger bottle. ₦150k. Let him feel it.",
+        "cost": 150000,
+        "tags": [
+          "luxury",
+          "public_embarrassment"
+        ],
+        "broke_text": "Your account is not in this fight.",
+        "receipt": "You sent Ebuka a ₦150k bottle to win the booth.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The VIP section goes 'OHHHH'. Ebuka salutes. You won. She's furious you made it a show.",
+            "clout": 25,
+            "attachment": 3
+          }
+        ],
+        "truth_override": {
+          "engaged": {
+            "text": "Ebuka laughs. 'I like this one, Ada. Bring them to the wedding.' Wedding.",
+            "clout": 15,
+            "sanity": -10,
+            "saw_truth": true
+          }
+        }
+      },
+      {
+        "id": "suya",
+        "label": "Send him ₦2k suya 'with compliments'.",
+        "cost": 2000,
+        "tags": [
+          "budget"
+        ],
+        "receipt": "You sent the rival a ₦2k suya.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The suya lands on his table. The whole VIP laughs. Even Ebuka eats it.",
+            "clout": 10,
+            "chemistry": 3,
+            "attachment": 3
+          }
+        ]
+      },
+      {
+        "id": "ask_him",
+        "label": "Walk over: 'Ebuka. What's the merger?'",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You asked Ebuka about the 'merger'.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He smiles. 'Ask her.'",
+            "sanity": -3
+          }
+        ],
+        "truth_override": {
+          "engaged": {
+            "text": "'Our wedding, my friend. Introduction is the 14th. Didn't she tell you?' He seems genuinely sorry.",
+            "sanity": -15,
+            "saw_truth": true
+          },
+          "collapsing": {
+            "text": "'I'm buying her company for the price of a Range Rover. Hers.' He winks. 'Don't worry, I'll keep the staff.'",
+            "sanity": -5,
+            "saw_truth": true
+          },
+          "tired": {
+            "text": "'She turned me down three times. Congratulations, I suppose.' He means it. He buys you a drink.",
+            "trust": 5
+          }
+        }
+      },
+      {
+        "id": "dance",
+        "label": "Pull her to the dance floor. Let him watch.",
+        "receipt": "You danced with her in front of the rival.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Three songs. Ebuka leaves after one. She forgets he exists after two.",
+            "attachment": 8,
+            "chemistry": 5,
+            "exposure": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ada_pd_friends",
+    "character": "adaeze",
+    "slot": "public_drama",
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "afternoon",
+      "expression": "charming",
+      "mood": "positive"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "You booked a table for two. She arrives with four friends, Chidinma, and a cousin 'visiting from London'."
+      },
+      {
+        "who": "partner",
+        "text": "They wanted to see you. Order anything. You're hosting, abi?"
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "engaged": {
+        "id": "t_eng_invite",
+        "text": "One friend, loud: 'So is it gold or ivory on the 14th?' Everyone kicks her under the table."
+      },
+      "collapsing": {
+        "id": "t_col_sale",
+        "text": "All her friends wear her boutique's dresses. One still has the 70% OFF tag on the sleeve."
+      },
+      "tired": {
+        "id": "t_tired_test",
+        "text": "Her friends ask your salary in turns. She glares at each one. 'Stop it. That's not why.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "host",
+        "label": "Order for the whole table. ₦200k. Pride.",
+        "cost": 200000,
+        "tags": [
+          "luxury"
+        ],
+        "broke_text": "Your account refuses to host London.",
+        "receipt": "You hosted her friends for ₦200k.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The friends approve loudly. The London cousin asks for your number 'for business'.",
+            "clout": 15,
+            "attachment": 8
+          }
+        ]
+      },
+      {
+        "id": "small_chops",
+        "label": "'Small chops for the table. Mains are split.'",
+        "cost": 30000,
+        "tags": [
+          "budget"
+        ],
+        "receipt": "You bought small chops and split the mains.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Puff-puff diplomacy. The friends respect a budget. Adaeze respects a spreadsheet.",
+            "attachment": 4,
+            "trust": 3
+          }
+        ]
+      },
+      {
+        "id": "two",
+        "label": "'I booked for two. I'll wait for the two.'",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You told her you'd wait for the table for two.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She sends the friends to the bar. They're offended. She's intrigued.",
+            "attachment": -3,
+            "trust": 5
+          }
+        ],
+        "truth_override": {
+          "tired": {
+            "text": "She sends them to another table. 'Thank you. They've scared off four people this year.'",
+            "attachment": 6,
+            "trust": 10
+          }
+        }
+      },
+      {
+        "id": "grilled",
+        "label": "Let them grill you. Every question. Keep smiling.",
+        "receipt": "You let her friends grill you for three hours.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Three hours. Your exes, your rent, your mother's maiden name. You pass. You also need to lie down for a week.",
+            "attachment": 10,
+            "clout": 10,
+            "sanity": -35,
+            "exposure": 10
+          }
+        ],
+        "truth_override": {
+          "tired": {
+            "text": "Three hours. You pass. In the car she says, 'Nobody's ever sat through all of it.' You're too tired to answer.",
+            "attachment": 12,
+            "trust": 6,
+            "sanity": -30
+          },
+          "engaged": {
+            "text": "Three hours. Question 41: 'Would you attend a wedding as a guest?' Everyone goes quiet. You need to lie down.",
+            "attachment": 6,
+            "sanity": -40,
+            "exposure": 10
+          }
+        }
+      },
+      {
+        "id": "charm",
+        "label": "Win the friends over. Ignore her a little.",
+        "receipt": "You charmed her friends.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "The group chat votes. You pass, 4-1. The London cousin abstains.",
+            "clout": 10,
+            "attachment": 6
+          },
+          {
+            "chance": 0.5,
+            "bad": true,
+            "text": "One friend likes you a bit too much. She notices. Everyone notices.",
+            "trust": -8
+          }
+        ]
+      },
+      {
+        "id": "sugar_london",
+        "label": "[Sugar] Ask the London cousin for transport.",
+        "vibe": "sugar",
+        "receipt": "You asked her London cousin for transport money.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "£20 lands. The cousin says 'I like this one.' Adaeze pretends to be appalled.",
+            "wallet": 25000,
+            "clout": 5
+          },
+          {
+            "chance": 0.5,
+            "bad": true,
+            "text": "The cousin sends the screenshot to the group. Adaeze's face says 'item 6: decorum'.",
+            "attachment": -8,
+            "exposure": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ada_cf_engaged",
+    "character": "adaeze",
+    "slot": "confrontation",
+    "requires": {
+      "truth": [
+        "engaged"
+      ]
+    },
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "night",
+      "expression": "caught",
+      "mood": "negative",
+      "npc": {
+        "name": "Ebuka"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Dinner. A man in a perfect agbada walks to your table and kisses her hand. There's a ring on it now."
+      },
+      {
+        "who": "Ebuka",
+        "text": "Good evening. I'm Ebuka. Her fiancé. And you must be the... consultant?"
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "engaged": {
+        "id": "t_eng_ring",
+        "text": "The ring from her bag is on her finger. She keeps turning it, like she's trying to unscrew it."
+      }
+    },
+    "choices": [
+      {
+        "id": "paper",
+        "label": "'Is it on paper, or in your heart?'",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked her if the engagement was paper or heart.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She looks at Ebuka. Then at you. 'Paper. My uncle's paper.' Ebuka sits down, very slowly.",
+            "trust": 10,
+            "attachment": 8,
+            "saw_truth": true
+          }
+        ]
+      },
+      {
+        "id": "leave",
+        "label": "Leave your share on the table. Walk out.",
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You paid your share and walked out on her and her fiancé.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You leave ₦20k under the salt. She follows you to the lift. You let the doors close.",
+            "end": "walked_away",
+            "sanity": 10,
+            "saw_truth": true
+          }
+        ]
+      },
+      {
+        "id": "buy_out",
+        "label": "'Ebuka. Buy me out. Like you're buying her.'",
+        "receipt": "You asked her fiancé to buy you out.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "Ebuka writes a cheque without blinking. ₦800k, 'consultancy'. She looks at you like you've sold her. You have.",
+            "wallet": 800000,
+            "saw_truth": true,
+            "attachment": -20
+          },
+          {
+            "chance": 0.4,
+            "bad": true,
+            "text": "'I don't pay for things I already own.' He says it to you. He's looking at her.",
+            "sanity": -25,
+            "saw_truth": true
+          }
+        ]
+      },
+      {
+        "id": "announce",
+        "label": "Tell the whole terrace she's two-timing.",
+        "tags": [
+          "toxic",
+          "public_embarrassment"
+        ],
+        "receipt": "You announced her engagement to the whole restaurant.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Forty phones come out. Uncle's driver is in the car park by dessert. 'Heiress Gate' is trending by midnight.",
+            "clout": 20,
+            "exposure": 25,
+            "bond": -20,
+            "saw_truth": true,
+            "truth_exposed": true,
+            "goal": {
+              "revenge": 40
+            },
+            "sanity": -20
+          }
+        ]
+      },
+      {
+        "id": "fourteenth",
+        "label": "'The 14th. You said family thing. This is the thing.'",
+        "requires": {
+          "flags": [
+            "knows_fourteenth"
+          ]
+        },
+        "tags": [
+          "call_out"
+        ],
+        "receipt": "You reminded her of the 14th.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She takes the ring off and puts it next to the salt. 'I was going to tell you on the 13th.' Ebuka excuses himself.",
+            "saw_truth": true,
+            "trust": 6,
+            "attachment": 6
+          }
+        ]
+      },
+      {
+        "id": "photo",
+        "label": "Show her the lace-fitting photo from Admiralty Way.",
+        "requires": {
+          "flags": [
+            "secret_shutter_photo"
+          ]
+        },
+        "tags": [
+          "call_out"
+        ],
+        "receipt": "You showed her the photo of her ceremony fitting.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She goes pale. 'You knew. And you stayed?' Ebuka looks at her very differently now.",
+            "saw_truth": true,
+            "attachment": 5,
+            "clout": 5
+          }
+        ]
+      },
+      {
+        "id": "pedigree",
+        "label": "'Computer Village, Ebuka. Your people?'",
+        "requires": {
+          "flags": [
+            "honest_pedigree"
+          ]
+        },
+        "receipt": "You introduced yourself to her fiancé with your real pedigree.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Oil.' He sounds bored saying it. She laughs. Not at you. At him. Something has decided itself.",
+            "saw_truth": true,
+            "trust": 6,
+            "attachment": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ada_cf_collapsing",
+    "character": "adaeze",
+    "slot": "confrontation",
+    "requires": {
+      "truth": [
+        "collapsing"
+      ]
+    },
+    "scene": {
+      "location": "lekki_salon",
+      "time": "morning",
+      "expression": "caught",
+      "mood": "negative",
+      "npc": {
+        "name": "Bank officer"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "8am, Admiralty Way. Six staff sitting on the boutique floor. A bank officer holding a padlock."
+      },
+      {
+        "who": "partner",
+        "text": "Please. Lend me ₦500k for payroll. Today. I'll pay you back Friday. I've never said please this much."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "collapsing": {
+        "id": "t_col_rover",
+        "text": "Outside, a tow truck backs up to her Range Rover. 'ASSET FINANCE' on the door."
+      }
+    },
+    "choices": [
+      {
+        "id": "lend",
+        "label": "Lend the ₦500k. The staff need salary.",
+        "cost": 500000,
+        "tags": [
+          "luxury"
+        ],
+        "broke_text": "Your account is also on the floor.",
+        "receipt": "You lent her ₦500k for payroll.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The staff cheer. She cries in the storeroom. You are a hero with no money.",
+            "attachment": 15,
+            "trust": 8,
+            "sanity": -20,
+            "saw_truth": true
+          }
+        ]
+      },
+      {
+        "id": "one_salary",
+        "label": "Pay one person's salary. ₦40k.",
+        "cost": 40000,
+        "tags": [
+          "budget"
+        ],
+        "receipt": "You paid one staff member's salary.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The cashier, Blessing, takes it and hugs you. Adaeze watches like she's learning something.",
+            "attachment": 5,
+            "trust": 4,
+            "saw_truth": true
+          }
+        ]
+      },
+      {
+        "id": "plan",
+        "label": "Sit on the floor with them. Make a plan.",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You sat on the floor and built a rescue plan with her.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Two hours. A clearance sale, a supplier deal, a loan restructure. She looks at you like a co-founder. Then like more.",
+            "trust": 12,
+            "attachment": 10,
+            "saw_truth": true
+          }
+        ]
+      },
+      {
+        "id": "stock",
+        "label": "Offer to buy all her stock. At 10%.",
+        "cost": 100000,
+        "receipt": "You bought her stock at 10% of value.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "You resell it on Instagram in four days. Profit: obscene. She finds out from her own customers.",
+            "wallet": 1000000,
+            "scaled": true,
+            "saw_truth": true,
+            "attachment": -15
+          },
+          {
+            "chance": 0.4,
+            "bad": true,
+            "text": "Half of it is last season. You now own 300 sequinned blazers and nowhere to put them.",
+            "wallet": 150000,
+            "scaled": true,
+            "saw_truth": true
+          }
+        ]
+      },
+      {
+        "id": "livestream",
+        "label": "Livestream the padlock. The Parlour loves a fall.",
+        "tags": [
+          "toxic",
+          "public_embarrassment"
+        ],
+        "receipt": "You livestreamed her boutique being padlocked.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "9,000 viewers. Her suppliers comment before she does. She looks at the camera, then at you, then never again.",
+            "clout": 30,
+            "exposure": 25,
+            "bond": -25,
+            "saw_truth": true,
+            "truth_exposed": true,
+            "goal": {
+              "revenge": 50
+            },
+            "sanity": -15
+          }
+        ]
+      },
+      {
+        "id": "walk",
+        "label": "'I'm not your payroll.' Walk out.",
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You told her you're not her payroll and left.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You step over the padlock chain. The tow truck honks goodbye. You don't look back.",
+            "end": "walked_away",
+            "sanity": 5,
+            "saw_truth": true
+          }
+        ]
+      },
+      {
+        "id": "owed",
+        "label": "'You still owe me from last time.'",
+        "requires": {
+          "flags": [
+            "funded_her"
+          ]
+        },
+        "tags": [
+          "call_out"
+        ],
+        "receipt": "You told her she still owes you.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She opens her purse. Car keys. 'Take the Range Rover. It isn't mine either.' The tow man laughs.",
+            "saw_truth": true,
+            "sanity": -5,
+            "attachment": -5
+          }
+        ]
+      },
+      {
+        "id": "seventy",
+        "label": "'I paid full price for a 70% off outfit.'",
+        "requires": {
+          "flags": [
+            "paid_boutique"
+          ]
+        },
+        "tags": [
+          "call_out"
+        ],
+        "receipt": "You reminded her you paid full price for a sale outfit.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She laughs, horribly, then properly. 'You did. You were my best customer that month.' The staff applaud you.",
+            "saw_truth": true,
+            "attachment": 6,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "sunday",
+        "label": "'Pay Sunday Okon first. Six kids.'",
+        "requires": {
+          "flags": [
+            "knows_sunday_okon"
+          ]
+        },
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You told her to pay the security man first.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She pays Sunday from her own watch money. He salutes you both. 'Madam, this one is good.'",
+            "saw_truth": true,
+            "trust": 10,
+            "attachment": 8
+          }
+        ]
+      },
+      {
+        "id": "liquidity",
+        "label": "'Liquidity-challenged. You told me. I listened.'",
+        "requires": {
+          "flags": [
+            "knows_liquidity"
+          ]
+        },
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You told her you'd heard her liquidity joke.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'You caught that?' She sits on the floor. 'Then you know I've been drowning politely.' She lets you help.",
+            "saw_truth": true,
+            "trust": 10,
+            "attachment": 6
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ada_cf_tired",
+    "character": "adaeze",
+    "slot": "confrontation",
+    "requires": {
+      "truth": [
+        "tired"
+      ]
+    },
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "expression": "suspicious",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Her flat, midnight. Her eyes are red. Her uncle's voice note is still playing on the sofa."
+      },
+      {
+        "who": "Uncle Obiora",
+        "text": "A Computer Village family? Adaeze, end it. Or we end your shares."
+      },
+      {
+        "who": "partner",
+        "text": "I need you to know why I hid you. Then I need you to decide."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "tired": {
+        "id": "t_tired_hide",
+        "text": "'I hid you because Uncle buys them off. The last three took the money. All three.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "not_for_sale",
+        "label": "'Let him try. I'm not for sale.'",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You told her you're not for sale.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She laughs and cries at once. 'That's all I needed. That's all I've ever needed.'",
+            "trust": 15,
+            "attachment": 12
+          }
+        ]
+      },
+      {
+        "id": "how_much",
+        "label": "Ask what Uncle is offering. Just to know.",
+        "receipt": "You asked how much her uncle was offering.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'₦1 million,' she says quietly. 'The last one took ₦500k.' She watches your face like a stock price.",
+            "trust": -10,
+            "attachment": -5
+          }
+        ]
+      },
+      {
+        "id": "ashamed",
+        "label": "'So you were ashamed of me.'",
+        "tags": [
+          "toxic"
+        ],
+        "receipt": "You accused her of being ashamed of you.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She flinches. 'No. I was ashamed of THEM.' She opens the door and waits.",
+            "trust": -5
+          }
+        ]
+      },
+      {
+        "id": "leave",
+        "label": "'I can't fight your whole family.' Leave.",
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You left rather than fight her family.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She doesn't stop you. One text: 'You were the realest thing. Be well.' You read it on the bridge.",
+            "end": "walked_away",
+            "sanity": -5
+          }
+        ]
+      },
+      {
+        "id": "village",
+        "label": "'Computer Village, day one. Still proud.'",
+        "requires": {
+          "flags": [
+            "honest_pedigree"
+          ]
+        },
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You stood by your Computer Village roots.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She forwards Uncle your exact words. Then switches her phone off. 'Let him chew on that.'",
+            "trust": 15,
+            "attachment": 10
+          }
+        ]
+      },
+      {
+        "id": "amala",
+        "label": "Take her to the Ojuelegba amala spot. Now. Midnight.",
+        "requires": {
+          "flags": [
+            "knows_amala"
+          ]
+        },
+        "receipt": "You took her for midnight amala at Ojuelegba.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Plastic chairs, a generator, her heels in your hand. The Mama Put calls her 'my daughter'. She hasn't stopped smiling.",
+            "trust": 12,
+            "attachment": 15,
+            "chemistry": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ada_po_title_check",
+    "character": "adaeze",
+    "slot": "payoff",
+    "priority": 6,
+    "presentation": "call",
+    "requires": {
+      "flags": [
+        "secret_fake_title"
+      ],
+      "not_flags": [
+        "title_checked"
+      ],
+      "flag_age": {
+        "flag": "secret_fake_title",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "secret_fake_title"
+    ],
+    "scene": {
+      "location": "mainland_street",
+      "time": "morning",
+      "mood": "negative",
+      "partner_present": false,
+      "npc": {
+        "name": "Uncle Obiora"
+      }
+    },
+    "beats": [
+      {
+        "who": "Uncle Obiora",
+        "text": "Good morning. I called the palace in your village. They have never heard of Ichie you. Explain, or I explain to Adaeze."
+      }
+    ],
+    "choices": [
+      {
+        "id": "confess",
+        "label": "Confess to Uncle. Then to her, before he does.",
+        "tags": [
+          "cautious",
+          "contact_partner"
+        ],
+        "receipt": "You confessed the fake title to her uncle and to her.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She listens. 'You lied to impress people you don't even like. Okay. Don't do it again.'",
+            "trust": 5,
+            "attachment": -3,
+            "set": [
+              "title_checked"
+            ]
+          }
+        ],
+        "truth_override": {
+          "tired": {
+            "text": "She laughs. 'Uncle called me first. I told him I knew. I didn't. Now I do. Thank you for not making me a liar.'",
+            "trust": 10,
+            "attachment": 4,
+            "set": [
+              "title_checked"
+            ]
+          }
+        }
+      },
+      {
+        "id": "double_down",
+        "label": "'It's a new title, sir. Very new.'",
+        "receipt": "You doubled down on the fake title.",
+        "outcomes": [
+          {
+            "chance": 0.4,
+            "text": "'Hm.' He hangs up. You've bought one week, maybe two.",
+            "sanity": -5,
+            "set": [
+              "title_checked"
+            ]
+          },
+          {
+            "chance": 0.6,
+            "bad": true,
+            "text": "He forwards the call recording to her. And to the family WhatsApp. Forty-two members.",
+            "exposure": 20,
+            "trust": -15,
+            "set": [
+              "title_checked"
+            ],
+            "sanity": -15
+          }
+        ]
+      },
+      {
+        "id": "hang_up",
+        "label": "Hang up. Block Uncle. Pray.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You hung up on her uncle.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He calls from three other numbers. Then he calls your mother. Your mother is on his side.",
+            "sanity": -20,
+            "set": [
+              "title_checked"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "runs_deal",
+        "label": "[Runs] 'Uncle, how much to keep this between us?'",
+        "vibe": "runs",
+        "receipt": "You tried to bribe her uncle.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He laughs for a long time. 'I like you. ₦0. But you'll call me Ichie from now on.'",
+            "sanity": 5,
+            "clout": 5,
+            "set": [
+              "title_checked"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ada_po_bag_talk",
+    "character": "adaeze",
+    "slot": "payoff",
+    "priority": 7,
+    "requires": {
+      "partner_knows": [
+        "secret_bag_snoop"
+      ],
+      "not_flags": [
+        "snoop_talked"
+      ],
+      "flag_age": {
+        "flag": "secret_bag_snoop",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "secret_bag_snoop"
+    ],
+    "partner_reacts_to": [
+      "secret_bag_snoop"
+    ],
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "expression": "angry",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "You went through my bag. My uncle has read my statements since I was nineteen. Not you too."
+      }
+    ],
+    "choices": [
+      {
+        "id": "sorry",
+        "label": "'I'm sorry. I was scared. Ask me anything back.'",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You apologised for going through her bag.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She asks you three hard questions. You answer all three. She sits down next to you, not across.",
+            "trust": 8,
+            "set": [
+              "snoop_talked"
+            ]
+          }
+        ],
+        "truth_override": {
+          "tired": {
+            "text": "She asks three hard questions. You answer. 'Okay. I'll show you the notebook myself one day.'",
+            "trust": 10,
+            "attachment": 5,
+            "set": [
+              "snoop_talked"
+            ]
+          }
+        }
+      },
+      {
+        "id": "hiding",
+        "label": "'You were hiding something. Weren't you?'",
+        "tags": [
+          "call_out"
+        ],
+        "receipt": "You told her she was hiding something.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Long silence.",
+            "set": [
+              "snoop_talked"
+            ]
+          }
+        ],
+        "truth_override": {
+          "engaged": {
+            "text": "'Yes.' She sits. 'There's a ring. It isn't my choice. I wanted to tell you properly.'",
+            "saw_truth": true,
+            "trust": 4,
+            "set": [
+              "snoop_talked"
+            ]
+          },
+          "collapsing": {
+            "text": "'Yes. Three default notices. I wanted to fix it before you saw. I'm so tired of fixing.'",
+            "saw_truth": true,
+            "trust": 5,
+            "set": [
+              "snoop_talked"
+            ]
+          },
+          "tired": {
+            "text": "'A notebook. About you. Happy?' She is not happy.",
+            "trust": -10,
+            "set": [
+              "snoop_talked"
+            ]
+          }
+        }
+      },
+      {
+        "id": "charger",
+        "label": "'I was looking for a charger.'",
+        "receipt": "You told her you were looking for a charger.",
+        "outcomes": [
+          {
+            "chance": 0.4,
+            "text": "She wants to believe you. She mostly does. She buys you a charger.",
+            "trust": -2,
+            "set": [
+              "snoop_talked"
+            ]
+          },
+          {
+            "chance": 0.6,
+            "bad": true,
+            "text": "'In the zip pocket? Behind the letters?' She holds up her own charger.",
+            "trust": -15,
+            "set": [
+              "snoop_talked"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ada_po_lawal_back",
+    "character": "adaeze",
+    "slot": "payoff",
+    "priority": 5,
+    "presentation": "text",
+    "requires": {
+      "flags": [
+        "secret_bribed_pi"
+      ],
+      "not_flags": [
+        "lawal_handled"
+      ],
+      "flag_age": {
+        "flag": "secret_bribed_pi",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "secret_bribed_pi"
+    ],
+    "scene": {
+      "location": "mainland_street",
+      "time": "afternoon",
+      "mood": "negative",
+      "partner_present": false,
+      "npc": {
+        "name": "Mr Lawal"
+      }
+    },
+    "beats": [
+      {
+        "who": "Mr Lawal",
+        "text": "Good day. Uncle wants an updated report. For another ₦50k, I can keep 'very tall' in it."
+      }
+    ],
+    "choices": [
+      {
+        "id": "pay",
+        "label": "Pay him. Height is expensive.",
+        "cost": 50000,
+        "receipt": "You paid the investigator a second time.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "'Very tall' stays. He adds 'good teeth' as a free bonus.",
+            "attachment": 3,
+            "set": [
+              "lawal_handled"
+            ]
+          },
+          {
+            "chance": 0.5,
+            "bad": true,
+            "text": "He takes it, then texts: 'Same time next week?' You've got a subscription now.",
+            "sanity": -10,
+            "set": [
+              "lawal_handled"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "refuse",
+        "label": "'Write what you like, Lawal.'",
+        "receipt": "You refused to pay the investigator again.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He writes 'Average height. Bribes poorly.' It's fair, honestly.",
+            "trust": -3,
+            "set": [
+              "lawal_handled"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tell_her",
+        "label": "Forward it to her. Own the first bribe.",
+        "tags": [
+          "cautious",
+          "contact_partner"
+        ],
+        "receipt": "You told her you'd bribed her investigator.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'You bribed Lawal?' A pause. 'With ₦20k? He usually charges ₦100k.' She fires him anyway.",
+            "trust": 5,
+            "set": [
+              "lawal_handled"
+            ]
+          }
+        ],
+        "truth_override": {
+          "engaged": {
+            "text": "'I didn't send Lawal. Uncle did. For... another family's file.' She goes quiet for the rest of the day.",
+            "saw_truth": true,
+            "set": [
+              "lawal_handled"
+            ]
+          },
+          "collapsing": {
+            "text": "'I stopped paying Lawal in March. He's freelancing you.' She laughs, then doesn't.",
+            "saw_truth": true,
+            "set": [
+              "lawal_handled"
+            ]
+          },
+          "tired": {
+            "text": "She fires Lawal by voice note. Then calls you: 'I'm sorry I ever sent him. Bribing him was dumb, though.'",
+            "trust": 8,
+            "attachment": 4,
+            "set": [
+              "lawal_handled"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ada_po_salary_audit",
+    "character": "adaeze",
+    "slot": "payoff",
+    "priority": 6,
+    "requires": {
+      "flags": [
+        "secret_inflated_salary"
+      ],
+      "not_flags": [
+        "salary_audited"
+      ],
+      "flag_age": {
+        "flag": "secret_inflated_salary",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "secret_inflated_salary"
+    ],
+    "discovers": [
+      {
+        "flag": "secret_inflated_salary",
+        "to": [
+          "partner"
+        ]
+      }
+    ],
+    "partner_reacts_to": [
+      "secret_inflated_salary"
+    ],
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "afternoon",
+      "expression": "suspicious",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Chidinma's email reached her first: 'Salary verification. Sources: LinkedIn, a payslip, your cousin's tweet.'"
+      },
+      {
+        "who": "partner",
+        "text": "So. Your salary. Let's discuss the variance."
+      }
+    ],
+    "choices": [
+      {
+        "id": "confess",
+        "label": "'I lied. I wanted to look like your world.'",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You admitted you'd inflated your salary.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'My world is exhausting. Don't move in.' She closes the email. Mostly forgiven.",
+            "trust": 6,
+            "set": [
+              "salary_audited"
+            ]
+          }
+        ],
+        "truth_override": {
+          "tired": {
+            "text": "'Modest was always the point, you mumu.' She kisses your forehead like a manager who's also in love.",
+            "trust": 12,
+            "attachment": 6,
+            "set": [
+              "salary_audited"
+            ]
+          },
+          "collapsing": {
+            "text": "'Oh.' She sounds disappointed for the wrong reason. She looks at the ceiling, doing maths.",
+            "attachment": -10,
+            "saw_truth": true,
+            "set": [
+              "salary_audited"
+            ]
+          }
+        }
+      },
+      {
+        "id": "projected",
+        "label": "'It's projected salary. Forward-looking.'",
+        "receipt": "You called your fake salary a projection.",
+        "outcomes": [
+          {
+            "chance": 0.4,
+            "text": "She snorts. 'Forward-looking. I'm stealing that for my investors.'",
+            "attachment": 3,
+            "set": [
+              "salary_audited"
+            ]
+          },
+          {
+            "chance": 0.6,
+            "bad": true,
+            "text": "'Projections need assumptions. What's yours? That I'm stupid?'",
+            "trust": -12,
+            "set": [
+              "salary_audited"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "audited_me",
+        "label": "'Your PA investigated me? Wow.'",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You complained that her PA had investigated you.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Everyone gets investigated. You're the first one who lied.' Fair. Painful. Fair.",
+            "trust": -5,
+            "sanity": -3,
+            "set": [
+              "salary_audited"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ada_tt_amala",
+    "character": "adaeze",
+    "slot": "talking_time",
+    "presentation": "voice_note",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Board ran late. I'm starving. You know what I actually want? Amala from that buka at Ojuelegba. Don't tell anyone. My mother thinks I eat salads."
+      }
+    ],
+    "detail": {
+      "flag": "knows_amala",
+      "missed": {
+        "chemistry": -3
+      }
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "'Ojuelegba amala. Your secret is safe. 🤐'",
+        "caught": true,
+        "receipt": "You caught her secret amala craving.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Don't make me laugh, I'm in a lift with my uncle.' Then a heart.",
+            "attachment": 3,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "salad",
+        "label": "'Salad is self-care, babe.'",
+        "receipt": "You told her salad is self-care.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'You sound like my mother.' Read.",
+            "attachment": -2
+          }
+        ]
+      },
+      {
+        "id": "account",
+        "label": "Send your account number. 'For the amala.'",
+        "receipt": "You sent her your account number for amala.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She sends ₦5k with the reference 'AMALA (UNBUDGETED)'.",
+            "wallet": 5000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ada_tt_fourteenth",
+    "character": "adaeze",
+    "slot": "talking_time",
+    "presentation": "text",
+    "scene": {
+      "location": "lekki_salon",
+      "time": "afternoon",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Can't do the 14th. Family thing in Enugu. Chidinma has blocked my whole Saturday. Don't ask, it's boring."
+      }
+    ],
+    "detail": {
+      "flag": "knows_fourteenth",
+      "missed": {
+        "chemistry": -3
+      },
+      "red_flag": true
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "'The 14th, Enugu, family. Noted. 📌'",
+        "caught": true,
+        "receipt": "You noted her 'family thing' on the 14th.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'You pin things.' A pause. 'I like that.' Another pause, longer.",
+            "attachment": 2,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "ok",
+        "label": "'Enjoy! Bring me okpa.'",
+        "receipt": "You asked her to bring okpa back from Enugu.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Okpa. Okay.' She sounds relieved you didn't ask anything else.",
+            "attachment": 3
+          }
+        ]
+      },
+      {
+        "id": "sulk",
+        "label": "'Always family. When is it me?'",
+        "receipt": "You sulked about her family plans.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Item 7: patience.' She's typing for a long time. Then she isn't.",
+            "attachment": -3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ada_tt_sunday",
+    "character": "adaeze",
+    "slot": "talking_time",
+    "presentation": "voice_note",
+    "scene": {
+      "location": "lekki_salon",
+      "time": "morning",
+      "mood": "positive",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Sunday is the only day I don't wear heels. Funny, my security man is called Sunday. Sunday Okon. Six kids. Best man in Lagos. Anyway. Good morning."
+      }
+    ],
+    "detail": {
+      "flag": "knows_sunday_okon",
+      "missed": {
+        "chemistry": -2
+      }
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "'Greet Sunday Okon for me. Six kids is a whole team.'",
+        "caught": true,
+        "receipt": "You remembered her security man, Sunday Okon.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She plays your message to Sunday. He salutes the phone. She sends you the video.",
+            "attachment": 3,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "heels",
+        "label": "'Send a no-heels picture.'",
+        "receipt": "You asked for a picture of her without heels.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She sends a picture of her feet in Crocs. Pink Crocs. You'll die with this information.",
+            "chemistry": 2
+          }
+        ]
+      },
+      {
+        "id": "gm",
+        "label": "'GM ☀️'",
+        "receipt": "You replied 'GM'.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'GM.' Two letters for a voice note. The minutes would not approve.",
+            "attachment": -1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ada_tt_uncle",
+    "character": "adaeze",
+    "slot": "talking_time",
+    "presentation": "text",
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "afternoon",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Uncle Obiora hates two things: people who talk too much and people who don't eat. Just FYI. For no reason at all."
+      }
+    ],
+    "detail": {
+      "flag": "knows_uncle_rules",
+      "missed": {
+        "chemistry": -2
+      }
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "'Talk less, eat more. I was born for this.'",
+        "caught": true,
+        "receipt": "You noted her uncle's two rules.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Good. Don't make me regret the FYI.' She's smiling. You can tell from the punctuation.",
+            "attachment": 3,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "why",
+        "label": "'For no reason? 👀 Am I meeting Uncle?'",
+        "receipt": "You asked if you were meeting her uncle.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'No.' Then: 'Maybe.' Then: 'Don't be weird about it.'",
+            "attachment": 2
+          }
+        ]
+      },
+      {
+        "id": "uncles",
+        "label": "'My uncle hates people who don't send money.'",
+        "receipt": "You hinted for money through your uncle.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She sends ₦2k: 'For your uncle.' It's an insult and you both know it.",
+            "wallet": 2000,
+            "attachment": -2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ada_tt_minutes",
+    "character": "adaeze",
+    "slot": "talking_time",
+    "presentation": "voice_note",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "I take minutes because my father did. He made Mummy sign them after every argument. I hate that I do it. Ignore me. It's late."
+      }
+    ],
+    "detail": {
+      "flag": "knows_father_minutes",
+      "missed": {
+        "chemistry": -3
+      }
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "'You're not him. You can stop whenever. I'm listening.'",
+        "caught": true,
+        "receipt": "You heard why she takes minutes.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "No reply for ten minutes. Then: 'Thank you.' No full stop. From her, that's a hug.",
+            "attachment": 4,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "funny",
+        "label": "'Lol your dad was a whole board.'",
+        "receipt": "You laughed off her father story.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Yes. Lol.' She goes offline.",
+            "attachment": -3
+          }
+        ]
+      },
+      {
+        "id": "sleep",
+        "label": "'Sleep, CEO. Tomorrow is a meeting.'",
+        "receipt": "You told her to sleep.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Yes sir/ma.' She sends a sleeping emoji and a calendar invite for breakfast.",
+            "attachment": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ada_tt_liquidity",
+    "character": "adaeze",
+    "slot": "talking_time",
+    "presentation": "text",
+    "scene": {
+      "location": "lekki_salon",
+      "time": "golden",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "My accountant just called me 'liquidity-challenged'. To my face. That's a joke. Laugh. Anyway, dinner Thursday? You pick, I pay."
+      }
+    ],
+    "detail": {
+      "flag": "knows_liquidity",
+      "missed": {
+        "chemistry": -2
+      },
+      "red_flag": true
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "'Haha. Is everything okay, though? Actually okay?'",
+        "caught": true,
+        "receipt": "You caught her 'liquidity' joke and asked if she was okay.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Of course.' Then, a minute later: 'Mostly. Thursday. You pick.'",
+            "attachment": 2,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "pick",
+        "label": "'Thursday. Ikoyi rooftop. You did say you pay.'",
+        "receipt": "You picked the expensive rooftop for her to pay.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Of course.' The reply takes eleven minutes.",
+            "attachment": 2
+          }
+        ]
+      },
+      {
+        "id": "lol",
+        "label": "'😂😂😂'",
+        "receipt": "You laughed at her liquidity joke.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Exactly. Funny.' She sends a GIF of a man falling off a horse.",
+            "chemistry": 1
+          }
+        ]
+      }
+    ]
+  }
+]

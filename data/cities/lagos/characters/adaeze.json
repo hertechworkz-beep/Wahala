@@ -1,0 +1,86 @@
+{
+  "id": "adaeze",
+  "cold_open": {
+    "duration": 16,
+    "scene": { "location": "ikoyi_restaurant", "time": "night", "expression": "charming", "mood": "neutral", "props": ["agenda"] },
+    "phone": [
+      { "at": 1.5, "kind": "text", "from": "Chidinma (PA to Adaeze)", "text": "Good evening. Ms Adaeze can see you at 8:00pm. Kindly confirm attendance. Dress code: considered." },
+      { "at": 7, "kind": "alert", "from": "Calendar", "text": "Invite accepted on your behalf: 'Date (Preliminary Review)'. 90 mins." }
+    ],
+    "beats": [
+      { "at": 0.5, "who": "narration", "text": "7:58pm. A rooftop off Bourdillon Road. One table is already set: two glasses, one leather folder." },
+      { "at": 5, "who": "narration", "text": "A woman in a navy suit checks her watch, then checks you, top to bottom, like a balance sheet." },
+      { "at": 9.5, "who": "partner", "text": "You're two minutes early. Interesting. Sit. We have ninety minutes and I've read your CV." },
+      { "at": 13.5, "who": "narration", "text": "She slides the folder across. On the cover, in gold: 'AGENDA'. Item 1 is your name." }
+    ]
+  },
+  "endings": {
+    "locked_in": {
+      "title": "Board Approved",
+      "text": "Motion carried, unanimously. She cancelled the Friday minutes for good and introduced you at Sunday lunch as 'my person'. Uncle asked about your intentions. She answered for you.",
+      "scene": { "location": "ikoyi_restaurant", "time": "night", "expression": "charming", "mood": "positive" },
+      "truths": {
+        "engaged": {
+          "title": "Merger Cancelled",
+          "text": "Locked In. She returned the ring to Ebuka by courier, with a cover letter. Uncle has stopped speaking to you both. Chidinma's last minutes: 'Motion carried. Uncle abstained.'"
+        },
+        "collapsing": {
+          "title": "Co-Founders",
+          "text": "Locked In. The boutique is a pop-up in Yaba now. The Range Rover is gone; she drives a Corolla and laughs more. You're on the payroll. Unpaid. You've never been happier."
+        },
+        "tired": {
+          "title": "The Real Thing",
+          "text": "She took you to the Ojuelegba buka and introduced you to Mama Put before her mother. Uncle came third. Chidinma deleted the minutes folder and cried a little."
+        }
+      }
+    },
+    "counter_con": {
+      "title": "Hostile Takeover",
+      "text": "You read the fine print before she did. You left with the cheque, the stock, or the buyout, and she learned the word 'consultant' the hard way. Chidinma has minuted you as 'a lesson'.",
+      "scene": { "location": "luxury_apartment", "time": "morning", "expression": "caught", "mood": "neutral" }
+    },
+    "survived": {
+      "title": "Under Review",
+      "text": "No breakup, no commitment. 'Let's revisit next quarter,' she says, and diarises it. You are a standing agenda item, which is more than most people get.",
+      "scene": { "location": "ikoyi_restaurant", "time": "night", "expression": "charming", "mood": "neutral" },
+      "truths": {
+        "engaged": { "text": "'Let's revisit after the 14th,' she says. You know what the 14th is. She knows you know. Nobody puts it on the agenda." }
+      }
+    },
+    "scandal": {
+      "title": "Heiress Gate",
+      "text": "Trending in the Parlour: you, her, her uncle's driver and a screenshot of the minutes. Her family's lawyer has your full name spelled correctly. That's never good.",
+      "scene": { "location": "mainland_street", "time": "golden", "expression": "angry", "mood": "negative" }
+    },
+    "sapa": {
+      "title": "Liquidated",
+      "text": "You tried to keep up with an heiress on a Lagos salary. Your account was wound up before her boutique was. She sent ₦10k 'for transport' with no message. It hurt more than nothing.",
+      "scene": { "location": "mainland_street", "time": "night", "mood": "negative", "partner_present": false }
+    },
+    "breakdown": {
+      "title": "Minuted Breakdown",
+      "text": "You cried in a Lekki supermarket car park on a Sunday. Somewhere, Chidinma is typing: 'Candidate became emotional. Meeting adjourned.'",
+      "scene": { "location": "mainland_street", "time": "afternoon", "mood": "negative", "partner_present": false }
+    },
+    "ghosted": {
+      "title": "Meeting Cancelled",
+      "text": "A calendar notification: 'Adaeze has declined all future events.' No reason given. Chidinma still likes your statuses, professionally.",
+      "scene": { "location": "lekki_salon", "time": "afternoon", "expression": "suspicious", "mood": "negative", "partner_present": false }
+    },
+    "fumbled": {
+      "title": "Fumbled the Heiress",
+      "text": "She was tired of rich people and wanted a real one. You went through her bag, posted her shutters and asked her uncle's price. She found a real one. It just wasn't you.",
+      "scene": { "location": "luxury_apartment", "time": "night", "expression": "suspicious", "mood": "negative" }
+    },
+    "obsession": {
+      "title": "Obsession",
+      "text": "This one isn't funny. You stopped making your own decisions and called it alignment. Control isn't love, whatever the minutes say.",
+      "scene": { "location": "luxury_apartment", "time": "night", "expression": "suspicious", "mood": "negative" }
+    },
+    "walked_away": {
+      "title": "Resigned, Effective Immediately",
+      "text": "You left your share under the salt cellar and took the stairs. No exit interview. You bought suya at the bottom of Bourdillon Road and ate it slowly, a free person.",
+      "scene": { "location": "mainland_street", "time": "golden", "mood": "neutral", "partner_present": false }
+    }
+  }
+}
