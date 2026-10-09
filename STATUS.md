@@ -1,5 +1,52 @@
 # Build status · October 9, 2026
 
+## Step 1: Chief's first date is played, not read
+
+Day 1 with Chief is now a scene you play on the phone, start to finish. Every moment goes through the engine, so the night is seeded, saved, replayable and shows on the receipts.
+
+1. **Getting ready.** A full-body avatar wears what you pick: outfit, hairstyle (gele, braids, bone straight, cap, waves...), shoes, jewellery, bag and a perfume aura.
+   - Items cost real money. You can never spend your last ₦10k on clothes.
+   - Bestie rings while you dress: answer, reply or let it ring.
+   - Borrowed outfits can split on the way (seeded 30%).
+2. **The ride.** Inside the Prado: city lights going past, Musa in the mirror, his lines voiced. Chief texts "No pictures". Drag your phone into your bag, or keep it in your hand.
+3. **The table.** A top-down plan of the restaurant: tap a table and your avatar walks there. The table matters later in the escape.
+4. **Chief walks in.** You watch him cross the floor, then cut to his painted close-up. His reaction depends on how well you dressed for his taste.
+5. **At the table** (the painted restaurant, panning between moments):
+   - talk, with tappable objects (menu, lagoon, and his Rolex if your phone is out)
+   - a timing toast that can spill wine on his agbada
+   - his phone lighting up on the table (3.5 seconds to read it)
+   - his briefcase while he takes a call: open the latches, flip pages, tap the lines that matter, and close it before his footsteps come back
+   - an anonymous photo you can zoom into
+6. **The Wife Escape.** She (or his creditor, or his ex) walks in. You have 4 seconds: hide, stay seated, hold his hand, or walk up to her.
+   - Hiding turns the restaurant into a chase: move between hiding spots, reach the kitchen door, or stay hidden until she gives up.
+   - A bouncer, a friend filming and a waiter with a tray are in play: 2 of 3 per run.
+   - Outcomes: escaped, outlasted, filmed, made it worse, or caught.
+   - A test proves every table and tactic mix is both winnable and losable.
+7. **The ride home.** Open the envelope (the cash counts up), then see the night on paper: money in, out and net, red flags caught versus let slide, and every receipt.
+
+Also in this step:
+- Chief's painted art set 1 replaces the drawn Chief everywhere, with expression aliases (happy → laughing, sad → tender).
+- Characters "speak" captions as pitched voice babble with sound effects (laugh, hmm, tsk, gasp). A recorded clip at `public/audio/voices/<who>/<clip>.mp3` replaces any line.
+- A new payoff card follows the escape video: the Parlour posts it, and you can own it, pay to take it down, or send it to Chief.
+- Money text now matches money moved. A choice reading "Send ₦10k" that costs ₦6k at your vibe now reads ₦6k, in the button and in the receipts.
+- Reloading mid-date resumes at the same moment.
+- The simulator and the balance tests play the scene too, through the same options a player has.
+
+Tests and checks:
+- `npm test`: 88/88 pass, including 18 new scene tests.
+- `npm run validate`: 11/11 characters playable.
+- `node scripts/date-e2e.mjs`: phone e2e with screen video. Run as a woman hiding and as a man walking up to her; both clean.
+- `npm run shots`: the full 7-day Chief run, through the date to the Verdict. No page errors (one earlier attempt timed out on the cold-open skip button; the rerun was clean).
+
+Honest gaps:
+- All art except Chief's is temporary and drawn in code: the avatar figure, the floor plan, the Prado, the briefcase and the photo.
+- The painted restaurant shows Chief seated, so his walk-in happens on the floor plan before cutting to the painting.
+- There are no recorded voices yet.
+- Random-tapping Chief runs now end in Walked Away about 14% of the time (was 3.5%), and Breakdown is higher for Big Boy. Deliberate play still reaches Locked In on at least 20/40 seeds for every vibe.
+- Not yet tested on a real phone.
+
+---
+
 ## Update: full roster (brief sections from "Roster addition" onward)
 
 All 11 launch characters pass the launch gate: Chief Emeka, Kayode, Bello, Ovie, Osaze, Tiwa, Adaeze, Zainab, Blessing, Mercy and Madam Folake.

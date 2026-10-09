@@ -21,7 +21,7 @@ const alive = (s: RunState) => (s.status === 'ended' ? -1e6 : 0);
 const TARGETS: Target[] = [
   { ending: 'locked_in', player: { vibe: 'corporate' }, truth: 'divorced', score: (s) => alive(s) + s.meters.attachment + s.meters.trust - s.meters.exposure - s.meters.control * 5 - s.stays * 50 },
   { ending: 'counter_con', player: { vibe: 'runs', goal: 'bag' }, truth: 'serial_sponsor', score: (s) => alive(s) + netWorth(s) / 1000 + (s.sawTruth ? 2000 : 0) - s.meters.exposure * 5 - s.stays * 500 },
-  { ending: 'survived', player: { vibe: 'lover' }, truth: 'broke', score: (s) => alive(s) + Math.min(s.meters.attachment, 60) + Math.min(s.meters.trust, 50) + s.meters.sanity - s.meters.exposure },
+  { ending: 'survived', player: { vibe: 'lover' }, truth: 'broke', score: (s) => alive(s) + Math.min(s.meters.attachment, 40) + Math.min(s.meters.trust, 35) + s.meters.sanity - s.meters.exposure - (s.ending === 'locked_in' ? 1e6 : 0) },
   { ending: 'scandal', player: { vibe: 'bigboy', goal: 'revenge' }, truth: 'serial_sponsor', score: (s) => s.meters.exposure * 10 + (s.ending === 'scandal' ? 1e6 : 0) },
   { ending: 'sapa', player: { vibe: 'sugar', goal: 'bag' }, truth: 'broke', score: (s) => -s.meters.wallet + (s.ending === 'sapa' ? 1e9 : 0) },
   { ending: 'breakdown', player: { vibe: 'bigboy' }, truth: 'serial_sponsor', score: (s) => -s.meters.sanity * 10 + (s.ending === 'breakdown' ? 1e6 : 0) },
@@ -76,15 +76,14 @@ describe('scripted: every hidden truth plays out', () => {
 });
 
 describe('scripted: flag payoffs (rule 1)', () => {
-  it('Rolex video on Day 1 -> recognised later -> a woman messages you', () => {
+  it('Rolex snapped on the played first date -> recognised later -> a woman messages you', () => {
     let ok = false;
     for (let seed = 1; seed <= 200 && !ok; seed++) {
-      const start = newRun(seed);
-      if (start.todaySteps[0].cardId !== 'emeka_d1_ikoyi_dinner') continue;
-      const run = lookaheadRun(start, (s) => (s.status === 'ended' ? -1e6 : 0) + (s.flags.secret_rolex_video ? 100 : 0) + (s.flags.watch_recognised ? 100 : 0) + (s.flags.woman_met ? 100 : 0) + s.meters.sanity, {
+      const run = lookaheadRun(newRun(seed), (s) => (s.status === 'ended' ? -1e6 : 0) + (s.flags.secret_rolex_video ? 100 : 0) + (s.flags.watch_recognised ? 100 : 0) + (s.flags.woman_met ? 100 : 0) + s.meters.sanity, {
         spots: false,
-        prefer: (a) => a.kind === 'choose' && ['rolex_video', 'flex', 'meet'].includes(a.id),
+        prefer: (a) => (a.kind === 'scene' && (a.id === 'phone_out' || a.id.startsWith('rolex+'))) || (a.kind === 'choose' && ['flex', 'meet'].includes(a.id)),
       });
+      expect(run.log.some((e) => e.card === 'scene:chief_first_date:rolex.rolex_snap' || e.card === 'scene:chief_first_date:rolex.rolex_seen')).toBe(true);
       const iRec = run.log.findIndex((e) => e.card === 'emeka_po_watch_recognised');
       const iMsg = run.log.findIndex((e) => e.card === 'emeka_po_woman_messages');
       if (iRec >= 0 && iMsg > iRec) {

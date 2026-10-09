@@ -8,6 +8,7 @@ export interface RawCity {
   cardFiles: Card[][];
   catalog?: CatalogItem[];
   brand?: BrandInfo;
+  scenes?: CityContent['scenes'];
   spots: Spot[];
   locations: LocationSpec[];
   brands: BrandInventory;
@@ -40,6 +41,7 @@ export function buildCity(raw: RawCity): CityContent {
     launch: raw.launch ?? {},
     catalog: raw.catalog ?? [],
     brand: raw.brand ?? { name: 'Wahala', edition: 'Lagos', social: [] },
+    scenes: raw.scenes ?? [],
   };
 }
 

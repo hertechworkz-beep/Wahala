@@ -360,6 +360,8 @@ export interface CityContent {
   brands: BrandInventory;
   catalog: CatalogItem[];
   brand: BrandInfo;
+  /** Played scenes (data/cities/<city>/scenes/*.json), e.g. Chief's first date. */
+  scenes: import('./scene').SceneSpec[];
 }
 
 export interface BrandInfo {
@@ -448,7 +450,7 @@ export interface FlagState {
   knows: Knower[];
 }
 
-export type Cause = 'chosen' | 'tricked' | 'dice' | 'world';
+export type Cause = 'chosen' | 'tricked' | 'dice' | 'world' | 'played';
 
 export interface LoggedEvent {
   seq: number;
@@ -523,7 +525,8 @@ export interface RunState {
   payoffsPlayed: number;
   interruptsPlayed: number;
   money: { spent: number; received: number; borrowed: number; earned: number };
-  history: { action: 'choose' | 'spot' | 'bailout' | 'decline_bailout' | 'clue' | 'next_day'; id: string; option?: string; loan?: boolean }[];
+  history: { action: 'choose' | 'spot' | 'bailout' | 'decline_bailout' | 'clue' | 'next_day' | 'scene_event' | 'scene_end'; id: string; option?: string; loan?: boolean; event?: SceneEvent }[];
+  redFlagsCaught: number;
 }
 
 export interface ResolvedChoice {
@@ -559,4 +562,20 @@ export interface ChoiceResult {
   bad: boolean;
   ending?: EndingId;
   pendingEnding?: EndingId;
+}
+
+/** One played moment inside a scripted scene (the playable first date). */
+export interface SceneEvent {
+  id: string;
+  label: string; // what the player did, e.g. "Hid behind the bar"
+  text: string; // what happened
+  effects: Effects;
+  tags?: ChoiceTag[];
+  receipt?: string;
+  tellShown?: string; // a tell the player saw during the moment
+  caught?: boolean; // the player caught a red flag
+  missedTell?: boolean; // the player let a red flag slide
+  cause?: Cause;
+  fromPartner?: boolean; // money comes from the partner (Chemistry scales gifts)
+  meta?: Record<string, string>; // what the scene needs to remember (outfit picked, escape outcome)
 }

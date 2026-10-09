@@ -91,7 +91,7 @@ class Sound {
     const key = this.current;
     if (await this.hasFile(id)) {
       if (key !== this.current) return;
-      const el = new Audio(`/audio/${id}.mp3`);
+      const el = new Audio(`${import.meta.env.BASE_URL}audio/${id}.mp3`);
       el.loop = true;
       const src = this.ctx!.createMediaElementSource(el);
       src.connect(this.amb);
@@ -107,7 +107,7 @@ class Sound {
     if (this.fileCache.has(id)) return this.fileCache.get(id)!;
     let ok = false;
     try {
-      const r = await fetch(`/audio/${id}.mp3`, { method: 'HEAD' });
+      const r = await fetch(`${import.meta.env.BASE_URL}audio/${id}.mp3`, { method: 'HEAD' });
       ok = r.ok && (r.headers.get('content-type') ?? '').includes('audio');
     } catch {
       ok = false;
@@ -360,6 +360,120 @@ class Sound {
         return undefined;
     }
     return () => stops.forEach((s) => s());
+  }
+
+  // ---------------------------------------------------------------- voices and scene sounds
+
+  /**
+   * A character "speaks" a caption: a short pitched babble in their register, so lines are
+   * heard, not just read. A recorded clip at /audio/voices/<who>/<clip>.mp3 replaces it.
+   * Returns roughly how long the line takes, in ms.
+   */
+  voice(who: string, text: string, clip?: string): number {
+    const ms = Math.min(2600, 500 + text.length * 32);
+    if (!this.ctx || this.muted) return ms;
+    if (clip) {
+      const id = `voices/${who}/${clip}`;
+      this.hasFile(id).then((ok) => {
+        if (!ok) return this.babble(who, text);
+        const el = new Audio(`${import.meta.env.BASE_URL}audio/${id}.mp3`);
+        el.play().catch(() => {});
+      });
+      return ms;
+    }
+    this.babble(who, text);
+    return ms;
+  }
+
+  private babble(who: string, text: string) {
+    const voices: Record<string, { f: number; type: OscillatorType; g: number; rate: number }> = {
+      partner: { f: 98, type: 'sawtooth', g: 0.05, rate: 0.13 },
+      musa: { f: 140, type: 'sawtooth', g: 0.045, rate: 0.11 },
+      bestie: { f: 300, type: 'triangle', g: 0.07, rate: 0.085 },
+      wife: { f: 235, type: 'sawtooth', g: 0.045, rate: 0.1 },
+      waiter: { f: 170, type: 'triangle', g: 0.05, rate: 0.1 },
+    };
+    const v = voices[who] ?? voices.waiter;
+    const syll = Math.max(2, Math.min(12, Math.round(text.replace(/[^a-z]/gi, '').length / 4)));
+    const q = /\?$/.test(text.trim());
+    const ex = /!$/.test(text.trim());
+    for (let i = 0; i < syll; i++) {
+      const rise = q && i === syll - 1 ? 1.35 : ex && i === 0 ? 1.25 : 1;
+      const f = v.f * rise * (0.9 + ((i * 7919) % 23) / 100);
+      this.tone(f, v.rate * 0.9, { type: v.type, gain: v.g, at: i * v.rate, slide: 0.92, attack: 0.012 });
+      this.tone(f * 2.02, v.rate * 0.7, { type: 'sine', gain: v.g * 0.5, at: i * v.rate });
+    }
+  }
+
+  effect(name: string) {
+    if (!this.ctx || this.muted) return;
+    switch (name) {
+      case 'laugh':
+        for (let i = 0; i < 4; i++) this.tone(150 - i * 8, 0.11, { type: 'sawtooth', gain: 0.07, at: i * 0.14, slide: 0.8 });
+        break;
+      case 'hmm':
+        this.tone(115, 0.55, { type: 'sawtooth', gain: 0.05, slide: 1.12, attack: 0.08 });
+        break;
+      case 'tsk':
+        this.burst(0.03, 4000, 0.3);
+        this.burst(0.03, 4200, 0.3, this.sfx, 0.12);
+        break;
+      case 'gasp':
+        this.burst(0.35, 1800, 0.18, this.sfx, 0, 'highpass');
+        break;
+      case 'sigh':
+        this.burst(0.8, 900, 0.12, this.sfx, 0, 'lowpass');
+        break;
+      case 'clink':
+        [2637, 3951, 5274].forEach((f, i) => this.tone(f, 0.9 - i * 0.2, { gain: 0.06, type: 'sine' }));
+        break;
+      case 'spill':
+        this.burst(0.6, 700, 0.25, this.sfx, 0, 'lowpass');
+        this.tone(2637, 0.2, { gain: 0.05 });
+        break;
+      case 'zip':
+        this.burst(0.3, 3000, 0.2, this.sfx, 0, 'bandpass');
+        break;
+      case 'latch':
+        this.burst(0.04, 2500, 0.4);
+        this.tone(900, 0.05, { gain: 0.08, type: 'square', at: 0.05 });
+        break;
+      case 'paper':
+        this.burst(0.18, 5000, 0.12, this.sfx, 0, 'highpass');
+        break;
+      case 'step':
+        this.tone(70, 0.09, { gain: 0.25, slide: 0.7 });
+        this.burst(0.05, 400, 0.12, this.sfx, 0, 'lowpass');
+        break;
+      case 'shutter':
+        this.burst(0.05, 3000, 0.35);
+        this.burst(0.06, 2000, 0.3, this.sfx, 0.08);
+        break;
+      case 'crash':
+        this.burst(0.9, 2500, 0.45, this.sfx, 0, 'highpass');
+        [1760, 2349, 3136].forEach((f, i) => this.tone(f, 0.6, { gain: 0.06, at: 0.05 * i }));
+        this.tone(90, 0.4, { gain: 0.3, slide: 0.5 });
+        break;
+      case 'door':
+        this.tone(180, 0.3, { gain: 0.1, type: 'triangle', slide: 0.7 });
+        this.burst(0.25, 600, 0.15, this.sfx, 0.05, 'lowpass');
+        break;
+      case 'sparkle':
+        [2093, 2637, 3136, 4186].forEach((f, i) => this.tone(f, 0.25, { gain: 0.035, at: i * 0.05 }));
+        break;
+      case 'whoosh':
+        this.burst(0.4, 800, 0.2);
+        break;
+      case 'pop':
+        this.tone(500, 0.08, { gain: 0.12, slide: 1.8, type: 'triangle' });
+        break;
+      case 'engine':
+        this.tone(55, 1.2, { gain: 0.2, type: 'sawtooth', slide: 1.6, attack: 0.2 });
+        break;
+      case 'tick':
+        this.tone(1800, 0.03, { gain: 0.05, type: 'square' });
+        break;
+    }
   }
 
   // ---------------------------------------------------------------- UI sounds

@@ -7,3 +7,5 @@ screenshots/tmp
 screenshots/verdicts
 .claude/worktrees
 dist-preview
+.scratch/
+screenshots/**/video/

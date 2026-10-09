@@ -1,0 +1,249 @@
+{
+  "id": "chief_first_date",
+  "character": "chief_emeka",
+  "replaces": "first_date",
+  "likes": ["red", "gold", "coral", "traditional", "oud", "designer", "heels", "loafers"],
+  "steps": [
+    {
+      "type": "dressup",
+      "id": "getting_ready",
+      "title": "Dinner with Chief. 8pm. Ikoyi.",
+      "required": ["outfit", "shoes"],
+      "items": [
+        { "id": "w_red_bodycon", "slot": "outfit", "set": "woman", "label": "Red bodycon", "tags": ["red"], "look": { "outfit": "#b3122a", "outfitAccent": "#f2c84b", "outfitStyle": "dress" } },
+        { "id": "w_ankara", "slot": "outfit", "set": "woman", "label": "Ankara two-piece", "tags": ["traditional"], "look": { "outfit": "#c2410c", "outfitAccent": "#facc15", "outfitStyle": "agbada" } },
+        { "id": "w_designer_gown", "slot": "outfit", "set": "woman", "label": "Designer gown", "cost": 60000, "tags": ["designer", "gold"], "look": { "outfit": "#1a1a1a", "outfitAccent": "#e8c14a", "outfitStyle": "dress" } },
+        { "id": "w_sequin", "slot": "outfit", "set": "woman", "label": "Bestie's gold sequins", "borrowed": true, "tags": ["gold"], "look": { "outfit": "#b8862b", "outfitAccent": "#fff3c4", "outfitStyle": "dress" } },
+        { "id": "m_kaftan", "slot": "outfit", "set": "man", "label": "Black kaftan", "tags": [], "look": { "outfit": "#141414", "outfitAccent": "#c9a86a", "outfitStyle": "kaftan" } },
+        { "id": "m_agbada", "slot": "outfit", "set": "man", "label": "Red agbada", "tags": ["traditional", "red"], "look": { "outfit": "#8f1d22", "outfitAccent": "#e7b54a", "outfitStyle": "agbada" } },
+        { "id": "m_suit", "slot": "outfit", "set": "man", "label": "Designer suit", "cost": 60000, "tags": ["designer"], "look": { "outfit": "#1f2937", "outfitAccent": "#e8e1d0", "outfitStyle": "jacket" } },
+        { "id": "m_velvet", "slot": "outfit", "set": "man", "label": "Bestie's velvet blazer", "borrowed": true, "tags": ["gold"], "look": { "outfit": "#4c1d95", "outfitAccent": "#e8c14a", "outfitStyle": "jacket" } },
+        { "id": "h_frontal", "slot": "hair", "set": "woman", "label": "30-inch bone straight", "tags": [], "look": { "hair": "frontal", "hairColor": "#17100b" } },
+        { "id": "h_braids", "slot": "hair", "set": "woman", "label": "Knotless braids", "tags": [], "look": { "hair": "braids", "hairColor": "#1a120c" } },
+        { "id": "h_gele", "slot": "hair", "set": "woman", "label": "Gold gele", "cost": 15000, "tags": ["traditional", "gold"], "look": { "hair": "gele", "hairColor": "#d4a017" } },
+        { "id": "h_natural", "slot": "hair", "set": "woman", "label": "Natural puff", "tags": [], "look": { "hair": "natural", "hairColor": "#140d08" } },
+        { "id": "h_low", "slot": "hair", "set": "man", "label": "Fresh low cut", "tags": [], "look": { "hair": "low", "hairColor": "#0f0a07" } },
+        { "id": "h_waves", "slot": "hair", "set": "man", "label": "360 waves", "tags": [], "look": { "hair": "waves", "hairColor": "#0f0a07" } },
+        { "id": "h_bald", "slot": "hair", "set": "man", "label": "Clean bald", "tags": [], "look": { "hair": "bald", "hairColor": "#0f0a07" } },
+        { "id": "h_cap", "slot": "hair", "set": "man", "label": "Red cap, like his", "tags": ["red", "traditional"], "look": { "hair": "cap", "hairColor": "#a3131a" } },
+        { "id": "s_heels", "slot": "shoes", "set": "woman", "label": "Red heels", "tags": ["heels", "red"] },
+        { "id": "s_flats", "slot": "shoes", "set": "woman", "label": "Gold flats", "tags": ["gold"] },
+        { "id": "s_sneakers", "slot": "shoes", "set": "any", "label": "White sneakers", "tags": [] },
+        { "id": "s_loafers", "slot": "shoes", "set": "man", "label": "Italian loafers", "cost": 25000, "tags": ["loafers", "designer"] },
+        { "id": "s_sandals", "slot": "shoes", "set": "man", "label": "Leather sandals", "tags": ["traditional"] },
+        { "id": "j_gold_chain", "slot": "jewellery", "set": "any", "label": "Gold chain", "tags": ["gold"] },
+        { "id": "j_coral", "slot": "jewellery", "set": "any", "label": "Coral beads", "tags": ["coral", "traditional"] },
+        { "id": "j_pearls", "slot": "jewellery", "set": "woman", "label": "Pearls", "tags": [] },
+        { "id": "j_watch", "slot": "jewellery", "set": "man", "label": "Steel watch", "tags": [] },
+        { "id": "b_clutch", "slot": "bag", "set": "woman", "label": "Gold clutch", "tags": ["gold"] },
+        { "id": "b_designer", "slot": "bag", "set": "any", "label": "Designer bag", "cost": 40000, "tags": ["designer"] },
+        { "id": "b_tote", "slot": "bag", "set": "any", "label": "Everyday tote", "tags": [] },
+        { "id": "p_oud", "slot": "perfume", "set": "any", "label": "Oud", "tags": ["oud"] },
+        { "id": "p_floral", "slot": "perfume", "set": "any", "label": "Sweet floral", "tags": [] },
+        { "id": "p_none", "slot": "perfume", "set": "any", "label": "No perfume", "tags": [] }
+      ],
+      "borrowed_disaster": {
+        "chance": 0.3,
+        "text": "The borrowed zip bursts as you sit in the Prado. Musa pretends not to hear.",
+        "effects": { "sanity": -8, "chemistry": -3 },
+        "receipt": "Your Bestie's borrowed outfit split on the way."
+      },
+      "call": {
+        "after_picks": 2,
+        "caller": "Bestie",
+        "lines": [
+          { "who": "bestie", "text": "Babe. BABE. Are you sure about this Chief?", "sfx": "gasp" },
+          { "who": "bestie", "text": "59 years. Red cap. Tinted Prado. Somebody's husband energy." }
+        ],
+        "replies": [
+          { "id": "sweet", "label": "\"He's sweet. Let me enjoy.\"", "lines": [{ "who": "bestie", "text": "Sweet like sugar. Sugar causes diabetes. Enjoy.", "sfx": "laugh" }], "effects": { "sanity": 3 }, "receipt": "You told your Bestie Chief is sweet." },
+          { "id": "checkin", "label": "\"Call me at 10. If I don't pick, come.\"", "tags": ["cautious"], "lines": [{ "who": "bestie", "text": "10pm. I'm setting alarm. I have Uber money ready.", "sfx": "hmm" }], "effects": { "sanity": 8 }, "receipt": "You set up a 10pm safety call with your Bestie." },
+          { "id": "bag", "label": "\"Na the bag I dey find.\"", "lines": [{ "who": "bestie", "text": "Then don't come back with only a voice note.", "sfx": "laugh" }], "effects": { "clout": 3 }, "receipt": "You told your Bestie it's about the bag." }
+        ],
+        "missed": { "id": "ignored", "label": "Let it ring", "effects": { "sanity": -2 }, "receipt": "You let your Bestie's call ring out." }
+      }
+    },
+    {
+      "type": "ride",
+      "id": "the_ride",
+      "driver": "Musa",
+      "driver_lines": [
+        { "who": "musa", "text": "Good evening, {title}. Oga is waiting. Seatbelt, please.", "sfx": "hmm" },
+        { "who": "musa", "text": "The bridge is free tonight. God is working.", "sfx": "laugh" }
+      ],
+      "partner_text": "Leave your phone in your bag tonight. No pictures.",
+      "put_away": { "id": "phone_away", "label": "Phone into the bag", "tags": ["discreet"], "effects": { "attachment": 3, "sanity": -2, "set": [{ "flag": "promised_secrecy", "knows": ["player", "partner"] }] }, "receipt": "You put your phone away like Chief asked." },
+      "keep_out": { "id": "phone_out", "label": "Keep it in your hand", "tags": ["independence"], "effects": { "sanity": 2 }, "receipt": "You kept your phone out, despite Chief's text." }
+    },
+    {
+      "type": "seat",
+      "id": "choose_table",
+      "prompt": "The terrace. Where do you sit?",
+      "seats": [
+        { "id": "window", "label": "Window, lagoon view", "hint": "Romantic. Visible.", "node": "window", "effects": { "chemistry": 4, "exposure": 4 }, "receipt": "You chose the window table with the lagoon view." },
+        { "id": "booth", "label": "Corner booth", "hint": "Private. Near the kitchen.", "node": "booth", "tags": ["discreet"], "effects": { "attachment": 3 }, "receipt": "You chose the private corner booth." },
+        { "id": "band", "label": "By the sax player", "hint": "Loud. Fun. Near the bar.", "node": "band", "effects": { "clout": 4, "sanity": 2 }, "receipt": "You sat by the saxophonist." }
+      ]
+    },
+    {
+      "type": "arrival",
+      "id": "chief_arrives",
+      "lines": {
+        "high": [{ "who": "partner", "text": "Ehen! You dressed for me. Turn around, let me see.", "expression": "laughing", "sfx": "laugh" }],
+        "mid": [{ "who": "partner", "text": "You look... nice. Sit, sit.", "expression": "charming", "sfx": "hmm" }],
+        "low": [{ "who": "partner", "text": "Next time, let my tailor dress you. Sit down.", "expression": "suspicious", "sfx": "tsk" }]
+      },
+      "effects": {
+        "high": { "attachment": 8, "chemistry": 4 },
+        "mid": { "attachment": 3 },
+        "low": { "attachment": -4 }
+      }
+    },
+    {
+      "type": "talk",
+      "id": "first_talk",
+      "lines": [{ "who": "partner", "text": "So. Tell me. What does a person like you want from a man like me?", "expression": "charming" }],
+      "replies": [
+        { "id": "honest", "label": "\"Honesty. Can you afford it?\"", "tags": ["cautious"], "lines": [{ "who": "partner", "text": "Hmm. Honesty is expensive in Lagos. I'll see what I have.", "expression": "suspicious", "sfx": "hmm" }], "effects": { "trust": 6 }, "receipt": "You asked Chief for honesty on the first date." },
+        { "id": "flirt", "label": "\"Your time. And your attention.\"", "lines": [{ "who": "partner", "text": "My time is very expensive. For you, discount.", "expression": "laughing", "sfx": "laugh" }], "effects": { "attachment": 6, "chemistry": 2 }, "receipt": "You flirted your way through the first question." },
+        { "id": "money", "label": "\"Let's start with dinner. Then we talk.\"", "lines": [{ "who": "partner", "text": "A negotiator. My kind of person.", "expression": "charming", "sfx": "laugh" }], "effects": { "attachment": 3, "clout": 2 }, "receipt": "You told Chief to start with dinner." }
+      ],
+      "rolex": {
+        "label": "Snap his Rolex",
+        "chance_seen": 0.5,
+        "unseen": { "id": "rolex_snap", "text": "Snap. 2,000 views by dessert. Nobody saw. Yet.", "effects": { "clout": 15, "exposure": 8, "set": [{ "flag": "secret_rolex_video", "knows": ["player", "world"] }] }, "receipt": "You secretly posted his Rolex." },
+        "seen": { "id": "rolex_seen", "text": "Flash. He sees. 'I said no pictures.'", "expression": "angry", "effects": { "clout": 6, "exposure": 10, "trust": -12, "set": [{ "flag": "secret_rolex_video", "knows": ["player", "world", "partner"] }] }, "receipt": "Chief caught you photographing his Rolex." }
+      }
+    },
+    {
+      "type": "toast",
+      "id": "the_toast",
+      "lines": [{ "who": "partner", "text": "Raise your glass. To new things.", "expression": "tender" }],
+      "perfect": { "id": "toast_perfect", "text": "Clink. He holds your eye a second too long.", "expression": "tender", "effects": { "attachment": 8, "chemistry": 4 }, "receipt": "You landed the perfect toast." },
+      "good": { "id": "toast_good", "text": "Clink. Nice. He smiles into his wine.", "expression": "charming", "effects": { "attachment": 3 }, "receipt": "You toasted with Chief." },
+      "spill": { "id": "toast_spill", "text": "Wine on his agbada. He laughs. Mostly.", "expression": "laughing", "effects": { "sanity": -6, "attachment": 2 }, "receipt": "You spilled wine on Chief's agbada." }
+    },
+    {
+      "type": "glance",
+      "id": "phone_glance",
+      "seconds": 3.5,
+      "lead": "His phone lights up. Face up. He reaches for it.",
+      "screen": {
+        "serial_sponsor": { "name": "Lekki 2", "tell": "t_sponsor_numbers" },
+        "broke": { "name": "Apapa Clearing (17)", "tell": "t_broke_apapa" },
+        "divorced": { "name": "Ada (Kids) 📞", "tell": "t_div_weekends" }
+      },
+      "replies": [
+        { "id": "read", "label": "Read it", "tags": ["cautious"], "caught": true, "text": "You read it before his thumb covers it.", "effects": { "sanity": -3 }, "receipt": "You read the name on Chief's phone." },
+        { "id": "flip", "label": "Flip it face down for him", "tags": ["discreet", "excuse"], "missed": true, "text": "He squeezes your hand. Grateful. Very grateful.", "expression": "tender", "effects": { "attachment": 6 }, "receipt": "You flipped his phone face down for him." },
+        { "id": "away", "label": "Look at the lagoon", "tags": ["excuse"], "missed": true, "text": "The lagoon is lovely. The phone was lovelier.", "effects": {}, "receipt": "You looked away from Chief's phone." }
+      ],
+      "timeout": { "id": "frozen", "text": "Too slow. He pockets it, smiling.", "missed": true, "effects": {}, "receipt": "You missed the name on Chief's phone." }
+    },
+    {
+      "type": "inspect",
+      "id": "briefcase",
+      "seconds": 16,
+      "lead": [{ "who": "partner", "text": "I must take this. Two minutes. Don't run away.", "expression": "charming" }],
+      "object": "briefcase",
+      "pages": {
+        "serial_sponsor": [
+          { "title": "INVOICE · Lekki Phase 1, Flat 3B", "lines": [{ "text": "Rent: 12 months, paid" }, { "text": "Occupant: 'L. 2'" }] },
+          { "title": "MONTHLY ALLOWANCES", "lines": [{ "text": "Lekki 1 ........ ₦300,000", "clue": true }, { "text": "Lekki 2 ........ ₦300,000", "clue": true }, { "text": "Lekki 3 ........ ₦250,000", "clue": true }, { "text": "New ............ TBC" }] }
+        ],
+        "broke": [
+          { "title": "APAPA PORT · DEMURRAGE NOTICE", "lines": [{ "text": "Containers: 3" }, { "text": "Overdue: 11 months", "clue": true }] },
+          { "title": "LOAN FACILITY · ₦18,000,000", "lines": [{ "text": "Borrower: E. Okonkwo" }, { "text": "GUARANTOR: ____________", "clue": true }, { "text": "Sign here" }] }
+        ],
+        "divorced": [
+          { "title": "SCHOOL FEES · SECOND TERM", "lines": [{ "text": "Ada O. · Chidi O." }, { "text": "Paid by: E. Okonkwo", "clue": true }] },
+          { "title": "HIGH COURT · ABUJA", "lines": [{ "text": "Re: Okonkwo & Okonkwo" }, { "text": "Weekend arrangement: Fri 7pm to Mon", "clue": true }] }
+        ]
+      },
+      "found": {
+        "serial_sponsor": { "id": "found_allowances", "text": "Lekki 1, 2, 3. And 'New'. New is you.", "caught": true, "tell": "t_sponsor_numbers", "effects": { "sanity": -8, "set": [{ "flag": "saw_lekki_texts", "knows": ["player"] }] }, "receipt": "You found his allowance list in the briefcase." },
+        "broke": { "id": "found_guarantor", "text": "A blank guarantor line. Waiting for a name. Yours?", "caught": true, "tell": "t_broke_apapa", "effects": { "sanity": -6, "set": [{ "flag": "heard_guarantor", "knows": ["player"] }] }, "receipt": "You found a guarantor form in his briefcase." },
+        "divorced": { "id": "found_custody", "text": "Friday 7pm to Monday. His weekends belong to someone.", "caught": true, "tell": "t_div_weekends", "effects": { "sanity": -2, "set": [{ "flag": "has_intel", "knows": ["player"] }] }, "receipt": "You found court papers about his weekends." }
+      },
+      "caught": { "id": "caught_snooping", "text": "'Found what you're looking for?' He was standing there the whole time.", "expression": "angry", "tags": ["toxic"], "effects": { "trust": -15, "sanity": -6, "set": [{ "flag": "secret_grabbed_phone", "knows": ["player", "partner"] }] }, "receipt": "Chief caught you inside his briefcase." },
+      "skipped": { "id": "left_it", "text": "You leave it alone. He comes back to an innocent face.", "tags": ["discreet"], "effects": { "attachment": 2 }, "receipt": "You left Chief's briefcase alone." },
+      "back": [{ "who": "partner", "text": "Sorry. Business never sleeps. Where were we?", "expression": "charming" }]
+    },
+    {
+      "type": "photo",
+      "id": "unknown_photo",
+      "from": "Unknown number",
+      "message": "You should see this.",
+      "detail": {
+        "serial_sponsor": { "label": "Her wrist", "text": "A gold bracelet. Same box as the one in his glovebox.", "tell": "t_sponsor_bracelet" },
+        "broke": { "label": "The sign behind them", "text": "'APAPA CLEARING AGENTS'. He's smiling. She isn't.", "tell": "t_broke_apapa" },
+        "divorced": { "label": "The banner", "text": "'PRIZE-GIVING DAY'. A school event. Two kids at the edge of the frame.", "tell": "t_div_ring" }
+      },
+      "replies": [
+        { "id": "confront", "label": "Show Chief the photo", "tags": ["cautious"], "lines": { "serial_sponsor": [{ "who": "partner", "text": "That? My cousin. Lagos is full of my cousins.", "expression": "caught", "sfx": "laugh" }], "broke": [{ "who": "partner", "text": "A business associate. She's... impatient.", "expression": "caught", "sfx": "hmm" }], "divorced": [{ "who": "partner", "text": "That's my ex-wife. At my children's school. I'll tell you everything.", "expression": "tender", "sfx": "sigh" }] }, "effects": { "serial_sponsor": { "sanity": -5, "trust": -3 }, "broke": { "sanity": -3 }, "divorced": { "trust": 10, "attachment": 5 } }, "receipt": "You showed Chief the photo at the table." },
+        { "id": "forward", "label": "Forward it to your Bestie", "lines": [{ "who": "bestie", "text": "Who sent this?! Babe. Eat your food and watch.", "sfx": "gasp" }], "effects": { "sanity": 2, "set": [{ "flag": "has_intel", "knows": ["player", "bestie"] }] }, "receipt": "You forwarded the photo to your Bestie." },
+        { "id": "delete", "label": "Delete it. Not tonight.", "tags": ["excuse"], "missed": true, "effects": { "sanity": -2 }, "receipt": "You deleted the photo without a word." }
+      ]
+    },
+    {
+      "type": "escape",
+      "id": "wife_escape",
+      "reaction_seconds": 4,
+      "intruder": {
+        "serial_sponsor": { "name": "Mama Ugo", "role": "his first wife", "line": "Emeka. So this is the 'meeting'?" },
+        "broke": { "name": "Mrs Coker", "role": "the woman he owes ₦12m", "line": "Emeka! You said you were in Abuja. You owe me." },
+        "divorced": { "name": "Nkechi", "role": "his ex-wife", "line": "Emeka. The children's bags. Again." }
+      },
+      "tactics": ["guard", "filming", "waiter"],
+      "reactions": [
+        { "id": "hide", "label": "HIDE" },
+        { "id": "stay", "label": "Stay seated. Smile." },
+        { "id": "hand", "label": "Hold Chief's hand" },
+        { "id": "face", "label": "Walk up to her" }
+      ],
+      "outcomes": {
+        "escaped": { "id": "escaped", "text": "Through the kitchen, past a man gutting fish. You're on Bourdillon Road. Alive.", "effects": { "sanity": -4, "clout": 8 }, "receipt": "You escaped her through the kitchen." },
+        "outlasted": { "id": "outlasted", "text": "She gives up and storms out. Chief wipes his forehead. 'Business.'", "effects": { "sanity": -6, "attachment": 4 }, "receipt": "You stayed hidden until she left." },
+        "filmed": { "id": "filmed", "text": "You got out. But her friend's phone caught you crawling. It's online.", "effects": { "exposure": 25, "clout": 6, "sanity": -6, "set": [{ "flag": "secret_escape_video", "knows": ["player", "world", "wife"] }] }, "receipt": "Her friend filmed you escaping." },
+        "worse": { "id": "worse", "text": "CRASH. You took out a waiter's tray. Every head turns. Including hers.", "tags": ["public_embarrassment"], "effects": { "exposure": 20, "sanity": -12, "set": [{ "flag": "secret_escape_video", "knows": ["player", "world", "wife"] }] }, "receipt": "You knocked over a tray while hiding from her." },
+        "caught": {
+          "serial_sponsor": { "id": "caught_wife", "text": "'You. Stand up.' Mama Ugo looks you over like a new maid. 'Number four.'", "tags": ["public_embarrassment"], "effects": { "sanity": -18, "exposure": 25, "set": [{ "flag": "knows_wives", "knows": ["player", "partner"] }, { "flag": "secret_escape_video", "knows": ["player", "world", "wife"] }] }, "receipt": "His first wife caught you hiding." },
+          "broke": { "id": "caught_creditor", "text": "'Are you his new bank?' Mrs Coker hands you her card. 'Call me when he asks.'", "tags": ["public_embarrassment"], "effects": { "sanity": -12, "exposure": 15, "set": [{ "flag": "heard_guarantor", "knows": ["player", "partner"] }] }, "receipt": "The woman he owes caught you hiding." },
+          "divorced": { "id": "caught_ex", "text": "Nkechi finds you behind the bar. 'Why are you hiding? I'm the ex.' Oh.", "effects": { "sanity": -8, "clout": -4 }, "receipt": "His ex-wife found you hiding behind the bar." }
+        },
+        "faced": {
+          "serial_sponsor": { "id": "faced_wife", "text": "You walk up. She smiles. 'Brave. They're usually under the table.'", "tags": ["call_out"], "effects": { "sanity": -8, "clout": 12, "saw_truth": true, "set": [{ "flag": "knows_wives", "knows": ["player", "partner"] }] }, "receipt": "You walked straight up to his first wife." },
+          "broke": { "id": "faced_creditor", "text": "'He owes me twelve million.' She says it to you. Chief studies the menu.", "tags": ["call_out"], "effects": { "sanity": -6, "clout": 8, "saw_truth": true, "set": [{ "flag": "heard_guarantor", "knows": ["player", "partner"] }] }, "receipt": "You faced the woman he owes." },
+          "divorced": { "id": "faced_ex", "text": "'Relax. I'm the ex. He snores and forgets birthdays. Good luck.'", "tags": ["cautious"], "effects": { "trust": 10, "sanity": 4 }, "receipt": "You introduced yourself to his ex-wife." }
+        },
+        "stayed": {
+          "serial_sponsor": { "id": "stayed_cousin", "text": "'My cousin from the East,' Chief says. You smile. You are now his cousin.", "tags": ["excuse"], "missed": true, "effects": { "sanity": -12, "attachment": 4 }, "receipt": "You let Chief introduce you as his cousin." },
+          "broke": { "id": "stayed_creditor", "text": "She sits at your table and orders. On his tab. He goes grey.", "effects": { "sanity": -6 }, "receipt": "You sat through his creditor joining your dinner." },
+          "divorced": { "id": "stayed_ex", "text": "She drops a school bag on the table. 'Saturday, 9am.' Leaves. That's it.", "effects": { "trust": 4 }, "receipt": "You stayed calm while his ex dropped off the kids' bag." }
+        },
+        "hand": {
+          "serial_sponsor": { "id": "hand_wife", "text": "You take his hand. She sees. The whole terrace sees. Chief does not.", "tags": ["public_embarrassment", "toxic"], "effects": { "clout": 15, "exposure": 30, "sanity": -10, "truth_exposed": true, "goal": { "revenge": 30 } }, "receipt": "You held Chief's hand in front of his wife." },
+          "broke": { "id": "hand_creditor", "text": "'Ah, so you're the new investor.' She slides an invoice towards you.", "tags": ["public_embarrassment"], "effects": { "sanity": -8, "exposure": 10 }, "receipt": "You held his hand in front of the woman he owes." },
+          "divorced": { "id": "hand_ex", "text": "Nkechi raises an eyebrow, then a thumbs up. Chief squeezes back.", "effects": { "attachment": 8, "trust": 4 }, "receipt": "You held Chief's hand in front of his ex-wife." }
+        }
+      }
+    },
+    {
+      "type": "outro",
+      "id": "goodnight",
+      "lines": {
+        "escaped": [{ "who": "partner", "text": "Sorry about tonight. Musa is outside. Let me make it up to you.", "expression": "caught" }],
+        "outlasted": [{ "who": "partner", "text": "You're still here. Good. Very good.", "expression": "tender" }],
+        "filmed": [{ "who": "partner", "text": "Don't post anything. I'll handle it. I always handle it.", "expression": "suspicious" }],
+        "worse": [{ "who": "partner", "text": "Next time, sit still. I'll send Musa.", "expression": "angry" }],
+        "caught": [{ "who": "partner", "text": "She talks too much. Forget her. Get home safe.", "expression": "caught" }],
+        "faced": [{ "who": "partner", "text": "You have liver. I don't know if I like it.", "expression": "suspicious" }],
+        "stayed": [{ "who": "partner", "text": "You handled that well. Very well.", "expression": "charming" }],
+        "hand": [{ "who": "partner", "text": "Hmm. Brave. We'll talk.", "expression": "suspicious" }]
+      },
+      "envelope": { "id": "envelope", "text": "An envelope in the Prado: 'For transport.' It is not transport money.", "effects": { "wallet": 150000 }, "receipt": "Chief sent you home with an envelope." },
+      "envelope_broke": { "id": "envelope_small", "text": "An envelope in the Prado. ₦40k in mixed notes. 'Something bigger next week.'", "effects": { "wallet": 40000 }, "receipt": "Chief's envelope was smaller than his promises." },
+      "teaser": "Tomorrow: Chief wants to know where you were at 10pm."
+    }
+  ]
+}

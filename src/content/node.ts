@@ -22,8 +22,16 @@ export function loadCity(id = 'lagos', opts: { withGenerated?: boolean } = {}): 
         .sort()
         .map((f) => read(join(charDir, f)))
     : [];
+  const sceneDir = join(dir, 'scenes');
+  const scenes = existsSync(sceneDir)
+    ? readdirSync(sceneDir)
+        .filter((f) => f.endsWith('.json'))
+        .sort()
+        .map((f) => read(join(sceneDir, f)))
+    : [];
   return buildCity({
     city: read(join(dir, 'city.json')),
+    scenes,
     characters: read(join(dir, 'characters.json')),
     characterFiles,
     catalog: existsSync(join(dir, 'catalog.json')) ? read(join(dir, 'catalog.json')) : [],

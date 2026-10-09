@@ -2,6 +2,7 @@
 // run RNG only ever advances on real game actions.
 
 import { choose, nextDay, resolveBailout, resolveCard, resolveSpot, spotAvailable, visitSpot } from './engine';
+import { activeScene, playSceneOption, sceneOptions } from './scene';
 import { createRun } from './engine';
 import { nextRand, pick } from './rng';
 import type { ChoiceTag, CityContent, EndingId, GoalId, PlayerSetup, ResolvedChoice, RunState, VibeId } from './types';
@@ -85,6 +86,11 @@ export function playOut(content: CityContent, start: RunState, opts: SimOpts = {
       s = nextDay(content, s).state;
       continue;
     }
+    const scene = activeScene(content, s);
+    if (scene) {
+      s = playSceneOption(content, scene, s, pick(bot, sceneOptions(scene, s)).id);
+      continue;
+    }
     const rc = resolveCard(content, s);
     if (!rc) throw new Error(`No card in status ${s.status} day ${s.day} step ${s.stepIndex}`);
     const requiresIds = new Set(rc.card.choices.filter((c) => c.requires).map((c) => c.id));
@@ -133,10 +139,12 @@ export function simulate(content: CityContent, characterId: string, n: number, o
 
 // ---------------------------------------------------------------- deliberate play
 
-export type Action = { kind: 'choose'; id: string; loan?: boolean } | { kind: 'spot'; spot: string; option: string };
+export type Action = { kind: 'choose'; id: string; loan?: boolean } | { kind: 'spot'; spot: string; option: string } | { kind: 'scene'; scene: string; id: string };
 
 export function availableActions(content: CityContent, s: RunState, opts: { loans?: boolean; spots?: boolean } = {}): Action[] {
   const out: Action[] = [];
+  const scene = activeScene(content, s);
+  if (scene) return sceneOptions(scene, s).map((o) => ({ kind: 'scene', scene: scene.id, id: o.id }));
   const rc = resolveCard(content, s);
   if (rc) for (const c of rc.choices) if (c.available || (opts.loans && c.canLoan)) out.push({ kind: 'choose', id: c.id, loan: !c.available || undefined });
   if (opts.spots !== false && spotAvailable(s))
@@ -145,6 +153,7 @@ export function availableActions(content: CityContent, s: RunState, opts: { loan
 }
 
 export function applyAction(content: CityContent, s: RunState, a: Action): RunState {
+  if (a.kind === 'scene') return playSceneOption(content, content.scenes.find((x) => x.id === a.scene)!, s, a.id);
   return a.kind === 'choose' ? choose(content, s, a.id, { loan: a.loan }).state : visitSpot(content, s, a.spot, a.option).state;
 }
 

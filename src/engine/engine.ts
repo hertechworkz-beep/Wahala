@@ -29,6 +29,7 @@ import type {
   Tell,
   Truth,
   Choice,
+  SceneEvent,
 } from './types';
 
 export const GOOD_ONE_CHANCE = 0.25;
@@ -161,6 +162,7 @@ export function createRun(content: CityContent, player: PlayerSetup, characterId
     payoffsPlayed: 0,
     interruptsPlayed: 0,
     money: { spent: 0, received: 0, borrowed: 0, earned: 0 },
+    redFlagsCaught: 0,
     history: [],
   };
 
@@ -386,7 +388,8 @@ function resolveChoice(content: CityContent, s: RunState, c: Choice | SpotOption
   const ch = getCharacter(content, s.characterId);
   return {
     id: c.id,
-    label: fill(c.label, { character: ch, player: s.player }),
+    // The price in the label is the price you pay (costs scale with your vibe).
+    label: cost ? reconcileMoney(fill(c.label, { character: ch, player: s.player }), cost, { last: true }) : fill(c.label, { character: ch, player: s.player }),
     available: affordable,
     reason: affordable ? undefined : fill(c.broke_text ?? 'Your account balance said "be serious".', { character: ch, player: s.player }),
     cost,
@@ -636,6 +639,7 @@ export function choose(content: CityContent, prev: RunState, choiceId: string, o
       if (card.detail.red_flag && !s.goodOne) s.redFlagsMissed++;
     }
   }
+  if (tell && (tags.includes('call_out') || tags.includes('investigate') || tags.includes('cautious'))) s.redFlagsCaught++;
   let missedTell = false;
   if (tell && tags.includes('excuse') && !s.goodOne) {
     s.redFlagsMissed++;
@@ -649,8 +653,8 @@ export function choose(content: CityContent, prev: RunState, choiceId: string, o
     card: card.id,
     slot: card.slot,
     choice: choice.id,
-    choiceLabel: fill(choice.label, { character: ch, player: s.player }),
-    outcomeText: fill(o.text, { character: ch, player: s.player }),
+    choiceLabel: cost ? reconcileMoney(fill(choice.label, { character: ch, player: s.player }), cost, { last: true }) : fill(choice.label, { character: ch, player: s.player }),
+    outcomeText: reconcileMoney(fill(o.text, { character: ch, player: s.player }), ctx.deltas.wallet),
     outcomeIndex: i,
     rolled,
     bad,
@@ -663,7 +667,7 @@ export function choose(content: CityContent, prev: RunState, choiceId: string, o
   });
 
   const result: ChoiceResult = {
-    text: fill(o.text, { character: ch, player: s.player }),
+    text: reconcileMoney(fill(o.text, { character: ch, player: s.player }), ctx.deltas.wallet),
     notes: ctx.notes,
     deltas: ctx.deltas,
     phone: ctx.phone,
@@ -690,6 +694,24 @@ export function choose(content: CityContent, prev: RunState, choiceId: string, o
   return { state: s, result };
 }
 
+/**
+ * Story text is written with round base amounts ("a ₦100k alert"), but costs scale by vibe and
+ * gifts by Chemistry. When the text names exactly one amount, rewrite it to the real delta so
+ * the text, the bank alert and the meter always agree (Playtest 1, rule 7).
+ */
+export function reconcileMoney(text: string, delta: number | undefined, opts: { last?: boolean } = {}): string {
+  if (!delta) return text;
+  const re = /₦\s?(\d[\d,.]*)\s?(k|m)?\b/gi;
+  const hits = text.match(re);
+  if (!hits || (hits.length !== 1 && !opts.last)) return text;
+  const abs = Math.abs(delta);
+  const short = abs >= 1_000_000 ? `₦${(Math.round(abs / 100_000) / 10).toString()}m` : abs >= 1000 ? `₦${(Math.round(abs / 100) / 10).toString()}k` : `₦${abs}`;
+  if (hits.length === 1) return text.replace(re, short);
+  // Choice labels put the price last ("Spray ₦50 notes. Many of them. ₦5k").
+  const i = text.lastIndexOf(hits[hits.length - 1]);
+  return text.slice(0, i) + short + text.slice(i + hits[hits.length - 1].length);
+}
+
 function takeLoan(ctx: ApplyCtx, shortfall: number) {
   const amount = Math.ceil(shortfall / 5000) * 5000;
   add(ctx, 'wallet', amount);
@@ -704,6 +726,64 @@ function takeLoan(ctx: ApplyCtx, shortfall: number) {
 
 function logEvent(s: RunState, e: Omit<LoggedEvent, 'score' | 'seq'>) {
   s.log.push({ ...e, seq: s.log.length, score: eventScore(e, s) });
+}
+
+// ---------------------------------------------------------------- played scenes
+
+/** Applies one moment from a played scene (dress-up, inspect, Wife Escape...) to the run. */
+export function playSceneEvent(content: CityContent, prev: RunState, sceneId: string, ev: SceneEvent): { state: RunState; result: ChoiceResult } {
+  const s = clone(prev);
+  if (s.status !== 'card') throw new Error('Scene events need an active day');
+  const ch = getCharacter(content, s.characterId);
+  s.history.push({ action: 'scene_event', id: sceneId, event: clone(ev) });
+  const tags = (ev.tags ?? []) as ChoiceTag[];
+  const ctx: ApplyCtx = { content, s, ch, fromPartner: ev.fromPartner ?? true, tags, notes: [], phone: [], fx: [], deltas: {} };
+  if (tags.includes('toxic')) s.toxicCount++;
+  if (tags.includes('stay')) s.stays++;
+  if (ev.tellShown && !s.tellsShown.includes(ev.tellShown)) {
+    s.tellsShown.push(ev.tellShown);
+    s.evidenceSinceInvestigation++;
+  }
+  if (ev.caught) s.redFlagsCaught++;
+  if (ev.missedTell && !s.goodOne) s.redFlagsMissed++;
+  applyEffects(ctx, ev.effects);
+  applyRules(ctx);
+  const text = reconcileMoney(fill(ev.text, { character: ch, player: s.player }), ctx.deltas.wallet);
+  logEvent(s, {
+    day: s.day,
+    card: `scene:${sceneId}:${ev.id}`,
+    slot: currentStep(s)?.slot ?? 'first_date',
+    choice: ev.id,
+    choiceLabel: fill(ev.label, { character: ch, player: s.player }),
+    outcomeText: text,
+    outcomeIndex: 0,
+    rolled: false,
+    bad: false,
+    cause: ev.cause ?? 'played',
+    deltas: ctx.deltas,
+    tags,
+    tellShown: ev.tellShown,
+    missedTell: !!ev.missedTell && !s.goodOne,
+    receipt: ev.receipt,
+  });
+  const result: ChoiceResult = { text, notes: ctx.notes, deltas: ctx.deltas, phone: ctx.phone, fx: ctx.fx, expression: ctx.expression, rolled: false, bad: false };
+  const instant = checkInstantEnding(s);
+  if (instant) {
+    result.pendingEnding = instant;
+    queueEnding(content, s, instant);
+    if ((s.status as string) === 'ended') result.ending = instant;
+  }
+  return { state: s, result };
+}
+
+/** Ends a played scene: it stands in for the current step (e.g. Day 1's First Date card). */
+export function finishScene(content: CityContent, prev: RunState, sceneId: string): RunState {
+  const s = clone(prev);
+  if (s.status !== 'card') return s;
+  s.history.push({ action: 'scene_end', id: sceneId });
+  s.stepIndex++;
+  drawUntilPlayable(content, s);
+  return s;
 }
 
 // ---------------------------------------------------------------- city spots (rule 8)
@@ -950,6 +1030,8 @@ export function replay(content: CityContent, player: PlayerSetup, characterId: s
     else if (h.action === 'bailout') s = resolveBailout(content, s, true);
     else if (h.action === 'decline_bailout') s = resolveBailout(content, s, false);
     else if (h.action === 'clue') s = useClue(content, s).state;
+    else if (h.action === 'scene_event') s = playSceneEvent(content, s, h.id, h.event!).state;
+    else if (h.action === 'scene_end') s = finishScene(content, s, h.id);
   }
   return s;
 }

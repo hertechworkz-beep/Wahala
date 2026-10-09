@@ -61,8 +61,37 @@ try {
 
   let shots = 0;
   let openedPhone = false;
-  for (let step = 0; step < 120; step++) {
+  for (let step = 0; step < 400; step++) {
     await page.waitForTimeout(300);
+    // Chief's first date is a played scene: tap through it like a player would.
+    if (await page.locator('[data-scene]').count()) {
+      const st = await page.locator('[data-step]').getAttribute('data-step');
+      if (st === 'getting_ready') {
+        if (await page.locator('[data-act="answer"]').count()) await page.locator('[data-act="answer"]').click({ force: true });
+        else if (await page.locator('[data-act^="call-"]').count()) await page.locator('[data-act^="call-"]').first().click({ force: true });
+        else if (await page.locator('[data-act="leave"]:not([disabled])').count()) await page.locator('[data-act="leave"]').click({ force: true });
+        else {
+          await page.locator('[data-tab="outfit"]').click();
+          await page.locator('[data-item]').first().click();
+          await page.locator('[data-tab="shoes"]').click();
+          await page.locator('[data-item]').first().click();
+        }
+        continue;
+      }
+      const acts = page.locator('[data-act]:not([disabled]):not([data-act$="-page"])');
+      if (await acts.count()) {
+        if (shots < 14 && step % 3 === 0) await shot(`date-${++shots}`);
+        await acts.first().click({ force: true });
+        continue;
+      }
+      const nodes = page.locator('[data-node]');
+      if (await nodes.count()) {
+        await nodes.first().click({ force: true });
+        continue;
+      }
+      await page.mouse.click(195, 790);
+      continue;
+    }
     if (await page.locator('[data-verdict]').count()) {
       await page.waitForTimeout(600);
       await shot('ending');

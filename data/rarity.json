@@ -2,16 +2,16 @@
   "chief_emeka": {
     "runs": 5000,
     "endings": {
-      "locked_in": 0.0426,
-      "counter_con": 0.005,
-      "survived": 0.712,
-      "scandal": 0.0272,
-      "sapa": 0.0224,
-      "breakdown": 0.0404,
-      "ghosted": 0.039,
-      "fumbled": 0.0716,
-      "obsession": 0.0044,
-      "walked_away": 0.0354
+      "locked_in": 0.0452,
+      "counter_con": 0.01,
+      "survived": 0.475,
+      "scandal": 0.0414,
+      "sapa": 0.0126,
+      "breakdown": 0.0614,
+      "ghosted": 0.1106,
+      "fumbled": 0.0998,
+      "obsession": 0.0078,
+      "walked_away": 0.1362
     }
   },
   "kayode": {

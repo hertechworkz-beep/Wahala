@@ -7,6 +7,15 @@ import type { PortraitLook } from '../../engine/types';
 export type Expression = 'charming' | 'suspicious' | 'angry' | 'caught' | 'happy' | 'sad' | string;
 
 const artCache = new Map<string, boolean>();
+
+/** Painted sets name some expressions differently; map the engine's names onto them. */
+const ART_ALIAS: Record<string, Record<string, string>> = {
+  chief: { happy: 'laughing', sad: 'tender', shocked: 'caught', worried: 'caught', flirty: 'charming', cold: 'suspicious' },
+};
+export function artPath(artId: string, expression: string): string {
+  const e = ART_ALIAS[artId]?.[expression] ?? expression;
+  return `${import.meta.env.BASE_URL}art/${artId}_${e}.webp`;
+}
 export function useArt(path: string | undefined): boolean {
   const [ok, setOk] = useState(() => (path ? artCache.get(path) === true : false));
   useEffect(() => {
@@ -75,10 +84,19 @@ export function Portrait({
   className?: string;
   idle?: boolean;
 }) {
-  const art = artId ? `/art/${artId}_${expression}.webp` : undefined;
+  const art = artId ? artPath(artId, expression) : undefined;
+  const fallback = artId ? artPath(artId, 'charming') : undefined;
   const hasArt = useArt(art);
+  const hasFallback = useArt(fallback);
   const uid = useId().replace(/:/g, '');
-  if (hasArt && art) return <img src={art} alt="" width={size} className={`${idle ? 'anim-breathe' : ''} ${className}`} style={{ height: 'auto' }} />;
+  const src = hasArt ? art : hasFallback ? fallback : undefined;
+  // Painted portraits carry their own background, so they sit in a soft-edged frame.
+  if (src)
+    return (
+      <div className={`overflow-hidden rounded-[28px] ${idle ? 'anim-breathe' : ''} ${className}`} style={{ width: size, height: size * 1.2, WebkitMaskImage: 'linear-gradient(180deg, #000 70%, transparent 100%)', maskImage: 'linear-gradient(180deg, #000 70%, transparent 100%)' }}>
+        <img key={src} src={src} alt="" className="anim-fade h-full w-full object-cover" style={{ objectPosition: '50% 20%' }} />
+      </div>
+    );
 
   const e = EXPR[expression] ?? EXPR.charming;
   const skin = look.skin;

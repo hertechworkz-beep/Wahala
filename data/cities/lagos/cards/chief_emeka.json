@@ -3845,6 +3845,170 @@
     ]
   },
   {
+    "id": "emeka_po_escape_video",
+    "character": "chief_emeka",
+    "slot": "payoff",
+    "priority": 6,
+    "presentation": "text",
+    "requires": {
+      "flags": [
+        "secret_escape_video"
+      ],
+      "not_flags": [
+        "escape_video_out"
+      ],
+      "day_min": 2
+    },
+    "payoff_of": [
+      "secret_escape_video"
+    ],
+    "scene": {
+      "location": "mainland_street",
+      "time": "morning",
+      "mood": "negative",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "The Parlour has a new video. 41,000 views."
+      },
+      {
+        "who": "The Parlour",
+        "text": "Who is this running through the kitchen of an Ikoyi restaurant last night?? Somebody's wife walked in 👀"
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "serial_sponsor": {
+        "id": "t_sponsor_driver",
+        "text": "Top comment: 'That's Chief's driver at the back door. Musa has seen this movie before.'"
+      },
+      "broke": {
+        "id": "t_broke_card",
+        "text": "Top comment: 'The woman at the door is Mrs Coker. Ask her who owes her twelve million.'"
+      },
+      "divorced": {
+        "id": "t_div_weekends",
+        "text": "Top comment: 'That's his ex. She was dropping off school bags. Why did the babe run? 😂'"
+      }
+    },
+    "choices": [
+      {
+        "id": "own_it",
+        "label": "Quote it: \"Cardio is important.\"",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You owned the escape video in public.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The Parlour loves you. Chief does not reply for six hours.",
+            "clout": 14,
+            "exposure": 10,
+            "attachment": -4,
+            "set": [
+              {
+                "flag": "escape_video_out",
+                "knows": [
+                  "player",
+                  "world",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pay_takedown",
+        "label": "Pay the blog ₦20k to take it down",
+        "cost": 20000,
+        "tags": [
+          "discreet"
+        ],
+        "receipt": "You paid a blog to delete the escape video.",
+        "broke_text": "Takedowns cost money. Your money is on strike.",
+        "outcomes": [
+          {
+            "chance": 0.7,
+            "text": "Gone in ten minutes. Screenshots are forever, but fewer people have them.",
+            "exposure": -15,
+            "set": [
+              {
+                "flag": "escape_video_out",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          },
+          {
+            "chance": 0.3,
+            "text": "They took your money and posted part two.",
+            "bad": true,
+            "exposure": 10,
+            "sanity": -8,
+            "set": [
+              {
+                "flag": "escape_video_out",
+                "knows": [
+                  "player",
+                  "world"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tell_chief",
+        "label": "Send it to Chief: \"Your wahala, not mine.\"",
+        "tags": [
+          "call_out"
+        ],
+        "receipt": "You sent Chief the escape video.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'I'll handle it.' An hour later the video is gone. So is your peace.",
+            "trust": 4,
+            "sanity": -4,
+            "set": [
+              {
+                "flag": "escape_video_out",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "divorced": {
+            "text": "'Ha! You ran from Nkechi? She's harmless. Come for lunch, I'll explain everything.'",
+            "trust": 10,
+            "attachment": 6,
+            "set": [
+              {
+                "flag": "escape_video_out",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
     "id": "emeka_es_location",
     "character": "chief_emeka",
     "slot": "escalation",

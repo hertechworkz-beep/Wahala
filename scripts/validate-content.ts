@@ -5,6 +5,7 @@ import { join } from 'node:path';
 import { DATA_ROOT, loadCity } from '../src/content/node';
 import { validateCity } from '../src/engine/validate';
 import { simulate, POLICIES } from '../src/engine/sim';
+import { validateScene } from '../src/engine/scene';
 import type { EndingId } from '../src/engine/types';
 
 const content = loadCity('lagos', { withGenerated: false });
@@ -25,7 +26,10 @@ for (const ch of content.characters) {
     const stats2 = simulate(content, ch.id, 600, { policies: POLICIES, seedBase: 29, acceptBailout: true, loanChance: 0.2 });
     const expected = ALL_ENDINGS.filter((e) => (e === 'obsession' ? ch.temperament.controlling : true));
     for (const e of expected) if (!stats.endings[e] && !stats2.endings[e]) errs.push(`ending ${e} not reached in 3,600 simulated runs`);
-    const neverSeen = content.cards.filter((c) => c.character === ch.id && !stats.cardsSeen[c.id] && !stats2.cardsSeen[c.id]).map((c) => c.id);
+    // A played scene stands in for its slot's cards (they stay as written fallbacks).
+    const scene = content.scenes.find((s) => s.character === ch.id);
+    if (scene) errs.push(...validateScene(scene, ch));
+    const neverSeen = content.cards.filter((c) => c.character === ch.id && c.slot !== scene?.replaces && !stats.cardsSeen[c.id] && !stats2.cardsSeen[c.id]).map((c) => c.id);
     for (const c of neverSeen) errs.push(`card ${c} never drawn in simulation`);
   }
   launch[ch.id] = { pass: hasDeck(ch.id) && errs.length === 0, errors: hasDeck(ch.id) ? errs : ['deck not written yet', ...errs] };

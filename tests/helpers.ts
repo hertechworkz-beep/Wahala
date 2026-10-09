@@ -1,5 +1,6 @@
 import { loadCity } from '../src/content/node';
-import { choose, createRun, nextDay, resolveBailout, resolveCard, resolveSpot, spotAvailable, visitSpot, type CreateOpts } from '../src/engine/engine';
+import { createRun, nextDay, resolveBailout, spotAvailable, type CreateOpts } from '../src/engine/engine';
+import { applyAction, availableActions, type Action } from '../src/engine/sim';
 import type { CityContent, PlayerSetup, RunState, VibeId, GoalId } from '../src/engine/types';
 
 export const content: CityContent = loadCity();
@@ -16,20 +17,15 @@ export function setup(over: Partial<PlayerSetup> = {}): PlayerSetup {
   };
 }
 
-export type Action = { kind: 'choose'; id: string; loan?: boolean } | { kind: 'spot'; spot: string; option: string };
+export type { Action };
 
-/** All actions available right now (card choices plus today's spot options). */
+/** All actions available right now (scene options, card choices, today's spot options). */
 export function actions(s: RunState, opts: { loans?: boolean; spots?: boolean } = {}): Action[] {
-  const out: Action[] = [];
-  const rc = resolveCard(content, s);
-  if (rc) for (const c of rc.choices) if (c.available || (opts.loans && c.canLoan)) out.push({ kind: 'choose', id: c.id, loan: !c.available || undefined });
-  if (opts.spots !== false && spotAvailable(s))
-    for (const spot of content.spots) for (const o of resolveSpot(content, s, spot.id)) if (o.available) out.push({ kind: 'spot', spot: spot.id, option: o.id });
-  return out;
+  return availableActions(content, s, opts);
 }
 
 export function apply(s: RunState, a: Action): RunState {
-  return a.kind === 'choose' ? choose(content, s, a.id, { loan: a.loan }).state : visitSpot(content, s, a.spot, a.option).state;
+  return applyAction(content, s, a);
 }
 
 /**

@@ -1,8 +1,8 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import { lagos } from '../content/browser';
-import { choose, createRun, nextDay, replay, resolveBailout, useClue, visitSpot } from '../engine/engine';
+import { choose, createRun, finishScene, nextDay, playSceneEvent, replay, resolveBailout, useClue, visitSpot } from '../engine/engine';
 import { newSeed } from '../engine/rng';
-import type { ChoiceResult, Meters, PhoneEvent, PlayerSetup, RunState } from '../engine/types';
+import type { ChoiceResult, Meters, PhoneEvent, PlayerSetup, RunState, SceneEvent } from '../engine/types';
 import { backend, storage } from '../backend';
 
 // A saved run is just its seed and choices: the engine replays it exactly (rule 23).
@@ -42,8 +42,10 @@ export interface LastEvent {
 export function useRun() {
   const [run, setRun] = useState<RunState | null>(() => loadSaved());
   const [last, setLast] = useState<LastEvent | null>(null);
+  const latest = useRef(run);
 
   const commit = useCallback((s: RunState | null) => {
+    latest.current = s;
     setRun(s);
     save(s);
   }, []);
@@ -110,10 +112,34 @@ export function useRun() {
     return r.hint;
   }, [run, commit]);
 
+  /** A played moment inside the first-date scene. Uses the latest state: moments can be quick. */
+  const sceneEvent = useCallback(
+    (sceneId: string, ev: SceneEvent) => {
+      const cur = latest.current;
+      if (!cur || cur.status !== 'card') return undefined;
+      const { state, result } = playSceneEvent(lagos, cur, sceneId, ev);
+      if (state.status === 'bailout') backend.track('bailout_shown', { ending: state.pendingEnding });
+      if (state.status === 'ended') backend.track('run_ended', { ending: state.ending, day: state.endedDay, character: state.characterId });
+      commit(state);
+      setLast({ id: Date.now() + Math.random(), kind: 'choice', result, choiceLabel: ev.label, phone: result.phone, deltas: result.deltas });
+      return { state, result };
+    },
+    [commit],
+  );
+
+  const sceneEnd = useCallback(
+    (sceneId: string) => {
+      const cur = latest.current;
+      if (!cur) return;
+      commit(finishScene(lagos, cur, sceneId));
+    },
+    [commit],
+  );
+
   const reset = useCallback(() => {
     commit(null);
     setLast(null);
   }, [commit]);
 
-  return { run, last, start, pick, spot, sleep, bailout, clue, reset };
+  return { run, last, start, pick, spot, sleep, bailout, clue, reset, sceneEvent, sceneEnd };
 }

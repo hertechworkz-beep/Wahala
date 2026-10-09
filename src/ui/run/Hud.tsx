@@ -29,7 +29,7 @@ function useTween(value: number, ms = 700) {
   return v;
 }
 
-export function Hud({ meters, day, deltas, deltaKey, onPhone, phoneBadge, muted, onMute }: { meters: Meters; day: number; deltas: Partial<Meters>; deltaKey: number; onPhone: () => void; phoneBadge: number; muted: boolean; onMute: () => void }) {
+export function Hud({ meters, day, deltas, deltaKey, onPhone, phoneBadge, muted, onMute }: { meters: Meters; day: number; deltas: Partial<Meters>; deltaKey: number; onPhone?: () => void; phoneBadge: number; muted: boolean; onMute: () => void }) {
   const [floats, setFloats] = useState<Float[]>([]);
   const [hit, setHit] = useState<Record<string, number>>({});
   const wallet = useTween(meters.wallet);
@@ -70,10 +70,10 @@ export function Hud({ meters, day, deltas, deltaKey, onPhone, phoneBadge, muted,
         <button onClick={onMute} className="press flex h-9 w-9 items-center justify-center rounded-full bg-black/55 text-sm backdrop-blur-md" aria-label={muted ? 'Unmute' : 'Mute'}>
           {muted ? '🔇' : '🔊'}
         </button>
-        <button onClick={onPhone} className="press relative flex h-9 items-center gap-1.5 rounded-full bg-black/55 px-3 text-sm backdrop-blur-md" aria-label="Open phone">
+        {onPhone && <button onClick={onPhone} className="press relative flex h-9 items-center gap-1.5 rounded-full bg-black/55 px-3 text-sm backdrop-blur-md" aria-label="Open phone">
           📱<span className="text-xs font-bold">Phone</span>
           {phoneBadge > 0 && <span className="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-[#F43F5E] px-1 text-[10px] font-bold">{phoneBadge}</span>}
-        </button>
+        </button>}
       </div>
       <div className="mt-2 grid grid-cols-3 gap-2">
         <Meter label="Wallet" color="#10B981" hitKey={hit.wallet} floats={floats.filter((f) => f.key === 'wallet' || f.key === 'debt')}>

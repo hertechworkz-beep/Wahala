@@ -13,6 +13,8 @@ import { SceneBackdrop } from '../scene/Scene';
 import type { useRun } from '../session';
 import { Hud } from './Hud';
 import { ColdOpen } from './ColdOpen';
+import { FirstDate } from '../date/FirstDate';
+import { sceneActive } from '../../engine/scene';
 import { storage } from '../../backend';
 
 type Session = ReturnType<typeof useRun>;
@@ -45,6 +47,18 @@ export function RunScreen({ session, onVerdict }: { session: Session; onVerdict:
   const [toast, setToast] = useState('');
   const [chemToast, setChemToast] = useState<number | null>(null);
   const cardsSinceGossip = useRef(0);
+  // Chief's first date is played as a scene, not a card.
+  const scene = lagos.scenes.find((s) => s.character === run.characterId);
+  const inScene = sceneActive(run, scene);
+  const wasInScene = useRef(inScene);
+  useEffect(() => {
+    if (wasInScene.current && !inScene) {
+      setCard(resolveCard(lagos, run) ?? null);
+      setOutcome(null);
+      setPhase(run.status === 'card' ? 'intro' : run.status === 'day_end' ? 'night' : run.status === 'bailout' ? 'bailout' : 'ending');
+    }
+    wasInScene.current = inScene;
+  }, [inScene]);
 
   useEffect(() => {
     sound.lowEnd = reduced;
@@ -221,6 +235,8 @@ export function RunScreen({ session, onVerdict }: { session: Session; onVerdict:
         }}
       />
     );
+
+  if (inScene && scene) return <FirstDate scene={scene} run={run} play={session.sceneEvent} end={session.sceneEnd} />;
 
   return (
     <div key={shake} className={`relative h-full overflow-hidden ${shake ? 'anim-shake' : ''} ${reduced ? 'reduced' : ''}`}>
