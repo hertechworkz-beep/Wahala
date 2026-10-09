@@ -1,20 +1,291 @@
 [
-  { "text": "A man who hides you on weekends is not busy. He is booked.", "truths": ["serial_sponsor"] },
-  { "text": "If you're saved as a number, you're one of several.", "truths": ["serial_sponsor"] },
-  { "text": "\"I'll refund you tomorrow\" has never once been followed by tomorrow.", "truths": ["broke"] },
-  { "text": "Rich men don't need your signature. Broke men do.", "truths": ["broke"] },
-  { "text": "Not every locked phone is hiding a lover. Some are hiding a man who is tired.", "truths": ["divorced"] },
-  { "text": "Loud men are not always dangerous. Quiet ones are not always safe.", "good_one": true },
-  { "text": "Sometimes the wahala is you.", "endings": ["fumbled"] },
-  { "text": "Checking once is caution. Checking again is a hobby. Posting it is a war.", "endings": ["fumbled"] },
-  { "text": "Control isn't love. Leaving isn't failure.", "endings": ["obsession", "walked_away"] },
-  { "text": "If her love language is alerts, you are a subscription.", "endings": ["sapa"] },
-  { "text": "Every \"emergency\" that needs your money is someone else's plan.", "endings": ["sapa"] },
-  { "text": "Sanity is a currency too. You spent all of it on him.", "endings": ["breakdown"] },
-  { "text": "Blue ticks are a full sentence.", "endings": ["ghosted"] },
-  { "text": "The Parlour doesn't forget. It just waits for a better picture.", "endings": ["scandal"] },
-  { "text": "You read the signs before they read you. That's not luck. That's attention.", "endings": ["counter_con"] },
-  { "text": "Exclusive is a status, not a promise.", "endings": ["survived"] },
-  { "text": "Being chosen feels good. Make sure you chose too.", "endings": ["locked_in"] },
-  { "text": "You saw the signs. Next time, believe them.", "endings": ["ghosted", "survived", "sapa"] }
+  {
+    "text": "A man who hides you on weekends is not busy. He is booked.",
+    "truths": [
+      "serial_sponsor"
+    ]
+  },
+  {
+    "text": "If you're saved as a number, you're one of several.",
+    "truths": [
+      "serial_sponsor"
+    ]
+  },
+  {
+    "text": "\"I'll refund you tomorrow\" has never once been followed by tomorrow.",
+    "truths": [
+      "broke"
+    ]
+  },
+  {
+    "text": "Rich men don't need your signature. Broke men do.",
+    "truths": [
+      "broke"
+    ]
+  },
+  {
+    "text": "Not every locked phone is hiding a lover. Some are hiding a man who is tired.",
+    "truths": [
+      "divorced"
+    ]
+  },
+  {
+    "text": "Loud men are not always dangerous. Quiet ones are not always safe.",
+    "good_one": true
+  },
+  {
+    "text": "Sometimes the wahala is you.",
+    "endings": [
+      "fumbled"
+    ]
+  },
+  {
+    "text": "Checking once is caution. Checking again is a hobby. Posting it is a war.",
+    "endings": [
+      "fumbled"
+    ]
+  },
+  {
+    "text": "Control isn't love. Leaving isn't failure.",
+    "endings": [
+      "obsession",
+      "walked_away"
+    ]
+  },
+  {
+    "text": "If her love language is alerts, you are a subscription.",
+    "endings": [
+      "sapa"
+    ]
+  },
+  {
+    "text": "Every \"emergency\" that needs your money is someone else's plan.",
+    "endings": [
+      "sapa"
+    ]
+  },
+  {
+    "text": "Sanity is a currency too. You spent all of it on him.",
+    "endings": [
+      "breakdown"
+    ]
+  },
+  {
+    "text": "Blue ticks are a full sentence.",
+    "endings": [
+      "ghosted"
+    ]
+  },
+  {
+    "text": "The Parlour doesn't forget. It just waits for a better picture.",
+    "endings": [
+      "scandal"
+    ]
+  },
+  {
+    "text": "You read the signs before they read you. That's not luck. That's attention.",
+    "endings": [
+      "counter_con"
+    ]
+  },
+  {
+    "text": "Exclusive is a status, not a promise.",
+    "endings": [
+      "survived"
+    ]
+  },
+  {
+    "text": "Being chosen feels good. Make sure you chose too.",
+    "endings": [
+      "locked_in"
+    ]
+  },
+  {
+    "text": "You saw the signs. Next time, believe them.",
+    "endings": [
+      "ghosted",
+      "survived",
+      "sapa"
+    ]
+  },
+  {
+    "text": "If his money runs from police, it was never his money.",
+    "truths": [
+      "yahoo"
+    ]
+  },
+  {
+    "text": "\"I'll double it by night\" is a prayer, not a plan.",
+    "truths": [
+      "gambler"
+    ]
+  },
+  {
+    "text": "Some men run from sirens because their father is scarier than the police.",
+    "truths": [
+      "trust_fund"
+    ]
+  },
+  {
+    "text": "Italian shoes don't need a passport. People do.",
+    "truths": [
+      "never_left"
+    ]
+  },
+  {
+    "text": "If his time zone is always 'Europe', ask who's awake there.",
+    "truths": [
+      "wife_abroad"
+    ]
+  },
+  {
+    "text": "Sometimes the papers money really is for papers. Ask to see them, then believe what you see.",
+    "truths": [
+      "japa_real"
+    ]
+  },
+  {
+    "text": "A man who can't be seen with you has already been seen with someone else.",
+    "truths": [
+      "arranged"
+    ]
+  },
+  {
+    "text": "Every other Friday is not a business trip. It's a marriage.",
+    "truths": [
+      "kano_wife"
+    ]
+  },
+  {
+    "text": "Secrecy can be protection. You only find out if you ask instead of accuse.",
+    "truths": [
+      "defiant_love"
+    ]
+  },
+  {
+    "text": "Someone who tracks your phone isn't scared of losing you. They're scared of you leaving.",
+    "truths": [
+      "controlling"
+    ]
+  },
+  {
+    "text": "If 'Customer' calls at 11pm, the customer is family.",
+    "truths": [
+      "baby_mamas"
+    ]
+  },
+  {
+    "text": "Loud men are not always dangerous. Quiet ones are not always safe.",
+    "truths": [
+      "loyal"
+    ]
+  },
+  {
+    "text": "If her love language is alerts, you are a subscription.",
+    "truths": [
+      "main_boyfriend"
+    ]
+  },
+  {
+    "text": "Soft life on credit is hard life with a delay.",
+    "truths": [
+      "vendor_debt"
+    ]
+  },
+  {
+    "text": "Some people test with money because money is where they got hurt.",
+    "truths": [
+      "tester"
+    ]
+  },
+  {
+    "text": "If the families are 'close', ask how close.",
+    "truths": [
+      "engaged"
+    ]
+  },
+  {
+    "text": "A 70% off sign on the boutique is a press release.",
+    "truths": [
+      "collapsing"
+    ]
+  },
+  {
+    "text": "Rich people get tired of rich people too. Being real is a currency.",
+    "truths": [
+      "tired"
+    ]
+  },
+  {
+    "text": "If she never says 'next year', she already knows.",
+    "truths": [
+      "family_no"
+    ]
+  },
+  {
+    "text": "Curfew at 9, online at 3. Believe the 3.",
+    "truths": [
+      "wild_life"
+    ]
+  },
+  {
+    "text": "Hiding someone can be love. Ask what they're afraid of before you decide.",
+    "truths": [
+      "dangerous_ex"
+    ]
+  },
+  {
+    "text": "If the DJ shouts her out by a pet name, he's not just the DJ.",
+    "truths": [
+      "dj_ex"
+    ]
+  },
+  {
+    "text": "If your name is on the flyer as 'sponsor', you're the event budget.",
+    "truths": [
+      "event_money"
+    ]
+  },
+  {
+    "text": "The one who fights for you in public is rarely the one cheating in private.",
+    "truths": [
+      "fierce_loyal"
+    ]
+  },
+  {
+    "text": "Lagos is small. Your sponsor's sponsor has a red cap.",
+    "truths": [
+      "chief_sponsor"
+    ]
+  },
+  {
+    "text": "If she converts every gift to dollars, you're the last stop, not the destination.",
+    "truths": [
+      "japa"
+    ]
+  },
+  {
+    "text": "Leaving the life is hard. Leaving it for you is harder. Notice the difference.",
+    "truths": [
+      "quitting"
+    ]
+  },
+  {
+    "text": "When someone pays for your life, ask who else is watching the receipts.",
+    "truths": [
+      "husband_alive"
+    ]
+  },
+  {
+    "text": "If you're booked in slots, you're not the relationship. You're the schedule.",
+    "truths": [
+      "three_men"
+    ]
+  },
+  {
+    "text": "Generous and controlling can both be grief. Ask before you judge.",
+    "truths": [
+      "widow"
+    ]
+  }
 ]

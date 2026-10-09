@@ -2,16 +2,136 @@
   "chief_emeka": {
     "runs": 5000,
     "endings": {
-      "locked_in": 0.045,
-      "counter_con": 0.006,
-      "survived": 0.7084,
-      "scandal": 0.0298,
-      "sapa": 0.02,
-      "breakdown": 0.0406,
-      "ghosted": 0.0374,
-      "fumbled": 0.0714,
-      "obsession": 0.005,
-      "walked_away": 0.0364
+      "locked_in": 0.0426,
+      "counter_con": 0.005,
+      "survived": 0.712,
+      "scandal": 0.0272,
+      "sapa": 0.0224,
+      "breakdown": 0.0404,
+      "ghosted": 0.039,
+      "fumbled": 0.0716,
+      "obsession": 0.0044,
+      "walked_away": 0.0354
+    }
+  },
+  "kayode": {
+    "runs": 5000,
+    "endings": {
+      "locked_in": 0.193,
+      "counter_con": 0.0266,
+      "survived": 0.5238,
+      "scandal": 0.0102,
+      "sapa": 0.0318,
+      "breakdown": 0.0088,
+      "ghosted": 0.013,
+      "fumbled": 0.0306,
+      "obsession": 0,
+      "walked_away": 0.1622
+    }
+  },
+  "osaze": {
+    "runs": 5000,
+    "endings": {
+      "locked_in": 0.1566,
+      "counter_con": 0.027,
+      "survived": 0.568,
+      "scandal": 0.0056,
+      "sapa": 0.0384,
+      "breakdown": 0.0056,
+      "ghosted": 0.0116,
+      "fumbled": 0.0448,
+      "obsession": 0,
+      "walked_away": 0.1424
+    }
+  },
+  "tiwa": {
+    "runs": 5000,
+    "endings": {
+      "locked_in": 0.1336,
+      "counter_con": 0.0444,
+      "survived": 0.5506,
+      "scandal": 0.0034,
+      "sapa": 0.053,
+      "breakdown": 0.0032,
+      "ghosted": 0.0224,
+      "fumbled": 0.0098,
+      "obsession": 0,
+      "walked_away": 0.1796
+    }
+  },
+  "adaeze": {
+    "runs": 5000,
+    "endings": {
+      "locked_in": 0.0822,
+      "counter_con": 0.0184,
+      "survived": 0.5136,
+      "scandal": 0.0026,
+      "sapa": 0.0486,
+      "breakdown": 0.0082,
+      "ghosted": 0.0906,
+      "fumbled": 0.0376,
+      "obsession": 0,
+      "walked_away": 0.1982
+    }
+  },
+  "zainab": {
+    "runs": 5000,
+    "endings": {
+      "locked_in": 0.079,
+      "counter_con": 0.029,
+      "survived": 0.5268,
+      "scandal": 0.004,
+      "sapa": 0.041,
+      "breakdown": 0.0074,
+      "ghosted": 0.0962,
+      "fumbled": 0.0258,
+      "obsession": 0,
+      "walked_away": 0.1908
+    }
+  },
+  "blessing": {
+    "runs": 5000,
+    "endings": {
+      "locked_in": 0.1498,
+      "counter_con": 0.0624,
+      "survived": 0.477,
+      "scandal": 0.036,
+      "sapa": 0.0676,
+      "breakdown": 0.0056,
+      "ghosted": 0.0048,
+      "fumbled": 0.0366,
+      "obsession": 0,
+      "walked_away": 0.1602
+    }
+  },
+  "mercy": {
+    "runs": 5000,
+    "endings": {
+      "locked_in": 0.1484,
+      "counter_con": 0.0476,
+      "survived": 0.5026,
+      "scandal": 0.0044,
+      "sapa": 0.0538,
+      "breakdown": 0.0008,
+      "ghosted": 0.0104,
+      "fumbled": 0.0274,
+      "obsession": 0,
+      "walked_away": 0.2046
+    }
+  },
+  "madam_folake": {
+    "runs": 5000,
+    "endings": {
+      "locked_in": 0.097,
+      "counter_con": 0.085,
+      "survived": 0.4114,
+      "scandal": 0.0014,
+      "sapa": 0.0228,
+      "breakdown": 0.0076,
+      "ghosted": 0.0436,
+      "fumbled": 0.0398,
+      "obsession": 0.008,
+      "walked_away": 0.2834
     }
   }
 }
