@@ -692,3 +692,48 @@ Reactions arrive as pop-ups, sounds and animation, not instruction text: the pho
 ### Voice plan
 
 Characters' voices are core to the experience and are never sold separately. Generic robotic AI voices are not acceptable. Plan: record real Nigerian voices once, about 40 short clips per character ("Ehen!", "My darling", "Who told you?", "Sit down.", laughs, sighs), and reuse them across all runs, with captions for full lines. Store clips in `public/audio/voices/<character>/<clip>.mp3` and reference them from card data. Until clips are recorded, show captions with expressive sound effects (no robotic text-to-speech).
+
+## Live Spots: real players together (Phase 1, overrides rule 11's "no free-text messages at launch")
+
+Wahala must never feel like playing alone. Lagos Life's pull is thousands of real players sharing one Lagos. Wahala adds that from Phase 1.
+
+1. **Spots are live venues** using real Lagos places: a VIP lounge on Ozumba Mbadiwe, a beach bar at Elegushi, a café on Admiralty Way. Players enter between days (or anytime from the phone) and see other real players there as their avatars, moving and idling.
+2. **Who's here:** each player shows a display name, avatar and a badge of their current run ("Dating Chief · Day 4"). Tap someone to see their Clout and their latest shared Verdict title.
+3. **Things to do together:** text chat, emoji reactions, buy someone a drink with game money, dance, toast, invite to a Squad Run, compare runs with others dating the same character, start a rivalry.
+4. **Voice rooms:** opt-in microphone chat with push-to-talk, per table or per Spot. Voice is off by default.
+5. **AI and real together:** the AI Bestie and NPC regulars (bartender, gossip aunty, DJ) keep Spots lively when few players are online. They are always labelled as characters, never presented as real people.
+6. **Safety (required before launch):** mute, block and report on every player; voice off by default and push-to-talk only; automatic filtering of abuse, slurs, phone numbers, links and payment requests in chat; rate limits; an admin moderation queue; reported voice users removed from voice until reviewed; age gate still applies.
+7. **Tech:** Supabase Realtime for presence and chat; WebRTC voice through a managed service with a free tier (for example LiveKit); Spots fail gracefully and never block the single-player run.
+8. **Brands:** Spots are prime sponsor inventory (named venue, sponsored playlist, drinks).
+
+Build order: after the new first date passes the acceptance test, Live Spots are the next priority, before more characters.
+
+### Live Spots refinements (final)
+
+1. **Start with one walkable lounge, done well:** a VIP lounge on Ozumba Mbadiwe. Players move their avatar around it (tap to walk), sit at tables, stand at the bar, dance. It must feel busy even with a handful of players. Add more venues only after this one feels alive.
+2. **Spots are part of the dating story, not a separate menu.** Story events happen inside the lounge: Chief calls you there, your AI Bestie interrupts, the wife or a rival can walk in, a Chief-related set piece can trigger. Some days of the run take place in the lounge with other real players around you.
+3. **Approach people naturally:** walk up to a player to talk (voice or text), buy them a virtual drink, toast, invite them to your table.
+4. **No spoilers:** other players see who you're dating and what day you're on, never your hidden truth, rolled events or tells. The game never shares one player's hidden truth with another; players can only share what they choose to say.
+5. **Voice is a real feature:** proximity voice (you hear people near you more loudly) with opt-in, push-to-talk, mute, block and report.
+
+### Live Spots at launch (final, overrides "start with one lounge")
+
+Build the Spot engine (walking, presence, voice, chat, safety) using the Ozumba Mbadiwe VIP lounge first. Once it works, add venues as art and data only. **Launch with 4 Spots:** VIP lounge on Ozumba Mbadiwe (Victoria Island), beach bar at Elegushi Beach (Lekki), café on Admiralty Way (Lekki Phase 1), suya spot at Ojuelegba (Surulere). Players start in different Spots depending on their vibe and story, and can move between them. Each Spot shows how many people are inside; when players are few, the game nudges people towards the busiest Spot, and AI regulars keep quieter Spots alive.
+
+### Chief Emeka art, set 1 (interim)
+
+Files in `public/art/`: `chief_charming`, `chief_laughing`, `chief_suspicious`, `chief_angry`, `chief_caught`, `chief_tender` (waist-up portraits) and `chief_seated_ikoyi_restaurant` (Chief seated at the Ikoyi restaurant table, for the first date). The full sheet is `design/reference/04_chief_character_sheet.png`. Use these now in place of the code-drawn Chief, including for expression changes mid-scene; replace the code-drawn placeholder entirely. This set is more realistic than the illustrated setup screens and has painted backgrounds; final art will be redrawn in the approved illustration style with transparent backgrounds, so keep art loading data-driven so files can be swapped without code changes. Chief's look is canon: red cap, red and gold traditional outfit, coral beads, grey-flecked beard, gold watch and ring.
+
+## Live City: your avatar lives in Lagos (core of the game; overrides any scene-only structure)
+
+Wahala is a living city, not a sequence of scenes. Between and around the story's dramatic scenes, the player's avatar lives in a premium 2D illustrated Lagos.
+
+1. **The city map:** start with Victoria Island, Ikoyi and Lekki, drawn in the approved illustration style (top-down or isometric, animated). Places: the player's apartment (Lekki Phase 1), the 4 Spots, the Admiralty Way salon, the Awolowo Road clinic, the Ikoyi restaurant, Elegushi Beach, the Lekki-Ikoyi Link Bridge. Expand to the Mainland (Ojuelegba, Yaba) next.
+2. **Your avatar moves:** tap to walk, or take a ride (Uber-style car, danfo, okada) between places with a short animated trip. Day and night change, traffic moves, NPCs walk the streets.
+3. **Other real players are visible** in the city and in venues, with their avatars, names and "Dating Chief · Day 4"-style badges (no spoilers). Tap to wave, chat or talk by voice where allowed. All Live Spots safety rules apply city-wide.
+4. **The story happens where you go:** walking into the restaurant starts Chief's date; the salon can trigger the wife's friends; Chief calls while you cross the bridge; set pieces (Wife Escape, Okada Dash) launch from the city. Each day has story appointments ("Dinner with Chief, 8pm, Ikoyi") and free time between them.
+5. **Your home:** wardrobe and dress-up, mirror, bed (sleep ends the day), phone. Getting ready happens here.
+6. **Free-time activities are playable:** Glow Up at the clinic changes your look; the Spots are social; shopping comes later.
+7. **Tech:** a 2D game engine suited to the browser (for example PixiJS or Phaser) for the city and Spots, sharing state with the existing story engine; Supabase Realtime for player presence. Performance first on mid-range Android phones.
+
+**Build order (revised):** (1) Chief's first date as a playable scene with the Wife Escape set piece; (2) the Live City (VI, Ikoyi, Lekki) with your avatar moving, your home and travel; (3) Live Spots inside the city with real players, voice and text; (4) then more characters.
