@@ -3,7 +3,7 @@
 // player on a fixed seed, then replayed from history to prove it reproduces exactly.
 import { describe, expect, it } from 'vitest';
 import { bond, netWorth, replay } from '../src/engine/engine';
-import { playOut, POLICIES } from '../src/engine/sim';
+import { lockedInReach, playOut, POLICIES } from '../src/engine/sim';
 import type { EndingId, PlayerSetup, RunState } from '../src/engine/types';
 import { content, lookaheadRun, newRun, setup, type Action } from './helpers';
 
@@ -152,4 +152,13 @@ describe('scripted: money edge cases', () => {
     }
     expect(ok).toBe(true);
   });
+});
+
+describe('balance: deliberate play reaches Locked In (brief balance rule)', () => {
+  const playable = content.characters.filter((c) => content.launch[c.id]?.pass);
+  for (const ch of playable) {
+    it(`${ch.id}: at least 20 of 40 seeds per vibe`, () => {
+      for (const v of content.vibes) expect(lockedInReach(content, ch.id, v.id), `${ch.id} as ${v.id}`).toBeGreaterThanOrEqual(20);
+    }, 120_000);
+  }
 });
