@@ -1,7 +1,22 @@
 import type { ReactNode } from 'react';
 import { sound } from './audio';
 
+/** Hash routing for sandboxed previews (claude.ai), path routing everywhere else. */
+export const HASH_ROUTER = import.meta.env.VITE_HASH_ROUTER === '1';
+
+export function currentPath(): string {
+  if (!HASH_ROUTER) return location.pathname;
+  const h = location.hash.slice(1);
+  return h ? `/${h}` : '/';
+}
+
 export function navigate(path: string) {
+  if (HASH_ROUTER) {
+    const token = path.replace(/^\//, '').split('?')[0];
+    location.hash = token;
+    window.dispatchEvent(new PopStateEvent('popstate'));
+    return;
+  }
   window.history.pushState({}, '', path);
   window.dispatchEvent(new PopStateEvent('popstate'));
 }

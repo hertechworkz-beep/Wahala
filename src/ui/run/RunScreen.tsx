@@ -291,7 +291,7 @@ export function RunScreen({ session, onVerdict }: { session: Session; onVerdict:
         onMute={() => (sound.setMuted(!muted), setMuted(!muted))}
         reduced={reduced}
         onReduced={() => setReduced(!reduced)}
-        onRestart={() => confirm('Abandon this run? Your Verdict will never be known.') && session.reset()}
+        onRestart={() => session.reset()}
       />
       {toast && <Toast text={toast} onDone={() => setToast('')} />}
     </div>

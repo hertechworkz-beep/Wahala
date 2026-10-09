@@ -174,9 +174,7 @@ export function PhoneSheet({
               <div className="space-y-3 p-5">
                 <Toggle label="Sound" on={!muted} onClick={onMute} />
                 <Toggle label="Lite mode (less animation)" on={reduced} onClick={onReduced} />
-                <button onClick={onRestart} className="press mt-6 w-full rounded-2xl border-2 border-[#EF4444]/40 p-4 text-left text-[#EF4444]">
-                  Abandon this run
-                </button>
+                <AbandonButton onConfirm={onRestart} />
                 <p className="pt-4 text-center text-[11px] text-white/30">Run #{run.seed.toString(36)} · replayable for support</p>
               </div>
             </AppFrame>
@@ -185,6 +183,15 @@ export function PhoneSheet({
         <button onClick={onClose} className="absolute bottom-2 left-1/2 h-1.5 w-32 -translate-x-1/2 rounded-full bg-white/40" aria-label="Close phone" />
       </div>
     </div>
+  );
+}
+
+function AbandonButton({ onConfirm }: { onConfirm: () => void }) {
+  const [sure, setSure] = useState(false);
+  return (
+    <button onClick={() => (sure ? onConfirm() : setSure(true))} className="press mt-6 w-full rounded-2xl border-2 border-[#EF4444]/40 p-4 text-left text-[#EF4444]">
+      {sure ? 'Tap again to abandon. Your Verdict will never be known.' : 'Abandon this run'}
+    </button>
   );
 }
 

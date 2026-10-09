@@ -17,7 +17,7 @@ npm run shots        # after build: plays a full Chief run in a phone viewport, 
 npx tsx scripts/card-gallery.ts   # after build: renders every ending's Verdict Card via its share link
 ```
 
-Deploy `dist/` to Vercel (`vercel.json` has SPA rewrites and caching headers).
+Deploy to Vercel (`vercel.json` has SPA rewrites and caching headers): set `VERCEL_TOKEN` in the environment, then `npm run deploy:preview`. `npm run build:preview` builds a hash-routed copy (`dist-preview/`) that runs inside sandboxed frames such as a claude.ai preview.
 
 ## How it fits together
 

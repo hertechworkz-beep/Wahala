@@ -6,3 +6,4 @@ test-results
 screenshots/tmp
 screenshots/verdicts
 .claude/worktrees
+dist-preview

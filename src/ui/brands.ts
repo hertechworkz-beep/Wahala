@@ -1,5 +1,6 @@
 import type { BrandBooking, BrandInventory } from '../engine/types';
 import { lagos } from '../content/browser';
+import { HASH_ROUTER } from './kit';
 
 // Brand slots live inside the story, never as banners over a scene (Brand inventory).
 // Brands only appear in positive or neutral scenes; empty slots advertise themselves.
@@ -29,7 +30,7 @@ export function fillSlot(slotId: string, mood: 'positive' | 'neutral' | 'negativ
     shown[slotId] = (shown[slotId] ?? 0) + 1;
     return { sponsored: true, text: booking.creative.text ?? booking.brand, sub: booking.brand, link: booking.creative.link ?? '#', booking };
   }
-  return { sponsored: false, text: HOUSE[slotId] ?? inv.house_ad, sub: 'Advertise on Wahala', link: '/advertise' };
+  return { sponsored: false, text: HOUSE[slotId] ?? inv.house_ad, sub: 'Advertise on Wahala', link: HASH_ROUTER ? '#advertise' : '/advertise' };
 }
 
 const HOUSE: Record<string, string> = {

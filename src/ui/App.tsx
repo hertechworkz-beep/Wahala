@@ -5,7 +5,7 @@ import { naira } from '../engine/text';
 import { backend, storage } from '../backend';
 import { Portrait } from './art/Portrait';
 import { sound } from './audio';
-import { Btn, Logo, navigate } from './kit';
+import { Btn, Logo, currentPath, navigate } from './kit';
 import { RunScreen } from './run/RunScreen';
 import { ErrorBoundary } from './ErrorBoundary';
 import { useRun } from './session';
@@ -25,11 +25,15 @@ function useChallengeFromUrl() {
 }
 
 function usePath() {
-  const [path, setPath] = useState(location.pathname);
+  const [path, setPath] = useState(currentPath());
   useEffect(() => {
-    const on = () => setPath(location.pathname);
+    const on = () => setPath(currentPath());
     window.addEventListener('popstate', on);
-    return () => window.removeEventListener('popstate', on);
+    window.addEventListener('hashchange', on);
+    return () => {
+      window.removeEventListener('popstate', on);
+      window.removeEventListener('hashchange', on);
+    };
   }, []);
   return path;
 }
