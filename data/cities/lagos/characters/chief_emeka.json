@@ -1,0 +1,14 @@
+{
+  "id": "chief_emeka",
+  "cold_open": {
+    "duration": 16,
+    "scene": { "location": "prado_interior", "time": "night", "expression": "charming", "mood": "neutral", "props": ["window_half"] },
+    "phone": [{ "at": 1.5, "kind": "text", "from": "Unknown number", "text": "Madam, Oga is outside. Black Prado. - Musa" }],
+    "beats": [
+      { "at": 0.5, "who": "narration", "text": "7:00pm. A tinted Prado slides to a stop outside your gate. Nobody gets out." },
+      { "at": 4.5, "who": "narration", "text": "The back window lowers halfway. A gold Rolex. A red cap. A smile you can only half see." },
+      { "at": 9, "who": "partner", "text": "So you're the one Musa told me about. Get in. Ikoyi is waiting." },
+      { "at": 13, "who": "narration", "text": "The window stays half down. Like everything with him, you'll only ever see part of it." }
+    ]
+  }
+}

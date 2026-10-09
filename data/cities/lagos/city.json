@@ -3,30 +3,214 @@
   "name": "Lagos",
   "season": "Season 1: Lagos",
   "vibes": [
-    { "id": "lover", "label": { "woman": "Lovergirl", "man": "Loverboy", "nonbinary": "Lover" }, "wallet": 150000, "sanity": 80, "clout": 30, "job": "Customer care at a telco", "first_seen": "Easy to play, loyal, emotional", "tier": 0.6, "salary": 6000 },
-    { "id": "sugar", "label": { "woman": "Sugar Babe", "man": "Sugar Boy", "nonbinary": "Sugar Baby" }, "wallet": 60000, "sanity": 60, "clout": 55, "job": "Part-time brand promoter", "first_seen": "A transaction from day one", "tier": 0.35, "salary": 4000 },
-    { "id": "bigboy", "label": { "woman": "Lagos Big Girl", "man": "Lagos Big Boy", "nonbinary": "Lagos Big Body" }, "wallet": 400000, "sanity": 50, "clout": 70, "job": "\"Contracts and crypto\"", "first_seen": "A rival, a flex, a risk", "tier": 1.3, "salary": 30000, "volatile": true },
-    { "id": "runs", "label": { "woman": "Runs Girl", "man": "Runs Guy", "nonbinary": "Runs Babe" }, "wallet": 250000, "sanity": 55, "clout": 60, "job": "\"Logistics and luxury\"", "first_seen": "Street-smart, hard to fool, hard to trust", "tier": 0.9, "salary": 10000 },
-    { "id": "corporate", "label": { "woman": "Corporate 9-to-5er", "man": "Corporate 9-to-5er", "nonbinary": "Corporate 9-to-5er" }, "wallet": 300000, "sanity": 70, "clout": 35, "job": "Bank analyst", "first_seen": "Stable, boring, marriage material", "tier": 1, "salary": 15000 }
+    {
+      "id": "lover",
+      "label": {
+        "woman": "Lovergirl",
+        "man": "Loverboy",
+        "nonbinary": "Lover"
+      },
+      "wallet": 150000,
+      "sanity": 80,
+      "clout": 30,
+      "job": "Customer care at a telco",
+      "first_seen": "Easy to play, loyal, emotional",
+      "tier": 0.6,
+      "salary": 6000
+    },
+    {
+      "id": "sugar",
+      "label": {
+        "woman": "Sugar Babe",
+        "man": "Sugar Boy",
+        "nonbinary": "Sugar Baby"
+      },
+      "wallet": 60000,
+      "sanity": 60,
+      "clout": 55,
+      "job": "Part-time brand promoter",
+      "first_seen": "A transaction from day one",
+      "tier": 0.35,
+      "salary": 4000
+    },
+    {
+      "id": "bigboy",
+      "label": {
+        "woman": "Lagos Big Girl",
+        "man": "Lagos Big Boy",
+        "nonbinary": "Lagos Big Body"
+      },
+      "wallet": 400000,
+      "sanity": 50,
+      "clout": 70,
+      "job": "\"Contracts and crypto\"",
+      "first_seen": "A rival, a flex, a risk",
+      "tier": 1.3,
+      "salary": 30000,
+      "volatile": true
+    },
+    {
+      "id": "runs",
+      "label": {
+        "woman": "Runs Girl",
+        "man": "Runs Guy",
+        "nonbinary": "Runs Babe"
+      },
+      "wallet": 250000,
+      "sanity": 55,
+      "clout": 60,
+      "job": "\"Logistics and luxury\"",
+      "first_seen": "Street-smart, hard to fool, hard to trust",
+      "tier": 0.9,
+      "salary": 10000
+    },
+    {
+      "id": "corporate",
+      "label": {
+        "woman": "Corporate 9-to-5er",
+        "man": "Corporate 9-to-5er",
+        "nonbinary": "Corporate 9-to-5er"
+      },
+      "wallet": 300000,
+      "sanity": 70,
+      "clout": 35,
+      "job": "Bank analyst",
+      "first_seen": "Stable, boring, marriage material",
+      "tier": 1,
+      "salary": 15000
+    }
   ],
   "goals": [
-    { "id": "bag", "label": "Secure the Bag", "wins": "Finish with Wallet up ₦500k or more", "roast": "Came for the bag, left with the bill" },
-    { "id": "love", "label": "Real Love", "wins": "Bond 80+ and Sanity 40+ at Day 7", "roast": "Gave love, received a voice note" },
-    { "id": "ring", "label": "The Ring", "wins": "Reach Locked In", "roast": "Wanted a ring, got a read receipt" },
-    { "id": "revenge", "label": "Revenge / Chaos", "wins": "Expose the partner's hidden truth publicly before Day 7", "roast": "Planned a war, started a WhatsApp group" }
+    {
+      "id": "bag",
+      "label": "Secure the Bag",
+      "wins": "Finish with Wallet up ₦500k or more",
+      "roast": "Came for the bag, left with the bill"
+    },
+    {
+      "id": "love",
+      "label": "Real Love",
+      "wins": "Bond 80+ and Sanity 40+ at Day 7",
+      "roast": "Gave love, received a voice note"
+    },
+    {
+      "id": "ring",
+      "label": "The Ring",
+      "wins": "Reach Locked In",
+      "roast": "Wanted a ring, got a read receipt"
+    },
+    {
+      "id": "revenge",
+      "label": "Revenge / Chaos",
+      "wins": "Expose the partner's hidden truth publicly before Day 7",
+      "roast": "Planned a war, started a WhatsApp group"
+    }
   ],
   "avatar": {
+    "skins": [
+      {
+        "id": "s1",
+        "hex": "#F3D9C4"
+      },
+      {
+        "id": "s2",
+        "hex": "#E8C2A0"
+      },
+      {
+        "id": "s3",
+        "hex": "#D9A87F"
+      },
+      {
+        "id": "s4",
+        "hex": "#C68E64"
+      },
+      {
+        "id": "s5",
+        "hex": "#B07650"
+      },
+      {
+        "id": "s6",
+        "hex": "#9A6240"
+      },
+      {
+        "id": "s7",
+        "hex": "#865236"
+      },
+      {
+        "id": "s8",
+        "hex": "#73442C"
+      },
+      {
+        "id": "s9",
+        "hex": "#5E3622"
+      },
+      {
+        "id": "s10",
+        "hex": "#4B2A1A"
+      },
+      {
+        "id": "s11",
+        "hex": "#3A2014"
+      },
+      {
+        "id": "s12",
+        "hex": "#2A160D"
+      }
+    ],
     "build": {
-      "woman": ["Slim and Trim", "Petite Baddie", "Curvy / Thick", "Athletic", "Soft and Full"],
-      "man": ["Lean and Clean", "Gym Rat", "Big Daddy", "Average Guy", "Tall and Slim"]
+      "woman": [
+        "Slim and Trim",
+        "Petite Baddie",
+        "Curvy / Thick",
+        "Athletic",
+        "Soft and Full"
+      ],
+      "man": [
+        "Lean and Clean",
+        "Gym Rat",
+        "Big Daddy",
+        "Average Guy",
+        "Tall and Slim"
+      ]
     },
     "hair": {
-      "woman": ["30-inch Bone Straight", "Knotless Braids", "Natural / Low Cut", "Coloured Frontal", "Locs"],
-      "man": ["Low Cut", "Waves", "Locs", "Clean Bald", "Beard Gang"]
+      "woman": [
+        "30-inch Bone Straight",
+        "Knotless Braids",
+        "Locs",
+        "Natural",
+        "Low Cut",
+        "Coloured Frontal"
+      ],
+      "man": [
+        "Low Cut",
+        "Waves",
+        "Locs",
+        "Clean Bald"
+      ]
+    },
+    "facial": {
+      "man": [
+        "Clean Shaven",
+        "Stubble",
+        "Full Beard",
+        "Goatee"
+      ]
     },
     "style": {
-      "woman": ["Designer Glam", "Alté / Streetwear", "Smart Casual", "Owambe Traditional"],
-      "man": ["Designer Drip", "Alté / Streetwear", "Smart Casual", "Agbada / Senator"]
+      "woman": [
+        "Designer Glam",
+        "Alté / Streetwear",
+        "Smart Casual",
+        "Owambe Traditional"
+      ],
+      "man": [
+        "Designer Drip",
+        "Alté / Streetwear",
+        "Smart Casual",
+        "Agbada",
+        "Senator"
+      ]
     }
   },
   "gossip": [

@@ -15,9 +15,19 @@ export function loadCity(id = 'lagos', opts: { withGenerated?: boolean } = {}): 
     .sort()
     .map((f) => read(join(cardsDir, f)));
   const gen = opts.withGenerated !== false;
+  const charDir = join(dir, 'characters');
+  const characterFiles = existsSync(charDir)
+    ? readdirSync(charDir)
+        .filter((f) => f.endsWith('.json'))
+        .sort()
+        .map((f) => read(join(charDir, f)))
+    : [];
   return buildCity({
     city: read(join(dir, 'city.json')),
     characters: read(join(dir, 'characters.json')),
+    characterFiles,
+    catalog: existsSync(join(dir, 'catalog.json')) ? read(join(dir, 'catalog.json')) : [],
+    brand: existsSync(join(root, 'brand.json')) ? read(join(root, 'brand.json')) : undefined,
     cardFiles,
     spots: read(join(dir, 'spots.json')),
     locations: read(join(dir, 'locations.json')),

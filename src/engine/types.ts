@@ -249,26 +249,53 @@ export interface Character {
   signature_catch: string;
   archetype: string;
   temperament: { id: string; controlling: boolean; description: string };
-  taste: { fixed: Record<'woman' | 'man', { build?: string; hair?: string; style?: string }>; pool: string[]; high_maintenance?: boolean };
+  taste: { fixed: Record<'woman' | 'man', { build?: string; hair?: string; style?: string; facial?: string }>; pool: string[]; high_maintenance?: boolean };
   vibe_start: Record<VibeId, { attachment: number; trust: number; line: string }>;
   truths: Truth[];
   rules: BehaviourRule[];
   look: PortraitLook;
-  endings: Partial<Record<EndingId, { title: string; text: string; scene?: SceneSpec }>>;
+  endings: Partial<Record<EndingId, { title: string; text: string; scene?: SceneSpec; /** Per-truth rewrites, e.g. Locked In with a polygamous Chief vs a divorced one. */ truths?: Record<string, { title?: string; text: string }> }>>;
+  /** 10 to 20 second animated scene that opens every run, before any choice. */
+  cold_open?: ColdOpen;
   expressions: string[];
   chemistry_leaks?: { match: string; text: string }[];
   lessons?: Partial<Record<EndingId | 'default', string[]>>;
 }
 
+export interface ColdOpen {
+  scene: SceneSpec;
+  beats: (Beat & { at: number })[]; // seconds from start
+  phone?: (PhoneEvent & { at: number })[];
+  duration: number; // seconds
+}
+
+export interface MerchantFields {
+  merchant_name: string | null;
+  real_url: string | null;
+  affiliate_url: string | null;
+  address: string | null;
+  map_url: string | null;
+  sponsored: boolean;
+  scene_tone_allowed: ('positive' | 'neutral')[];
+}
+
+export interface CatalogItem extends MerchantFields {
+  id: string;
+  kind: 'venue' | 'outfit' | 'gift';
+  name: string;
+  location?: string;
+}
+
 export interface PortraitLook {
   skin: string;
-  hair: 'cap' | 'low' | 'bald' | 'braids' | 'frontal' | 'locs' | 'waves' | 'bun' | 'hijab' | 'curls';
+  hair: 'cap' | 'low' | 'bald' | 'braids' | 'frontal' | 'locs' | 'waves' | 'bun' | 'hijab' | 'curls' | 'gele' | 'natural';
   hairColor: string;
   outfit: string;
   outfitAccent: string;
   outfitStyle: 'agbada' | 'kaftan' | 'shirt' | 'jacket' | 'dress' | 'top' | 'senator';
   accessory?: 'gold_chain' | 'beads' | 'glasses' | 'earrings' | 'watch' | 'cap';
   beard?: boolean;
+  beardStyle?: 'stubble' | 'full' | 'goatee';
   build?: 'broad' | 'slim' | 'average';
 }
 
@@ -331,11 +358,21 @@ export interface CityContent {
   avatar: AvatarOptions;
   gossip: string[];
   brands: BrandInventory;
+  catalog: CatalogItem[];
+  brand: BrandInfo;
+}
+
+export interface BrandInfo {
+  name: string;
+  edition: string;
+  social: { name: string; url: string | null }[];
 }
 
 export interface AvatarOptions {
+  skins: { id: string; hex: string }[];
   build: { woman: string[]; man: string[] };
   hair: { woman: string[]; man: string[] };
+  facial: { man: string[] };
   style: { woman: string[]; man: string[] };
 }
 
@@ -345,7 +382,7 @@ export interface PlayerSetup {
   datePref: DatePref;
   vibe: VibeId;
   goal: GoalId;
-  avatar: { build: string; hair: string; style: string; set: 'woman' | 'man' };
+  avatar: { build: string; hair: string; style: string; set: 'woman' | 'man'; skin?: string; facial?: string };
 }
 
 export interface LocationSpec {
@@ -381,7 +418,7 @@ export interface LessonRule {
   good_one?: boolean;
 }
 
-export interface BrandSlot {
+export interface BrandSlot extends MerchantFields {
   id: string;
   name: string;
   where: string;
@@ -389,7 +426,7 @@ export interface BrandSlot {
   cap_per_run: number;
 }
 
-export interface BrandBooking {
+export interface BrandBooking extends MerchantFields {
   slot: string;
   brand: string;
   creative: { text?: string; image?: string; audio?: string; link?: string };

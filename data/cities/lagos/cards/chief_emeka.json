@@ -1076,6 +1076,204 @@
     ]
   },
   {
+    "id": "emeka_rf_family_group",
+    "character": "chief_emeka",
+    "slot": "red_flag",
+    "presentation": "text",
+    "scene": {
+      "location": "mainland_street",
+      "time": "afternoon",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Someone adds you to a WhatsApp group by mistake: 'EMEKA FAMILY 👑 (OFFICIAL)'. 47 members."
+      },
+      {
+        "who": "Pinned message",
+        "text": "Levy for Papa's 60th: first wives ₦50k, second wives ₦30k, children by Friday."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "serial_sponsor": {
+        "id": "t_sponsor_numbers",
+        "text": "Chief's number is in the group. Saved as 'Our Husband'."
+      },
+      "broke": {
+        "id": "t_broke_apapa",
+        "text": "The last thirty messages are reminders about Chief's unpaid levy. Since March."
+      },
+      "divorced": {
+        "id": "t_div_voice",
+        "text": "A voice note from the admin, Nkechi: 'Emeka, the children's school fees. Today.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "exit",
+        "label": "Exit the group quietly. You saw nothing.",
+        "tags": [
+          "excuse",
+          "discreet"
+        ],
+        "receipt": "You left his family WhatsApp group without a word.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'You left' appears in 47 phones. Somebody types 'who was that?' Nobody answers. Yet.",
+            "sanity": -10,
+            "attachment": 3
+          }
+        ]
+      },
+      {
+        "id": "ask",
+        "label": "Screenshot it. Ask Chief: \"Second wives?\"",
+        "tags": [
+          "cautious",
+          "contact_partner"
+        ],
+        "receipt": "You asked Chief about the second wives.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He calls in a minute.",
+            "set": [
+              {
+                "flag": "knows_wives",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "serial_sponsor": {
+            "text": "He calls in a minute. 'It's culture. My father had four wives. You'll understand when you meet them.' When.",
+            "sanity": -10,
+            "saw_truth": true,
+            "set": [
+              {
+                "flag": "knows_wives",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "broke": {
+            "text": "'It's culture,' he says. Then, softly: 'Can you help with the levy? Small small.'",
+            "sanity": -10,
+            "saw_truth": true,
+            "set": [
+              {
+                "flag": "knows_wives",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "divorced": {
+            "text": "He laughs until he coughs. 'That's my brothers' wives! I have none. Just an ex who runs that group like a government.'",
+            "trust": 8,
+            "attachment": 4,
+            "set": [
+              {
+                "flag": "knows_wives",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "hello",
+        "label": "Post in the group: \"Hello family 👋🏾\"",
+        "tags": [
+          "public_embarrassment",
+          "toxic"
+        ],
+        "receipt": "You said hello to his whole family WhatsApp.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Nine seconds later, Mama Ugo: 'Which family?' Then 200 messages.",
+            "clout": 10,
+            "exposure": 30,
+            "set": [
+              {
+                "flag": "secret_family_hello",
+                "knows": [
+                  "player",
+                  "world",
+                  "partner",
+                  "wife"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "divorced": {
+            "text": "Nkechi replies: 'Emeka's new friend? Welcome. Pay the levy.' His sisters send 40 laughing emojis.",
+            "clout": 10,
+            "exposure": 15,
+            "set": [
+              {
+                "flag": "secret_family_hello",
+                "knows": [
+                  "player",
+                  "world",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "corp_audit",
+        "label": "[Corporate] Scroll up and audit every levy payment",
+        "vibe": "corporate",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You audited his family's levy records.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Paid in full, every month, by 'Emeka (Kids)'. He's dull with money and devoted to his children.",
+            "trust": 4
+          }
+        ],
+        "truth_override": {
+          "serial_sponsor": {
+            "text": "Two wives pay their levies on time. Chief pays a third levy for 'Lekki'. There are no Emekas in Lekki.",
+            "saw_truth": true
+          },
+          "broke": {
+            "text": "Chief has owed the levy since March. The wives covered him. Twice.",
+            "saw_truth": true
+          }
+        }
+      }
+    ]
+  },
+  {
     "id": "emeka_mt_sign_papers",
     "character": "chief_emeka",
     "slot": "money_trap",
@@ -2368,6 +2566,28 @@
         ]
       },
       {
+        "id": "how_many",
+        "label": "\"How many wives, Chief? Exactly.\"",
+        "requires": {
+          "flags": [
+            "knows_wives"
+          ]
+        },
+        "tags": [
+          "call_out"
+        ],
+        "receipt": "You asked Chief exactly how many wives he has.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Two. And these ones are... friends.' The girls laugh at the same time. Chioma raises her glass to the wives.",
+            "saw_truth": true,
+            "clout": 10,
+            "trust": -10
+          }
+        ]
+      },
+      {
         "id": "silence_price",
         "label": "\"I kept your secret since day one. Price?\"",
         "requires": {
@@ -3507,6 +3727,120 @@
             ]
           }
         }
+      }
+    ]
+  },
+  {
+    "id": "emeka_po_wives_summon",
+    "character": "chief_emeka",
+    "slot": "payoff",
+    "priority": 7,
+    "requires": {
+      "knows": [
+        {
+          "flag": "secret_family_hello",
+          "who": "wife"
+        }
+      ],
+      "truth": [
+        "serial_sponsor",
+        "broke"
+      ],
+      "not_flags": [
+        "wives_met"
+      ],
+      "flag_age": {
+        "flag": "secret_family_hello",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "secret_family_hello"
+    ],
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "afternoon",
+      "mood": "negative",
+      "partner_present": false,
+      "npc": {
+        "name": "Mama Ugo"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "A driver you don't know is at your gate. A card in gold ink:"
+      },
+      {
+        "who": "Mama Ugo",
+        "text": "Tea. Ikoyi. Four o'clock. Come and see the family you're trying to join."
+      }
+    ],
+    "choices": [
+      {
+        "id": "cake",
+        "label": "Go, with a cake. Manners first.",
+        "cost": 15000,
+        "tags": [
+          "budget",
+          "cautious"
+        ],
+        "receipt": "You took a cake to tea with Chief's first wife.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She inspects you like a new hire. 'Rooms are allocated by seniority. You'd be number three.' The second wife refills your tea without a word.",
+            "saw_truth": true,
+            "sanity": -10,
+            "set": [
+              "wives_met"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "refuse",
+        "label": "Send the driver back. You don't do summons.",
+        "receipt": "You refused the first wife's summons.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "The driver shrugs. The card stays on your table like a threat with good handwriting.",
+            "sanity": -5,
+            "set": [
+              "wives_met"
+            ]
+          },
+          {
+            "chance": 0.4,
+            "bad": true,
+            "text": "Next morning the same driver is outside your office. With your boss.",
+            "exposure": 20,
+            "sanity": -10,
+            "set": [
+              "wives_met"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "call_chief",
+        "label": "Call Chief: \"Your wife has summoned me.\"",
+        "tags": [
+          "contact_partner"
+        ],
+        "receipt": "You told Chief his wife had summoned you.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Don't go! She'll poison your mind.' Then: 'Wear the green one if you do.'",
+            "trust": -5,
+            "control": 1,
+            "set": [
+              "wives_met"
+            ]
+          }
+        ]
       }
     ]
   },

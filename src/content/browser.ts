@@ -10,13 +10,19 @@ import lessons from '../../data/lessons.json';
 import roasts from '../../data/roasts.json';
 import rarity from '../../data/rarity.json';
 import launch from '../../data/launch-gate.json';
+import catalog from '../../data/cities/lagos/catalog.json';
+import brand from '../../data/brand.json';
 
 // Every card file in the city's cards folder is picked up automatically.
+const characterModules = import.meta.glob('../../data/cities/lagos/characters/*.json', { eager: true, import: 'default' }) as Record<string, any>;
 const cardModules = import.meta.glob('../../data/cities/lagos/cards/*.json', { eager: true, import: 'default' }) as Record<string, Card[]>;
 
 export const lagos: CityContent = buildCity({
   city,
   characters: characters as any,
+  characterFiles: Object.keys(characterModules).sort().map((k) => characterModules[k]),
+  catalog: catalog as any,
+  brand: brand as any,
   cardFiles: Object.values(cardModules),
   spots: spots as any,
   locations: locations as any,

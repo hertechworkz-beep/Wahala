@@ -21,7 +21,7 @@ export function resetBrandCaps() {
 export function fillSlot(slotId: string, mood: 'positive' | 'neutral' | 'negative', inv: BrandInventory = lagos.brands): SlotFill | null {
   if (mood === 'negative') return null;
   const slot = inv.slots.find((s) => s.id === slotId);
-  if (!slot) return null;
+  if (!slot || !(slot.scene_tone_allowed ?? ['positive', 'neutral']).includes(mood)) return null;
   const now = new Date().toISOString().slice(0, 10);
   const booking = inv.bookings.find((b) => b.slot === slotId && b.starts <= now && b.ends >= now);
   if (booking) {

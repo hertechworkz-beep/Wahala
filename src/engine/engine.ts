@@ -178,11 +178,12 @@ export function createRun(content: CityContent, player: PlayerSetup, characterId
 export function tasteMatches(character: Character, s: RunState): string[] {
   const a = s.player.avatar;
   const fx = character.taste.fixed[a.set] ?? {};
-  const favs = [fx.build, fx.hair, fx.style, s.tasteFav].filter(Boolean) as string[];
+  const favs = [fx.build, fx.hair, fx.style, fx.facial, s.tasteFav].filter(Boolean) as string[];
   const out: string[] = [];
   if (favs.includes(a.build)) out.push('build');
   if (favs.includes(a.hair)) out.push('hair');
   if (favs.includes(a.style)) out.push('style');
+  if (a.facial && favs.includes(a.facial)) out.push('facial');
   return out;
 }
 

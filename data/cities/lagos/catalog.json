@@ -1,0 +1,310 @@
+[
+  {
+    "id": "venue_ikoyi_restaurant",
+    "kind": "venue",
+    "name": "Rooftop restaurant",
+    "location": "ikoyi_restaurant",
+    "merchant_name": null,
+    "real_url": null,
+    "affiliate_url": null,
+    "address": null,
+    "map_url": null,
+    "sponsored": false,
+    "scene_tone_allowed": [
+      "positive",
+      "neutral"
+    ]
+  },
+  {
+    "id": "venue_vi_club_vip",
+    "kind": "venue",
+    "name": "VIP lounge",
+    "location": "vi_club_vip",
+    "merchant_name": null,
+    "real_url": null,
+    "affiliate_url": null,
+    "address": null,
+    "map_url": null,
+    "sponsored": false,
+    "scene_tone_allowed": [
+      "positive",
+      "neutral"
+    ]
+  },
+  {
+    "id": "venue_prado_interior",
+    "kind": "venue",
+    "name": "Chief's Prado",
+    "location": "prado_interior",
+    "merchant_name": null,
+    "real_url": null,
+    "affiliate_url": null,
+    "address": null,
+    "map_url": null,
+    "sponsored": false,
+    "scene_tone_allowed": [
+      "positive",
+      "neutral"
+    ]
+  },
+  {
+    "id": "venue_lekki_salon",
+    "kind": "venue",
+    "name": "Upscale salon",
+    "location": "lekki_salon",
+    "merchant_name": null,
+    "real_url": null,
+    "affiliate_url": null,
+    "address": null,
+    "map_url": null,
+    "sponsored": false,
+    "scene_tone_allowed": [
+      "positive",
+      "neutral"
+    ]
+  },
+  {
+    "id": "venue_mainland_street",
+    "kind": "venue",
+    "name": "Busy junction",
+    "location": "mainland_street",
+    "merchant_name": null,
+    "real_url": null,
+    "affiliate_url": null,
+    "address": null,
+    "map_url": null,
+    "sponsored": false,
+    "scene_tone_allowed": [
+      "positive",
+      "neutral"
+    ]
+  },
+  {
+    "id": "venue_luxury_apartment",
+    "kind": "venue",
+    "name": "Glass flat",
+    "location": "luxury_apartment",
+    "merchant_name": null,
+    "real_url": null,
+    "affiliate_url": null,
+    "address": null,
+    "map_url": null,
+    "sponsored": false,
+    "scene_tone_allowed": [
+      "positive",
+      "neutral"
+    ]
+  },
+  {
+    "id": "venue_aesthetic_clinic",
+    "kind": "venue",
+    "name": "Skin clinic",
+    "location": "aesthetic_clinic",
+    "merchant_name": null,
+    "real_url": null,
+    "affiliate_url": null,
+    "address": null,
+    "map_url": null,
+    "sponsored": false,
+    "scene_tone_allowed": [
+      "positive",
+      "neutral"
+    ]
+  },
+  {
+    "id": "venue_mainland_lash_tech",
+    "kind": "venue",
+    "name": "Lash kiosk",
+    "location": "mainland_lash_tech",
+    "merchant_name": null,
+    "real_url": null,
+    "affiliate_url": null,
+    "address": null,
+    "map_url": null,
+    "sponsored": false,
+    "scene_tone_allowed": [
+      "positive",
+      "neutral"
+    ]
+  },
+  {
+    "id": "outfit_designer_glam",
+    "kind": "outfit",
+    "name": "Designer Glam",
+    "merchant_name": null,
+    "real_url": null,
+    "affiliate_url": null,
+    "address": null,
+    "map_url": null,
+    "sponsored": false,
+    "scene_tone_allowed": [
+      "positive",
+      "neutral"
+    ]
+  },
+  {
+    "id": "outfit_alte_streetwear",
+    "kind": "outfit",
+    "name": "Alté / Streetwear",
+    "merchant_name": null,
+    "real_url": null,
+    "affiliate_url": null,
+    "address": null,
+    "map_url": null,
+    "sponsored": false,
+    "scene_tone_allowed": [
+      "positive",
+      "neutral"
+    ]
+  },
+  {
+    "id": "outfit_smart_casual",
+    "kind": "outfit",
+    "name": "Smart Casual",
+    "merchant_name": null,
+    "real_url": null,
+    "affiliate_url": null,
+    "address": null,
+    "map_url": null,
+    "sponsored": false,
+    "scene_tone_allowed": [
+      "positive",
+      "neutral"
+    ]
+  },
+  {
+    "id": "outfit_owambe_traditional",
+    "kind": "outfit",
+    "name": "Owambe Traditional",
+    "merchant_name": null,
+    "real_url": null,
+    "affiliate_url": null,
+    "address": null,
+    "map_url": null,
+    "sponsored": false,
+    "scene_tone_allowed": [
+      "positive",
+      "neutral"
+    ]
+  },
+  {
+    "id": "outfit_designer_drip",
+    "kind": "outfit",
+    "name": "Designer Drip",
+    "merchant_name": null,
+    "real_url": null,
+    "affiliate_url": null,
+    "address": null,
+    "map_url": null,
+    "sponsored": false,
+    "scene_tone_allowed": [
+      "positive",
+      "neutral"
+    ]
+  },
+  {
+    "id": "outfit_agbada",
+    "kind": "outfit",
+    "name": "Agbada",
+    "merchant_name": null,
+    "real_url": null,
+    "affiliate_url": null,
+    "address": null,
+    "map_url": null,
+    "sponsored": false,
+    "scene_tone_allowed": [
+      "positive",
+      "neutral"
+    ]
+  },
+  {
+    "id": "outfit_senator",
+    "kind": "outfit",
+    "name": "Senator",
+    "merchant_name": null,
+    "real_url": null,
+    "affiliate_url": null,
+    "address": null,
+    "map_url": null,
+    "sponsored": false,
+    "scene_tone_allowed": [
+      "positive",
+      "neutral"
+    ]
+  },
+  {
+    "id": "gift_perfume",
+    "kind": "gift",
+    "name": "Perfume",
+    "merchant_name": null,
+    "real_url": null,
+    "affiliate_url": null,
+    "address": null,
+    "map_url": null,
+    "sponsored": false,
+    "scene_tone_allowed": [
+      "positive",
+      "neutral"
+    ]
+  },
+  {
+    "id": "gift_birthday_cake",
+    "kind": "gift",
+    "name": "Birthday cake",
+    "merchant_name": null,
+    "real_url": null,
+    "affiliate_url": null,
+    "address": null,
+    "map_url": null,
+    "sponsored": false,
+    "scene_tone_allowed": [
+      "positive",
+      "neutral"
+    ]
+  },
+  {
+    "id": "gift_flowers",
+    "kind": "gift",
+    "name": "Flowers",
+    "merchant_name": null,
+    "real_url": null,
+    "affiliate_url": null,
+    "address": null,
+    "map_url": null,
+    "sponsored": false,
+    "scene_tone_allowed": [
+      "positive",
+      "neutral"
+    ]
+  },
+  {
+    "id": "gift_bottle_of_wine",
+    "kind": "gift",
+    "name": "Bottle of wine",
+    "merchant_name": null,
+    "real_url": null,
+    "affiliate_url": null,
+    "address": null,
+    "map_url": null,
+    "sponsored": false,
+    "scene_tone_allowed": [
+      "positive",
+      "neutral"
+    ]
+  },
+  {
+    "id": "gift_designer_bag",
+    "kind": "gift",
+    "name": "Designer bag",
+    "merchant_name": null,
+    "real_url": null,
+    "affiliate_url": null,
+    "address": null,
+    "map_url": null,
+    "sponsored": false,
+    "scene_tone_allowed": [
+      "positive",
+      "neutral"
+    ]
+  }
+]

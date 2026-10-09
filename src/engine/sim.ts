@@ -51,13 +51,14 @@ function pickChoice(bot: { rng: number }, choices: ResolvedChoice[], policy: Pol
 export function randomSetup(content: CityContent, bot: { rng: number }, vibe?: VibeId, goal?: GoalId): PlayerSetup {
   const gender = nextRand(bot) < 0.5 ? 'woman' : 'man';
   const set = gender;
+  const facial = set === 'man' ? pick(bot, content.avatar.facial.man) : undefined;
   return {
     name: 'Sim',
     gender,
     datePref: 'both',
     vibe: vibe ?? pick(bot, content.vibes).id,
     goal: goal ?? pick(bot, content.goals).id,
-    avatar: { set, build: pick(bot, content.avatar.build[set]), hair: pick(bot, content.avatar.hair[set]), style: pick(bot, content.avatar.style[set]) },
+    avatar: { set, skin: pick(bot, content.avatar.skins).hex, facial, build: pick(bot, content.avatar.build[set]), hair: pick(bot, content.avatar.hair[set]), style: pick(bot, content.avatar.style[set]) },
   };
 }
 
@@ -128,4 +129,86 @@ export function simulate(content: CityContent, characterId: string, n: number, o
   }
   stats.avgCards = Math.round((totalCards / Math.max(1, stats.runs)) * 10) / 10;
   return stats;
+}
+
+// ---------------------------------------------------------------- deliberate play
+
+export type Action = { kind: 'choose'; id: string; loan?: boolean } | { kind: 'spot'; spot: string; option: string };
+
+export function availableActions(content: CityContent, s: RunState, opts: { loans?: boolean; spots?: boolean } = {}): Action[] {
+  const out: Action[] = [];
+  const rc = resolveCard(content, s);
+  if (rc) for (const c of rc.choices) if (c.available || (opts.loans && c.canLoan)) out.push({ kind: 'choose', id: c.id, loan: !c.available || undefined });
+  if (opts.spots !== false && spotAvailable(s))
+    for (const spot of content.spots) for (const o of resolveSpot(content, s, spot.id)) if (o.available) out.push({ kind: 'spot', spot: spot.id, option: o.id });
+  return out;
+}
+
+export function applyAction(content: CityContent, s: RunState, a: Action): RunState {
+  return a.kind === 'choose' ? choose(content, s, a.id, { loan: a.loan }).state : visitSpot(content, s, a.spot, a.option).state;
+}
+
+/**
+ * A deliberate player: one-step lookahead that keeps the action scoring best. The engine is
+ * deterministic, so it plays with perfect knowledge of the next roll; results are replayable.
+ */
+export function lookaheadRun(
+  content: CityContent,
+  start: RunState,
+  score: (s: RunState) => number,
+  opts: { acceptBailout?: boolean; loans?: boolean; spots?: boolean; prefer?: (a: Action, s: RunState) => boolean } = {},
+): RunState {
+  let s = start;
+  for (let i = 0; i < 300 && s.status !== 'ended'; i++) {
+    if (s.status === 'bailout') {
+      s = resolveBailout(content, s, !!opts.acceptBailout);
+      continue;
+    }
+    const acts = availableActions(content, s, { loans: opts.loans, spots: opts.spots });
+    const forced = opts.prefer ? acts.filter((a) => opts.prefer!(a, s)) : [];
+    const pool = forced.length ? forced : acts;
+    if (!pool.length) {
+      if (s.status === 'day_end') {
+        s = nextDay(content, s).state;
+        continue;
+      }
+      throw new Error('stuck');
+    }
+    let best = pool[0];
+    let bestScore = -Infinity;
+    for (const a of pool) {
+      const sc = score(applyAction(content, s, a));
+      if (sc > bestScore) {
+        bestScore = sc;
+        best = a;
+      }
+    }
+    if (s.status === 'day_end' && best.kind === 'spot') {
+      const slept = nextDay(content, s).state;
+      if (score(slept) >= bestScore) {
+        s = slept;
+        continue;
+      }
+    }
+    s = applyAction(content, s, best);
+    if (s.status === 'day_end' && !spotAvailable(s)) s = nextDay(content, s).state;
+  }
+  return s;
+}
+
+/** The "playing for love" objective used to check every vibe can reach Locked In. */
+export function lockedInScore(s: RunState): number {
+  if (s.status === 'ended') return s.ending === 'locked_in' ? 1e6 : -1e6;
+  return s.meters.attachment + s.meters.trust * 1.5 - s.meters.exposure - s.meters.control * 5 - s.stays * 50;
+}
+
+export function lockedInReach(content: CityContent, characterId: string, vibe: VibeId, seeds = 40): number {
+  let hits = 0;
+  for (let seed = 1; seed <= seeds; seed++) {
+    const bot = { rng: seed * 7717 };
+    const setup = randomSetup(content, bot, vibe);
+    const r = lookaheadRun(content, createRun(content, setup, characterId, seed), lockedInScore);
+    if (r.ending === 'locked_in') hits++;
+  }
+  return hits;
 }

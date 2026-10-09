@@ -205,6 +205,15 @@ export function validateCity(content: CityContent): ValidationReport {
   for (const set of ['woman', 'man'] as const)
     for (const kind of ['build', 'hair', 'style'] as const)
       for (const opt of content.avatar[kind][set]) if (!favs.has(opt)) err('avatar', `"${opt}" is nobody's favourite`);
+  for (const opt of content.avatar.facial?.man ?? []) if (!favs.has(opt)) err('avatar', `"${opt}" is nobody's favourite`);
+  if ((content.avatar.skins ?? []).length < 10) err('avatar', 'needs at least 10 skin tones');
+
+  // Shoppable world: every slot, venue, outfit and gift carries the merchant fields, even when empty.
+  const MERCHANT = ['merchant_name', 'real_url', 'affiliate_url', 'address', 'map_url', 'sponsored', 'scene_tone_allowed'];
+  for (const item of [...content.brands.slots, ...content.brands.bookings, ...content.catalog] as unknown as Record<string, unknown>[])
+    for (const f of MERCHANT) if (!(f in item)) err(`merchant ${String(item.id ?? item.slot)}`, `missing field ${f}`);
+  for (const item of [...content.brands.slots, ...content.catalog] as unknown as { id: string; scene_tone_allowed?: string[] }[])
+    if ((item.scene_tone_allowed ?? []).some((t) => t === 'negative')) err(`merchant ${item.id}`, 'brands never appear in negative scenes');
 
   // Content matrix per character (rule 6) and the launch gate (rule 17).
   const characters: ValidationReport['characters'] = {};
@@ -216,6 +225,10 @@ export function validateCity(content: CityContent): ValidationReport {
     for (const [slot, min] of Object.entries(MATRIX)) if ((counts[slot as Slot] ?? 0) < min!) errors.push(`${slot}: ${counts[slot as Slot] ?? 0}/${min}`);
     for (const t of ch.truths) if (!deck.some((c) => c.slot === 'confrontation' && c.requires?.truth?.includes(t.id))) errors.push(`no confrontation for truth ${t.id}`);
     if (ch.temperament.controlling && !deck.some((c) => c.slot === 'escalation')) errors.push('controlling temperament but no escalation cards');
+    if (deck.length && !ch.cold_open) errors.push('no cold open');
+    if (ch.cold_open && (ch.cold_open.duration < 10 || ch.cold_open.duration > 20)) errors.push('cold open must run 10 to 20 seconds');
+    if (ch.cold_open && !locIds.has(ch.cold_open.scene.location)) errors.push(`cold open: unknown location ${ch.cold_open.scene.location}`);
+    if (deck.length && !ch.endings.locked_in) errors.push('no Locked In ending text');
     const payoffFlags = new Set(deck.flatMap((c) => c.payoff_of ?? []));
     if (payoffFlags.size < 2) errors.push('needs at least 2 payoff cards tied to earlier choices');
     const own = issues.filter((i) => i.level === 'error' && deck.some((c) => i.where.startsWith(`card ${c.id}`)));

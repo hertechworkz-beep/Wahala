@@ -63,7 +63,8 @@ export function buildVerdict(content: CityContent, s: RunState): Verdict {
   const noRoast = ending === 'obsession';
   const ctx = { character: ch, player: s.player };
 
-  const endingText = fill(ch.endings[ending]?.text ?? defaultEndingText(ending), ctx);
+  const variant = ch.endings[ending]?.truths?.[s.truthId];
+  const endingText = fill(variant?.text ?? ch.endings[ending]?.text ?? defaultEndingText(ending), ctx);
   const title = noRoast ? "This one isn't funny." : pickTitle(content, s);
   const lesson = noRoast ? 'Control isn\'t love. If someone tracks you, keys your door or checks your phone, tell someone you trust. You deserve to feel free.' : pickLesson(content, s);
   const roast = noRoast ? "Control isn't love. Leaving isn't failure." : pickRoast(content, s, won, goal.roast);
