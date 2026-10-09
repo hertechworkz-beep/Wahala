@@ -1,0 +1,4346 @@
+[
+  {
+    "id": "ovie_d1_pepper_soup",
+    "character": "ovie",
+    "slot": "first_date",
+    "scene": {
+      "location": "mainland_street",
+      "time": "night",
+      "expression": "charming",
+      "mood": "positive"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "A point-and-kill joint in Surulere. Generator humming, highlife loud. Ovie peels cash from a black nylon bag. No POS. No transfer."
+      },
+      {
+        "who": "partner",
+        "text": "Transfer get eye. Cash na cash. Choose any fish, any size. Warri no dey carry last."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "controlling": {
+        "id": "t_ctrl_where",
+        "text": "'How Yaba traffic be today?' he asks, pouring your drink. You never told him you were in Yaba."
+      },
+      "baby_mamas": {
+        "id": "t_bm_customer",
+        "text": "His phone buzzes: 'Customer'. 11pm. He answers: 'I don send am! Abeg!' and hangs up. 'Customer,' he explains."
+      },
+      "loyal": {
+        "id": "t_loyal_temper",
+        "text": "He shouts at the waiter over the size of the fish until the generator seems to flinch. Then tips him ₦10k when he thinks you're not looking."
+      }
+    },
+    "choices": [
+      {
+        "id": "biggest",
+        "label": "Point at the biggest catfish. Let him pay.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You let him buy the biggest catfish in Surulere.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The fish is the size of a toddler. He watches you eat like it's his own achievement. 'You see? Warri hospitality.'",
+            "attachment": 10,
+            "chemistry": 3
+          }
+        ]
+      },
+      {
+        "id": "pay_share",
+        "label": "\"I'll pay my share. In cash.\"",
+        "cost": 8000,
+        "tags": [
+          "budget",
+          "independence"
+        ],
+        "receipt": "You insisted on paying your share.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He stares at your ₦8k like it insulted his mother. Then laughs. 'You get mouth. I like am.'",
+            "attachment": 4,
+            "trust": 4
+          }
+        ],
+        "truth_override": {
+          "controlling": {
+            "text": "He folds your ₦8k back into your bag himself. 'For this relationship, na me dey pay. Na so e go be.' Relationship. Day one.",
+            "attachment": 4,
+            "control": 1
+          }
+        }
+      },
+      {
+        "id": "why_cash",
+        "label": "\"Why only cash, Ovie? Be honest.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked him why he only uses cash.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Bank dey talk. Cash no dey talk.' He winks. Not an answer. A vibe.",
+            "trust": 3
+          }
+        ],
+        "truth_override": {
+          "controlling": {
+            "text": "'So nobody fit trace my movement.' Then, grinning: 'Me, I fit trace anybody own.' He laughs. You almost do.",
+            "trust": 3,
+            "sanity": -5
+          },
+          "baby_mamas": {
+            "text": "'Some people for my life dey check my account to know how much to collect.' Some people. Collect.",
+            "trust": 3,
+            "sanity": -3
+          },
+          "loyal": {
+            "text": "'Some men dey watch my business accounts. Rivals. I no want them see your name for my statement. Ever.'",
+            "trust": 8,
+            "attachment": 4
+          }
+        }
+      },
+      {
+        "id": "sugar_transport",
+        "label": "[Sugar] \"Since na cash, add transport.\"",
+        "vibe": "sugar",
+        "receipt": "You asked him to add transport money.",
+        "outcomes": [
+          {
+            "chance": 0.7,
+            "text": "He peels ₦50k off without looking. 'Transport. Plus small for your mama.' You came by keke.",
+            "wallet": 50000,
+            "attachment": 3
+          },
+          {
+            "chance": 0.3,
+            "bad": true,
+            "text": "'Transport? I go drop you myself.' He does. Now he knows your street, your gate and your neighbour's dog.",
+            "sanity": -5,
+            "attachment": 3
+          }
+        ]
+      },
+      {
+        "id": "bigboy_fish",
+        "label": "[Big Boy] Order a second fish. Pay before he can.",
+        "vibe": "bigboy",
+        "cost": 25000,
+        "receipt": "You paid for the second fish before he could.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He goes very quiet. 'You wan form big man for my front?' Then he laughs. Mostly.",
+            "clout": 10,
+            "attachment": -5,
+            "trust": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ovie_d1_rooftop_boys",
+    "character": "ovie",
+    "slot": "first_date",
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "night",
+      "expression": "charming",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Rooftop in Ikoyi. White shirt, gold chain, the energy of a man who has never whispered. Two of his boys sit at the next table, ordering nothing."
+      },
+      {
+        "who": "partner",
+        "text": "Dem be my boys. Dem no dey disturb. Order anything, abeg."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "controlling": {
+        "id": "t_ctrl_boys",
+        "text": "One of the boys has a red okada helmet on his chair. You've seen that helmet outside your office. Twice."
+      },
+      "baby_mamas": {
+        "id": "t_bm_toy",
+        "text": "He drops his car key on the table. A tiny toy car dangles from the ring. 'Promo item,' he says."
+      },
+      "loyal": {
+        "id": "t_loyal_boys",
+        "text": "The boys don't watch Ovie. They watch the stairs, the lift, and anyone who looks at you for too long."
+      }
+    },
+    "choices": [
+      {
+        "id": "send_home",
+        "label": "\"Tell your boys to go home.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked him to send his boys home.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He waves. They leave. Then they're at the bar downstairs. 'Na their own money,' he shrugs.",
+            "trust": 3,
+            "attachment": -3
+          }
+        ],
+        "truth_override": {
+          "controlling": {
+            "text": "He waves. They move one table further away. Still facing you. 'Dem no dey disturb,' he repeats.",
+            "sanity": -5,
+            "control": 1
+          },
+          "loyal": {
+            "text": "He hesitates, then nods. 'Okay. For you.' On the way out one boy slips you a card: 'If anybody disturbs you, call this number.'",
+            "trust": 6,
+            "attachment": 4
+          }
+        }
+      },
+      {
+        "id": "flirt",
+        "label": "Ignore the boys. Focus on the chain and the man.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You ignored his boys and flirted.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He's funny. Really funny. By dessert you've forgotten the boys. They haven't forgotten you.",
+            "attachment": 10,
+            "chemistry": 4,
+            "sanity": -3
+          }
+        ]
+      },
+      {
+        "id": "suya_boys",
+        "label": "Order suya for the boys. ₦10k. Win the cabinet.",
+        "cost": 10000,
+        "tags": [
+          "budget"
+        ],
+        "receipt": "You bought suya for his boys.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The boys eat with their whole chest. One salutes you. Ovie looks at you like you passed an exam he didn't tell you about.",
+            "attachment": 8,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "runs_boys",
+        "label": "[Runs] \"My own boys are downstairs too.\"",
+        "vibe": "runs",
+        "receipt": "You told him you had your own boys downstairs.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He laughs so loud the waiter drops a spoon. 'Ehen! Na so! Respect.'",
+            "attachment": 6,
+            "trust": 3
+          }
+        ],
+        "truth_override": {
+          "controlling": {
+            "text": "He laughs, then stops. 'Which boys? Give me their names.' He's not joking any more.",
+            "control": 1,
+            "sanity": -5
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ovie_d1_vip",
+    "character": "ovie",
+    "slot": "first_date",
+    "scene": {
+      "location": "vi_club_vip",
+      "time": "night",
+      "expression": "charming",
+      "mood": "positive"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "VIP booth on Ozumba Mbadiwe. Sparklers, a DJ shouting his name. A guy you went to uni with says hello. Ovie stands up."
+      },
+      {
+        "who": "partner",
+        "text": "Who be this one? Introduce am. Now."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "controlling": {
+        "id": "t_ctrl_phone",
+        "text": "Before the bottles land, he holds out his hand: 'Give me your phone. Unlock am. Make I save my number.' Just because."
+      },
+      "baby_mamas": {
+        "id": "t_bm_customer",
+        "text": "His phone lights up face-up on the table: 'Customer 2 calling'. 11pm. In a club."
+      },
+      "loyal": {
+        "id": "t_loyal_calls",
+        "text": "You check your phone: twelve missed calls from him, all before the date. 'I wan make sure say you reach safe.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "introduce",
+        "label": "\"Ovie, this is Tunde. Uni. Harmless.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You introduced him to your old classmate.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Ovie shakes Tunde's hand for a very long time. Tunde leaves early. Very early.",
+            "trust": 4
+          }
+        ],
+        "truth_override": {
+          "controlling": {
+            "text": "Ovie shakes his hand, then takes his number 'for business'. Tunde unfollows you before midnight.",
+            "trust": 2,
+            "control": 1,
+            "sanity": -5
+          },
+          "loyal": {
+            "text": "Ovie shakes his hand, buys him a drink and asks about his mother. Tunde leaves a fan.",
+            "trust": 6,
+            "attachment": 5
+          }
+        }
+      },
+      {
+        "id": "dance",
+        "label": "Pull Ovie to the dance floor. Cool him down.",
+        "tags": [
+          "discreet"
+        ],
+        "receipt": "You dragged him to the dance floor.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He dances like Warri is watching. The tension melts. Tunde melts into the crowd.",
+            "attachment": 8,
+            "chemistry": 4
+          }
+        ]
+      },
+      {
+        "id": "catch_up",
+        "label": "Go catch up with Tunde. Ovie can wait.",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You left him to catch up with Tunde.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Ten minutes. When you come back, Ovie is gone, the bill is paid, and your ride is already outside. He booked it.",
+            "attachment": -8,
+            "control": 1,
+            "sanity": -5
+          }
+        ],
+        "truth_override": {
+          "loyal": {
+            "text": "You come back to a note on the table: 'Paid. Driver outside. I no like am, but I trust you.'",
+            "trust": 5,
+            "attachment": -3
+          }
+        }
+      },
+      {
+        "id": "bigboy_bottle",
+        "label": "[Big Boy] Send Tunde a bottle. Make it a contest.",
+        "vibe": "bigboy",
+        "cost": 60000,
+        "receipt": "You sent your classmate a bottle in front of him.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Tunde raises it to you. Ovie sends two to Tunde. Lagos men will fight with money until the club closes.",
+            "clout": 20,
+            "attachment": -5,
+            "exposure": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ovie_rf_okada",
+    "character": "ovie",
+    "slot": "red_flag",
+    "scene": {
+      "location": "mainland_street",
+      "time": "afternoon",
+      "expression": "suspicious",
+      "mood": "negative",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Third day running: the same okada man parked opposite your office on Allen Avenue. Red helmet. Never takes passengers. Never takes his eyes off your door."
+      },
+      {
+        "who": "partner",
+        "text": "You don chop? 😘"
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "controlling": {
+        "id": "t_ctrl_boys",
+        "text": "When you step out for lunch, he starts his engine. When you go back in, he switches it off."
+      },
+      "baby_mamas": {
+        "id": "t_bm_school",
+        "text": "He hands you an envelope: 'Oga say make you keep am.' Cash, and a school fees receipt: 'Ovie Jr. Primary 2.' Wrong envelope?"
+      },
+      "loyal": {
+        "id": "t_loyal_boys",
+        "text": "When a black Camry slows beside you at the bus stop, the okada rolls in between you. Then the man pretends to check his phone."
+      }
+    },
+    "choices": [
+      {
+        "id": "confront",
+        "label": "Walk over. \"Who sent you?\"",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You confronted the okada man outside your office.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He smiles: 'Na passenger I dey find.' He hasn't found one in three days.",
+            "set": [
+              "saw_okada"
+            ]
+          }
+        ],
+        "truth_override": {
+          "controlling": {
+            "text": "'Oga say make I dey look you,' he says simply, like weather. 'Every hour I dey send am report.'",
+            "saw_truth": true,
+            "sanity": -15,
+            "set": [
+              "saw_okada"
+            ]
+          },
+          "baby_mamas": {
+            "text": "Another envelope: ₦50k and a child's drawing signed 'Junior'. He snatches the drawing back. 'Wrong one!'",
+            "saw_truth": true,
+            "wallet": 50000,
+            "sanity": -8,
+            "set": [
+              "saw_okada"
+            ]
+          },
+          "loyal": {
+            "text": "'Oga say make I protect you. Some bad people dey find am trouble.' He looks embarrassed to have said it.",
+            "trust": 6,
+            "set": [
+              "saw_okada"
+            ]
+          }
+        }
+      },
+      {
+        "id": "call",
+        "label": "Call Ovie: \"Is the red helmet your boy?\"",
+        "tags": [
+          "cautious",
+          "contact_partner"
+        ],
+        "receipt": "You asked him if the okada man was his.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Which red helmet?' A pause too long. 'Ah. Ejiro. Him dey that area for work.'",
+            "trust": 3
+          }
+        ],
+        "truth_override": {
+          "controlling": {
+            "text": "'Yes. So?' Just that. 'So?'",
+            "sanity": -8,
+            "control": 1
+          },
+          "baby_mamas": {
+            "text": "'Na my boy. Him dey do delivery for me.' Delivery of what, to whom, Ovie?",
+            "sanity": -3,
+            "trust": 2
+          },
+          "loyal": {
+            "text": "'Yes. I go explain one day. Just know say nobody go touch you while I dey.'",
+            "trust": 6,
+            "attachment": 4
+          }
+        }
+      },
+      {
+        "id": "ignore",
+        "label": "Ignore him. Lagos has a million okadas.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You ignored the okada man watching your office.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You ignore him. He doesn't ignore you.",
+            "sanity": -8,
+            "attachment": 2
+          }
+        ]
+      },
+      {
+        "id": "security",
+        "label": "Report him to the office security man.",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You reported the okada man to security.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Security chases him off. Ten minutes later he's back, one building down. Ovie texts: 'Why you dey report person?'",
+            "sanity": -5,
+            "control": 1
+          }
+        ],
+        "truth_override": {
+          "loyal": {
+            "text": "Security chases him off. Ovie texts: 'Okay. I go tell am make him stand far small. But him still dey.'",
+            "attachment": 2,
+            "trust": 2
+          }
+        }
+      },
+      {
+        "id": "ejiro",
+        "label": "\"Ejiro, abi? Come and greet me properly.\"",
+        "requires": {
+          "flags": [
+            "knows_ejiro"
+          ]
+        },
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You called the okada man by name.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He takes off the helmet, grinning. 'Oga talk say you sharp.'",
+            "trust": 4
+          }
+        ],
+        "truth_override": {
+          "controlling": {
+            "text": "He freezes, then calls Ovie on the spot. You hear Ovie: 'Na your eye I send, no be your mouth.'",
+            "saw_truth": true,
+            "sanity": -10
+          },
+          "baby_mamas": {
+            "text": "Helmet off. 'Please no tell Oga I dey here. I suppose dey do school run.' School run?",
+            "saw_truth": true,
+            "sanity": -5
+          },
+          "loyal": {
+            "text": "Helmet off, embarrassed. 'Oga say make we no let you know. One man dey threaten am. We dey cover you.'",
+            "trust": 10,
+            "attachment": 6
+          }
+        }
+      },
+      {
+        "id": "corp_plate",
+        "label": "[Corporate] Photograph his plate. File an incident report.",
+        "vibe": "corporate",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You filed an incident report on the okada.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "HR files it. The okada disappears. A new one appears. Green helmet this time.",
+            "sanity": -5
+          }
+        ],
+        "truth_override": {
+          "controlling": {
+            "text": "The plate is registered to a marine logistics company. His.",
+            "saw_truth": true,
+            "sanity": -10
+          },
+          "baby_mamas": {
+            "text": "The plate traces to a Warri address shared with a woman called Ese.",
+            "saw_truth": true,
+            "sanity": -5
+          },
+          "loyal": {
+            "text": "The plate is his company's. The same day, a second okada starts parking beside it: someone else's boy, watching his boy.",
+            "trust": 4
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ovie_rf_customer",
+    "character": "ovie",
+    "slot": "red_flag",
+    "scene": {
+      "location": "prado_interior",
+      "time": "night",
+      "expression": "suspicious",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Parked outside your gate at 11pm. His phone lights up on the dashboard: 'Customer'. He answers on the first ring."
+      },
+      {
+        "who": "partner",
+        "text": "I don send am! I don send am! ... Na customer. Supply matter."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "controlling": {
+        "id": "t_ctrl_where",
+        "text": "Hanging up, he says: 'Why you go Lekki today? I no vex. I just dey ask.' You never mentioned Lekki."
+      },
+      "baby_mamas": {
+        "id": "t_bm_customer",
+        "text": "In the background of the call, a small voice: 'Is that Daddy?' He turns the volume down to zero."
+      },
+      "loyal": {
+        "id": "t_loyal_calls",
+        "text": "His call log is open on the dash: 'Customer' twice today. You, thirty-one times."
+      }
+    },
+    "choices": [
+      {
+        "id": "kiss",
+        "label": "\"Supply never sleeps.\" Kiss him goodnight.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You let the late-night 'customer' call slide.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He relaxes. 'You understand me.' You do. Mostly.",
+            "attachment": 8,
+            "sanity": -5
+          }
+        ]
+      },
+      {
+        "id": "grab",
+        "label": "Grab his phone when he steps out to pee.",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You went through his phone.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Locked. Face ID. His face, not yours.",
+            "sanity": -3
+          }
+        ],
+        "truth_override": {
+          "controlling": [
+            {
+              "chance": 0.6,
+              "text": "A folder called 'HER'. Your screenshots. Your location history. Your mother's address.",
+              "saw_truth": true,
+              "sanity": -20,
+              "set": [
+                {
+                  "flag": "secret_snooped_ovie",
+                  "knows": [
+                    "player"
+                  ]
+                }
+              ]
+            },
+            {
+              "chance": 0.4,
+              "bad": true,
+              "text": "He's back before you put it down. He doesn't shout. 'So you dey check me?' He takes it and looks at you a long time.",
+              "trust": -20,
+              "control": 1,
+              "expression": "angry",
+              "set": [
+                {
+                  "flag": "secret_snooped_ovie",
+                  "knows": [
+                    "player",
+                    "partner"
+                  ]
+                }
+              ]
+            }
+          ],
+          "baby_mamas": [
+            {
+              "chance": 0.6,
+              "text": "'Customer' and 'Customer 2'. Profile pictures: two women, each holding a child with his exact forehead.",
+              "saw_truth": true,
+              "sanity": -15,
+              "set": [
+                {
+                  "flag": "secret_snooped_ovie",
+                  "knows": [
+                    "player"
+                  ]
+                }
+              ]
+            },
+            {
+              "chance": 0.4,
+              "bad": true,
+              "text": "He's back before you put it down. 'So you dey check me?' He pockets it and doesn't speak for the rest of the night.",
+              "trust": -20,
+              "expression": "angry",
+              "set": [
+                {
+                  "flag": "secret_snooped_ovie",
+                  "knows": [
+                    "player",
+                    "partner"
+                  ]
+                }
+              ]
+            }
+          ],
+          "loyal": [
+            {
+              "chance": 0.6,
+              "text": "'Customer' is saved with a photo of an old woman in a church hat. His mother. 'Customer' because she always needs something.",
+              "sanity": 5,
+              "set": [
+                {
+                  "flag": "secret_snooped_ovie",
+                  "knows": [
+                    "player"
+                  ]
+                }
+              ]
+            },
+            {
+              "chance": 0.4,
+              "bad": true,
+              "text": "He catches you. 'You fit just ask me.' He's more hurt than angry.",
+              "trust": -15,
+              "set": [
+                {
+                  "flag": "secret_snooped_ovie",
+                  "knows": [
+                    "player",
+                    "partner"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "speaker",
+        "label": "\"Next time, put Customer on speaker.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked him to put Customer on speaker.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Customer no like speaker,' he says. You don't like 'Customer'.",
+            "trust": 2
+          }
+        ],
+        "truth_override": {
+          "controlling": {
+            "text": "'Okay. And your own calls, I go hear dem too?' Fair is fair. Fair is a trap.",
+            "control": 1,
+            "sanity": -3
+          },
+          "baby_mamas": {
+            "text": "He laughs too fast. 'Customer go vex.' Customer would.",
+            "sanity": -5
+          },
+          "loyal": {
+            "text": "He calls back on speaker. An old woman: 'Ovie! You don chop? Bring that your friend come Warri!' His mother. Saved as 'Customer'.",
+            "trust": 8,
+            "attachment": 6,
+            "sanity": 5
+          }
+        }
+      },
+      {
+        "id": "lover_vip",
+        "label": "[Lover] \"Am I your only customer?\"",
+        "vibe": "lover",
+        "receipt": "You asked if you were his only customer.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He laughs. 'You na VIP customer. Free delivery.'",
+            "attachment": 6,
+            "chemistry": 3
+          }
+        ]
+      },
+      {
+        "id": "customers",
+        "label": "\"Your two biggest customers, abi? At 11pm?\"",
+        "requires": {
+          "flags": [
+            "knows_customers"
+          ]
+        },
+        "tags": [
+          "call_out"
+        ],
+        "receipt": "You called out his 'two biggest customers'.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He goes quiet. 'You dey listen too much.'",
+            "trust": 2
+          }
+        ],
+        "truth_override": {
+          "baby_mamas": {
+            "text": "Quiet. Then: 'Okay. Dem be... the mothers of my children.' Plural.",
+            "saw_truth": true,
+            "trust": 3,
+            "sanity": -10
+          },
+          "controlling": {
+            "text": "'Customers no dey sleep. Unlike you. Why you still dey awake?'",
+            "control": 1,
+            "sanity": -5
+          },
+          "loyal": {
+            "text": "'One na my mama, one na my sister. Both of them dey shout like customer.'",
+            "trust": 6,
+            "attachment": 4
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ovie_rf_lockscreen",
+    "character": "ovie",
+    "slot": "red_flag",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "afternoon",
+      "expression": "charming",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "You come back from the toilet. Your lock screen is now Ovie. Shirtless. Gold chain. Holding a fish."
+      },
+      {
+        "who": "partner",
+        "text": "So when any man see your phone, him go know say you get owner."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "controlling": {
+        "id": "t_ctrl_phone",
+        "text": "He hands it back unlocked. You never gave him your code."
+      },
+      "baby_mamas": {
+        "id": "t_bm_toy",
+        "text": "Scrolling his gallery for 'the best picture', he skips past a toddler's birthday cake. Fast."
+      },
+      "loyal": {
+        "id": "t_loyal_calls",
+        "text": "'Twelve calls yesterday and you no pick. Now when you see my face, you go remember to pick.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "keep",
+        "label": "Keep it. The fish is iconic.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You kept his shirtless fish photo as your lock screen.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Your colleagues ask about 'the fish man' daily. You've never been this popular at work.",
+            "attachment": 8,
+            "clout": 5,
+            "set": [
+              {
+                "flag": "lockscreen_his",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "change_back",
+        "label": "Change it back in front of him.",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You changed your lock screen back in front of him.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He watches. 'Okay.' The okay has a temperature.",
+            "attachment": -5
+          }
+        ],
+        "truth_override": {
+          "controlling": {
+            "text": "He watches you do it. That night it's back. You never unlocked your phone.",
+            "control": 1,
+            "sanity": -10
+          },
+          "loyal": {
+            "text": "He laughs. 'Okay, okay. Na joke.' Then sets his own lock screen to you.",
+            "attachment": 3,
+            "trust": 3
+          }
+        }
+      },
+      {
+        "id": "how",
+        "label": "\"How did you open my phone?\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked him how he opened your phone.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Your code na your birthday. Lagos no safe like that.' Fair. Creepy. Fair.",
+            "trust": 2
+          }
+        ],
+        "truth_override": {
+          "controlling": {
+            "text": "'I watch you type am two times.' He says it proudly, like a skill.",
+            "sanity": -10,
+            "control": 1
+          },
+          "baby_mamas": {
+            "text": "'Your code na 1234? Ah. Even my pikin fit open am.' His pikin?",
+            "sanity": -5
+          },
+          "loyal": {
+            "text": "'Na your birthday. Change am, abeg. If I fit open am, anybody fit.' He looks away while you type the new one.",
+            "trust": 8
+          }
+        }
+      },
+      {
+        "id": "swap",
+        "label": "Set his lock screen to you. Revenge.",
+        "receipt": "You set his lock screen to your face.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "He keeps it. Shows his boys. 'Na my person be this.' You're now famous in a WhatsApp group of thirty Warri men.",
+            "attachment": 8,
+            "clout": 5
+          },
+          {
+            "chance": 0.4,
+            "bad": true,
+            "text": "He changes it back within the hour. 'Business phone. People go see.' Which people?",
+            "attachment": -3,
+            "sanity": -5
+          }
+        ],
+        "truth_override": {
+          "loyal": {
+            "text": "He keeps it. For the rest of the week. Possibly the rest of his life.",
+            "attachment": 10,
+            "trust": 4
+          }
+        }
+      },
+      {
+        "id": "pin",
+        "label": "\"You told me to change my PIN. I did. So how?\"",
+        "requires": {
+          "flags": [
+            "knows_pin"
+          ]
+        },
+        "tags": [
+          "call_out"
+        ],
+        "receipt": "You asked how he got past your new PIN.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He blinks. 'I... guess am.' Nobody guesses six digits.",
+            "sanity": -5
+          }
+        ],
+        "truth_override": {
+          "controlling": {
+            "text": "'I get one guy for Computer Village. Him fit open any phone.' A pause. 'Na for your safety.'",
+            "saw_truth": true,
+            "sanity": -15
+          },
+          "baby_mamas": {
+            "text": "'My son played with it last week. He sabi open everything.' His son. In your house? When?",
+            "saw_truth": true,
+            "sanity": -8
+          },
+          "loyal": {
+            "text": "'I no open am. I set the picture before you changed it. Na why I tell you change am.' He's sheepish.",
+            "trust": 6
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ovie_mt_bag",
+    "character": "ovie",
+    "slot": "money_trap",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "expression": "suspicious",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "He drops a Ghana-must-go bag on your bed. It's heavy. It's money."
+      },
+      {
+        "who": "partner",
+        "text": "₦2 million. Keep am for your house two days. Bank get eye. Your house no get eye. I go dash you ₦200k."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "controlling": {
+        "id": "t_ctrl_where",
+        "text": "'Keep am under your bed,' he says. 'Left side.' He has never been in your room before."
+      },
+      "baby_mamas": {
+        "id": "t_bm_school",
+        "text": "Rubber-banded to one bundle, in biro: 'Ese: school fees + rent. Precious: brown envelope.'"
+      },
+      "loyal": {
+        "id": "t_loyal_temper",
+        "text": "His phone rings. He snaps, 'Godspower, if you try me!' and kills the call. His hands are shaking."
+      }
+    },
+    "choices": [
+      {
+        "id": "keep_bag",
+        "label": "Keep it. ₦200k for babysitting money.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You kept his bag of cash under your bed.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Two days, ₦200k. Easy.",
+            "wallet": 200000,
+            "set": [
+              {
+                "flag": "holding_bag",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "controlling": {
+            "text": "₦200k. And his boys 'check on the bag' every few hours. They check on you.",
+            "wallet": 200000,
+            "control": 1,
+            "sanity": -8,
+            "set": [
+              {
+                "flag": "holding_bag",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "baby_mamas": {
+            "text": "₦200k. Day two, an unknown number calls: 'Ovie say you get my rent.'",
+            "wallet": 200000,
+            "sanity": -8,
+            "set": [
+              {
+                "flag": "holding_bag",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "loyal": {
+            "text": "₦200k, and his trust. 'Only you I fit give am.' He calls every two hours. To check on you, not the bag.",
+            "wallet": 200000,
+            "attachment": 10,
+            "trust": 6,
+            "set": [
+              {
+                "flag": "holding_bag",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "count_sign",
+        "label": "\"Count it in front of me. Sign for it.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You made him count the cash and sign for it.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "₦2,000,000 in cash, counted on your bedsheet. He signs a page torn from your notebook. Very Warri. Very legal.",
+            "trust": 4,
+            "set": [
+              {
+                "flag": "holding_bag",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "controlling": {
+            "text": "He signs, then adds: 'Any shortage, na your head.' Smiling.",
+            "control": 1,
+            "sanity": -5,
+            "set": [
+              {
+                "flag": "holding_bag",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "baby_mamas": {
+            "text": "Counting, you find the labels: 'Ese' and 'Precious'. 'Customers,' he says. Too quickly.",
+            "saw_truth": true,
+            "sanity": -8,
+            "set": [
+              {
+                "flag": "holding_bag",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "loyal": {
+            "text": "He signs with a flourish. 'This one go enter history. First contract of our relationship.'",
+            "trust": 8,
+            "attachment": 4,
+            "set": [
+              {
+                "flag": "holding_bag",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "refuse",
+        "label": "\"Ovie, my house isn't a bank.\"",
+        "receipt": "You refused to keep his cash.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He picks up the bag, grumbling. 'Lagos people and wahala.' He'll find another house.",
+            "attachment": -6,
+            "sanity": 5
+          }
+        ],
+        "truth_override": {
+          "controlling": {
+            "text": "'Okay. But I go still check your house. For security.'",
+            "control": 1,
+            "sanity": -3
+          },
+          "loyal": {
+            "text": "He nods. 'You're right. Na me dey bring wahala come your door.' Ovie, apologising. A rare species.",
+            "trust": 6,
+            "attachment": -2
+          }
+        }
+      },
+      {
+        "id": "runs_storage",
+        "label": "[Runs] Keep it. Charge ₦400k 'storage'.",
+        "vibe": "runs",
+        "receipt": "You charged him a storage fee for his cash.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "He laughs and pays. 'Na why I like you.'",
+            "wallet": 400000,
+            "set": [
+              {
+                "flag": "holding_bag",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          {
+            "chance": 0.5,
+            "bad": true,
+            "text": "He pays, then counts the bag on day two. Twice. Out loud. In front of you.",
+            "wallet": 400000,
+            "trust": -15,
+            "set": [
+              {
+                "flag": "holding_bag",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "skim",
+        "label": "Slip ₦100k out of the bag. He won't count.",
+        "tags": [
+          "toxic"
+        ],
+        "receipt": "You skimmed ₦100k from his bag.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "He doesn't count. You buy a new wig, a new phone case and a new conscience.",
+            "wallet": 100000,
+            "set": [
+              {
+                "flag": "holding_bag",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          {
+            "chance": 0.5,
+            "bad": true,
+            "text": "He counts. Of course he counts. 'Ninety-eight bundles.' He looks at you. 'Where the other two?'",
+            "wallet": 100000,
+            "trust": -25,
+            "attachment": -10,
+            "set": [
+              {
+                "flag": "holding_bag",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ovie_mt_party",
+    "character": "ovie",
+    "slot": "money_trap",
+    "scene": {
+      "location": "mainland_street",
+      "time": "golden",
+      "expression": "charming",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Surulere, Saturday. He needs a cake for a sixth birthday party. 'My niece. Make am fine. Fondant, two layers, name in gold.'"
+      },
+      {
+        "who": "partner",
+        "text": "₦70k. You get taste pass me. I go refund you."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "controlling": {
+        "id": "t_ctrl_where",
+        "text": "'Buy am from that bakery near your office, the one you go Tuesdays.' You go on Tuesdays. You never told him."
+      },
+      "baby_mamas": {
+        "id": "t_bm_toy",
+        "text": "His back seat is full of party packs and a toy car with a bow on it. 'For my niece,' he says. To the toy car."
+      },
+      "loyal": {
+        "id": "t_loyal_temper",
+        "text": "On the phone with the decorator he explodes: 'I say PINK! You no hear?' The decorator hangs up on him."
+      }
+    },
+    "choices": [
+      {
+        "id": "fondant",
+        "label": "Order the full fondant cake. ₦70k.",
+        "cost": 70000,
+        "tags": [
+          "luxury"
+        ],
+        "broke_text": "₦70k for a cake? Your account sent a crying emoji.",
+        "receipt": "You bought a ₦70k fondant cake for the party.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The cake is a masterpiece. Nobody refunds you, but the photos are lovely.",
+            "attachment": 5
+          }
+        ],
+        "truth_override": {
+          "baby_mamas": {
+            "text": "The birthday boy runs at Ovie screaming 'Daddy!' The niece is a nephew. The nephew is a son. His mother is holding the knife.",
+            "saw_truth": true,
+            "sanity": -20,
+            "attachment": 3
+          },
+          "controlling": {
+            "text": "At the party he doesn't let you leave his side for four hours. Not to the toilet. Not to the gate. 'Stay where I fit see you.'",
+            "control": 2,
+            "sanity": -10,
+            "attachment": 5,
+            "wallet": 70000,
+            "scaled": true
+          },
+          "loyal": {
+            "text": "Omote, six, blows out the candles. Her father, his brother, died two years ago. Ovie pays her fees, her rent, her ballet. He cries at 'happy birthday'. Loudly. He refunds you before the candles go out.",
+            "trust": 12,
+            "attachment": 10,
+            "sanity": 5,
+            "wallet": 70000,
+            "scaled": true
+          }
+        }
+      },
+      {
+        "id": "yaba_cake",
+        "label": "Buy a ₦12k cake in Yaba. Pink is pink.",
+        "cost": 12000,
+        "tags": [
+          "budget"
+        ],
+        "receipt": "You bought a ₦12k cake for the party.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "It leans slightly to the left. The child doesn't care. Children are honest critics.",
+            "attachment": 4
+          }
+        ],
+        "truth_override": {
+          "baby_mamas": {
+            "text": "The birthday boy calls him Daddy over your leaning cake. Nobody notices you noticing.",
+            "saw_truth": true,
+            "sanity": -12
+          },
+          "loyal": {
+            "text": "His niece Omote hugs the leaning cake. Ovie hugs you. 'You no need fondant. You get heart.'",
+            "attachment": 8,
+            "trust": 6
+          }
+        }
+      },
+      {
+        "id": "your_cake",
+        "label": "\"Your niece, your cake, Ovie.\"",
+        "receipt": "You told him to buy his own niece's cake.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He laughs. 'Fair.' He buys the most expensive cake in Surulere and sends you a picture. Gold name, two layers.",
+            "attachment": -3
+          }
+        ],
+        "truth_override": {
+          "controlling": {
+            "text": "'Okay. But you go come the party.' It is not a question.",
+            "control": 1,
+            "attachment": -2
+          },
+          "loyal": {
+            "text": "'Fair,' he says. 'But come. She wants to meet the person who makes me smile.'",
+            "trust": 4,
+            "attachment": 3
+          }
+        }
+      },
+      {
+        "id": "sugar_send",
+        "label": "[Sugar] \"Send ₦100k. I'll handle the cake.\"",
+        "vibe": "sugar",
+        "receipt": "You asked him to send the cake money.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "₦100k arrives. You buy a ₦15k cake. Profit and pastry.",
+            "wallet": 100000
+          },
+          {
+            "chance": 0.4,
+            "bad": true,
+            "text": "He sends it straight to the bakery. 'So the cake no go japa.'",
+            "attachment": -3
+          }
+        ]
+      },
+      {
+        "id": "banga",
+        "label": "Bring banga and starch instead. The adults will riot.",
+        "requires": {
+          "flags": [
+            "knows_banga"
+          ]
+        },
+        "cost": 10000,
+        "tags": [
+          "budget"
+        ],
+        "receipt": "You cooked banga and starch for the party.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The adults abandon the cake and riot over the banga. His mother calls from Warri: 'Who cooked?'",
+            "attachment": 12,
+            "trust": 6,
+            "chemistry": 4
+          }
+        ],
+        "truth_override": {
+          "baby_mamas": {
+            "text": "Two different women ask for your recipe. Two mothers. One party. Same forehead on both their kids.",
+            "saw_truth": true,
+            "attachment": 6,
+            "sanity": -10
+          },
+          "controlling": {
+            "text": "The adults riot over the banga. Ovie tells everyone you'll cook for every party now. You weren't asked.",
+            "attachment": 10,
+            "trust": 4,
+            "control": 1
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ovie_mt_iphone",
+    "character": "ovie",
+    "slot": "money_trap",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "afternoon",
+      "expression": "charming",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "A brand-new iPhone on your pillow. Latest model. Gold, like his chain."
+      },
+      {
+        "who": "partner",
+        "text": "Throw that your cracked phone away. I don set this one for you already. Just log in."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "controlling": {
+        "id": "t_ctrl_phone",
+        "text": "It's already logged in. To his account. 'So I fit help you if you lose am. Just because.'"
+      },
+      "baby_mamas": {
+        "id": "t_bm_toy",
+        "text": "The receipt in the box lists two items: this phone, and a kids' tablet with a cartoon case. Same day, same shop."
+      },
+      "loyal": {
+        "id": "t_loyal_calls",
+        "text": "Emergency contacts already set: him, your mother, and 'Ejiro (call if I no pick)'."
+      }
+    },
+    "choices": [
+      {
+        "id": "use_it",
+        "label": "Use it. It's gorgeous. Who cares.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You started using the phone he set up for you.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Gorgeous. Fast. A camera so good your enemies look better.",
+            "attachment": 8,
+            "clout": 10,
+            "set": [
+              {
+                "flag": "using_his_phone",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "controlling": {
+            "text": "Gorgeous. Three days later he quotes a message you sent your sister. Word for word.",
+            "attachment": 8,
+            "control": 2,
+            "sanity": -12,
+            "set": [
+              {
+                "flag": "using_his_phone",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "baby_mamas": {
+            "text": "Gorgeous. Then his photos sync: two small faces at a Warri beach. Both with his forehead.",
+            "saw_truth": true,
+            "attachment": 5,
+            "sanity": -10,
+            "set": [
+              {
+                "flag": "using_his_phone",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "loyal": {
+            "text": "Gorgeous. When your bag is snatched at Obalende the next week, he's the reason your SIM is back in an hour.",
+            "attachment": 10,
+            "trust": 6,
+            "set": [
+              {
+                "flag": "using_his_phone",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "reset",
+        "label": "Factory reset it in front of him.",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You factory reset his gift in front of him.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He watches the logo spin. 'Okay. Na your phone now.'",
+            "trust": 3
+          }
+        ],
+        "truth_override": {
+          "controlling": {
+            "text": "He watches the logo spin, jaw tight. 'Why you dey treat me like thief?'",
+            "attachment": -6,
+            "sanity": -3
+          },
+          "loyal": {
+            "text": "He laughs. 'Good. Na so I teach you.' He asks if you'll add him as an emergency contact. Only if you want.",
+            "trust": 8,
+            "attachment": 4
+          }
+        }
+      },
+      {
+        "id": "sell",
+        "label": "Sell it at Computer Village. Keep your cracked phone.",
+        "receipt": "You sold his iPhone at Computer Village.",
+        "outcomes": [
+          {
+            "chance": 0.7,
+            "text": "₦900k cash from a man named Sunday who asked zero questions. Your cracked phone has never felt richer.",
+            "wallet": 900000,
+            "set": [
+              {
+                "flag": "secret_sold_iphone",
+                "knows": [
+                  "player",
+                  "world"
+                ]
+              }
+            ]
+          },
+          {
+            "chance": 0.3,
+            "bad": true,
+            "text": "Sunday pays ₦600k, then frowns: 'Boss, this phone dey track. Somebody dey see am.' You walk faster.",
+            "wallet": 600000,
+            "sanity": -10,
+            "set": [
+              {
+                "flag": "secret_sold_iphone",
+                "knows": [
+                  "player",
+                  "world"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "refuse",
+        "label": "\"I like my cracked screen. It's loyal.\"",
+        "receipt": "You refused his iPhone.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He puts the box back in his bag. 'Stubborn.' He says it fondly. Mostly.",
+            "attachment": -4,
+            "trust": 3
+          }
+        ],
+        "truth_override": {
+          "controlling": {
+            "text": "'Okay.' Next morning your old phone has an app you didn't install.",
+            "control": 1,
+            "sanity": -10
+          },
+          "loyal": {
+            "text": "He laughs. 'Loyal like me.' He gets your screen fixed in Ikeja instead. Done by evening.",
+            "attachment": 5,
+            "trust": 4
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ovie_pd_lounge_fight",
+    "character": "ovie",
+    "slot": "public_drama",
+    "scene": {
+      "location": "vi_club_vip",
+      "time": "night",
+      "expression": "angry",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "A lounge on Ozumba Mbadiwe. A man brushes your waist on his way past. Ovie is on his feet before the man finishes the step. Phones come out."
+      },
+      {
+        "who": "partner",
+        "text": "You touch my person? You don craze?"
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "controlling": {
+        "id": "t_ctrl_where",
+        "text": "'I see how he dey look you since 9:14,' Ovie says. You arrived at 9:14. Ovie arrived at 10."
+      },
+      "baby_mamas": {
+        "id": "t_bm_customer",
+        "text": "'Customer' calls mid-fight. He actually answers: 'Not now, Ese!' Then acts like he didn't say a name."
+      },
+      "loyal": {
+        "id": "t_loyal_temper",
+        "text": "The man isn't a stranger. Ovie knows his name: 'Godspower, I warn you.' The man smiles at you like he knows your address."
+      }
+    },
+    "choices": [
+      {
+        "id": "pull_out",
+        "label": "Pull Ovie out before the bouncers come.",
+        "tags": [
+          "discreet"
+        ],
+        "receipt": "You dragged him out of the fight.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You drag him out by the chain. In the car he's breathing like a generator. 'Sorry. Sorry. Na you I dey protect.'",
+            "attachment": 8,
+            "sanity": -8
+          }
+        ]
+      },
+      {
+        "id": "let_him",
+        "label": "Sit back. Let Warri handle it.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You let him fight in the lounge.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "A table goes over. Then another. He pays for both, in cash, from a nylon bag. The bouncers call him 'Oga'.",
+            "attachment": 6,
+            "sanity": -10,
+            "exposure": 10
+          }
+        ]
+      },
+      {
+        "id": "film",
+        "label": "Film it. This is content.",
+        "tags": [
+          "toxic",
+          "public_embarrassment"
+        ],
+        "receipt": "You filmed his fight for content.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Two million views by morning: 'Warri Man vs The Whole Lounge'. Your voice is in it: 'Ovie, NO!'",
+            "clout": 30,
+            "exposure": 25
+          }
+        ]
+      },
+      {
+        "id": "apologise",
+        "label": "Apologise to the man yourself. Calm everyone.",
+        "tags": [
+          "public_embarrassment"
+        ],
+        "receipt": "You apologised to the man in front of everyone.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Ovie stares at you like you switched sides. 'You beg am? For my front?'",
+            "attachment": -3,
+            "sanity": -5
+          }
+        ],
+        "truth_override": {
+          "loyal": {
+            "text": "In the car, quietly: 'You no know who that is. Never beg that man. Never go near am.' He's not angry. He's scared.",
+            "sanity": -5,
+            "trust": 3
+          }
+        }
+      },
+      {
+        "id": "scared",
+        "label": "Hold his face. \"What are you scared of?\"",
+        "requires": {
+          "flags": [
+            "knows_mama_fear"
+          ]
+        },
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked him softly what he was scared of.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The fight drains out of him. 'Who tell you say I dey fear?' 'Your mama.' He laughs, wet-eyed.",
+            "trust": 8,
+            "attachment": 6
+          }
+        ],
+        "truth_override": {
+          "controlling": {
+            "text": "'Scared? Of losing what's mine.' He says it gently, to your face. It's the gentleness that frightens you.",
+            "control": 1,
+            "sanity": -10
+          },
+          "loyal": {
+            "text": "'That man threatened you last month. Because of me. I'm scared every day.' The first time he's said anything without shouting.",
+            "trust": 12,
+            "attachment": 8
+          }
+        }
+      },
+      {
+        "id": "godspower",
+        "label": "\"That's Godspower, isn't it?\"",
+        "requires": {
+          "flags": [
+            "knows_godspower"
+          ]
+        },
+        "tags": [
+          "call_out"
+        ],
+        "receipt": "You named the man as Godspower.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Ovie freezes. 'How you sabi that name?' 'You told me.' He nods slowly.",
+            "trust": 5
+          }
+        ],
+        "truth_override": {
+          "controlling": {
+            "text": "'No. Na just one idiot.' Later, in the car: 'Who tell you about Godspower? Who you dey talk to?'",
+            "control": 1,
+            "sanity": -8
+          },
+          "baby_mamas": {
+            "text": "'Godspower na Precious brother. Long story.' Who is Precious?",
+            "saw_truth": true,
+            "sanity": -8
+          },
+          "loyal": {
+            "text": "'Yes. And now he knows your face. Na why the boys dey follow you.' Everything clicks.",
+            "trust": 10,
+            "attachment": 5
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ovie_pd_salon",
+    "character": "ovie",
+    "slot": "public_drama",
+    "scene": {
+      "location": "lekki_salon",
+      "time": "afternoon",
+      "mood": "neutral",
+      "partner_present": false,
+      "npc": {
+        "name": "Precious"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Admiralty Way. Your braider is gisting about her baby daddy: 'Warri man. Gold chain. Supply. Saves me as Customer.' Your scalp goes cold."
+      },
+      {
+        "who": "Precious",
+        "text": "Him dey Lagos now, dey form say him single. Men!"
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "controlling": {
+        "id": "t_ctrl_boys",
+        "text": "Outside the window: a red helmet, an okada, engine off. Not moving."
+      },
+      "baby_mamas": {
+        "id": "t_bm_school",
+        "text": "'Last week he paid my son's school fees. Cash. In a black nylon bag.' You know that bag."
+      },
+      "loyal": {
+        "id": "t_loyal_boys",
+        "text": "Outside, two of Ovie's boys sit on the kerb eating gala. Watching the road, not you."
+      }
+    },
+    "choices": [
+      {
+        "id": "ask_name",
+        "label": "\"What's his name?\" Casual. Very casual.",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You asked your braider her baby daddy's name.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Oviemuno. Why?' Different man. You breathe."
+          }
+        ],
+        "truth_override": {
+          "baby_mamas": {
+            "text": "'Ovie. Why, you know am?' She stops braiding. Your edges are now hostages.",
+            "saw_truth": true,
+            "sanity": -20,
+            "set": [
+              {
+                "flag": "met_precious",
+                "knows": [
+                  "player",
+                  "world"
+                ]
+              }
+            ]
+          },
+          "controlling": {
+            "text": "'Kessington. Why?' Different man. Then: 'Every Warri man get one red-helmet boy. My own dey watch me too.'",
+            "sanity": -5
+          },
+          "loyal": {
+            "text": "'Kessington. Why?' Not Ovie. She laughs: 'Every Warri man get gold chain, my dear.'",
+            "sanity": 5
+          }
+        }
+      },
+      {
+        "id": "silent",
+        "label": "Close your eyes. Let her braid. Say nothing.",
+        "tags": [
+          "discreet",
+          "excuse"
+        ],
+        "receipt": "You sat through the gist in silence.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Six hours. You learn his star sign, his mother's church and that he snores. Whose 'he', you're not sure.",
+            "sanity": -10,
+            "intel": "tell"
+          }
+        ]
+      },
+      {
+        "id": "half_braid",
+        "label": "Tip ₦10k and leave half-braided.",
+        "cost": 10000,
+        "tags": [
+          "budget"
+        ],
+        "receipt": "You left the salon half-braided.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You walk down Admiralty Way with half your head done. Fashion is a choice. Panic is also a choice.",
+            "sanity": -5,
+            "clout": -5
+          }
+        ]
+      },
+      {
+        "id": "speaker",
+        "label": "Call Ovie on speaker: \"Do you know a Precious?\"",
+        "tags": [
+          "public_embarrassment",
+          "contact_partner"
+        ],
+        "receipt": "You called him on speaker in the salon.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Precious? Which Precious?' The whole salon leans in. Nobody is braiding anything.",
+            "clout": 5
+          }
+        ],
+        "truth_override": {
+          "baby_mamas": {
+            "text": "'Precious? Which Precious?' Precious, loudly: 'This one, Ovie. This one.' The salon applauds.",
+            "saw_truth": true,
+            "truth_exposed": true,
+            "exposure": 20,
+            "clout": 15,
+            "set": [
+              {
+                "flag": "met_precious",
+                "knows": [
+                  "player",
+                  "world",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "controlling": {
+            "text": "'Precious? Why you dey salon on Admiralty? I thought you said Yaba.' You hadn't said anything.",
+            "control": 1,
+            "sanity": -10
+          },
+          "loyal": {
+            "text": "'I no know any Precious. But tell her say I no get pikin. Yet.' The salon whoops.",
+            "attachment": 5,
+            "trust": 3
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ovie_pd_friends_dinner",
+    "character": "ovie",
+    "slot": "public_drama",
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "night",
+      "expression": "charming",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Your friend Kemi's birthday dinner. Ten seats. Ovie arrives uninvited, with eight boys. They order like it's a wake."
+      },
+      {
+        "who": "partner",
+        "text": "No worry, na me go pay. Happy birthday, Kemi! ...Which one of you be Kemi?"
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "controlling": {
+        "id": "t_ctrl_where",
+        "text": "Nobody told him the restaurant. Or the time. Or that Kemi exists."
+      },
+      "baby_mamas": {
+        "id": "t_bm_toy",
+        "text": "One of the boys is carrying a small Spider-Man backpack. 'Na Oga own,' he says, and gets kicked under the table."
+      },
+      "loyal": {
+        "id": "t_loyal_boys",
+        "text": "The boys sit facing the door all night. When a black Camry slows outside, two of them quietly step out."
+      }
+    },
+    "choices": [
+      {
+        "id": "thank",
+        "label": "Thank him. Free dinner is free dinner.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You thanked him for crashing the birthday.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Kemi is thrilled. Her boyfriend is not. Ovie pays ₦600k in cash and sprays Kemi on the way out. Legend.",
+            "attachment": 6,
+            "clout": 10,
+            "sanity": -5
+          }
+        ]
+      },
+      {
+        "id": "boundary",
+        "label": "Pull him aside: \"You weren't invited.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You told him he wasn't invited.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Invitation na for strangers,' he says. But he sends six of the boys home.",
+            "trust": 3,
+            "attachment": -4
+          }
+        ],
+        "truth_override": {
+          "controlling": {
+            "text": "'I no need invitation to where you dey.' He sits back down. The boys stay.",
+            "control": 1,
+            "sanity": -8
+          },
+          "loyal": {
+            "text": "He drops his head. 'You right. I overdo. Godspower boys dey around tonight. I panic.' He pays, leaves, and keeps two boys outside, quietly.",
+            "trust": 8,
+            "attachment": 2
+          }
+        }
+      },
+      {
+        "id": "post",
+        "label": "Post the boys eating: \"My man brought the army.\"",
+        "tags": [
+          "public_embarrassment"
+        ],
+        "receipt": "You posted his boys at the birthday dinner.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "The Parlour loves it. 'Who's the Warri army?' He loves it in public and hates it in private.",
+            "clout": 20,
+            "exposure": 10
+          },
+          {
+            "chance": 0.4,
+            "bad": true,
+            "text": "Someone reshares it with the location tag. Ovie calls: 'Delete am. NOW.'",
+            "exposure": 25,
+            "sanity": -8
+          }
+        ]
+      },
+      {
+        "id": "corp_bill",
+        "label": "[Corporate] Hand Ovie the bill before he offers.",
+        "vibe": "corporate",
+        "receipt": "You handed him the bill.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He pays without blinking. Kemi's boyfriend learns something about himself tonight.",
+            "attachment": 3,
+            "clout": 8
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ovie_cf_controlling",
+    "character": "ovie",
+    "slot": "confrontation",
+    "requires": {
+      "truth": [
+        "controlling"
+      ]
+    },
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "expression": "angry",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "His tablet lights up on the couch while he's in the shower. A map. A blue dot. A log: '08:02 Office. 12:40 Lekki salon. 18:15 Mother's house.' Today."
+      },
+      {
+        "who": "partner",
+        "text": "Who dey touch my tablet?"
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "controlling": {
+        "id": "t_ctrl_where",
+        "text": "Under the map, a WhatsApp group: 'HER MOVEMENT'. Six members. All his boys."
+      }
+    },
+    "choices": [
+      {
+        "id": "leave",
+        "label": "Screenshot everything. Leave while the water runs.",
+        "tags": [
+          "exit",
+          "cautious"
+        ],
+        "receipt": "You screenshotted his tracking and left.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You're in a keke before the shower stops. Screenshots to your bestie and your brother. Block. Breathe.",
+            "saw_truth": true,
+            "sanity": 15,
+            "end": "walked_away"
+          }
+        ]
+      },
+      {
+        "id": "explain",
+        "label": "Wait for him. \"Explain HER MOVEMENT.\"",
+        "tags": [
+          "call_out"
+        ],
+        "receipt": "You made him explain the tracking.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He comes out dripping. Doesn't deny it. 'Lagos no safe. I need know where you dey. Every time.' Every time.",
+            "saw_truth": true,
+            "sanity": -15,
+            "control": 1,
+            "attachment": 5
+          }
+        ]
+      },
+      {
+        "id": "put_down",
+        "label": "Put it down. He's just protective.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You put the tablet down and said nothing.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You put it down. The blue dot doesn't move all night. Neither do you.",
+            "sanity": -20,
+            "attachment": 10,
+            "control": 2
+          }
+        ]
+      },
+      {
+        "id": "post",
+        "label": "Post the group chat on the Parlour.",
+        "tags": [
+          "toxic",
+          "public_embarrassment"
+        ],
+        "receipt": "You posted his tracking group on the Parlour.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'HER MOVEMENT' trends by morning. Six boys leave the group. Ovie does not leave your street.",
+            "clout": 25,
+            "exposure": 30,
+            "saw_truth": true,
+            "truth_exposed": true,
+            "goal": {
+              "revenge": 50
+            },
+            "sanity": -10
+          }
+        ]
+      },
+      {
+        "id": "named",
+        "label": "\"This is surveillance. My therapist has a word.\"",
+        "requires": {
+          "flags": [
+            "named_tactic"
+          ]
+        },
+        "tags": [
+          "exit",
+          "call_out"
+        ],
+        "receipt": "You named his surveillance out loud.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He opens his mouth to argue and finds no words. You leave with yours.",
+            "saw_truth": true,
+            "sanity": 20,
+            "attachment": -20,
+            "control": -3,
+            "set": [
+              "boundary_set"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "okada",
+        "label": "\"Your red-helmet boy already told me. Every hour.\"",
+        "requires": {
+          "flags": [
+            "saw_okada"
+          ]
+        },
+        "tags": [
+          "call_out"
+        ],
+        "receipt": "You told him his okada boy had confessed.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He doesn't even look surprised. 'Ejiro talk too much.' That is all he's sorry about.",
+            "saw_truth": true,
+            "sanity": -10
+          }
+        ]
+      },
+      {
+        "id": "folder",
+        "label": "\"I saw the folder called 'HER' last week.\"",
+        "requires": {
+          "flags": [
+            "secret_snooped_ovie"
+          ]
+        },
+        "tags": [
+          "call_out"
+        ],
+        "receipt": "You told him you'd seen his folder about you.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'And you still dey here,' he says softly. 'So you like am.' You don't. You realise you'll have to prove it.",
+            "saw_truth": true,
+            "sanity": -15
+          }
+        ]
+      },
+      {
+        "id": "phone",
+        "label": "Throw the phone he gave you onto the couch.",
+        "requires": {
+          "flags": [
+            "using_his_phone"
+          ]
+        },
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You gave back the phone he tracked you with.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'That phone na gift!' 'It was a leash.' You leave it there, still glowing.",
+            "saw_truth": true,
+            "sanity": 10,
+            "control": -2,
+            "attachment": -10
+          }
+        ]
+      },
+      {
+        "id": "bag",
+        "label": "\"Your ₦2m is still under my bed. Call it rent.\"",
+        "requires": {
+          "flags": [
+            "holding_bag"
+          ]
+        },
+        "receipt": "You kept his cash as 'rent'.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He goes very still. Then laughs. 'Keep am. I go collect am another way.' You change your locks that night.",
+            "wallet": 800000,
+            "saw_truth": true,
+            "sanity": -10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ovie_cf_baby_mamas",
+    "character": "ovie",
+    "slot": "confrontation",
+    "requires": {
+      "truth": [
+        "baby_mamas"
+      ]
+    },
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "afternoon",
+      "expression": "caught",
+      "mood": "negative",
+      "npc": {
+        "name": "Ese"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "His flat, Sunday. The doorbell. Two women, two children, one look between them. They are not fighting each other."
+      },
+      {
+        "who": "Ese",
+        "text": "So you be the new customer? Sit down. We need to talk about school fees."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "baby_mamas": {
+        "id": "t_bm_customer",
+        "text": "His phone on the counter rings: 'Customer'. Ese holds up her own phone. Calling."
+      }
+    },
+    "choices": [
+      {
+        "id": "listen",
+        "label": "Sit. Listen. Take notes.",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You sat down with his two baby mamas and listened.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Ese has Junior, six. Precious has Karo, three. Both are still in his phone as 'Customer'. Both are still waiting for him to 'come and talk'.",
+            "saw_truth": true,
+            "sanity": -10
+          }
+        ]
+      },
+      {
+        "id": "group_chat",
+        "label": "\"Ladies. Group chat. Now.\"",
+        "receipt": "You started a group chat with his baby mamas.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Ovie's Customers' has three members by sundown. Agenda: his schedule, his lies, and Precious's jollof.",
+            "saw_truth": true,
+            "clout": 15,
+            "sanity": 5,
+            "goal": {
+              "revenge": 30
+            }
+          }
+        ]
+      },
+      {
+        "id": "leave",
+        "label": "Hug the kids goodbye. Leave him to explain.",
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You left him to explain himself to the mothers of his children.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You hug Junior, hand Karo a biscuit, and leave Ovie to two women who have heard every version. He calls you nine times before you reach the gate.",
+            "saw_truth": true,
+            "sanity": 10,
+            "attachment": -15,
+            "trust": -5
+          }
+        ]
+      },
+      {
+        "id": "live",
+        "label": "Livestream the meeting. #CustomerService",
+        "tags": [
+          "toxic",
+          "public_embarrassment"
+        ],
+        "receipt": "You livestreamed his baby mamas' meeting.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "40,000 viewers. Ese does a ten-minute monologue. Precious waves. Ovie arrives at minute 38.",
+            "clout": 35,
+            "exposure": 30,
+            "saw_truth": true,
+            "truth_exposed": true,
+            "goal": {
+              "revenge": 50
+            }
+          }
+        ]
+      },
+      {
+        "id": "stay",
+        "label": "\"Kids are a blessing. I'm staying.\"",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You told them you were staying with him.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Ovie arrives, sees you holding Karo, and nearly cries. That night: ₦300k, 'You be wife material.' Ese reads it over your shoulder.",
+            "wallet": 300000,
+            "attachment": 15,
+            "sanity": -20
+          }
+        ]
+      },
+      {
+        "id": "customers",
+        "label": "\"So you two are his 'biggest customers'.\"",
+        "requires": {
+          "flags": [
+            "knows_customers"
+          ]
+        },
+        "tags": [
+          "call_out"
+        ],
+        "receipt": "You told them what he calls them.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Ese laughs so hard she has to sit. 'Customer! Na wetin him call us?' Precious: 'And what does he call you?' 'Nothing. Yet.'",
+            "saw_truth": true,
+            "clout": 10,
+            "sanity": 5
+          }
+        ]
+      },
+      {
+        "id": "precious",
+        "label": "\"Precious. You braided my hair.\"",
+        "requires": {
+          "flags": [
+            "met_precious"
+          ]
+        },
+        "receipt": "You reminded Precious she'd braided your hair.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Precious gasps. 'Na you! I talk say my baby daddy dey form single!' The coincidence is so Lagos that everyone laughs. Then nobody does.",
+            "saw_truth": true,
+            "clout": 10
+          }
+        ]
+      },
+      {
+        "id": "bag",
+        "label": "\"Your school fees were in a bag under my bed.\"",
+        "requires": {
+          "flags": [
+            "holding_bag"
+          ]
+        },
+        "receipt": "You told them where their money had been.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Ese and Precious split the bag on his carpet and leave you ₦800k: 'Your share, for your trouble. He go pay us back.'",
+            "wallet": 800000,
+            "saw_truth": true,
+            "clout": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ovie_cf_loyal",
+    "character": "ovie",
+    "slot": "confrontation",
+    "requires": {
+      "truth": [
+        "loyal"
+      ]
+    },
+    "scene": {
+      "location": "mainland_street",
+      "time": "night",
+      "mood": "negative",
+      "partner_present": false,
+      "npc": {
+        "name": "Ejiro"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Ojuelegba, 10pm. A black Camry has followed your keke for six streets. Then two okadas cut it off. Red helmet. Ejiro."
+      },
+      {
+        "who": "Ejiro",
+        "text": "Abeg no vex. Godspower people. Oga say make we no ever let dem near you. We don dey cover you since day one."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "loyal": {
+        "id": "t_loyal_calls",
+        "text": "Your phone: Ovie, twelve times in four minutes. When you pick up, he's breathing like he ran here. He did."
+      }
+    },
+    "choices": [
+      {
+        "id": "call",
+        "label": "Hug Ejiro. Then call Ovie: \"Come.\"",
+        "tags": [
+          "cautious",
+          "contact_partner"
+        ],
+        "receipt": "You called him to come.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He arrives on the back of an okada, no chain, shirt half-buttoned. 'I no sabi talk soft. I only sabi stand for front.' He stands in front of you till the Camry is gone, and long after.",
+            "trust": 15,
+            "attachment": 15,
+            "sanity": 10
+          }
+        ]
+      },
+      {
+        "id": "why_not_tell",
+        "label": "\"Why didn't anybody tell ME?\"",
+        "tags": [
+          "cautious",
+          "call_out"
+        ],
+        "receipt": "You asked why nobody told you.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He takes it. All of it. Then: 'Because I wanted you to choose me, not because you were scared.' Fair. Infuriating. Fair.",
+            "trust": 10,
+            "attachment": 5
+          }
+        ]
+      },
+      {
+        "id": "not_container",
+        "label": "\"I'm not a container, Ovie. Call off your boys.\"",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You told him to call off his boys.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "A long silence. 'Okay. One boy. Far away. Until Godspower settles.' He respects it. It costs him.",
+            "trust": 8,
+            "attachment": -3,
+            "sanity": 5
+          }
+        ]
+      },
+      {
+        "id": "post",
+        "label": "Post his boys as stalkers on the Parlour.",
+        "tags": [
+          "toxic",
+          "public_embarrassment"
+        ],
+        "receipt": "You posted his boys as stalkers.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Warri boyfriend's boys stalk Lagos lover' goes viral. Godspower reposts it with laughing emojis. Now he knows exactly who you are.",
+            "clout": 20,
+            "exposure": 30,
+            "sanity": -10
+          }
+        ]
+      },
+      {
+        "id": "space",
+        "label": "\"This is too much wahala. I need space.\"",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You told him you needed space.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He doesn't argue. 'I understand.' He goes. The boys stay on your street anyway, further away, eating gala, pretending not to exist.",
+            "sanity": 10,
+            "attachment": -12
+          }
+        ]
+      },
+      {
+        "id": "mama",
+        "label": "\"Your mama said you only shout when you're scared.\"",
+        "requires": {
+          "flags": [
+            "knows_mama_fear"
+          ]
+        },
+        "receipt": "You told him what his mother said.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He laughs, and his voice breaks in the middle of it. 'That woman no dey keep secret.' He holds your hand on the roadside like it's the safest place in Lagos.",
+            "trust": 12,
+            "attachment": 12
+          }
+        ]
+      },
+      {
+        "id": "godspower",
+        "label": "\"Godspower. You warned me. I didn't listen.\"",
+        "requires": {
+          "flags": [
+            "knows_godspower"
+          ]
+        },
+        "receipt": "You told him you remembered Godspower's name.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'You listened enough to remember his name.' He grins. 'That one na love.'",
+            "trust": 10,
+            "attachment": 8
+          }
+        ]
+      },
+      {
+        "id": "banga",
+        "label": "\"Come home. I made banga.\"",
+        "requires": {
+          "flags": [
+            "knows_banga"
+          ]
+        },
+        "receipt": "You took him home for banga and starch.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Two plates in silence, then everything: the jetty, the threats, the boys. Then he asks for a third plate. Also everything.",
+            "trust": 12,
+            "attachment": 10,
+            "chemistry": 5
+          }
+        ]
+      },
+      {
+        "id": "ejiro",
+        "label": "\"Ejiro, you could have just waved.\"",
+        "requires": {
+          "flags": [
+            "knows_ejiro"
+          ]
+        },
+        "receipt": "You told Ejiro he could have waved.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Ejiro: 'Oga say make I no wave!' Ovie, arriving: 'I say make you wave SMALL!' Two Warri men arguing about waving while saving your life.",
+            "trust": 8,
+            "attachment": 8,
+            "sanity": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ovie_es_gate",
+    "character": "ovie",
+    "slot": "escalation",
+    "requires": {
+      "day_min": 3
+    },
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "expression": "angry",
+      "mood": "negative",
+      "fx": [
+        "rain"
+      ]
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Why your location dey off? I dey your gate. Open the door or I go open am myself."
+      },
+      {
+        "who": "narration",
+        "text": "1am. You never told him which flat is yours. He's knocking on the right door."
+      }
+    ],
+    "choices": [
+      {
+        "id": "open",
+        "label": "Open the door. Turn your location back on.",
+        "tags": [
+          "stay"
+        ],
+        "receipt": "You let him in at 1am and turned your location on.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He checks the wardrobe, the bathroom, under the bed. Then kisses you. 'Now I fit sleep.' You don't.",
+            "attachment": 15,
+            "control": 2,
+            "sanity": -12
+          }
+        ]
+      },
+      {
+        "id": "go_home",
+        "label": "\"Go home, Ovie. I'll call you tomorrow.\"",
+        "tags": [
+          "exit",
+          "cautious"
+        ],
+        "receipt": "You told him to go home and didn't open the door.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Silence on the other side of the door. Then footsteps. Then his engine, idling outside until 4am.",
+            "attachment": -8,
+            "control": -2,
+            "sanity": 5,
+            "set": [
+              "boundary_set"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bestie",
+        "label": "Call your bestie. Sleep at hers tonight.",
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You called your bestie and slept at hers.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She's outside in twenty minutes with her brother and his very large dog. Ovie leaves before the dog does.",
+            "attachment": -5,
+            "control": -1,
+            "sanity": 10
+          }
+        ]
+      },
+      {
+        "id": "security",
+        "label": "Call estate security. Then 112.",
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You called estate security and the emergency line.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Security walks him to his car. He looks back at your window the whole way. The operator stays on the line until he's gone.",
+            "attachment": -10,
+            "control": -2,
+            "sanity": 5,
+            "set": [
+              "boundary_set"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "leave",
+        "label": "Pack a bag. Go to your sister in Ibadan. Block him.",
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You packed a bag and left for Ibadan.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You leave by the back gate at dawn. The Lagos-Ibadan Expressway has never felt so wide. You block him at the toll gate.",
+            "sanity": 15,
+            "end": "walked_away"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ovie_es_office",
+    "character": "ovie",
+    "slot": "escalation",
+    "requires": {
+      "day_min": 4
+    },
+    "scene": {
+      "location": "mainland_street",
+      "time": "afternoon",
+      "expression": "angry",
+      "mood": "negative",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Allen Avenue. Two of his boys are in your office reception, telling your colleagues they're your 'brothers'. Your manager is asking questions."
+      },
+      {
+        "who": "partner",
+        "text": "Na protection. Who be that man wey dey call you 'dear' for your office?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "brothers",
+        "label": "Tell your manager they're your brothers.",
+        "tags": [
+          "stay"
+        ],
+        "receipt": "You covered for his boys at your office.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Your manager nods slowly. Your colleague moves desks. Ovie sends a heart. 'Good.'",
+            "attachment": 15,
+            "control": 2,
+            "sanity": -12
+          }
+        ]
+      },
+      {
+        "id": "hr",
+        "label": "Tell HR the truth. Ask security to keep them out.",
+        "tags": [
+          "exit",
+          "cautious"
+        ],
+        "receipt": "You told HR the truth about his boys.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "HR writes it down. Security bans them. Your manager asks, gently: 'Are you safe?' It's the first time anyone has asked.",
+            "attachment": -8,
+            "control": -2,
+            "sanity": 8,
+            "set": [
+              "boundary_set"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "new_number",
+        "label": "Change your number. Give it only to family.",
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You changed your number.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "New SIM, new number, old fear. It's a start.",
+            "attachment": -10,
+            "control": -1,
+            "sanity": 5
+          }
+        ]
+      },
+      {
+        "id": "leave",
+        "label": "\"We're done, Ovie.\" Block him in front of his boys.",
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You ended it in front of his boys.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You block him in reception. One of the boys says, quietly, 'Well done.' You don't look back.",
+            "sanity": 15,
+            "end": "walked_away"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ovie_es_phone_rule",
+    "character": "ovie",
+    "slot": "escalation",
+    "requires": {
+      "day_min": 4
+    },
+    "scene": {
+      "location": "prado_interior",
+      "time": "night",
+      "expression": "angry",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Unlock your phone. Just because. From today, every night, I go check am. Na rule."
+      },
+      {
+        "who": "narration",
+        "text": "He's holding out his hand. The car doors are locked. He locked them."
+      }
+    ],
+    "choices": [
+      {
+        "id": "unlock",
+        "label": "Unlock it. Nothing to hide.",
+        "tags": [
+          "stay"
+        ],
+        "receipt": "You unlocked your phone for his nightly check.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He reads for forty minutes. Deletes three contacts, including your cousin. Hands it back: 'Good.' The doors unlock.",
+            "attachment": 15,
+            "control": 2,
+            "sanity": -15
+          }
+        ]
+      },
+      {
+        "id": "no",
+        "label": "\"No. Unlock the doors.\"",
+        "tags": [
+          "exit",
+          "cautious"
+        ],
+        "receipt": "You refused and told him to unlock the doors.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "A long second. Then: click. You get out. Your legs are shaking, but they work.",
+            "attachment": -8,
+            "control": -2,
+            "sanity": 5,
+            "set": [
+              "boundary_set"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bestie",
+        "label": "Call your bestie on speaker: \"Come and get me.\"",
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You called your bestie from his locked car.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Bestie, on speaker: 'I have your location. Ovie, open the door.' He opens it. For once, someone else is watching.",
+            "attachment": -6,
+            "control": -2,
+            "sanity": 8
+          }
+        ]
+      },
+      {
+        "id": "named",
+        "label": "\"This is control. My therapist has a word for it.\"",
+        "requires": {
+          "flags": [
+            "named_tactic"
+          ]
+        },
+        "tags": [
+          "exit",
+          "call_out"
+        ],
+        "receipt": "You named his control out loud.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He laughs, then stops, because you aren't laughing. He unlocks the doors.",
+            "attachment": -10,
+            "control": -3,
+            "sanity": 15,
+            "set": [
+              "boundary_set"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pin",
+        "label": "\"You told me to change my PIN. I did. Because of you.\"",
+        "requires": {
+          "flags": [
+            "knows_pin"
+          ]
+        },
+        "tags": [
+          "exit",
+          "call_out"
+        ],
+        "receipt": "You threw his own PIN advice back at him.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He stares at you. He knows exactly what you mean. He unlocks the doors.",
+            "attachment": -6,
+            "control": -2,
+            "sanity": 10,
+            "set": [
+              "boundary_set"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "leave",
+        "label": "Hit the hazards. Shout for the security man. Leave.",
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You got out of his car and left him.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "A security guard runs over. The doors open. You walk to the main road and take the first danfo going anywhere. Anywhere is better.",
+            "sanity": 10,
+            "end": "walked_away"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ovie_es_move_in",
+    "character": "ovie",
+    "slot": "escalation",
+    "requires": {
+      "day_min": 5
+    },
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "afternoon",
+      "expression": "charming",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "You come home from work. Your flat is empty. Your landlord says your 'husband' came with a truck."
+      },
+      {
+        "who": "partner",
+        "text": "Surprise! I don move your things to my place. For my house, you go safe. Nobody go fit reach you."
+      }
+    ],
+    "choices": [
+      {
+        "id": "stay",
+        "label": "Stay with him. It's a bigger flat.",
+        "tags": [
+          "stay"
+        ],
+        "receipt": "You moved into his flat.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The flat is beautiful. The gate has a code. You don't have the code. 'Why you need am? I dey here.'",
+            "attachment": 15,
+            "control": 3,
+            "sanity": -15
+          }
+        ]
+      },
+      {
+        "id": "bring_back",
+        "label": "\"Bring my things back. Today.\"",
+        "tags": [
+          "exit",
+          "cautious"
+        ],
+        "receipt": "You made him bring your things back.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He sulks, then sends the truck back. Half your things. The other half 'got lost'. You change your locks anyway.",
+            "attachment": -8,
+            "control": -2,
+            "sanity": 5,
+            "set": [
+              "boundary_set"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "brother",
+        "label": "Call your brother to come with you to collect them.",
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You took your brother to collect your things.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Your brother arrives with two cousins. The boys stand down. Your brother says nothing all the way home, which says everything.",
+            "attachment": -6,
+            "control": -2,
+            "sanity": 10
+          }
+        ]
+      },
+      {
+        "id": "leave",
+        "label": "Let the things go. Leave. Start again.",
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You left your things and him behind.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You leave the mattress, the pots and your pride. You keep your life. A friend in Yaba has a spare room and no questions.",
+            "sanity": 15,
+            "end": "walked_away"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ovie_po_club",
+    "character": "ovie",
+    "slot": "payoff",
+    "priority": 8,
+    "requires": {
+      "knows": [
+        {
+          "flag": "club_night",
+          "who": "world"
+        }
+      ],
+      "not_flags": [
+        "club_confronted"
+      ],
+      "flag_age": {
+        "flag": "club_night",
+        "min": 1
+      }
+    },
+    "discovers": [
+      {
+        "flag": "club_night",
+        "to": [
+          "partner"
+        ]
+      }
+    ],
+    "payoff_of": [
+      "club_night"
+    ],
+    "partner_reacts_to": [
+      "club_night"
+    ],
+    "scene": {
+      "location": "prado_interior",
+      "time": "night",
+      "expression": "angry",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "His boys saw you at the club. By the time you get home, he's parked outside your gate."
+      },
+      {
+        "who": "partner",
+        "text": "Which club you go? Who you dance with? I don hear everything already. I want hear am from your mouth."
+      }
+    ],
+    "choices": [
+      {
+        "id": "truth",
+        "label": "\"Club with my girls. I danced. That's all.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You told him the truth about your night out.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He grips the wheel. 'Next time, tell me first.'",
+            "trust": 3,
+            "set": [
+              "club_confronted"
+            ]
+          }
+        ],
+        "truth_override": {
+          "controlling": {
+            "text": "'Booth 4. Two vodka-pineapples. The boy in the blue shirt.' He lists it like a receipt. 'Next time, you go ask me first.'",
+            "control": 2,
+            "sanity": -12,
+            "set": [
+              "club_confronted"
+            ]
+          },
+          "baby_mamas": {
+            "text": "'You no fit club. You get man.' On his dashboard: glitter, a party hat and a sippy cup. He was at a children's party all night. Whose?",
+            "sanity": -8,
+            "set": [
+              "club_confronted"
+            ]
+          },
+          "loyal": {
+            "text": "He exhales. 'Okay. Godspower boys dey that club. Next time tell me, I go send driver. You fit dance till morning.'",
+            "trust": 8,
+            "attachment": 5,
+            "set": [
+              "club_confronted"
+            ]
+          }
+        }
+      },
+      {
+        "id": "flip",
+        "label": "\"Who are your boys to report on me?\"",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You asked why his boys were reporting on you.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'My boys na my eye.' He says it like it's romantic. It isn't.",
+            "control": 1,
+            "sanity": -5,
+            "set": [
+              "club_confronted"
+            ]
+          }
+        ],
+        "truth_override": {
+          "loyal": {
+            "text": "'My boys na your shield. But okay. I go tell dem make dem stand far.'",
+            "trust": 5,
+            "set": [
+              "club_confronted"
+            ]
+          }
+        }
+      },
+      {
+        "id": "sorry",
+        "label": "\"I'm sorry. I won't go again.\"",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You promised him you wouldn't go clubbing again.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Good.' He kisses your forehead. 'Na so.' It doesn't feel like being forgiven. It feels like being filed.",
+            "attachment": 10,
+            "control": 1,
+            "sanity": -10,
+            "set": [
+              "club_confronted"
+            ]
+          }
+        ],
+        "truth_override": {
+          "loyal": {
+            "text": "'No! Go! Just tell me, make I sleep.' He looks almost offended you'd stop.",
+            "attachment": 6,
+            "trust": 4,
+            "set": [
+              "club_confronted"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ovie_po_lockscreen",
+    "character": "ovie",
+    "slot": "payoff",
+    "priority": 5,
+    "requires": {
+      "flags": [
+        "lockscreen_his"
+      ],
+      "not_flags": [
+        "lockscreen_seen"
+      ],
+      "flag_age": {
+        "flag": "lockscreen_his",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "lockscreen_his"
+    ],
+    "scene": {
+      "location": "lekki_salon",
+      "time": "afternoon",
+      "mood": "neutral",
+      "partner_present": false,
+      "npc": {
+        "name": "Woman at the next dryer"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Your phone lights up on the salon counter. Shirtless Ovie. Gold chain. Fish. The woman at the next dryer leans over."
+      },
+      {
+        "who": "Woman at the next dryer",
+        "text": "Wait. Na Ovie be that?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "yes",
+        "label": "\"Yes. My man.\"",
+        "receipt": "You claimed him at the salon.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Lucky you,' she says, in a voice that has opinions.",
+            "set": [
+              "lockscreen_seen"
+            ]
+          }
+        ],
+        "truth_override": {
+          "baby_mamas": {
+            "text": "'Your man?' She turns her phone around: same chain, same fish, holding a little girl. 'Na my baby daddy.'",
+            "saw_truth": true,
+            "sanity": -20,
+            "set": [
+              "lockscreen_seen"
+            ]
+          },
+          "controlling": {
+            "text": "'Your man? Na him boys dey stand outside my shop every day. Dem say na for one person wey dey come here.' She means you.",
+            "saw_truth": true,
+            "sanity": -12,
+            "set": [
+              "lockscreen_seen"
+            ]
+          },
+          "loyal": {
+            "text": "'Ovie? The Warri man? He paid for my sister's surgery when nobody else would. Hold him tight.'",
+            "sanity": 10,
+            "trust": 4,
+            "set": [
+              "lockscreen_seen"
+            ]
+          }
+        }
+      },
+      {
+        "id": "no",
+        "label": "\"Who? Never seen him before.\"",
+        "tags": [
+          "discreet"
+        ],
+        "receipt": "You denied knowing him.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She squints. 'Okay.' She doesn't believe you. Neither does your lock screen.",
+            "sanity": -3,
+            "set": [
+              "lockscreen_seen"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "change",
+        "label": "Flip the phone. Change the lock screen today.",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You changed your lock screen.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You change it to a sunset. Sunsets don't have boys.",
+            "set": [
+              "lockscreen_seen"
+            ]
+          }
+        ],
+        "truth_override": {
+          "controlling": {
+            "text": "You change it. Within the hour: 'Why you remove my picture?' You never told him.",
+            "saw_truth": true,
+            "control": 1,
+            "sanity": -10,
+            "set": [
+              "lockscreen_seen"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ovie_po_snooped",
+    "character": "ovie",
+    "slot": "payoff",
+    "priority": 6,
+    "requires": {
+      "partner_knows": [
+        "secret_snooped_ovie"
+      ],
+      "not_flags": [
+        "snoop_talk"
+      ],
+      "flag_age": {
+        "flag": "secret_snooped_ovie",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "secret_snooped_ovie"
+    ],
+    "partner_reacts_to": [
+      "secret_snooped_ovie"
+    ],
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "expression": "angry",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "You enter my phone. My own phone. Wetin you find? Talk."
+      }
+    ],
+    "choices": [
+      {
+        "id": "enough",
+        "label": "\"Enough.\" Hold his stare.",
+        "receipt": "You told him you'd found enough.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He blinks first. That's all. He blinks first.",
+            "set": [
+              "snoop_talk"
+            ]
+          }
+        ],
+        "truth_override": {
+          "controlling": {
+            "text": "'Then you know say I dey look out for you.' He doesn't blink. 'Now I go look harder.'",
+            "control": 2,
+            "sanity": -10,
+            "set": [
+              "snoop_talk"
+            ]
+          },
+          "baby_mamas": {
+            "text": "He breaks first. 'Okay. Two. Dem be two. I for tell you.' Two what? 'Children.'",
+            "saw_truth": true,
+            "sanity": -10,
+            "set": [
+              "snoop_talk"
+            ]
+          },
+          "loyal": {
+            "text": "'Then you see say my mama na Customer. Happy?' He laughs. Then he's hurt. Then he laughs again.",
+            "attachment": -5,
+            "set": [
+              "snoop_talk"
+            ]
+          }
+        }
+      },
+      {
+        "id": "sorry",
+        "label": "\"I'm sorry. I panicked.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You apologised for going through his phone.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He nods slowly. 'Trust na two-way road.'",
+            "attachment": -4,
+            "sanity": 5,
+            "set": [
+              "snoop_talk"
+            ]
+          }
+        ],
+        "truth_override": {
+          "controlling": {
+            "text": "'Okay. Then from today, I go check your own every night. Fair.' It isn't.",
+            "control": 1,
+            "sanity": -5,
+            "set": [
+              "snoop_talk"
+            ]
+          }
+        }
+      },
+      {
+        "id": "fair",
+        "label": "\"You check mine. I check yours. Fair.\"",
+        "tags": [
+          "toxic"
+        ],
+        "receipt": "You demanded equal access to his phone.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Fair?' He laughs once. 'Okay.' He changes his password in front of you.",
+            "trust": -10,
+            "set": [
+              "snoop_talk"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ovie_po_iphone",
+    "character": "ovie",
+    "slot": "payoff",
+    "priority": 6,
+    "presentation": "call",
+    "requires": {
+      "flags": [
+        "secret_sold_iphone"
+      ],
+      "not_flags": [
+        "iphone_traced"
+      ],
+      "flag_age": {
+        "flag": "secret_sold_iphone",
+        "min": 1
+      }
+    },
+    "discovers": [
+      {
+        "flag": "secret_sold_iphone",
+        "to": [
+          "partner"
+        ]
+      }
+    ],
+    "payoff_of": [
+      "secret_sold_iphone"
+    ],
+    "scene": {
+      "location": "mainland_street",
+      "time": "afternoon",
+      "mood": "negative",
+      "partner_present": false,
+      "npc": {
+        "name": "Sunday"
+      }
+    },
+    "beats": [
+      {
+        "who": "Sunday",
+        "text": "Boss, that gold phone you sell me? Some boys don come my shop for Computer Village. Dem dey ask for you. By name."
+      }
+    ],
+    "choices": [
+      {
+        "id": "what_boys",
+        "label": "\"What did the boys look like?\"",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You asked who came looking for the phone.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Normal boys. Dem no talk plenty.'",
+            "sanity": -5,
+            "set": [
+              "iphone_traced"
+            ]
+          }
+        ],
+        "truth_override": {
+          "controlling": {
+            "text": "'Red helmet. Dem show me your picture. Dem say Oga dey track where the phone go.' The phone was tracking. So were they.",
+            "saw_truth": true,
+            "sanity": -15,
+            "set": [
+              "iphone_traced"
+            ]
+          },
+          "baby_mamas": {
+            "text": "'No be boys. Na one woman, Ese. She say na her son's birthday phone wey Oga collect back.'",
+            "saw_truth": true,
+            "sanity": -10,
+            "set": [
+              "iphone_traced"
+            ]
+          },
+          "loyal": {
+            "text": "'Red helmet. Dem buy am back, dash me ₦20k, and say make I tell you: Oga say e no matter. Next time, ask him.'",
+            "trust": 6,
+            "attachment": 4,
+            "set": [
+              "iphone_traced"
+            ]
+          }
+        }
+      },
+      {
+        "id": "buy_back",
+        "label": "Buy it back. Damage control.",
+        "cost": 250000,
+        "receipt": "You bought the iPhone back.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Sunday sells it back at a 'small profit'. Lagos economics.",
+            "sanity": -5,
+            "set": [
+              "iphone_traced"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "hang_up",
+        "label": "\"Sold is sold. Don't call me again.\"",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You hung up on the phone buyer.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You hang up. The fear doesn't.",
+            "sanity": -8,
+            "set": [
+              "iphone_traced"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ovie_po_bag",
+    "character": "ovie",
+    "slot": "payoff",
+    "priority": 7,
+    "requires": {
+      "flags": [
+        "holding_bag"
+      ],
+      "not_flags": [
+        "bag_collected"
+      ],
+      "flag_age": {
+        "flag": "holding_bag",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "holding_bag"
+    ],
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "mood": "negative",
+      "partner_present": false,
+      "fx": [
+        "rain"
+      ]
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "3am. Knocking. Not polite knocking. Someone has come for the bag."
+      }
+    ],
+    "choices": [
+      {
+        "id": "open",
+        "label": "Open the door.",
+        "receipt": "You opened the door at 3am.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "It's one of his boys. He takes the bag and leaves without a word.",
+            "sanity": -5,
+            "set": [
+              "bag_collected"
+            ]
+          }
+        ],
+        "truth_override": {
+          "controlling": {
+            "text": "It's Ovie. 'I come check the bag.' He checks the bag, your wardrobe, your call log, your face. 'Okay. You fit sleep now.'",
+            "control": 2,
+            "sanity": -15,
+            "set": [
+              "bag_collected"
+            ]
+          },
+          "baby_mamas": {
+            "text": "A woman with a sleeping toddler on her back. 'I be Ese. Ovie say make I collect school fees from the bag.' She sees you. 'Ah. So you be the new one.'",
+            "saw_truth": true,
+            "sanity": -15,
+            "set": [
+              "bag_collected"
+            ]
+          },
+          "loyal": {
+            "text": "Ejiro, out of breath: 'Godspower people dey come. Oga send me collect am before dem reach.' Behind him, two more boys, facing the road.",
+            "trust": 8,
+            "sanity": -5,
+            "set": [
+              "bag_collected"
+            ]
+          }
+        }
+      },
+      {
+        "id": "call_ovie",
+        "label": "Don't open. Call Ovie.",
+        "tags": [
+          "contact_partner",
+          "cautious"
+        ],
+        "receipt": "You called him instead of opening the door.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Na my boy. Give am.' Simple.",
+            "set": [
+              "bag_collected"
+            ]
+          }
+        ],
+        "truth_override": {
+          "controlling": {
+            "text": "'Na me dey knock. Open.' He was never going to let you hold it alone.",
+            "control": 1,
+            "sanity": -10,
+            "set": [
+              "bag_collected"
+            ]
+          },
+          "baby_mamas": {
+            "text": "'Na Ese. Give her the white envelope only. Abeg. I go explain.' He has been explaining for six years.",
+            "saw_truth": true,
+            "sanity": -10,
+            "set": [
+              "bag_collected"
+            ]
+          },
+          "loyal": {
+            "text": "'Na Ejiro. Godspower people dey come. Give am, lock your door. I dey come.' He arrives in nine minutes, barefoot.",
+            "trust": 10,
+            "attachment": 8,
+            "set": [
+              "bag_collected"
+            ]
+          }
+        }
+      },
+      {
+        "id": "police",
+        "label": "Shout through the door: \"I've called the police!\"",
+        "receipt": "You shouted that you'd called the police.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The knocking stops. Footsteps. In the morning the bag is still there. So is the fear.",
+            "sanity": -10,
+            "set": [
+              "bag_collected"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ovie_tt_ejiro",
+    "character": "ovie",
+    "slot": "talking_time",
+    "presentation": "voice_note",
+    "scene": {
+      "location": "mainland_street",
+      "time": "afternoon",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "If you see one boy with red helmet near your office, na Ejiro. My cousin. Him dey do delivery for that side. Wave am if you like."
+      }
+    ],
+    "detail": {
+      "flag": "knows_ejiro",
+      "missed": {
+        "chemistry": -2
+      },
+      "red_flag": true
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Ejiro. Red helmet. Noted.\"",
+        "caught": true,
+        "receipt": "You caught the name of the boy with the red helmet.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'You too sharp,' he says. Then: 'Na why I like you.'",
+            "attachment": 2,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "why",
+        "label": "\"Why is your cousin near my office?\"",
+        "receipt": "You asked why his cousin was near your office.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Delivery! Lagos na one street.' It's a very big street.",
+            "sanity": -2
+          }
+        ]
+      },
+      {
+        "id": "suya",
+        "label": "\"Send Ejiro with suya, then.\"",
+        "receipt": "You asked him to send suya with Ejiro.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Ejiro arrives in twenty minutes with suya and a salute. Delivery confirmed.",
+            "attachment": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ovie_tt_customers",
+    "character": "ovie",
+    "slot": "talking_time",
+    "presentation": "text",
+    "scene": {
+      "location": "prado_interior",
+      "time": "night",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Sorry I no pick. My two biggest customers dey call me every night. Supply no dey sleep. Talk tomorrow, my person."
+      }
+    ],
+    "detail": {
+      "flag": "knows_customers",
+      "missed": {
+        "sanity": -3
+      },
+      "red_flag": true
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Two biggest customers. Every night. Noted 👀\"",
+        "caught": true,
+        "receipt": "You caught his two night-time customers.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Na business,' he replies. Fast. Very fast.",
+            "attachment": 2,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "goodnight",
+        "label": "\"Goodnight, supply king 😴\"",
+        "receipt": "You called him the supply king.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "A crown emoji. And ₦10k 'for data'.",
+            "wallet": 10000,
+            "attachment": 3
+          }
+        ]
+      },
+      {
+        "id": "what",
+        "label": "\"What do you even supply?\"",
+        "receipt": "You asked him what he supplies.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Everything wey boat fit carry.' Very specific.",
+            "sanity": -2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ovie_tt_mama",
+    "character": "ovie",
+    "slot": "talking_time",
+    "presentation": "voice_note",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "morning",
+      "mood": "positive",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "My mama say make I bring you Warri for Christmas. She say I only dey shout when I dey fear. No tell am say I talk am, abeg."
+      }
+    ],
+    "detail": {
+      "flag": "knows_mama_fear",
+      "missed": {
+        "chemistry": -3
+      }
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Your secret is safe. Christmas in Warri 🎄\"",
+        "caught": true,
+        "receipt": "You caught what his mother said about him.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'She go like you. She no like anybody.'",
+            "attachment": 4,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "who_pays",
+        "label": "\"Warri for Christmas? Who's paying?\"",
+        "receipt": "You asked who was paying for Christmas.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Me! Who else?' ₦20k lands 'for Christmas clothes'. It's October.",
+            "wallet": 20000
+          }
+        ]
+      },
+      {
+        "id": "shout",
+        "label": "\"Your mama is right. You shout too much.\"",
+        "receipt": "You told him he shouts too much.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'I NO DEY SHOUT,' he types. In capitals.",
+            "attachment": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ovie_tt_banga",
+    "character": "ovie",
+    "slot": "talking_time",
+    "presentation": "text",
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "night",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Dis Lagos people no fit cook banga. If you sabi cook banga and starch, na marriage be that. I dey hungry for home."
+      }
+    ],
+    "detail": {
+      "flag": "knows_banga",
+      "missed": {
+        "chemistry": -3
+      }
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Banga and starch. Noted. Watch this space.\"",
+        "caught": true,
+        "receipt": "You caught his favourite soup.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Don't play with my heart like that.'",
+            "attachment": 3,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "chinese",
+        "label": "\"Order Chinese like a normal person.\"",
+        "receipt": "You told him to order Chinese.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Chinese? Na rice wey dey shy.'",
+            "attachment": 1
+          }
+        ]
+      },
+      {
+        "id": "amala",
+        "label": "\"Send money, I'll buy you amala.\"",
+        "receipt": "You asked him for amala money.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "₦15k arrives. 'Amala no be banga, but I go manage.'",
+            "wallet": 15000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ovie_tt_godspower",
+    "character": "ovie",
+    "slot": "talking_time",
+    "presentation": "text",
+    "scene": {
+      "location": "mainland_street",
+      "time": "night",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "If one man called Godspower ever greet you anywhere, no answer am. Just walk. Long story. Business."
+      }
+    ],
+    "detail": {
+      "flag": "knows_godspower",
+      "missed": {
+        "chemistry": -2
+      }
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Godspower. Walk away. Got it.\"",
+        "caught": true,
+        "receipt": "You caught the name Godspower.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Good. That one na snake with wristwatch.'",
+            "attachment": 2,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "rival",
+        "label": "\"Business rival or ex?\"",
+        "receipt": "You asked if Godspower was a rival or an ex.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Rival. Ex? Me? I no get ex???' A suspicious number of question marks.",
+            "sanity": -2
+          }
+        ]
+      },
+      {
+        "id": "lol",
+        "label": "\"Lol. Okay.\"",
+        "receipt": "You replied 'lol okay'.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He sends a single eye emoji. Not lol.",
+            "attachment": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ovie_tt_pin",
+    "character": "ovie",
+    "slot": "talking_time",
+    "presentation": "voice_note",
+    "scene": {
+      "location": "prado_interior",
+      "time": "golden",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Abeg change your phone password. If e be your birthday, change am. Lagos no safe. Make nobody fit open am. Even me."
+      }
+    ],
+    "detail": {
+      "flag": "knows_pin",
+      "missed": {
+        "sanity": -3
+      },
+      "red_flag": true
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Changing it now. Even from you.\"",
+        "caught": true,
+        "receipt": "You changed your PIN after his voice note.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Even from me,' he repeats. He sounds like he means it. Or like he's testing it.",
+            "attachment": 2,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "how_know",
+        "label": "\"How do you know my password is my birthday?\"",
+        "receipt": "You asked how he knew your password.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Everybody password na their birthday.' Not an answer.",
+            "sanity": -3
+          }
+        ]
+      },
+      {
+        "id": "paranoid",
+        "label": "\"You're paranoid, Ovie.\"",
+        "receipt": "You called him paranoid.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Na paranoid people dey alive for Lagos.'",
+            "attachment": 2
+          }
+        ]
+      }
+    ]
+  }
+]

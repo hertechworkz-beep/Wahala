@@ -1,0 +1,4083 @@
+[
+  {
+    "id": "bello_d1_private_room",
+    "character": "bello",
+    "slot": "first_date",
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "night",
+      "expression": "charming",
+      "mood": "positive"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "An Ikoyi rooftop, but not the rooftop. A private room behind it, booked out. Oud smoke, a brass teapot, one table. The staff only come when he rings."
+      },
+      {
+        "who": "partner",
+        "text": "No photos tonight. Not because of you. Because of everyone else."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "arranged": {
+        "id": "t_arr_mother",
+        "text": "His phone buzzes once. 'My mother,' he says. 'She says I must be serious this year.' He says it to the teapot, not to you."
+      },
+      "kano_wife": {
+        "id": "t_kano_ring",
+        "text": "When he leans over to pour your tea, a gold ring on a thin chain swings out of his kaftan collar. He tucks it back like a reflex."
+      },
+      "defiant_love": {
+        "id": "t_def_hide",
+        "text": "A waiter whispers to him. He stands: 'We leave through the kitchen. Trust me.' The cooks don't even look up. They've seen this before."
+      }
+    },
+    "choices": [
+      {
+        "id": "obey",
+        "label": "Phones away. Tea, oud and his full attention.",
+        "tags": [
+          "discreet",
+          "excuse"
+        ],
+        "receipt": "You put your phone away and kept him a secret.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He talks like a man who has rationed words for years. At midnight his aide hands you an envelope: 'For your fuel.' You don't drive.",
+            "wallet": 150000,
+            "attachment": 8,
+            "sanity": -5,
+            "set": [
+              {
+                "flag": "promised_invisible",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "defiant_love": {
+            "text": "Three hours. His father's rigs, his mother's laugh. 'I've never said this much to anyone.' The envelope says 'For your fuel.' You don't drive.",
+            "wallet": 150000,
+            "attachment": 10,
+            "trust": 6,
+            "set": [
+              {
+                "flag": "promised_invisible",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "post_teapot",
+        "label": "Post the teapot. Just the teapot. Nobody will know.",
+        "receipt": "You posted the teapot from his private room.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "Just a teapot. 900 views and one question: 'Who's the Alhaji?' You say nothing. Power.",
+            "clout": 20,
+            "exposure": 5,
+            "set": [
+              {
+                "flag": "secret_bello_post",
+                "knows": [
+                  "player",
+                  "world"
+                ]
+              }
+            ]
+          },
+          {
+            "chance": 0.4,
+            "bad": true,
+            "text": "His reflection is in the brass. Cream cap, bespoke cuff. Zoom culture is undefeated.",
+            "clout": 10,
+            "exposure": 15,
+            "trust": -5,
+            "set": [
+              {
+                "flag": "secret_bello_post",
+                "knows": [
+                  "player",
+                  "world"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "why_hide",
+        "label": "\"Why the secrecy, Bello? Be honest.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked him why you had to be a secret.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'In my family, everything is somebody's business. I wanted one thing that was only mine.' Lovely. Not an answer.",
+            "attachment": -3,
+            "trust": 5
+          }
+        ],
+        "truth_override": {
+          "arranged": {
+            "text": "'My family has plans for me. I haven't agreed to them.' Haven't. Yet.",
+            "trust": 5
+          },
+          "kano_wife": {
+            "text": "'Lagos talks. Kano listens.' He refills your tea instead of finishing the sentence.",
+            "trust": 3,
+            "sanity": -3
+          },
+          "defiant_love": {
+            "text": "'Because my family will try to buy you or scare you. I wanted you to meet me before you meet them.' He means it.",
+            "trust": 10,
+            "attachment": 5
+          }
+        }
+      },
+      {
+        "id": "sugar_invisible",
+        "label": "[Sugar] \"Invisible costs extra. I take cash.\"",
+        "vibe": "sugar",
+        "receipt": "You told him being invisible costs extra.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "He laughs, his first real laugh. 'Honest. Rare.' ₦200k, counted out in Hausa.",
+            "wallet": 200000,
+            "attachment": 5
+          },
+          {
+            "chance": 0.4,
+            "bad": true,
+            "text": "'Then this is a transaction.' He pays the bill, and the warmth leaves with the waiter.",
+            "wallet": 80000,
+            "attachment": -10
+          }
+        ]
+      },
+      {
+        "id": "corp_companies",
+        "label": "[Corporate] Ask which of his father's companies he actually runs.",
+        "vibe": "corporate",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You asked which companies he actually runs.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Three. Officially. Unofficially, my uncle runs me.' He laughs. You don't.",
+            "trust": 4
+          }
+        ],
+        "truth_override": {
+          "arranged": {
+            "text": "'My uncle runs everything. Including my calendar.' He shows you. March is solid grey.",
+            "trust": 2,
+            "sanity": -3
+          },
+          "kano_wife": {
+            "text": "'The Lagos subsidiary. The Kano one is... family-run.' Family-run.",
+            "sanity": -3
+          },
+          "defiant_love": {
+            "text": "'Three. And my uncle wants all three back if I disobey him.' He says it like weather. Bad weather.",
+            "trust": 6,
+            "attachment": 3
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "bello_d1_scent",
+    "character": "bello",
+    "slot": "first_date",
+    "scene": {
+      "location": "vi_club_vip",
+      "time": "night",
+      "expression": "charming",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "A members' lounge on Ozumba Mbadiwe with no sign on the door. Bello has laid out twelve tiny bottles of oil on black velvet."
+      },
+      {
+        "who": "partner",
+        "text": "Everyone I care about has their own scent. So I can find them in a dark room. Let me make yours."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "arranged": {
+        "id": "t_arr_date",
+        "text": "His aide reads the diary: 'Sir, everything is free except March.' Bello, quietly: 'Don't say March in front of guests.'"
+      },
+      "kano_wife": {
+        "id": "t_kano_flights",
+        "text": "His aide leans in: 'LOS-KAN, Friday, 6:40am, sir. As usual.' Bello: 'Thank you, Abdullahi.' As usual."
+      },
+      "defiant_love": {
+        "id": "t_def_call",
+        "text": "His phone lights up: 'Uncle'. He silences it. It lights up again. Later, through the glass, you watch him argue in very quiet Hausa."
+      }
+    },
+    "choices": [
+      {
+        "id": "blend",
+        "label": "Let him blend it. Saffron, rose, a little smoke.",
+        "receipt": "You let him make you a scent.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Twenty silent minutes, then a dab behind your ear. 'Now I'll know you anywhere.' Romantic. Also, technically, a tracking device.",
+            "attachment": 10,
+            "chemistry": 4,
+            "set": [
+              {
+                "flag": "has_his_scent",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "defiant_love": {
+            "text": "Twenty silent minutes, then a dab behind your ear. 'I've only ever done this for my mother.' His hands are not quite steady.",
+            "attachment": 12,
+            "trust": 5,
+            "chemistry": 4,
+            "set": [
+              {
+                "flag": "has_his_scent",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "body_spray",
+        "label": "\"I'm loyal to my ₦3,500 body spray.\"",
+        "receipt": "You stayed loyal to your body spray.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He sniffs your wrist and laughs into his sleeve. 'Mainland vanilla. Brave.' He is charmed against his will.",
+            "attachment": 5,
+            "chemistry": 2
+          }
+        ]
+      },
+      {
+        "id": "price",
+        "label": "Ask what one bottle sells for. Purely academic.",
+        "receipt": "You asked what his oud costs.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "'This one? About four million naira a litre.' Your wrist is now worth more than your rent.",
+            "clout": 10,
+            "attachment": 2
+          },
+          {
+            "chance": 0.4,
+            "bad": true,
+            "text": "'You're counting,' he says, not unkindly, and closes the velvet case.",
+            "attachment": -6
+          }
+        ]
+      },
+      {
+        "id": "who_else",
+        "label": "\"Who else has a scent, Bello?\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked who else he made a scent for.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'My mother. My sister. Now you.' He counts it on his fingers like a man checking for a missing one.",
+            "trust": 4
+          }
+        ],
+        "truth_override": {
+          "arranged": {
+            "text": "'My mother. My sister.' Pause. 'And someone my mother chose. I didn't blend that one. I bought it.'",
+            "trust": 4,
+            "sanity": -3
+          },
+          "kano_wife": {
+            "text": "'My mother. My sister.' His thumb finds the chain under his kaftan. 'That's all.' That is not all.",
+            "trust": 2,
+            "sanity": -4
+          },
+          "defiant_love": {
+            "text": "'My mother and my sister. That's the list. You're the first person I chose.'",
+            "trust": 8,
+            "attachment": 4
+          }
+        }
+      },
+      {
+        "id": "runs_bottle",
+        "label": "[Runs] Slip one tiny bottle into your bag.",
+        "vibe": "runs",
+        "receipt": "You pocketed one of his oud bottles.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "Clean. A perfume dealer in Balogun pays ₦350k and asks no questions.",
+            "wallet": 350000
+          },
+          {
+            "chance": 0.4,
+            "bad": true,
+            "text": "He notices. Of course he notices. 'Keep it,' he says, cold. 'Consider it severance.'",
+            "wallet": 350000,
+            "trust": -20,
+            "attachment": -10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bello_d1_suya_drive",
+    "character": "bello",
+    "slot": "first_date",
+    "scene": {
+      "location": "prado_interior",
+      "time": "night",
+      "expression": "charming",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "He drives himself. 'Drivers talk.' Third Mainland at 11pm, then a suya stand in Yaba where the mallam greets him by his full name."
+      },
+      {
+        "who": "partner",
+        "text": "Eat in the car. The windows are tinted for a reason."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "arranged": {
+        "id": "t_arr_cards",
+        "text": "You open the boot for your bag. A carton of cream wedding cards, gold Arabic calligraphy. He shuts it gently. 'My cousin's.'"
+      },
+      "kano_wife": {
+        "id": "t_kano_call",
+        "text": "His phone: 'Hajiya'. He answers in a whisper, 'Ina kwana, Hajiya,' at 11pm, and hangs up in four seconds."
+      },
+      "defiant_love": {
+        "id": "t_def_ring",
+        "text": "At a red light he's scrolling a jeweller's site. Solitaires. He locks the screen when he sees you see."
+      }
+    },
+    "choices": [
+      {
+        "id": "in_car",
+        "label": "Windows up. Suya in the dark. Very romantic.",
+        "tags": [
+          "discreet",
+          "excuse"
+        ],
+        "receipt": "You ate suya in his tinted car, hidden.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Pepper, onions, his knee against yours. He tells you about Kano palaces. You tell him about Ojuelegba traffic. Both stories are epic.",
+            "attachment": 10,
+            "sanity": -3
+          }
+        ]
+      },
+      {
+        "id": "bonnet",
+        "label": "Eat on the bonnet like normal people.",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You made him eat suya on the bonnet in public.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "He hesitates, then sits on the bonnet in a ₦2m kaftan. The mallam takes a photo for his wall.",
+            "attachment": 5,
+            "chemistry": 3,
+            "exposure": 10
+          },
+          {
+            "chance": 0.4,
+            "bad": true,
+            "text": "A car slows. He's back inside before it stops. 'Not here.' The suya goes cold between you.",
+            "attachment": -8,
+            "trust": -3
+          }
+        ],
+        "truth_override": {
+          "defiant_love": [
+            {
+              "chance": 0.7,
+              "text": "He sits on the bonnet without hesitating. 'Let them see,' he says, then looks surprised he said it.",
+              "attachment": 10,
+              "trust": 5,
+              "exposure": 5
+            },
+            {
+              "chance": 0.3,
+              "bad": true,
+              "text": "A car slows. He's back inside before it stops. 'Not here. Not yet.' The suya goes cold between you.",
+              "attachment": -5
+            }
+          ]
+        }
+      },
+      {
+        "id": "boot",
+        "label": "\"Open the boot. What's in the box?\"",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You asked to see what's in his boot.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Gym bag, prayer mat, a carton of something. 'Business cards,' he says. They're cream."
+          }
+        ],
+        "truth_override": {
+          "arranged": {
+            "text": "Wedding cards. 'Bello weds Amina.' He doesn't lie. He just says: 'Not yet. Please, not yet.'",
+            "sanity": -10,
+            "saw_truth": true,
+            "set": [
+              {
+                "flag": "saw_wedding_cards",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "kano_wife": {
+            "text": "Prayer mat, gym bag, a child's sandal, size 4. 'My nephew's.' He closes the boot like a book.",
+            "sanity": -6
+          },
+          "defiant_love": {
+            "text": "A ring box. Empty. He laughs, embarrassed: 'The jeweller is slow.' You stop asking.",
+            "trust": 3,
+            "attachment": 4
+          }
+        }
+      },
+      {
+        "id": "transport",
+        "label": "\"Suya is nice. Transport money is nicer.\"",
+        "receipt": "You asked for transport money after suya.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "₦50k, uncounted. 'For transport.' You came in his car. He knows. You know. Lagos.",
+            "wallet": 50000,
+            "attachment": -2
+          }
+        ]
+      },
+      {
+        "id": "lover_secret",
+        "label": "[Lover] \"Tell me one thing you've never told anyone.\"",
+        "vibe": "lover",
+        "receipt": "You asked him for a secret.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'I've never been on a date I chose myself.' He means tonight. He means it.",
+            "attachment": 8,
+            "trust": 5
+          }
+        ],
+        "truth_override": {
+          "arranged": {
+            "text": "'I've never been allowed to choose anything. Not my course. Not my company. Not my...' He stops.",
+            "attachment": 6,
+            "trust": 3
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "bello_rf_kitchen",
+    "character": "bello",
+    "slot": "red_flag",
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "night",
+      "expression": "suspicious",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "A quiet restaurant off Awolowo Road. Halfway through the grilled fish, his aide Abdullahi whispers in his ear. Bello puts cash on the table."
+      },
+      {
+        "who": "partner",
+        "text": "Someone I know is in the lobby. We leave through the kitchen. Now."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "arranged": {
+        "id": "t_arr_mother",
+        "text": "Through the kitchen door you glimpse the lobby: an older woman in gold lace and a young one beside her. 'My mother,' he says. Nothing else."
+      },
+      "kano_wife": {
+        "id": "t_kano_call",
+        "text": "In the kitchen corridor his phone rings: 'Hajiya'. He doesn't answer. He walks faster."
+      },
+      "defiant_love": {
+        "id": "t_def_hide",
+        "text": "The cooks greet him without looking up: 'Sir, again?' He knows the kitchen route a little too well."
+      }
+    },
+    "choices": [
+      {
+        "id": "follow",
+        "label": "Follow him through the kitchen. Hold his hand.",
+        "tags": [
+          "excuse",
+          "discreet"
+        ],
+        "receipt": "You followed him out through the kitchen.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Past the pepper soup pots, out by the generator, into his car. He kisses your knuckles: 'Thank you for not asking.' You didn't. You should have.",
+            "attachment": 8,
+            "sanity": -8
+          }
+        ]
+      },
+      {
+        "id": "finish",
+        "label": "\"I'm finishing my fish. Go.\"",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You stayed and finished your fish alone.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He goes. You finish the fish alone. It's excellent and already paid for. Petty and full.",
+            "attachment": -6,
+            "sanity": 5,
+            "clout": 5
+          }
+        ]
+      },
+      {
+        "id": "front_door",
+        "label": "Walk out the front. See who's in the lobby.",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You went to see who he was hiding from.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Just a crowd in the lobby. Nobody looks at you. You look at everybody.",
+            "set": [
+              "saw_lobby"
+            ]
+          }
+        ],
+        "truth_override": {
+          "arranged": {
+            "text": "His mother, and a girl in gold lace holding fabric swatches. They're choosing a reception venue. The girl looks at you a second too long.",
+            "sanity": -10,
+            "saw_truth": true,
+            "set": [
+              "saw_lobby"
+            ]
+          },
+          "kano_wife": {
+            "text": "A man in a white kaftan, a little boy on his shoulders, asking the manager: 'Have you seen Bello? His wife's brother is looking for him.'",
+            "sanity": -15,
+            "saw_truth": true,
+            "set": [
+              "saw_lobby"
+            ]
+          },
+          "defiant_love": {
+            "text": "An older man in a white agbada with two aides, scanning every table. His uncle. Looking for a face. Yours.",
+            "sanity": -5,
+            "set": [
+              "saw_lobby"
+            ]
+          }
+        }
+      },
+      {
+        "id": "ask_car",
+        "label": "In the car: \"Who was it, Bello? Honestly.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked him who he was hiding from.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He grips the wheel. 'Family.' One word doing the work of a paragraph.",
+            "trust": 3,
+            "attachment": -2
+          }
+        ],
+        "truth_override": {
+          "arranged": {
+            "text": "'My mother. With someone she wants me to meet.' Wants. Present tense.",
+            "trust": 5,
+            "sanity": -4
+          },
+          "kano_wife": {
+            "text": "'An in-law,' he says, then corrects himself: 'A family friend.' Corrections are confessions with manners.",
+            "sanity": -5
+          },
+          "defiant_love": {
+            "text": "'My uncle. He's looking for you. He doesn't know your name yet. I'd like to keep it that way.'",
+            "trust": 10,
+            "attachment": 5
+          }
+        }
+      },
+      {
+        "id": "bigboy_runway",
+        "label": "[Big Boy] \"I don't do kitchens.\" Walk out the front, slowly.",
+        "vibe": "bigboy",
+        "tags": [
+          "public_embarrassment"
+        ],
+        "receipt": "You strolled out the front while he used the kitchen.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You cross the lobby like a runway. Every head turns. One of them belongs to someone who knows his family.",
+            "clout": 20,
+            "exposure": 15
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bello_rf_calendar",
+    "character": "bello",
+    "slot": "red_flag",
+    "presentation": "text",
+    "scene": {
+      "location": "mainland_street",
+      "time": "afternoon",
+      "expression": "suspicious",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Lunch break on Allen Avenue. He shares his calendar so you can 'plan us properly'. It's colour-coded. It's beautiful. One block is solid grey."
+      },
+      {
+        "who": "partner",
+        "text": "Plan anything. Any weekend. Just not March."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "arranged": {
+        "id": "t_arr_date",
+        "text": "All of March: grey. One word inside the block: 'KADUNA'."
+      },
+      "kano_wife": {
+        "id": "t_kano_flights",
+        "text": "Every other Friday is blocked at dawn: 'LOS-KAN 06:40'. Regular as prayer."
+      },
+      "defiant_love": {
+        "id": "t_def_call",
+        "text": "Tomorrow, 9pm: 'Uncle. Final.' It has been moved four times."
+      }
+    },
+    "choices": [
+      {
+        "id": "book_march",
+        "label": "Book your birthday trip for March anyway.",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You booked a trip for the two of you in March.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Two tickets to Zanzibar, March 14th. You send him the confirmation. He's typing. Then not typing.",
+            "attachment": -3,
+            "set": [
+              {
+                "flag": "booked_march",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ask_march",
+        "label": "\"What's in March?\"",
+        "tags": [
+          "cautious",
+          "contact_partner"
+        ],
+        "receipt": "You asked him what's happening in March.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Family things.' Then: 'I'll explain when I can.' When is a lovely word with no date in it.",
+            "trust": 3
+          }
+        ],
+        "truth_override": {
+          "arranged": {
+            "text": "'Family obligations in Kaduna.' Obligations. Plural. Formal.",
+            "trust": 4,
+            "sanity": -3
+          },
+          "kano_wife": {
+            "text": "'March? Nothing. Ask me about Fridays,' he jokes. You didn't ask about Fridays.",
+            "sanity": -5
+          },
+          "defiant_love": {
+            "text": "'March is when I tell my family about you. I wanted the date to be mine.' A calendar invite arrives: 'Us. Always.'",
+            "trust": 10,
+            "attachment": 6
+          }
+        }
+      },
+      {
+        "id": "close_it",
+        "label": "Close it. Calendars are boring.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You ignored the grey block in his calendar.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You close the app. The grey block stays open in your head.",
+            "sanity": -5,
+            "attachment": 2
+          }
+        ]
+      },
+      {
+        "id": "corp_flights",
+        "label": "[Corporate] Cross-check his calendar against public records.",
+        "vibe": "corporate",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You cross-checked his calendar like an audit.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Every other Friday, the 6:40 to Kano. Back Sunday. Very regular. So are some liars."
+          }
+        ],
+        "truth_override": {
+          "arranged": {
+            "text": "His March block matches a hall booking in Kaduna: 'Wedding reception, 600 guests.'",
+            "saw_truth": true,
+            "sanity": -10
+          },
+          "kano_wife": {
+            "text": "Every other Friday to Kano, and a monthly transfer to a primary school there. Child-sized fees.",
+            "saw_truth": true,
+            "sanity": -10
+          },
+          "defiant_love": {
+            "text": "The Fridays are board meetings at the family's Kano office. The minutes are public. He votes against his uncle every time.",
+            "trust": 6
+          }
+        }
+      },
+      {
+        "id": "kaduna_person",
+        "label": "\"You said March is Kaduna. Is Kaduna a person?\"",
+        "requires": {
+          "flags": [
+            "knows_march"
+          ]
+        },
+        "tags": [
+          "cautious",
+          "call_out"
+        ],
+        "receipt": "You asked if Kaduna was a person.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He goes very still. 'Kaduna is a place,' he says. 'And a promise I didn't make.'",
+            "trust": 4
+          }
+        ],
+        "truth_override": {
+          "arranged": {
+            "text": "'Kaduna is her family's home,' he says finally. 'I'm sorry.' The first honest sentence in two weeks.",
+            "saw_truth": true,
+            "trust": 5
+          },
+          "kano_wife": {
+            "text": "'Kaduna is business.' He didn't say Kano. Neither did you.",
+            "sanity": -5
+          },
+          "defiant_love": {
+            "text": "'Kaduna is where I tell my family no. In person. You can come, if you're brave.'",
+            "trust": 12,
+            "attachment": 8
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "bello_rf_photo",
+    "character": "bello",
+    "slot": "red_flag",
+    "presentation": "call",
+    "scene": {
+      "location": "mainland_street",
+      "time": "night",
+      "expression": "suspicious",
+      "mood": "negative",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Your bestie's birthday photo dump is up. Slide 7: you, laughing, and a cream kaftan sleeve beside you. Ten minutes later, he calls."
+      },
+      {
+        "who": "partner",
+        "text": "Take it down. Please. Before people see it."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "arranged": {
+        "id": "t_arr_mother",
+        "text": "'If my mother sees it, she'll call it unserious. This is the year I must be serious.'"
+      },
+      "kano_wife": {
+        "id": "t_kano_flights",
+        "text": "'I fly on Friday. I can't fly into a scandal.' Every other Friday, he flies."
+      },
+      "defiant_love": {
+        "id": "t_def_call",
+        "text": "Behind him, a man is shouting his name in Hausa. 'My uncle,' he says. 'Ignore it.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "delete",
+        "label": "Get it taken down. Quietly.",
+        "tags": [
+          "discreet",
+          "excuse"
+        ],
+        "receipt": "You got the photo taken down for him.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Bestie deletes it with a voice note: 'Your man is a ghost with a tailor.' He sends ₦100k. 'For your trouble.'",
+            "wallet": 100000,
+            "attachment": 6,
+            "sanity": -5
+          }
+        ]
+      },
+      {
+        "id": "sleeve",
+        "label": "\"Bello. It's a sleeve.\"",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You refused to delete a photo of his sleeve.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'It's my sleeve. Everybody in my family knows my tailor.' Silence. You realise he means it.",
+            "attachment": -6,
+            "trust": -2
+          }
+        ],
+        "truth_override": {
+          "defiant_love": {
+            "text": "'It's my sleeve. My uncle knows my tailor. He'll find your face next.' He's scared. For you, you realise.",
+            "trust": 5,
+            "attachment": -2
+          }
+        }
+      },
+      {
+        "id": "who_cant",
+        "label": "\"Who exactly can't see a sleeve?\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked who exactly couldn't see the photo.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Everybody. For now.' For now is doing a lot of heavy lifting.",
+            "trust": 3
+          }
+        ],
+        "truth_override": {
+          "arranged": {
+            "text": "'My mother. And everyone my mother talks to. Which is all of Kaduna.'",
+            "trust": 3,
+            "sanity": -3
+          },
+          "kano_wife": {
+            "text": "'People who would ask questions I can't answer.' Questions like what, Bello?",
+            "sanity": -5
+          },
+          "defiant_love": {
+            "text": "'My uncle's people. They'll come to you with money or threats. I'd rather they come to me.'",
+            "trust": 8,
+            "attachment": 4
+          }
+        }
+      },
+      {
+        "id": "keep_copy",
+        "label": "Delete it. Keep a copy in your hidden folder.",
+        "receipt": "You deleted the photo and kept a secret copy.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Deleted. Also saved. Future you says thank you.",
+            "attachment": 3,
+            "sanity": 3,
+            "set": [
+              {
+                "flag": "secret_kept_photo",
+                "knows": [
+                  "player"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sugar_fee",
+        "label": "[Sugar] \"Deleting is ₦100k. Bestie's admin fee.\"",
+        "vibe": "sugar",
+        "receipt": "You charged him to delete the photo.",
+        "outcomes": [
+          {
+            "chance": 0.7,
+            "text": "₦150k lands. 'Keep the change.' Bestie gets ₦10k and a new respect for you.",
+            "wallet": 150000
+          },
+          {
+            "chance": 0.3,
+            "bad": true,
+            "text": "He pays, then goes quiet for a day. Transactions are fast. Feelings aren't.",
+            "wallet": 100000,
+            "attachment": -8
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bello_mt_flat",
+    "character": "bello",
+    "slot": "money_trap",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "afternoon",
+      "expression": "charming",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "An empty flat in Lekki Phase 1. Marble, glass, a view of the lagoon. Keys on the counter."
+      },
+      {
+        "who": "partner",
+        "text": "It's yours. But it goes in your cousin's name. Not yours. Never mine."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "arranged": {
+        "id": "t_arr_date",
+        "text": "The lease starts in April. 'After March,' he says, 'things will be... settled.'"
+      },
+      "kano_wife": {
+        "id": "t_kano_ring",
+        "text": "He initials the lease with his left hand. A pale line on the ring finger. The ring itself lives on the chain."
+      },
+      "defiant_love": {
+        "id": "t_def_hide",
+        "text": "The agent asks for ID. He shows a company letter instead. 'My name can't be on anything yet. My uncle reads registries.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "take_keys",
+        "label": "Take the keys. Cousin's name is fine.",
+        "tags": [
+          "discreet",
+          "excuse"
+        ],
+        "receipt": "You took a flat in your cousin's name.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Your cousin Chika can't believe her luck. Neither can you. You live in a flat legally owned by someone who borrows your shoes.",
+            "attachment": 10,
+            "sanity": -5,
+            "set": [
+              {
+                "flag": "has_ikoyi_flat",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "arranged": [
+            {
+              "chance": 0.6,
+              "text": "Keys. A beautiful flat. Twice a week, a girl in gold lace drives past slowly.",
+              "attachment": 8,
+              "sanity": -10,
+              "set": [
+                {
+                  "flag": "has_ikoyi_flat",
+                  "knows": [
+                    "player",
+                    "partner"
+                  ]
+                }
+              ]
+            },
+            {
+              "chance": 0.4,
+              "bad": true,
+              "tricked": true,
+              "text": "The lease has a clause: 'Vacate on request after March.' He requested it in the fine print, in advance.",
+              "attachment": 5,
+              "sanity": -15,
+              "set": [
+                {
+                  "flag": "has_ikoyi_flat",
+                  "knows": [
+                    "player",
+                    "partner"
+                  ]
+                }
+              ]
+            }
+          ],
+          "kano_wife": {
+            "text": "Keys. Every other weekend he's 'in Kano'. Every other weekend you have a flat and no man. A kept person's timetable.",
+            "attachment": 8,
+            "sanity": -10,
+            "set": [
+              {
+                "flag": "has_ikoyi_flat",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "defiant_love": {
+            "text": "Keys. On the counter he leaves a second set, labelled in his handwriting: 'Ours, when they let us. Before, if they don't.'",
+            "attachment": 15,
+            "trust": 8,
+            "set": [
+              {
+                "flag": "has_ikoyi_flat",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "my_name",
+        "label": "\"My name on the lease, or no flat.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked for your own name on the lease.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He looks at you a long time. 'You make everything hard.' He doesn't say no. He doesn't say yes.",
+            "attachment": -5,
+            "trust": 4
+          }
+        ],
+        "truth_override": {
+          "arranged": {
+            "text": "'In your name, it's evidence,' he says. Evidence of what, Bello?",
+            "trust": 2,
+            "sanity": -5
+          },
+          "kano_wife": {
+            "text": "'Your name and my name in one document? Impossible.' Impossible is a strong word for a lease.",
+            "sanity": -5
+          },
+          "defiant_love": {
+            "text": "He calls the agent back. 'Your name. And mine beside it. Let them read it.'",
+            "trust": 12,
+            "attachment": 8,
+            "set": [
+              {
+                "flag": "has_ikoyi_flat",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "pay_fee",
+        "label": "Pay the agency fee yourself. Own something.",
+        "cost": 300000,
+        "tags": [
+          "luxury"
+        ],
+        "broke_text": "The agency fee laughed at your salary slip.",
+        "receipt": "You paid the agency fee yourself.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Your fee, your receipt, your name on page one. He's quiet, then impressed. 'You don't want to be kept.'",
+            "attachment": 6,
+            "trust": 6,
+            "clout": 10,
+            "set": [
+              {
+                "flag": "has_ikoyi_flat",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "kano_wife": [
+            {
+              "chance": 0.5,
+              "text": "Your fee, your receipt, your name on page one. He's quiet. 'You don't want to be kept.' He sounds almost jealous of you.",
+              "attachment": 6,
+              "trust": 4,
+              "set": [
+                {
+                  "flag": "has_ikoyi_flat",
+                  "knows": [
+                    "player",
+                    "partner"
+                  ]
+                }
+              ]
+            },
+            {
+              "chance": 0.5,
+              "bad": true,
+              "tricked": true,
+              "text": "Clause 9: 'Occupancy subject to the landlord's family.' The landlord is his father-in-law's company.",
+              "sanity": -15,
+              "set": [
+                {
+                  "flag": "has_ikoyi_flat",
+                  "knows": [
+                    "player",
+                    "partner"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "yaba",
+        "label": "\"I'll keep my mini-flat in Yaba, thanks.\"",
+        "tags": [
+          "budget",
+          "independence"
+        ],
+        "receipt": "You kept your mini-flat in Yaba.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He visits it. Sits on your plastic chair in a ₦2m kaftan, eats your noodles, says it's the best meal he's had all month.",
+            "attachment": 6,
+            "chemistry": 3
+          }
+        ]
+      },
+      {
+        "id": "tuwo",
+        "label": "Skip the flat talk. Cook him tuwo and miyan kuka.",
+        "requires": {
+          "flags": [
+            "knows_tuwo"
+          ]
+        },
+        "cost": 8000,
+        "tags": [
+          "budget"
+        ],
+        "receipt": "You cooked him tuwo shinkafa and miyan kuka.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He eats two plates standing at the counter. 'Who taught you?' 'You did. In a text.' He looks at you like a door opened.",
+            "attachment": 12,
+            "trust": 8,
+            "chemistry": 4
+          }
+        ],
+        "truth_override": {
+          "arranged": {
+            "text": "Two plates, standing. Then, quietly: 'My mother would like you. That's the problem.'",
+            "attachment": 10,
+            "trust": 5
+          },
+          "kano_wife": {
+            "text": "Two plates. 'It's good,' he says. 'Better than—' He stops. Better than whose?",
+            "attachment": 8,
+            "trust": 3,
+            "sanity": -3
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "bello_mt_aso_ebi",
+    "character": "bello",
+    "slot": "money_trap",
+    "scene": {
+      "location": "lekki_salon",
+      "time": "afternoon",
+      "expression": "charming",
+      "mood": "neutral"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Admiralty Way. His cousin's fatiha is Saturday, and the family aso-ebi is cream and gold. ₦85k a set, sold from a Ghana-must-go bag."
+      },
+      {
+        "who": "partner",
+        "text": "Buy it. Come. Stand at the back. Nobody will know you're with me."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "arranged": {
+        "id": "t_arr_date",
+        "text": "The seller, chatty: 'After this one, the big one is March! The groom's side ordered six hundred sets.' Bello studies the ceiling."
+      },
+      "kano_wife": {
+        "id": "t_kano_call",
+        "text": "The seller: 'Hajiya ordered hers in green, as usual. She said keep his in cream.' His phone buzzes: 'Hajiya'. He declines."
+      },
+      "defiant_love": {
+        "id": "t_def_ring",
+        "text": "The seller winks at him: 'And the ring? Did you finally buy it?' Bello goes red under his beard."
+      }
+    },
+    "choices": [
+      {
+        "id": "full_set",
+        "label": "Buy the full set. Back row, best dressed.",
+        "cost": 85000,
+        "tags": [
+          "luxury"
+        ],
+        "broke_text": "₦85k to stand at the back? Your account said 'stand at home'.",
+        "receipt": "You bought the full aso-ebi for his cousin's fatiha.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You look incredible at the back of the hall. Nobody knows why you're there. That was the brief.",
+            "attachment": 6,
+            "sanity": -5
+          }
+        ],
+        "truth_override": {
+          "arranged": {
+            "text": "At the fatiha the imam announces the next one: 'Bello's, in March, insha Allah.' Everyone claps. You clap. In aso-ebi.",
+            "sanity": -20,
+            "saw_truth": true
+          },
+          "kano_wife": {
+            "text": "A woman in green adjusts his cap without asking. He lets her. Everyone calls her Hajiya. Nobody calls you anything.",
+            "sanity": -20,
+            "saw_truth": true
+          },
+          "defiant_love": {
+            "text": "He walks to the back row, takes your hand, and leads you to the family table. His uncle stops chewing.",
+            "attachment": 12,
+            "trust": 10,
+            "exposure": 10
+          }
+        }
+      },
+      {
+        "id": "cap_only",
+        "label": "Buy just the cap and gele. ₦15k.",
+        "cost": 15000,
+        "tags": [
+          "budget"
+        ],
+        "receipt": "You bought half an aso-ebi.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Half aso-ebi, full confidence. From the back row you see everything, which was the point.",
+            "sanity": -3,
+            "intel": "tell"
+          }
+        ]
+      },
+      {
+        "id": "not_paying",
+        "label": "\"I don't pay to be invisible.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You refused to pay to be invisible.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He laughs, then doesn't. 'Fair.' He buys you a set anyway. You don't go. Neither of you mentions it.",
+            "attachment": -4,
+            "trust": 4
+          }
+        ],
+        "truth_override": {
+          "defiant_love": {
+            "text": "He nods slowly. 'You're right. Come as my guest, or don't come.' The full set arrives with your name on the tag.",
+            "trust": 8,
+            "attachment": 6
+          }
+        }
+      },
+      {
+        "id": "sugar_send",
+        "label": "[Sugar] \"Send the ₦85k. I'll buy it myself.\"",
+        "vibe": "sugar",
+        "receipt": "You asked him to send the aso-ebi money.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "₦85k lands. You buy a ₦20k set in Balogun and keep the change. The aso-ebi economy is beautiful.",
+            "wallet": 85000
+          },
+          {
+            "chance": 0.4,
+            "bad": true,
+            "text": "He pays the seller directly. 'So you don't get confused.' He knows you.",
+            "attachment": -4
+          }
+        ]
+      },
+      {
+        "id": "call_aisha",
+        "label": "Call Aisha. Ask whose wedding is next.",
+        "requires": {
+          "flags": [
+            "knows_aisha"
+          ]
+        },
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You called his sister to ask whose wedding was next.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Aisha laughs nervously. 'Ask him. Please. I can't.'",
+            "trust": 2
+          }
+        ],
+        "truth_override": {
+          "arranged": {
+            "text": "Aisha, quietly: 'His. In March. I told him to tell you. I'm so sorry.'",
+            "saw_truth": true,
+            "sanity": -10
+          },
+          "kano_wife": {
+            "text": "Aisha sighs: 'Ask him about Hauwa. Then decide if you still want to come.'",
+            "saw_truth": true,
+            "sanity": -10
+          },
+          "defiant_love": {
+            "text": "Aisha squeals: 'Mine is next! And he wants you there. In front. He's been practising the speech.'",
+            "trust": 10,
+            "attachment": 8
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "bello_mt_account",
+    "character": "bello",
+    "slot": "money_trap",
+    "scene": {
+      "location": "prado_interior",
+      "time": "night",
+      "expression": "suspicious",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Parked outside your gate, engine running. He hasn't spoken for a full minute."
+      },
+      {
+        "who": "partner",
+        "text": "I need to move some money through your account. ₦30 million. Two days, then it leaves. Nobody looks at your account."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "arranged": {
+        "id": "t_arr_mother",
+        "text": "'My mother handles the family accounts,' he says. 'For the... arrangements. I need money she can't see.'"
+      },
+      "kano_wife": {
+        "id": "t_kano_flights",
+        "text": "'It's for Kano. Payments that can't come from my name.' His boarding pass sits on the dashboard. Friday, 6:40am."
+      },
+      "defiant_love": {
+        "id": "t_def_call",
+        "text": "'My uncle froze my company accounts this morning,' he says. 'Because of you. He thinks I'll come crawling.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "lend",
+        "label": "Give him your account details. Love is trust.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You let him move ₦30m through your account.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "It moves in, it moves out. ₦300k stays behind: 'For the inconvenience.'",
+            "wallet": 300000,
+            "set": [
+              {
+                "flag": "account_lent",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "arranged": [
+            {
+              "chance": 0.5,
+              "text": "In, out, done. ₦300k stays behind: 'For the inconvenience.' The narration on the transfer says 'Kaduna'.",
+              "wallet": 300000,
+              "set": [
+                {
+                  "flag": "account_lent",
+                  "knows": [
+                    "player",
+                    "partner"
+                  ]
+                }
+              ]
+            },
+            {
+              "chance": 0.5,
+              "bad": true,
+              "tricked": true,
+              "text": "Your bank freezes everything, your salary included. The transfer narration reads 'BRIDE PRICE BALANCE'.",
+              "wallet": -100000,
+              "sanity": -15,
+              "set": [
+                {
+                  "flag": "account_lent",
+                  "knows": [
+                    "player",
+                    "partner"
+                  ]
+                }
+              ]
+            }
+          ],
+          "kano_wife": [
+            {
+              "chance": 0.5,
+              "text": "In, out, done. ₦300k stays behind: 'For the inconvenience.'",
+              "wallet": 300000,
+              "set": [
+                {
+                  "flag": "account_lent",
+                  "knows": [
+                    "player",
+                    "partner"
+                  ]
+                }
+              ]
+            },
+            {
+              "chance": 0.5,
+              "bad": true,
+              "tricked": true,
+              "text": "Your account is frozen 'pending review'. The outgoing leg went to a primary school in Kano.",
+              "wallet": -100000,
+              "sanity": -15,
+              "set": [
+                {
+                  "flag": "account_lent",
+                  "knows": [
+                    "player",
+                    "partner"
+                  ]
+                }
+              ]
+            }
+          ],
+          "defiant_love": {
+            "text": "It lands. He moves it straight to a new account in his own name and leaves ₦300k in yours: 'Your share of my freedom.'",
+            "wallet": 300000,
+            "attachment": 12,
+            "trust": 10,
+            "set": [
+              {
+                "flag": "account_lent",
+                "knows": [
+                  "player",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "bvn",
+        "label": "\"Bello, I like you. I like my BVN more.\"",
+        "receipt": "You refused to lend him your account.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He laughs despite himself. 'Fair.' He finds another way. You'll never know which.",
+            "attachment": -5,
+            "sanity": 5
+          }
+        ],
+        "truth_override": {
+          "defiant_love": {
+            "text": "He nods. 'Good. Never do that for anyone. Including me.' Then: 'I'll sell a car instead.'",
+            "trust": 6,
+            "attachment": -2
+          }
+        }
+      },
+      {
+        "id": "in_writing",
+        "label": "\"Put it in writing. Source, purpose, date.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked him to put the transfer in writing.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He drafts it on his phone in two minutes. Very professional. It says nothing at all.",
+            "trust": 3
+          }
+        ],
+        "truth_override": {
+          "arranged": {
+            "text": "He types 'Purpose:' and stops. 'I can't write this down.' Then don't move it through me.",
+            "trust": 3,
+            "sanity": -5
+          },
+          "kano_wife": {
+            "text": "'Purpose: family support, Kano.' He deletes it. Retypes: 'Business.'",
+            "sanity": -5,
+            "saw_truth": true
+          },
+          "defiant_love": {
+            "text": "'Funds belonging to Bello, held from family control.' He signs it. 'Now you have proof I trusted you first.'",
+            "trust": 10,
+            "attachment": 6
+          }
+        }
+      },
+      {
+        "id": "corp_escrow",
+        "label": "[Corporate] \"I work in a bank. Let me structure it.\"",
+        "vibe": "corporate",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You offered to structure his transfer properly.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "A proper escrow in an hour. He looks at you like a miracle with a lanyard.",
+            "attachment": 10,
+            "trust": 6,
+            "wallet": 100000
+          }
+        ],
+        "truth_override": {
+          "arranged": {
+            "text": "Source account: 'Alhaji Sani & Sons, Family Dowry'. You close your laptop.",
+            "saw_truth": true,
+            "sanity": -10
+          },
+          "kano_wife": {
+            "text": "Destination: 'Hauwa Bello, Kano'. You close your laptop very gently.",
+            "saw_truth": true,
+            "sanity": -15
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "bello_pd_birthday",
+    "character": "bello",
+    "slot": "public_drama",
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "night",
+      "mood": "neutral",
+      "partner_present": false,
+      "npc": {
+        "name": "Funmi"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Your bestie's birthday dinner. Everyone brought a partner. Yours sent a ₦300k cake and a voice note: 'Can't come. Enjoy.'"
+      },
+      {
+        "who": "Funmi",
+        "text": "Babe, is this man real or is he Wi-Fi?"
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "arranged": {
+        "id": "t_arr_mother",
+        "text": "At the end of his voice note, a woman's voice: 'Bello, your mother is waiting for you.'"
+      },
+      "kano_wife": {
+        "id": "t_kano_flights",
+        "text": "The voice note has airport noise in it. 'Final call for Kano.'"
+      },
+      "defiant_love": {
+        "id": "t_def_call",
+        "text": "In the voice note, a man is shouting at him in Hausa. Bello: 'Uncle, I'm talking to someone important.'"
+      }
+    },
+    "choices": [
+      {
+        "id": "video",
+        "label": "Video call him at the table. Prove he exists.",
+        "tags": [
+          "public_embarrassment",
+          "contact_partner"
+        ],
+        "receipt": "You video-called him in front of your friends.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "He answers! Cream cap, dark room. Everyone screams. He hangs up in eight seconds like a hostage.",
+            "clout": 20
+          },
+          {
+            "chance": 0.5,
+            "bad": true,
+            "text": "Declined. Twice. Funmi: 'Wi-Fi.' The table howls.",
+            "clout": -10,
+            "sanity": -10
+          }
+        ],
+        "truth_override": {
+          "defiant_love": [
+            {
+              "chance": 0.7,
+              "text": "He answers, greets everyone by name, and sings happy birthday off-key. Your friends are in love. So are you.",
+              "clout": 20,
+              "attachment": 8,
+              "trust": 10
+            },
+            {
+              "chance": 0.3,
+              "bad": true,
+              "text": "He answers from a car, whispering: 'Not now, my uncle is here.' Funmi: 'Wi-Fi with a family.'",
+              "clout": -5,
+              "sanity": -5
+            }
+          ]
+        }
+      },
+      {
+        "id": "cake",
+        "label": "Point at the ₦300k cake. \"That's him.\"",
+        "receipt": "You let the cake speak for him.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Four tiers, your name piped in gold. Funmi eats a slice in silence. Respect is cake-shaped.",
+            "clout": 15,
+            "attachment": 3
+          }
+        ]
+      },
+      {
+        "id": "abuja",
+        "label": "Say he's in Abuja. Change the subject.",
+        "tags": [
+          "discreet",
+          "excuse"
+        ],
+        "receipt": "You told your friends he was in Abuja.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Abuja,' you say. The table nods the way people nod at a man who 'works in oil'. You go home early.",
+            "sanity": -8,
+            "attachment": 4
+          }
+        ]
+      },
+      {
+        "id": "split",
+        "label": "Split the bill, ₦12k, and be normal.",
+        "cost": 12000,
+        "tags": [
+          "budget"
+        ],
+        "receipt": "You paid your share of the birthday dinner.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You pay your share like a citizen. Funmi hugs you: 'Real or not, you're still my favourite.'",
+            "sanity": 5
+          }
+        ]
+      },
+      {
+        "id": "bigboy_bill",
+        "label": "[Big Boy] Pay the whole bill. Tell them he did.",
+        "vibe": "bigboy",
+        "cost": 150000,
+        "tags": [
+          "luxury"
+        ],
+        "receipt": "You paid the whole bill and credited him.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'From Bello,' you announce. The table cheers a man who isn't there. He'll never know he was generous tonight.",
+            "clout": 25,
+            "sanity": -5
+          }
+        ]
+      },
+      {
+        "id": "tea",
+        "label": "Text him one word: 'Tea.'",
+        "requires": {
+          "flags": [
+            "knows_tea"
+          ]
+        },
+        "tags": [
+          "contact_partner"
+        ],
+        "receipt": "You sent him the one word he gave you.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Twenty minutes later: 'I can't come. I'm sorry. I wish I could.' He means the wish. Not the coming.",
+            "attachment": 3,
+            "sanity": -5
+          }
+        ],
+        "truth_override": {
+          "defiant_love": {
+            "text": "Twenty minutes later he walks in. Through the front door. Kisses your forehead in front of everyone. 'You said tea.'",
+            "attachment": 15,
+            "trust": 12,
+            "clout": 20
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "bello_pd_blind_item",
+    "character": "bello",
+    "slot": "public_drama",
+    "presentation": "text",
+    "scene": {
+      "location": "mainland_street",
+      "time": "afternoon",
+      "mood": "negative",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "The Parlour drops a blind item: 'Which quiet oil heir hides a Lagos lover in a private lounge on Ozumba Mbadiwe? Hint: oud.' Your group chat is guessing. Wrongly. For now."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "arranged": {
+        "id": "t_arr_date",
+        "text": "Second hint: 'His family has a big announcement in March.'"
+      },
+      "kano_wife": {
+        "id": "t_kano_flights",
+        "text": "Second hint: 'Ask where he spends every other weekend. Not Lagos.'"
+      },
+      "defiant_love": {
+        "id": "t_def_call",
+        "text": "The blog credits its source: 'a family elder'. Someone senior is leaking this on purpose."
+      }
+    },
+    "choices": [
+      {
+        "id": "silent",
+        "label": "Say nothing. Mute the chat. Breathe.",
+        "tags": [
+          "discreet"
+        ],
+        "receipt": "You stayed silent about the blind item.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You go quiet. He notices. 'Thank you,' he texts, without saying for what.",
+            "attachment": 6,
+            "sanity": -5
+          }
+        ]
+      },
+      {
+        "id": "lol_who",
+        "label": "Comment \"lol who?\" under the post.",
+        "receipt": "You commented 'lol who?' under the blind item.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "Perfect cover. Fifty people reply 'lol who?' under you. Lagos is a choir.",
+            "clout": 5
+          },
+          {
+            "chance": 0.4,
+            "bad": true,
+            "text": "Someone replies: 'You, babe. Your bag was in the lounge photo.' 300 likes.",
+            "exposure": 20,
+            "sanity": -10,
+            "set": [
+              {
+                "flag": "secret_bello_post",
+                "knows": [
+                  "player",
+                  "world"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "feed_blog",
+        "label": "DM the blog more details. For clout.",
+        "tags": [
+          "toxic",
+          "public_embarrassment"
+        ],
+        "receipt": "You fed the blog more details about him.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "Your extras go viral: the oud, the kitchen exits, the cream caps. You're anonymous. Your joy isn't.",
+            "clout": 30,
+            "exposure": 25,
+            "truth_exposed": true,
+            "goal": {
+              "revenge": 30
+            },
+            "set": [
+              {
+                "flag": "secret_bello_post",
+                "knows": [
+                  "player",
+                  "world"
+                ]
+              }
+            ]
+          },
+          {
+            "chance": 0.4,
+            "bad": true,
+            "text": "The blog posts your DM screenshot by 'mistake'. Your name is in the crop.",
+            "clout": 10,
+            "exposure": 40,
+            "truth_exposed": true,
+            "set": [
+              {
+                "flag": "secret_bello_post",
+                "knows": [
+                  "player",
+                  "world",
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ask_him",
+        "label": "Send it to him: \"Is this you?\"",
+        "tags": [
+          "contact_partner",
+          "cautious"
+        ],
+        "receipt": "You sent him the blind item.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Delete the chat. Say nothing.' An hour later: 'Are you okay?' The order of those messages tells you everything.",
+            "trust": 2
+          }
+        ],
+        "truth_override": {
+          "arranged": {
+            "text": "'It's my family. They're cleaning house before March.' Cleaning house. You're the house.",
+            "sanity": -8,
+            "trust": 2
+          },
+          "kano_wife": {
+            "text": "'Lagos gossip. Ignore.' Then he books an extra flight to Kano. Damage control has a timetable.",
+            "sanity": -8
+          },
+          "defiant_love": {
+            "text": "'My uncle leaked it. He wants you scared off. Are you scared?' Then: 'I'm not.'",
+            "trust": 8,
+            "attachment": 6
+          }
+        }
+      },
+      {
+        "id": "uncle",
+        "label": "\"This smells like Alhaji Sani.\"",
+        "requires": {
+          "flags": [
+            "knows_uncle"
+          ]
+        },
+        "tags": [
+          "call_out"
+        ],
+        "receipt": "You named his uncle as the source.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He goes silent for a minute. 'How do you know that name?' 'You told me.' 'I did.' He sounds proud.",
+            "trust": 6,
+            "attachment": 4
+          }
+        ],
+        "truth_override": {
+          "arranged": {
+            "text": "'Alhaji Sani arranges everything,' he says. 'Including me.'",
+            "saw_truth": true,
+            "trust": 3,
+            "sanity": -5
+          },
+          "kano_wife": {
+            "text": "'My uncle? No. My uncle has... other concerns. In Kano.'",
+            "sanity": -5
+          }
+        }
+      },
+      {
+        "id": "tea",
+        "label": "Text him one word: 'Tea.'",
+        "requires": {
+          "flags": [
+            "knows_tea"
+          ]
+        },
+        "tags": [
+          "contact_partner"
+        ],
+        "receipt": "You sent him the one word he gave you.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Not tonight. I'm sorry.' The word worked. He just didn't.",
+            "sanity": -5
+          }
+        ],
+        "truth_override": {
+          "defiant_love": {
+            "text": "He's at your gate in forty minutes. No aide, no driver. 'Nobody scares you out of my life. Not even a blog.'",
+            "trust": 10,
+            "attachment": 10
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "bello_cf_arranged",
+    "character": "bello",
+    "slot": "confrontation",
+    "requires": {
+      "truth": [
+        "arranged"
+      ]
+    },
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "afternoon",
+      "expression": "caught",
+      "mood": "negative",
+      "npc": {
+        "name": "Amina"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "His flat, Saturday. The door opens and a young woman walks in with a tape measure and her mother."
+      },
+      {
+        "who": "Amina",
+        "text": "Sorry. They said measure the curtains for after the wedding. I'm Amina. Nobody told me your name."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "arranged": {
+        "id": "t_arr_cards",
+        "text": "On the counter, a fresh box of cream wedding cards. 'Bello weds Amina. March 14th.' Gold Arabic calligraphy."
+      }
+    },
+    "choices": [
+      {
+        "id": "tea_amina",
+        "label": "Make her tea. Ask her what she wants.",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You made his fiancée tea and listened.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She's twenty-four, a pharmacist in Kaduna, and she didn't choose this either. 'He's kind,' she says. 'He's just not brave.'",
+            "saw_truth": true,
+            "attachment": -5,
+            "sanity": 5
+          }
+        ]
+      },
+      {
+        "id": "choose",
+        "label": "\"Bello. Choose. Right now.\"",
+        "tags": [
+          "call_out",
+          "contact_partner"
+        ],
+        "receipt": "You made him choose in front of her.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "'You,' he says. Then his phone rings: 'Mama'. He answers it.",
+            "saw_truth": true,
+            "sanity": -15,
+            "trust": -5
+          },
+          {
+            "chance": 0.5,
+            "bad": true,
+            "text": "He looks at you, at her mother, then at the floor. The floor wins.",
+            "saw_truth": true,
+            "sanity": -20,
+            "attachment": -10
+          }
+        ]
+      },
+      {
+        "id": "leave",
+        "label": "\"Congratulations to you both.\" Leave the key.",
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You congratulated them and left his key behind.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You put the key beside the wedding cards. Amina says 'sorry' as you go. She means it more than he does.",
+            "saw_truth": true,
+            "sanity": 10,
+            "end": "walked_away"
+          }
+        ]
+      },
+      {
+        "id": "live",
+        "label": "Go live from his balcony. Narrate everything.",
+        "tags": [
+          "toxic",
+          "public_embarrassment"
+        ],
+        "receipt": "You livestreamed his fiancée's visit.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "#BelloAndAmina was supposed to trend in March. It trends today, with you narrating.",
+            "clout": 35,
+            "exposure": 30,
+            "saw_truth": true,
+            "truth_exposed": true,
+            "goal": {
+              "revenge": 50
+            }
+          }
+        ]
+      },
+      {
+        "id": "after_march",
+        "label": "\"I'll still be here after March.\"",
+        "tags": [
+          "excuse",
+          "discreet"
+        ],
+        "receipt": "You promised to stay after his wedding.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Amina looks at you with pity. He looks at you with relief. One look is worse. He presses ₦300k into your hand: 'For your patience.'",
+            "wallet": 300000,
+            "attachment": 15,
+            "sanity": -20
+          }
+        ]
+      },
+      {
+        "id": "price",
+        "label": "\"I kept your secret from day one. Price?\"",
+        "requires": {
+          "flags": [
+            "promised_invisible"
+          ]
+        },
+        "receipt": "You named your price for staying invisible.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "₦900k lands before her mother finds the curtain rail. Silence has a wedding budget too.",
+            "wallet": 900000,
+            "saw_truth": true,
+            "attachment": -10
+          }
+        ]
+      },
+      {
+        "id": "boot",
+        "label": "\"Day one. Your boot. 'My cousin's.'\"",
+        "requires": {
+          "flags": [
+            "saw_wedding_cards"
+          ]
+        },
+        "tags": [
+          "call_out"
+        ],
+        "receipt": "You reminded him of the cards in his boot.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He can't look at you. Amina can. 'He told me you were his cousin too.'",
+            "saw_truth": true,
+            "sanity": -10,
+            "clout": 10
+          }
+        ]
+      },
+      {
+        "id": "lobby",
+        "label": "\"I saw you both in that lobby.\"",
+        "requires": {
+          "flags": [
+            "saw_lobby"
+          ]
+        },
+        "tags": [
+          "call_out"
+        ],
+        "receipt": "You told her you'd seen her in the lobby.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Amina nods. 'Awolowo Road. You walked past us. I knew then.' Of course she did.",
+            "saw_truth": true,
+            "sanity": -5
+          }
+        ]
+      },
+      {
+        "id": "scent",
+        "label": "\"Does she smell like me too?\"",
+        "requires": {
+          "flags": [
+            "scent_recognised"
+          ]
+        },
+        "tags": [
+          "call_out"
+        ],
+        "receipt": "You asked if he'd made her a scent too.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Amina sniffs the air. 'He bought mine. Yours he made.' She leaves the tape measure on the floor and walks out first.",
+            "saw_truth": true,
+            "clout": 15,
+            "attachment": -10
+          }
+        ]
+      },
+      {
+        "id": "photo",
+        "label": "Show Amina the photo he made you delete.",
+        "requires": {
+          "flags": [
+            "secret_kept_photo"
+          ]
+        },
+        "receipt": "You showed his fiancée the deleted photo.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She studies it. 'He's never laughed like that with me.' She sends it to her mother. Then to his.",
+            "saw_truth": true,
+            "truth_exposed": true,
+            "exposure": 20,
+            "goal": {
+              "revenge": 40
+            }
+          }
+        ]
+      },
+      {
+        "id": "flat",
+        "label": "\"So the flat in my cousin's name was for after March.\"",
+        "requires": {
+          "flags": [
+            "has_ikoyi_flat"
+          ]
+        },
+        "tags": [
+          "call_out"
+        ],
+        "receipt": "You asked if your flat was his after-March plan.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He doesn't deny it. 'I wanted you somewhere safe. Somewhere I could still come.' Amina writes the address down.",
+            "saw_truth": true,
+            "sanity": -15
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bello_cf_kano",
+    "character": "bello",
+    "slot": "confrontation",
+    "requires": {
+      "truth": [
+        "kano_wife"
+      ]
+    },
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "morning",
+      "expression": "caught",
+      "mood": "negative",
+      "npc": {
+        "name": "Hauwa"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Sunday morning. You surprise him at his flat with akara and pap. Someone else has already made breakfast."
+      },
+      {
+        "who": "Hauwa",
+        "text": "Ina kwana. I'm Hauwa. His wife. You must be the Lagos one."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "kano_wife": {
+        "id": "t_kano_ring",
+        "text": "On her finger: the twin of the ring he wears on a chain under his kaftan."
+      }
+    },
+    "choices": [
+      {
+        "id": "sit",
+        "label": "Sit down. Eat. Let her talk.",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You sat down and let his wife talk.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "An hour, calmly. Kano, eight years, two children. 'You are not the first Lagos one,' she says. 'You are the first he hid this well.'",
+            "saw_truth": true,
+            "sanity": -10
+          }
+        ]
+      },
+      {
+        "id": "wake",
+        "label": "Wake him up. Make him explain. Now.",
+        "tags": [
+          "call_out",
+          "contact_partner"
+        ],
+        "receipt": "You woke him up to explain himself.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He comes out in a singlet, sees you both, and sits down on the floor like a man in a film. 'I was going to tell you.' Both of you laugh. Not kindly.",
+            "saw_truth": true,
+            "sanity": -15,
+            "attachment": -10
+          }
+        ]
+      },
+      {
+        "id": "leave",
+        "label": "Put the breakfast down. Leave. Block him in the lift.",
+        "tags": [
+          "exit"
+        ],
+        "receipt": "You left breakfast for his wife and blocked him.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Hauwa calls after you: 'Take your akara! You paid for it!' Kano manners. You block him between floors.",
+            "saw_truth": true,
+            "sanity": 10,
+            "end": "walked_away"
+          }
+        ]
+      },
+      {
+        "id": "post",
+        "label": "Photograph her. Post: \"Meet the wife.\"",
+        "tags": [
+          "toxic",
+          "public_embarrassment"
+        ],
+        "receipt": "You posted his wife on the Parlour.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The Parlour goes feral. Her brother comments within the hour. Kano and Lagos, united at last, against him.",
+            "clout": 35,
+            "exposure": 35,
+            "saw_truth": true,
+            "truth_exposed": true,
+            "goal": {
+              "revenge": 50
+            }
+          }
+        ]
+      },
+      {
+        "id": "share",
+        "label": "\"I don't mind sharing.\"",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You told his wife you didn't mind sharing.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Hauwa raises one eyebrow. 'He minds. Very much.' That afternoon he sends ₦250k: 'For Sunday.'",
+            "wallet": 250000,
+            "attachment": 10,
+            "sanity": -20
+          }
+        ]
+      },
+      {
+        "id": "price",
+        "label": "\"Invisible was your rule. Invisible has a price.\"",
+        "requires": {
+          "flags": [
+            "promised_invisible"
+          ]
+        },
+        "receipt": "You named your price for staying invisible.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "₦1m lands before Hauwa finishes her kunu. 'Please,' he texts. Just that.",
+            "wallet": 1000000,
+            "saw_truth": true,
+            "attachment": -10
+          }
+        ]
+      },
+      {
+        "id": "fridays",
+        "label": "\"Every other Friday. 6:40 to Kano. I counted.\"",
+        "requires": {
+          "flags": [
+            "knows_fridays"
+          ]
+        },
+        "tags": [
+          "call_out"
+        ],
+        "receipt": "You told her you'd counted his Kano flights.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Hauwa laughs. 'He told you the flight number? He doesn't even tell me the flight number.'",
+            "saw_truth": true,
+            "clout": 10,
+            "sanity": 5
+          }
+        ]
+      },
+      {
+        "id": "scent",
+        "label": "\"Your sister already met me. At a salon.\"",
+        "requires": {
+          "flags": [
+            "scent_recognised"
+          ]
+        },
+        "receipt": "You told her you'd met her sister.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Hauwa nods. 'Rabi told me. Saffron and rose. I came to see for myself.' She looks at him. 'He's getting lazy.'",
+            "saw_truth": true,
+            "sanity": -5,
+            "clout": 10
+          }
+        ]
+      },
+      {
+        "id": "photo",
+        "label": "Show her the photo from the birthday dump.",
+        "requires": {
+          "flags": [
+            "secret_kept_photo"
+          ]
+        },
+        "receipt": "You showed his wife the photo he made you delete.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She looks for a long time. 'He told me he was in Abuja that night.' Now two of you know where he was.",
+            "saw_truth": true,
+            "sanity": -5,
+            "goal": {
+              "revenge": 20
+            }
+          }
+        ]
+      },
+      {
+        "id": "account",
+        "label": "\"Is that why your school fees came through me?\"",
+        "requires": {
+          "flags": [
+            "account_lent"
+          ]
+        },
+        "tags": [
+          "call_out"
+        ],
+        "receipt": "You asked whose money went through your account.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Hauwa frowns. 'The fees came from a Lagos account this term.' She looks at you. 'Yours?' She is not angry at you. That's worse.",
+            "saw_truth": true,
+            "sanity": -10
+          }
+        ]
+      },
+      {
+        "id": "lobby",
+        "label": "\"I saw your brother in that restaurant lobby.\"",
+        "requires": {
+          "flags": [
+            "saw_lobby"
+          ]
+        },
+        "tags": [
+          "call_out"
+        ],
+        "receipt": "You told her you'd seen her brother looking for him.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Idris? He was looking for this one.' She points at her husband with a spoon. 'He said Bello ran through a kitchen.'",
+            "saw_truth": true,
+            "clout": 10
+          }
+        ]
+      },
+      {
+        "id": "flat",
+        "label": "\"Is my cousin's-name flat because of you?\"",
+        "requires": {
+          "flags": [
+            "has_ikoyi_flat"
+          ]
+        },
+        "tags": [
+          "call_out"
+        ],
+        "receipt": "You asked his wife about the flat he gave you.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'A flat?' Hauwa turns to him slowly. 'You told me Lagos was expensive.' You both watch him find a new interest in the ceiling.",
+            "saw_truth": true,
+            "clout": 10,
+            "sanity": -5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bello_cf_defiant",
+    "character": "bello",
+    "slot": "confrontation",
+    "requires": {
+      "truth": [
+        "defiant_love"
+      ]
+    },
+    "scene": {
+      "location": "vi_club_vip",
+      "time": "night",
+      "expression": "suspicious",
+      "mood": "negative",
+      "partner_present": false,
+      "npc": {
+        "name": "Alhaji Sani"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "A private lounge on Ozumba Mbadiwe. Bello's uncle is waiting alone, with tea and a leather briefcase. He doesn't stand."
+      },
+      {
+        "who": "Alhaji Sani",
+        "text": "My nephew will marry who his family chooses. Here is one million naira. There are four more if you are gone by Friday."
+      },
+      {
+        "who": "narration",
+        "text": "{tell}"
+      }
+    ],
+    "tells": {
+      "defiant_love": {
+        "id": "t_def_call",
+        "text": "A phone buzzes on the table: 'Bello'. Nine missed calls. The uncle silences it without looking."
+      }
+    },
+    "choices": [
+      {
+        "id": "call_bello",
+        "label": "Push the briefcase back. Call Bello.",
+        "tags": [
+          "cautious",
+          "contact_partner"
+        ],
+        "receipt": "You refused his uncle's money and called him.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He arrives in eleven minutes, out of breath, cap crooked. He takes your hand in front of his uncle. 'Uncle. Meet the person I'm choosing.'",
+            "attachment": 15,
+            "trust": 15,
+            "sanity": 10
+          }
+        ]
+      },
+      {
+        "id": "take",
+        "label": "Take the money. A million is a million.",
+        "receipt": "You took his uncle's money.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "You take it. Bello knows by midnight. He doesn't shout. 'He told me everyone has a price. I said not you.'",
+            "wallet": 1000000,
+            "trust": -40,
+            "attachment": -15,
+            "sanity": -10
+          }
+        ]
+      },
+      {
+        "id": "record",
+        "label": "Record him secretly. Send it to the Parlour.",
+        "tags": [
+          "toxic",
+          "public_embarrassment"
+        ],
+        "receipt": "You leaked his uncle's bribe to the Parlour.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Oil family tries to buy off Lagos lover' trends by morning. His family is humiliated. So, quietly, is Bello.",
+            "clout": 30,
+            "exposure": 30
+          }
+        ]
+      },
+      {
+        "id": "why_afraid",
+        "label": "\"Why are you so afraid of me, Alhaji?\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked his uncle why he was afraid of you.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He sips his tea. 'He has never disobeyed me. Because of you, he has done it eleven times this month.' He almost smiles.",
+            "trust": 8,
+            "attachment": 6
+          }
+        ]
+      },
+      {
+        "id": "runs_ten",
+        "label": "[Runs] \"Make it ten, and I'll think about it.\"",
+        "vibe": "runs",
+        "receipt": "You haggled with his uncle.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "He pays two, smiling. You text Bello everything from the lift. He laughs: 'Keep it. It's my inheritance anyway.'",
+            "wallet": 2000000,
+            "trust": 5
+          },
+          {
+            "chance": 0.5,
+            "bad": true,
+            "text": "Bello walks in on the words 'make it ten'. He leaves without a sound.",
+            "trust": -30,
+            "attachment": -10
+          }
+        ]
+      },
+      {
+        "id": "scent",
+        "label": "\"He made me a scent. He doesn't do that for 'temporary'.\"",
+        "requires": {
+          "flags": [
+            "has_his_scent"
+          ]
+        },
+        "receipt": "You told his uncle about the scent.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The uncle leans in, sniffs once, sits back. 'Saffron and rose. His grandmother's.' He closes the briefcase. 'So it's like that.'",
+            "trust": 10,
+            "attachment": 10,
+            "sanity": 10
+          }
+        ]
+      },
+      {
+        "id": "named",
+        "label": "\"You're the Alhaji Sani he warned me about.\"",
+        "requires": {
+          "flags": [
+            "knows_uncle"
+          ]
+        },
+        "tags": [
+          "call_out"
+        ],
+        "receipt": "You told his uncle you'd been warned about him.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'He warned you?' A pause. 'Good. Then he's serious.' The uncle pours your tea himself.",
+            "trust": 8,
+            "attachment": 6
+          }
+        ]
+      },
+      {
+        "id": "aisha",
+        "label": "Call Aisha. Put her on speaker.",
+        "requires": {
+          "flags": [
+            "knows_aisha"
+          ]
+        },
+        "tags": [
+          "contact_partner"
+        ],
+        "receipt": "You put his sister on speaker with his uncle.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Aisha: 'Uncle, if you send them away, I'm not coming to my own wedding.' He puts his cup down very carefully.",
+            "trust": 10,
+            "attachment": 8,
+            "clout": 10
+          }
+        ]
+      },
+      {
+        "id": "march",
+        "label": "\"He's telling the family in March. Wait for March.\"",
+        "requires": {
+          "flags": [
+            "knows_march"
+          ]
+        },
+        "receipt": "You told his uncle to wait for March.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "The uncle studies you. 'He told you March? He told me never.' He leaves the briefcase and the bill.",
+            "trust": 10,
+            "attachment": 6
+          }
+        ]
+      },
+      {
+        "id": "lobby",
+        "label": "\"You were in that lobby, looking for my face.\"",
+        "requires": {
+          "flags": [
+            "saw_lobby"
+          ]
+        },
+        "tags": [
+          "call_out"
+        ],
+        "receipt": "You told his uncle you'd seen him hunting for you.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'And you walked out the front door to show me.' He nods slowly. 'Brave. My nephew needs brave.'",
+            "trust": 8,
+            "attachment": 8
+          }
+        ]
+      },
+      {
+        "id": "keys",
+        "label": "Show him the key tag: 'Ours, when they let us.'",
+        "requires": {
+          "flags": [
+            "has_ikoyi_flat"
+          ]
+        },
+        "receipt": "You showed his uncle the key Bello gave you.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He reads the label twice. 'His handwriting has not changed since he was nine.' He hands it back gently.",
+            "trust": 8,
+            "attachment": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bello_po_scent",
+    "character": "bello",
+    "slot": "payoff",
+    "priority": 6,
+    "requires": {
+      "flags": [
+        "has_his_scent"
+      ],
+      "not_flags": [
+        "scent_recognised"
+      ],
+      "flag_age": {
+        "flag": "has_his_scent",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "has_his_scent"
+    ],
+    "scene": {
+      "location": "lekki_salon",
+      "time": "afternoon",
+      "mood": "neutral",
+      "partner_present": false,
+      "npc": {
+        "name": "Woman in a silk hijab"
+      }
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "Admiralty Way salon. The woman in the next chair leans over and sniffs, very politely."
+      },
+      {
+        "who": "Woman in a silk hijab",
+        "text": "Sorry. That oud. Saffron, rose, a little smoke. Only one man in Lagos blends that. Bello?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "deny",
+        "label": "\"It's from a shop in Balogun.\"",
+        "tags": [
+          "discreet"
+        ],
+        "receipt": "You denied the scent was his.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She smiles like she's heard that before. 'Of course.'",
+            "set": [
+              "scent_recognised"
+            ]
+          }
+        ],
+        "truth_override": {
+          "arranged": {
+            "text": "'Of course.' She photographs her nails, and you. 'My cousin Amina will love this colour.' Amina.",
+            "sanity": -8,
+            "set": [
+              "scent_recognised"
+            ]
+          },
+          "kano_wife": {
+            "text": "'Of course. My sister Hauwa has the same one. From the same shop.' She doesn't blink.",
+            "sanity": -10,
+            "saw_truth": true,
+            "set": [
+              "scent_recognised"
+            ]
+          },
+          "defiant_love": {
+            "text": "'Of course,' she says, delighted. 'I'm Aisha. His sister. He's never made one for anyone but our mother.'",
+            "sanity": 10,
+            "trust": 4,
+            "set": [
+              "scent_recognised"
+            ]
+          }
+        }
+      },
+      {
+        "id": "admit",
+        "label": "\"Yes. He made it for me.\"",
+        "receipt": "You admitted Bello made you the scent.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "She nods slowly and says nothing else.",
+            "set": [
+              "scent_recognised"
+            ]
+          }
+        ],
+        "truth_override": {
+          "arranged": {
+            "text": "Her smile drops. 'He made you one? He bought one for Amina. Bought.' She leaves without her change.",
+            "sanity": -10,
+            "saw_truth": true,
+            "set": [
+              "scent_recognised"
+            ]
+          },
+          "kano_wife": {
+            "text": "'He made one for you. Eight years, my sister got hers from duty free.' She leaves with her nails half-done.",
+            "sanity": -15,
+            "saw_truth": true,
+            "set": [
+              "scent_recognised"
+            ]
+          },
+          "defiant_love": {
+            "text": "'Then it's serious.' She hugs you, wet nails and all. 'I'm Aisha. His sister. I've been waiting for you.'",
+            "sanity": 10,
+            "trust": 5,
+            "attachment": 5,
+            "set": [
+              "scent_recognised"
+            ]
+          }
+        }
+      },
+      {
+        "id": "how_know",
+        "label": "\"How do you know his blend?\"",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You asked how she knew his blend.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Everyone in his family knows it.'",
+            "set": [
+              "scent_recognised"
+            ]
+          }
+        ],
+        "truth_override": {
+          "arranged": {
+            "text": "'Everyone at the engagement smelled it.' Engagement. She says it like weather.",
+            "sanity": -12,
+            "saw_truth": true,
+            "set": [
+              "scent_recognised"
+            ]
+          },
+          "kano_wife": {
+            "text": "'My sister wears the other one. In Kano.' She shows you a wedding photo. It's him.",
+            "sanity": -15,
+            "saw_truth": true,
+            "set": [
+              "scent_recognised"
+            ]
+          },
+          "defiant_love": {
+            "text": "'Because I'm his sister, and I've smelled that blend once before. On our mother.'",
+            "sanity": 10,
+            "trust": 4,
+            "set": [
+              "scent_recognised"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "bello_po_post_seen",
+    "character": "bello",
+    "slot": "payoff",
+    "priority": 5,
+    "presentation": "text",
+    "requires": {
+      "knows": [
+        {
+          "flag": "secret_bello_post",
+          "who": "world"
+        }
+      ],
+      "not_flags": [
+        "post_seen"
+      ],
+      "flag_age": {
+        "flag": "secret_bello_post",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "secret_bello_post"
+    ],
+    "scene": {
+      "location": "mainland_street",
+      "time": "night",
+      "mood": "negative",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "narration",
+        "text": "A DM from an account with no picture."
+      },
+      {
+        "who": "Unknown",
+        "text": "Saw your post. I know that cuff. I know that teapot. Who are you to him?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "block",
+        "label": "Block. Delete. Pretend it's spam.",
+        "tags": [
+          "discreet",
+          "cautious"
+        ],
+        "receipt": "You blocked the stranger who knew him.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Blocked. Your hands are still shaking a little.",
+            "sanity": -5,
+            "set": [
+              "post_seen"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "who_asking",
+        "label": "\"Who's asking?\"",
+        "tags": [
+          "investigate"
+        ],
+        "receipt": "You asked the stranger who they were.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "No reply. Just 'seen'.",
+            "sanity": -3,
+            "set": [
+              "post_seen"
+            ]
+          }
+        ],
+        "truth_override": {
+          "arranged": {
+            "text": "'Amina's cousin. The bride.' Bride.",
+            "saw_truth": true,
+            "sanity": -15,
+            "set": [
+              "post_seen"
+            ]
+          },
+          "kano_wife": {
+            "text": "'I sewed that cuff. In Kano. For my husband.' Then she blocks you.",
+            "saw_truth": true,
+            "sanity": -20,
+            "set": [
+              "post_seen"
+            ]
+          },
+          "defiant_love": {
+            "text": "'His uncle's office. Alhaji would like a meeting.' A meeting. Like a contract.",
+            "sanity": -5,
+            "set": [
+              "post_seen"
+            ]
+          }
+        }
+      },
+      {
+        "id": "forward",
+        "label": "Forward it to Bello.",
+        "tags": [
+          "contact_partner"
+        ],
+        "receipt": "You forwarded the DM to Bello.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Delete your post. Please.' Then: 'I'll handle it.'",
+            "set": [
+              "post_seen"
+            ],
+            "reveal": [
+              {
+                "flag": "secret_bello_post",
+                "to": [
+                  "partner"
+                ]
+              }
+            ]
+          }
+        ],
+        "truth_override": {
+          "arranged": {
+            "text": "'Delete it. Now.' Then nothing for six hours.",
+            "sanity": -8,
+            "set": [
+              "post_seen"
+            ],
+            "reveal": [
+              {
+                "flag": "secret_bello_post",
+                "to": [
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "kano_wife": {
+            "text": "'Who sent this? Send me the account.' He doesn't ask if you're okay.",
+            "sanity": -10,
+            "set": [
+              "post_seen"
+            ],
+            "reveal": [
+              {
+                "flag": "secret_bello_post",
+                "to": [
+                  "partner"
+                ]
+              }
+            ]
+          },
+          "defiant_love": {
+            "text": "'That's my uncle's office. I'm coming over.' He arrives with tea and a plan.",
+            "trust": 8,
+            "attachment": 5,
+            "set": [
+              "post_seen"
+            ],
+            "reveal": [
+              {
+                "flag": "secret_bello_post",
+                "to": [
+                  "partner"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "bello_po_post_confront",
+    "character": "bello",
+    "slot": "payoff",
+    "priority": 6,
+    "requires": {
+      "partner_knows": [
+        "secret_bello_post"
+      ],
+      "not_flags": [
+        "post_talk"
+      ],
+      "flag_age": {
+        "flag": "secret_bello_post",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "secret_bello_post"
+    ],
+    "partner_reacts_to": [
+      "secret_bello_post"
+    ],
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "expression": "suspicious",
+      "mood": "negative"
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "You posted us. I asked for one thing. Invisible. Why?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "sorry",
+        "label": "\"I'm sorry. I wanted one person to know.\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You apologised for posting him.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He sits with that a long time. 'I know,' he says. 'I want that too.'",
+            "trust": 4,
+            "attachment": 3,
+            "set": [
+              "post_talk"
+            ]
+          }
+        ],
+        "truth_override": {
+          "defiant_love": {
+            "text": "'One person,' he repeats. 'Soon it'll be everyone. I promise.'",
+            "trust": 8,
+            "attachment": 6,
+            "set": [
+              "post_talk"
+            ]
+          }
+        }
+      },
+      {
+        "id": "say_it",
+        "label": "\"Why can't anyone know, Bello? Say it.\"",
+        "tags": [
+          "call_out"
+        ],
+        "receipt": "You demanded to know why you had to be hidden.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He opens his mouth. Closes it. 'Not tonight.'",
+            "sanity": -5,
+            "set": [
+              "post_talk"
+            ]
+          }
+        ],
+        "truth_override": {
+          "arranged": {
+            "text": "'Because in March I'm expected somewhere. And I'm a coward about it.' Honest, finally.",
+            "saw_truth": true,
+            "sanity": -10,
+            "set": [
+              "post_talk"
+            ]
+          },
+          "kano_wife": {
+            "text": "'Because some people in Kano read Lagos statuses.' He picks his words like a man crossing a river on stones.",
+            "saw_truth": true,
+            "sanity": -10,
+            "set": [
+              "post_talk"
+            ]
+          },
+          "defiant_love": {
+            "text": "'Because my uncle will come for you, and I'm not ready to lose. Give me until March.'",
+            "trust": 10,
+            "attachment": 5,
+            "set": [
+              "post_talk"
+            ]
+          }
+        }
+      },
+      {
+        "id": "again",
+        "label": "\"I'll post you again. Proudly.\"",
+        "tags": [
+          "toxic"
+        ],
+        "receipt": "You told him you'd post him again.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He stands. 'Then post an empty chair.' He leaves his tea untouched.",
+            "trust": -10,
+            "attachment": -8,
+            "clout": 10,
+            "set": [
+              "post_talk"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bello_po_account",
+    "character": "bello",
+    "slot": "payoff",
+    "priority": 6,
+    "presentation": "call",
+    "requires": {
+      "flags": [
+        "account_lent"
+      ],
+      "not_flags": [
+        "account_called"
+      ],
+      "flag_age": {
+        "flag": "account_lent",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "account_lent"
+    ],
+    "scene": {
+      "location": "mainland_street",
+      "time": "morning",
+      "mood": "negative",
+      "partner_present": false,
+      "npc": {
+        "name": "Bank compliance"
+      }
+    },
+    "beats": [
+      {
+        "who": "Bank compliance",
+        "text": "Good morning. ₦30 million passed through your account this week. We need the source of funds by Friday, or we escalate."
+      }
+    ],
+    "choices": [
+      {
+        "id": "call_bello",
+        "label": "Call Bello: \"Your money, your explanation.\"",
+        "tags": [
+          "contact_partner",
+          "cautious"
+        ],
+        "receipt": "You made Bello explain the money to your bank.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He sends a letter on company letterhead. The officer says 'okay' in a voice that isn't okay.",
+            "sanity": -5,
+            "set": [
+              "account_called"
+            ]
+          }
+        ],
+        "truth_override": {
+          "arranged": {
+            "text": "His letter, on family letterhead: 'Bride price disbursement.' The officer reads it aloud, slowly.",
+            "saw_truth": true,
+            "sanity": -10,
+            "set": [
+              "account_called"
+            ]
+          },
+          "kano_wife": {
+            "text": "His letter: 'Family support, Kano household.' Household.",
+            "saw_truth": true,
+            "sanity": -10,
+            "set": [
+              "account_called"
+            ]
+          },
+          "defiant_love": {
+            "text": "He's at the bank in an hour with lawyers and statements. 'It's mine. They were helping me.' The officer apologises to you.",
+            "trust": 10,
+            "attachment": 5,
+            "set": [
+              "account_called"
+            ]
+          }
+        }
+      },
+      {
+        "id": "lawyer",
+        "label": "Pay a lawyer to answer for you.",
+        "cost": 50000,
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You paid a lawyer to deal with the bank.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Three paragraphs later the bank closes the file. Your lawyer opens an invoice.",
+            "sanity": 5,
+            "set": [
+              "account_called"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ignore",
+        "label": "Ignore it. Banks forget.",
+        "tags": [
+          "excuse"
+        ],
+        "receipt": "You ignored the bank's compliance call.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Banks do not forget. Your card is declined at a petrol station in Ikeja. In front of a queue.",
+            "wallet": -40000,
+            "sanity": -10,
+            "set": [
+              "account_called"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bello_po_march",
+    "character": "bello",
+    "slot": "payoff",
+    "priority": 5,
+    "presentation": "voice_note",
+    "requires": {
+      "flags": [
+        "booked_march"
+      ],
+      "partner_knows": [
+        "booked_march"
+      ],
+      "not_flags": [
+        "march_answered"
+      ],
+      "flag_age": {
+        "flag": "booked_march",
+        "min": 1
+      }
+    },
+    "payoff_of": [
+      "booked_march"
+    ],
+    "partner_reacts_to": [
+      "booked_march"
+    ],
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "About the trip. March 14th. I... can we talk about the dates?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "keep",
+        "label": "\"No. March 14th. Pack light.\"",
+        "tags": [
+          "independence"
+        ],
+        "receipt": "You refused to move your March trip.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "Silence. Then: 'Okay.' It doesn't sound okay.",
+            "sanity": -3,
+            "set": [
+              "march_answered"
+            ]
+          }
+        ],
+        "truth_override": {
+          "arranged": {
+            "text": "'I can't do the 14th.' ₦500k arrives: 'Change the dates. Please. I'll explain.' He won't.",
+            "wallet": 500000,
+            "sanity": -10,
+            "set": [
+              "march_answered"
+            ]
+          },
+          "kano_wife": {
+            "text": "'I can't do March. Family in Kano.' He sends money for a solo trip. Generous. Absent.",
+            "wallet": 300000,
+            "sanity": -8,
+            "set": [
+              "march_answered"
+            ]
+          },
+          "defiant_love": {
+            "text": "A long pause. 'Okay. I'll tell my family on the 13th, then. Pack light for both of us.'",
+            "trust": 10,
+            "attachment": 10,
+            "set": [
+              "march_answered"
+            ]
+          }
+        }
+      },
+      {
+        "id": "change",
+        "label": "\"Fine. You pick the dates.\"",
+        "tags": [
+          "discreet",
+          "excuse"
+        ],
+        "receipt": "You let him move your March trip.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He picks April. 'After things settle.' Things.",
+            "attachment": 6,
+            "sanity": -5,
+            "set": [
+              "march_answered"
+            ]
+          }
+        ],
+        "truth_override": {
+          "defiant_love": {
+            "text": "He picks March 15th. 'One day to tell them. The rest of my life to tell you.' Cheesy. Devastating.",
+            "attachment": 10,
+            "trust": 6,
+            "set": [
+              "march_answered"
+            ]
+          }
+        }
+      },
+      {
+        "id": "what_happens",
+        "label": "\"What happens on March 14th, Bello?\"",
+        "tags": [
+          "cautious"
+        ],
+        "receipt": "You asked him what happens on March 14th.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Nothing you need to worry about.' Which is exactly what people say about things you need to worry about.",
+            "trust": 2,
+            "set": [
+              "march_answered"
+            ]
+          }
+        ],
+        "truth_override": {
+          "arranged": {
+            "text": "A long silence. 'A wedding,' he says. 'Not ours.'",
+            "saw_truth": true,
+            "trust": 3,
+            "sanity": -15,
+            "set": [
+              "march_answered"
+            ]
+          },
+          "kano_wife": {
+            "text": "'An anniversary. A business one.' A business anniversary.",
+            "sanity": -10,
+            "set": [
+              "march_answered"
+            ]
+          },
+          "defiant_love": {
+            "text": "'Nothing yet. That's the point. I want it to be the day I tell them about you.'",
+            "trust": 10,
+            "attachment": 6,
+            "set": [
+              "march_answered"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "bello_tt_march",
+    "character": "bello",
+    "slot": "talking_time",
+    "presentation": "voice_note",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "night",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Long day. My mother says I must be serious this year. Anyway. Plan anything you want for us. Just know I'll be in Kaduna most of March."
+      }
+    ],
+    "detail": {
+      "flag": "knows_march",
+      "missed": {
+        "chemistry": -3
+      },
+      "red_flag": true
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Noted. March is Kaduna. I'll miss you.\"",
+        "caught": true,
+        "receipt": "You caught that March is Kaduna.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'You listen,' he replies. Then: 'Few people do.'",
+            "attachment": 3,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "serious",
+        "label": "\"Serious about what, exactly? 👀\"",
+        "receipt": "You asked what 'serious' meant.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "A laughing emoji, then nothing. A man dodging a question in emoji.",
+            "attachment": 2
+          }
+        ]
+      },
+      {
+        "id": "kilishi",
+        "label": "\"Kaduna? Bring me kilishi.\"",
+        "receipt": "You asked him for kilishi.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "His driver drops three kilos of kilishi at your gate. No note. Love language: dried meat.",
+            "attachment": 3,
+            "sanity": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bello_tt_uncle",
+    "character": "bello",
+    "slot": "talking_time",
+    "presentation": "text",
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "night",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Sorry I missed your call. My uncle again. He runs the family like a board meeting with no minutes. If an Alhaji Sani ever calls you, don't pick."
+      }
+    ],
+    "detail": {
+      "flag": "knows_uncle",
+      "missed": {
+        "chemistry": -2
+      }
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Alhaji Sani. Blocked in advance.\"",
+        "caught": true,
+        "receipt": "You caught his uncle's name.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Good.' A pause. 'He's not a bad man. He just thinks he owns the weather.'",
+            "attachment": 2,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "why_call",
+        "label": "\"Why would your uncle call me?\"",
+        "receipt": "You asked why his uncle would call you.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'He wouldn't. Probably.' Probably.",
+            "sanity": -2
+          }
+        ]
+      },
+      {
+        "id": "minutes",
+        "label": "\"Board meeting? Send me minutes and money.\"",
+        "receipt": "You asked him for minutes and money.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "₦30k. 'Minutes to follow.' They never do.",
+            "wallet": 30000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bello_tt_fridays",
+    "character": "bello",
+    "slot": "talking_time",
+    "presentation": "text",
+    "scene": {
+      "location": "vi_club_vip",
+      "time": "golden",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Can't do this Friday. Or the one after next. Every other Friday I take the 6:40 to Kano. Business, family, you know how it is."
+      }
+    ],
+    "detail": {
+      "flag": "knows_fridays",
+      "missed": {
+        "sanity": -3
+      },
+      "red_flag": true
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"6:40 to Kano, every other Friday. Noted.\"",
+        "caught": true,
+        "receipt": "You caught his Kano Fridays.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'You're very precise,' he says. You are.",
+            "attachment": 2,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "kaftan",
+        "label": "\"Bring me back a kaftan.\"",
+        "receipt": "You asked for a kaftan from Kano.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "He brings two. Hand-embroidered. Your tailor weeps.",
+            "attachment": 3,
+            "chemistry": 2
+          }
+        ]
+      },
+      {
+        "id": "which_family",
+        "label": "\"Which family, Bello?\"",
+        "receipt": "You asked him which family.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "A voice note of him laughing. Only laughing.",
+            "attachment": -2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bello_tt_aisha",
+    "character": "bello",
+    "slot": "talking_time",
+    "presentation": "voice_note",
+    "scene": {
+      "location": "luxury_apartment",
+      "time": "morning",
+      "mood": "positive",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Good morning. My sister Aisha is the only one in my family who knows about you. If she ever calls, she's safe. She's the only one who is."
+      }
+    ],
+    "detail": {
+      "flag": "knows_aisha",
+      "missed": {
+        "chemistry": -3
+      }
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Aisha is safe. Saving her number.\"",
+        "caught": true,
+        "receipt": "You caught that Aisha is safe.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'She'll like you,' he says. 'She likes trouble.'",
+            "attachment": 3,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "only_one",
+        "label": "\"Only one? Why only one?\"",
+        "receipt": "You asked why only his sister knows.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Because the others would have opinions.' Opinions is doing a lot of work.",
+            "sanity": -2
+          }
+        ]
+      },
+      {
+        "id": "stylist",
+        "label": "\"Tell Aisha I need her stylist.\"",
+        "receipt": "You asked for his sister's stylist.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "A stranger's voice note: 'Who is this?' Then a stylist's number. Family bonding.",
+            "chemistry": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bello_tt_tuwo",
+    "character": "bello",
+    "slot": "talking_time",
+    "presentation": "text",
+    "scene": {
+      "location": "ikoyi_restaurant",
+      "time": "night",
+      "mood": "neutral",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Twelve courses tonight and nothing tastes like home. My mother's tuwo shinkafa and miyan kuka. Nobody in Lagos gets it right."
+      }
+    ],
+    "detail": {
+      "flag": "knows_tuwo",
+      "missed": {
+        "chemistry": -3
+      }
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"Tuwo shinkafa and miyan kuka. Challenge accepted.\"",
+        "caught": true,
+        "receipt": "You caught his favourite meal.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Don't threaten me with a good time.'",
+            "attachment": 3,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "pack",
+        "label": "\"Twelve courses?? Pack some for me.\"",
+        "receipt": "You asked him to pack you leftovers.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "His aide drops four takeaway boxes at your gate. Tiny portions. Enormous plates.",
+            "attachment": 2
+          }
+        ]
+      },
+      {
+        "id": "noodles",
+        "label": "Send a photo of your noodles.",
+        "receipt": "You sent him your noodles.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Is this what you eat?' ₦20k arrives: 'Food. Real food.'",
+            "wallet": 20000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bello_tt_tea",
+    "character": "bello",
+    "slot": "talking_time",
+    "presentation": "voice_note",
+    "scene": {
+      "location": "vi_club_vip",
+      "time": "night",
+      "mood": "positive",
+      "partner_present": false
+    },
+    "beats": [
+      {
+        "who": "partner",
+        "text": "Lagos is loud. If you ever need me, don't call. Calls get seen. Send one word: 'Tea.' I'll find a way."
+      }
+    ],
+    "detail": {
+      "flag": "knows_tea",
+      "missed": {
+        "chemistry": -3
+      }
+    },
+    "choices": [
+      {
+        "id": "noted",
+        "label": "\"One word. Tea. Got it.\"",
+        "caught": true,
+        "receipt": "You caught his one-word signal.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Good,' he says. 'I've never given anyone that word.'",
+            "attachment": 3,
+            "trust": 4
+          }
+        ]
+      },
+      {
+        "id": "normal",
+        "label": "\"Why can't I just call like a normal person?\"",
+        "receipt": "You asked why you can't just call.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "'Because nothing about this is normal yet.' Yet.",
+            "sanity": -2
+          }
+        ]
+      },
+      {
+        "id": "zobo",
+        "label": "\"Tea? I prefer zobo.\"",
+        "receipt": "You told him you prefer zobo.",
+        "outcomes": [
+          {
+            "chance": 1,
+            "text": "A crate of zobo arrives with a note: 'Fine. Zobo.' Romance, Hausa edition.",
+            "attachment": 2
+          }
+        ]
+      }
+    ]
+  }
+]

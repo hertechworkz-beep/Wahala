@@ -1,0 +1,100 @@
+{
+  "id": "ovie",
+  "cold_open": {
+    "duration": 16,
+    "scene": { "location": "mainland_street", "time": "night", "expression": "charming", "mood": "neutral", "fx": ["generator"] },
+    "phone": [
+      { "at": 3, "kind": "missed_call", "from": "Unknown number", "text": "3 missed calls" },
+      { "at": 5, "kind": "text", "from": "Unknown number", "text": "You reach house? - O" }
+    ],
+    "beats": [
+      { "at": 0.5, "who": "narration", "text": "Ojuelegba, 11pm. You met him once, at a friend's birthday, for eleven minutes. Gold chain. Loud laugh." },
+      { "at": 6.5, "who": "narration", "text": "You never gave him your number." },
+      { "at": 9, "who": "partner", "text": "No vex. I get my ways. Lagos no safe for person like you. Tomorrow, 7pm. I go send car." },
+      { "at": 13, "who": "narration", "text": "Across the road, an okada man in a red helmet hasn't moved in twenty minutes." }
+    ]
+  },
+  "vibe_start": {
+    "lover": { "attachment": 55, "trust": 50, "line": "'You be my person now. No shaking.'" },
+    "sugar": { "attachment": 45, "trust": 35, "line": "'Money no be problem. Disrespect na problem.'" },
+    "bigboy": { "attachment": 38, "trust": 32, "line": "'Who you be sef? Talk am.'" },
+    "runs": { "attachment": 45, "trust": 32, "line": "'I sabi your type. I still like you.'" },
+    "corporate": { "attachment": 45, "trust": 55, "line": "'Office person. Good. You go dey house by 6.'" }
+  },
+  "chemistry_leaks": [
+    { "match": "build", "text": "He looks you up and down and nods like a man approving a shipment. 'Strong. I like strong.'" },
+    { "match": "hair", "text": "'Who do your hair? Give me her number. I wan pay her bonus.'" },
+    { "match": "style", "text": "'This your style get Warri energy. You sure say you no be my village person?'" },
+    { "match": "none", "text": "He squints at your outfit. 'Na Lagos dey dress you like this? We go fix am.'" },
+    { "match": "spark", "text": "He forgets to check his phone for a whole hour. One of his boys texts him to ask if he's alive." }
+  ],
+  "endings": {
+    "locked_in": {
+      "title": "Warri Wins",
+      "text": "He introduced you to his mama on video call. She asked about your cooking first and your family second. The boys salute you now. On Sundays, you wear the chain.",
+      "scene": { "location": "ikoyi_restaurant", "time": "night", "expression": "charming", "mood": "positive" },
+      "truths": {
+        "controlling": {
+          "title": "Locked In, On His Terms",
+          "text": "Locked In. Your location is always on. The boys know your schedule better than your boss does. He calls it love. Your bestie calls it something else, and keeps her phone on for you, just in case."
+        },
+        "baby_mamas": {
+          "title": "Locked In, Plus Group Chat",
+          "text": "Locked In. You, Ese, Precious and a WhatsApp group called 'Ovie Matters'. School runs on rotation. He's loyal now. To all of you, on a schedule."
+        },
+        "loyal": {
+          "title": "The Most Loyal Man in Lagos",
+          "text": "He took you to Warri for Christmas. His mama fed you until you couldn't stand. On the drive back, nobody followed. 'Godspower don settle,' he said. 'Now only me go dey look out for you. And only if you allow.' You allowed."
+        }
+      }
+    },
+    "counter_con": {
+      "title": "Supply and Demand",
+      "text": "You held his bag, sold his phone and walked away with the difference. In Warri they call it business. In Lagos they call it Tuesday.",
+      "scene": { "location": "luxury_apartment", "time": "morning", "expression": "caught", "mood": "neutral" }
+    },
+    "survived": {
+      "title": "Still Under Watch",
+      "text": "Day 7. Still together. Still a red helmet across the road. You're not sure if it's protection or a report.",
+      "scene": { "location": "mainland_street", "time": "night", "expression": "charming", "mood": "neutral" },
+      "truths": {
+        "loyal": { "text": "Day 7. Still together. The red helmet across the road waves at you now. You wave back. Small progress." }
+      }
+    },
+    "scandal": {
+      "title": "Warri vs The Internet",
+      "text": "The lounge fight, the boys, the receipts. You're a meme with his face in it. He's offering to 'settle' the bloggers. Please don't let him.",
+      "scene": { "location": "vi_club_vip", "time": "night", "expression": "angry", "mood": "negative" }
+    },
+    "sapa": {
+      "title": "Cash Only, None Left",
+      "text": "He paid in cash. You paid in transfers. When the nylon bag stopped coming, so did your rent.",
+      "scene": { "location": "mainland_street", "time": "night", "expression": "suspicious", "mood": "negative", "partner_present": false }
+    },
+    "breakdown": {
+      "title": "Twelve Missed Calls",
+      "text": "You flinch every time your phone rings. An okada man in a green helmet asked if you were okay. You weren't. He bought you a cold malt anyway.",
+      "scene": { "location": "mainland_street", "time": "afternoon", "mood": "negative", "partner_present": false }
+    },
+    "ghosted": {
+      "title": "Off the Radar",
+      "text": "He stopped calling. The boys stopped watching. For the first time in weeks, nobody knows where you are. It feels like silence. It also feels like air.",
+      "scene": { "location": "mainland_street", "time": "night", "expression": "suspicious", "mood": "negative", "partner_present": false }
+    },
+    "fumbled": {
+      "title": "You Fought the Wrong Man",
+      "text": "He was guarding you from a real threat. You posted his boys as stalkers. He still sent them to watch your street one last week, and never told you.",
+      "scene": { "location": "mainland_street", "time": "night", "mood": "negative", "partner_present": false }
+    },
+    "obsession": {
+      "title": "Obsession",
+      "text": "You stopped going to work because his boys were always there. You stopped seeing friends because he asked who they were. Your phone, your keys and your days are his now. You told yourself it was love. It isn't. Control isn't love, and you can still tell someone.",
+      "scene": { "location": "luxury_apartment", "time": "night", "expression": "suspicious", "mood": "negative" }
+    },
+    "walked_away": {
+      "title": "Walked Away",
+      "text": "You left the chain, the cash and the red helmet behind. New number, new route, new locks. Your sister in Ibadan made pepper soup. It tasted like freedom.",
+      "scene": { "location": "mainland_street", "time": "golden", "mood": "neutral", "partner_present": false }
+    }
+  }
+}

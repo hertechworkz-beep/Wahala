@@ -1,0 +1,91 @@
+{
+  "id": "bello",
+  "cold_open": {
+    "duration": 17,
+    "scene": { "location": "vi_club_vip", "time": "night", "expression": "charming", "mood": "neutral" },
+    "phone": [{ "at": 1.5, "kind": "text", "from": "Unknown number", "text": "Mr Bello requests your company. Ozumba Mbadiwe, 9pm. No sign on the door. Come alone. Tell no one. - A." }],
+    "beats": [
+      { "at": 0.5, "who": "narration", "text": "9:00pm. A door with no sign. A man in a dark suit opens it before you knock." },
+      { "at": 5, "who": "narration", "text": "Oud smoke. One lamp. A tall man in a cream kaftan stands up. The whole lounge is empty. He booked all of it." },
+      { "at": 9.5, "who": "partner", "text": "Forgive the secrecy. In my family, everything is somebody's business. I wanted one thing that was only mine." },
+      { "at": 14, "who": "narration", "text": "His phone buzzes face down on the table. Once. Twice. He doesn't turn it over. Not once, all night." }
+    ]
+  },
+  "chemistry_leaks": [
+    { "match": "style", "text": "He touches your sleeve like a tailor. 'Who made this? My mother would approve. That's dangerous.'" },
+    { "match": "hair", "text": "'Your hair,' he says, and then forgets the rest of the sentence." },
+    { "match": "build", "text": "He stands when you stand. Every single time. His aide starts counting." },
+    { "match": "none", "text": "He's polite. Very polite. The kind of polite that is also a locked door." },
+    { "match": "spark", "text": "He laughs out loud, then looks around the empty lounge like someone might have heard." }
+  ],
+  "endings": {
+    "locked_in": {
+      "title": "Seen, Finally",
+      "text": "He held your hand on Awolowo Road in broad daylight. No kitchen exits. His sister posted the photo before he could stop her. He didn't try.",
+      "scene": { "location": "ikoyi_restaurant", "time": "night", "expression": "charming", "mood": "positive" },
+      "truths": {
+        "arranged": {
+          "title": "The Lagos Secret",
+          "text": "Locked In, quietly. The wedding still happens in March. He calls you from the reception toilet: 'Nothing changes.' Everything has."
+        },
+        "kano_wife": {
+          "title": "The Lagos Chapter",
+          "text": "Locked In, as the Lagos chapter. Every other Friday he flies to Kano. Every other Sunday he flies back to you, smelling of someone else's incense."
+        },
+        "defiant_love": {
+          "title": "Chosen, Out Loud",
+          "text": "He told his uncle in front of the whole family. He lost a board seat and a share of everything. He walked out with your hand, his sister and his grandmother's oud recipe. 'I'm poorer,' he said. 'I've never been richer.'"
+        }
+      }
+    },
+    "counter_con": {
+      "title": "The Silent Partner",
+      "text": "He paid for your silence in instalments. You kept the receipts, the scent and the photo. He's still invisible. Your account isn't.",
+      "scene": { "location": "vi_club_vip", "time": "night", "expression": "caught", "mood": "neutral" }
+    },
+    "survived": {
+      "title": "Still Invisible",
+      "text": "Day 7, unseen. He sends tea to your gate every morning. Nobody knows about you two. Some days, not even you.",
+      "scene": { "location": "luxury_apartment", "time": "night", "expression": "charming", "mood": "neutral" },
+      "truths": {
+        "arranged": { "text": "Day 7. Tea at your gate every morning. In March it will come from Kaduna, with an apology folded inside." },
+        "kano_wife": { "text": "Day 7. Every other Friday he's gone. Every other Monday there's tea at your gate. A timetable, not a relationship." }
+      }
+    },
+    "scandal": {
+      "title": "Blind Item, Named",
+      "text": "The Parlour put your name on the blind item. His family's lawyers put his name back in the dark. Only one of you is still on the front page.",
+      "scene": { "location": "mainland_street", "time": "afternoon", "expression": "angry", "mood": "negative" }
+    },
+    "sapa": {
+      "title": "Kept, Then Cut",
+      "text": "The flat was in your cousin's name. The money was in his. When he went quiet, so did your account.",
+      "scene": { "location": "mainland_street", "time": "night", "expression": "suspicious", "mood": "negative", "partner_present": false }
+    },
+    "breakdown": {
+      "title": "Lost in the Oud",
+      "text": "You can't walk past a perfume stall without crying. The mallam at the suya stand in Yaba gave you free suya and a long, kind silence.",
+      "scene": { "location": "mainland_street", "time": "night", "mood": "negative", "partner_present": false }
+    },
+    "ghosted": {
+      "title": "Disappeared, Politely",
+      "text": "He didn't block you. He just stopped existing, the way he always taught you to. The lounge with no sign says he cancelled his membership.",
+      "scene": { "location": "vi_club_vip", "time": "night", "expression": "suspicious", "mood": "negative", "partner_present": false }
+    },
+    "fumbled": {
+      "title": "You Lit Up the Secret",
+      "text": "He was ready to choose you in front of everyone. You chose the Parlour first. His uncle sent you a thank-you note.",
+      "scene": { "location": "luxury_apartment", "time": "night", "expression": "angry", "mood": "negative" }
+    },
+    "obsession": {
+      "title": "Obsession",
+      "text": "You stopped going out so you'd be free when he called. You stopped telling friends where you were. Being hidden became the whole relationship, and then it became your whole life.",
+      "scene": { "location": "luxury_apartment", "time": "night", "expression": "suspicious", "mood": "negative" }
+    },
+    "walked_away": {
+      "title": "Out the Front Door",
+      "text": "No kitchen exits for you. You walked out the front, into daylight, and let the whole of Ikoyi watch you go.",
+      "scene": { "location": "mainland_street", "time": "golden", "mood": "neutral", "partner_present": false }
+    }
+  }
+}

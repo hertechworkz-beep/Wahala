@@ -29,6 +29,36 @@
       "walked_away": 0.1622
     }
   },
+  "bello": {
+    "runs": 5000,
+    "endings": {
+      "locked_in": 0.1118,
+      "counter_con": 0.0116,
+      "survived": 0.6422,
+      "scandal": 0.0092,
+      "sapa": 0.0302,
+      "breakdown": 0.0176,
+      "ghosted": 0.01,
+      "fumbled": 0.0358,
+      "obsession": 0,
+      "walked_away": 0.1316
+    }
+  },
+  "ovie": {
+    "runs": 5000,
+    "endings": {
+      "locked_in": 0.074,
+      "counter_con": 0.024,
+      "survived": 0.5846,
+      "scandal": 0.0032,
+      "sapa": 0.02,
+      "breakdown": 0.0424,
+      "ghosted": 0.0508,
+      "fumbled": 0.037,
+      "obsession": 0.0052,
+      "walked_away": 0.1588
+    }
+  },
   "osaze": {
     "runs": 5000,
     "endings": {

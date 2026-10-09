@@ -1,5 +1,48 @@
 # Build status · October 9, 2026
 
+## Update: full roster (brief sections from "Roster addition" onward)
+
+All 11 launch characters pass the launch gate: Chief Emeka, Kayode, Bello, Ovie, Osaze, Tiwa, Adaeze, Zainab, Blessing, Mercy and Madam Folake.
+
+- **Decks:** each has a 25 to 30 card deck, a 10 to 20 second cold open, all 10 endings with per-truth Locked In text, and a lesson for every hidden truth. Ovie and Madam Folake are controlling, so each has 4 control escalations with real exits.
+- **Chief:**
+  - he is 59, and his flawed truths carry the polygamous household
+  - the polygamy surfaces only in the story: a family WhatsApp red flag, then a first-wife summons
+  - Locked In reads "Wife Number Three", or "The Only One" on the divorced run
+- **Setup:** follows the brief's order (age gate, create your avatar, who you date, vibe and goal, pick your date, cold open).
+  - The age gate uses the brief's wording.
+  - The under-18 path collects nothing; the e2e script checks it has no inputs.
+  - The avatar has 12 skin tones, plus men's hair, facial hair and five styles.
+  - Branding reads "Wahala: Lagos" with an 18+ badge.
+- **Merchant fields** sit on every brand slot and catalog item (8 venues, outfits, gifts).
+- **Balance gate:** deliberate play reaches Locked In on at least 20 of 40 seeds for every vibe and every character. It's enforced by a test; the lowest current figure is 27/40 (Ovie as Big Boy).
+- **Tests:** 70/70 pass, and validation passes for 11/11. The Chief e2e run has no page errors.
+- **Preview:** a private claude.ai link, built with hash routing (`npm run build:preview`). Vercel needs `VERCEL_TOKEN`; then run `npm run deploy:preview`.
+
+Random-play ending rates (5,000 runs per character, from `npm run simulate`):
+
+| Character | Locked In | Walked Away | Survived |
+| --- | --- | --- | --- |
+| Chief Emeka | 4.3% | 3.5% | 71.2% |
+| Kayode | 19.3% | 16.2% | 52.4% |
+| Bello | 11.2% | 13.2% | 64.2% |
+| Ovie | 7.4% | 15.9% | 58.5% |
+| Osaze | 15.7% | 14.2% | 56.8% |
+| Tiwa | 13.4% | 18.0% | 55.1% |
+| Adaeze | 8.2% | 19.8% | 51.4% |
+| Zainab | 7.9% | 19.1% | 52.7% |
+| Blessing | 15.0% | 16.0% | 47.7% |
+| Mercy | 14.8% | 20.5% | 50.3% |
+| Madam Folake | 9.7% | 28.3% | 41.1% |
+
+Open balance questions:
+- Chief is much harder to Lock In with than the rest.
+- The new characters end in Walked Away far more often, because their confrontation cards include a "leave".
+- Some of their car scenes reuse Chief's Prado backdrop; there is no neutral car location yet.
+
+---
+
+
 The repo was empty when the build started (no commits, no remote branches), so there was no prior work to preserve. Everything below was built and tested in this session.
 
 ## What works
@@ -61,7 +104,7 @@ The repo was empty when the build started (no commits, no remote branches), so t
 
 ## Unfinished (honest list)
 
-1. **The other 9 characters' decks** (build step 8). Their public cards, truths, tells, Taste, Temperament and behaviour rules are in `characters.json`, but they stay locked by the launch gate until their decks pass validation.
+1. ~~The other characters' decks (build step 8).~~ Done: see the update above.
 2. **Backend is not live.** The schema, RLS and Paystack verification function are written (`supabase/`) but not deployed. The game runs on `LocalBackend`:
    - payments are off; the Bail-Out and Clue Pass screens explain why
    - there are no live counters
