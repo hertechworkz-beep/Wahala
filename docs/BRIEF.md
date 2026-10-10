@@ -818,3 +818,9 @@ Code alone can only draw shapes. Living characters need 3D models with rigs and 
 3. **Restaurant:** you walk in past diners and waiters, choose a table by tapping it, walk there and sit. Chief walks in, greets you, sits. You both raise a glass. Music, chatter and cutlery sounds.
 
 Then stop and send a preview link plus a screen recording. Acceptance: the creator plays it on her phone and feels it's a living world. Only after she approves does the rest of the date (briefcase, phone, Wife Escape) get rebuilt in 3D, followed by the Live City.
+
+### Proof scene standard (creator's instruction, binding)
+
+The 3D proof must be genuinely playable on a mobile phone. I must be able to control my avatar, move around the apartment and restaurant, interact physically with objects, see natural character animations and hear spoken dialogue. Do not replace these requirements with camera pans, still images, floating objects, text descriptions or buttons that merely announce an action. Use suitable licensed 3D assets and animations, and explain any limitations before building. The objective is to demonstrate a living dating simulation, not another visual novel presented in 3D.
+
+Specifically: the avatar walks naturally, turns, approaches objects and interacts with them; a chosen bag is held in the hand; sitting aligns body and chair; Chief's hand grips his glass; Chief looks like the mature, wealthy Nigerian man already established (not a young generic model in traditional clothes); Chief greets the player audibly and the conversation is heard. Aim for a convincing result now by customising ready-made models and adapting animations, not by accepting generic characters because they're free.
