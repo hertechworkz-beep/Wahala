@@ -96,7 +96,7 @@ export function armchair(seatTop: number, color = '#2b1b14') {
   box(0.16, 0.34, D, 0.07, leather, -W / 2 + 0.08, baseH + 0.12, 0); // arms
   box(0.16, 0.34, D, 0.07, leather, W / 2 - 0.08, baseH + 0.12, 0);
   for (const [x, z] of [[-0.36, -0.34], [0.36, -0.34], [-0.36, 0.34], [0.36, 0.34]]) box(0.06, 0.08, 0.06, 0.02, wood, x, 0.04, z);
-  g.userData.seatLocal = new THREE.Vector3(0, seatTop, 0.06);
+  g.userData.seatLocal = new THREE.Vector3(0, seatTop, -0.06);
   return g;
 }
 

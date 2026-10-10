@@ -151,7 +151,7 @@ export async function startChiefStage(canvas: HTMLCanvasElement, ev: StageEvents
       if (chief.held === glass) return chief.sip();
       const spot = new THREE.Vector3(0.55, 0, -0.72);
       chief.walkTo(spot, () => {
-        chief.after(0.1, () => chief.hold(glass));
+        chief.face(glass.getWorldPosition(new THREE.Vector3()), () => chief.after(0.1, () => chief.hold(glass)));
         ev.onHint?.('Tap the glass again to drink. Tap Chief to toast.');
       });
       showMarker(spot);

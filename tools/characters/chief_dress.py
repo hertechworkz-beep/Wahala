@@ -3,7 +3,7 @@ import sys, os, math, bpy, bmesh, random
 import numpy as np
 from mathutils import Vector, Matrix
 from mathutils.bvhtree import BVHTree
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.dirname(__file__))
 from dresslib import *
 
 src, out = sys.argv[-2], sys.argv[-1]
@@ -340,7 +340,7 @@ skirt = bpy.data.objects.new('chief_skirt', sk_me); bpy.context.collection.objec
 for f in sk_me.polygons:
     f.use_smooth = True
 # Skirt weights: pelvis at the waist, blending into each thigh by side, so the hem swings with the legs.
-for n in ('pelvis', 'thigh_l', 'thigh_r'):
+for n in ('pelvis', 'thigh_l', 'thigh_r', 'calf_l', 'calf_r'):
     skirt.vertex_groups.new(name=n)
 SKIRT_CY = sum(v.co.y for v in sk_me.vertices) / len(sk_me.vertices)
 for v in sk_me.vertices:
@@ -350,9 +350,15 @@ for v in sk_me.vertices:
     front = 1 / (1 + math.exp((v.co.y - SKIRT_CY) / 0.025))  # 1 at the front (−y): lies over the lap when seated
     centre = math.exp(-(v.co.x / 0.07) ** 2)
     legs = (1 - wp) * (0.12 + 0.88 * front) * (1 - 0.65 * centre)
+    # below the knee, the front of the hem hangs from the shins (so it falls when seated)
+    below = min(1.0, max(0.0, (KNEE + 0.02 - v.co.z) / 0.12)) * front
+    shin = legs * below * 0.8
+    legs_t = legs - shin
     skirt.vertex_groups['pelvis'].add([v.index], 1 - legs, 'REPLACE')
-    skirt.vertex_groups['thigh_l'].add([v.index], legs * side, 'REPLACE')
-    skirt.vertex_groups['thigh_r'].add([v.index], legs * (1 - side), 'REPLACE')
+    skirt.vertex_groups['thigh_l'].add([v.index], legs_t * side, 'REPLACE')
+    skirt.vertex_groups['thigh_r'].add([v.index], legs_t * (1 - side), 'REPLACE')
+    skirt.vertex_groups['calf_l'].add([v.index], shin * side, 'REPLACE')
+    skirt.vertex_groups['calf_r'].add([v.index], shin * (1 - side), 'REPLACE')
 skirt.parent = RIG
 am = skirt.modifiers.new('Armature', 'ARMATURE'); am.object = RIG
 

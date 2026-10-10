@@ -218,6 +218,7 @@ export class Character {
     const dur = this.full['stand_up'].getClip().duration;
     this.busyUntil = this.clock + dur;
     this.after(dur - 0.2, () => {
+      this.busyUntil = 0;
       // bake where the hips walked to into the character's position, then stand idle
       const e = this.pelvisAt.standEnd, i = this.pelvisAt.idle;
       this.root.position.add(new THREE.Vector3(e.x - i.x, 0, e.z - i.z).applyAxisAngle(new THREE.Vector3(0, 1, 0), this.root.rotation.y));
@@ -230,6 +231,17 @@ export class Character {
   private timers: { at: number; fn: () => void }[] = [];
   after(sec: number, fn: () => void) {
     this.timers.push({ at: this.clock + sec, fn });
+  }
+
+  /** Turn on the spot to face a point, then continue. */
+  face(p: THREE.Vector3, then?: () => void) {
+    const want = Math.atan2(p.x - this.root.position.x, p.z - this.root.position.z);
+    this.faceTo = want;
+    const wait = () => {
+      if (this.faceTo !== null) return void this.after(0.05, wait);
+      then?.();
+    };
+    wait();
   }
 
   wave() {
