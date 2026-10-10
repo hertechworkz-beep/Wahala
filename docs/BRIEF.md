@@ -737,3 +737,84 @@ Wahala is a living city, not a sequence of scenes. Between and around the story'
 7. **Tech:** a 2D game engine suited to the browser (for example PixiJS or Phaser) for the city and Spots, sharing state with the existing story engine; Supabase Realtime for player presence. Performance first on mid-range Android phones.
 
 **Build order (revised):** (1) Chief's first date as a playable scene with the Wife Escape set piece; (2) the Live City (VI, Ikoyi, Lekki) with your avatar moving, your home and travel; (3) Live Spots inside the city with real players, voice and text; (4) then more characters.
+
+## Wahala World: the dating world design (direction for Live City and Live Spots; build after the first date passes)
+
+**Identity:** Wahala is a living virtual dating world. Lagos Life is a life simulator where dating is one activity; in Wahala, every place, activity and system exists for love, attraction, relationships and drama. Work, shopping and transport appear only where they feed dating.
+
+### Two kinds of dating, one avatar, one city
+
+1. **Fictional dating (the drama):** Chief Emeka and the roster, with hidden truths, set pieces and Verdict Cards.
+2. **Real-player dating (the unexpected):** real players meet through avatars, talk, flirt, go on dates, and become friends, rivals or virtual couples. Nothing scripted.
+3. **Collisions:** Chief texts while you're flirting at the lounge; your real friends react; someone says they dated a completely different Chief.
+
+### Status and privacy (overrides the earlier "Dating Chief · Day 4" badge)
+
+Players choose their visible status: Single, Open to Dates, Taken (virtual), Here for Friends, or Private. Fictional romances stay private unless the player shares them. Usernames and avatars only; no real-world identity required.
+
+### Where you meet decides who you meet
+
+Each venue has its own crowd of NPC regulars, its own activities, and its own kind of romance. Appearances can deceive (the hotel "billionaire" who isn't paying for his room).
+
+| Venue (real Lagos place) | Crowd | What you do there |
+| --- | --- | --- |
+| Dating lounge, Ozumba Mbadiwe, Victoria Island (the heartbeat) | Everyone looking | Mingle, dance, buy drinks, private booths by mutual consent, Speed Dating Nights, Wahala Table |
+| Five-star hotel rooftop, Victoria Island | Money, or people pretending | Cocktails, business mixers, "I'll fly you to Dubai" |
+| Gym, Lekki Phase 1 | Fitness regulars | Morning classes, partner workout challenges |
+| Book café, Yaba | Readers, students, creatives | Book chats, quiz nights; conversation before looks |
+| Cinema, Lekki | Casual daters, couples | Movie dates, pick seats, react together, talk after |
+| Elegushi Beach | Relaxed, group outings | Sunset walks, beach games, bonfire nights |
+
+Launch with the lounge plus at least 3 others; add more (art gallery, owambe weddings, church singles fellowship, supermarket, comedy night) as data and art.
+
+### Real-player dating features
+
+1. **Date invitations:** choose place, activity and transport; the other player accepts, declines or suggests another place. Then both go and do it together.
+2. **Couples' date nights and double dates:** dress up, reserve a table, order, dance, exchange gifts (game money), take virtual photos.
+3. **Signature experiences:** Speed Dating Nights (3-minute rotations, private mutual-match reveal); Blind Date Reveal (talk first, both must agree to reveal full profiles); the Wahala Table (group game debating relationship dilemmas, voting by voice or tap); the AI Bestie as matchmaker (suggests events and opted-in players, with questionable advice); the Relationship Diary (first meeting, favourite places, photos, funny moments).
+4. **Depth:** dating and outings first. A shared home for couples is a later chapter.
+
+### Real features that work inside the game
+
+If a player orders a taxi, a taxi arrives and the trip is animated with a fare; if they reserve a table, they can sit there together. Later, selected features can connect to real businesses, always clearly separated from game money.
+
+### Consent and safety (required)
+
+Real-player romance is optional and consensual. Private booths, voice calls and dates require mutual acceptance. Blocking ends all contact and visibility. No following after a block, no sharing personal information, phone numbers or links. Reporting and moderation operate from launch.
+
+## Live City in premium stylized 3D (overrides "2D city map" and PixiJS in Live City)
+
+Lagos Life uses simple blocky 3D (cars on streets, Chase/Side/Inside camera views, live cab rides, time, mood, money, players online). Wahala must be clearly more premium.
+
+1. **Look:** smooth, stylish, premium 3D (not blocky, not voxel): soft lighting, real day and night cycles, rain and NEPA blackouts, reflections on wet roads at night, Lagos details (danfos, okadas, kiosks, billboards, palm trees, the Link Bridge lights). Same colour identity as the brief (black, red, gold, emerald).
+2. **Engine:** Three.js (or Babylon.js) in the browser, PWA, tuned for mid-range Android phones (level-of-detail, reduced effects on weak devices, fast first load with progressive asset streaming).
+3. **Your avatar in 3D:** walks, runs, sits, dances, waves, hugs, with the same customisation as the avatar builder (12+ skin tones, body types, hair, facial hair, outfits). Smooth animations, not stiff.
+4. **Camera:** follow-cam while walking; Chase, Side and Inside views for rides; cinematic cameras for set pieces.
+5. **Rides:** order a taxi, danfo or okada; the vehicle arrives; ride in real time through the 3D city with Skip and Turn back options; fares in game money.
+6. **Spots and venues** are 3D interiors (the dating lounge, hotel rooftop, gym, book café, cinema, beach) where real players' avatars move, sit together, dance and talk.
+7. **Story moments stay cinematic:** Chief's close-ups, expressions and dramatic beats use the illustrated character art as cutscene overlays inside the 3D world. Set pieces (Wife Escape, Okada Dash) play in 3D.
+8. **Art source:** Claude Code builds the engine and systems; 3D models are art assets. For the prototype, use licensed stylized 3D character and city asset packs (glTF), recoloured and customised for Nigerian skin tones, hair and fashion; keep every model swappable so commissioned Wahala-made 3D art can replace them later. List exactly which packs you use and their licences.
+9. **HUD:** time of day, mood, Wallet, players online, the phone, and a clean-screen toggle, styled to the brief (premium, not cluttered).
+
+## Playtest 2 verdict and 3D proof scene (TOP PRIORITY; overrides 2D scene presentation everywhere)
+
+**Creator's playtest of the new first date:** "It is still options to click and text to read. The avatar is a stick figure; the bag doesn't sit in her hand; the restaurant is circles on a floor plan; nothing moves, nobody talks. I wanted a living world: my avatar walking, sitting, raising a glass, the car actually driving, booking a ride and it arriving." The 2D approach is rejected. Wahala moves to real-time 3D now, including the first date.
+
+### Why it looked like this, and the fix
+
+Code alone can only draw shapes. Living characters need 3D models with rigs and animation files. Use ready-made, properly licensed assets now; commissioned Wahala art replaces them later.
+
+1. **Engine:** Three.js (with glTF assets and an animation mixer) in the existing PWA. Mid-range Android performance is a requirement.
+2. **Characters:** rigged, stylized (not blocky) humanoid models with animation clips for idle, walk, run, sit down, sit idle, stand up, raise glass and drink, talk gestures, wave, hug, dance, hold phone, carry bag. Sources to use: CC0 or permissively licensed packs (for example Quaternius characters and animations, Kenney assets), and Mixamo animations if the creator downloads them. Recolour skin tones (12+), hair and outfits; outfits and accessories attach to the skeleton (a bag is held in the hand bone, not floating). Chief's 3D stand-in wears a red cap and red-and-gold outfit; his painted portraits stay as close-up cutaways.
+3. **Environments:** a 3D apartment interior (wardrobe, full-length mirror, bed, window with city lights), the Lekki-Ikoyi Link Bridge drive, and the Ikoyi restaurant interior (tables, bar, saxophonist, waiters, other diners), using licensed modular interior and city packs.
+4. **Vehicles and rides:** booking a ride shows the car arriving, you getting in, and the drive through the city with a moving camera.
+5. **Text:** almost none. Actions happen by tapping where to go and what to touch; short speech bubbles with voices (babble until real recordings) and sound.
+6. **Licences:** list every asset pack used and its licence in `docs/ASSETS.md`. If a needed pack can't be downloaded from this environment, list exactly what the creator must download and where to upload it.
+
+### The 3D proof scene (build only this first)
+
+1. **Apartment:** your avatar stands in your room; tap the wardrobe, walk to it, change outfit (it changes on the 3D body), walk to the mirror and see yourself, pick up your bag (held in your hand).
+2. **Ride:** Musa's car pulls up outside; you walk to it and get in; the car drives across the Link Bridge at night with city lights and traffic.
+3. **Restaurant:** you walk in past diners and waiters, choose a table by tapping it, walk there and sit. Chief walks in, greets you, sits. You both raise a glass. Music, chatter and cutlery sounds.
+
+Then stop and send a preview link plus a screen recording. Acceptance: the creator plays it on her phone and feels it's a living world. Only after she approves does the rest of the date (briefcase, phone, Wife Escape) get rebuilt in 3D, followed by the Live City.
