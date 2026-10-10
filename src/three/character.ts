@@ -54,6 +54,7 @@ export class Character {
   private mouth = 0;
   private blinkT = 2;
   private busyUntil = 0;
+  sipWindow = { start: 0, end: 3.4 };
   clock = 0;
   onStateChange?: (s: string) => void;
 
@@ -126,6 +127,15 @@ export class Character {
     const hq = new THREE.Quaternion();
     hw.decompose(new THREE.Vector3(), hq, new THREE.Vector3());
     this.holdLocal.quat.copy(hq.invert()); // upright in the world at this moment
+    // The drinking clip is long; find the sip (glass closest to the mouth) and play just that.
+    const head = this.bones['head'];
+    let best = { t: 0, d: Infinity };
+    for (let t = 0; t < d('drink'); t += 0.1) {
+      sample('drink', t);
+      const dd = hand.getWorldPosition(new THREE.Vector3()).distanceTo(head.getWorldPosition(new THREE.Vector3()));
+      if (dd < best.d) best = { t, d: dd };
+    }
+    this.sipWindow = { start: Math.max(0, best.t - 1.7), end: Math.min(d('drink'), best.t + 1.5) };
     this.mixer.stopAllAction();
   }
 
@@ -279,11 +289,11 @@ export class Character {
   }
 
   sip() {
-    if (!this.held) return;
-    this.setUpper('drink');
-    this.upperActs['drink'].time = 0;
-    // the sip itself is the first ~3.5s of the clip; then back to holding
-    this.after(3.4, () => this.upper === 'drink' && this.setUpper('drink_idle'));
+    if (!this.held || this.upper === 'drink') return;
+    this.setUpper('drink', 0.3);
+    const a = this.upperActs['drink'];
+    a.time = this.sipWindow.start;
+    this.after(this.sipWindow.end - this.sipWindow.start, () => this.upper === 'drink' && this.setUpper('drink_idle', 0.4));
   }
 
   /** Mouth moves while a line is spoken; amplitude comes from audio when available. */
