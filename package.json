@@ -16,7 +16,7 @@
     "preview": "vite preview",
     "icons": "node scripts/make-icons.mjs",
     "shots": "node scripts/screenshots.mjs",
-    "build:preview": "VITE_HASH_ROUTER=1 vite build --base ./ --outDir dist-preview",
+    "build:preview": "VITE_HASH_ROUTER=1 vite build --base ./ --outDir dist-preview && node scripts/glb-to-json.mjs dist-preview/models && rm -f dist-preview/models/*.glb",
     "deploy:preview": "npm run build && npx --yes vercel@39.1.1 deploy dist --token \"$VERCEL_TOKEN\" --yes"
   },
   "dependencies": {

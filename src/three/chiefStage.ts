@@ -82,7 +82,7 @@ export async function startChiefStage(canvas: HTMLCanvasElement, ev: StageEvents
   ev.onProgress?.(0.05);
   const base = import.meta.env.BASE_URL;
   const [gltf, meta] = await Promise.all([
-    loadGLB(`${base}models/chief.glb`),
+    loadGLB(`${base}models/${import.meta.env.VITE_HASH_ROUTER === '1' ? 'chief.gltf.json' : 'chief.glb'}`),
     fetch(`${base}models/chief.clips.json`).then((r) => r.json() as Promise<Record<string, ClipMeta>>),
   ]);
   ev.onProgress?.(0.8);
