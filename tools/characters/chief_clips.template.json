@@ -1,0 +1,12 @@
+[
+ {"name": "idle", "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_static/m_idle_neutral_01.max.fbx", "root": "static", "loop": true},
+ {"name": "walk", "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_xy/m_walk_neutral_01.max.fbx", "root": "inplace", "loop": true},
+ {"name": "sit_down", "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_xyz/m_sit_down_chair_01.max.fbx", "root": "keep"},
+ {"name": "sit_idle", "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_static/m_sit_chair_idle_neutral_01.max.fbx", "root": "keep", "loop": true},
+ {"name": "stand_up", "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_xyz/m_sit_stand_up_chair_01.max.fbx", "root": "keep"},
+ {"name": "wave", "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_static/m_wave_01.max.fbx", "root": "static"},
+ {"name": "talk", "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_static/m_gestic_talk_neutral_01.max.fbx", "root": "static", "loop": true},
+ {"name": "drink_idle", "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_static/m_drink_idle.max.fbx", "root": "static", "loop": true},
+ {"name": "drink", "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_static/m_drink_drinking.max.fbx", "root": "static"},
+ {"name": "invite_sit", "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_static/m_invite_sit.max.fbx", "root": "static"}
+]

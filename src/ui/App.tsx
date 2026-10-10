@@ -15,6 +15,7 @@ import { decodeCard, encodeCard } from './verdict/payload';
 // Sharing code (html-to-image, QR) loads only when a Verdict is shown: faster first load on 3G.
 const VerdictScreen = lazy(() => import('./verdict/VerdictScreen').then((m) => ({ default: m.VerdictScreen })));
 const SharedCard = lazy(() => import('./verdict/SharedCard'));
+const ChiefPreview = lazy(() => import('./three/ChiefPreview'));
 const Loading = () => <div className="flex h-full items-center justify-center text-white/40">Loading…</div>;
 
 function useChallengeFromUrl() {
@@ -44,6 +45,7 @@ export function App() {
   if (path.startsWith('/v/')) page = <ShareLanding payload={path.slice(3)} />;
   else if (path.startsWith('/advertise')) page = <Advertise />;
   else if (path.startsWith('/play')) page = <Play />;
+  else if (path.startsWith('/3d')) page = <Suspense fallback={<Loading />}><ChiefPreview /></Suspense>;
   else page = <Home />;
   return (
     <div className="frame">
@@ -92,6 +94,9 @@ function Home() {
         ) : null}
         <Btn tone={saved ? 'ghost' : 'primary'} className="w-full" onClick={() => (sound.unlock(), saved && storage.set('wahala.run.v1', null), navigate('/play'))}>
           {saved ? 'Start a new run' : 'Start dating →'}
+        </Btn>
+        <Btn tone="gold" className="w-full" onClick={() => (sound.unlock(), navigate('/3d'))}>
+          Meet Chief in 3D (preview)
         </Btn>
         <div className="flex justify-center gap-4 pt-2 text-[12px] text-white/40">
           <a href="/advertise" onClick={(e) => (e.preventDefault(), navigate('/advertise'))} className="underline">

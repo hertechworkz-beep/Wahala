@@ -1,0 +1,122 @@
+{
+ "idle": {
+  "frames": 351,
+  "duration": 11.667,
+  "speed": 0.0,
+  "loop": true,
+  "root": "static",
+  "end_offset": [
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "walk": {
+  "frames": 37,
+  "duration": 1.2,
+  "speed": 1.101,
+  "loop": true,
+  "root": "inplace",
+  "end_offset": [
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "sit_down": {
+  "frames": 88,
+  "duration": 2.9,
+  "speed": 0.251,
+  "loop": false,
+  "root": "keep",
+  "end_offset": [
+   0.0,
+   0.727,
+   0.0
+  ]
+ },
+ "sit_idle": {
+  "frames": 1084,
+  "duration": 36.1,
+  "speed": 0.0,
+  "loop": true,
+  "root": "keep",
+  "end_offset": [
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "stand_up": {
+  "frames": 76,
+  "duration": 2.5,
+  "speed": 0.185,
+  "loop": false,
+  "root": "keep",
+  "end_offset": [
+   0.018,
+   -0.461,
+   0.0
+  ]
+ },
+ "wave": {
+  "frames": 86,
+  "duration": 2.833,
+  "speed": 0.0,
+  "loop": false,
+  "root": "static",
+  "end_offset": [
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "talk": {
+  "frames": 1068,
+  "duration": 35.567,
+  "speed": 0.0,
+  "loop": true,
+  "root": "static",
+  "end_offset": [
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "drink_idle": {
+  "frames": 943,
+  "duration": 31.4,
+  "speed": 0.0,
+  "loop": true,
+  "root": "static",
+  "end_offset": [
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "drink": {
+  "frames": 1051,
+  "duration": 35.0,
+  "speed": 0.0,
+  "loop": false,
+  "root": "static",
+  "end_offset": [
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "invite_sit": {
+  "frames": 131,
+  "duration": 4.333,
+  "speed": 0.0,
+  "loop": false,
+  "root": "static",
+  "end_offset": [
+   0.0,
+   0.0,
+   0.0
+  ]
+ }
+}
