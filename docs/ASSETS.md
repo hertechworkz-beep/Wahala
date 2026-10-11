@@ -4,16 +4,20 @@ Every 3D asset in the game, where it comes from, and its licence. All of them ca
 
 ## Characters
 
+### Chief Emeka (in game): the Meshy model
+
 | Asset | Source | Licence | Notes |
 | --- | --- | --- | --- |
-| Chief Emeka body | [MakeHuman](https://github.com/makehumancommunity/makehuman) base mesh and targets, via [MPFB2](https://github.com/makehumancommunity/mpfb2) | CC0 1.0 | Built by script (`tools/characters/chief_base.py`): male, age 59, African, heavy build, belly, fuller neck and cheeks |
-| Chief's eyes | MakeHuman "low-poly" eyes and brown eye texture | CC0 1.0 | The iris is recoloured to a deep brown |
-| Chief's skeleton | MPFB2 `game_engine` rig | CC0 1.0 | 53 bones, including fingers |
-| Chief's facial expressions | MakeHuman expression units (African set): mouth-open, eye-closure and mouth-corner-puller | CC0 1.0 | Used for speaking, blinking and smiling |
-| Chief's skin texture and age lines | Generated in Blender by our scripts | Ours | |
-| Beard, eyebrows and hair | Generated in Blender by our scripts | Ours | Built as layered strand shells |
-| Cap, coral beads, senator outfit, shoes, watch and ring | Modelled and textured by our scripts | Ours | |
-| Animations | [Microsoft Rocketbox](https://github.com/microsoft/Microsoft-Rocketbox) animation library | MIT, © 2020 Microsoft | Retargeted onto the MakeHuman rig by `tools/characters/retarget.py`. Clips: idle, walk, sit down, sit idle, stand up, wave, talk, drink idle, drink and invite-to-sit |
+| Model, textures and skeleton | Made by the creator with [Meshy](https://www.meshy.ai) ("Regal Crimson Heritage"). The original file is kept in `art-src/chief/chief_meshy_source.glb` | Per the creator's Meshy plan (see below) | Agbada with gold embroidery, coral beads, red cap and loafers; 15,146 vertices; Mixamo-standard skeleton with 66 joints |
+| Walk, run and seated-talk clips | Came with the Meshy file | As above | Renamed in game to `walk`, `run` and `sit_talk` |
+| Idle, sit down and stand up, seated idles, wave, talk, drink, phone call, cheer, clap, invite-to-sit and two dances | [Microsoft Rocketbox](https://github.com/microsoft/Microsoft-Rocketbox) animation library | MIT, © 2020 Microsoft | Retargeted onto the Meshy skeleton by `tools/characters/retarget.py` |
+| Hand weight fix | `tools/characters/fix_meshy_weights.py` | Ours | Meshy's automatic rig let the thigh and hip bones pull on the hands, so 1,338 vertices are corrected |
+
+**Meshy licence: please confirm your plan.** As we understand Meshy's terms, models made on a paid plan are yours to use commercially and privately, while free-plan models are released under CC BY 4.0, which means public credit to Meshy. Please check which plan made this model. If it's the free plan, we'll add the credit to the in-game credits.
+
+### Earlier stand-in (kept for reference, not used in game)
+
+Our first Chief was built with MakeHuman (CC0) through MPFB2: `tools/characters/build_chief.sh`. It is no longer loaded.
 
 The MIT licence requires keeping Microsoft's copyright notice. It is reproduced here and will appear in the in-game credits:
 
@@ -23,7 +27,7 @@ The MIT licence requires keeping Microsoft's copyright notice. It is reproduced 
 
 | Asset | Source | Licence |
 | --- | --- | --- |
-| Armchair, side table, wine glass, floor, rug, walls and lamp | Modelled in code (`src/three/props.ts`) | Ours |
+| Armchair, side table, wine glass, speaker, floor, rug, walls and lamp | Modelled in code (`src/three/props.ts`) | Ours |
 
 ## Tools (not shipped)
 

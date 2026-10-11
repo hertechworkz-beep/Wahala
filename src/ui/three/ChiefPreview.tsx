@@ -8,6 +8,9 @@ export default function ChiefPreview() {
   const [hint, setHint] = useState('');
   const [line, setLine] = useState<{ who: string; text: string; id: number } | null>(null);
   const [error, setError] = useState('');
+  const [drawer, setDrawer] = useState(false);
+  const [clips, setClips] = useState<string[]>([]);
+  const stageRef = useRef<any>(null);
 
   useEffect(() => {
     let stage: Awaited<ReturnType<typeof import('../../three/chiefStage').startChiefStage>> | null = null;
@@ -26,6 +29,8 @@ export default function ChiefPreview() {
         if (!alive) s.dispose();
         else {
           stage = s;
+          stageRef.current = s;
+          setClips(s.clips());
           (window as any).__stage = s;
         }
       })
@@ -43,7 +48,7 @@ export default function ChiefPreview() {
         <button className="pointer-events-auto rounded-full bg-black/55 px-3 py-1.5 text-[13px] font-bold backdrop-blur" onClick={() => navigate('/')}>
           ← Wahala
         </button>
-        <div className="rounded-full bg-black/55 px-3 py-1.5 text-right text-[11px] font-bold uppercase tracking-wider text-[#F59E0B] backdrop-blur">Chief preview · 3D</div>
+        <div className="rounded-full bg-black/55 px-3 py-1.5 text-right text-[11px] font-bold uppercase tracking-wider text-[#F59E0B] backdrop-blur">Chief · 3D</div>
       </div>
       {line && (
         <div key={line.id} className="anim-rise pointer-events-none absolute inset-x-4 top-[18%] mx-auto max-w-[420px] rounded-2xl bg-black/70 px-4 py-2.5 text-center backdrop-blur">
@@ -60,6 +65,23 @@ export default function ChiefPreview() {
           <div className="h-1.5 w-48 overflow-hidden rounded-full bg-white/10">
             <div className="h-full bg-[#F59E0B] transition-[width]" style={{ width: `${Math.round(progress * 100)}%` }} />
           </div>
+        </div>
+      )}
+      {ready && (
+        <div className="absolute right-3 top-[max(56px,calc(env(safe-area-inset-top)+48px))] flex flex-col items-end gap-2">
+          <button data-act="anim-check" className="rounded-full bg-black/60 px-3 py-1.5 text-[12px] font-bold backdrop-blur" onClick={() => setDrawer((d) => !d)}>
+            {drawer ? 'Close' : 'Animation check'}
+          </button>
+          {drawer && (
+            <div className="max-h-[55vh] w-[170px] overflow-y-auto rounded-2xl bg-black/75 p-2 backdrop-blur">
+              <div className="px-1 pb-1 text-[10px] font-bold uppercase tracking-wider text-white/50">Testing: every clip</div>
+              {clips.map((c) => (
+                <button key={c} data-clip={c} className="block w-full rounded-lg px-2 py-1.5 text-left text-[13px] hover:bg-white/10 active:bg-white/20" onClick={() => stageRef.current?.act(c)}>
+                  {c.replace(/_/g, ' ')}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
       )}
       {error && <div className="absolute inset-x-4 top-1/3 rounded-2xl bg-red-950/80 p-4 text-sm">3D failed to start: {error}</div>}

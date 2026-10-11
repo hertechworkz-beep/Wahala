@@ -2,7 +2,8 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
 import { Character, loadGLB, type ClipMeta } from './character';
-import { armchair, rug, sideTable, wineGlass, woodFloor } from './props';
+import { armchair, rug, sideTable, speaker, wineGlass, woodFloor } from './props';
+import { sound } from '../ui/audio';
 import { speak } from './voice';
 
 // Chief preview: a lounge where you control Chief directly to judge him standing, walking,
@@ -105,6 +106,33 @@ export async function startChiefStage(canvas: HTMLCanvasElement, ev: StageEvents
   glass.traverse((o: any) => (o.castShadow = true));
   scene.add(glass);
 
+  const spk = speaker();
+  spk.position.set(2.6, 0, 0.9);
+  spk.rotation.y = -1.1;
+  scene.add(spk);
+  const setMusic = (on: boolean) => {
+    spk.userData.setOn(on);
+    sound.unlock();
+    if (on) sound.setAmbience(['afrobeats_radio', 'crowd'], 'lounge:music');
+    else sound.setAmbience(['ac_hum'], 'lounge:quiet');
+    if (on) {
+      if (chief.seated) chief.gesture('clap', 6);
+      else if (!chief.held) chief.loop(Math.random() < 0.5 ? 'dance' : 'dance2');
+      ev.onHint?.('Music on. Tap the speaker again to stop it.');
+    } else if (chief.base.startsWith('dance')) chief.walkTo(chief.root.position.clone());
+  };
+
+  // His phone rings now and then: he takes the call wherever he is.
+  let nextCall = 30;
+  const phoneCall = () => {
+    if (chief.held || chief.base.startsWith('dance') || chief.base === 'walk' || chief.base === 'run') return false;
+    sound.play('ring');
+    if (chief.seated) chief.talkSeated(5);
+    else chief.gesture('phone', 6);
+    say('chief_phone', 'Hmm. Business. It can wait.');
+    return true;
+  };
+
   // Destination marker
   const marker = new THREE.Mesh(new THREE.RingGeometry(0.09, 0.12, 32), new THREE.MeshBasicMaterial({ color: '#F59E0B', transparent: true, opacity: 0 }));
   marker.rotation.x = -Math.PI / 2;
@@ -117,12 +145,14 @@ export async function startChiefStage(canvas: HTMLCanvasElement, ev: StageEvents
     chief.speak(s.seconds);
     ev.onSay?.('Chief', text, s.seconds);
     chief.after(s.seconds + 0.5, () => ev.onSayEnd?.());
+    return s;
   };
 
   // Taps
   const ray = new THREE.Raycaster();
   const ndc = new THREE.Vector2();
   let down: { x: number; y: number; t: number } | null = null;
+  let lastFloorTap = { t: -1, x: 0, y: 0 };
   canvas.addEventListener('pointerdown', (e) => (down = { x: e.clientX, y: e.clientY, t: performance.now() }));
   canvas.addEventListener('pointerup', (e) => {
     if (!down) return;
@@ -136,7 +166,7 @@ export async function startChiefStage(canvas: HTMLCanvasElement, ev: StageEvents
     const r = canvas.getBoundingClientRect();
     ndc.set(((clientX - r.left) / r.width) * 2 - 1, -((clientY - r.top) / r.height) * 2 + 1);
     ray.setFromCamera(ndc, camera);
-    const hits = ray.intersectObjects([chief.root, chair, glass, table, floor], true);
+    const hits = ray.intersectObjects([chief.root, chair, glass, table, spk, floor], true);
     if (!hits.length) return;
     const h = hits[0];
     const isIn = (root: THREE.Object3D) => {
@@ -147,6 +177,10 @@ export async function startChiefStage(canvas: HTMLCanvasElement, ev: StageEvents
       }
       return false;
     };
+    if (isIn(spk)) {
+      setMusic(!spk.userData.isOn());
+      return;
+    }
     if (isIn(glass)) {
       if (chief.held === glass) return chief.sip();
       const spot = new THREE.Vector3(0.55, 0, -0.72);
@@ -172,7 +206,11 @@ export async function startChiefStage(canvas: HTMLCanvasElement, ev: StageEvents
       const p = h.point.clone().setY(0);
       p.x = Math.max(-5, Math.min(5, p.x));
       p.z = Math.max(-2.7, Math.min(5, p.z));
-      chief.walkTo(p);
+      // a quick second tap on the floor means run
+      const now = performance.now();
+      const run = now - lastFloorTap.t < 380 && Math.hypot(clientX - lastFloorTap.x, clientY - lastFloorTap.y) < 40;
+      lastFloorTap = { t: now, x: clientX, y: clientY };
+      chief.walkTo(p, undefined, run);
       showMarker(p);
     }
   }
@@ -203,6 +241,8 @@ export async function startChiefStage(canvas: HTMLCanvasElement, ev: StageEvents
     camera.position.copy(controls.target).add(camOffset);
     controls.update();
     markerT = Math.max(0, markerT - dt);
+    spk.userData.tick(chief.clock);
+    if (chief.clock > nextCall) nextCall = chief.clock + (phoneCall() ? 70 : 6);
     (marker.material as THREE.MeshBasicMaterial).opacity = Math.min(0.9, markerT);
     marker.scale.setScalar(1 + (1.2 - markerT) * 0.4);
     renderer.render(scene, camera);
@@ -233,6 +273,22 @@ export async function startChiefStage(canvas: HTMLCanvasElement, ev: StageEvents
       if ('speechSynthesis' in window) speechSynthesis.cancel();
     },
     // for the automated walkthrough (screen recording)
-    debug: { chief, chair, glass, camera, controls, tap: (o: 'chair' | 'glass' | 'chief' | THREE.Vector3) => o },
+    /** Testing drawer: trigger any clip in the way gameplay would. */
+    act(name: string) {
+      const seatW = (chair.userData.seatLocal as THREE.Vector3).clone().applyMatrix4(chair.matrixWorld);
+      const ahead = chief.root.position.clone().add(new THREE.Vector3(Math.sin(chief.root.rotation.y), 0, Math.cos(chief.root.rotation.y)).multiplyScalar(2.2));
+      if (chief.base.startsWith('dance') && !name.startsWith('dance')) chief.loop('idle');
+      if (name === 'walk' || name === 'run') return chief.walkTo(ahead, undefined, name === 'run');
+      if (name === 'sit_down' || name === 'sit_idle' || name === 'sit_relaxed') return chief.sitOn(seatW, chair.rotation.y);
+      if (name === 'stand_up') return chief.standUp();
+      if (name === 'sit_talk' || name === 'sit_shrug') return chief.seated ? chief.talkSeated(5) : chief.sitOn(seatW, chair.rotation.y);
+      if (name === 'drink_idle' || name === 'drink') return chief.held ? chief.sip() : tap(...Object.values(this.screenOf(glass.getWorldPosition(new THREE.Vector3())))  as [number, number]);
+      if (name === 'talk' || name === 'talk_excited') return say('chief_small_talk', 'You know, I don\'t usually come out on a Monday. But for you...');
+      if (name === 'phone') return phoneCall();
+      if (name === 'idle' || name === 'idle2' || name.startsWith('dance')) return chief.loop(name);
+      return chief.gesture(name);
+    },
+    clips: () => chief.clipNames,
+    debug: { chief, chair, glass, speaker: spk, camera, controls, tap: (o: 'chair' | 'glass' | 'chief' | THREE.Vector3) => o },
   };
 }

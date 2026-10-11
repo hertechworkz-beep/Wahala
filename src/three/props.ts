@@ -145,3 +145,29 @@ export function mulberry(a: number) {
     return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
   };
 }
+
+/** A floor-standing speaker with a glowing ring; `setOn` lights it up and makes the cone pulse. */
+export function speaker() {
+  const g = new THREE.Group();
+  g.name = 'speaker';
+  const body = new THREE.Mesh(new RoundedBoxGeometry(0.42, 1.0, 0.36, 3, 0.03), new THREE.MeshStandardMaterial({ color: '#141414', roughness: 0.6 }));
+  body.position.y = 0.5;
+  body.castShadow = body.receiveShadow = true;
+  const coneMat = new THREE.MeshStandardMaterial({ color: '#222', roughness: 0.9 });
+  const cone = new THREE.Mesh(new THREE.CircleGeometry(0.15, 32), coneMat);
+  cone.position.set(0, 0.36, 0.181);
+  const tweet = new THREE.Mesh(new THREE.CircleGeometry(0.06, 24), coneMat);
+  tweet.position.set(0, 0.74, 0.181);
+  const ringMat = new THREE.MeshStandardMaterial({ color: '#F59E0B', emissive: '#F59E0B', emissiveIntensity: 0.15 });
+  const ring = new THREE.Mesh(new THREE.TorusGeometry(0.165, 0.008, 8, 48), ringMat);
+  ring.position.copy(cone.position);
+  g.add(body, cone, tweet, ring);
+  let on = false;
+  g.userData.setOn = (v: boolean) => (on = v);
+  g.userData.isOn = () => on;
+  g.userData.tick = (t: number) => {
+    ringMat.emissiveIntensity = on ? 1.2 + Math.sin(t * 12) * 0.6 : 0.15;
+    cone.scale.setScalar(on ? 1 + Math.max(0, Math.sin(t * 12.6)) * 0.05 : 1);
+  };
+  return g;
+}

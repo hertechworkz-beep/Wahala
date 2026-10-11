@@ -11,33 +11,60 @@ from mathutils import Matrix, Quaternion, Vector
 blend, clips_json, out_glb = sys.argv[-3], sys.argv[-2], sys.argv[-1]
 CLIPS = json.load(open(clips_json))
 bpy.ops.wm.open_mainfile(filepath=blend)
+for o in [o for o in bpy.data.objects if o.type == 'MESH' and o.name.startswith('Icosphere')]:
+    bpy.data.objects.remove(o, do_unlink=True)
 RIG = [o for o in bpy.data.objects if o.type == 'ARMATURE'][0]
 RIG.rotation_mode = 'XYZ'
 
-MAP = {'Bip01 Pelvis': 'pelvis', 'Bip01 Spine': 'spine_01', 'Bip01 Spine1': 'spine_02', 'Bip01 Spine2': 'spine_03',
-       'Bip01 Neck': 'neck_01', 'Bip01 Head': 'head'}
-for s, t in (('L', 'l'), ('R', 'r')):
-    MAP.update({f'Bip01 {s} Clavicle': f'clavicle_{t}', f'Bip01 {s} UpperArm': f'upperarm_{t}', f'Bip01 {s} Forearm': f'lowerarm_{t}',
-                f'Bip01 {s} Hand': f'hand_{t}', f'Bip01 {s} Thigh': f'thigh_{t}', f'Bip01 {s} Calf': f'calf_{t}',
-                f'Bip01 {s} Foot': f'foot_{t}', f'Bip01 {s} Toe0': f'ball_{t}'})
-    for fi, fname in enumerate(['thumb', 'index', 'middle', 'ring', 'pinky']):
-        for k in range(3):
-            src = f'Bip01 {s} Finger{fi}' + ('' if k == 0 else str(k))
-            MAP[src] = f'{fname}_0{k + 1}_{t}'
-# Which joint each bone points at (for posture alignment).
-def child_joint(tname):
-    order = {'pelvis': 'spine_01', 'spine_01': 'spine_02', 'spine_02': 'spine_03', 'spine_03': 'neck_01', 'neck_01': 'head'}
-    if tname in order:
-        return order[tname]
-    for t in ('l', 'r'):
-        chain = {f'clavicle_{t}': f'upperarm_{t}', f'upperarm_{t}': f'lowerarm_{t}', f'lowerarm_{t}': f'hand_{t}', f'hand_{t}': f'middle_01_{t}',
-                 f'thigh_{t}': f'calf_{t}', f'calf_{t}': f'foot_{t}', f'foot_{t}': f'ball_{t}'}
-        if tname in chain:
-            return chain[tname]
-        for f in ['thumb', 'index', 'middle', 'ring', 'pinky']:
-            if tname == f'{f}_01_{t}': return f'{f}_02_{t}'
-            if tname == f'{f}_02_{t}': return f'{f}_03_{t}'
-    return None
+TARGET = os.environ.get('TARGET', 'game_engine')
+if TARGET == 'mixamo':
+    P = 'mixamorig:'
+    HIPS = P + 'Hips'
+    MAP = {'Bip01 Pelvis': HIPS, 'Bip01 Spine': P + 'Spine', 'Bip01 Spine1': P + 'Spine1', 'Bip01 Spine2': P + 'Spine2',
+           'Bip01 Neck': P + 'Neck', 'Bip01 Head': P + 'Head'}
+    for s, side in (('L', 'Left'), ('R', 'Right')):
+        MAP.update({f'Bip01 {s} Clavicle': f'{P}{side}Shoulder', f'Bip01 {s} UpperArm': f'{P}{side}Arm', f'Bip01 {s} Forearm': f'{P}{side}ForeArm',
+                    f'Bip01 {s} Hand': f'{P}{side}Hand', f'Bip01 {s} Thigh': f'{P}{side}UpLeg', f'Bip01 {s} Calf': f'{P}{side}Leg',
+                    f'Bip01 {s} Foot': f'{P}{side}Foot', f'Bip01 {s} Toe0': f'{P}{side}ToeBase'})
+        if not os.environ.get('SKIP_FINGERS'):
+            for fi, fname in enumerate(['Thumb', 'Index', 'Middle', 'Ring', 'Pinky']):
+                for k in range(3):
+                    MAP[f'Bip01 {s} Finger{fi}' + ('' if k == 0 else str(k))] = f'{P}{side}Hand{fname}{k + 1}'
+    CHAIN = {HIPS: P + 'Spine', P + 'Spine': P + 'Spine1', P + 'Spine1': P + 'Spine2', P + 'Spine2': P + 'Neck', P + 'Neck': P + 'Head'}
+    for side in ('Left', 'Right'):
+        CHAIN.update({f'{P}{side}Shoulder': f'{P}{side}Arm', f'{P}{side}Arm': f'{P}{side}ForeArm', f'{P}{side}ForeArm': f'{P}{side}Hand',
+                      f'{P}{side}Hand': f'{P}{side}HandMiddle1', f'{P}{side}UpLeg': f'{P}{side}Leg', f'{P}{side}Leg': f'{P}{side}Foot',
+                      f'{P}{side}Foot': f'{P}{side}ToeBase'})
+        for f in ['Thumb', 'Index', 'Middle', 'Ring', 'Pinky']:
+            CHAIN[f'{P}{side}Hand{f}1'] = f'{P}{side}Hand{f}2'
+            CHAIN[f'{P}{side}Hand{f}2'] = f'{P}{side}Hand{f}3'
+    def child_joint(tname):
+        return CHAIN.get(tname)
+else:
+    HIPS = 'pelvis'
+    MAP = {'Bip01 Pelvis': 'pelvis', 'Bip01 Spine': 'spine_01', 'Bip01 Spine1': 'spine_02', 'Bip01 Spine2': 'spine_03',
+           'Bip01 Neck': 'neck_01', 'Bip01 Head': 'head'}
+    for s, t in (('L', 'l'), ('R', 'r')):
+        MAP.update({f'Bip01 {s} Clavicle': f'clavicle_{t}', f'Bip01 {s} UpperArm': f'upperarm_{t}', f'Bip01 {s} Forearm': f'lowerarm_{t}',
+                    f'Bip01 {s} Hand': f'hand_{t}', f'Bip01 {s} Thigh': f'thigh_{t}', f'Bip01 {s} Calf': f'calf_{t}',
+                    f'Bip01 {s} Foot': f'foot_{t}', f'Bip01 {s} Toe0': f'ball_{t}'})
+        for fi, fname in enumerate(['thumb', 'index', 'middle', 'ring', 'pinky']):
+            for k in range(3):
+                src = f'Bip01 {s} Finger{fi}' + ('' if k == 0 else str(k))
+                MAP[src] = f'{fname}_0{k + 1}_{t}'
+    def child_joint(tname):
+        order = {'pelvis': 'spine_01', 'spine_01': 'spine_02', 'spine_02': 'spine_03', 'spine_03': 'neck_01', 'neck_01': 'head'}
+        if tname in order:
+            return order[tname]
+        for t in ('l', 'r'):
+            chain = {f'clavicle_{t}': f'upperarm_{t}', f'upperarm_{t}': f'lowerarm_{t}', f'lowerarm_{t}': f'hand_{t}', f'hand_{t}': f'middle_01_{t}',
+                     f'thigh_{t}': f'calf_{t}', f'calf_{t}': f'foot_{t}', f'foot_{t}': f'ball_{t}'}
+            if tname in chain:
+                return chain[tname]
+            for f in ['thumb', 'index', 'middle', 'ring', 'pinky']:
+                if tname == f'{f}_01_{t}': return f'{f}_02_{t}'
+                if tname == f'{f}_02_{t}': return f'{f}_03_{t}'
+        return None
 INV = {v: k for k, v in MAP.items()}
 
 def rot3(m):
@@ -56,8 +83,29 @@ def import_clip(path):
 
 out_meta = {}
 sc = bpy.context.scene
+# Clips that came with the model (e.g. Meshy's walk/run) are kept, renamed, as NLA tracks.
+if RIG.animation_data:
+    for tr in list(RIG.animation_data.nla_tracks):
+        RIG.animation_data.nla_tracks.remove(tr)
+for spec in filter(None, os.environ.get('KEEP', '').split(',')):
+    src_name, new_name, speed = (spec.split(':') + ['0'])[:3]
+    a = bpy.data.actions.get(src_name)
+    if not a:
+        continue
+    a.name = new_name
+    a.use_fake_user = True
+    RIG.animation_data_create()
+    tr = RIG.animation_data.nla_tracks.new(); tr.name = new_name
+    tr.strips.new(new_name, int(a.frame_range[0]), a)
+    fps = sc.render.fps
+    out_meta[new_name] = {'frames': int(a.frame_range[1] - a.frame_range[0]) + 1, 'duration': round((a.frame_range[1] - a.frame_range[0]) / fps, 3),
+                          'speed': float(speed), 'loop': True, 'root': 'inplace', 'end_offset': [0, 0, 0]}
+if RIG.animation_data:
+    RIG.animation_data.action = None
+FPS = sc.render.fps
 for clip in CLIPS:
     S, new_objs = import_clip(clip['file'])
+    sc.render.fps, sc.render.fps_base = FPS, 1.0  # the FBX importer may change it
     act_src = S.animation_data.action
     f0, f1 = int(act_src.frame_range[0]), int(act_src.frame_range[1])
     SB = S.data.bones
@@ -69,7 +117,7 @@ for clip in CLIPS:
         if sname not in SB or tname not in TB:
             continue
         cj = child_joint(tname)
-        if cj and INV.get(cj) in SB:
+        if cj and cj in INV and INV[cj] in SB:
             td = (T_HEAD_W[cj] - T_HEAD_W[tname]).normalized()
             sd = (S_HEAD_W[INV[cj]] - S_HEAD_W[sname]).normalized()
             Q_ALIGN[tname] = td.rotation_difference(sd)
@@ -81,7 +129,7 @@ for clip in CLIPS:
                 p = p.parent
             Q_ALIGN[tname] = Q_ALIGN[p.name] if p is not None else Quaternion()
     s_pelvis_rest = S_HEAD_W['Bip01 Pelvis']
-    ratio = T_HEAD_W['pelvis'].z / s_pelvis_rest.z
+    ratio = T_HEAD_W[HIPS].z / s_pelvis_rest.z
     # sample the source
     frames = list(range(f0, f1 + 1))
     samples = []
@@ -114,7 +162,7 @@ for clip in CLIPS:
             dp = dp - travel * k - Vector((start.x - s_pelvis_rest.x, start.y - s_pelvis_rest.y, 0))
         elif mode == 'static':
             dp = Vector((0, 0, dp.z))
-        pel_w = T_HEAD_W['pelvis'] + dp * ratio
+        pel_w = T_HEAD_W[HIPS] + dp * ratio
         arm_mats = {}
         for name in order:
             b = TB[name]
@@ -132,7 +180,7 @@ for clip in CLIPS:
                 parent_arm = arm_mats[b.parent.name]
                 rel = b.parent.matrix_local.inverted() @ b.matrix_local
             default = parent_arm @ rel
-            if name == 'pelvis':
+            if name == HIPS:
                 loc = rig_inv @ pel_w
             else:
                 loc = default.to_translation()
@@ -142,10 +190,10 @@ for clip in CLIPS:
             arm_mats[name] = M
             basis = (parent_arm @ rel).inverted() @ M
             pb.rotation_quaternion = basis.to_quaternion()
-            pb.keyframe_insert('rotation_quaternion', frame=fi + 1, group=name)
-            if name == 'pelvis':
+            pb.keyframe_insert('rotation_quaternion', frame=1 + fi * FPS / 30.0, group=name)
+            if name == HIPS:
                 pb.location = basis.to_translation()
-                pb.keyframe_insert('location', frame=fi + 1, group=name)
+                pb.keyframe_insert('location', frame=1 + fi * FPS / 30.0, group=name)
     act.use_fake_user = True
     try:
         track = RIG.animation_data.nla_tracks.new()

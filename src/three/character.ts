@@ -15,7 +15,22 @@ export interface ClipMeta {
   root: 'inplace' | 'keep' | 'static';
 }
 
-const UPPER = /^(spine_02|spine_03|neck_01|head|clavicle_|upperarm_|lowerarm_|hand_|thumb_|index_|middle_|ring_|pinky_)/;
+// Skeleton profiles: the game talks about bones by role; each rig names them its own way.
+const PROFILES = {
+  game_engine: {
+    detect: 'pelvis',
+    upper: /^(spine_02|spine_03|neck_01|head|clavicle_|upperarm_|lowerarm_|hand_|thumb_|index_|middle_|ring_|pinky_)/,
+    names: { pelvis: 'pelvis', head: 'head', hand_r: 'hand_r', thumb_02_r: 'thumb_02_r', index_01_r: 'index_01_r', index_02_r: 'index_02_r', middle_01_r: 'middle_01_r', ring_01_r: 'ring_01_r' },
+  },
+  mixamo: {
+    // three.js strips the ':' from "mixamorig:Hips"
+    detect: 'mixamorigHips',
+    proceduralGrip: true, // finger motion isn't retargeted onto this rig; the grip is posed in code
+    upper: /^(mixamorig(Spine1|Spine2|Neck|Head|LeftShoulder|RightShoulder|LeftArm|RightArm|LeftForeArm|RightForeArm|LeftHand|RightHand)|headfront)/,
+    names: { pelvis: 'mixamorigHips', head: 'mixamorigHead', hand_r: 'mixamorigRightHand', thumb_02_r: 'mixamorigRightHandThumb2', index_01_r: 'mixamorigRightHandIndex1', index_02_r: 'mixamorigRightHandIndex2', middle_01_r: 'mixamorigRightHandMiddle1', ring_01_r: 'mixamorigRightHandRing1' },
+  },
+};
+type Role = keyof (typeof PROFILES)['game_engine']['names'];
 
 function filterClip(clip: THREE.AnimationClip, keep: (bone: string) => boolean, name: string) {
   const tracks = clip.tracks.filter((t) => keep(t.name.split('.')[0]));
@@ -28,8 +43,8 @@ export async function loadGLB(url: string) {
   return loader.loadAsync(url);
 }
 
-type Base = 'idle' | 'walk' | 'sit_down' | 'sit_idle' | 'stand_up';
-type Upper = 'wave' | 'drink_idle' | 'drink' | 'talk' | 'invite_sit' | null;
+type Base = string; // idle, walk, run, sit_down, sit_idle, stand_up, dance...
+type Upper = string | null; // wave, drink_idle, drink, talk, phone, cheer...
 
 export class Character {
   root = new THREE.Group(); // stands on the floor; +Z is forward
@@ -38,6 +53,12 @@ export class Character {
   bones: Record<string, THREE.Bone> = {};
   morphMeshes: THREE.Mesh[] = [];
   meta: Record<string, ClipMeta>;
+  profile: (typeof PROFILES)[keyof typeof PROFILES] = PROFILES.game_engine;
+  clipNames: string[] = [];
+  gait: 'walk' | 'run' = 'walk';
+  bone(role: Role) {
+    return this.bones[this.profile.names[role]];
+  }
   private full: Record<string, THREE.AnimationAction> = {};
   private lower: Record<string, THREE.AnimationAction> = {};
   private upperActs: Record<string, THREE.AnimationAction> = {};
@@ -51,6 +72,9 @@ export class Character {
   held: THREE.Object3D | null = null;
   private holdLocal = { pos: new THREE.Vector3(), quat: new THREE.Quaternion() };
   private speaking = 0;
+  private gripSign = 1;
+  private fingerRest = new Map<THREE.Bone, THREE.Quaternion>();
+  private grip = 0; // 0 open .. 1 closed round a held object
   private mouth = 0;
   private blinkT = 2;
   private busyUntil = 0;
@@ -76,12 +100,15 @@ export class Character {
         }
       }
     });
+    this.profile = this.bones[PROFILES.mixamo.detect] ? PROFILES.mixamo : PROFILES.game_engine;
+    const UPPER = this.profile.upper;
     this.mixer = new THREE.AnimationMixer(this.model);
     for (const c of gltf.animations) {
       this.full[c.name] = this.mixer.clipAction(c);
       this.lower[c.name] = this.mixer.clipAction(filterClip(c, (b) => !UPPER.test(b), c.name + '_lower'));
       this.upperActs[c.name] = this.mixer.clipAction(filterClip(c, (b) => UPPER.test(b), c.name + '_upper'));
     }
+    this.clipNames = gltf.animations.map((c) => c.name);
     for (const [n, a] of Object.entries({ ...this.full, ...this.lower, ...this.upperActs })) {
       const m = meta[n.replace(/_(lower|upper)$/, '')];
       if (m && !m.loop) {
@@ -95,7 +122,7 @@ export class Character {
 
   /** Measures where the hips are at key moments of the sitting clips, in character space. */
   private calibrate() {
-    const pel = this.bones['pelvis'];
+    const pel = this.bone('pelvis');
     const sample = (name: string, t: number) => {
       this.mixer.stopAllAction();
       const a = this.full[name];
@@ -118,9 +145,9 @@ export class Character {
     const ids = ['thumb_02_r', 'index_01_r', 'middle_01_r', 'ring_01_r', 'index_02_r'];
     sample('drink_idle', 1.0);
     const g = new THREE.Vector3();
-    for (const n of ids) g.add(this.bones[n].getWorldPosition(new THREE.Vector3()));
+    for (const n of ids) g.add(this.bone(n as Role).getWorldPosition(new THREE.Vector3()));
     g.multiplyScalar(1 / ids.length);
-    const hand = this.bones['hand_r'];
+    const hand = this.bone('hand_r');
     const hw = hand.matrixWorld.clone();
     const inv = hw.clone().invert();
     this.holdLocal.pos.copy(g.clone().applyMatrix4(inv));
@@ -128,7 +155,7 @@ export class Character {
     hw.decompose(new THREE.Vector3(), hq, new THREE.Vector3());
     this.holdLocal.quat.copy(hq.invert()); // upright in the world at this moment
     // The drinking clip is long; find the sip (glass closest to the mouth) and play just that.
-    const head = this.bones['head'];
+    const head = this.bone('head');
     let best = { t: 0, d: Infinity };
     for (let t = 0; t < d('drink'); t += 0.1) {
       sample('drink', t);
@@ -136,7 +163,57 @@ export class Character {
       if (dd < best.d) best = { t, d: dd };
     }
     this.sipWindow = { start: Math.max(0, best.t - 1.7), end: Math.min(d('drink'), best.t + 1.5) };
+    if ((this.profile as any).proceduralGrip) {
+      for (const side of ['Right', 'Left'] as const) for (const chain of this.fingers(side)) for (const b of chain) this.fingerRest.set(b, b.quaternion.clone());
+      this.calibrateGrip();
+    }
     this.mixer.stopAllAction();
+  }
+
+  private fingers(side: 'Right' | 'Left') {
+    const B = (n: string) => this.bones[`mixamorig${side}Hand${n}`];
+    return ['Thumb', 'Index', 'Middle', 'Ring', 'Pinky'].map((f) => [1, 2, 3].map((k) => B(f + k)).filter(Boolean));
+  }
+
+  /** Which way is "curl towards the palm" for this rig: try both, keep the one that closes on the grip point. */
+  private calibrateGrip() {
+    const hand = this.bone('hand_r');
+    const fs = this.fingers('Right')[1];
+    const tip = this.bones['mixamorigRightHandIndex4'] ?? fs[2];
+    if (!fs.length || !tip) return;
+    const target = this.holdLocal.pos.clone().applyMatrix4(hand.matrixWorld);
+    const dist = (sign: number) => {
+      const saved = fs.map((b) => b.quaternion.clone());
+      this.gripSign = sign;
+      this.applyGrip(1, ['Right']);
+      this.root.updateMatrixWorld(true);
+      const d = tip.getWorldPosition(new THREE.Vector3()).distanceTo(target);
+      fs.forEach((b, i) => b.quaternion.copy(saved[i]));
+      return d;
+    };
+    this.gripSign = dist(1) < dist(-1) ? 1 : -1;
+  }
+
+  /** Curls the fingers round an object: rotate each joint about the hand's knuckle line. */
+  private applyGrip(amount: number, sides: ('Right' | 'Left')[] = ['Right']) {
+    if (amount <= 0) return;
+    for (const side of sides) {
+      const fs = this.fingers(side);
+      const a = this.bones[`mixamorig${side}HandIndex1`], p = this.bones[`mixamorig${side}HandPinky1`];
+      if (!a || !p) continue;
+      this.root.updateMatrixWorld(true);
+      const lateral = a.getWorldPosition(new THREE.Vector3()).sub(p.getWorldPosition(new THREE.Vector3())).normalize();
+      const curls = [[0.35, 0.3, 0.2], [0.95, 1.0, 0.6], [1.0, 1.05, 0.6], [1.0, 1.05, 0.6], [0.95, 1.0, 0.6]];
+      fs.forEach((chain, fi) => {
+        chain.forEach((b, k) => {
+          const parentQ = b.parent!.getWorldQuaternion(new THREE.Quaternion());
+          const axisLocal = lateral.clone().applyQuaternion(parentQ.clone().invert()).normalize();
+          const ang = curls[fi][k] * amount * this.gripSign * (fi === 0 ? -0.8 : 1);
+          b.quaternion.premultiply(new THREE.Quaternion().setFromAxisAngle(axisLocal, ang));
+          b.updateMatrixWorld(true);
+        });
+      });
+    }
   }
 
   /** Seated hip height in character space (for building chairs that fit). */
@@ -175,20 +252,44 @@ export class Character {
   }
 
   get seated() {
-    return this.base === 'sit_down' || this.base === 'sit_idle';
+    return this.base === 'sit_down' || this.base === 'sit_idle' || this.base === 'stand_up';
   }
 
   /** Walk to a point on the floor (character space is the world here). */
-  walkTo(p: THREE.Vector3, onArrive?: () => void) {
-    if (this.clock < this.busyUntil) return;
+  walkTo(p: THREE.Vector3, onArrive?: () => void, run = false) {
+    if (this.clock < this.busyUntil) return void this.after(this.busyUntil - this.clock + 0.05, () => this.walkTo(p, onArrive, run));
     if (this.seated) {
-      this.standUp(() => this.walkTo(p, onArrive));
+      this.standUp(() => this.walkTo(p, onArrive, run));
       return;
     }
+    if (this.upper && !this.held) this.setUpper(null, 0.2);
     this.target = p.clone().setY(0);
     this.onArrive = onArrive ?? null;
     this.faceTo = null;
-    if (this.base !== 'walk') this.play('walk', 0.25);
+    this.gait = run && this.full.run ? 'run' : 'walk';
+    if (this.base !== this.gait) this.play(this.gait, 0.25);
+  }
+
+  has(clip: string) {
+    return !!this.full[clip];
+  }
+
+  /** A full-body loop that runs until the next move (dancing). */
+  loop(clip: string) {
+    if (!this.full[clip] || this.seated || this.clock < this.busyUntil) return false;
+    if (this.upper && !this.held) this.setUpper(null, 0.2);
+    this.target = null;
+    this.play(clip, 0.4);
+    return true;
+  }
+
+  /** An upper-body action over whatever the legs are doing (wave, cheer, phone...). */
+  gesture(clip: string, seconds?: number) {
+    if (!this.upperActs[clip] || this.held) return false;
+    this.setUpper(clip);
+    const dur = seconds ?? Math.min(this.full[clip].getClip().duration, 6);
+    this.after(dur - 0.3, () => this.upper === clip && this.setUpper(null));
+    return true;
   }
 
   /** Walk to a seat, turn, and sit so the hips land on the cushion. */
@@ -221,7 +322,8 @@ export class Character {
   }
 
   standUp(then?: () => void) {
-    if (!this.seated || this.clock < this.busyUntil) return;
+    if (this.clock < this.busyUntil) return void this.after(this.busyUntil - this.clock + 0.05, () => this.standUp(then));
+    if (!this.seated) return then?.();
     const a = this.pelvisAt.sitIdle, b = this.pelvisAt.standStart;
     this.root.position.add(new THREE.Vector3(a.x - b.x, 0, a.z - b.z).applyAxisAngle(new THREE.Vector3(0, 1, 0), this.root.rotation.y));
     this.play('stand_up', 0.25);
@@ -256,6 +358,7 @@ export class Character {
 
   wave() {
     if (this.upper === 'drink_idle' || this.upper === 'drink') return;
+    if (this.seated) return this.talkSeated(3);
     this.setUpper('wave');
     this.after(this.full['wave'].getClip().duration - 0.4, () => this.upper === 'wave' && this.setUpper(null));
   }
@@ -263,7 +366,7 @@ export class Character {
   /** Takes an object into the right hand (it's parented to the hand bone; fingers close round it). */
   hold(obj: THREE.Object3D, ms = 450) {
     this.setUpper('drink_idle');
-    const hand = this.bones['hand_r'];
+    const hand = this.bone('hand_r');
     const startW = obj.getWorldPosition(new THREE.Vector3());
     const startQ = obj.getWorldQuaternion(new THREE.Quaternion());
     const t0 = this.clock;
@@ -300,7 +403,16 @@ export class Character {
   speak(seconds: number) {
     this.speaking = Math.max(this.speaking, seconds);
     if (!this.upper && !this.seated) this.setUpper('talk');
+    else if (!this.upper && this.seated) this.talkSeated(seconds);
     this.after(seconds, () => this.upper === 'talk' && this.setUpper(null));
+  }
+
+  /** Seated conversation: the upper body gestures while the hips stay in the chair. */
+  talkSeated(seconds: number) {
+    const clip = this.upperActs['sit_talk'] ? 'sit_talk' : this.upperActs['sit_shrug'] ? 'sit_shrug' : null;
+    if (!clip || this.base !== 'sit_idle') return;
+    this.setUpper(clip, 0.4);
+    this.after(Math.max(2.5, seconds), () => this.upper === clip && this.setUpper(null, 0.5));
   }
   mouthLevel = (): number | null => null;
 
@@ -313,11 +425,11 @@ export class Character {
       }
     }
     // Locomotion: move at the walk clip's own speed, turning toward the target.
-    if (this.target && this.base === 'walk') {
+    if (this.target && this.base === this.gait) {
       const to = this.target.clone().sub(this.root.position);
       to.y = 0;
       const dist = to.length();
-      const speed = this.meta.walk?.speed ?? 1.1;
+      const speed = this.meta[this.gait]?.speed ?? 1.1;
       if (dist < 0.06) {
         this.target = null;
         this.play('idle', 0.3);
@@ -331,7 +443,7 @@ export class Character {
         // slow down while turning sharply and when arriving, so feet keep contact
         const k = Math.max(0.25, Math.cos(Math.min(Math.abs(diff), Math.PI / 2)));
         const v = Math.min(dist / dt, speed * k);
-        const a = this.full.walk;
+        const a = (this.upper ? this.lower : this.full)[this.gait];
         a.timeScale = v / speed;
         this.root.position.addScaledVector(new THREE.Vector3(Math.sin(this.root.rotation.y), 0, Math.cos(this.root.rotation.y)), v * dt);
       }
@@ -348,6 +460,15 @@ export class Character {
       }
     }
     this.mixer.update(dt);
+    if ((this.profile as any).proceduralGrip) {
+      // While holding something the fingers are posed in code (start from rest each frame, then curl);
+      // otherwise the clips (Meshy's own walk/run animate the fingers) are left alone.
+      this.grip += ((this.held ? 1 : 0) - this.grip) * Math.min(1, dt * 6);
+      if (this.grip > 0.002) {
+        for (const [b, q] of this.fingerRest) b.quaternion.copy(q);
+        this.applyGrip(this.grip);
+      }
+    }
     // Face: blink every few seconds, mouth while speaking.
     this.blinkT -= dt;
     let blink = 0;

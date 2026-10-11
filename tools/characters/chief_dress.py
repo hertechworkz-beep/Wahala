@@ -3,7 +3,7 @@ import sys, os, math, bpy, bmesh, random
 import numpy as np
 from mathutils import Vector, Matrix
 from mathutils.bvhtree import BVHTree
-sys.path.insert(0, os.path.dirname(__file__))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from dresslib import *
 
 src, out = sys.argv[-2], sys.argv[-1]
