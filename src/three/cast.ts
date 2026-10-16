@@ -8,9 +8,10 @@ export interface Voice {
   rate?: number;
 }
 /**
- * Casting (brief Part 29): in Lagos, main characters, player avatar options and almost all NPCs are
- * Black African, across the full range of skin tones. Non-African people may appear only as a few
- * background expats or tourists, never in a story role. The content validator enforces this.
+ * Casting (brief Part 29): in Lagos, main characters, player avatar options and the large majority
+ * of NPCs are Black African with authentic African features, across the full range of skin tones.
+ * Non-African people appear only as a small share of background characters (expats, tourists,
+ * business visitors), never in a story role. The content validator enforces this.
  */
 export type Heritage = 'black_african' | 'non_african';
 export type CastRole = 'story' | 'player' | 'npc' | 'background_expat';

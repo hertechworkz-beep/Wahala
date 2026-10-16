@@ -30,10 +30,14 @@ export function seatIds(v: VenueConfig) {
   return out;
 }
 
-/** Most background people a scene may cast from outside Africa ("a few expats or tourists"). */
-export const MAX_EXPATS_PER_SCENE = 2;
+/**
+ * Part 29.2: non-African people only as "a small share of background characters". We read that as
+ * at most 15% of a scene's background cast, and always allow one (a lone expat at the bar).
+ */
+export const EXPAT_SHARE = 0.15;
+export const allowedExpats = (backgroundCount: number) => Math.max(1, Math.floor(backgroundCount * EXPAT_SHARE));
 
-/** Brief Part 29: Lagos is cast Black African; non-African people only as a few background expats. */
+/** Brief Part 29: Lagos is cast Black African; non-African people only as a small share of background characters. */
 export function validateCasting(s: DateScene): string[] {
   const errs: string[] = [];
   const leads = [s.player.who, s.date.who];
@@ -49,7 +53,8 @@ export function validateCasting(s: DateScene): string[] {
     if (p.role !== 'background_expat') errs.push(`${s.id}: ${e.who} is not Black African, so may only be cast as a background expat (Part 29)`);
     expats++;
   }
-  if (expats > MAX_EXPATS_PER_SCENE) errs.push(`${s.id}: ${expats} non-African extras; at most ${MAX_EXPATS_PER_SCENE} background expats per scene (Part 29)`);
+  const allowed = allowedExpats(s.extras.length);
+  if (expats > allowed) errs.push(`${s.id}: ${expats} non-African extras of ${s.extras.length}; a small share is at most ${allowed} background expats here (Part 29)`);
   return errs;
 }
 

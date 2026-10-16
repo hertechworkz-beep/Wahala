@@ -403,17 +403,6 @@ The creator is willing to buy assets and services to reach quality faster. Use t
 5. Billing via the Advertise page; reports show views, try-ons, taps and purchases.
 6. Build the data model and upload/approval flow early; automate generation once the core game is proven.
 
-## PART 29 — CASTING: LAGOS IS BLACK AFRICAN
-
-*Interim text written from the creator's instruction; to be replaced by the creator's full Part 29.*
-
-- In Wahala: Lagos, the **main characters, every player avatar option and almost all NPCs are Black African, with authentic African features, across the full range of skin tones.**
-- **Non-African people** may appear only as **a few background expats or tourists**, never as story characters (at most two per scene).
-- **For now, use only Rocketbox's Black models** for Lagos diners and crowds. Keep the other Rocketbox people for future Seasons (London, New York).
-- **More Lagos people** will come from the creator's set of Nigerian face portraits, through the photo-to-avatar or Meshy pipeline.
-- Never darken a non-African model's skin to cast them as African: features matter, not only skin tone.
-- The rule is enforced in content: every person in the cast declares heritage and role, and the build fails if a story role, a player option or too many background people break it (`src/three/scenes/validate.ts`). The audit of available bodies is in `docs/CASTING.md`.
-
 ## PART 21 (UPDATED) — BUILD ORDER
 
 1. **Finish the 3D proof scene** with current stand-ins.
@@ -424,3 +413,10 @@ The creator is willing to buy assets and services to reach quality faster. Use t
 6. **Spots and real players** (Part 12), with safety.
 7. **Merchant upload and approval flow** (Part 28), then automated twins.
 8. **Remaining characters** using the same brain and pipeline.
+
+## PART 29 — WHO LIVES IN LAGOS (casting rule for 3D people)
+
+1. Main characters, player avatar options and the large majority of NPCs in Wahala: Lagos are Black African with authentic African features (face shape, hair textures, styling), across the full range of skin tones from very dark to light-skinned.
+2. Non-African people may appear in Lagos only as a small share of background characters (expats, tourists, business visitors), never as main or story characters.
+3. Rocketbox's non-African models are reserved for future Seasons (London, New York and others). Its Black models may be used as Lagos background characters now.
+4. To fill Lagos quickly: generate a library of fictional Nigerian face portraits (varied ages, ethnic groups, skin tones, hairstyles; never real people), convert them to rigged 3D people with the photo-to-avatar or Meshy pipeline, and dress them in Lagos fashion (ankara, agbada, senator, kaftan, gele, corporate wear, streetwear, uniforms for waiters, security, drivers, hawkers).

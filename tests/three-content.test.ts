@@ -31,7 +31,7 @@ describe('3D content', () => {
       const fewExpats = validateScene({ ...firstDate, extras: [...firstDate.extras, { who: '__test_expat', seat: 't3.a' }] });
       expect(fewExpats).toEqual([]);
       const tooMany = validateScene({ ...firstDate, extras: [...firstDate.extras, ...['t2.a', 't2.b', 't3.a'].map((seat) => ({ who: '__test_expat', seat }))] });
-      expect(tooMany.some((e) => e.includes('background expats per scene'))).toBe(true);
+      expect(tooMany.some((e) => e.includes('a small share is at most'))).toBe(true);
     } finally {
       delete PEOPLE.__test_expat;
       delete PEOPLE.__test_lead;

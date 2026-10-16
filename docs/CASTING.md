@@ -1,14 +1,20 @@
 # Casting (brief Part 29)
 
-Lagos is cast Black African: main characters, player avatar options and almost all NPCs, across the
-full range of skin tones. Non-African people appear only as a few background expats or tourists
-(at most two per scene), never in story roles. The validator enforces this from `src/three/cast.ts`.
+The rule is Part 29 of the brief. In short: main characters, player avatar options and the large
+majority of NPCs in Lagos are Black African with authentic African features (face shape, hair
+textures, styling), from very dark to light-skinned. Non-African people appear only as a small share
+of background characters (expats, tourists, business visitors), never in story roles. Rocketbox's
+non-African models are reserved for future Seasons; its Black models may be Lagos background
+characters now.
+
+The validator enforces this from `src/three/cast.ts`. "A small share" is read as at most 15% of a
+scene's background cast, always allowing one.
 
 ## Rocketbox audit (all 111 adult avatars reviewed)
 
 | Avatar | Reads as | Use in Lagos |
 | --- | --- | --- |
-| Business_Female_01 | Black African woman, smart clothes | **Player stand-in** |
+| Business_Female_01 | Black African woman, smart clothes | **Player stand-in** (temporary: Part 29 keeps Rocketbox to background roles, so the portrait pipeline replaces her as the player) |
 | Pilot_Female_02 | Black African woman, cabin-crew uniform | Diner (off-duty crew), airport scenes |
 | Male_Adult_04 | Black African man, casual | Diner |
 | Male_Adult_12 | Black African man, casual | Waiter |
@@ -20,10 +26,11 @@ full range of skin tones. Non-African people appear only as a few background exp
 | Everyone else | Not African | Background expats only, or future Seasons |
 
 **The gap:** Rocketbox has only two clearly Black African women, and few Black men in everyday
-clothes. Lagos needs far more variety (ages, builds, skin tones, styles: ankara, agbada, kaftan,
-office wear, street wear). That comes from the creator's Nigerian face portraits through the
-photo-to-avatar (MetaPerson) or Meshy pipeline, rigged to a Mixamo skeleton so they use the same
-animation libraries as everyone else.
+clothes. Part 29.4 fills it: a library of fictional Nigerian face portraits (varied ages, ethnic
+groups, skin tones and hairstyles; never real people), turned into rigged 3D people with the
+photo-to-avatar or Meshy pipeline and dressed in Lagos fashion: ankara, agbada, senator, kaftan,
+gele, corporate wear, streetwear, and uniforms for waiters, security, drivers and hawkers. Each is
+rigged to a Mixamo skeleton so they share the animation libraries with everyone else.
 
 ## Adding a person
 
