@@ -403,6 +403,17 @@ The creator is willing to buy assets and services to reach quality faster. Use t
 5. Billing via the Advertise page; reports show views, try-ons, taps and purchases.
 6. Build the data model and upload/approval flow early; automate generation once the core game is proven.
 
+## PART 29 — CASTING: LAGOS IS BLACK AFRICAN
+
+*Interim text written from the creator's instruction; to be replaced by the creator's full Part 29.*
+
+- In Wahala: Lagos, the **main characters, every player avatar option and almost all NPCs are Black African, with authentic African features, across the full range of skin tones.**
+- **Non-African people** may appear only as **a few background expats or tourists**, never as story characters (at most two per scene).
+- **For now, use only Rocketbox's Black models** for Lagos diners and crowds. Keep the other Rocketbox people for future Seasons (London, New York).
+- **More Lagos people** will come from the creator's set of Nigerian face portraits, through the photo-to-avatar or Meshy pipeline.
+- Never darken a non-African model's skin to cast them as African: features matter, not only skin tone.
+- The rule is enforced in content: every person in the cast declares heritage and role, and the build fails if a story role, a player option or too many background people break it (`src/three/scenes/validate.ts`). The audit of available bodies is in `docs/CASTING.md`.
+
 ## PART 21 (UPDATED) — BUILD ORDER
 
 1. **Finish the 3D proof scene** with current stand-ins.

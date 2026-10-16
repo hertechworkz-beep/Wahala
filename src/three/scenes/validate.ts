@@ -30,11 +30,42 @@ export function seatIds(v: VenueConfig) {
   return out;
 }
 
+/** Most background people a scene may cast from outside Africa ("a few expats or tourists"). */
+export const MAX_EXPATS_PER_SCENE = 2;
+
+/** Brief Part 29: Lagos is cast Black African; non-African people only as a few background expats. */
+export function validateCasting(s: DateScene): string[] {
+  const errs: string[] = [];
+  const leads = [s.player.who, s.date.who];
+  for (const w of leads) {
+    const p = PEOPLE[w];
+    if (p && p.heritage !== 'black_african') errs.push(`${s.id}: ${w} is a story character and must be Black African (Part 29)`);
+    if (p && p.role === 'background_expat') errs.push(`${s.id}: ${w} is a background expat and can't be a story character`);
+  }
+  let expats = 0;
+  for (const e of s.extras) {
+    const p = PEOPLE[e.who];
+    if (!p || p.heritage === 'black_african') continue;
+    if (p.role !== 'background_expat') errs.push(`${s.id}: ${e.who} is not Black African, so may only be cast as a background expat (Part 29)`);
+    expats++;
+  }
+  if (expats > MAX_EXPATS_PER_SCENE) errs.push(`${s.id}: ${expats} non-African extras; at most ${MAX_EXPATS_PER_SCENE} background expats per scene (Part 29)`);
+  return errs;
+}
+
+/** Every person registered for the player or a story role must be Black African. */
+export function validateCast(): string[] {
+  return Object.entries(PEOPLE)
+    .filter(([, p]) => (p.role === 'player' || p.role === 'story') && p.heritage !== 'black_african')
+    .map(([id]) => `cast: ${id} has a ${PEOPLE[id].role} role and must be Black African (Part 29)`);
+}
+
 export function validateScene(s: DateScene): string[] {
   const errs = validateVenue(s.venue);
   const seats = new Set(seatIds(s.venue));
   const who = [s.player.who, s.date.who, ...s.extras.map((e) => e.who)];
   for (const w of who) if (!PEOPLE[w]) errs.push(`${s.id}: unknown person ${w}`);
+  errs.push(...validateCasting(s));
   if (!s.venue.spots[s.player.start]) errs.push(`${s.id}: player start spot ${s.player.start} missing`);
   if (!s.venue.spots[s.date.enterFrom]) errs.push(`${s.id}: date entrance ${s.date.enterFrom} missing`);
   const used = new Set<string>();

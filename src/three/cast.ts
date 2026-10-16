@@ -7,8 +7,19 @@ export interface Voice {
   pitch?: number;
   rate?: number;
 }
+/**
+ * Casting (brief Part 29): in Lagos, main characters, player avatar options and almost all NPCs are
+ * Black African, across the full range of skin tones. Non-African people may appear only as a few
+ * background expats or tourists, never in a story role. The content validator enforces this.
+ */
+export type Heritage = 'black_african' | 'non_african';
+export type CastRole = 'story' | 'player' | 'npc' | 'background_expat';
+
 export interface PersonDef {
   name: string;
+  heritage: Heritage;
+  role: CastRole;
+  source: string; // where the body comes from, for the casting audit
   model: string; // under public/
   meta?: string; // the model's own clip facts (when it carries its own clips)
   library?: keyof typeof LIBRARIES;
@@ -21,11 +32,11 @@ export const LIBRARIES = {
 };
 
 export const PEOPLE: Record<string, PersonDef> = {
-  chief: { name: 'Chief', model: 'models/chief.glb', meta: 'models/chief.clips.json', voice: { male: true, pitch: 0.7, rate: 0.9 } },
-  player_f: { name: 'You', model: 'models/people/player_f.glb', library: 'rb_female', voice: { male: false, pitch: 1.05, rate: 1 } },
-  diner_m1: { name: 'Diner', model: 'models/people/diner_m1.glb', library: 'rb_male', voice: { male: true, pitch: 0.9 } },
-  diner_m2: { name: 'Diner', model: 'models/people/diner_m2.glb', library: 'rb_male', voice: { male: true, pitch: 0.95 } },
-  diner_f1: { name: 'Diner', model: 'models/people/diner_f1.glb', library: 'rb_female', voice: { male: false } },
-  waiter: { name: 'Waiter', model: 'models/people/waiter.glb', library: 'rb_male', voice: { male: true, pitch: 1.0, rate: 1.05 } },
+  chief: { name: 'Chief', heritage: 'black_african', role: 'story', source: 'Meshy (approved Chief)', model: 'models/chief.glb', meta: 'models/chief.clips.json', voice: { male: true, pitch: 0.7, rate: 0.9 } },
+  player_f: { name: 'You', heritage: 'black_african', role: 'player', source: 'Rocketbox Business_Female_01', model: 'models/people/player_f.glb', library: 'rb_female', voice: { male: false, pitch: 1.05, rate: 1 } },
+  diner_m1: { name: 'Diner', heritage: 'black_african', role: 'npc', source: 'Rocketbox Male_Adult_04', model: 'models/people/diner_m1.glb', library: 'rb_male', voice: { male: true, pitch: 0.9 } },
+  diner_m2: { name: 'Diner', heritage: 'black_african', role: 'npc', source: 'Rocketbox Male_Adult_18', model: 'models/people/diner_m2.glb', library: 'rb_male', voice: { male: true, pitch: 0.95 } },
+  diner_f1: { name: 'Diner', heritage: 'black_african', role: 'npc', source: 'Rocketbox Pilot_Female_02 (off-duty crew)', model: 'models/people/diner_f1.glb', library: 'rb_female', voice: { male: false } },
+  waiter: { name: 'Waiter', heritage: 'black_african', role: 'npc', source: 'Rocketbox Male_Adult_12', model: 'models/people/waiter.glb', library: 'rb_male', voice: { male: true, pitch: 1.0, rate: 1.05 } },
 };
 

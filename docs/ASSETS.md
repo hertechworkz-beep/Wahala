@@ -19,9 +19,11 @@ Every 3D asset in the game, where it comes from, and its licence. All of them ca
 
 | Who | Avatar | Licence |
 | --- | --- | --- |
-| You (stand-in until the player avatar system) | `Female_Party_02` | MIT, © 2020 Microsoft |
-| Diners | `Male_Adult_04`, `Business_Female_01`, `Male_Adult_12` | MIT |
-| Waiter | `Business_Male_05` | MIT |
+| You (stand-in until the player avatar system) | `Business_Female_01` | MIT, © 2020 Microsoft |
+| Diners | `Male_Adult_04`, `Male_Adult_18`, `Pilot_Female_02` (off-duty crew) | MIT |
+| Waiter | `Male_Adult_12` | MIT |
+
+Casting follows brief Part 29 (see `docs/CASTING.md`): only Rocketbox's Black African avatars are used in Lagos.
 
 Each uses the avatar's "facial" export, keeping its 52 ARKit expression shapes and 15 lip-sync visemes. Two shared animation libraries (female and male) of Rocketbox clips drive every avatar on the Biped skeleton: idles, walk, run, chair and table sitting, standing up, carrying a bag, drinking, talking, listening, laughing, phone, dancing and more. Built by `tools/characters/build_rocketbox_people.sh`.
 

@@ -7,7 +7,7 @@ import { validateCity } from '../src/engine/validate';
 import { simulate, POLICIES } from '../src/engine/sim';
 import { validateScene } from '../src/engine/scene';
 import type { EndingId } from '../src/engine/types';
-import { validateScene as validate3D } from '../src/three/scenes/validate';
+import { validateCast, validateScene as validate3D } from '../src/three/scenes/validate';
 import { firstDate } from '../src/three/scenes/firstDate';
 
 const content = loadCity('lagos', { withGenerated: false });
@@ -63,7 +63,7 @@ const blocking = errors.filter((e) => {
   return true;
 });
 // 3D scenes: every seat, person, spot and line a scene names must exist.
-const scene3d = [firstDate].flatMap((s) => validate3D(s));
+const scene3d = [...validateCast(), ...[firstDate].flatMap((s) => validate3D(s))];
 for (const e of scene3d) console.log(`  ERROR 3D ${e}`);
 console.log(`3D scenes: ${scene3d.length ? 'FAILED' : 'ok'}`);
 if (blocking.length || !report.shared.pass || playable === 0 || scene3d.length) {
