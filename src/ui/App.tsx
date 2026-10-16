@@ -45,6 +45,7 @@ export function App() {
   if (path.startsWith('/v/')) page = <ShareLanding payload={path.slice(3)} />;
   else if (path.startsWith('/advertise')) page = <Advertise />;
   else if (path.startsWith('/play')) page = <Play />;
+  else if (path.startsWith('/3d/date')) page = <Suspense fallback={<Loading />}><ChiefPreview stage="date" /></Suspense>;
   else if (path.startsWith('/3d')) page = <Suspense fallback={<Loading />}><ChiefPreview /></Suspense>;
   else page = <Home />;
   return (
@@ -95,9 +96,12 @@ function Home() {
         <Btn tone={saved ? 'ghost' : 'primary'} className="w-full" onClick={() => (sound.unlock(), saved && storage.set('wahala.run.v1', null), navigate('/play'))}>
           {saved ? 'Start a new run' : 'Start dating →'}
         </Btn>
-        <Btn tone="gold" className="w-full" onClick={() => (sound.unlock(), navigate('/3d'))}>
-          Meet Chief in 3D (preview)
+        <Btn tone="gold" className="w-full" onClick={() => (sound.unlock(), navigate('/3d/date'))}>
+          First date in 3D (preview)
         </Btn>
+        <button className="w-full text-[13px] font-bold text-[#F59E0B]/80 underline" onClick={() => (sound.unlock(), navigate('/3d'))}>
+          Chief's animation check
+        </button>
         <div className="flex justify-center gap-4 pt-2 text-[12px] text-white/40">
           <a href="/advertise" onClick={(e) => (e.preventDefault(), navigate('/advertise'))} className="underline">
             Advertise on Wahala

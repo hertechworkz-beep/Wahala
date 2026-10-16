@@ -48,6 +48,17 @@ Short lines for the apartment, the ride and the restaurant. Real voices replace 
 
 Female files: `you_f_hello` and so on. Male files: `you_m_hello` and so on.
 
+## First date in 3D (the restaurant)
+
+These lines come straight from `src/three/scenes/firstDate.ts`; `tools/voice/elevenlabs.mjs` generates them all once `ELEVENLABS_API_KEY` is set. A human recording with the same id always replaces the generated one.
+
+| Who | IDs |
+| --- | --- |
+| Chief | `chief_arrive_1`, `chief_arrive_2`, `chief_small_1` to `chief_small_4`, `chief_toast`, `chief_toast_2`, `chief_left_1`, `chief_left_2`, `chief_back_1` |
+| You | `player_reply_1` to `player_reply_3` |
+| Waiter | `waiter_serve`, `waiter_tap_1`, `waiter_tap_2` |
+| Diners (each diner has their own voice) | `diner_taken_1`, `diner_taken_2`, `diner_tap_1`, `diner_tap_2` |
+
 ## Where they go
 
 Upload the files here. I'll trim, level and compress them for phones, and place them in `public/audio/voices/<character>/<id>.mp3`.

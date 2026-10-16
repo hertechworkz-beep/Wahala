@@ -171,3 +171,167 @@ export function speaker() {
   };
   return g;
 }
+
+const std = (color: string, roughness = 0.6, metalness = 0) => new THREE.MeshStandardMaterial({ color, roughness, metalness });
+function add(g: THREE.Group, geo: THREE.BufferGeometry, mat: THREE.Material, x: number, y: number, z: number, shadow = true) {
+  const m = new THREE.Mesh(geo, mat);
+  m.position.set(x, y, z);
+  m.castShadow = m.receiveShadow = shadow;
+  g.add(m);
+  return m;
+}
+
+/** A dining chair. The sitter faces +Z (local); `seatLocal` is the top of the cushion. */
+export function diningChair(seatTop = 0.47, color = '#3b1f14', fabric = '#8a6a3a') {
+  const g = new THREE.Group();
+  g.name = 'chair';
+  const wood = std(color, 0.45), cloth = std(fabric, 0.85);
+  const W = 0.46, D = 0.46;
+  add(g, new RoundedBoxGeometry(W, 0.06, D, 2, 0.02), cloth, 0, seatTop - 0.03, 0);
+  add(g, new RoundedBoxGeometry(W, 0.03, D, 2, 0.01), wood, 0, seatTop - 0.075, 0);
+  // an open back (two posts and a curved rail) so clothes that brush it don't vanish into a board
+  for (const x of [-0.2, 0.2]) add(g, new THREE.BoxGeometry(0.035, 0.5, 0.035), wood, x, seatTop + 0.22, -D / 2 + 0.02);
+  add(g, new RoundedBoxGeometry(W, 0.12, 0.035, 2, 0.015), wood, 0, seatTop + 0.42, -D / 2 + 0.02);
+  for (const [x, z] of [[-0.2, -0.2], [0.2, -0.2], [-0.2, 0.2], [0.2, 0.2]]) add(g, new THREE.BoxGeometry(0.035, seatTop - 0.09, 0.035), wood, x, (seatTop - 0.09) / 2, z);
+  g.userData.seatLocal = new THREE.Vector3(0, seatTop, 0.07); // sit a little forward, clear of the back
+  return g;
+}
+
+/** A round restaurant table with a white cloth. `topY` is the height of the top surface. */
+export function roundTable(radius = 0.42, topY = 0.75) {
+  const g = new THREE.Group();
+  g.name = 'table';
+  const cloth = new THREE.Mesh(new THREE.CylinderGeometry(radius, radius + 0.02, 0.1, 40, 1, true), std('#f2ede4', 0.9));
+  cloth.position.y = topY - 0.05;
+  cloth.material.side = THREE.DoubleSide;
+  cloth.castShadow = true;
+  g.add(cloth);
+  add(g, new THREE.CylinderGeometry(radius, radius, 0.02, 40), std('#f7f3ec', 0.85), 0, topY - 0.01, 0);
+  add(g, new THREE.CylinderGeometry(0.05, 0.07, topY - 0.05, 16), std('#2a1a12', 0.4, 0.3), 0, (topY - 0.05) / 2, 0);
+  add(g, new THREE.CylinderGeometry(0.28, 0.3, 0.03, 32), std('#2a1a12', 0.4, 0.3), 0, 0.015, 0);
+  g.userData.topY = topY;
+  return g;
+}
+
+/** Plate with folded napkin. */
+export function placeSetting() {
+  const g = new THREE.Group();
+  add(g, new THREE.CylinderGeometry(0.12, 0.1, 0.015, 32), std('#ffffff', 0.25), 0, 0.008, 0, false);
+  add(g, new THREE.CylinderGeometry(0.08, 0.08, 0.004, 32), std('#e9e4da', 0.3), 0, 0.017, 0, false);
+  add(g, new THREE.BoxGeometry(0.012, 0.004, 0.17), std('#c9c9c9', 0.2, 1), 0.15, 0.003, 0, false);
+  add(g, new THREE.BoxGeometry(0.012, 0.004, 0.17), std('#c9c9c9', 0.2, 1), -0.15, 0.003, 0, false);
+  return g;
+}
+
+/** A candle in a glass with a flickering flame and its own small light. */
+export function candle(withLight = true) {
+  const g = new THREE.Group();
+  add(g, new THREE.CylinderGeometry(0.03, 0.03, 0.07, 16), new THREE.MeshPhysicalMaterial({ color: '#ffffff', transmission: 0.9, roughness: 0.1, transparent: true, opacity: 0.4 }), 0, 0.035, 0, false);
+  add(g, new THREE.CylinderGeometry(0.022, 0.022, 0.045, 16), std('#f4ead2', 0.7), 0, 0.023, 0, false);
+  const flameMat = new THREE.MeshBasicMaterial({ color: '#ffcf7a' });
+  const flame = add(g, new THREE.SphereGeometry(0.008, 8, 6), flameMat, 0, 0.058, 0, false);
+  flame.scale.set(1, 2, 1);
+  let light: THREE.PointLight | null = null;
+  if (withLight) {
+    light = new THREE.PointLight('#ffb35c', 0.6, 1.6, 2);
+    light.position.y = 0.12;
+    g.add(light);
+  }
+  g.userData.tick = (t: number) => {
+    const f = 0.85 + Math.sin(t * 17.3) * 0.08 + Math.sin(t * 7.1) * 0.07;
+    flame.scale.set(1, 2 * f, 1);
+    if (light) light.intensity = 0.6 * f;
+  };
+  return g;
+}
+
+/** A structured handbag. Origin at the top of the handle, so it hangs from the hand. */
+export function handbag(color = '#c0392b') {
+  const g = new THREE.Group();
+  g.name = 'bag';
+  const leather = std(color, 0.4);
+  const body = add(g, new RoundedBoxGeometry(0.26, 0.18, 0.1, 3, 0.025), leather, 0, -0.2, 0);
+  body.castShadow = true;
+  add(g, new RoundedBoxGeometry(0.26, 0.06, 0.104, 3, 0.02), std('#8e1f16', 0.45), 0, -0.135, 0);
+  add(g, new THREE.BoxGeometry(0.04, 0.02, 0.106), std('#d4af37', 0.25, 1), 0, -0.15, 0);
+  const handle = new THREE.Mesh(new THREE.TorusGeometry(0.07, 0.008, 8, 24, Math.PI), std('#8e1f16', 0.4));
+  handle.position.y = -0.11;
+  g.add(handle);
+  g.userData.baseOffset = 0.29; // origin to the bottom
+  return g;
+}
+
+/** A long bar counter with stools and bottles on a back shelf. */
+export function barCounter(length = 4) {
+  const g = new THREE.Group();
+  g.name = 'bar';
+  add(g, new RoundedBoxGeometry(length, 1.05, 0.6, 2, 0.03), std('#1d120d', 0.5), 0, 0.525, 0);
+  add(g, new RoundedBoxGeometry(length + 0.1, 0.05, 0.7, 2, 0.02), std('#d9c9a8', 0.2, 0.1), 0, 1.075, 0);
+  const strip = new THREE.Mesh(new THREE.BoxGeometry(length, 0.02, 0.02), new THREE.MeshBasicMaterial({ color: '#F59E0B' }));
+  strip.position.set(0, 0.05, 0.31);
+  g.add(strip);
+  const shelf = add(g, new THREE.BoxGeometry(length, 0.04, 0.3), std('#3a2418', 0.5), 0, 1.6, -1.0);
+  void shelf;
+  const rnd = mulberry(4);
+  const bottleMats = ['#2f5d3a', '#6b3a1e', '#c9a24a', '#1b2a4a', '#7a1020'].map((c) => new THREE.MeshPhysicalMaterial({ color: c, roughness: 0.15, transmission: 0.4, transparent: true, opacity: 0.85 }));
+  for (let x = -length / 2 + 0.15; x < length / 2 - 0.1; x += 0.16 + rnd() * 0.08) {
+    const h = 0.24 + rnd() * 0.1;
+    add(g, new THREE.CylinderGeometry(0.035, 0.04, h, 12), bottleMats[Math.floor(rnd() * bottleMats.length)], x, 1.62 + h / 2, -1.0, false);
+  }
+  return g;
+}
+
+export function barStool() {
+  const g = new THREE.Group();
+  add(g, new THREE.CylinderGeometry(0.19, 0.19, 0.06, 24), std('#5a1018', 0.6), 0, 0.76, 0);
+  add(g, new THREE.CylinderGeometry(0.025, 0.025, 0.74, 10), std('#b08a3c', 0.3, 1), 0, 0.37, 0);
+  add(g, new THREE.CylinderGeometry(0.2, 0.2, 0.02, 24), std('#b08a3c', 0.3, 1), 0, 0.01, 0);
+  return g;
+}
+
+/** A potted palm made of drooping leaf blades. */
+export function plant(height = 1.5) {
+  const g = new THREE.Group();
+  add(g, new THREE.CylinderGeometry(0.22, 0.17, 0.42, 20), std('#d8cdb8', 0.7), 0, 0.21, 0);
+  const leaf = std('#2f6b35', 0.6);
+  leaf.side = THREE.DoubleSide;
+  const rnd = mulberry(11);
+  for (let i = 0; i < 14; i++) {
+    const a = (i / 14) * Math.PI * 2 + rnd() * 0.3;
+    const len = height * (0.45 + rnd() * 0.25);
+    const geo = new THREE.PlaneGeometry(0.12, len, 1, 6);
+    const pos = geo.attributes.position as THREE.BufferAttribute;
+    for (let k = 0; k < pos.count; k++) {
+      const y = pos.getY(k) + len / 2;
+      const t = y / len;
+      pos.setXYZ(k, pos.getX(k) * (1 - t * 0.8), y * (1 - t * 0.35), t * t * len * 0.55);
+    }
+    geo.computeVertexNormals();
+    const m = new THREE.Mesh(geo, leaf);
+    m.position.y = 0.4;
+    m.rotation.set(-0.35 - rnd() * 0.3, a, 0);
+    m.castShadow = true;
+    g.add(m);
+  }
+  return g;
+}
+
+/** A warm pendant lamp hanging from the ceiling (a glowing shade; light added by the venue). */
+export function pendant(dropTo = 1.9) {
+  const g = new THREE.Group();
+  add(g, new THREE.CylinderGeometry(0.004, 0.004, 3.2 - dropTo, 4), std('#111', 0.5), 0, (3.2 + dropTo) / 2, 0, false);
+  const shade = add(g, new THREE.SphereGeometry(0.16, 24, 12, 0, Math.PI * 2, 0, Math.PI / 2), new THREE.MeshStandardMaterial({ color: '#c9a24a', metalness: 1, roughness: 0.3, side: THREE.DoubleSide }), 0, dropTo, 0, false);
+  void shade;
+  add(g, new THREE.SphereGeometry(0.05, 12, 8), new THREE.MeshBasicMaterial({ color: '#ffe0a8' }), 0, dropTo - 0.02, 0, false);
+  return g;
+}
+
+/** A double door in a frame. */
+export function door(width = 1.6, color = '#2a170d') {
+  const g = new THREE.Group();
+  g.name = 'door';
+  add(g, new THREE.BoxGeometry(width + 0.2, 2.5, 0.12), std('#c9a24a', 0.3, 1), 0, 1.25, -0.02);
+  add(g, new THREE.BoxGeometry(width / 2 - 0.02, 2.35, 0.06), std(color, 0.5), -width / 4, 1.18, 0.02);
+  add(g, new THREE.BoxGeometry(width / 2 - 0.02, 2.35, 0.06), std(color, 0.5), width / 4, 1.18, 0.02);
+  return g;
+}

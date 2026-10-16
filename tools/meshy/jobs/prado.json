@@ -1,0 +1,10 @@
+{
+  "name": "prado",
+  "out": "art-src/vehicles",
+  "text": {
+    "prompt": "A dark gunmetal grey 2022 Toyota Land Cruiser Prado style SUV, tinted windows, chrome grille, alloy wheels, clean and expensive, realistic proportions, game asset",
+    "negative_prompt": "logo, text, damaged, cartoon",
+    "art_style": "realistic",
+    "target_polycount": 30000
+  }
+}

@@ -40,6 +40,16 @@ if TARGET == 'mixamo':
             CHAIN[f'{P}{side}Hand{f}2'] = f'{P}{side}Hand{f}3'
     def child_joint(tname):
         return CHAIN.get(tname)
+elif TARGET == 'rocketbox':
+    # Same Biped skeleton as the source: map every bone to itself (fingers included).
+    HIPS = 'Bip01 Pelvis'
+    MAP = {b.name: b.name for b in RIG.data.bones if b.name.startswith('Bip01 ') and not b.name.endswith('Nub') and 'Footsteps' not in b.name}
+    def child_joint(tname):
+        kids = [c.name for c in RIG.data.bones[tname].children if c.name in MAP]
+        spine = [k for k in kids if 'Spine' in k or 'Neck' in k or 'Head' in k]
+        mid = [k for k in kids if 'Finger2' in k or k.endswith(('Forearm', 'Hand', 'Calf', 'Foot', 'Toe0', 'UpperArm'))]
+        pick = spine or mid or kids
+        return pick[0] if pick else None
 else:
     HIPS = 'pelvis'
     MAP = {'Bip01 Pelvis': 'pelvis', 'Bip01 Spine': 'spine_01', 'Bip01 Spine1': 'spine_02', 'Bip01 Spine2': 'spine_03',
@@ -212,6 +222,10 @@ for clip in CLIPS:
 for pb in RIG.pose.bones:
     pb.matrix_basis = Matrix.Identity(4)
 bpy.ops.wm.save_as_mainfile(filepath=out_glb.replace('.glb', '_anim.blend'))
+if os.environ.get('ANIM_ONLY'):
+    # a shared clip library: just the skeleton and its clips, no body
+    for o in [o for o in bpy.data.objects if o.type == 'MESH']:
+        bpy.data.objects.remove(o, do_unlink=True)
 json.dump(out_meta, open(out_glb.replace('.glb', '.clips.json'), 'w'), indent=1)
 bpy.ops.export_scene.gltf(filepath=out_glb, export_format='GLB', export_animation_mode='NLA_TRACKS', export_skins=True, export_morph=True,
                           export_apply=False, export_yup=True, export_image_format='WEBP', export_image_quality=82, export_cameras=False, export_lights=False)

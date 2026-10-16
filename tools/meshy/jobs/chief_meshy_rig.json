@@ -1,0 +1,7 @@
+{
+  "name": "chief_meshy_rig",
+  "out": "art-src/chief/meshy_rig_test",
+  "model": "art-src/chief/chief_meshy_source.glb",
+  "rig": { "height_meters": 1.78 },
+  "animations": []
+}

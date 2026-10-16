@@ -1,0 +1,7 @@
+{
+  "name": "chief_from_portrait",
+  "out": "art-src/chief/meshy_portrait_test",
+  "image": { "file": "public/art/chief_charming.webp", "options": { "topology": "quad", "target_polycount": 40000 } },
+  "rig": { "height_meters": 1.78 },
+  "animations": []
+}

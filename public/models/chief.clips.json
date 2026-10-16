@@ -250,5 +250,53 @@
    0.0,
    0.0
   ]
+ },
+ "table_down": {
+  "frames": 127,
+  "duration": 4.2,
+  "speed": 0.228,
+  "loop": false,
+  "root": "keep",
+  "end_offset": [
+   -0.0,
+   -0.957,
+   0.0
+  ]
+ },
+ "table_up": {
+  "frames": 103,
+  "duration": 3.4,
+  "speed": 0.17,
+  "loop": false,
+  "root": "keep",
+  "end_offset": [
+   0.527,
+   -0.242,
+   0.0
+  ]
+ },
+ "table_idle": {
+  "frames": 1372,
+  "duration": 45.7,
+  "speed": 0.0,
+  "loop": true,
+  "root": "keep",
+  "end_offset": [
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "table_shrug": {
+  "frames": 106,
+  "duration": 3.5,
+  "speed": 0.0,
+  "loop": false,
+  "root": "keep",
+  "end_offset": [
+   0.0,
+   0.0,
+   0.0
+  ]
  }
 }

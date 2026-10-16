@@ -8,9 +8,9 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 W=${WORK:-/tmp/wahala-chief}; mkdir -p "$W"
-"$PY" chief_base.py "$W/base.blend"
-SKIN_RES=${SKIN_RES:-1024} "$PY" chief_dress.py "$W/base.blend" "$W/dressed.blend"
-envsubst < chief_clips.template.json > "$W/clips.json"
-"$PY" retarget.py "$W/dressed.blend" "$W/clips.json" "$W/chief.glb"
+$PY chief_base.py "$W/base.blend"
+SKIN_RES=${SKIN_RES:-1024} $PY chief_dress.py "$W/base.blend" "$W/dressed.blend"
+sed "s|\$ROCKETBOX|$ROCKETBOX|g" chief_clips.template.json > "$W/clips.json"
+$PY retarget.py "$W/dressed.blend" "$W/clips.json" "$W/chief.glb"
 npx gltf-transform optimize "$W/chief.glb" ../../public/models/chief.glb --compress meshopt --texture-compress webp --texture-size 1024 --simplify false --join false --flatten false
 cp "$W/chief.clips.json" ../../public/models/chief.clips.json

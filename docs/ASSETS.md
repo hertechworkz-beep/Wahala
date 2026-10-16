@@ -13,7 +13,17 @@ Every 3D asset in the game, where it comes from, and its licence. All of them ca
 | Idle, sit down and stand up, seated idles, wave, talk, drink, phone call, cheer, clap, invite-to-sit and two dances | [Microsoft Rocketbox](https://github.com/microsoft/Microsoft-Rocketbox) animation library | MIT, © 2020 Microsoft | Retargeted onto the Meshy skeleton by `tools/characters/retarget.py` |
 | Hand weight fix | `tools/characters/fix_meshy_weights.py` | Ours | Meshy's automatic rig let the thigh and hip bones pull on the hands, so 1,338 vertices are corrected |
 
-**Meshy licence: please confirm your plan.** As we understand Meshy's terms, models made on a paid plan are yours to use commercially and privately, while free-plan models are released under CC BY 4.0, which means public credit to Meshy. Please check which plan made this model. If it's the free plan, we'll add the credit to the in-game credits.
+**Meshy licence:** made on the creator's paid Meshy plan, so the model is ours to use commercially; no public credit is required.
+
+### The restaurant cast: Microsoft Rocketbox avatars
+
+| Who | Avatar | Licence |
+| --- | --- | --- |
+| You (stand-in until the player avatar system) | `Female_Party_02` | MIT, © 2020 Microsoft |
+| Diners | `Male_Adult_04`, `Business_Female_01`, `Male_Adult_12` | MIT |
+| Waiter | `Business_Male_05` | MIT |
+
+Each uses the avatar's "facial" export, keeping its 52 ARKit expression shapes and 15 lip-sync visemes. Two shared animation libraries (female and male) of Rocketbox clips drive every avatar on the Biped skeleton: idles, walk, run, chair and table sitting, standing up, carrying a bag, drinking, talking, listening, laughing, phone, dancing and more. Built by `tools/characters/build_rocketbox_people.sh`.
 
 ### Earlier stand-in (kept for reference, not used in game)
 
@@ -28,6 +38,8 @@ The MIT licence requires keeping Microsoft's copyright notice. It is reproduced 
 | Asset | Source | Licence |
 | --- | --- | --- |
 | Armchair, side table, wine glass, speaker, floor, rug, walls and lamp | Modelled in code (`src/three/props.ts`) | Ours |
+| Restaurant: round tables with cloths, dining chairs, place settings, candles, bar with bottles, plants, pendant lamps, doors, marble floor, panelled walls, handbag | Modelled in code (`src/three/props.ts`, `src/three/venue.ts`) | Ours |
+| Walkable floor (navmesh) | Generated at runtime by [recast-navigation](https://github.com/isaac-mason/recast-navigation-js) | MIT |
 
 ## Tools (not shipped)
 
@@ -37,5 +49,5 @@ The MIT licence requires keeping Microsoft's copyright notice. It is reproduced 
 
 ## Pending (requested from the creator)
 
-- **MakeHuman system assets** (CC0): realistic eyebrows, eyelashes and hair, plus clothes for the player avatars.
-- **An SUV for Musa's car**, from Sketchfab, licensed CC0 or CC-BY. The artist will be credited here.
+- **Musa's SUV:** to be generated with Meshy (`tools/meshy/jobs/prado.json`) once `MESHY_API_KEY` and `api.meshy.ai` reach the environment; a code-built SUV stands in until then.
+- **MetaPerson Chief:** coming from the creator's team, for the realistic-character comparison.

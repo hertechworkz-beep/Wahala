@@ -1,0 +1,338 @@
+{
+ "idle": {
+  "frames": 351,
+  "duration": 11.667,
+  "speed": 0.0,
+  "loop": true,
+  "root": "static",
+  "end_offset": [
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "idle2": {
+  "frames": 466,
+  "duration": 15.5,
+  "speed": 0.0,
+  "loop": true,
+  "root": "static",
+  "end_offset": [
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "walk": {
+  "frames": 37,
+  "duration": 1.2,
+  "speed": 1.009,
+  "loop": true,
+  "root": "inplace",
+  "end_offset": [
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "run": {
+  "frames": 23,
+  "duration": 0.733,
+  "speed": 3.074,
+  "loop": true,
+  "root": "inplace",
+  "end_offset": [
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "sit_down": {
+  "frames": 88,
+  "duration": 2.9,
+  "speed": 0.171,
+  "loop": false,
+  "root": "keep",
+  "end_offset": [
+   0.0,
+   0.496,
+   0.0
+  ]
+ },
+ "sit_idle": {
+  "frames": 1084,
+  "duration": 36.1,
+  "speed": 0.0,
+  "loop": true,
+  "root": "keep",
+  "end_offset": [
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "sit_relaxed": {
+  "frames": 1093,
+  "duration": 36.4,
+  "speed": 0.0,
+  "loop": true,
+  "root": "keep",
+  "end_offset": [
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "sit_shrug": {
+  "frames": 91,
+  "duration": 3.0,
+  "speed": 0.0,
+  "loop": false,
+  "root": "keep",
+  "end_offset": [
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "stand_up": {
+  "frames": 76,
+  "duration": 2.5,
+  "speed": 0.169,
+  "loop": false,
+  "root": "keep",
+  "end_offset": [
+   0.016,
+   -0.423,
+   0.0
+  ]
+ },
+ "table_idle": {
+  "frames": 1372,
+  "duration": 45.7,
+  "speed": 0.0,
+  "loop": true,
+  "root": "keep",
+  "end_offset": [
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "table_shrug": {
+  "frames": 106,
+  "duration": 3.5,
+  "speed": 0.0,
+  "loop": false,
+  "root": "keep",
+  "end_offset": [
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "table_thoughtful": {
+  "frames": 501,
+  "duration": 16.667,
+  "speed": 0.0,
+  "loop": false,
+  "root": "keep",
+  "end_offset": [
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "wave": {
+  "frames": 86,
+  "duration": 2.833,
+  "speed": 0.0,
+  "loop": false,
+  "root": "static",
+  "end_offset": [
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "talk": {
+  "frames": 1068,
+  "duration": 35.567,
+  "speed": 0.0,
+  "loop": true,
+  "root": "static",
+  "end_offset": [
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "talk_excited": {
+  "frames": 797,
+  "duration": 26.533,
+  "speed": 0.0,
+  "loop": true,
+  "root": "static",
+  "end_offset": [
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "listen": {
+  "frames": 977,
+  "duration": 32.533,
+  "speed": 0.0,
+  "loop": true,
+  "root": "static",
+  "end_offset": [
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "angry": {
+  "frames": 851,
+  "duration": 28.333,
+  "speed": 0.0,
+  "loop": true,
+  "root": "static",
+  "end_offset": [
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "drink_idle": {
+  "frames": 943,
+  "duration": 31.4,
+  "speed": 0.0,
+  "loop": true,
+  "root": "static",
+  "end_offset": [
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "drink": {
+  "frames": 1051,
+  "duration": 35.0,
+  "speed": 0.0,
+  "loop": false,
+  "root": "static",
+  "end_offset": [
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "invite_sit": {
+  "frames": 131,
+  "duration": 4.333,
+  "speed": 0.0,
+  "loop": false,
+  "root": "static",
+  "end_offset": [
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "cheer": {
+  "frames": 740,
+  "duration": 24.633,
+  "speed": 0.0,
+  "loop": false,
+  "root": "static",
+  "end_offset": [
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "clap": {
+  "frames": 211,
+  "duration": 7.0,
+  "speed": 0.0,
+  "loop": false,
+  "root": "static",
+  "end_offset": [
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "dance": {
+  "frames": 885,
+  "duration": 29.467,
+  "speed": 0.0,
+  "loop": true,
+  "root": "static",
+  "end_offset": [
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "dance2": {
+  "frames": 646,
+  "duration": 21.5,
+  "speed": 0.0,
+  "loop": true,
+  "root": "static",
+  "end_offset": [
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "bag_idle": {
+  "frames": 1064,
+  "duration": 35.433,
+  "speed": 0.0,
+  "loop": true,
+  "root": "static",
+  "end_offset": [
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "phone": {
+  "frames": 958,
+  "duration": 31.9,
+  "speed": 0.0,
+  "loop": true,
+  "root": "static",
+  "end_offset": [
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "table_down": {
+  "frames": 127,
+  "duration": 4.2,
+  "speed": 0.239,
+  "loop": false,
+  "root": "keep",
+  "end_offset": [
+   -0.0,
+   -1.004,
+   0.0
+  ]
+ },
+ "table_up": {
+  "frames": 103,
+  "duration": 3.4,
+  "speed": 0.179,
+  "loop": false,
+  "root": "keep",
+  "end_offset": [
+   0.553,
+   -0.254,
+   0.0
+  ]
+ }
+}

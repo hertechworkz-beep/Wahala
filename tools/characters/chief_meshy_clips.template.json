@@ -1,20 +1,124 @@
 [
- {"name": "idle", "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_static/m_idle_neutral_01.max.fbx", "root": "static", "loop": true},
- {"name": "idle2", "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_static/m_idle_neutral_02.max.fbx", "root": "static", "loop": true},
- {"name": "sit_down", "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_xyz/m_sit_down_chair_01.max.fbx", "root": "keep"},
- {"name": "sit_idle", "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_static/m_sit_chair_idle_neutral_01.max.fbx", "root": "keep", "loop": true},
- {"name": "sit_relaxed", "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_static/m_sit_chair_idle_relaxed_01.max.fbx", "root": "keep", "loop": true},
- {"name": "sit_shrug", "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_static/m_sit_chair_gestic_shrug_01.max.fbx", "root": "keep"},
- {"name": "stand_up", "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_xyz/m_sit_stand_up_chair_01.max.fbx", "root": "keep"},
- {"name": "wave", "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_static/m_wave_01.max.fbx", "root": "static"},
- {"name": "talk", "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_static/m_gestic_talk_neutral_01.max.fbx", "root": "static", "loop": true},
- {"name": "talk_excited", "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_static/m_gestic_talk_excited_01.max.fbx", "root": "static", "loop": true},
- {"name": "drink_idle", "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_static/m_drink_idle.max.fbx", "root": "static", "loop": true},
- {"name": "drink", "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_static/m_drink_drinking.max.fbx", "root": "static"},
- {"name": "invite_sit", "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_static/m_invite_sit.max.fbx", "root": "static"},
- {"name": "phone", "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_static/m_cell_phone_talk_01.max.fbx", "root": "static", "loop": true},
- {"name": "cheer", "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_static/m_cheer_01.max.fbx", "root": "static"},
- {"name": "clap", "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_static/m_claphands_01.max.fbx", "root": "static"},
- {"name": "dance", "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_static/m_dancing_cool.max.fbx", "root": "static", "loop": true},
- {"name": "dance2", "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_static/m_dancing_neutral.max.fbx", "root": "static", "loop": true}
+ {
+  "name": "idle",
+  "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_static/m_idle_neutral_01.max.fbx",
+  "root": "static",
+  "loop": true
+ },
+ {
+  "name": "idle2",
+  "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_static/m_idle_neutral_02.max.fbx",
+  "root": "static",
+  "loop": true
+ },
+ {
+  "name": "sit_down",
+  "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_xyz/m_sit_down_chair_01.max.fbx",
+  "root": "keep"
+ },
+ {
+  "name": "sit_idle",
+  "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_static/m_sit_chair_idle_neutral_01.max.fbx",
+  "root": "keep",
+  "loop": true
+ },
+ {
+  "name": "sit_relaxed",
+  "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_static/m_sit_chair_idle_relaxed_01.max.fbx",
+  "root": "keep",
+  "loop": true
+ },
+ {
+  "name": "sit_shrug",
+  "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_static/m_sit_chair_gestic_shrug_01.max.fbx",
+  "root": "keep"
+ },
+ {
+  "name": "stand_up",
+  "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_xyz/m_sit_stand_up_chair_01.max.fbx",
+  "root": "keep"
+ },
+ {
+  "name": "wave",
+  "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_static/m_wave_01.max.fbx",
+  "root": "static"
+ },
+ {
+  "name": "talk",
+  "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_static/m_gestic_talk_neutral_01.max.fbx",
+  "root": "static",
+  "loop": true
+ },
+ {
+  "name": "talk_excited",
+  "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_static/m_gestic_talk_excited_01.max.fbx",
+  "root": "static",
+  "loop": true
+ },
+ {
+  "name": "drink_idle",
+  "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_static/m_drink_idle.max.fbx",
+  "root": "static",
+  "loop": true
+ },
+ {
+  "name": "drink",
+  "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_static/m_drink_drinking.max.fbx",
+  "root": "static"
+ },
+ {
+  "name": "invite_sit",
+  "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_static/m_invite_sit.max.fbx",
+  "root": "static"
+ },
+ {
+  "name": "phone",
+  "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_static/m_cell_phone_talk_01.max.fbx",
+  "root": "static",
+  "loop": true
+ },
+ {
+  "name": "cheer",
+  "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_static/m_cheer_01.max.fbx",
+  "root": "static"
+ },
+ {
+  "name": "clap",
+  "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_static/m_claphands_01.max.fbx",
+  "root": "static"
+ },
+ {
+  "name": "dance",
+  "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_static/m_dancing_cool.max.fbx",
+  "root": "static",
+  "loop": true
+ },
+ {
+  "name": "dance2",
+  "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_static/m_dancing_neutral.max.fbx",
+  "root": "static",
+  "loop": true
+ },
+ {
+  "name": "table_down",
+  "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_xyz/m_sit_down_table_left.max.fbx",
+  "root": "keep"
+ },
+ {
+  "name": "table_up",
+  "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_xyz/m_sit_stand_up_table_left.max.fbx",
+  "root": "keep"
+ },
+ {
+  "name": "table_idle",
+  "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_static/m_sit_table_idle_neutral_01.max.fbx",
+  "root": "keep",
+  "loop": true
+ },
+ {
+  "name": "table_shrug",
+  "file": "$ROCKETBOX/Assets/Animations/all_animations_max_motextr_static/m_sit_table_gestic_shrug_01.max.fbx",
+  "root": "keep",
+  "loop": false
+ }
 ]

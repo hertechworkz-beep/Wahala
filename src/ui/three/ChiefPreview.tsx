@@ -1,7 +1,18 @@
 import { useEffect, useRef, useState } from 'react';
 import { navigate } from '../kit';
 
-export default function ChiefPreview() {
+type Start = (canvas: HTMLCanvasElement, ev: any, opts: { capture?: boolean }) => Promise<any>;
+const stages: Record<string, { title: string; loading: string; start: () => Promise<Start> }> = {
+  chief: { title: 'Chief · 3D', loading: 'Loading Chief', start: () => import('../../three/chiefStage').then((m) => m.startChiefStage) },
+  date: {
+    title: 'First date · 3D',
+    loading: 'Loading the restaurant',
+    start: () => Promise.all([import('../../three/dateStage'), import('../../three/scenes/firstDate')]).then(([m, s]) => (c, ev, o) => m.startDateStage(c, s.firstDate, ev, o)),
+  },
+};
+
+export default function ChiefPreview({ stage: which = 'chief' }: { stage?: keyof typeof stages }) {
+  const def = stages[which];
   const canvas = useRef<HTMLCanvasElement>(null);
   const [progress, setProgress] = useState(0);
   const [ready, setReady] = useState(false);
@@ -13,15 +24,16 @@ export default function ChiefPreview() {
   const stageRef = useRef<any>(null);
 
   useEffect(() => {
-    let stage: Awaited<ReturnType<typeof import('../../three/chiefStage').startChiefStage>> | null = null;
+    let stage: any = null;
     let alive = true;
-    import('../../three/chiefStage')
-      .then(({ startChiefStage }) =>
-        startChiefStage(canvas.current!, {
+    def
+      .start()
+      .then((start) =>
+        start(canvas.current!, {
           onProgress: setProgress,
           onReady: () => setReady(true),
           onHint: setHint,
-          onSay: (who, text) => setLine({ who, text, id: Date.now() }),
+          onSay: (who: string, text: string) => setLine({ who, text, id: Date.now() }),
           onSayEnd: () => setLine(null),
         }, { capture: location.search.includes('capture') || location.hash.includes('capture') }),
       )
@@ -39,7 +51,7 @@ export default function ChiefPreview() {
       alive = false;
       stage?.dispose();
     };
-  }, []);
+  }, [which]);
 
   return (
     <div className="relative h-full overflow-hidden bg-black">
@@ -48,7 +60,7 @@ export default function ChiefPreview() {
         <button className="pointer-events-auto rounded-full bg-black/55 px-3 py-1.5 text-[13px] font-bold backdrop-blur" onClick={() => navigate('/')}>
           ← Wahala
         </button>
-        <div className="rounded-full bg-black/55 px-3 py-1.5 text-right text-[11px] font-bold uppercase tracking-wider text-[#F59E0B] backdrop-blur">Chief · 3D</div>
+        <div className="rounded-full bg-black/55 px-3 py-1.5 text-right text-[11px] font-bold uppercase tracking-wider text-[#F59E0B] backdrop-blur">{def.title}</div>
       </div>
       {line && (
         <div key={line.id} className="anim-rise pointer-events-none absolute inset-x-4 top-[18%] mx-auto max-w-[420px] rounded-2xl bg-black/70 px-4 py-2.5 text-center backdrop-blur">
@@ -61,7 +73,7 @@ export default function ChiefPreview() {
       )}
       {!ready && !error && (
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-[#0b0809]">
-          <div className="text-[13px] font-bold uppercase tracking-[0.25em] text-white/60">Loading Chief</div>
+          <div className="text-[13px] font-bold uppercase tracking-[0.25em] text-white/60">{def.loading}</div>
           <div className="h-1.5 w-48 overflow-hidden rounded-full bg-white/10">
             <div className="h-full bg-[#F59E0B] transition-[width]" style={{ width: `${Math.round(progress * 100)}%` }} />
           </div>
